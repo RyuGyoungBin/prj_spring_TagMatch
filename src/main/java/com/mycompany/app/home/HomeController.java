@@ -9,5 +9,13 @@ public class HomeController {
 	public String home() {
 		System.out.println("asdf");
 		return "/home";
+	}	
+		@RequestMapping("/login")
+		public String login() {
+			return "/usr/infra/index/indexUsrView";
 	}
+		@RequestMapping("/memberShip")
+		public String memberShip() {
+			return "/usr/infra/index/indexUsrSingUp";
+		}
 }
