@@ -50,7 +50,7 @@
         
 
 	</main>
-	<!-- End main -->
+	<!-- End main --> 
     
     <jsp:include page="../include/footer.jsp"></jsp:include>
 	<jsp:include page="../include/script.jsp"></jsp:include>
