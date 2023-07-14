@@ -21,7 +21,7 @@
                                         <p class="owl-slide-animated owl-slide-subtitle">
                                             Discover hidden wonders on trips curated by Citytours Tours Experts
                                         </p>
-                                        <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="all_tours_list.html" role="button">Read more</a></div>
+                                        <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="" role="button">Read more</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -34,12 +34,16 @@
         </div>
         <!--/carousel-->
         <div class="d-flex justify-content-around p-5" style="height: 80vh;">
+        	<div id="mapktx01"class="clsMapKtx">
+        	
+        	</div>
         	<div class="col-6 text-center">
         		<img alt="경부선" src="/resources/assets/img/map_ktx01.png" class="position-relative" style="height: 100%;">
         	</div>
         	<div class="col-5 d-flex flex-column position-relative">
-        		<div class="position-absolute top-10 start-50 translate-middle">
+        		<div class="position-absolute top-50" id="liveBox" style="transform: translate(25%,-100%);">
         			<iframe width="560" height="315" src="https://www.youtube.com/embed/oJNgLwibVO4?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+	        		<button type="button" class="btn position-absolute top-0 end-0 text-danger" id="liveClose" style="transform: translate(100%, -100%);">X</button>
         		</div>
         		<div>
         			
@@ -55,7 +59,11 @@
     <jsp:include page="../include/footer.jsp"></jsp:include>
 	<jsp:include page="../include/script.jsp"></jsp:include>
 	<script>
-		new CBPFWTabs(document.getElementById('tabs'));
+// 		new CBPFWTabs(document.getElementById('tabs'));
+		$("#liveClose").on("click", function(){
+			alert("sdf");
+			$("#liveBox").fadeOut();
+		})
 	</script>
     
 
