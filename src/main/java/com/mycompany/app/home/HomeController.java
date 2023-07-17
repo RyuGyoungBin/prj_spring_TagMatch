@@ -18,4 +18,8 @@ public class HomeController {
 		public String memberShip() {
 			return "/usr/infra/index/indexUsrSingUp";
 		}
+		@RequestMapping("/indexUsrTiket")
+		public String indexUsrTiket() {
+			return "/usr/infra/index/indexUsrTiket";
+		}
 }
