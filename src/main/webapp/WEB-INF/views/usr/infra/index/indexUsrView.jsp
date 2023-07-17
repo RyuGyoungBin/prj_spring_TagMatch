@@ -11,7 +11,7 @@
 	<main>
 		<div id="carousel-home">
             <div class="owl-carousel owl-theme">
-                 <div class="owl-slide cover" style="background-image: url(/resources/assets/img/slides/slide_home_3.jpg); height: 20vh;">
+                 <div class="owl-slide cover" style="background: url(/resources/assets/img/20211129101952388_04mF.jpg) center no-repeat; background-size: 100%; background-position: bottom;">
                     <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                         <div class="container">
                             <div class="row justify-content-center justify-content-md-start">
@@ -33,23 +33,258 @@
             <div id="icon_drag_mobile"></div>
         </div>
         <!--/carousel-->
-        <div class="d-flex justify-content-around p-5" style="height: 80vh;">
-        	<div id="mapktx01"class="clsMapKtx">
-        	
-        	</div>
-        	<div class="col-6 text-center">
-        		<img alt="경부선" src="/resources/assets/img/map_ktx01.png" class="position-relative" style="height: 100%;">
-        	</div>
-        	<div class="col-5 d-flex flex-column position-relative">
-        		<div class="position-absolute top-50" id="liveBox" style="transform: translate(25%,-100%);">
-        			<iframe width="560" height="315" src="https://www.youtube.com/embed/oJNgLwibVO4?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-	        		<button type="button" class="btn position-absolute top-0 end-0 text-danger" id="liveClose" style="transform: translate(100%, -100%);">X</button>
-        		</div>
-        		<div>
-        			
-        		</div>
-        		
-        	</div>
+        <div>
+        	<div class="container margin_60 d-flex justify-content-around">
+        	<aside class="col-lg-3">
+					<div class="box_style_cat">
+						<ul id="cat_nav">
+							<li><a href="#" id="active"><i class="icon_set_1_icon-51"></i>기차</a>
+							</li>
+							<li><a href="#" id="active"><i class="icon_set_1_icon-51"></i>숙소</a>
+							</li>
+							<li><a href="#" id="active"><i class="icon_set_1_icon-51"></i>입장권</a>
+							</li>
+						</ul>
+					</div>
+
+					<div id="filters_col">
+						<a data-bs-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt"><i class="icon_set_1_icon-65"></i>예약상세</a>
+						<div class="collapse show" id="collapseFilters">
+							<div class="filter_type">
+								<h6>Price</h6>
+								<input type="text" id="price" name="price" value="">
+							</div>
+							<div class="filter_type">
+								<h6>Rating</h6>
+								<ul>
+									<li>
+                                       <label class="container_check">
+                                            <span class="rating">
+                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
+                                            </span>
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+									</li>
+									<li>
+                                        <label class="container_check">
+                                            <span class="rating">
+                                               <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i>
+                                            </span>
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+									</li>
+									<li>
+                                        <label class="container_check">
+                                            <span class="rating">
+                                               <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                            </span>
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+									</li>
+									<li>
+                                        <label class="container_check">
+                                            <span class="rating">
+                                              <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                            </span>
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+									</li>
+									<li>
+                                        <label class="container_check">
+                                            <span class="rating">
+                                             <i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+                                            </span>
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+									</li>
+								</ul>
+							</div>
+							<div class="filter_type">
+								<h6>Facility</h6>
+								<ul class="mb-0">
+									<li>
+                                        <label class="container_check">
+                                            Pet allowed
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+									</li>
+									<li>
+                                        <label class="container_check">
+                                            Groups allowed
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+									</li>
+									<li>
+                                        <label class="container_check">
+                                            Tour guides
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+									</li>
+									<li>
+                                        <label class="container_check">
+                                            Access for disabled
+                                            <input type="checkbox">
+                                            <span class="checkmark"></span>
+                                        </label>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!--End collapse -->
+					</div>
+					<!--End filters col-->
+					<div class="box_style_2 d-none d-sm-block">
+						<i class="icon_set_1_icon-57"></i>
+						<h4>Need <span>Help?</span></h4>
+						<a href="tel://004542344599" class="phone">+45 423 445 99</a>
+						<small>Monday to Friday 9.00am - 7.30pm</small>
+					</div>
+				</aside>
+				<!--End aside -->
+				<div class="col-lg-1"></div>
+				<div class="col-lg-8 d-flex flex-column">
+					<div class="col-12 d-flex justify-content-end">
+						<div class="me-3">
+							<input type="radio" name="itinerary" id="itineraryOne">
+							<label for="itineraryOne">편도</label>
+						</div>
+						<div>
+							<input type="radio" name="itinerary" id="itineraryTwo" checked>
+							<label for="itineraryTwo">왕복</label>
+						</div>
+					</div>
+					<div class="d-flex justify-content-center mb-2">
+						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">가는편</div>
+						<div class="d-flex me-3 text-nowrap align-items-center">
+							<label class="me-3">출발역</label>
+							<input type="text" class="form-control" value="서울역" readonly>
+						</div>
+						<div class="d-flex me-3 text-nowrap align-items-center">
+							<label class="me-3">도착역</label>
+							<input type="text" class="form-control" value="부산역" readonly>
+						</div>
+						<div class="d-flex me-3 text-nowrap align-items-center">
+							<label class="me-3">가는일자</label>
+							<div></div>
+						</div>
+					</div>
+					<div class="d-flex justify-content-center mb-2">
+						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">오는편</div>
+						<div class="d-flex me-3 text-nowrap align-items-center">
+							<label class="me-3">출발역</label>
+							<input type="text" class="form-control" value="서울역" readonly>
+						</div>
+						<div class="d-flex me-3 text-nowrap align-items-center">
+							<label class="me-3">도착역</label>
+							<input type="text" class="form-control" value="부산역" readonly>
+						</div>
+						<div class="d-flex me-3 text-nowrap align-items-center">
+							<label class="me-3">가는일자</label>
+							<div></div>
+						</div>
+					</div>
+					<div class="d-flex justify-content-around pb-3 border-bottom">
+						<div class="d-flex justify-content-center col-11">
+							<div class="d-flex me-3 text-nowrap align-items-center fw-bold">예약 인원</div>
+							<div class="d-flex me-3 text-nowrap align-items-center">
+								<label>성인(만 13세 이상)</label>
+								<select class="form-control">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+								</select>
+							</div>
+							<div class="d-flex me-3 text-nowrap align-items-center">
+								<label>아동(만 6세 ~ 13세)</label>
+								<select class="form-control">
+									<option value="0">0</option>
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+									<option value="6">6</option>
+									<option value="7">7</option>
+									<option value="8">8</option>
+									<option value="9">9</option>
+								</select>
+							</div>
+						</div>
+						<button type="button" class="col-1 btn btn-secondary">조회</button>
+					</div>
+					<div>
+						<h4 class="p-3 fw-bold">가는 철도편 선택</h4>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>열차종</th>
+									<th>출도착역</th>
+									<th>여정시간</th>
+									<th>소요시간</th>
+									<th>예약여부</th>
+									<th>요금</th>
+									<th>좌석조회</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>ktx</th>
+									<th>서울-부산</th>
+									<th>05:12 - 07:49</th>
+									<th>02:37</th>
+									<th class="text-danger">예약여부</th>
+									<th>성인:59,800원<br>아동:26,900원</th>
+									<th><a>좌석조회</a></th>
+								</tr>
+							</tbody>
+						
+						</table>
+					</div>
+					<div>
+						<h4 class="p-3 fw-bold">오는 철도편 선택</h4>
+						<table class="table">
+							<thead>
+								<tr>
+									<th>열차종</th>
+									<th>출도착역</th>
+									<th>여정시간</th>
+									<th>소요시간</th>
+									<th>예약여부</th>
+									<th>요금</th>
+									<th>좌석조회</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>ktx</th>
+									<th>서울-부산</th>
+									<th>05:12 - 07:49</th>
+									<th>02:37</th>
+									<th class="text-danger">예약여부</th>
+									<th>성인:59,800원<br>아동:26,900원</th>
+									<th><a>좌석조회</a></th>
+								</tr>
+							</tbody>
+						
+						</table>
+					</div>
+				</div>
+        </div>
         </div>
         
 
@@ -60,10 +295,7 @@
 	<jsp:include page="../include/script.jsp"></jsp:include>
 	<script>
 // 		new CBPFWTabs(document.getElementById('tabs'));
-		$("#liveClose").on("click", function(){
-			alert("sdf");
-			$("#liveBox").fadeOut();
-		})
+		
 	</script>
     
 

@@ -42,7 +42,7 @@
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
-                            <img src="img/logo_sticky.png" width="160" height="34" alt="City tours">
+                            <img src="/resources/assets/img/logo_sticky.png" width="160" height="34" alt="City tours">
                         </div>
                         <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                         <ul class="d-flex justify-content-end">
