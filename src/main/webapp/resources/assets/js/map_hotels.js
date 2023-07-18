@@ -1,4 +1,4 @@
-$('#collapseMap').on('shown.bs.collapse', function(e){
+/resources/assets/$('#collapseMap').on('shown.bs.collapse', function(e){
 	(function(A) {
 
 	if (!Array.prototype.forEach)

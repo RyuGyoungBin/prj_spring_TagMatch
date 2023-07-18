@@ -10,16 +10,6 @@ public class HomeController {
 		System.out.println("asdf");
 		return "/home";
 	}	
-		@RequestMapping("/login")
-		public String login() {
-			return "/usr/infra/index/indexUsrView";
-	}
-		@RequestMapping("/memberShip")
-		public String memberShip() {
-			return "/usr/infra/index/indexUsrSingUp";
-		}
-		@RequestMapping("/indexUsrTiket")
-		public String indexUsrTiket() {
-			return "/usr/infra/index/indexUsrTiket";
-		}
+
+	
 }
