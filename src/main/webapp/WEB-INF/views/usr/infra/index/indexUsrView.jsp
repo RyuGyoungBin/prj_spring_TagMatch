@@ -11,7 +11,7 @@
 	<main>
 		<div id="carousel-home">
             <div class="owl-carousel owl-theme">
-                 <div class="owl-slide cover" style="background: url(/resources/assets/img/20211129101952388_04mF.jpg) center no-repeat; background-size: 100%; background-position: bottom;">
+                 <div class="owl-slide cover" style="background: url(/resources/assets/img/20211129101952388_04mF1.jpg) center no-repeat; background-size: 100%; background-position: bottom;">
                     <div class="opacity-mask d-flex align-items-center" data-opacity-mask="rgba(0, 0, 0, 0.5)">
                         <div class="container">
                             <div class="row justify-content-center justify-content-md-start">
@@ -50,95 +50,21 @@
 					<div id="filters_col">
 						<a data-bs-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt"><i class="icon_set_1_icon-65"></i>예약상세</a>
 						<div class="collapse show" id="collapseFilters">
-							<div class="filter_type">
-								<h6>Price</h6>
-								<input type="text" id="price" name="price" value="">
-							</div>
-							<div class="filter_type">
-								<h6>Rating</h6>
-								<ul>
-									<li>
-                                       <label class="container_check">
-                                            <span class="rating">
-                                                <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
-                                            </span>
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
+							<div class="box_style_cat mt-3">
+								<ul id="cat_nav">
+									<li style="padding: 15px 10px;"><i class="icon_set_1_icon-51"></i><span>기차 : </span><span>0원</span>
 									</li>
-									<li>
-                                        <label class="container_check">
-                                            <span class="rating">
-                                               <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i>
-                                            </span>
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
+									<li style="padding: 15px 10px;"><i class="icon_set_1_icon-51"></i><span>숙소 : </span><span>0원</span>
 									</li>
-									<li>
-                                        <label class="container_check">
-                                            <span class="rating">
-                                               <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-                                            </span>
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-									</li>
-									<li>
-                                        <label class="container_check">
-                                            <span class="rating">
-                                              <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-                                            </span>
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-									</li>
-									<li>
-                                        <label class="container_check">
-                                            <span class="rating">
-                                             <i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-                                            </span>
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-									</li>
-								</ul>
-							</div>
-							<div class="filter_type">
-								<h6>Facility</h6>
-								<ul class="mb-0">
-									<li>
-                                        <label class="container_check">
-                                            Pet allowed
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-									</li>
-									<li>
-                                        <label class="container_check">
-                                            Groups allowed
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-									</li>
-									<li>
-                                        <label class="container_check">
-                                            Tour guides
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-									</li>
-									<li>
-                                        <label class="container_check">
-                                            Access for disabled
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
+									<li style="padding: 15px 10px;"><i class="icon_set_1_icon-51"></i><span>입장권 : </span><span>0원</span>
 									</li>
 								</ul>
 							</div>
 						</div>
 						<!--End collapse -->
+					</div>
+					<div class="box_style_cat">
+						<p class="p-3" style="color: #333;">총결제금액</p>
 					</div>
 					<!--End filters col-->
 					<div class="box_style_2 d-none d-sm-block">
