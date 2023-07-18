@@ -1,1 +1,0 @@
-  <script src="/resources/common/validation.js"></script>
