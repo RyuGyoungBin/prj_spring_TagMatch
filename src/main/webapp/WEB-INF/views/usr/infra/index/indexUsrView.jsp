@@ -33,7 +33,6 @@
             <div id="icon_drag_mobile"></div>
         </div>
         <!--/carousel-->
-        <div>
         	<div class="container margin_60 d-flex justify-content-around">
         	<aside class="col-lg-3">
 					<div class="box_style_cat">
@@ -209,8 +208,75 @@
 						
 						</table>
 					</div>
+			        <div class="border-bottom border-primary py-3 mb-3"></div>
+			        <form name="SlForm" method="post">
+			        <div class="col-12 d-flex justify-content-end mb-3">
+						<div>
+							<input type="radio" name="Slprice" id="SlpriceLow">
+							<label for="itineraryOne">저가순</label>
+						</div>
+						<div class="mx-3">
+							<input type="radio" name="Slprice" id="SlpriceHig">
+							<label for="itineraryTwo">고가순</label>
+						</div>
+						<div>
+							<input type="radio" name="Slprice" id="SlpriceSta" checked>
+							<label for="itineraryThr">추천순</label>
+						</div>
+					</div>
+					<div class="col-12 d-flex justify-content-around align-items-center mb-3">
+						<label class="fw-bold">유형</label>
+						<div>
+							<label for="SltypeAll">전체</label>
+							<input type="checkbox" name="SlType" id="SltypeAll">
+						</div>
+						<div class="mx-3">
+							<label for="SltypeHot">호텔</label>
+							<input type="checkbox" name="SlType" id="SltypeHot">
+						</div>
+						<div>
+							<label for="SltypePen">펜션</label>
+							<input type="checkbox" name="SlType" id="SltypePen">
+						</div>
+						<div class="mx-3">
+							<label for="SltypeCon">콘도</label>
+							<input type="checkbox" name="SlType" id="SltypeCon">
+						</div>
+						<div>
+							<label for="SltypeCam">캠핑카</label>
+							<input type="checkbox" name="SlType" id="SltypeCam">
+						</div>
+						<div class="d-flex align-items-center">
+							<label for="SltypeName" class="me-3">숙박지명</label>
+							<div>
+								<input type="text" name="SltypeName" id="SltypeName" class="form-control">
+							</div>
+						</div>
 				</div>
-        </div>
+				<div class="col-12 d-flex justify-content-around align-items-center">
+						<label class="fw-bold">지역</label>
+						<div>
+							<select class="form-control">
+								<option>-도/특별시-</option>
+							</select>
+						</div>
+						<div class="mx-3">
+							<select class="form-control">
+								<option>-시/구/지역-</option>
+							</select>
+						</div>
+						<div>
+							<span class="me-2">입실일</span>
+							<input type="text">
+						</div>
+						<div>
+							<span class="me-2">퇴실일</span>
+							<input type="text">
+						</div>
+						<button type="button" class="btn btn-sm btn-secondary" id="SlBtn">조회</button>
+				</div>
+				</form>
+				
         </div>
         
 
