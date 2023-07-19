@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
+
+
+
 <footer class="revealed">
         <div class="container">
             <div class="row">
