@@ -13,8 +13,6 @@
 <%@include file = "../include/head.jsp"%>
 <%@include file = "../include/header.jsp"%>
 
-
-
 	<section class="parallax-window" data-parallax="scroll"
 		data-natural-height="470">
 		<img
