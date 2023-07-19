@@ -13,9 +13,16 @@ public class MegaController {
 	@RequestMapping("/login")
 	public String login() {
 		return "/usr/infra/index/indexUsrView";
-}
+	}
 	@RequestMapping("/memberShip")
 	public String memberShip() {
 		return "/usr/infra/index/indexUsrSingUp";
 	}
+	
+	@RequestMapping("indexUsrTiketMoreInformation")
+	public String indexUsrTiketMoreInformation() {
+		return "/usr/infra/index/indexUsrTiketMoreInformation";
+	}
+	
+
 }
