@@ -13,6 +13,8 @@
 <%@include file = "../include/head.jsp"%>
 <%@include file = "../include/header.jsp"%>
 
+
+
 	<section class="parallax-window" data-parallax="scroll"
 		data-natural-height="470">
 		<img
@@ -56,11 +58,11 @@
 
 					<div class="box_style_cat">
 						<ul id="cat_nav">
-							<li><a href="hotelSeoul" id="active"><i
+							<li><a href="#" id="active"><i
 									class="icon_set_1_icon-51"></i>호텔 <span>(...)</span></a></li>
-							<li><a href="#"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
+							<li><a href="pension02"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
 							</li>
-							<li><a href="#"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a>
+							<li><a href="condo02"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a>
 							</li>
 							<li><a href="#"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a>
 							</li>
@@ -182,8 +184,8 @@
 												to wishlist</span></span></a>
 								</div>
 								<div class="img_list">
-									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/pension/gyunggido/01.jpg"
+									<a href="/detailInfo01"><img
+										src="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -198,7 +200,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>스마일카라반 펜션</strong>
+										<strong>신라스테이 삼성</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -265,7 +267,7 @@
 							<div class="col-lg-2 col-md-2">
 								<div class="price_list">
 									<div>
-										₩69,000~<span class="normal_price_list"></span><small>*2인
+										₩120,000~<span class="normal_price_list"></span><small>*2인
 											기준</small>
 										<p>
 											<a href="single_tour.html" class="btn_1">Details</a>
@@ -292,7 +294,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/pension/gyunggido/02.jpg"
+										src="/resources/assets/img/accommodation/hotel/seoul/02/02_1.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -307,7 +309,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>빌라엘라 펜션</strong>
+										<strong>AC호텔 바이 메리어트 서울 강남</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -374,7 +376,7 @@
 							<div class="col-lg-2 col-md-2">
 								<div class="price_list">
 									<div>
-										₩1,500,000~<span class="normal_price_list"></span><small>*최대 11인
+										₩220,000~<span class="normal_price_list"></span><small>*2인
 											기준</small>
 										<p>
 											<a href="single_tour.html" class="btn_1">Details</a>
@@ -401,7 +403,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/pension/gyunggido/03.jpg"
+										src="/resources/assets/img/accommodation/hotel/seoul/03/03_1.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -416,7 +418,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>풀빌라 림</strong>
+										<strong>보코서울강남</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -483,7 +485,7 @@
 							<div class="col-lg-2 col-md-2">
 								<div class="price_list">
 									<div>
-										₩335,000~<span class="normal_price_list"></span><small>*2인
+										₩229,900~<span class="normal_price_list"></span><small>*2인
 											기준</small>
 										<p>
 											<a href="single_tour.html" class="btn_1">Details</a>
@@ -510,7 +512,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/pension/gyunggido/04.jpg"
+										src="/resources/assets/img/accommodation/hotel/seoul/04/04_1.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -525,7 +527,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>풀스테이 조이 풀빌라</strong>
+										<strong>글래드 강남 코엑스 센터</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -592,7 +594,7 @@
 							<div class="col-lg-2 col-md-2">
 								<div class="price_list">
 									<div>
-										₩224,500~<span class="normal_price_list"></span><small>*2인
+										₩181,500~<span class="normal_price_list"></span><small>*2인
 											기준</small>
 										<p>
 											<a href="single_tour.html" class="btn_1">Details</a>
@@ -619,7 +621,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/pension/gyunggido/05.jpg"
+										src="/resources/assets/img/accommodation/hotel/seoul/05/05_1.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -634,7 +636,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>모노펜션</strong>
+										<strong>호텔 안테룸 서울</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -701,7 +703,7 @@
 							<div class="col-lg-2 col-md-2">
 								<div class="price_list">
 									<div>
-										₩112,000~<span class="normal_price_list"></span><small>*2인
+										₩182,000~<span class="normal_price_list"></span><small>*2인
 											기준</small>
 										<p>
 											<a href="single_tour.html" class="btn_1">Details</a>
@@ -728,7 +730,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/pension/gyunggido/06.jpg"
+										src="/resources/assets/img/accommodation/hotel/seoul/06/06_1.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -743,7 +745,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>소나무펜션</strong>
+										<strong>호텔 인 나인 강남</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -810,7 +812,7 @@
 							<div class="col-lg-2 col-md-2">
 								<div class="price_list">
 									<div>
-										₩180,000~<span class="normal_price_list"></span><small>*2인
+										₩169,000~<span class="normal_price_list"></span><small>*2인
 											기준</small>
 										<p>
 											<a href="single_tour.html" class="btn_1">Details</a>
@@ -860,10 +862,7 @@
 		$('#cat_nav').mobileMenu();
 	</script>
 
-	<!-- Map -->
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
-	<script src="/resources/assets/js/map.js"></script>
-	<script src="/resources/assets/js/infobox.js"></script>
+
 
 </body>
 

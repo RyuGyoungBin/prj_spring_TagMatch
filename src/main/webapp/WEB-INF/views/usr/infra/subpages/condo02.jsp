@@ -58,16 +58,11 @@
 
 					<div class="box_style_cat">
 						<ul id="cat_nav">
-							<li><a href="#" id="active"><i
-									class="icon_set_1_icon-51"></i>호텔 <span>(...)</span></a></li>
-							<li><a href="pensionSeoul"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
-							</li>
-							<li><a href="#"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a>
-							</li>
-							<li><a href="#"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a>
-							</li>
-							<li><a href="#"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a>
-							</li>
+							<li><a href="hotel02" id="active"><i class="icon_set_1_icon-51"></i>호텔 <span>(...)</span></a></li>
+							<li><a href="pension02"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a></li>
+							<li><a href="#"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a></li>
+							<li><a href="#"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a></li>
+							<li><a href="#"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a></li>
 
 						</ul>
 					</div>
@@ -171,7 +166,7 @@
 					</div>
 					<!--/tools -->
 
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.1s">
+					<div class="strip_condo_seoul wow fadeIn" data-wow-delay="0.1s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
 								<div class="ribbon_3 popular">
@@ -184,9 +179,7 @@
 												to wishlist</span></span></a>
 								</div>
 								<div class="img_list">
-									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/01_1.jpg"
-										alt="Image">
+									<a href="detailInfo03"><img	src="/resources/assets/img/accommodation/condo/gangwondo/01/01.jpg" alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
 										</div> </a>
@@ -197,10 +190,10 @@
 									<div class="rating">
 										<i class="icon-star voted"></i><i class="icon-star  voted"></i><i
 											class="icon-star  voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star"></i><small>(75)</small>
+											class="icon-star"></i><small>(75)</small>`
 									</div>
 									<h3>
-										<strong>신라스테이 삼성</strong>
+										<strong>하이원리조트 마운틴콘도</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -280,7 +273,7 @@
 					</div>
 					<!--End strip -->
 
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.2s">
+					<div class="strip_condo_seoul wow fadeIn" data-wow-delay="0.2s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
 								<div class="ribbon_3 popular">
@@ -294,7 +287,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/02_1.jpg"
+										src="/resources/assets/img/accommodation/condo/gangwondo/02/02.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -309,7 +302,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>AC호텔 바이 메리어트 서울 강남</strong>
+										<strong>하이원리조트 힐콘도</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -389,7 +382,7 @@
 					</div>
 					<!--End strip -->
 
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.3s">
+					<div class="strip_condo_seoul wow fadeIn" data-wow-delay="0.3s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
 								<div class="ribbon_3">
@@ -403,7 +396,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/03_1.jpg"
+										src="/resources/assets/img/accommodation/condo/gangwondo/03/03.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -418,7 +411,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>보코서울강남</strong>
+										<strong>현대아이파크콘도</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -498,7 +491,7 @@
 					</div>
 					<!--End strip -->
 
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.4s">
+					<div class="strip_condo_seoul wow fadeIn" data-wow-delay="0.4s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
 								<div class="ribbon_3">
@@ -512,7 +505,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/04_1.jpg"
+										src="/resources/assets/img/accommodation/condo/gangwondo/04/04.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -527,7 +520,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>글래드 강남 코엑스 센터</strong>
+										<strong>오션투유리조트 설악비치	호텔&콘도</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -607,7 +600,7 @@
 					</div>
 					<!--End strip -->
 
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.5s">
+					<div class="strip_condo_seoul wow fadeIn" data-wow-delay="0.5s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
 								<div class="ribbon_3">
@@ -621,7 +614,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/05_1.jpg"
+										src="/resources/assets/img/accommodation/condo/gangwondo/05/05.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -636,7 +629,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>호텔 안테룸 서울</strong>
+										<strong>금강산 콘도</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
@@ -716,7 +709,7 @@
 					</div>
 					<!--End strip -->
 
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.7s">
+					<div class="strip_condo_seoul wow fadeIn" data-wow-delay="0.7s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
 								<div class="ribbon_3">
@@ -730,7 +723,7 @@
 								</div>
 								<div class="img_list">
 									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/06_1.jpg"
+										src="/resources/assets/img/accommodation/condo/gangwondo/06/06.jpg"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -745,7 +738,7 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>호텔 인 나인 강남</strong>
+										<strong>더클래스300 콘도</strong>
 									</h3>
 									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
 										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui

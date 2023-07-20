@@ -9,3 +9,8 @@
 	
 	<!-- NOTIFY BUBBLES  -->
 <!-- 	<script src="/resources/assets/js/notify_func.js"></script> -->
+
+	<!-- Map -->
+	<script src="http://maps.googleapis.com/maps/api/js"></script>
+	<script src="/resources/assets/js/map.js"></script>
+	<script src="/resources/assets/js/infobox.js"></script>
