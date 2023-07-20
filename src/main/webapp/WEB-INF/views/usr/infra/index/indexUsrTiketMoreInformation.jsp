@@ -69,20 +69,20 @@
 						<div class="sp-slides">
 
 							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="../html/img/view123.jpg" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/img/view123.jpg" data-retina="/resources/assets/img/view123.jpg">
+								<img alt="Image" class="sp-image" src="../html/img/view123.jpg" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/" data-retina="/resources/assets/img/view123.jpg">
 							</div>
 							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="css/images/view123.gif" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/img/view123.jpg" data-retina="/resources/assets/img/view123.jpg">
+								<img alt="Image" class="sp-image" src="css/images/view123.gif" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/" data-retina="/resources/assets/img/view123.jpg">
 							</div>
 
 							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="css/images/view123.gif" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/img/view123.jpg" data-retina="/resources/assets/img/view123.jpg">
+								<img alt="Image" class="sp-image" src="css/images/view123.gif" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/" data-retina="/resources/assets/img/view123.jpg">
 							</div>
 						</div>
 						<div class="sp-thumbnails">
-							<img alt="Image" class="sp-thumbnail" src="img/view123.jpg">
-							<img alt="Image" class="sp-thumbnail" src="img/view123.jpg">
-							<img alt="Image" class="sp-thumbnail" src="img/view123.jpg">
+							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
+							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
+							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
 						</div>
 					</div>
 
@@ -486,7 +486,7 @@
 	<script src="/resources/assets/js/functions.js"></script>
 
 	<!-- Gallery -->
-	<script src="js/jquery.sliderPro.min.js"></script>
+	<script src="/resources/assets/js/jquery.sliderPro.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function ($) {
 			$('#Img_carousel').sliderPro({
@@ -555,7 +555,7 @@
 	</script>
 
 	<!--Review modal validation -->
-	<script src="/resources/assets/js/validate.js"></script>
+	<script src="/resources/assets/validate.js"></script>
 	
 </body>
 

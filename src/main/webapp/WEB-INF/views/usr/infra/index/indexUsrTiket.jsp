@@ -258,7 +258,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTiketMoreInformation">
 										<img src="/resources/assets/img/eastPalaceGarden.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
