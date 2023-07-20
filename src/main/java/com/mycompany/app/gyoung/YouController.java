@@ -5,13 +5,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class YouController {
 
-	@RequestMapping("/indexUsrView")
-	public String indexUsrView() {
-		return "/usr/infra/index/indexUsrView";
+	@RequestMapping("/bookingUsrView")
+	public String bookingUsr() {
+		return "/usr/infra/index/bookingUsrView";
 	}
 	
 	@RequestMapping("/test")
 	public String test() {
-		return "/usr/infra/index/test";
+		return "/usr/infra/index/indexUsrTiket";
 	}
 }
