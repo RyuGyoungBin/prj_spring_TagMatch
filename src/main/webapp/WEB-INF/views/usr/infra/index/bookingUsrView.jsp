@@ -40,11 +40,11 @@
 						<div class="collapse show" id="collapseFilters">
 							<div class="box_style_cat mt-3">
 								<ul id="cat_nav">
-									<li><a><i class="icon_set_1_icon-51"></i><span>기차 : </span><span>119,800원</span></a>
+									<li><a href="#train"><i class="icon_set_1_icon-51"></i><span>기차 : </span><span>119,800원</span></a>
 									</li>
-									<li><a><i class="icon_set_1_icon-51"></i><span>숙소 : </span><span>143,000원</span></a>
+									<li><a href="#hotel"><i class="icon_set_1_icon-51"></i><span>숙소 : </span><span>143,000원</span></a>
 									</li>
-									<li><a><i class="icon_set_1_icon-51"></i><span>입장권 : </span><span>210,000원</span></a>
+									<li><a href="#tour"><i class="icon_set_1_icon-51"></i><span>입장권 : </span><span>210,000원</span></a>
 									</li>
 								</ul>
 							</div>
@@ -68,7 +68,7 @@
 				</aside>
 				<!--End aside -->
 				<div class="col-lg-1"></div>
-				<div class="col-lg-8 d-flex flex-column">
+				<div class="col-lg-8 d-flex flex-column" id="train">
 					<div class="col-12 d-flex justify-content-end">
 						<div class="me-3">
 							<input type="radio" name="itinerary" id="itineraryOne">
@@ -240,7 +240,7 @@
 							<label for="itineraryThr">추천순</label>
 						</div>
 					</div>
-					<div class="col-12 d-flex justify-content-around align-items-center mb-3">
+					<div class="col-12 d-flex justify-content-around align-items-center mb-3" id="hotel">
 						<label class="fw-bold">유형</label>
 						<div>
 							<label for="SltypeAll">전체</label>
@@ -636,15 +636,25 @@
 									<td>113,637원</td>
 									<td><label for="room1">가능</label><input type="radio" name="room" id="room1"></td>
 								</tr>
-<!-- 								<div> -->
-<!-- 									<span>옵션선택</span> -->
-<!-- 									<input type="text" value="트윈(싱글+싱글)" class="form-controll"> -->
-<!-- 									<select> -->
-<!-- 										<option>1객실</option> -->
-<!-- 										<option>2객실</option> -->
-<!-- 										<option>3객실</option> -->
-<!-- 									</select> -->
-<!-- 								</div> -->
+							</tbody>
+						</table>
+						<div class="d-flex fustify-content-around align-items-center text-center">
+							<div class="col-2">
+								<span >옵션선택</span>
+							</div>
+							<div class="col-8 px-5 py-2">
+								<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
+							</div>
+							<div class="col-2 p-2">
+								<select class="form-control">
+									<option>1객실</option>
+									<option>2객실</option>
+									<option>3객실</option>
+								</select>
+							</div>
+						</div>
+						<table class="col-12 text-center">
+							<tbody>
 								<tr>
 									<td>스탠다드 더블</td>
 									<td>118,182원</td>
@@ -671,7 +681,7 @@
 			
 			<div class="border-bottom border-primary py-3 mb-3"></div>
 			<!--------------------입장권----------------------------- -->
-			<div class="col-12 d-flex justify-content-end mb-3">
+			<div class="col-12 d-flex justify-content-end mb-3" id="tour">
 						<div>
 							<input type="radio" name="Slprice" id="SlpriceLow">
 							<label for="itineraryOne">저가순</label>
@@ -1018,6 +1028,103 @@
 					<!-- End row -->
 				</div>
 			</div>
+			<div class="overflow-auto mb-3 border" style="height: 650px;">
+				<div class="d-flex flex-column">
+					<div class="p-4 border-bottom d-flex justify-content-between align-items-center">
+						상품상세정보
+						<a class="btn btn-light text-secondary">X</a>
+					</div>
+					<div class="d-flex p-3">
+						<div class="col-4 p-3 border-bottom">
+							<img src="/resources/assets/img/2022011314264525694731.jpg" width="300" height="533" class="img-fluid" alt="Image">
+						</div>
+						<div class="col-6 d-flex flex-column border-bottom justify-content-around">
+							<span class="h4 fw-bold text-center border-bottom pb-3">글래드 강남 코엑스센터</span>
+							<span>주소 : 서울 강남구 테헤란로 610</span>
+							<span>객 실수 : 10</span>
+							<span>특이사항 : 삼성역 주변</span>
+						</div>
+						<div class="col-2 p-3">
+							<a class="btn btn-secondary">지도보기</a>
+						</div>
+					</div>
+					<div class="px-3">
+						아래에서 원하는 객실을 선택하세요
+					</div>
+					<div class="p-3">
+						<table class="col-12 text-center">
+							<thead class="border-bottom">
+								<tr>
+									<th>객실 타입</th>
+									<th>07/24(월)</th>
+									<th>선택</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>스탠다드 트원</td>
+									<td>113,637원</td>
+									<td><label for="room1">가능</label><input type="radio" name="room" id="room1"></td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="d-flex fustify-content-around align-items-center text-center">
+							<div class="col-2">
+								<span >옵션선택</span>
+							</div>
+							<div class="col-8 px-5 py-2">
+								<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
+							</div>
+							<div class="col-2 p-2">
+								<select class="form-control">
+									<option>1객실</option>
+									<option>2객실</option>
+									<option>3객실</option>
+								</select>
+							</div>
+						</div>
+						<table class="col-12 text-center">
+							<tbody>
+								<tr>
+									<td>스탠다드 더블</td>
+									<td>118,182원</td>
+									<td><label for="room2">가능</label><input type="radio" name="room" id="room2"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="d-flex flex-column border p-3">
+				<div class="d-flex justify-content-around col-12 mb-1">
+					<span>2023/07/24 - 2023/07/25</span>
+					<span class="mx-3">글래드 강남 코엑스센터</span>
+					<span>[룸 온리]스탠다드 더블</span>
+					<span class="me-3">143,000원	</span>
+				</div>
+				<div class="d-flex justify-content-end align-items-center">
+					<div style="font-size: 9px;">선택된 총 숙박요금</div>
+					<div class="mx-2">143,000원</div>
+					<button type="button" class="btn btn-sm btn-primary">선택완료</button>
+				</div>
+			</div>
+			
+			<div class="border-bottom border-primary py-3 mb-3"></div>
+			<!--------------------입장권----------------------------- -->
+			<div class="col-12 d-flex justify-content-end mb-3">
+				<div>
+					<input type="radio" name="Slprice" id="SlpriceLow">
+					<label for="itineraryOne">저가순</label>
+				</div>
+				<div class="mx-3">
+					<input type="radio" name="Slprice" id="SlpriceHig">
+					<label for="itineraryTwo">고가순</label>
+				</div>
+				<div>
+					<input type="radio" name="Slprice" id="SlpriceSta" checked>
+					<label for="itineraryThr">추천순</label>
+				</div>2
+			</div>
 			<div class="d-flex flex-column border p-3">
 				<table class="mb-3 text-center">
 					<thead class="border-bottom">
@@ -1053,7 +1160,7 @@
 				</div> 
 			</div>
         </div>
-        
+     </div>   
 
 	</main>
 	<!-- End main --> 
