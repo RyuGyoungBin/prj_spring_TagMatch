@@ -3827,15 +3827,19 @@ ul.list_order li span {
 	content: '';
 }
 
-#selectCity {
+
+/* select group */
+.selectCity {
 	width : 20%;	
-	margin : 3% 3% 0;	
+    margin-bottom: 3%;
+    display: inline-block;
 
 }
 
-#selectDistrict {
-	width : 20%;
-	margin :10% 3% 0;
+.selectDistrict {
+	width : 20%;	
+    margin-bottom: 3%;
+    display: inline-block;
 }
 
 
