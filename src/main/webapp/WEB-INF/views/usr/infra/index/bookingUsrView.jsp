@@ -1229,7 +1229,7 @@
 	$(".hotelSelect tr:odd").on("click", function(){
 		$("tr").removeClass("bg-warning");
 		$(this).toggleClass("bg-warning");
-		$(".detail").addClass("d-none");
+		$(".detail").addClass("d-none");  
 		$(this).next().toggleClass("d-none");
 		var hotelPrice = 113637;
 		var hotelLen = $("#hotel").val();
