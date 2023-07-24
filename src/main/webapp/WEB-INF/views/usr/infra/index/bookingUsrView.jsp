@@ -291,14 +291,14 @@
 						</div>
 						<button type="button" class="btn btn-sm btn-secondary" id="SlBtn">조회</button>
 				</div>
-				<div class="overflow-auto mb-3" style="height: 650px;">
+				<div class="overflow-auto mb-3 ticketBox" style="height: 650px;">
 					<div class="d-flex flex-wrap pt-2">
 							<div class="col-md-4 px-2">
 								<div class="hotel_container">
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="indexUsrTiketMoreInformation">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -323,7 +323,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -348,7 +348,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -373,7 +373,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -398,7 +398,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -423,7 +423,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -448,7 +448,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -473,7 +473,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -498,7 +498,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -523,7 +523,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -548,7 +548,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -573,7 +573,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -598,11 +598,11 @@
 				</div>
 			<!-- 				상세정보 				 -->
 			</div>
-			<div class="overflow-auto mb-3 border" style="height: 650px;">
+			<div class="overflow-auto mb-3 border d-none ticketDetail" style="height: 650px;">
 				<div class="d-flex flex-column">
 					<div class="p-4 border-bottom d-flex justify-content-between align-items-center">
-						상품상세정보
-						<a class="btn btn-light text-secondary">X</a>
+						숙소상세정보
+						<a class="btn btn-light text-secondary detailCloseBtn">X</a>
 					</div>
 					<div class="d-flex p-3">
 						<div class="col-4 p-3 border-bottom">
@@ -720,14 +720,14 @@
 						</div>
 						<button type="button" class="btn btn-sm btn-secondary" id="SlBtn">조회</button>
 				</div>
-				<div class="overflow-auto mb-3" style="height: 650px;">
+				<div class="overflow-auto mb-3 ticketBox" style="height: 650px;">
 					<div class="d-flex flex-wrap pt-2">
 							<div class="col-md-4 px-2">
 								<div class="hotel_container">
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="indexUsrTiketMoreInformation">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -752,7 +752,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -777,7 +777,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -802,7 +802,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -827,7 +827,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -852,7 +852,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -877,7 +877,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -902,7 +902,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -927,7 +927,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -952,7 +952,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -977,7 +977,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -1002,7 +1002,7 @@
 									<div class="ribbon_3 popular"><span>Popular</span>
 									</div>
 									<div class="img_container">
-										<a href="single_hotel.html">
+										<a>
 											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span>7.5</span>Good</div>
 											<div class="short_info hotel">
@@ -1028,11 +1028,11 @@
 					<!-- End row -->
 				</div>
 			</div>
-			<div class="overflow-auto mb-3 border" style="height: 650px;">
+			<div class="overflow-auto mb-3 border d-none ticketDetail" style="height: 650px;">
 				<div class="d-flex flex-column">
 					<div class="p-4 border-bottom d-flex justify-content-between align-items-center">
 						상품상세정보
-						<a class="btn btn-light text-secondary">X</a>
+						<a class="btn btn-light text-secondary detailCloseBtn">X</a>
 					</div>
 					<div class="d-flex p-3">
 						<div class="col-4 p-3 border-bottom">
@@ -1169,7 +1169,14 @@
 	<jsp:include page="../include/script.jsp"></jsp:include>
 	<script>
 // 		new CBPFWTabs(document.getElementById('tabs'));
-
+	$(".ticketBox a").on("click", function(){
+		$(this).parent().parent().parent().parent().parent().addClass("d-none");
+		$(this).parent().parent().parent().parent().parent().next().removeClass("d-none");
+	})
+	$(".detailCloseBtn").on("click", function(){
+		$(this).parent().parent().parent().prev().removeClass("d-none");
+		$(this).parent().parent().parent().addClass("d-none");
+	})
 		
 	</script>
     
