@@ -2,9 +2,12 @@ package com.mycompany.app.korea;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+
 @Controller
 public class MegaController {
-
+	
+	
 	@RequestMapping("/indexUsrTicket")
 	public String indexUsrTicket() {
 		return "/usr/infra/index/indexUsrTicket";
@@ -30,5 +33,10 @@ public class MegaController {
 	public String indexUsrSingUp() {
 		return "/usr/infra/index/indexUsrSingUp";
 	}
+
+
+	
+
+
 
 }

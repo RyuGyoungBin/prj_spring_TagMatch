@@ -60,17 +60,17 @@
                             <form>
                                 <div class="form-group">
                                     <label>아이디</label>
-                                    <input type="text" class=" form-control " placeholder="아이디">
+                                    <input type="text" class=" form-control "  id=id placeholder="아이디">
                                 </div>
                                 <div class="form-group">
-                                    <label>비밀번호</label>
-                                    <input type="password" class=" form-control" placeholder="비밀번호">
+                                    <label >비밀번호</label>
+                                    <input type="password" class=" form-control" id=pass placeholder="비밀번호">
                                 </div>
                                 <p class="small">
                                     <a href="#">비밀번호 찾기</a>
                                 </p>
-                                <a href="#" class="btn_full">로그인</a>
-                                <a href="register.html " class="btn_full_outline">회원가입</a>
+                                <button type=button class="btn_full" id=btn >로그인</button>
+                                <button type=button class="btn_full" >회원가입</button>
                             </form>
                         </div>
                 </div>
@@ -145,7 +145,7 @@
 	<script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
 	<script src="/resources/assets/js/common_scripts_min.js"></script>
 	<script src="/resources/assets/js/functions.js"></script>
-	
+
 
 
   </body>

@@ -92,7 +92,9 @@
 						<div class="col-lg-3">
 							<h3>상세정보</h3>
 						</div>
-						<div class="col-lg-9" style="background-image: url(/resources/assets/img/h1.jpg); background-size: cover;">
+						<div class="col-lg-9" >
+<!-- 						style="background-image: url(/resources/assets/img/h1.jpg); background-size: cover;" -->
+						
 							<p>
 								롯데월드타워와 롯데월드몰에서 8km 떨어진 토요코인 서울강남은 무료 Wi-Fi를 완비하고 있습니다. 세븐럭카지노 강남코엑스점는 5km 이내 거리에 있습니다.
 
