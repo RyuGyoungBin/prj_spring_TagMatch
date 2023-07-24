@@ -175,7 +175,7 @@
                                         </label>
                                     </li>
                                 </ul>
-                            </div>
+                            </div>  
                             <div class="filter_type">
                                 <h6>Review Score</h6>
                                 <ul>
