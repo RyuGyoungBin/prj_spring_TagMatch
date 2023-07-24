@@ -1237,7 +1237,7 @@
 		console.log(hotelLen);  
 		
 		
-		$("#hotelTotal").text(hotelPrice * hotel + "원");
+		$("#hotelTotal").text(hotelPrice * hotel + "원"); 
 	})
 	
 	
