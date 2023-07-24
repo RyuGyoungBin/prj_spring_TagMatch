@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
+
+
 <body>
 
     <div id="preloader">
@@ -19,12 +22,12 @@
         <div id="top_line">
             <div class="container">
                 <div class="row">
-                    <div class="col-6"><i class="icon-phone"></i><strong>0045 043204434</strong></div>
+                    <div class="col-6"><i class="icon-phone"></i><strong>02-1993-0914</strong></div>
                     <div class="col-6">
                         <ul id="top_links">
                             <li><a href="#sign-in-dialog" id="access_link">Sign in</a></li>
                             <li><a href="wishlist.html" id="wishlist_link">Wishlist</a></li>
-                            <li><a href="http://themeforest.net/item/citytours-city-tours-tour-tickets-and-guides/10715647?ref=ansonika">Purchase this template</a></li>
+<!--                             <li><a href="http://themeforest.net/item/citytours-city-tours-tour-tickets-and-guides/10715647?ref=ansonika">Purchase this template</a></li> -->
                         </ul>
                     </div>
                 </div><!-- End row -->
@@ -49,35 +52,24 @@
                             <li class="submenu">
                                 <a href="javascript:void(0);" class="show-submenu">Home <i class="icon-down-open-mini"></i></a>
                                 <ul>
-                                    <li><a href="index.html">Owl Carousel Slider</a></li>
-                                    <li><a href="index_25.html">KenBurns Slider</a></li>
-                                    <li><a href="index_22.html">Home items with Carousel</a></li>
-                                    <li><a href="index_23.html">Home with Search V2</a></li>
-                                    <li class="third-level"><a href="javascript:void(0);">Revolution slider <strong class="badge badge-danger">New!</strong></a>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="index_25.html">Train Route Map</a></li>
+                                    <li><a href="index_22.html">Accommodation</a></li>
+                                    <li><a href="index_23.html">Event / Festival</a></li>
+                                    <li class="third-level"><a href="javascript:void(0);">ABCDEFG <strong class="badge badge-danger">New!</strong></a>
                                         <ul>
-                                            <li><a href="index_24.html">Default slider</a></li>
-                                            <li><a href="index_20.html">Basic slider</a></li>
-                                            <li><a href="index_14.html">Youtube Hero</a></li>
-                                            <li><a href="index_15.html">Vimeo Hero</a></li>
-                                            <li><a href="index_17.html">Full Screen <strong class="badge badge-danger">New!</strong></a></li>
-                                            <li><a href="index_21.html">Full Screen Slicey <strong class="badge badge-danger">New!</strong></a></li>
-                                            <li><a href="index_16.html">Carousel</a></li>
-                                            <li><a href="index_19.html">Mailchimp Newsletter</a></li>
-                                            <li><a href="index_18.html">Fixed Caption</a></li>
+                                            <li><a href="index_24.html">H</a></li>
+                                            <li><a href="index_20.html">I</a></li>
+                                            <li><a href="index_14.html">J</a></li>
+                                            <li><a href="index_15.html">K</a></li>
+                                            <li><a href="index_17.html">L <strong class="badge badge-danger">New!</strong></a></li>
+                                            <li><a href="index_21.html">M <strong class="badge badge-danger">New!</strong></a></li>
+                                            <li><a href="index_16.html">N</a></li>
+                                            <li><a href="index_19.html">O</a></li>
+                                            <li><a href="index_18.html">P</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="index_12.html">Layer slider</a></li>
-                                    <li><a href="index_2.html">With Only tours</a></li>
-                                    <li><a href="index_3.html">Single image</a></li>
-                                    <li><a href="index_4.html">Header video</a></li>
-                                    <li><a href="index_7.html">With search panel</a></li>
-                                    <li><a href="index_13.html">With tabs</a></li>
-                                    <li><a href="index_5.html">With map</a></li>
-                                    <li><a href="index_6.html">With search bar</a></li>
-                                    <li><a href="index_8.html">Search bar + Video</a></li>
-                                    <li><a href="index_9.html">With Text Rotator</a></li>
-                                    <li><a href="index_10.html">With Cookie Bar (EU law)</a></li>
-                                    <li><a href="index_11.html">Popup Advertising</a></li>
+
                                 </ul>
                             </li>
                             <li class="submenu">
