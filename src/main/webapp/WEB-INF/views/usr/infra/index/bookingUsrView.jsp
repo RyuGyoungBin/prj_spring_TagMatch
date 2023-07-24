@@ -1224,7 +1224,7 @@
 		$(this).toggleClass("bg-warning");
 		$(".detail").addClass("d-none");
 		$(this).next().toggleClass("d-none");
-	})
+	}) 
 	
 	$(".hotelSelect tr:odd").on("click", function(){
 		$("tr").removeClass("bg-warning");
