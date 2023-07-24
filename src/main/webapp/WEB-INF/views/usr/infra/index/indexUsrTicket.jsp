@@ -258,7 +258,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="indexUsrTiketMoreInformation">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/eastPalaceGarden.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -283,7 +283,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/knowledgeSpaceSeoyuguandBingheogak.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -308,7 +308,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/forestArboretum.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -333,7 +333,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/aproksangsangSchool.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -358,7 +358,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/shushuBonbonKidsCafe.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -383,7 +383,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/high1WaterWorld.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -408,7 +408,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/kidsraraThemePark.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -433,7 +433,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/magicFlowWonderRabbit.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -458,7 +458,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/oceanAdventure.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -483,7 +483,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/high1WaterWorldSnowCountryWaterPlayEquipmentRental.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -508,7 +508,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/tinoljaAnimalPark.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -533,7 +533,7 @@
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="single_hotel.html">
+									<a href="indexUsrTicketDetailInfo">
 										<img src="/resources/assets/img/nationalNakdonggangBiologicalResourcesCenter.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
