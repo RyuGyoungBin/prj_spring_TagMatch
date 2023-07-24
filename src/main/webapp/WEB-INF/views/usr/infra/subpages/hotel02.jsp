@@ -51,25 +51,23 @@
 		</div>
 		<!-- Position -->
 
-		<select class="form-select" aria-label="Default select example">
+		<select class="form-select" aria-label="Default select example" id="selectCity">
 		  <option selected>Open this select menu</option>
 		  <option value="1">One</option>
 		  <option value="2">Two</option>
 		  <option value="3">Three</option>
 	    </select>
 
+<!-- 		<select class="form-select" aria-label="Default select example" id="selectDistrict"> -->
+<!-- 		  <option selected>Open this select menu</option> -->
+<!-- 		  <option value="1">One</option> -->
+<!-- 		  <option value="2">Two</option> -->
+<!-- 		  <option value="3">Three</option> -->
+<!-- 	    </select> -->
 
 		<div class="container margin_60">
-		
-		
-
 			<div class="row">
-			
-			
-			
 				<aside class="col-lg-3">
-
-
 					<div class="box_style_cat">
 						<ul id="cat_nav">
 							<li><a href="#" id="active"><i
@@ -82,7 +80,6 @@
 							</li>
 							<li><a href="#"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a>
 							</li>
-
 						</ul>
 					</div>
 
