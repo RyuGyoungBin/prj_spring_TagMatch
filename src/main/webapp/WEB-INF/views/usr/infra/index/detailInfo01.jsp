@@ -9,7 +9,7 @@
 <%@include file="../include/head.jsp"%>
 <%@include file="../include/header.jsp"%>
 
-	
+	asd
 
 	<main>
 		<div id="position">
