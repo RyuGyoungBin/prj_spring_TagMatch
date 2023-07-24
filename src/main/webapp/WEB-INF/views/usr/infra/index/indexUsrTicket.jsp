@@ -157,7 +157,7 @@
                                         </label>
                                     </li>
                                     <li>
-                                        <label class="container_check">
+                                        <label class="container_check"> 
                                             <span class="rating">
                                                 <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
                                             </span>(08)
