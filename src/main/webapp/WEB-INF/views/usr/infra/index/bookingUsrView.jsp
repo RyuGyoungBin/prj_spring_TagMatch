@@ -636,29 +636,46 @@
 									<td>113,637원</td>
 									<td><label for="room1">가능</label><input type="radio" name="room" id="room1"></td>
 								</tr>
-							</tbody>
-						</table>
-						<div class="d-flex fustify-content-around align-items-center text-center">
-							<div class="col-2">
-								<span >옵션선택</span>
-							</div>
-							<div class="col-8 px-5 py-2">
-								<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
-							</div>
-							<div class="col-2 p-2">
-								<select class="form-control">
-									<option>1객실</option>
-									<option>2객실</option>
-									<option>3객실</option>
-								</select>
-							</div>
-						</div>
-						<table class="col-12 text-center">
-							<tbody>
+								<tr>
+									<td colspan="3" class="d-flex align-items-center justify-content-around d-none">
+										<div class="col-2">
+											<span >옵션선택</span>
+										</div>
+										<div class="col-8 px-5 py-2">
+											<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
+										</div>
+										<div class="col-2 p-2">
+											<select class="form-control">
+												<option>1객실</option>
+												<option>2객실</option>
+												<option>3객실</option>
+											</select>
+										</div>
+									
+									</td>
+								</tr>
 								<tr>
 									<td>스탠다드 더블</td>
 									<td>118,182원</td>
 									<td><label for="room2">가능</label><input type="radio" name="room" id="room2"></td>
+								</tr>
+								<tr>
+									<td colspan="3" class="d-flex align-items-center justify-content-around">
+										<div class="col-2">
+											<span >옵션선택</span>
+										</div>
+										<div class="col-8 px-5 py-2">
+											<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
+										</div>
+										<div class="col-2 p-2">
+											<select class="form-control">
+												<option>1객실</option>
+												<option>2객실</option>
+												<option>3객실</option>
+											</select>
+										</div>
+									
+									</td>
 								</tr>
 							</tbody>
 						</table>
@@ -1177,6 +1194,10 @@
 		$(this).parent().parent().parent().prev().removeClass("d-none");
 		$(this).parent().parent().parent().addClass("d-none");
 	})
+	
+	if($("input[name=room]").is(":checked") == true){
+		alert("asd")
+	}
 		
 	</script>
     
