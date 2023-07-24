@@ -31,7 +31,84 @@
 			</div>
 		</div>
 		<!-- Position -->
-
+<div class=" text-bg-dark p-3">
+    <span class="d-flex justify-content-center me-2">카테고리</span>
+	   <div class="d-flex justify-content-center me-2 text-bg-dark p-3">
+		   <div class="form-check form-check-inline">
+		       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+		       <label class="form-check-label" for="inlineCheckbox1">전체</label>
+		     </div>
+		     <div class="form-check form-check-inline">
+		       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+		       <label class="form-check-label" for="inlineCheckbox2">레저/액티비티</label>
+		     </div>
+		     <div class="form-check form-check-inline">
+		       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+		       <label class="form-check-label" for="inlineCheckbox2">입장권/티켓</label>
+		     </div>
+		     <div class="form-check form-check-inline">
+		       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+		       <label class="form-check-label" for="inlineCheckbox2">투어</label>
+		     </div>
+		     <div class="form-check form-check-inline">
+		       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+		       <label class="form-check-label" for="inlineCheckbox2">클래스</label>
+		     </div>
+		     <div class="form-check form-check-inline">
+		       <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="option2">
+		       <label class="form-check-label" for="inlineCheckbox2">미식/맛집</label>
+		     </div>
+		     <div class="form-check form-check-inline">
+		       <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="option2">
+		       <label class="form-check-label" for="inlineCheckbox2">뷰티/힐링</label>
+		     </div>
+		     <div class="d-grid gap-2 d-md-block">
+				  <button class="btn btn-dark" type="button"><i class="bi bi-search">조회</i></button>
+			</div>
+    </div>
+    <div class="d-flex justify-content-center me-2 text-bg-dark p-3">
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">공연/전시</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">웨딩/스냅</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">여행/교통편의</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+            <label class="form-check-label" for="inlineCheckbox2">숙박권</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control text-bg-secondary p-2" id="floatingInput" >
+            <label for="floatingInput">출발</label>
+        </div>
+        <div class="dropdown ms-3">
+		  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+		    전체지역
+		  </button><!-- 정체를 알 수 없음 -->
+			  <ul class="dropdown-menu">
+				    <li><a class="dropdown-item" href="#">==전체==</a></li>
+				    <li><a class="dropdown-item" href="#">서울특별시</a></li>
+				    <li><a class="dropdown-item" href="#">부산광역시</a></li>
+				    <li><a class="dropdown-item" href="#">인천광역시</a></li>
+				    <li><a class="dropdown-item" href="#">대구 광역시</a></li>
+				    <li><a class="dropdown-item" href="#">강원도</a></li>
+				    <li><a class="dropdown-item" href="#">경기도</a></li>
+				    <li><a class="dropdown-item" href="#">경남/울산</a></li>
+				    <li><a class="dropdown-item" href="#">경상북도</a></li>
+			     	<li><a class="dropdown-item" href="#">전남/광주</a></li>
+				    <li><a class="dropdown-item" href="#">전라북도</a></li>
+				    <li><a class="dropdown-item" href="#">충남/대전/세종</a></li>
+				    <li><a class="dropdown-item" href="#">충천북도</a></li>
+			  </ul>
+		</div>
+	</div>
+</div>
 		<div class="collapse" id="collapseMap">
 			<div id="map" class="map"></div>
 		</div>
