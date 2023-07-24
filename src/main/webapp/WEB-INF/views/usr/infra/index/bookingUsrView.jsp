@@ -34,7 +34,7 @@
         </div>
         <!--/carousel-->
         	<div class="container margin_60 d-flex justify-content-around">
-        	<aside class="col-lg-3">
+        	<aside class="col-lg-3">  
 					<div id="filters_col">
 						<a data-bs-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt"><i class="icon_set_1_icon-65"></i>예약상세</a>
 						<div class="collapse show" id="collapseFilters">
