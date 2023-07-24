@@ -12,6 +12,6 @@ public class YouController {
 	
 	@RequestMapping("/test")
 	public String test() {
-		return "/usr/infra/index/indexUsrTiket";
+		return "/usr/infra/index/detailInfo01";
 	}
 }
