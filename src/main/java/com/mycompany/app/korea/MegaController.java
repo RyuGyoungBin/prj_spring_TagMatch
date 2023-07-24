@@ -5,9 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MegaController {
 
-	@RequestMapping("/indexUsrTiket")
-	public String indexUsrTiket() {
-		return "/usr/infra/index/indexUsrTiket";
+	@RequestMapping("/indexUsrTicket")
+	public String indexUsrTicket() {
+		return "/usr/infra/index/indexUsrTicket";
 	}
 	
 	@RequestMapping("/login")
@@ -19,10 +19,24 @@ public class MegaController {
 		return "/usr/infra/index/indexUsrSingUp";
 	}
 	
-	@RequestMapping("indexUsrTiketMoreInformation")
+	@RequestMapping("/indexUsrTicketDetailInfo")
 	public String indexUsrTiketMoreInformation() {
-		return "/usr/infra/index/indexUsrTiketMoreInformation";
+		return "/usr/infra/index/indexUsrTicketDetailInfo";
 	}
 	
+	@RequestMapping("/detailInfo01")
+	public String detaillnfo01() {
+		return "/usr/infra/index/detailInfo01";
+	}
+	
+	@RequestMapping("/indexUsrLogin")
+	public String indexUsrLogin() {
+		return "/usr/infra/index/indexUsrLogin";
+	}
+	
+	@RequestMapping("/indexUsrSingUp")
+	public String indexUsrSingUp() {
+		return "/usr/infra/index/indexUsrSingUp";
+	}
 
 }

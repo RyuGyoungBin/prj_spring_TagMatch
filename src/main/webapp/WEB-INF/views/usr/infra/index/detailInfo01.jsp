@@ -9,25 +9,7 @@
 <%@include file="../include/head.jsp"%>
 <%@include file="../include/header.jsp"%>
 
-	<section class="parallax-window" data-parallax="scroll" data-image-src="/resources/assets/img/view123.jpg" data-natural-width="1400" data-natural-height="470">
-		<div class="parallax-content-2">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-8">
-						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
-						<h1>Mariott Hotel</h1>
-						<span>Champ de Mars, 5 Avenue Anatole, 75007 Paris.</span>
-					</div>
-					<div class="col-md-4">
-						<div id="price_single_main" class="hotel">
-							from/per night <span><sup>$</sup>95</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- End section -->
+	
 
 	<main>
 		<div id="position">
@@ -51,33 +33,7 @@
 		<div class="container margin_60">
 			<div class="row">
 				<div class="col-lg-12" id="single_tour_desc">
-					
-					<p class="d-block d-lg-none"><a class="btn_map" data-bs-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
-					</p>
-					<!-- Map button for tablets/mobiles -->
-					<div id="Img_carousel" class="slider-pro">
-						<div class="sp-slides">
-
-							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="../html/img/view123.jpg" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/" data-retina="/resources/assets/img/view123.jpg">
-							</div>
-							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="css/images/view123.gif" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/" data-retina="/resources/assets/img/view123.jpg">
-							</div>
-
-							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="css/images/view123.gif" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/" data-retina="/resources/assets/img/view123.jpg">
-							</div>
-						</div>
-						<div class="sp-thumbnails">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
-						</div>
-					</div>
-					<hr>
-
-					<div id="single_tour_feat" style="border-top:2px solid #555; padding-top:20px">
+					<div id="single_tour_feat">
 						<ul>
 							<li><i class="icon_set_2_icon-116"></i>Plasma TV</li>
 							<li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
@@ -88,36 +44,61 @@
 							<li><i class="icon_set_1_icon-27"></i>Parking</li>
 						</ul>
 					</div>
-					<div class="row" >
+					<p class="d-block d-lg-none"><a class="btn_map" data-bs-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
+					</p>
+					<!-- Map button for tablets/mobiles -->
+					<div id="Img_carousel" class="slider-pro">
+						<div class="sp-slides">
+
+							<div class="sp-slide">
+								<img alt="Image" class="sp-image" src="/resources/assets/img/view123.jpg" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/img/view123.jpg" data-retina="/resources/assets/img/view123.jpg">
+							</div>
+							<div class="sp-slide">
+								<img alt="Image" class="sp-image" src="/resources/assets/img/view123.jpg" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/img/view123.jpg" data-retina="/resources/assets/img/view123.jpg">
+							</div>
+							<div class="sp-slide">
+								<img alt="Image" class="sp-image" src="/resources/assets/img/view123.jpg" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/img/view123.jpg" data-retina="/resources/assets/img/view123.jpg">
+							</div>
+						</div>
+						<div class="sp-thumbnails">
+							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
+							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
+							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
+						</div>
+					</div>
+
+					<hr>
+
+					<div class="row">
 						<div class="col-lg-3">
-							<h3>상세정보</h3>
+							<h3>Description</h3>
 						</div>
 						<div class="col-lg-9">
-						<img src="/resources/assets/img/h1.jpg" style="width:300px;height:300px">
 							<p>
-								롯데월드타워와 롯데월드몰에서 8km 떨어진 토요코인 서울강남은 무료 Wi-Fi를 완비하고 있습니다. 세븐럭카지노 강남코엑스점는 5km 이내 거리에 있습니다.
-
-호텔의 모든 객실은 금연실이며 각각 냉장고와 책상, 평면 케이블 TV를 갖추고 있습니다. 전용 욕실에는 욕조와 헤어드라이어, 무료 세면도구가 구비되어 있습니다.
-
-토요코인 서울강남에서 미국식 조식을 즐겨보세요.
-
-구내에 비즈니스 센터와 신문이 완비되어 있습니다. 한국어, 영어, 일본어를 구사하는 24시간 프런트 데스크 직원들이 투숙객의 문의에 친절하게 응대해드립니다.
-
-토요코인 서울강남에서 국립중앙박물관과 노량진수산시장, 신라면세점 본점은 10km 떨어져 있습니다. 봉은사는 5km 거리에 있습니다.
-
-토요코인 서울강남에서는 2018년 7월 18일부터 Booking.com 고객을 맞이하고 있습니다.
+								Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
 							</p>
-							
-							
+							<h4>Hotel facilities</h4>
+							<p>
+								Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
+							</p>
 							<div class="row">
 								<div class="col-md-6">
-								<h3></h3>
-									<p>시작일 : 7월13일</p>
-									<br>
-									<P>종료일 : 7월20일</P>
-									<br>
-									<p>취소/
-										선결제</p>
+									<ul class="list_ok">
+										<li>Lorem ipsum dolor sit amet</li>
+										<li>No scripta electram necessitatibus sit</li>
+										<li>Quidam percipitur instructior an eum</li>
+										<li>Ut est saepe munere ceteros</li>
+										<li>No scripta electram necessitatibus sit</li>
+										<li>Quidam percipitur instructior an eum</li>
+									</ul>
+								</div>
+								<div class="col-md-6">
+									<ul class="list_ok">
+										<li>Lorem ipsum dolor sit amet</li>
+										<li>No scripta electram necessitatibus sit</li>
+										<li>Quidam percipitur instructior an eum</li>
+										<li>No scripta electram necessitatibus sit</li>
+									</ul>
 								</div>
 							</div>
 							<!-- End row  -->
@@ -179,7 +160,7 @@
 							<!-- End row -->
 							<hr>
 							<div class="review_strip_single">
-								<img src="img/avatar1.jpg" alt="Image" class="rounded-circle">
+								<img src="/resources/assets/img/view123.jpg" alt="Image" class="rounded-circle">
 								<small> - 10 March 2015 -</small>
 								<h4>Jhon Doe</h4>
 								<p>
@@ -192,7 +173,7 @@
 							<!-- End review strip -->
 
 							<div class="review_strip_single">
-								<img src="img/avatar2.jpg" alt="Image" class="rounded-circle">
+								<img src="/resources/assets/img/view123.jpg" alt="Image" class="rounded-circle">
 								<small> - 10 March 2015 -</small>
 								<h4>Jhon Doe</h4>
 								<p>
@@ -205,7 +186,7 @@
 							<!-- End review strip -->
 
 							<div class="review_strip_single last">
-								<img src="img/avatar3.jpg" alt="Image" class="rounded-circle">
+								<img src="/resources/assets/img/view123.jpg" alt="Image" class="rounded-circle">
 								<small> - 10 March 2015 -</small>
 								<h4>Jhon Doe</h4>
 								<p>
