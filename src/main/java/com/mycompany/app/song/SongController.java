@@ -24,21 +24,21 @@ public class SongController {
 		return "/usr/infra/subpages/condo02";
 	}
 	
-	@RequestMapping ("/detailInfo01")
-	public String detailInfo01() {
+	@RequestMapping ("/roomDetailInfo01")
+	public String roomDetailInfo01() {
 		
-		return "/usr/infra/subpages/detailInfo01";
+		return "/usr/infra/subpages/roomDetailInfo01";
 	}
-	@RequestMapping ("/detailInfo02")
-	public String detailInfo02() {
+	@RequestMapping ("/roomDetailInfo02")
+	public String roomDetailInfo02() {
 		
-		return "/usr/infra/subpages/detailInfo02";
+		return "/usr/infra/subpages/roomDetailInfo02";
 	}
 
-	@RequestMapping ("/detailInfo03")
-	public String detailInfo03() {
+	@RequestMapping ("/roomDetailInfo03")
+	public String roomDetailInfo03() {
 		
-		return "/usr/infra/subpages/detailInfo03";
+		return "/usr/infra/subpages/roomDetailInfo03";
 	}
 
 

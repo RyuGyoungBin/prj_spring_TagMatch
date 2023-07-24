@@ -32,7 +32,14 @@
 	</section>
 	<!-- End section -->
 
+
+
+
 	<main>
+	<form method="post" >
+		
+	    
+	    
 		<div id="position">
 			<div class="container">
 				<ul>
@@ -44,15 +51,22 @@
 		</div>
 		<!-- Position -->
 
-		<div class="collapse" id="collapseMap">
-			<div id="map" class="map"></div>
-		</div>
-		<!-- End Map -->
+		<select class="form-select" aria-label="Default select example">
+		  <option selected>Open this select menu</option>
+		  <option value="1">One</option>
+		  <option value="2">Two</option>
+		  <option value="3">Three</option>
+	    </select>
 
 
 		<div class="container margin_60">
+		
+		
 
 			<div class="row">
+			
+			
+			
 				<aside class="col-lg-3">
 
 
@@ -149,6 +163,8 @@
 				</aside>
 				<!--End aside -->
 				<div class="col-lg-9">
+				
+				
 
 					<div id="tools">
 						<div class="row justify-content-between">
@@ -849,6 +865,7 @@
 			<!-- End row -->
 		</div>
 		<!-- End container -->
+		</form>
 	</main>
 	<!-- End main -->
 
