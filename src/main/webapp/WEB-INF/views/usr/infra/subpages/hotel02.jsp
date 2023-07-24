@@ -51,21 +51,42 @@
 		</div>
 		<!-- Position -->
 
-		<select class="form-select" aria-label="Default select example" id="selectCity">
-		  <option selected>Open this select menu</option>
-		  <option value="1">One</option>
-		  <option value="2">Two</option>
-		  <option value="3">Three</option>
-	    </select>
 
-<!-- 		<select class="form-select" aria-label="Default select example" id="selectDistrict"> -->
-<!-- 		  <option selected>Open this select menu</option> -->
-<!-- 		  <option value="1">One</option> -->
-<!-- 		  <option value="2">Two</option> -->
-<!-- 		  <option value="3">Three</option> -->
-<!-- 	    </select> -->
+
+
 
 		<div class="container margin_60">
+			 <select class="form-select selectCity" aria-label="Default select example" >
+				  <option selected>-도/특별시-</option>
+				  <option value="0">== 전체 ==</option>
+				  <option value="1">서울특별시</option>
+				  <option value="2">부산광역시</option>
+				  <option value="3">인천광역시</option>
+				  <option value="4">대전광역시</option>
+				  <option value="5">광주광역시</option>
+				  <option value="6">울산광역시</option>
+				  <option value="7">대구광역시</option>
+				  <option value="8">강원도</option>
+				  <option value="9">경기도</option>
+				  <option value="10">경상남도</option>
+				  <option value="11">경상북도</option>
+				  <option value="12">전라남도</option>
+				  <option value="13">전라북도</option>
+				  <option value="13">충청남도</option>
+				  <option value="13">충청북도</option>
+				  
+				  
+			 </select>
+			 
+	 		 <select class="form-select selectDistrict" aria-label="Default select example" >
+				  <option selected>-시/구/지역-</option>
+				  <option value="0">== 전체 ==</option>
+				  <option value="1">일구</option>
+				  <option value="2">이구</option>
+				  <option value="3">삼구</option>
+			 </select>
+			 
+			 
 			<div class="row">
 				<aside class="col-lg-3">
 					<div class="box_style_cat">
@@ -197,7 +218,7 @@
 												to wishlist</span></span></a>
 								</div>
 								<div class="img_list">
-									<a href="/detailInfo01"><img
+									<a href="/roomDetailInfo01"><img
 										src="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg"
 										alt="Image">
 										<div class="short_info">
@@ -747,7 +768,8 @@
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
-										</div> </a>
+										</div> 
+									</a>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6">
