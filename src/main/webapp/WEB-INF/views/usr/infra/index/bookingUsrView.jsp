@@ -1234,7 +1234,7 @@
 		var hotelPrice = 113637;
 		var hotelLen = $("#hotel").val();
 		console.log(hotelPrice);
-		console.log(hotelLen);
+		console.log(hotelLen);  
 		
 		
 		$("#hotelTotal").text(hotelPrice * hotel + "원");
