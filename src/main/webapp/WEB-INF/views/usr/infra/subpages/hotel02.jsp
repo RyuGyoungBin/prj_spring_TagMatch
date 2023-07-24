@@ -56,36 +56,6 @@
 
 
 		<div class="container margin_60">
-			 <select class="form-select selectCity" aria-label="Default select example" >
-				  <option selected>-도/특별시-</option>
-				  <option value="0">== 전체 ==</option>
-				  <option value="1">서울특별시</option>
-				  <option value="2">부산광역시</option>
-				  <option value="3">인천광역시</option>
-				  <option value="4">대전광역시</option>
-				  <option value="5">광주광역시</option>
-				  <option value="6">울산광역시</option>
-				  <option value="7">대구광역시</option>
-				  <option value="8">강원도</option>
-				  <option value="9">경기도</option>
-				  <option value="10">경상남도</option>
-				  <option value="11">경상북도</option>
-				  <option value="12">전라남도</option>
-				  <option value="13">전라북도</option>
-				  <option value="13">충청남도</option>
-				  <option value="13">충청북도</option>
-				  
-				  
-			 </select>
-			 
-	 		 <select class="form-select selectDistrict" aria-label="Default select example" >
-				  <option selected>-시/구/지역-</option>
-				  <option value="0">== 전체 ==</option>
-				  <option value="1">일구</option>
-				  <option value="2">이구</option>
-				  <option value="3">삼구</option>
-			 </select>
-			 
 			 
 			<div class="row">
 				<aside class="col-lg-3">
@@ -181,25 +151,39 @@
 				</aside>
 				<!--End aside -->
 				<div class="col-lg-9">
-				
-				
-
 					<div id="tools">
 						<div class="row justify-content-between">
-							<div class="col-md-3 col-sm-4">
-								<div class="styled-select-filters">
-									<select name="sort_price" id="sort_price">
-										<option value="" selected>Sort by price</option>
-										<option value="lower">Lowest price</option>
-										<option value="higher">Highest price</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
-								<a href="all_tours_grid.html" class="bt_filters"><i
-									class="icon-th"></i></a> <a href="#" class="bt_filters"><i
-									class=" icon-list"></i></a>
-							</div>
+							<select class="form-select selectCity" aria-label="Default select example" >
+							  <option selected>-도/특별시-</option>
+							  <option value="0">== 전체 ==</option>
+							  <option value="1">서울특별시</option>
+							  <option value="2">부산광역시</option>
+							  <option value="3">인천광역시</option>
+							  <option value="4">대전광역시</option>
+							  <option value="5">광주광역시</option>
+							  <option value="6">울산광역시</option>
+							  <option value="7">대구광역시</option>
+							  <option value="8">강원도</option>
+							  <option value="9">경기도</option>
+							  <option value="10">경상남도</option>
+							  <option value="11">경상북도</option>
+							  <option value="12">전라남도</option>
+							  <option value="13">전라북도</option>
+							  <option value="13">충청남도</option>
+							  <option value="13">충청북도</option>
+						 </select>
+				 		 <select class="form-select selectDistrict me-auto" aria-label="Default select example" >
+							  <option selected>-시/구/지역-</option>
+							  <option value="0">== 전체 ==</option>
+							  <option value="1">일구</option>
+							  <option value="2">이구</option>
+							  <option value="3">삼구</option>
+						 </select>
+						<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
+							<a href="all_tours_grid.html" class="bt_filters"><i
+								class="icon-th"></i></a> <a href="#" class="bt_filters"><i
+								class=" icon-list"></i></a>
+						</div>
 
 						</div>
 					</div>
