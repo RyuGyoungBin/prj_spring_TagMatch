@@ -152,7 +152,7 @@
 				<!--End aside -->
 				<div class="col-lg-9">
 					<div id="tools">
-						<div class="row justify-content-between">
+						<div class="d-flex justify-content-between">
 							<select class="form-select selectCity" aria-label="Default select example" >
 							  <option selected>-도/특별시-</option>
 							  <option value="0">== 전체 ==</option>

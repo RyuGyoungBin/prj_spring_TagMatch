@@ -636,51 +636,30 @@
 									<td>113,637원</td>
 									<td>O</td>
 								</tr>
-								<tr class="d-none detail">
-									<td colspan="3">
-										<div class="d-flex align-items-center justify-content-around">
-											<div class="col-2">
-												<span >옵션선택</span>
-											</div>
-											<div class="col-8 px-5 py-2">
-												<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
-											</div>
-											<div class="col-2 p-2">
-												<select class="form-control" id="hotel">
-													<option value="1">1객실</option>
-													<option value="2">2객실</option>
-													<option value="3">3객실</option>
-												</select>
-											</div>
-										</div>
-									</td>
-								</tr>
 								<tr>
 									<td>스탠다드 더블</td>
 									<td>118,182원</td>
 									<td>O</td>
 								</tr>
-								<tr class="d-none detail">
-									<td colspan="3">
-										<div class="d-flex align-items-center justify-content-around">
-											<div class="col-2">
-												<span >옵션선택</span>
-											</div>
-											<div class="col-8 px-5 py-2">
-												<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
-											</div>
-											<div class="col-2 p-2">
-												<select class="form-control" >
-													<option value="1">1객실</option>
-													<option value="2">2객실</option>
-													<option value="3">3객실</option>
-												</select>
-											</div>
-										</div>
-									</td>
-								</tr>
 							</tbody>
 						</table>
+						<div class="detail">
+							<div class="d-flex align-items-center justify-content-around">
+								<div class="col-2">
+									<span >옵션선택</span>
+								</div>
+								<div class="col-8 px-5 py-2">
+									<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
+								</div>
+								<div class="col-2 p-2">
+									<select class="form-control" >
+										<option value="1">1객실</option>
+										<option value="2">2객실</option>
+										<option value="3">3객실</option>
+									</select>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -1085,49 +1064,49 @@
 									<td>113,637원</td>
 									<td>O</td>
 								</tr>
-								<tr class="d-none detail">
-									<td colspan="3">
-										<div class="d-flex align-items-center justify-content-around">
-											<div class="col-2">
-												<span >옵션선택</span>
-											</div>
-											<div class="col-8 px-5 py-2">
-												<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
-											</div>
-											<div class="col-2 p-2">
-												<select class="form-control">
-													<option>1객실</option>
-													<option>2객실</option>
-													<option>3객실</option>
-												</select>
-											</div>
-										</div>
-									</td>
-								</tr>
+<!-- 								<tr class="d-none detail"> -->
+<!-- 									<td colspan="3"> -->
+<!-- 										<div class="d-flex align-items-center justify-content-around"> -->
+<!-- 											<div class="col-2"> -->
+<!-- 												<span >옵션선택</span> -->
+<!-- 											</div> -->
+<!-- 											<div class="col-8 px-5 py-2"> -->
+<!-- 												<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly> -->
+<!-- 											</div> -->
+<!-- 											<div class="col-2 p-2"> -->
+<!-- 												<select class="form-control"> -->
+<!-- 													<option>1객실</option> -->
+<!-- 													<option>2객실</option> -->
+<!-- 													<option>3객실</option> -->
+<!-- 												</select> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
+<!-- 									</td> -->
+<!-- 								</tr> -->
 								<tr>
 									<td>스탠다드 더블</td>
 									<td>118,182원</td>
 									<td>O</td>
 								</tr>
-								<tr class="d-none detail">
-									<td colspan="3">
-										<div class="d-flex align-items-center justify-content-around">
-											<div class="col-2">
-												<span >옵션선택</span>
-											</div>
-											<div class="col-8 px-5 py-2">
-												<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
-											</div>
-											<div class="col-2 p-2">
-												<select class="form-control">
-													<option>1객실</option>
-													<option>2객실</option>
-													<option>3객실</option>
-												</select>
-											</div>
-										</div>
-									</td>
-								</tr>
+<!-- 								<tr class="d-none detail"> -->
+<!-- 									<td colspan="3"> -->
+<!-- 										<div class="d-flex align-items-center justify-content-around"> -->
+<!-- 											<div class="col-2"> -->
+<!-- 												<span >옵션선택</span> -->
+<!-- 											</div> -->
+<!-- 											<div class="col-8 px-5 py-2"> -->
+<!-- 												<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly> -->
+<!-- 											</div> -->
+<!-- 											<div class="col-2 p-2"> -->
+<!-- 												<select class="form-control"> -->
+<!-- 													<option>1객실</option> -->
+<!-- 													<option>2객실</option> -->
+<!-- 													<option>3객실</option> -->
+<!-- 												</select> -->
+<!-- 											</div> -->
+<!-- 										</div> -->
+<!-- 									</td> -->
+<!-- 								</tr> -->
 							</tbody>
 						</table>
 					</div>
@@ -1216,32 +1195,26 @@
 		$(this).parent().parent().parent().addClass("d-none");
 	})
 	
-	if($("input[name=room]").is(":checked") == true){
-	}
-	
-	$(".ticketSelect tr:odd").on("click", function(){
-		$("tr").removeClass("bg-warning");
-		$(this).toggleClass("bg-warning");
-		$(".detail").addClass("d-none");
-		$(this).next().toggleClass("d-none");
-	}) 
-	
-	$(".hotelSelect tr:odd").on("click", function(){
-		$("tr").removeClass("bg-warning");
-		$(this).toggleClass("bg-warning");
-		$(".detail").addClass("d-none");  
-		$(this).next().toggleClass("d-none");
-		var hotelPrice = 113637;
-		var hotelLen = $("#hotel").val();
-		console.log(hotelPrice);
-		console.log(hotelLen);  
+	$(function(){
+		$("tbody tr").on("click", function(){
+			$("tr").removeClass("bg-warning");
+			$(this).toggleClass("bg-warning");
+			
+			var hotelPrice = 113637;
+			var hotelLen = $("#hotel").val();
+			console.log(hotelPrice);
+			console.log($("#hotel").val());  
+			$("#hotel").on("change", function(){
+				hotelLen = $("#hotel").val();
+		  			});
+			
+			
+			$("#hotelTotal").text(hotelPrice * hotel + "원"); 
+		})
 		
-		
-		$("#hotelTotal").text(hotelPrice * hotel + "원"); 
 	})
 	
 	
 	</script>
-    
 
 </body>
