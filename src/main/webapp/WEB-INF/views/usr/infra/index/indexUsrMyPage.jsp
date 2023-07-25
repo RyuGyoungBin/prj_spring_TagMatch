@@ -4,7 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 	<meta charset="utf-8">
@@ -16,11 +16,11 @@
 	<title>CITY TOURS - City tours and travel site template by Ansonika</title>
 
 	<!-- Favicons-->
-	<link rel="shortcut icon" href="/resources/assets/img/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" type="image/x-icon" href="/resources/assets/img/apple-touch-icon-57x57-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/resources/assets/img/apple-touch-icon-72x72-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/resources/assets/img/apple-touch-icon-114x114-precomposed.png">
-	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/resources/assets/img/apple-touch-icon-144x144-precomposed.png">
+	<link rel="shortcut icon" href="/resources/assets/assets/img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="/resources/assets/assets/img/apple-touch-icon-57x57-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/resources/assets/assets/img/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/resources/assets/assets/img/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/resources/assets/assets/img/apple-touch-icon-144x144-precomposed.png">
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -73,15 +73,15 @@
 			<div class="row">
 				<div class="col-3">
 					<div id="logo">
-						<a href="index.html"><img src="img/logo.png" width="160" height="34" alt="City tours" class="logo_normal"></a>
-						<a href="index.html"><img src="img/logo_sticky.png" width="160" height="34" alt="City tours" class="logo_sticky"></a>
+						<a href="index.html"><img src="assets/img/logo.png" width="160" height="34" alt="City tours" class="logo_normal"></a>
+						<a href="index.html"><img src="assets/img/logo_sticky.png" width="160" height="34" alt="City tours" class="logo_sticky"></a>
 					</div>
 				</div>
 				<nav class="col-9">
                     <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
                     <div class="main-menu">
                         <div id="header_menu">
-                            <img src="img/logo_sticky.png" width="160" height="34" alt="City tours">
+                            <img src="assets/img/logo_sticky.png" width="160" height="34" alt="City tours">
                         </div>
                         <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                          <ul>
@@ -285,17 +285,17 @@
                                 <a href="#" data-bs-toggle="dropdown" class="cart_bt"><i class="icon_bag_alt"></i><strong>3</strong></a>
                                 <ul class="dropdown-menu" id="cart_items">
                                     <li>
-                                        <div class="image"><img src="img/thumb_cart_1.jpg" alt="image"></div>
+                                        <div class="image"><img src="assets/img/thumb_cart_1.jpg" alt="image"></div>
                                         <strong><a href="#">Louvre museum</a>1x $36.00 </strong>
                                         <a href="#" class="action"><i class="icon-trash"></i></a>
                                     </li>
                                     <li>
-                                        <div class="image"><img src="img/thumb_cart_2.jpg" alt="image"></div>
+                                        <div class="image"><img src="assets/img/thumb_cart_2.jpg" alt="image"></div>
                                         <strong><a href="#">Versailles tour</a>2x $36.00 </strong>
                                         <a href="#" class="action"><i class="icon-trash"></i></a>
                                     </li>
                                     <li>
-                                        <div class="image"><img src="img/thumb_cart_3.jpg" alt="image"></div>
+                                        <div class="image"><img src="assets/img/thumb_cart_3.jpg" alt="image"></div>
                                         <strong><a href="#">Versailles tour</a>1x $36.00 </strong>
                                         <a href="#" class="action"><i class="icon-trash"></i></a>
                                     </li>
@@ -315,7 +315,7 @@
 	</header>
 	<!-- End Header -->
 
-	<section class="parallax-window" data-parallax="scroll" data-image-src="img/maldives-g0409719c5_1280.jpg" data-natural-width="1400" data-natural-height="470">
+	<section class="parallax-window" data-parallax="scroll" data-image-src="assets/img/maldives-g0409719c5_1280.jpg" data-natural-width="1400" data-natural-height="470">
 		<div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.4)">
 			<div class="animated fadeInDown">
 				<h1>Hello Clara!</h1>
@@ -375,7 +375,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-2 col-md-2">
-									<img src="img/notify_img.jpg" width="193px" height="88px" alt="">
+									<img src="assets/img/notify_img.jpg" width="193px" height="88px" alt="">
 									</div>
 								</div>
 							</div>
@@ -400,7 +400,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-2 col-md-2">
-									<img src="img/t8.jpg" width="193px" height="88px" alt="">
+									<img src="assets/img/t8.jpg" width="193px" height="88px" alt="">
 									
 									</div>
 								</div>
@@ -426,7 +426,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-2 col-md-2">
-									<img src="img/train-g49c60c529_640.jpg" width="193px" height="88px" alt="">
+									<img src="assets/img/train-g49c60c529_640.jpg" width="193px" height="88px" alt="">
 									</div>
 								</div>
 							</div>
@@ -451,7 +451,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-2 col-md-2">
-									<img src="img/tt2.jpg" width="193px" height="88px" alt="">
+									<img src="assets/img/tt2.jpg" width="193px" height="88px" alt="">
 									</div>
 								</div>
 							</div>
@@ -466,7 +466,7 @@
 								<div class="hotel_container">
 									<div class="img_container">
 										<a href="single_hotel.html">
-											<img src="img/h1.jpg" width="800" height="533" class="img-fluid" alt="Image">
+											<img src="assets/img/h1.jpg" width="800" height="533" class="img-fluid" alt="Image">
 											<div class="ribbon top_rated">
 											</div>
 											<div class="score">
@@ -496,7 +496,7 @@
 								<div class="hotel_container">
 									<div class="img_container">
 										<a href="single_hotel.html">
-											<img src="img/h2.jpg" width="800" height="533" class="img-fluid" alt="Image">
+											<img src="assets/img/h2.jpg" width="800" height="533" class="img-fluid" alt="Image">
 											<div class="ribbon top_rated">
 											</div>
 											<div class="score">
@@ -526,7 +526,7 @@
 								<div class="tour_container">
 									<div class="img_container">
 										<a href="single_tour.html">
-											<img src="img/h3.jpg" width="800" height="533" class="img-fluid" alt="Image">
+											<img src="assets/img/h3.jpg" width="800" height="533" class="img-fluid" alt="Image">
 											<div class="ribbon top_rated">
 											</div>
 											<div class="short_info">
@@ -553,7 +553,7 @@
 								<div class="tour_container">
 									<div class="img_container">
 										<a href="single_tour.html">
-											<img src="img/h4.jpg" width="800" height="533" class="img-fluid" alt="Image">
+											<img src="assets/img/h4.jpg" width="800" height="533" class="img-fluid" alt="Image">
 											<div class="ribbon popular">
 											</div>
 											<div class="short_info">
@@ -580,7 +580,7 @@
 								<div class="tour_container">
 									<div class="img_container">
 										<a href="single_tour.html">
-											<img src="img/h5.jpg" width="800" height="533" class="img-fluid" alt="Image">
+											<img src="assets/img/h5.jpg" width="800" height="533" class="img-fluid" alt="Image">
 											<div class="ribbon popular">
 											</div>
 											<div class="short_info">
@@ -607,7 +607,7 @@
 								<div class="transfer_container">
 									<div class="img_container">
 										<a href="single_transfer.html">
-											<img src="img/h6.jpg" width="800" height="533" class="img-fluid" alt="Image">
+											<img src="assets/img/h6.jpg" width="800" height="533" class="img-fluid" alt="Image">
 											<div class="ribbon top_rated">
 											</div>
 											<div class="short_info">
@@ -788,7 +788,7 @@
 							</div>
 							<div class="col-md-6">
 								<p>
-								<img src="img/JA.jpg" alt="Image" class="img-fluid styled profile_pic">
+								<img src="assets/img/JA.jpg" alt="Image" class="img-fluid styled profile_pic">
 								</p>
 							</div>
 						</div>
