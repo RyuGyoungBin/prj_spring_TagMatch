@@ -1209,10 +1209,10 @@
 		  			});
 			
 			
-			$("#hotelTotal").text(hotelPrice * 3 + "원"); 
 		})
 		
 	})
+	$("#hotelTotal").text(hotelPrice); 
 	
 	
 	</script>
