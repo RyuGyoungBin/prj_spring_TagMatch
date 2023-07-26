@@ -85,9 +85,9 @@
 
 					<div class="box_style_cat">
 						<ul id="cat_nav">
-							<li><a href="hotel02" id="active"><i
+							<li><a href="hotel02" ><i
 									class="icon_set_1_icon-51"></i>호텔 <span>(...)</span></a></li>
-							<li><a href="#"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
+							<li><a href="#" id="active"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
 							</li>
 							<li><a href="condo02"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a>
 							</li>

@@ -71,6 +71,22 @@ Author URI: http://themeforest.net/user/Ansonika/
 /* 1.  SITE STRUCTURE and TYPOGRAPHY */
 /*============================================================================================*/
 
+
+/* 나눔스퀘어 네오 폰트 */
+@font-face {
+    font-family: 'NanumSquareNeo-Variable';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/NanumSquareNeo-Variable.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* 세방고딕 폰트 */
+@font-face {
+    font-family: 'SEBANG_Gothic_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2104@1.0/SEBANG_Gothic_Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*-------- 1.1 Typography --------*/
 html, body {
     -webkit-font-smoothing: antialiased;
@@ -88,7 +104,7 @@ h1, h2, h3 {margin-top: 20px;margin-bottom: 10px;}
 
 .main_title {text-align:center; font-size:16px; margin-bottom:30px;}
 .main_title h2 {text-transform: uppercase; font-weight:700; letter-spacing:-1px; font-size:30px; margin-bottom:0;margin-top:0;}
-.main_title p {font-weight:400; font-size:20px; color: #555;}
+.main_title p {font-weight:400; font-size:20px; color: #555; font-family: 'NanumSquareNeo-Variable';}
 
 h2 span, h3 span, h4 span, h5 span, h6 span{color:#e04f67;}
 
@@ -111,7 +127,10 @@ h2 span, h3 span, h4 span, h5 span, h6 span{color:#e04f67;}
 a {color: #e14d67;text-decoration: none;-webkit-transition: all 0.2s ease;transition: all 0.2s ease; outline:none;}
 a:hover,a:focus {color: #111;text-decoration: none; outline:none;}
 
-p {margin: 0 0 20px 0;}
+p {
+	margin: 0 0 20px 0;
+	;
+}
 
 .nopadding {
 	margin: 0 !important;
@@ -1150,6 +1169,7 @@ a#close_in {display:block;position:absolute;right:15px;top:10px;width:20px;heigh
 	padding: 5px 0 10px 0;
 	display: block;
 	color: #333;
+	font-family: 'SEBANG_Gothic_Bold';
 }
 
 .other_tours ul li a:hover {
@@ -1178,7 +1198,7 @@ a#close_in {display:block;position:absolute;right:15px;top:10px;width:20px;heigh
 /* Home 2 */
 #hero {
 	position: relative;
-	height: 600px;
+	height: 100vh;
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-color: #ddd;
@@ -8162,3 +8182,7 @@ only screen and (min-device-pixel-ratio: 2) and (max-width: 991px) {
 
     height: 100%;
 }
+
+
+
+
