@@ -282,7 +282,7 @@ ul#profile_summary li:nth-child(odd) {
   content: "\26";
 }
 .strip_booking h3.tours_booking:before{
-  content: "\3e";
+  content: "\25";
 }
 .strip_booking h3.transfers_booking:before{
   content: "\39";

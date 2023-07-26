@@ -22,7 +22,7 @@
 
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
- 
+
     <!-- COMMON CSS -->
 	<link href="/resources/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/resources/assets/css/style.css" rel="stylesheet">
@@ -54,7 +54,7 @@
     	<div class="container">
         	<div class="row justify-content-center">
             	<div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
-                	<div id="login">
+                	<div id="login" style="margin:250px 0 269px;">
                     		<div class="text-center"><img src="img/logo_sticky.png" alt="Image" width="160" height="34"></div>
                             <hr>
                             <form>
@@ -145,7 +145,7 @@
 	<script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
 	<script src="/resources/assets/js/common_scripts_min.js"></script>
 	<script src="/resources/assets/js/functions.js"></script>
-
+   
 
 
   </body>

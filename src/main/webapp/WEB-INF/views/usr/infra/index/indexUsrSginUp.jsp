@@ -18,7 +18,7 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
-
+  
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -47,48 +47,47 @@
     <div class="layer"></div>
     <!-- Mobile menu overlay mask -->
 	<main>
-    <section id="hero" class="login">
+     <section id="hero" class="login">
     	<div class="container">
         	<div class="row justify-content-center">
             	<div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
-                	<div id="memberShip"> <!-- 회원가입 -->
+                	<div id="login" style="margin:60px 0 71px;">
                     		<div class="text-center"><img src="img/logo_sticky.png" alt="Image" width="160" height="34"></div>
                             <hr>
-                           <form>
+                            <form>
                                 <div class="form-group">
-                                	<label>이름</label>
-                                    <input type="text" class=" form-control"  placeholder="이름">
+                                    <label>이름</label>
+                                    <input type="text" class=" form-control "  id=id placeholder="이름">
                                 </div>
                                 <div class="form-group">
-                                	<label>아이디</label>
-                                    <input type="text" class=" form-control" placeholder="아이디">
+                                    <label>아이디</label>
+                                    <input type="text" class=" form-control "  id=id placeholder="아이디">
                                 </div>
                                 <div class="form-group">
                                     <label>비밀번호</label>
-                                    <input type="password" class=" form-control" id="password1" placeholder="비밀번호">
+                                    <input type="text" class=" form-control "  id=id placeholder="비밀번호">
                                 </div>
                                 <div class="form-group">
                                     <label>비밀번호 확인</label>
-                                    <input type="password" class=" form-control" id="password2" placeholder="비밀번호 확인">
+                                    <input type="text" class=" form-control "  id=id placeholder="비밀번호 확인">
                                 </div>
                                 <div class="form-group">
-                                	<label>이메일</label>
-                                    <input type="email" class=" form-control" placeholder="이메일">
+                                    <label>이메일</label>
+                                    <input type="text" class=" form-control "  id=id placeholder="이메일">
                                 </div>
                                 <div class="form-group">
-                                	<label>생년월일</label>
-                                    <input type="date" class=" form-control" placeholder="생년월일">
+                                    <label>생년월일</label>
+                                    <input type="date" class=" form-control "  id=id placeholder="생년월일">
                                 </div>
                                 <div class="form-group">
-                                	<label>주소</label>
-                                    <input type="adderss" class=" form-control" placeholder="주소">
+                                    <label>주소</label>
+                                    <input type="text" class=" form-control "  id=id placeholder="주소">
                                 </div>
                                 <div class="form-group">
-                                	<label>전화번호</label>
-                                    <input type="text" class=" form-control" placeholder="전화번호">
+                                    <label>전화번호</label>
+                                    <input type="text" class=" form-control "  id=id placeholder="전화번호">
                                 </div>
-                                <div id="pass-info" class="clearfix"></div>
-                                <button class="btn_full">회원가입</button>
+                                <button type=button class="btn_full" >회원가입</button>
                             </form>
                         </div>
                 </div>
