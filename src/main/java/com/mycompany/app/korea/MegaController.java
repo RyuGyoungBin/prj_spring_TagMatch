@@ -29,9 +29,9 @@ public class MegaController {
 		return "/usr/infra/index/indexUsrLogin";
 	}
 	
-	@RequestMapping("/indexUsrSingUp")
-	public String indexUsrSingUp() {
-		return "/usr/infra/index/indexUsrSingUp";
+	@RequestMapping("/indexUsrSignUp")
+	public String indexUsrSignUp() {
+		return "/usr/infra/index/indexUsrSignUp";
 	}
 
 	@RequestMapping("/indexUsrMyPage")
