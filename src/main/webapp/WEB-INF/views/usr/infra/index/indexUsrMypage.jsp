@@ -26,20 +26,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	
 	<!-- COMMON CSS -->
-	<link href="/resources/asstes/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/resources/asstes/css/style.css" rel="stylesheet">
-	<link href="/resources/asstes/css/vendors.css" rel="stylesheet">
+	<link href="/resources/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/assets/css/style.css" rel="stylesheet">
+	<link href="/resources/assets/css/vendors.css" rel="stylesheet">
 	
 	<!-- SPECIFIC CSS -->
-	<link href="/resources/asstes/css/admin.css" rel="stylesheet">
+	<link href="/resources/assets/css/admin.css" rel="stylesheet">
 	
 	<!-- CUSTOM CSS -->
-	<link href="/resources/asstes/css/custom.css" rel="stylesheet">
+	<link href="/resources/assets/css/custom.css" rel="stylesheet">
 
 </head>
 
 <body>
-
+ 
 	<div id="preloader">
 		<div class="sk-spinner sk-spinner-wave">
 			<div class="sk-rect1"></div>
@@ -104,7 +104,7 @@
                                             <li><a href="index_19.html">Mailchimp Newsletter</a></li>
                                             <li><a href="index_18.html">Fixed Caption</a></li>
                                         </ul>
-                                    </li>
+                                    </li> 
                                     <li><a href="index_12.html">Layer slider</a></li>
                                     <li><a href="index_2.html">With Only tours</a></li>
                                     <li><a href="index_3.html">Single image</a></li>
