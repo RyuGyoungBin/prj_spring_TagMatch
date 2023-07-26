@@ -40,11 +40,11 @@
 						<div class="collapse show" id="collapseFilters">
 							<div class="box_style_cat mt-3">
 								<ul id="cat_nav">
-									<li><a href="#train"><i class="icon_set_1_icon-51"></i><span>기차 : </span><span>119,800원</span></a>
+									<li><a href="#train"><i class="icon_set_1_icon-51"></i><span>기차 : </span><span id="trainPriceF">119,800</span>원</a>
 									</li>
-									<li><a href="#hotel"><i class="icon_set_1_icon-51"></i><span>숙소 : </span><span>143,000원</span></a>
+									<li><a href="#hotel"><i class="icon_set_1_icon-51"></i><span>숙소 : </span><span id="hotelPriceF">143,000</span>원</a>
 									</li>
-									<li><a href="#tour"><i class="icon_set_1_icon-51"></i><span>입장권 : </span><span>210,000원</span></a>
+									<li><a href="#tour"><i class="icon_set_1_icon-51"></i><span>입장권 : </span><span id="ticketPriceF">210,000</span>원</a>
 									</li>
 								</ul>
 							</div>
@@ -626,19 +626,22 @@
 							<thead class="border-bottom">
 								<tr>
 									<th>객실 타입</th>
-									<th>07/24(월)</th>
+									<th>날짜</th>
+									<th>비용(원)</th>
 									<th>예약가능</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
 									<td>스탠다드 트원</td>
-									<td>113,637원</td>
+									<td>07/24(월)</td>
+									<td>113637</td>
 									<td>O</td>
 								</tr>
 								<tr>
 									<td>스탠다드 더블</td>
-									<td>118,182원</td>
+									<td>07/24(월)</td>
+									<td>118182</td>
 									<td>O</td>
 								</tr>
 							</tbody>
@@ -652,8 +655,8 @@
 									<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly>
 								</div>
 								<div class="col-2 p-2">
-									<select class="form-control" >
-										<option value="1">1객실</option>
+									<select class="form-select" id="sleep">
+										<option value="1" selected>1객실</option>
 										<option value="2">2객실</option>
 										<option value="3">3객실</option>
 									</select>
@@ -664,16 +667,21 @@
 				</div>
 			</div>
 			<div class="d-flex flex-column border p-3">
-				<div class="d-flex justify-content-around col-12 mb-1">
-					<span>2023/07/24 - 2023/07/25</span>
-					<span class="mx-3">글래드 강남 코엑스센터</span>
-					<span>[룸 온리]스탠다드 더블</span>
-					<span class="me-3">143,000원	</span>
-				</div>
-				<div class="d-flex justify-content-end align-items-center">
-					<div style="font-size: 9px;">선택된 총 숙박요금</div>
-					<div class="mx-2" id="hotelTotal"></div>
-					<button type="button" class="btn btn-sm btn-primary">선택완료</button>
+				<div><h5 class="ms-2 mb-2">글래드 강남 코엑스센터</h5></div>
+				<div class="d-flex justify-content-between align-items-center">
+					<div class="col-6 d-flex justify-content-around flex-wrap">
+						<div class="col-5">객실명 : </div>
+						<div class="col-5">이용박수 : </div>
+						<div class="col-5">입실일 : </div>
+						<div class="col-5">객실수 : </div>
+					</div>
+					<div class="col-3 d-flex justify-content-between">
+						<div>
+							<div style="font-size: 9px;">선택된 총 숙박요금</div>
+							<div class="mx-2" id="hotelTotal"></div>
+						</div>
+						<button type="button" class="btn btn-sm btn-primary" id="hotelBtn">선택완료</button>
+					</div>
 				</div>
 			</div>
 			
@@ -1047,100 +1055,48 @@
 						</div>
 					</div>
 					<div class="px-3">
-						아래에서 원하는 객실을 선택하세요
+						아래에서 원하는 날짜와 입장권을 선택하세요
+					</div>
+					<div class="d-flex justify-content-end px-3">
+						<div class="me-2">
+							<label>07/25</label>
+							<input type="radio" name="ticketDate" checked>
+						</div>
+						<div class="me-2">
+							<label>07/26</label>
+							<input type="radio" name="ticketDate">
+						</div>
 					</div>
 					<div class="p-3">
-						<table class="col-12 text-center">
-							<thead class="border-bottom">
-								<tr>
-									<th>객실 타입</th>
-									<th>07/24(월)</th>
-									<th>선택</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>스탠다드 트원</td>
-									<td>113,637원</td>
-									<td>O</td>
-								</tr>
-<!-- 								<tr class="d-none detail"> -->
-<!-- 									<td colspan="3"> -->
-<!-- 										<div class="d-flex align-items-center justify-content-around"> -->
-<!-- 											<div class="col-2"> -->
-<!-- 												<span >옵션선택</span> -->
-<!-- 											</div> -->
-<!-- 											<div class="col-8 px-5 py-2"> -->
-<!-- 												<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly> -->
-<!-- 											</div> -->
-<!-- 											<div class="col-2 p-2"> -->
-<!-- 												<select class="form-control"> -->
-<!-- 													<option>1객실</option> -->
-<!-- 													<option>2객실</option> -->
-<!-- 													<option>3객실</option> -->
-<!-- 												</select> -->
-<!-- 											</div> -->
-<!-- 										</div> -->
-<!-- 									</td> -->
-<!-- 								</tr> -->
-								<tr>
-									<td>스탠다드 더블</td>
-									<td>118,182원</td>
-									<td>O</td>
-								</tr>
-<!-- 								<tr class="d-none detail"> -->
-<!-- 									<td colspan="3"> -->
-<!-- 										<div class="d-flex align-items-center justify-content-around"> -->
-<!-- 											<div class="col-2"> -->
-<!-- 												<span >옵션선택</span> -->
-<!-- 											</div> -->
-<!-- 											<div class="col-8 px-5 py-2"> -->
-<!-- 												<input type="text" value="트윈(싱글+싱글)" class="form-control" readonly> -->
-<!-- 											</div> -->
-<!-- 											<div class="col-2 p-2"> -->
-<!-- 												<select class="form-control"> -->
-<!-- 													<option>1객실</option> -->
-<!-- 													<option>2객실</option> -->
-<!-- 													<option>3객실</option> -->
-<!-- 												</select> -->
-<!-- 											</div> -->
-<!-- 										</div> -->
-<!-- 									</td> -->
-<!-- 								</tr> -->
-							</tbody>
-						</table>
+						<div class="border p-3">
+							<div class="mb-2">성인</div>
+							<div class="d-flex justify-content-between">
+								<div class="d-flex justify-content-center align-items-center" id="18up">
+									<div><h3 class="m-0 MBtn">-</h3></div>
+									<div><h3 class="my-0 mx-3 fw-bold"></h3></div>
+									<div><h3 class="m-0 PBtn">+</h3></div>
+								</div>
+								<div>
+									<span>3000</span>원
+								</div>
+							</div>
+						</div>
+						<div class="border p-3">
+							<div class="mb-2">청소년</div>
+							<div class="d-flex justify-content-between">
+								<div class="d-flex justify-content-center align-items-center" id="18down">
+									<div><h3 class="m-0 MBtn">-</h3></div>
+									<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>
+									<div><h3 class="m-0 PBtn">+</h3></div>
+								</div>
+								<div>
+									<span>2000</span>원
+								</div>
+							</div>
+						</div>
 					</div>
+					<button type="button" class="btn btn-info" id="selectTicket">선택 완료</button>
 				</div>
-			</div>
-			<div class="d-flex flex-column border p-3">
-				<div class="d-flex justify-content-around col-12 mb-1">
-					<span>2023/07/24 - 2023/07/25</span>
-					<span class="mx-3">글래드 강남 코엑스센터</span>
-					<span>[룸 온리]스탠다드 더블</span>
-					<span class="me-3">143,000원	</span>
-				</div>
-				<div class="d-flex justify-content-end align-items-center">
-					<div style="font-size: 9px;">선택된 총 숙박요금</div>
-					<div class="mx-2">143,000원</div>
-					<button type="button" class="btn btn-sm btn-primary">선택완료</button>
-				</div>
-			</div>
-			
-			<div class="border-bottom border-primary py-3 mb-3"></div>
-			<!--------------------입장권----------------------------- -->
-			<div class="col-12 d-flex justify-content-end mb-3">
-				<div>
-					<input type="radio" name="Slprice" id="SlpriceLow">
-					<label for="itineraryOne">저가순</label>
-				</div>
-				<div class="mx-3">
-					<input type="radio" name="Slprice" id="SlpriceHig">
-					<label for="itineraryTwo">고가순</label>
-				</div>
-				<div>
-					<input type="radio" name="Slprice" id="SlpriceSta" checked>
-					<label for="itineraryThr">추천순</label>
-				</div>2
 			</div>
 			<div class="d-flex flex-column border p-3">
 				<table class="mb-3 text-center">
@@ -1153,32 +1109,21 @@
 							<td>선택 취소</td>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td><span>[경기 시흥]</span></td>
-							<td><span class="mx-3">웨이브파크 서프존 (~7/31) 베이초급레슨</span></td>
-							<td><span>(1명)</span></td>
-							<td><span class="me-3">90,000원</span></td>
-							<td><a class="btn btn-light text-danger">X</a></td>
-						</tr>
-						<tr>
-						 	<td><span>[강원 속초]</span></td>
-						 	<td><span class="mx-3">파아란 스쿠버 다이빙 프리다이빙 자격증 체험 2인이상</span></td>
-						 	<td><span>(1명)</span></td>
-						 	<td><span class="me-3">120,000원</span></td>
-						 	<td><a class="btn btn-light text-danger">X</a></td>
-						</tr>
+					<tbody id="ticketView">
 					</tbody>
 				</table>
 				<div class="d-flex justify-content-end align-items-center">
 					<div style="font-size: 9px;">선택된 총 입장권요금</div>
-					<div class="mx-2">210,000원</div>
-					<button type="button" class="btn btn-sm btn-primary">선택완료</button>
+					<div class="mx-2"><span id="ticketTotal"></span><span>원</span></div>
+					<button type="button" class="btn btn-sm btn-primary" id="ticketBtn">선택완료</button>
 				</div> 
 			</div>
+			
+			<div class="border-bottom border-primary py-3 mb-3"></div>
+			<!--------------------입장권----------------------------- -->
+			
         </div>
      </div>   
-
 	</main>
 	<!-- End main --> 
     
@@ -1196,25 +1141,82 @@
 	})
 	
 	$(function(){
-		$("tbody tr").on("click", function(){
+		var hotelPrice = 113637;
+		var hotelLen = parseInt($("#sleep").val());
+		$("#hotelTotal").text(hotelPrice * hotelLen + "원");
+		$(".hotelSelect tbody tr").on("click", $("tbody tr"), function(){
 			$("tr").removeClass("bg-warning");
 			$(this).toggleClass("bg-warning");
-			
-			var hotelPrice = 113637;
-			var hotelLen = $("#hotel").val();
-			console.log(hotelPrice);
-			console.log($("#hotel").val());  
-			$("#hotel").on("change", function(){
-				hotelLen = $("#hotel").val();
-		  			});
-			
-			
+// 			hotelPrice = ;
 		})
+		$("#sleep").on("change", function(){
+			hotelLen =  parseInt($("#sleep").val());
+			$("#hotelTotal").text(hotelPrice * hotelLen + "원"); 
+		});
 		
 	})
-	$("#hotelTotal").text(hotelPrice); 
+	$(document).on("click", ".delBtn", function(){
+		$(this).parent().parent().remove();
+	})
+	var ageup = 0;
+	var agedown = 0;
+	var ageupPrice = 3000;
+	var agedownPrice = 2000;
 	
+	$("#18up").find(".fw-bold").text(ageup);
+	$("#18down").find(".fw-bold").text(agedown);
 	
-	</script>
+	$("#18up .PBtn").on("click",function(){
+		ageup ++;
+		$("#18up").find(".fw-bold").text(ageup);
+	})
+	
+	$("#18up .MBtn").on("click",function(){
+		if(ageup > 0){
+			ageup --;
+			$("#18up").find(".fw-bold").text(ageup);
+		} else {
+			
+		}
+	})
+	
+	$("#18down .PBtn").on("click",function(){
+		agedown ++;
+		$("#18down").find(".fw-bold").text(agedown);
+	})
+	
+	$("#18down .MBtn").on("click",function(){
+		if(agedown > 0){
+			agedown --;
+			$("#18down").find(".fw-bold").text(agedown);
+		} else {
+			
+		}
+	})
+	$("#selectTicket").on("click", function(){
+		if(ageup == 0 && agedown == 0) {
+			
+		} else {
+			var ticketPrice = ageup * ageupPrice + agedown * agedownPrice;
+			$("#ticketView").append('<tr><td><span>[강원 속초]</span></td><td><span class="mx-3">파아란 스쿠버 다이빙 프리다이빙 자격증 체험 2인이상</span></td><td><span>('+ (ageup+agedown) +'명)</span></td><td><span class="me-3 ticketPrice">'+ticketPrice+'</span><span>원</span></td><td><a class="btn btn-light text-danger delBtn">X</a></td></tr>');
+		}
+		var allTicketPrice = 0;
+		console.log($(".ticketPrice").length)
+		for(var i = 0; i<$(".ticketPrice").length; i++){
+			allTicketPrice += parseInt($(".ticketPrice").eq(i).text());
+		}
+		console.log(allTicketPrice)
+		$("#ticketTotal").text(allTicketPrice);
+		
+	})
+	$("#hotelBtn").on("click", function(){
+		$("#hotelPriceF").text($("#hotelTotal").text());
+	})
+	$("#ticketBtn").on("click", function(){
+		$("#ticketPriceF").text($("#ticketTotal").text());
+	})
+		
+</script>
+	
 
 </body>
