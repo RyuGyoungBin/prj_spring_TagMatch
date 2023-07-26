@@ -145,7 +145,7 @@
 	<script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
 	<script src="/resources/assets/js/common_scripts_min.js"></script>
 	<script src="/resources/assets/js/functions.js"></script>
-
+   
 
 
   </body>
