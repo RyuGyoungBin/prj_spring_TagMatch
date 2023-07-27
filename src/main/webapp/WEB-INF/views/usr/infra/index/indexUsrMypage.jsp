@@ -350,7 +350,7 @@
 					</ul>
 				</nav>
 				<div class="content">
-
+ 
 					<section id="section-1">
 
 						<div class="strip_booking">
