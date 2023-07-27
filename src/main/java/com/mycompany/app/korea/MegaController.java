@@ -28,16 +28,17 @@ public class MegaController {
 	public String indexUsrLogin() {
 		return "/usr/infra/index/indexUsrLogin";
 	}
-	
-	@RequestMapping("/indexUsrSignUp")
+	@RequestMapping("/indexUsrSginUp")
 	public String indexUsrSignUp() {
-		return "/usr/infra/index/indexUsrSignUp";
+		return "/usr/infra/index/indexUsrSginUp";
 	}
 
 	@RequestMapping("/indexUsrMyPage")
 	public String indexUsrMyPage() {
 		return "/usr/infra/index/indexUsrMyPage";
 	}
+	
+	
 
 	
 

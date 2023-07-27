@@ -6,12 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SongController {
 	
-	@RequestMapping ("/index")
-	public String index() {
-		
-		return "/usr/infra/index/index";
-	}
-
 	@RequestMapping ("/hotel02")
 	public String hotel02() {
 		
