@@ -311,33 +311,33 @@
 					</div>
 					<div class="col-lg-4 other_tours">
 						<ul>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Notredame<span class="other_tours_price">$48</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>부산 <-> 천안아산(온양온천)<span class="other_tours_price">$48</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Lafaiette<span class="other_tours_price">$55</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>부산 <-> 영등포<span class="other_tours_price">$55</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Trocadero<span class="other_tours_price">$76</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>부산 <-> 동대구<span class="other_tours_price">$76</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Open Bus tour<span class="other_tours_price">$55</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>김천 <-> 동대구	<span class="other_tours_price">$55</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Louvre museum<span class="other_tours_price">$24</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>진주 <-> 서울<span class="other_tours_price">$24</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Madlene Cathedral<span class="other_tours_price">$24</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>진주 <->천안아산(온양온천) <span class="other_tours_price">$24</span></a>
 							</li>
 						</ul>
 					</div>
 					<div class="col-lg-4 other_tours">
 						<ul>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Montparnasse<span class="other_tours_price">$36</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>여수(엑스포) <-> 용산<span class="other_tours_price">$36</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>D'Orsey museum<span class="other_tours_price">$28</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>여수(엑스포) <-> 천안아산(온양온천)<span class="other_tours_price">$28</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Gioconda Louvre musuem<span class="other_tours_price">$44</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>남원 <-> 용산<span class="other_tours_price">$44</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Tour Eiffel<span class="other_tours_price">$56</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>청량리 <-> 안동<span class="other_tours_price">$56</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Ladefanse<span class="other_tours_price">$16</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>부발 <-> 충주<span class="other_tours_price">$16</span></a>
 							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>Notredame<span class="other_tours_price">$26</span></a>
+							<li><a href="#"><i class=" icon_set_1_icon-5"></i>행신 <-> 나주<span class="other_tours_price">$26</span></a>
 							</li>
 						</ul>
 					</div>
@@ -345,9 +345,9 @@
 				<!-- End row -->
 
 				<div class="banner colored">
-					<h4>Discover our Top tours <span>from $34</span></h4>
+					<h4>ㄱㄴㄷㄹㅁㅂㅅ <span> 이벤트! </span></h4>
 					<p>
-						Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.
+						한 번도 경험해보지 못한 특가 상품! 지금 당장 이용해보세요!
 					</p>
 					<a href="single_tour.html" class="btn_1 white">Read more</a>
 				</div>
@@ -355,31 +355,35 @@
 				<div class="row">
 					<div class="col-lg-3 col-md-6 text-center">
 						<p>
-							<a href="#"><img src="resources/assets/img/bus.jpg" alt="Pic" class="img-fluid rounded"></a>
+							<a href="#"><img src="resources/assets/img/accommodation/hotel/event/event01.jpg" alt="Pic" class="img-fluid rounded"></a>
 						</p>
-						<h4><span>Sightseen tour</span> booking</h4>
-						<p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.</p>
+						<h4><span>라마다 앙코르 바이 윈덤 천안호텔</span></h4>
+						<p>천안 KTX 천안아산역 차량 10분거리</p>
+						<p>113,000원~</p>
 					</div>
 					<div class="col-lg-3 col-md-6 text-center">
 						<p>
-							<a href="#"><img src="resources/assets/img/transfer.jpg" alt="Pic" class="img-fluid rounded"></a>
+							<a href="#"><img src="resources/assets/img/accommodation/hotel/event/event02.png" alt="Pic" class="img-fluid rounded"></a>
 						</p>
-						<h4><span>Transfer</span> booking</h4>
-						<p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.</p>
+						<h4><span>신라스테이 여수</span> </h4>
+						<p>여수 엑스포역 KTX 차량 4분 거리</p>
+						<p>115,000원~</p>
 					</div>
 					<div class="col-lg-3 col-md-6 text-center">
 						<p>
-							<a href="#"><img src="resources/assets/img/guide.jpg" alt="Pic" class="img-fluid rounded"></a>
+							<a href="#"><img src="resources/assets/img/accommodation/hotel/event/event03.jpg" alt="Pic" class="img-fluid rounded"></a>
 						</p>
-						<h4><span>Tour guide</span> booking</h4>
-						<p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.</p>
+						<h4><span>베스트 루이스 해밀턴 해운대</span></h4>
+						<p>해운대해수욕장 7번출구 800m</p>
+						<p>180,000원~</p>
 					</div>
 					<div class="col-lg-3 col-md-6 text-center">
 						<p>
-							<a href="#"><img src="resources/assets/img/hotel.jpg" alt="Pic" class="img-fluid rounded"></a>
+							<a href="#"><img src="resources/assets/img/accommodation/hotel/event/event04.jpg" alt="Pic" class="img-fluid rounded"></a>
 						</p>
-						<h4><span>Hotel</span> booking</h4>
-						<p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in.</p>
+						<h4><span>군산 호텔 은파팰리스</span> </h4>
+						<p>은파관광지 도보 3분</p>
+						<p>155,000원~</p>
 					</div>
 				</div>
 				<!-- End row -->
@@ -390,88 +394,24 @@
 		<!-- End white_bg -->
 
 		<section class="promo_full">
+		
 			<div class="promo_full_wp magnific">
+			
+			
 				<div>
-					<h3>BELONG ANYWHERE</h3>
+					<h3>내일로 두번째 이야기</h3>
 					<p>
-						Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex.
+					 	"전 국민 누구나 즐기는 7일간의 자유 여행!" 	보다 더 자유롭고 편안해진 내일로를 경험해보세요.
 					</p>
-					<a href="https://www.youtube.com/watch?v=Zz5cu72Gv5Y" class="video"><i class="icon-play-circled2-1"></i></a>
+					<div class="background-video"><i class="icon-play-circled2-1">
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/_rYEidvIch4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					</i></div>
 				</div>
 			</div>
 		</section>
 		<!-- End section -->
 
-		<div class="container margin_60">
 
-			<div class="main_title">
-				<h2>Some <span>good</span> reasons</h2>
-				<p>
-					Quisque at tortor a libero posuere laoreet vitae sed arcu. Curabitur consequat.
-				</p>
-			</div>
-
-			<div class="row">
-
-				<div class="col-lg-4 wow zoomIn" data-wow-delay="0.2s">
-					<div class="feature_home">
-						<i class="icon_set_1_icon-41"></i>
-						<h3><span>+120</span> Premium tours</h3>
-						<p>
-							Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
-						</p>
-						<a href="about.html" class="btn_1 outline">Read more</a>
-					</div>
-				</div>
-
-				<div class="col-lg-4 wow zoomIn" data-wow-delay="0.4s">
-					<div class="feature_home">
-						<i class="icon_set_1_icon-30"></i>
-						<h3><span>+1000</span> Customers</h3>
-						<p>
-							Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
-						</p>
-						<a href="about.html" class="btn_1 outline">Read more</a>
-					</div>
-				</div>
-
-				<div class="col-lg-4 wow zoomIn" data-wow-delay="0.6s">
-					<div class="feature_home">
-						<i class="icon_set_1_icon-57"></i>
-						<h3><span>H24 </span> Support</h3>
-						<p>
-							Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
-						</p>
-						<a href="about.html" class="btn_1 outline">Read more</a>
-					</div>
-				</div>
-
-			</div>
-			<!--End row -->
-
-			<hr>
-
-			<div class="row">
-				<div class="col-md-6">
-					<img src="resources/assets/img/laptop.png" alt="Laptop" class="img-fluid laptop">
-				</div>
-				<div class="col-md-6">
-					<h3><span>Get started</span> with CityTours</h3>
-					<p>
-						Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.
-					</p>
-					<ul class="list_order">
-						<li><span>1</span>Select your preferred tours</li>
-						<li><span>2</span>Purchase tickets and options</li>
-						<li><span>3</span>Pick them directly from your office</li>
-					</ul>
-					<a href="all_tour_list.html" class="btn_1">Start now</a>
-				</div>
-			</div>
-			<!-- End row -->
-        
-    	</div>
-		<!-- End container -->
     </main>
 	<!-- End main -->
 	
@@ -481,7 +421,7 @@
 
 	<script>
 		//Search bar
-		$(function() {
+		$(function() 
 			"use strict";
 			$("#searchDropdownBox").change(function() {
 				var Search_Str = $(this).val();

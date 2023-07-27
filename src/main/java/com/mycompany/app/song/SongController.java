@@ -40,6 +40,11 @@ public class SongController {
 		
 		return "/usr/infra/subpages/roomDetailInfo03";
 	}
+	
+	@RequestMapping ("/registerUsrForm")
+	public String registerUsrForm() {
+		return "/usr/infra/member/registerUsrForm";
+	}
 
 
 }
