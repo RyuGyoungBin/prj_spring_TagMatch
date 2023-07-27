@@ -34,17 +34,18 @@
         </div>
         <!--/carousel-->
         	<div class="container margin_60 d-flex justify-content-around">
-        	<aside class="col-lg-3">  
+        	<aside class="col-lg-3">
+        		<div id="bookingView" class="position-absolute" style="top: 907px;">
 					<div id="filters_col">
 						<a data-bs-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt"><i class="icon_set_1_icon-65"></i>예약상세</a>
 						<div class="collapse show" id="collapseFilters">
 							<div class="box_style_cat mt-3">
 								<ul id="cat_nav">
-									<li><a href="#train"><i class="icon_set_1_icon-51"></i><span>기차 : </span><span id="trainPriceF">119,800</span>원</a>
+									<li><a href="#train"><i class="icon_set_1_icon-51"></i><span>기차 : </span><span id="trainPriceF">0</span>원</a>
 									</li>
-									<li><a href="#hotel"><i class="icon_set_1_icon-51"></i><span>숙소 : </span><span id="hotelPriceF">143,000</span>원</a>
+									<li><a href="#hotel"><i class="icon_set_1_icon-51"></i><span>숙소 : </span><span id="hotelPriceF">0</span>원</a>
 									</li>
-									<li><a href="#tour"><i class="icon_set_1_icon-51"></i><span>입장권 : </span><span id="ticketPriceF">210,000</span>원</a>
+									<li><a href="#tour"><i class="icon_set_1_icon-51"></i><span>입장권 : </span><span id="ticketPriceF">0</span>원</a>
 									</li>
 								</ul>
 							</div>
@@ -53,7 +54,7 @@
 					</div>
 					<div class="box_style_cat">
 						<p class="p-3" style="color: #333;">총결제금액</p>
-						<p class="ps-5">472,800원</p>
+						<p class="ps-5"><span id="totalPrice">0</span>원</p>
 						<div class="d-flex justify-content-center my-3">
 							<button type="button" class="btn btn-info">예매하기</button>
 						</div>
@@ -65,18 +66,27 @@
 						<a href="tel://004542344599" class="phone">+45 423 445 99</a>
 						<small>Monday to Friday 9.00am - 7.30pm</small>
 					</div>
+					</div>
 				</aside>
 				<!--End aside -->
 				<div class="col-lg-1"></div>
 				<div class="col-lg-8 d-flex flex-column" id="train">
-					<div class="col-12 d-flex justify-content-end">
-						<div class="me-3">
-							<input type="radio" name="itinerary" id="itineraryOne">
-							<label for="itineraryOne">편도</label>
+					<div class="col-12 d-flex justify-content-between">
+						<div class="d-flex me-3 text-nowrap justify-content-center align-items-center mb-3">
+							<label class="me-3">여행일자</label>
+							<div>
+								<input class="date-pick form-control" type="text" placeholder="Select dates">
+							</div>
 						</div>
-						<div>
-							<input type="radio" name="itinerary" id="itineraryTwo" checked>
-							<label for="itineraryTwo">왕복</label>
+						<div class="d-flex">
+							<div class="me-3">
+								<input type="radio" name="itinerary" id="itineraryOne">
+								<label for="itineraryOne">편도</label>
+							</div>
+							<div>
+								<input type="radio" name="itinerary" id="itineraryTwo" checked>
+								<label for="itineraryTwo">왕복</label>
+							</div>
 						</div>
 					</div>
 					<div class="d-flex justify-content-center mb-2">
@@ -89,10 +99,6 @@
 							<label class="me-3">도착역</label>
 							<input type="text" class="form-control" value="부산역" readonly>
 						</div>
-						<div class="d-flex me-3 text-nowrap align-items-center">
-							<label class="me-3">가는일자</label>
-							<div></div>
-						</div>
 					</div>
 					<div class="d-flex justify-content-center mb-2">
 						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">오는편</div>
@@ -103,10 +109,6 @@
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">도착역</label>
 							<input type="text" class="form-control" value="부산역" readonly>
-						</div>
-						<div class="d-flex me-3 text-nowrap align-items-center">
-							<label class="me-3">가는일자</label>
-							<div></div>
 						</div>
 					</div>
 					<div class="d-flex justify-content-around pb-3 border-bottom">
@@ -678,7 +680,7 @@
 					<div class="col-3 d-flex justify-content-between">
 						<div>
 							<div style="font-size: 9px;">선택된 총 숙박요금</div>
-							<div class="mx-2" id="hotelTotal"></div>
+							<div class="mx-2"><span id="hotelTotal"></span>원</div>
 						</div>
 						<button type="button" class="btn btn-sm btn-primary" id="hotelBtn">선택완료</button>
 					</div>
@@ -1143,7 +1145,7 @@
 	$(function(){
 		var hotelPrice = 113637;
 		var hotelLen = parseInt($("#sleep").val());
-		$("#hotelTotal").text(hotelPrice * hotelLen + "원");
+		$("#hotelTotal").text(hotelPrice * hotelLen);
 		$(".hotelSelect tbody tr").on("click", $("tbody tr"), function(){
 			$("tr").removeClass("bg-warning");
 			$(this).toggleClass("bg-warning");
@@ -1151,7 +1153,7 @@
 		})
 		$("#sleep").on("change", function(){
 			hotelLen =  parseInt($("#sleep").val());
-			$("#hotelTotal").text(hotelPrice * hotelLen + "원"); 
+			$("#hotelTotal").text(hotelPrice * hotelLen); 
 		});
 		
 	})
@@ -1211,11 +1213,47 @@
 	})
 	$("#hotelBtn").on("click", function(){
 		$("#hotelPriceF").text($("#hotelTotal").text());
+		$("#totalPrice").text(parseInt($("#ticketPriceF").text()) + parseInt($("#hotelPriceF").text()) + parseInt($("#trainPriceF").text()));
 	})
 	$("#ticketBtn").on("click", function(){
 		$("#ticketPriceF").text($("#ticketTotal").text());
+		$("#totalPrice").text(parseInt($("#ticketPriceF").text()) + parseInt($("#hotelPriceF").text()) + parseInt($("#trainPriceF").text()));
 	})
+	
+	$(window).scroll(function(){
+        var sectionTop = $("#train").offset().top;
+        var secPos = Math.abs($(window).scrollTop() - sectionTop);
+        
+
+        if ($(window).scrollTop() > 600 && $(window).scrollTop() < 2400) {
+    
+            $("#bookingView").css({
+
+                top: secPos + 800 +"px"
+            });
+    
+        }
+
+
+    });
 		
+	$(function() {
+	      'use strict';
+	      $('input.date-pick').daterangepicker({
+	          autoUpdateInput: false,
+	          opens: 'left',
+	          minDate:new Date(),
+	          locale: {
+	              cancelLabel: 'Clear'
+	          }
+	      });
+	      $('input.date-pick').on('apply.daterangepicker', function(ev, picker) {
+	          $(this).val(picker.startDate.format('MM-DD-YY') + ' > ' + picker.endDate.format('MM-DD-YY'));
+	      });
+	      $('input.date-pick').on('cancel.daterangepicker', function(ev, picker) {
+	          $(this).val('');
+	      });
+	    });
 </script>
 	
 
