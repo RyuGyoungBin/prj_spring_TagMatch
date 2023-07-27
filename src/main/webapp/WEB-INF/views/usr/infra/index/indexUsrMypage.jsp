@@ -366,7 +366,7 @@
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-5">
-									<h3 class="tours_booking">단양->서울<span style="color: red;">성인 2명</span></h3>
+									<h3 class="tours_booking">서울->부산<span style="color: red;">성인 2명</span></h3>
 								</div>
 								<div class="col-lg-2 col-md-3">
 									<ul class="info_booking">
@@ -375,7 +375,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-2 col-md-2">
-									<img src="img/notify_img.jpg" width="193px" height="88px" alt="">
+									<img src="/resources/assets/img/station/busan1.jpg" width="193px" height="88px" alt="">
 									</div>
 								</div>
 							</div>
@@ -391,7 +391,7 @@
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-5">
-									<h3 class="tours_booking">강원도->충북<span style="color: red;">성인 1명<br>아동 2명</span></h3>
+									<h3 class="tours_booking">강원도->안양<span style="color: red;">성인 1명<br>아동 2명</span></h3>
 								</div>
 								<div class="col-lg-2 col-md-3">
 									<ul class="info_booking">
@@ -400,7 +400,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-2 col-md-2">
-									<img src="img/t8.jpg" width="193px" height="88px" alt="">
+									<img src="/resources/assets/img/station/anyang.jpg" width="193px" height="88px" alt="">
 									
 									</div>
 								</div>
@@ -426,7 +426,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-2 col-md-2">
-									<img src="img/train-g49c60c529_640.jpg" width="193px" height="88px" alt="">
+									<img src="/resources/assets/img/station/haengsin.jpg" width="193px" height="88px" alt="">
 									</div>
 								</div>
 							</div>
@@ -451,7 +451,7 @@
 									</ul>
 								</div>
 								<div class="col-lg-2 col-md-2">
-									<img src="img/tt2.jpg" width="193px" height="88px" alt="">
+									<img src="/resources/assets/img/station/geoje.jpg" width="193px" height="88px" alt="">
 									</div>
 								</div>
 							</div>
