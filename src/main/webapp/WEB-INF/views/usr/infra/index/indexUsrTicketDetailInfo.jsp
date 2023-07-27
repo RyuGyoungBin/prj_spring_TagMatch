@@ -9,14 +9,15 @@
 <%@include file="../include/head.jsp"%>
 <%@include file="../include/header.jsp"%>
 
-	<section class="parallax-window" data-parallax="scroll" data-image-src="/resources/assets/img/view123.jpg" data-natural-width="1400" data-natural-height="470">
+	<section class="parallax-window" data-parallax="scroll"  data-natural-width="1400" data-natural-height="470">
+<!-- 	data-image-src="/resources/assets/img/banner/spring.webp" -->
 		<div class="parallax-content-2">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">
 						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
-						<h1>Mariott Hotel</h1>
-						<span>Champ de Mars, 5 Avenue Anatole, 75007 Paris.</span>
+						<h1>[전주] 지식공간 서유구와빙허각</h1>
+						<span>서유구와 빙허각</span>
 					</div>
 					<div class="col-md-4">
 						<div id="price_single_main" class="hotel">
@@ -59,20 +60,20 @@
 						<div class="sp-slides">
 
 							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="../html/img/view123.jpg" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/" data-retina="/resources/assets/img/view123.jpg">
+								<img alt="Image" class="sp-image" src="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-src="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-small="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-medium="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-large="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-retina="/resources/assets/img/detailsSlide/detailSlide1.jpg">
 							</div>
 							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="css/images/view123.gif" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/" data-retina="/resources/assets/img/view123.jpg">
+								<img alt="Image" class="sp-image" src="/resources/assets/img/detailsSlide/detailSlide2.png" data-src="/resources/assets/img/detailsSlide/detailSlide2.png" data-small="/resources/assets/img/detailsSlide/detailSlide2.png" data-medium="/resources/assets/img/detailsSlide/detailSlide2.png" data-large="/resources/assets/img/detailsSlide/detailSlide2.png" data-retina="/resources/assets/img/detailsSlide/detailSlide2.png">
 							</div>
 
 							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="css/images/view123.gif" data-src="/resources/assets/img/view123.jpg" data-small="/resources/assets/img/view123.jpg" data-medium="/resources/assets/img/view123.jpg" data-large="/resources/assets/" data-retina="/resources/assets/img/view123.jpg">
+								<img alt="Image" class="sp-image" src="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-src="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-small="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-medium="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-large="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-retina="/resources/assets/img/detailsSlide/detailSlide3.jpg">
 							</div>
 						</div>
 						<div class="sp-thumbnails">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/view123.jpg">
+							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/detailsSlide/detailSlide1.jpg">
+							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/detailsSlide/detailSlide2.png">
+							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/detailsSlide/detailSlide3.jpg">
 						</div>
 					</div>
 					<hr>
@@ -88,35 +89,76 @@
 							<li><i class="icon_set_1_icon-27"></i>Parking</li>
 						</ul>
 					</div>
-					<div class="row" >
-						<div class="col-lg-3">
-							<h3>상세정보</h3>
-						</div>
+					<div class="row" style="justify-content: space-around;">
 						<div class="col-lg-9" >
 <!-- 						style="background-image: url(/resources/assets/img/h1.jpg); background-size: cover;" -->
-						
+						<div >
+						<img src="/resources/assets/img/detail/Detail1_1.jpg" alt="Image" style="width: 98%;">
+						<img src="/resources/assets/img/detail/Detail1_2.jpg" alt="Image">
+						<img src="/resources/assets/img/detail/Detail1_3.jpg" alt="Image">
+						<img src="/resources/assets/img/detail/Detail1_4.jpg" alt="Image">
+						<img src="/resources/assets/img/detail/Detail1_5.jpg" alt="Image">
+						<img src="/resources/assets/img/detail/Detail1_6.jpg" alt="Image">
+						<img src="/resources/assets/img/detail/Detail1_7.jpg" alt="Image">
+						</div>
 							<p>
-								무료 Wi-Fi 접속 설비를 제공하는 이 현대적인 부티크 호텔은 인덕원 지하철 역 (4 호선)에서 불과 350m 거리에 있는 편리한 지역에 위치해 있습니다. 호텔 레스토랑은 07:00~10:00에 조식 뷔페를 제공합니다.
-
-어반 부티크 호텔은 안양 시청에서 차로 5분 거리에 있으며 서울 놀이 공원에서 차로 20 분 거리에 있습니다.인천 국제공항까지는 차로 1시간이 소요됩니다.
-
-에어컨과 난방 시스템을 갖춘 세련된 객실은 평면 TV, 냉장고, 욕조가 있는 실내 욕실을 갖추고 있습니다.
-
-비즈니스 센터를 이용하실 수 있으며, 리셉션에서 수하물 보관, 세탁, 다림질 관련 서비스에 대한 도움을 받으실 수 있습니다.무료 전용 주차장도 이용 가능합니다.
-
-한국 및 아시아 음식을 맛볼 수 있는 곳이 여러 곳 있습니다.  술집과 가라오케 바도 있으며 모두 호텔로부터 도보로 3 분 거리 안에 있습니다.
+														이용안내
+							* 당일 구매 당일 사용 가능
+							<br>
+							* 현장 무인발권기에서 구매정보 입력 후 입장권 발권
+							<br>
+							<br>
+							★ 해당 시설은 입장시설업체와 연동되어있는 티켓으로 영업일 외 구매시 즉시사용이 어려울 수 있습니다
+							<br>
+							★ ( 평일 09:00 ~ 18:00, 주말/공휴일 제외 )
+							<br>
+							<br>
+							취소/환불 규정
+							<br>
+							아래규정은 특별규정약관으로 실제 이용시설들과 수수료규정이 상이합니다.
+							<br>
+							<br>
+							-단품만 구매시 예약일 날짜로 영업일 기준 +5일내 에만 취소 환불처리 가능합니다. (이외 경우는 연장 및 취소, 환불처리 불가)
+							<br>
+							<br>
+							- 미사용티켓은 변경 및 취소환불처리가 불가합니다.
+							<br>
+							- 상품유효기간과는 무관하게 지정날짜에만 이용하셔야하며
+							<br>
+							지정날짜외 입장시에는 별도 문의부탁드립니다.
+							<br>
+							<br>
+							-본 레저/티켓 정보는 야놀자에서 제공합니다.
+							<br>
+							야놀자 고객센터정보
+							<br>
+							<br>
+							-문의전화 : 1644-1346 (야놀자 고객센터)
+							<br>
+							-상담시간 : 09:00~18:00 (연중무휴)
+							<br>
+							업체 정보
+							<br>
+							* 주소: 전북 전주시 완산구 향교길 104 1층
+							<br>
+							* 문의전화: 063-291-2583
+							<br>
+							* 주차정보: 주차불가
+							<br>
+							<br>
+							운영정보는 현장 상황에 따라 변동될 수 있습니다.
 							</p>
 							
 							<div class="row">
 								<div class="col-md-6" style="font-size:20px;">
 								<h3></h3>
-									<p><i class="icon-login-1"></i>체크인 : 11:00부터</p>
+									<p><i class="icon-login-1"></i>운영시간: 11:00시 ~ 18:00시 까지</p>
 									<br>
-									<P><i class="icon-logout-1"></i>체크아웃 : 12:30까지</P>
+<!-- 									<P><i class="icon-logout-1"></i>체크아웃 : 18:30까지</P> -->
 									<br>
-									<p><i class="icon-info-1"></i>취소/선결제</p><p>숙소 유형에 따라 취소 및 선결제 정책이 달라집니다. 옵션을 선택할 때는 반드시 예약조건을 확인해주시기 바랍니다.</p>
+<!-- 									<p><i class="icon-info-1"></i>취소/선결제</p><p>숙소 유형에 따라 취소 및 선결제 정책이 달라집니다. 옵션을 선택할 때는 반드시 예약조건을 확인해주시기 바랍니다.</p> -->
 									<br>
-									<p><i class="icon-user-5"></i>연령제한</p><p>만 19세 이상만 체크인 가능합니다</p>
+<!-- 									<p><i class="icon-user-5"></i>연령제한</p><p>만 19세 이상만 체크인 가능합니다</p> -->
 								</div>
 							</div>
 							<!-- End row  -->
