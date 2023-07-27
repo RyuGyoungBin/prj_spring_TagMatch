@@ -421,7 +421,7 @@
 
 	<script>
 		//Search bar
-		$(function() 
+		$(function() {
 			"use strict";
 			$("#searchDropdownBox").change(function() {
 				var Search_Str = $(this).val();
