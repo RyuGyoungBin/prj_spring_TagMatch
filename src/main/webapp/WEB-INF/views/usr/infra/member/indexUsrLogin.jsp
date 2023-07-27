@@ -55,22 +55,21 @@
         	<div class="row justify-content-center">
             	<div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
                 	<div id="login" style="margin:250px 0 269px;">
-                    		<div class="text-center"><img src="img/logo_sticky.png" alt="Image" width="160" height="34"></div>
+                    		<div class="text-center"></div>
                             <hr>
                             <form>
                                 <div class="form-group">
                                     <label>아이디</label>
-                                    <input type="text" class=" form-control "  id=id placeholder="아이디">
+                                    <input type="text" class="form-control"  id=id placeholder="아이디">
                                 </div>
                                 <div class="form-group">
                                     <label >비밀번호</label>
                                     <input type="password" class=" form-control" id=pass placeholder="비밀번호">
                                 </div>
-                                <p class="small">
-                                    <a href="#">비밀번호 찾기</a>
-                                </p>
+                                
                                 <button type=button class="btn_full" id=btn >로그인</button>
                                 <button type=button class="btn_full" >회원가입</button>
+                                <button type=button class="btn_full" >비밀번호 찾기</button>
                             </form>
                         </div>
                 </div>
