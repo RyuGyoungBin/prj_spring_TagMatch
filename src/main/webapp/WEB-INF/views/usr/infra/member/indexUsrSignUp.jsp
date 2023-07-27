@@ -13,11 +13,11 @@
     <title>CITY TOURS - City tours and travel site template by Ansonika</title>
 
     <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+    <link rel="shortcut icon" href="resources/assets/img/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" href="resources/assets/img/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="resources/assets/img/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="resources/assets/img/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="resources/assets/img/apple-touch-icon-144x144-precomposed.png">
   
     <!-- GOOGLE WEB FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -52,7 +52,7 @@
         	<div class="row justify-content-center">
             	<div class="col-xl-4 col-lg-5 col-md-6 col-sm-8">
                 	<div id="login" style="margin:60px 0 71px;">
-                    		<div class="text-center"><img src="img/logo_sticky.png" alt="Image" width="160" height="34"></div>
+                    		<div class="text-center"><img src="resources/assets/img/logo_sticky.png" alt="Image" width="160" height="34"></div>
                             <hr>
                             <form>
                                 <div class="form-group">

@@ -4785,7 +4785,8 @@ ul.plan-features {
 /* Promo_full */
 .promo_full {
 	height: auto;
-	background: url(../img/home_bg_2.jpg) no-repeat center center;
+	background : 
+	background-color: #000;
 	background-attachment: fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
