@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class SongController {
-
+	
 	@RequestMapping ("/hotel02")
 	public String hotel02() {
 		
