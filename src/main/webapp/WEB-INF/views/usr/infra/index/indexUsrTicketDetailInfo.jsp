@@ -29,7 +29,7 @@
 	</section>
 	<!-- End section -->
 
-	<main>
+	<main>      
 		<div id="position">
 			<div class="container">
 				<ul>
