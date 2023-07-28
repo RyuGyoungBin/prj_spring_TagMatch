@@ -403,8 +403,8 @@
 					<p>
 					 	"전 국민 누구나 즐기는 7일간의 자유 여행!" 	보다 더 자유롭고 편안해진 내일로를 경험해보세요.
 					</p>
-					<div class="background-video"><i class="icon-play-circled2-1">
-						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/_rYEidvIch4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+					<div class="background-video" style="height: 650px;"><i class="icon-play-circled2-1">
+						<iframe width="100%" height="100%" src="https://www.youtube.com/embed/_rYEidvIch4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 					</i></div>
 				</div>
 			</div>
