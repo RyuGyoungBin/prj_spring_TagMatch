@@ -150,7 +150,7 @@
 							<div class="row">
 								<div class="col-md-6" style="font-size:20px;">
 								<h3></h3>
-									<p><i class="icon-login-1"></i>운영시간: 09:00시 ~ 18:00시 까지</p>
+									<p><i class="icon-clock-6"></i>운영시간: 09:00시 ~ 18:00시 까지</p>
 									
 									<br>
 <!-- 									<P><i class="icon-logout-1"></i>체크아웃 : 18:30까지</P> -->
