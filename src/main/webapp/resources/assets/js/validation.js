@@ -149,7 +149,20 @@
 		if($.trim(obj.val()) == "" || $.trim(obj.val()) == null) {
 			obj.addClass("border-danger");
 			obj.siblings(".validation").remove();
-			obj.parent().append("<div class='p-2 text-danger validation'>주소를 입력해주세요</div>");
+			obj.parent().append("<div class='p-2 text-danger validation'>검색버튼을 클릭 해주세요</div>");
+			obj.focus();
+			return false;
+		} else {
+			obj.removeClass("border-danger");
+			obj.siblings(".validation").remove();
+		}
+	}
+	
+	checkDob = function(obj){
+		if($.trim(obj.val()) == "" || $.trim(obj.val()) == null) {
+			obj.addClass("border-danger");
+			obj.siblings(".validation").remove();
+			obj.parent().append("<div class='p-2 text-danger validation'>생년월일를 선택해주세요</div>");
 			obj.focus();
 			return false;
 		} else {
@@ -174,8 +187,8 @@
 	checkEmail = function(obj){
 		if(reqEmail.test($.trim(obj.val())) == false) {
 			obj.addClass("border-danger");
-			obj.parent().siblings(".validation").remove();
-			obj.parent().parent().append("<div class='p-2 text-danger validation'>이메일 형식으로 입력해주세요</div>");
+			obj.siblings(".validation").remove();
+			obj.parent().append("<div class='p-2 text-danger validation'>이메일 형식으로 입력해주세요</div>");
 			obj.focus();
 			return false;
 		} else {
