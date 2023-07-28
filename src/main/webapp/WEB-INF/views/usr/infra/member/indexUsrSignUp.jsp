@@ -57,37 +57,37 @@
                             <form>
                                 <div class="form-group">
                                     <label>이름</label>
-                                    <input type="text" class=" form-control "  id=id placeholder="이름">
+                                    <input type="text" class=" form-control "  id="name" name="name" placeholder="이름">
                                 </div>
                                 <div class="form-group">
                                     <label>아이디</label>
-                                    <input type="text" class=" form-control "  id=id placeholder="아이디">
+                                    <input type="text" class=" form-control "  id="id" name="id" placeholder="아이디">
                                 </div>
                                 <div class="form-group">
                                     <label>비밀번호</label>
-                                    <input type="text" class=" form-control "  id=id placeholder="비밀번호">
+                                    <input type="text" class=" form-control "  id="pwd" name="pwd" placeholder="비밀번호">
                                 </div>
                                 <div class="form-group">
                                     <label>비밀번호 확인</label>
-                                    <input type="text" class=" form-control "  id=id placeholder="비밀번호 확인">
+                                    <input type="text" class=" form-control "  id="pwdCheck" name="pwdCheck" placeholder="비밀번호 확인">
                                 </div>
                                 <div class="form-group">
                                     <label>이메일</label>
-                                    <input type="text" class=" form-control "  id=id placeholder="이메일">
+                                    <input type="text" class=" form-control "  id="email" name="email" placeholder="이메일">
                                 </div>
                                 <div class="form-group">
                                     <label>생년월일</label>
-                                    <input type="date" class=" form-control "  id=id placeholder="생년월일">
+                                    <input type="date" class=" form-control "  id="date" name="date" placeholder="생년월일">
                                 </div>
                                 <div class="form-group">
                                     <label>주소</label>
-                                    <input type="text" class=" form-control "  id=id placeholder="주소">
+                                    <input type="text" class=" form-control "  id="adderss" name="adderss" placeholder="주소">
                                 </div>
                                 <div class="form-group">
                                     <label>전화번호</label>
-                                    <input type="text" class=" form-control "  id=id placeholder="전화번호">
+                                    <input type="text" class=" form-control "  id="tel" name="tel" placeholder="전화번호">
                                 </div>
-                                <button type=button class="btn_full" >회원가입</button>
+                                <button type=button class="btn_full" id="btn">회원가입</button>
                             </form>
                         </div>
                 </div>
@@ -157,8 +157,34 @@
 		<!--form -->
 	</div>
 	
-		<script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
+	<%@include file="../include/validation.jsp"%>
+	<script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
 	<script src="/resources/assets/js/common_scripts_min.js"></script>
 	<script src="/resources/assets/js/functions.js"></script>
+	<script type="text/javascript">
+	var objname = $("#name");
+// 	var objreqEmailAccount = $("#email");
+	var objreqId = $("#id");
+	var objPw = $("#pwd");
+	var objreqPw = $("#pwdCheck");
+	var objcheckAddress = $("#adderss");   
+	var objreqPhone = $("#tel");
+	var objcheckEmail = $("#email");
+
+	validationinsert = function(){
+ 		if(check(objname) == false) return false;
+ 		if(checkId(objreqId) == false) return false;
+ 		if(checkPw(objPw) == false) return false;
+ 		if(pwCheck(objreqPw) == false) return false;
+ 		if(checkEmail(objcheckEmail) == false) return false;
+//  		if(checkEmailAccount(objreqEmailAccount) == false) return false;
+ 		if(checkAddress(objcheckAddress) == false) return false;
+ 		if(checkPhone(objreqPhone) == false) return false;
+	}	
+ 	$("#btn").on("click", function() {
+ 		if(validationinsert() == false) return false;
+		}); 
+ 
+	</script>
   </body>
 </html>
