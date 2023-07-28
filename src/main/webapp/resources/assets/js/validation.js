@@ -13,8 +13,8 @@
 	
 	var reqPhone = /^\d{3}-\d{3,4}-\d{4}$/;
 	
+	var reqEmail = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+$/; //이메일
 	
-
 	check = function(obj){
 		if(reqEng.test($.trim(obj.val())) == false) {
 			obj.addClass("border-danger");
@@ -118,6 +118,7 @@
 		}
 	}
 	
+	
 	checkDob = function(obj){
 		if(reqDob.test($.trim(obj.val())) == false) {
 			obj.addClass("border-danger");
@@ -148,7 +149,7 @@
 		if($.trim(obj.val()) == "" || $.trim(obj.val()) == null) {
 			obj.addClass("border-danger");
 			obj.siblings(".validation").remove();
-			obj.parent().append("<div class='p-2 text-danger validation'>우편번호찾기 버튼을 이용해주세요.</div>");
+			obj.parent().append("<div class='p-2 text-danger validation'>주소를 입력해주세요</div>");
 			obj.focus();
 			return false;
 		} else {
@@ -169,4 +170,18 @@
 			obj.siblings(".validation").remove();
 		}
 	}
+	
+	checkEmail = function(obj){
+		if(reqEmail.test($.trim(obj.val())) == false) {
+			obj.addClass("border-danger");
+			obj.parent().siblings(".validation").remove();
+			obj.parent().parent().append("<div class='p-2 text-danger validation'>이메일 형식으로 입력해주세요</div>");
+			obj.focus();
+			return false;
+		} else {
+			obj.removeClass("border-danger");
+			obj.parent().siblings(".validation").remove();
+		}
+	}
+	
 	
