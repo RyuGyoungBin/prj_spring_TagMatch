@@ -65,11 +65,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>비밀번호</label>
-                                    <input type="text" class=" form-control "  id="pwd" name="pwd" placeholder="비밀번호">
+                                    <input type="password" class=" form-control "  id="pwd" name="pwd" placeholder="비밀번호">
                                 </div>
                                 <div class="form-group">
                                     <label>비밀번호 확인</label>
-                                    <input type="text" class=" form-control "  id="pwdCheck" name="pwdCheck" placeholder="비밀번호 확인">
+                                    <input type="password" class=" form-control "  id="pwdCheck" name="pwdCheck" placeholder="비밀번호 확인">
                                 </div>
                                 <div class="form-group">
                                     <label>이메일</label>
@@ -79,10 +79,19 @@
                                     <label>생년월일</label>
                                     <input type="date" class=" form-control "  id="date" name="date" placeholder="생년월일">
                                 </div>
-                                <div class="form-group">
-                                    <label>주소</label>
-                                    <input type="text" class=" form-control "  id="adderss" name="adderss" placeholder="주소">
-                                </div>
+								<div class="form-group">
+									<label onclick="address1()"><i class="icon-search"></i> Zip code</label>
+									<input class="form-control" name="zipCode" id="registerZipCode" type="text" placeholder="우편번호" readonly>
+								</div>
+								<div class="form-group">
+									<label>Address</label>
+									<input class="form-control" name="address" id="registerAddress" type="text" placeholder="주소" readonly>
+								</div>
+								<div class="form-group">
+									<label>Address detail</label>
+									<input class="form-control" name="addressDetail" id="registerAddressDetail" type="text" placeholder="상세주소">
+								</div>
+								<input name="sido" id="sido" type="hidden">
                                 <div class="form-group">
                                     <label>전화번호</label>
                                     <input type="text" class=" form-control "  id="tel" name="tel" placeholder="전화번호">
@@ -154,6 +163,7 @@
 				</div>
 			</div>
 		</form>
+		
 		<!--form -->
 	</div>
 	
@@ -161,21 +171,24 @@
 	<script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
 	<script src="/resources/assets/js/common_scripts_min.js"></script>
 	<script src="/resources/assets/js/functions.js"></script>
+	<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 	<script type="text/javascript">
 	var objname = $("#name");
 // 	var objreqEmailAccount = $("#email");
 	var objreqId = $("#id");
 	var objPw = $("#pwd");
 	var objreqPw = $("#pwdCheck");
-	var objcheckAddress = $("#adderss");   
+	var objreqDate = $("#date");
+	var objcheckAddress = $("#registerZipCode");   
 	var objreqPhone = $("#tel");
 	var objcheckEmail = $("#email");
 
 	validationinsert = function(){
- 		if(check(objname) == false) return false;
+ 		if(checkKor(objname) == false) return false;
  		if(checkId(objreqId) == false) return false;
  		if(checkPw(objPw) == false) return false;
  		if(pwCheck(objreqPw) == false) return false;
+ 		if(checkDob(objreqDate) == false) return false;
  		if(checkEmail(objcheckEmail) == false) return false;
 //  		if(checkEmailAccount(objreqEmailAccount) == false) return false;
  		if(checkAddress(objcheckAddress) == false) return false;
@@ -183,8 +196,28 @@
 	}	
  	$("#btn").on("click", function() {
  		if(validationinsert() == false) return false;
-		}); 
- 
+		});
+//  	주소찾기
+ 	function address1() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+            	var addr = ""; // 주소 변수
+
+                //사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+                if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+                    addr = data.roadAddress;
+                } else { // 사용자가 지번 주소를 선택했을 경우(J)
+                    addr = data.jibunAddress;
+                }
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById("registerZipCode").value = data.zonecode;
+                document.getElementById("registerAddress").value = addr;
+                document.getElementById("sido").value = data.sido;
+                // 커서를 상세주소 필드로 이동한다.
+                document.getElementById("registerAddressDetail").focus();
+            }
+        }).open();
+    }
 	</script>
   </body>
 </html>
