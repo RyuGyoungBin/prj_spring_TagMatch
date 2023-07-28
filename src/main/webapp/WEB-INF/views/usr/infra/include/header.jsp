@@ -25,7 +25,7 @@
                     <div class="col-6"><i class="icon-phone"></i><strong>02-1993-0914</strong></div>
                     <div class="col-6">
                         <ul id="top_links">
-                            <li><a href="indexUsrLogin"  style="font-style: normal;" ><i class="icon-login-1">Log in</i></a></li>
+                            <li><a href="indexUsrLogin"  style="font-style: normal;" ><i class="icon-login-1"></i>Log in</a></li>
                             <li><a href="indexUsrSignUp" id="signUp"  style="font-style: normal;" ><i class="icon-user-add" > </i>Sign up</a></li>
                             <li><a href="#none" id="wishlist_link">Wishlist</a></li>
 <!--                             <li><a href="http://themeforest.net/item/citytours-city-tours-tour-tickets-and-guides/10715647?ref=ansonika">Purchase this template</a></li> -->

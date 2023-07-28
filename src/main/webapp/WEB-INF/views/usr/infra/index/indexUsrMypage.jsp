@@ -531,16 +531,18 @@
 
 						<hr>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-6" style="float:left">
 								<div class="form-group">
 									<label>주소</label>
 									<input class="form-control" name="first_name" id="first_name" type="text">
 								</div>
-								<div class="form-group" style="">
-									<label>상세주소</label>
-									<input class="form-control" name="first_name" id="first_name" type="text">
-								</div>
 							</div>
+								<div class="col-md-6" style="float:left">
+									<div class="form-group">
+										<label>상세주소</label>
+										<input class="form-control" name="first_name" id="first_name" type="text">
+									</div>
+								</div>
 						</div>
 						<!-- End row -->
 						<div class="row">
