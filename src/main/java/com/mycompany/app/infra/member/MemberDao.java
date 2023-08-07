@@ -16,7 +16,7 @@ public class MemberDao {
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession; // 변수명 선언
 	
-	private static String namespace = "com.mycompany.app.infra.modules.member.MemberMapper";
+	private static String namespace = "com.mycompany.app.infra.member.MemberMapper";
 	
 //	paging
 	public int selectOneCount(MemberVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); }

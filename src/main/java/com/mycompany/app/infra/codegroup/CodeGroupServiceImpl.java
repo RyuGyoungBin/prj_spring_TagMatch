@@ -25,24 +25,16 @@ import org.springframework.stereotype.Service;
 	public CodeGroup selectOne(CodeGroupVo vo) { return dao.selectOne(vo); }
 
 	@Override
-	public int update(CodeGroup dto) {
-		return dao.update(dto);	
-	}
+	public int update(CodeGroup dto) {return dao.update(dto);}
 	
 	@Override
-	public int delete(CodeGroup dto) {
-		return dao.delete(dto);	
-	}
+	public int delete(CodeGroup dto) {return dao.delete(dto);}
 	
 	@Override
-	public int insert(CodeGroup dto) {
-		return dao.insert(dto);	
-	}
+	public int insert(CodeGroup dto) {return dao.insert(dto);}
 	
 	@Override
-	public int uelete(CodeGroup dto) {
-		return dao.uelete(dto);	
-	}
+	public int uelete(CodeGroup dto) {return dao.uelete(dto);}
 
 
 	

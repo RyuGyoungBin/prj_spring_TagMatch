@@ -5,6 +5,7 @@ public class CodeGroupVo {
 	private Integer shOption;
 	private String shKeyword;
 	private String seq;
+	private String name; 
 	private Integer delNy;
 	
 	
@@ -29,6 +30,12 @@ public class CodeGroupVo {
 //	---------------------------- 
 	public int getThisPage() {
 		return thisPage;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public void setThisPage(int thisPage) {
 		this.thisPage = thisPage;
