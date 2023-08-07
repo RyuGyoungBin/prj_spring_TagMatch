@@ -63,146 +63,58 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
-			  <form autocomplete="off" action="codeXdmList" method="post" name="formList">
-			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
-			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
-					<div class="d-flex">
-						<div class="mb-3 col-2 text-start ms-3 me-3">
-							<input class="form-control form-control-sm p-2" id="start_date" type="text" placeholder="시작일">
-						</div>
-						<div class="mb-3 col-2 text-start ms-3 me-3">
-							<input class="form-control form-control-sm p-2" id="end_date" type="text" placeholder="종료일" min="">
-						</div>
-						<div class="mb-3 col-2 text-start ms-3 me-3">
-							<input class="form-control form-control-sm p-2" id="" type="text" placeholder="">
-						</div>
-					</div>
-					<div class="d-flex mb-3 align-items-center">
-						<div class="mb-3 col-2 text-start ms-3 me-3">
-
-						</div>
-						<div class="col-2 text-start ms-3 me-3">
-								<input class="form-control form-control-sm p-2" name="name" id="name" type="text" placeholder="name" value="<c:out value="${vo.name }"/>">
-						</div>
-						<div class="col-2 text-start ms-3 me-3">
-								<select class="form-control form-control-sm p-2" name="delNy" id="delNy">
-									<option value="">---delNy---</option>
-									<option value="0" <c:if test="${vo.delNy eq '0'}">selected</c:if>>Y</option>
-									<option value="1" <c:if test="${vo.delNy eq '1'}">selected</c:if>>N</option>
-								</select>
-						</div>
-						<div class="col-2 text-start ms-3 me-3">
-							<button type="submit" class="btn btn-warning btn-sm me-2" id="search"><i class="bi bi-search"></i></button>
-							<button type="reset" class="btn btn-danger btn-sm"><i class="bi bi-arrow-clockwise"></i></button>
-						</div>
-					</div>
-				</form>
-				
+			  <form name="form" method="post">
+			  	<div class="d-flex flex-wrap justify-content-around">
+	                <div class=" col-5 mb-3">
+	                  	<label for="seq" class=" col-form-label" >seq</label>
+                    	<input type="text" class="form-control bg-dark-subtle" readonly name="seq" id="seq" placeholder="자동생성" value="<c:out value="${list.seq }"></c:out>">
+	                </div>
+	                <div class=" col-5 mb-3">
+	                  	<label for="name" class=" col-form-label">name</label>
+                    	<input type="text" class="form-control" name="name" id="name" value="<c:out value="${list.name }"></c:out>">
+	                </div>
+	                <div class=" col-5 mb-3">
+	                  	<label for="delNy" class=" col-form-label">delNy</label>
+                    	<input type="text" class="form-control" name="delNy" id="delNy" value="<c:out value="${list.delNy }"></c:out>">
+	                </div>
+	                <div class=" col-5 mb-3">
+	                </div>
+	                
+				</div>
 				<c:choose>
-					<c:when test="${fn:length(list) eq 0}">
-						<tr>
-							<td class="text-center" colspan="9">There is no data!</td>
-						</tr>	
-					</c:when>
-					
-		                  	<c:otherwise>
-		              <!-- Table with stripped rows -->
-		              <table class="table table-striped">
-		                <thead>
-		                  <tr>
-		                  	<th scope="col">
-								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
-							</th>
-		                    <th>seq</th>
-		                    <th>name</th>
-		                    <th>nameKor</th>
-		                    <th>codeNum</th>
-		                    <th>codeGroup_seq</th>
-		                    <th>codeGroup_name</th>
-		                    <th>delNy</th>
-		                  </tr>
-		                </thead>
-		                <tbody>
-							<c:forEach items="${list}" var="list" varStatus="status">
-		                  		<tr>
-				                  	<th scope="col">
-										<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
-									</th>
-				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
-				                   <td><a href="/codeGroupXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
-				                   <td><c:out value="${list.nameKor}"></c:out></td>
-				                   <td><c:out value="${list.codeNum}"></c:out></td>
-				                   <td><c:out value="${list.codeGroup_seq}"></c:out></td>
-				                   <td><c:out value="${list.groupname}"></c:out></td>
-				                   <td><c:out value="${list.delNy}"></c:out></td>
-			                 	</tr>
-							</c:forEach>
-		                </tbody>
-		              </table>
-					</c:otherwise>
+				<c:when test="${empty param.seq }">
+					<div class="d-flex justify-content-between my-5 text-center">
+						<div class="col-2">
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/codeGroupXdmList'"><i class="bi bi-list"></i></button>
+						</div>
+						<div class="col-2">
+							<button id="btnInsert" type="button" class="btn btn-success">save</button>
+						</div>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="d-flex justify-content-between my-5 text-center">
+						<div class="col-2">
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/codeGroupXdmList'"><i class="bi bi-list"></i></button>
+							<button id="btnDelete" type="button" class="btn btn-danger">delete</button>
+							<button id="btnDelNy" type="button" class="btn btn-danger">uele</button>
+						</div>
+						<div class="col-2">
+							<button id="btnUpdate" type="button" class="btn btn-success">update</button>
+						</div>
+					</div>
+				</c:otherwise>
 				</c:choose>
+              </form>
               <!-- End Table with stripped rows -->
-              <div class="container-fluid px-0 mt-2">
-			    <div class="row">
-			        <div class="col">
-			            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
-			            <ul class="pagination justify-content-center mb-0">
-			                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
-			<c:if test="${vo.startPage gt vo.pageNumToShow}">
-			                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="bi bi-chevron-double-left"></i></a></li>
-			</c:if>
-			<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
-				<c:choose>
-					<c:when test="${i.index eq vo.thisPage}">
-			                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
-					</c:when>
-					<c:otherwise>             
-			                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
-					</c:otherwise>
-				</c:choose>
-			</c:forEach>                
-			<c:if test="${vo.endPage ne vo.totalPages}">                
-			                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="bi bi-chevron-double-right"></i></a></li>
-			</c:if>
-			                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
-			            </ul>
-			        </div>
-			    </div>
-			</div>
 
             </div>
-           
-				<div class="d-flex px-4 pb-5">
-					<div class="col">
-						<button type="button" class="btn btn-danger btn-sm" id="delNot">X</button>
-						<button class="btn btn-danger btn-sm" type="button" id="del"><i class="bi bi-trash"></i></button>
-					</div>
-					<div class="col text-end">
-						<button type="button" class="btn btn-success btn-sm" id="excel"><i class="bi bi-file-earmark-excel"></i></button>
-						<button type="button" class="btn btn-primary btn-sm" id="plus" onclick = "location.href = '/codeGroupXdmForm'">+</button>
-					</div>
-				</div>
           </div>
 		  
         </div>
       </div>
     </section>
-    <div class="modal fade" id="myModal">
-		<div class="modal-dialog modal-dialog-centered">
-	    	<div class="modal-content">
-	   			<div class="modal-header">
-	      			<h1 class="modal-title fs-5"></h1>
-	        		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-	      		</div>
-	      		<div class="modal-body">
-	      		</div>
-	      		<div class="modal-footer">
-		        	<button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button>
-		        	<button type="button" class="btn btn-secondary" id="modalOk">Ok</button>
-	      		</div>
-	    	</div>
-	 	</div>
-	</div>
+    
 
   </main><!-- End #main -->
 
@@ -236,6 +148,10 @@
 			minDate: $("#start_date").val()
 		});
 	});
+	
+	$("btnInsert").on("click", function(){
+		$("form[name=form]").attr("action", "/codeGroupXdmInsert").submit();
+	})
 	
  		</script>
 	</body>

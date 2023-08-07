@@ -38,20 +38,7 @@
 	    	member
 
 		WHERE 1=1
-			<if test="shKeyword != null and !shKeyword.equals('')">AND id LIKE CONCAT('%',#{shKeyword},'%')
-																   OR name LIKE CONCAT('%', #{shKeyword}, '%')
-																   OR password LIKE CONCAT('%', #{shKeyword}, '%')
-			           											   OR emailFull LIKE CONCAT('%', #{shKeyword}, '%')
-			           											   OR emailDomain LIKE CONCAT('%', #{shKeyword}, '%')
-			           											   OR emailAccount LIKE CONCAT('%', #{shKeyword}, '%')			           											   			           											   
-			           											   OR dob LIKE CONCAT('%', #{shKeyword}, '%')
-            													   OR phone LIKE CONCAT('%', #{shKeyword}, '%')	
-            													   OR zipCode LIKE CONCAT('%', #{shKeyword}, '%')	
-            													   OR address LIKE CONCAT('%', #{shKeyword}, '%')
-            													   OR addressDetail LIKE CONCAT('%', #{shKeyword}, '%')		
-            													   OR delNy LIKE CONCAT('%', #{shKeyword}, '%')			
-            													   OR type LIKE CONCAT('%', #{shKeyword}, '%')				   
-			</if>
+			<if test="name != null and !name.equals('')">AND id LIKE CONCAT('%',#{name},'%')</if>
     </sql>
     <select id="selectOneCount" resultType="Integer">
 		SELECT count(*)
