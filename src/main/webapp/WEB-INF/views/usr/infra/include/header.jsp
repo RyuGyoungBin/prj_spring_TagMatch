@@ -55,7 +55,7 @@
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="index_25.html">Train Route Map</a></li>
-                                    <li><a href="index_22.html">Accommodation</a></li>
+                                    <li><a href="/hotel02">Accommodation</a></li>
                                     <li><a href="index_23.html">Event / Festival</a></li>
                                     <li class="third-level"><a href="javascript:void(0);">ABCDEFG <strong class="badge badge-danger">New!</strong></a>
                                         <ul>

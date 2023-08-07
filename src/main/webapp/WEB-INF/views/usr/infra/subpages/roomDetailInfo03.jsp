@@ -75,43 +75,31 @@
 						</div>
 						<div class="col-lg-9">
 							<p>
-								Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi. Eu ponderum mediocrem has, vitae adolescens in pro. Mea liber ridens inermis ei, mei legendos vulputate an, labitur tibique te qui.
+								롯데월드타워와 롯데월드몰에서 8km 떨어진 토요코인 서울강남은 무료 Wi-Fi를 완비하고 있습니다. 세븐럭카지노 강남코엑스점는 5km 이내 거리에 있습니다.
+
+								호텔의 모든 객실은 금연실이며 각각 냉장고와 책상, 평면 케이블 TV를 갖추고 있습니다. 전용 욕실에는 욕조와 헤어드라이어, 무료 세면도구가 구비되어 있습니다.
+								
+								토요코인 서울강남에서 미국식 조식을 즐겨보세요.
+								
+								구내에 비즈니스 센터와 신문이 완비되어 있습니다. 한국어, 영어, 일본어를 구사하는 24시간 프런트 데스크 직원들이 투숙객의 문의에 친절하게 응대해드립니다.
+								
+								토요코인 서울강남에서 국립중앙박물관과 노량진수산시장, 신라면세점 본점은 10km 떨어져 있습니다. 봉은사는 5km 거리에 있습니다.
+								
+								토요코인 서울강남에서는 2018년 7월 18일부터 Booking.com 고객을 맞이하고 있습니다.
 							</p>
-							<h4>Hotel facilities</h4>
-							<p>
-								Lorem ipsum dolor sit amet, at omnes deseruisse pri. Quo aeterno legimus insolens ad. Sit cu detraxit constituam, an mel iudico constituto efficiendi.
-							</p>
+							
 							<div class="row">
-								<div class="col-md-6">
-									<ul class="list_ok">
-										<li>Lorem ipsum dolor sit amet</li>
-										<li>No scripta electram necessitatibus sit</li>
-										<li>Quidam percipitur instructior an eum</li>
-										<li>Ut est saepe munere ceteros</li>
-										<li>No scripta electram necessitatibus sit</li>
-										<li>Quidam percipitur instructior an eum</li>
-									</ul>
-								</div>
-								<div class="col-md-6">
-									<ul class="list_ok">
-										<li>Lorem ipsum dolor sit amet</li>
-										<li>No scripta electram necessitatibus sit</li>
-										<li>Quidam percipitur instructior an eum</li>
-										<li>No scripta electram necessitatibus sit</li>
-									</ul>
+								<div class="col-md-6" style="font-size:20px;">
+								<h3></h3>
+									<p><i class="icon-login-1"></i>체크인 : 15:00부터</p>
+									<br>
+									<P><i class="icon-logout-1"></i>체크아웃 : 11:00까지</P>
+									<br>
+									<p><i class="icon-info-1"></i>취소/선결제</p>
 								</div>
 							</div>
 							<!-- End row  -->
 						</div>
-						<!-- End col-md-9  -->
-					</div>
-					<!-- End row  -->
-
-					<hr>
-
-					<div class="row">
-						
-						
 						<!-- End col-md-9  -->
 					</div>
 					<!-- End row  -->

@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tables / Data - King-Petition</title>
+  <title>Tables / Data </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -42,9 +42,11 @@
 
 
   <main id="main" class="main">
+
  	 <c:forEach items="${listCodeGender }" var="list" varStatus="status">
 		<c:out value="${list.name }"></c:out>
 	</c:forEach>
+
     <div class="pagetitle">
       <h1>Data Tables</h1>
       <nav>

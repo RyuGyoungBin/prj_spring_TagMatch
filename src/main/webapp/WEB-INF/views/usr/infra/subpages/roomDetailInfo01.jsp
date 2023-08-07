@@ -91,9 +91,9 @@
 							<div class="row">
 								<div class="col-md-6" style="font-size:20px;">
 								<h3></h3>
-									<p><i class="icon-login-1"></i>체크인 : 11:00부터</p>
+									<p><i class="icon-login-1"></i>체크인 : 15:00부터</p>
 									<br>
-									<P><i class="icon-logout-1"></i>체크아웃 : 12:30까지</P>
+									<P><i class="icon-logout-1"></i>체크아웃 : 11:00까지</P>
 									<br>
 									<p><i class="icon-info-1"></i>취소/선결제</p>
 								</div>

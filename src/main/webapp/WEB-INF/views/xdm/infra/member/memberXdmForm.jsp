@@ -51,7 +51,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-CodeGroup</li>
+          <li class="breadcrumb-item active">Data-Member</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -78,7 +78,7 @@
 						</div>
 					</div>
 					<div class="d-flex mb-3 align-items-center">
-						<div class="mb-3 col-2 text-start ms-3 me-3">
+						<div class="col-2 text-start ms-3 me-3">
 
 						</div>
 						<div class="col-2 text-start ms-3 me-3">
@@ -129,7 +129,7 @@
 										<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 									</th>
 				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
-				                   <td><a href="/codeGroupXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
+				                   <td><a href="/memberXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
 				                   <td><c:out value="${list.nameKor}"></c:out></td>
 				                   <td><c:out value="${list.codeNum}"></c:out></td>
 				                   <td><c:out value="${list.codeGroup_seq}"></c:out></td>
@@ -179,7 +179,7 @@
 					</div>
 					<div class="col text-end">
 						<button type="button" class="btn btn-success btn-sm" id="excel"><i class="bi bi-file-earmark-excel"></i></button>
-						<button type="button" class="btn btn-primary btn-sm" id="plus" onclick = "location.href = '/codeGroupXdmForm'">+</button>
+						<button type="button" class="btn btn-primary btn-sm" id="plus" onclick = "location.href = '/memberXdmForm'">+</button>
 					</div>
 				</div>
           </div>
@@ -221,7 +221,7 @@
 //paging
 	goList = function(thisPage) {
 		$("input:hidden[name=thisPage]").val(thisPage);
-		$("form[name=formList]").attr("action", "codeGroupXdmList").submit();
+		$("form[name=formList]").attr("action", "codeXdmList").submit();
 	}
 // search
  	$("#start_date").datepicker({
