@@ -25,7 +25,7 @@
 
   <!-- Template Main JS File -->
   <script src="/resources/assets/xdm/js/mainAdmin.js"></script>
-  
+  <script src="/resources/assets/js/validation.js"></script>
   
 
 	

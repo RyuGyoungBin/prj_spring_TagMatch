@@ -140,9 +140,19 @@
               <i class="bi bi-circle"></i><span>CodeGroup Tables</span>
             </a>
           </li>
-                    <li>
+          <li>
             <a href="memberXdmList" >
               <i class="bi bi-circle"></i><span>Member Tables</span>
+            </a>
+          </li>
+          <li>
+            <a href="hotelXdmList" >
+              <i class="bi bi-circle"></i><span>Hotel Tables</span>
+            </a>
+          </li>
+          <li>
+            <a href="spotXdmList" >
+              <i class="bi bi-circle"></i><span>Spot Tables</span>
             </a>
           </li>
         </ul>

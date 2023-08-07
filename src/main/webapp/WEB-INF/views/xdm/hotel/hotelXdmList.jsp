@@ -12,7 +12,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Tables / Data </title>
+  <title>Tables / Data - King-Petition</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <%@include file = "../../include/includeCss.jsp"%>
+  <%@include file = "../include/includeCss.jsp"%>
   <!-- Template Main CSS File -->
 
 </head>
@@ -33,19 +33,18 @@
 <body>
 
   <!-- ======= Header ======= -->
-  <%@include file = "../../include/includeHeader.jsp"%>
+  <%@include file = "../include/includeHeader.jsp"%>
   <!-- End Header -->
 
  	<!-- ======= Sidebar ======= -->
-	<%@include file = "../../include/includeSidebar.jsp"%>
+	<%@include file = "../include/includeSidebar.jsp"%>
 	<!-- End Sidebar-->
 
 
   <main id="main" class="main">
-
- 	 <c:forEach items="${listCodeGender }" var="list" varStatus="status">
-		<c:out value="${list.name }"></c:out>
-	</c:forEach>
+<c:forEach items="${listCodeGender }" var="list" varStatus="status">
+	<c:out value="${list.name }"></c:out>
+</c:forEach>
 
     <div class="pagetitle">
       <h1>Data Tables</h1>
@@ -120,12 +119,22 @@
 								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 							</th>
 		                    <th>seq</th>
+		                    <th>hotelType</th>
 		                    <th>name</th>
-		                    <th>nameKor</th>
-		                    <th>codeNum</th>
-		                    <th>codeGroup_seq</th>
-		                    <th>codeGroup_name</th>
-		                    <th>delNy</th>
+		                    <th>zipCode</th>
+		                    <th>address</th>
+		                    <th>addressDetail</th>
+		                    <th>sido</th>
+		                    <th>tel</th>
+		                    <th>checkIn</th>
+		                    <th>checkOut</th>
+		                    <th>detailText</th>
+		                    <th>info</th>
+		                    <th>date</th>
+		                    <th>roomType</th>
+		                    <th>roomName</th>
+		                    <th>price</th>
+		                    <th>roomNum</th>
 		                  </tr>
 		                </thead>
 		                <tbody>
@@ -135,12 +144,22 @@
 										<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 									</th>
 				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
+				                    <td scope="row"><c:out value="${list.hotelType }"></c:out></td>
 				                   <td><a href="/codeXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
-				                   <td><c:out value="${list.nameKor}"></c:out></td>
-				                   <td><c:out value="${list.codeNum}"></c:out></td>
-				                   <td><c:out value="${list.codeGroup_seq}"></c:out></td>
-				                   <td><c:out value="${list.groupname}"></c:out></td>
-				                   <td><c:out value="${list.delNy}"></c:out></td>
+				                   <td><c:out value="${list.zipCode}"></c:out></td>
+				                   <td><c:out value="${list.address}"></c:out></td>
+				                   <td><c:out value="${list.addressDetail}"></c:out></td>
+				                   <td><c:out value="${list.sido}"></c:out></td>
+				                   <td><c:out value="${list.tel}"></c:out></td>
+				                   <td><c:out value="${list.checkInTime}"></c:out></td>
+				                   <td><c:out value="${list.checkOutTime}"></c:out></td>
+				                   <td><c:out value="${list.detailText}"></c:out></td>
+				                   <td><c:out value="${list.info}"></c:out></td>
+				                   <td><c:out value="${list.date}"></c:out></td>
+				                   <td><c:out value="${list.roomType}"></c:out></td>
+				                   <td><c:out value="${list.roomName}"></c:out></td>
+				                   <td><c:out value="${list.price}"></c:out></td>
+				                   <td><c:out value="${list.roomNum}"></c:out></td>
 			                 	</tr>
 							</c:forEach>
 		                </tbody>
@@ -213,13 +232,13 @@
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-	 <%@include file = "../../include/includeFooter.jsp"%>
+	 <%@include file = "../include/includeFooter.jsp"%>
   <!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-<%@include file = "../../include/includeJs.jsp"%>
+<%@include file = "../include/includeJs.jsp"%>
   <!-- Template Main JS File -->
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
