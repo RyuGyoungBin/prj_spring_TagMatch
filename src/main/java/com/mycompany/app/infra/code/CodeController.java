@@ -38,4 +38,14 @@ public class CodeController {
 //		model.addAttribute("vo", vo);
 		return "xdm/infra/code/codeXdmList";
 	}
+	
+	@RequestMapping("/codeXdmForm")
+	public String codeXdmForm(CodeVo vo, CodeGroupVo codeGroupVo, Model model) {
+		Code list = codeService.selectOne(vo);
+		List<CodeGroup> group = codeGroupService.selectList(codeGroupVo);
+		model.addAttribute("list", list);
+		model.addAttribute("group", group);
+		return "xdm/infra/code/codeXdmForm";
+	}
 }
+
