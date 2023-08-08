@@ -68,7 +68,7 @@
                                 </div>
                                 
                                 <button type=button class="btn_full" id=btn >로그인</button>
-                                <button type=button class="btn_full" >회원가입</button>
+                                <a href="indexUsrSignUp"><button type=button class="btn_full" >회원가입</button></a>
                                 <button type=button class="btn_full" >비밀번호 찾기</button>
                             </form>
                         </div>

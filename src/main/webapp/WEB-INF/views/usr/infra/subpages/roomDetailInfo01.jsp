@@ -14,9 +14,9 @@
 	<main>
 		<div id="position">
 			<div class="container">
+			<div id="topBlank"> </div>
 				<ul>
-					<li><a href="#">Homdsadase</a>
-					</li>
+
 					<li><a href="#">Category</a>
 					</li>
 					<li>Page active</li>

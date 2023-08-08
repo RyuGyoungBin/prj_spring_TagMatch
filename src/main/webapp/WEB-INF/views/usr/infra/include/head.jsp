@@ -24,6 +24,9 @@
     <link href="/resources/assets/css/style.css" rel="stylesheet">
 	<link href="/resources/assets/css/vendors.css" rel="stylesheet">
 	
+	<!-- SPECIFIC CSS -->
+	<link href="/resources/assets/css/admin.css" rel="stylesheet">
+	
 	<!-- CUSTOM CSS -->
 	<link href="/resources/assets/css/custom.css" rel="stylesheet">
 	<style>
