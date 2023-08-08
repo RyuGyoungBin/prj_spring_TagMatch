@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mycompany.app.spot.SpotMapper">		
+
+
+								<!-- select 결과를 받을 객체 -->
+    <resultMap id="resultMapObj" type="com.mycompany.app.spot.Spot"></resultMap>
+    
+    <sql id ="selectCommon">
+   		FROM    
+	    	spot a
+	    	LEFT JOIN spotInfo b on b.spot_seq = a.seq AND b.defaultNy = 1
+	    	LEFT JOIN spotCloseDay c on c.spot_seq = a.seq
+
+		WHERE 1=1 
+
+    </sql>
+        <sql id="selectSpot">
+    	a.seq,
+    	a.type,
+    	a.name,
+    	a.zipCode,
+    	a.address,
+    	a.addressDetail,
+    	a.sido,
+    	a.tel,
+    	a.openTime,
+    	a.closedTime,
+		a.adultPrice,
+		a.childPrice,
+		a.detailText,
+		b.info,
+		c.date
+		
+	</sql>
+    
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT
+			<include refid="selectSpot" />
+	    	<include refid="selectCommon" />
+	</select>
+    
+    
+    <insert id="insertSpot">
+	    insert into `spot` (
+	    	seq,
+	    	type,
+	    	name,
+	    	zipCode,
+	    	address,
+	    	addressDetail,
+	    	sido,
+	    	tel,
+	    	openTime,
+	    	closedTime,
+			adultPrice,
+			childPrice,
+			detailText
+		) values (
+			#{seq}
+			,#{type}
+			,#{name}
+			,#{zipCode}
+			,#{address}
+			,#{addressDetail}
+			,#{sido}
+			,#{tel}
+			,#{openTime}
+			,#{closedTime}
+			,#{adultPrice}
+			,#{childPrice}
+			,#{detailText}
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		 </selectKey>
+    </insert>
+    
+    <insert id="insertSpotInfo">
+   	    insert into `spotInfo` (
+			spot_seq
+			,info
+		) values (
+			#{seq}
+			,#{info}
+		)
+		
+	</insert>
+	
+    <insert id="insertSpotCloseDay">
+   	    insert into `spotCloseDay` (
+   	    	spot_seq
+			,date
+		) values (
+			#{seq}
+			,#{date}
+		)
+	</insert>
+    
+    <update id="update">
+        UPDATE 
+        	spot
+        SET 
+        	type = #{type},
+        	name = #{name},
+	    	zipCode= #{zipCode},
+	    	address= #{address},
+	    	addressDetail= #{addressDetail},
+	    	sido= #{sido},
+	    	tel= #{tel},
+	    	openTime= #{openTime},
+	    	closedTime= #{closedTime},
+			adultPrice= #{adultPrice},
+			childPrice= #{childPrice},
+			detailText= #{detailText}
+
+        WHERE 
+        	seq = #{seq}
+	</update>
+    
+    <delete id="delete">
+        	DELETE FROM 
+    		spot
+		WHERE
+			seq = #{seq}
+	</delete>
+    
+    <update id="updateDel">
+   		UPDATE 
+    		spot
+		SET 
+			delNy = 1
+		WHERE 
+			seq = #{seq}
+    </update>
+    
+    
+    </mapper>
