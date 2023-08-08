@@ -15,4 +15,21 @@ public class HotelDao {
 	private static String namespace = "com.mycompany.app.hotel.HotelMapper";
 	
 	public List<Hotel> selectList(HotelVo vo){return sqlSession.selectList(namespace +".selectList", vo);}
+	public int selectOneCount(HotelVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
+	public Hotel selectOne(HotelVo vo) {return sqlSession.selectOne(namespace +".selectOne", vo);}
+	
+	public int insert(Hotel dto) { return sqlSession.insert(namespace + ".insertHotel", dto); }
+	public int insertHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".insertHotelInfo", dto); }
+	public int insertHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".insertHotelRoom", dto); }
+	public int insertHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".insertHotelClose", dto); }
+	
+	public int update(Hotel dto) { return sqlSession.insert(namespace + ".updateHotel", dto); }
+	public int updateHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".updateHotelInfo", dto); }
+	public int updateHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".updateHotelRoom", dto); }
+	public int updateHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".updateHotelClose", dto); }
+	
+	public int delete(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotel", dto); }
+	public int deleteHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotelInfo", dto); }
+	public int deleteHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotelRoom", dto); }
+	public int deleteHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotelClose", dto); }
 }

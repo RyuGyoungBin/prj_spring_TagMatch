@@ -39,4 +39,162 @@
 			<include refid="selectHotel" />
 	    	<include refid="selectCommon" />
 	</select>
+	<select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectCommon" />
+	</select>
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			<include refid="selectHotel" />
+	    	<include refid="selectCommon" />
+	    	AND a.seq = #{seq}
+	</select>
+	
+	<insert id="insertHotel">
+    	insert into `hotel` (
+    		hotelType,
+			name,
+			zipCode,
+			address,
+			addressDetail,
+			sido,
+			tel,
+			checkInTime,
+			checkOutTime,
+			detailText
+    	) values(
+    		#{hotelType},
+    		#{name},
+    		#{zipCode},
+    		#{address},
+    		#{addressDetail},
+    		#{sido},
+    		#{tel},
+    		#{checkInTime},
+    		#{checkOutTime},
+    		#{detailText}
+    	)
+    	<selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		 </selectKey>
+    </insert>
+    <insert id="insertHotelInfo">
+    	insert into `hotelInfo`(
+    		defaultNy,
+    		info,
+    		delNy,
+    		hotel_seq
+    	) values (
+    		#{defaultNy},
+    		#{info},
+    		0,
+    		#{seq}
+    	)
+    </insert>
+    <insert id="insertHotelRoom">
+    	insert into `hotelRoom`(
+    		roomType,
+    		roomName,
+    		price,
+    		defaultNy,
+    		delNy,
+    		roomNum,
+    		hotel_seq
+    	) values (
+    		#{roomType},
+    		#{roomName},
+    		#{price},
+    		#{roomDefaultNy},
+    		0,
+    		#{roomNum},
+    		#{seq}
+    	)
+    </insert>
+    <insert id="insertHotelClose">
+    	insert into `hotelCloseDay`(
+    		date,
+    		hotel_seq
+    	) values (
+    		#{date},
+    		#{seq}
+    	)
+    </insert>
+    
+    <update id="updateHotel">
+    	UPDATE
+    		hotel
+    	SET
+    		hotelType = #{hotelType},
+			name = #{name},
+			zipCode = #{zipCode},
+			address = #{address},
+			addressDetail = #{addressDetail},
+			sido = #{sido},
+			tel = #{tel},
+			checkInTime = #{checkInTime},
+			checkOutTime = #{checkOutTime},
+			detailText = #{detailText}
+    	WHERE
+    		seq = #{seq}
+    </update>
+	<update id="updateHotelInfo">
+    	UPDATE
+    		hotelInfo
+    	SET
+    		defaultNy = #{defaultNy},
+    		info= #{info},
+    		delNy= #{delNy}
+    	WHERE
+    		hotel_seq = #{seq}
+    </update>
+    <update id="updateHotelRoom">
+    	UPDATE
+    		hotelRoom
+    	SET
+    		roomType = #{roomType},
+    		roomName = #{roomName},
+    		price = #{price},
+    		defaultNy = #{roomDefaultNy},
+    		delNy = #{roomDelNy},
+    		roomNum = #{roomNum}
+    	WHERE
+    		hotel_seq = #{seq}
+    </update>
+    <update id="updateHotelClose">
+    	UPDATE
+    		hotelCloseDay
+    	SET
+    		date = #{date}
+    	WHERE
+    		hotel_seq = #{seq}
+    </update>
+    <delete id="deleteHotel">
+    	DELETE FROM 
+    		hotel
+		WHERE
+			seq = #{seq}
+    
+    </delete>
+    <delete id="deleteHotelInfo">
+    	DELETE FROM 
+    		hotelInfo
+		WHERE
+			hotel_seq = #{seq}
+    
+    </delete>
+    <delete id="deleteHotelRoom">
+    	DELETE FROM 
+    		hotelRoom
+		WHERE
+			hotel_seq = #{seq}
+    
+    </delete>
+    <delete id="deleteHotelClose">
+    	DELETE FROM 
+    		hotelCloseDay
+		WHERE
+			hotel_seq = #{seq}
+    
+    </delete>
+	
 </mapper>

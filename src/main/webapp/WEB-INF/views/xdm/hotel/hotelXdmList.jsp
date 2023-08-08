@@ -79,14 +79,6 @@
 					</div>
 					<div class="d-flex mb-3 align-items-center">
 						<div class="col-2 text-start ms-3 me-3">
-							<select class="form-control form-control-sm p-2" name="codeGroup_seq" id="codeGroup_seq">
-								<option value="">---codeGroup---</option>
-                    		<c:forEach items="${groupList}" var="group" varStatus="status">
-                    			<option  value="<c:out value='${group.seq }'></c:out>" <c:if test="${vo.codeGroup_seq eq group.seq}">selected</c:if>><c:out value="${group.name}"></c:out></option>
-                    		</c:forEach>
-							</select>
-						</div>
-						<div class="col-2 text-start ms-3 me-3">
 								<input class="form-control form-control-sm p-2" name="name" id="name" type="text" placeholder="name" value="<c:out value="${vo.name }"/>">
 						</div>
 						<div class="col-2 text-start ms-3 me-3">
@@ -111,8 +103,9 @@
 					</c:when>
 					
 		                  	<c:otherwise>
+                  	<div class="overflow-hidden overflow-x-auto">
 		              <!-- Table with stripped rows -->
-		              <table class="table table-striped">
+		              <table class="table table-striped text-nowrap">
 		                <thead>
 		                  <tr>
 		                  	<th scope="col">
@@ -145,7 +138,7 @@
 									</th>
 				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
 				                    <td scope="row"><c:out value="${list.hotelType }"></c:out></td>
-				                   <td><a href="/codeXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
+				                   <td><a href="/hotelXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
 				                   <td><c:out value="${list.zipCode}"></c:out></td>
 				                   <td><c:out value="${list.address}"></c:out></td>
 				                   <td><c:out value="${list.addressDetail}"></c:out></td>
@@ -164,6 +157,7 @@
 							</c:forEach>
 		                </tbody>
 		              </table>
+		              </div>
 					</c:otherwise>
 				</c:choose>
               <!-- End Table with stripped rows -->
@@ -204,7 +198,7 @@
 					</div>
 					<div class="col text-end">
 						<button type="button" class="btn btn-success btn-sm" id="excel"><i class="bi bi-file-earmark-excel"></i></button>
-						<button type="button" class="btn btn-primary btn-sm" id="plus" onclick = "location.href = '/codeXdmForm'">+</button>
+						<button type="button" class="btn btn-primary btn-sm" id="plus" onclick = "location.href = '/hotelXdmForm'">+</button>
 					</div>
 				</div>
           </div>

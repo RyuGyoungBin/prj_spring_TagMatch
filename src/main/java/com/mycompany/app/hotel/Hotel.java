@@ -7,6 +7,7 @@ public class Hotel {
 //	hotel
 	private String seq;
 	private Integer hotelType;
+	private String name;
 	private String zipCode;
 	private String address;
 	private String addressDetail;
@@ -54,6 +55,12 @@ public class Hotel {
 	private String[] uploadImgRoomDeletePathFile;
 	public String getSeq() {
 		return seq;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public void setSeq(String seq) {
 		this.seq = seq;
