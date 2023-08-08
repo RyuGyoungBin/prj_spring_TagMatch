@@ -67,7 +67,8 @@
         UPDATE 
         	codeGroup
         SET 
-        	name = #{name}
+        	name = #{name},
+        	delNy = #{delNy}
         WHERE 
         	seq = #{seq}
     </update>

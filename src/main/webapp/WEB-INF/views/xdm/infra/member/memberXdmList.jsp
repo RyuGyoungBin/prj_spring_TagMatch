@@ -42,10 +42,6 @@
 
 
   <main id="main" class="main">
-	<c:forEach items="${listCodeGender }" var="list" varStatus="status">
-		<c:out value="${list.name }"></c:out>
-	</c:forEach>
-
     <div class="pagetitle">
       <h1>Data Tables</h1>
       <nav>
@@ -115,11 +111,17 @@
 							</th>
 		                    <th>seq</th>
 		                    <th>name</th>
-		                    <th>nameKor</th>
-		                    <th>codeNum</th>
-		                    <th>codeGroup_seq</th>
-		                    <th>codeGroup_name</th>
+		                    <th>id</th>
+		                    <th>password</th>
+		                    <th>emailFull</th>
+		                    <th>dob</th>
+		                    <th>phone</th>
+		                    <th>zipCode</th>
+		                    <th>address</th>
+		                    <th>addressDetail</th>
+		                    <th>sido</th>
 		                    <th>delNy</th>
+		                    <th>type</th>
 		                  </tr>
 		                </thead>
 		                <tbody>
@@ -130,11 +132,17 @@
 								   </th>
 				                   <td scope="row"><c:out value="${list.seq }"></c:out></td>
 				                   <td><a href="/memberXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
-				                   <td><c:out value="${list.nameKor}"></c:out></td>
-				                   <td><c:out value="${list.codeNum}"></c:out></td>
-				                   <td><c:out value="${list.codeGroup_seq}"></c:out></td>
-				                   <td><c:out value="${list.groupname}"></c:out></td>
+				                   <td><c:out value="${list.id}"></c:out></td>
+				                   <td><c:out value="${list.password}"></c:out></td>
+				                   <td><c:out value="${list.emailFull}"></c:out></td>
+				                   <td><c:out value="${list.dob}"></c:out></td>
+				                   <td><c:out value="${list.phone}"></c:out></td>
+				                   <td><c:out value="${list.zipCode}"></c:out></td>
+				                   <td><c:out value="${list.address}"></c:out></td>
+				                   <td><c:out value="${list.addressDetail}"></c:out></td>
+				                   <td><c:out value="${list.sido}"></c:out></td>
 				                   <td><c:out value="${list.delNy}"></c:out></td>
+				                   <td><c:out value="${list.memberType}"></c:out></td>
 			                 	</tr>
 							</c:forEach>
 		                </tbody>

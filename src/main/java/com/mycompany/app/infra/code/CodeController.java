@@ -47,5 +47,29 @@ public class CodeController {
 		model.addAttribute("group", group);
 		return "xdm/infra/code/codeXdmForm";
 	}
+	
+	@RequestMapping("/codeXdmInsert")
+	public String codeGroupXdmInsert(Code dto) {
+		codeService.insert(dto);
+		return "redirect:/codeXdmList";
+	}
+	
+	@RequestMapping("/codeXdmUpdate")
+	public String codeGroupXdmUpdate(Code dto) {
+		codeService.update(dto);
+		return "redirect:/codeXdmList";
+	}
+	
+	@RequestMapping("/codeXdmDelete")
+	public String codeGroupXdmDelete(Code dto) {
+		codeService.delete(dto);
+		return "redirect:/codeXdmList";
+	}
+	
+	@RequestMapping("/codeXdmDelNy")
+	public String codeGroupXdmDelNy(Code dto) {
+		codeService.updateDel(dto);
+		return "redirect:/codeXdmList";
+	}
 }
 

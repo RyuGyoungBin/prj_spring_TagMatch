@@ -42,10 +42,6 @@
 
 
   <main id="main" class="main">
-	<c:forEach items="${listCodeGender }" var="list" varStatus="status">
-		<c:out value="${list.name }"></c:out>
-	</c:forEach>
-
     <div class="pagetitle">
       <h1>Data Tables</h1>
       <nav>

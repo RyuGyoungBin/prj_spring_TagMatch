@@ -32,4 +32,22 @@ public class CodeGroupController {
 		return "redirect:/codeGroupXdmList";
 	}
 	
+	@RequestMapping("/codeGroupXdmUpdate")
+	public String codeGroupXdmUpdate(CodeGroup dto) {
+		service.update(dto);
+		return "redirect:/codeGroupXdmList";
+	}
+	
+	@RequestMapping("/codeGroupXdmDelete")
+	public String codeGroupXdmDelete(CodeGroup dto) {
+		service.delete(dto);
+		return "redirect:/codeGroupXdmList";
+	}
+	
+	@RequestMapping("/codeGroupXdmDelNy")
+	public String codeGroupXdmDelNy(CodeGroup dto) {
+		service.uelete(dto);
+		return "redirect:/codeGroupXdmList";
+	}
+	
 }

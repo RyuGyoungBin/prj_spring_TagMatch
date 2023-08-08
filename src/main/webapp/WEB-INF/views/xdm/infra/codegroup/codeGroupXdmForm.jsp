@@ -130,27 +130,19 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script type="text/javascript">
-//paging
-	goList = function(thisPage) {
-		$("input:hidden[name=thisPage]").val(thisPage);
-		$("form[name=formList]").attr("action", "codeGroupXdmList").submit();
-	}
-// search
- 	$("#start_date").datepicker({
- 	});
- 	$("#end_date").datepicker({
- 		maxDate : "+1m +1w",
- 		minDate : "-1y"
- 	});
-	$("#start_date").on("change", function(){
-		console.log($("#start_date").val())
-		$("#end_date").datepicker({
-			minDate: $("#start_date").val()
-		});
-	});
+
 	
-	$("btnInsert").on("click", function(){
+	$("#btnInsert").on("click", function(){
 		$("form[name=form]").attr("action", "/codeGroupXdmInsert").submit();
+	})
+	$("#btnUpdate").on("click", function(){
+		$("form[name=form]").attr("action", "/codeGroupXdmUpdate").submit();
+	})
+	$("#btnDelete").on("click", function(){
+		$("form[name=form]").attr("action", "/codeGroupXdmDelete").submit();
+	})
+	$("#btnDelNy").on("click", function(){
+		$("form[name=form]").attr("action", "/codeGroupXdmDelNy").submit();
 	})
 	
  		</script>
