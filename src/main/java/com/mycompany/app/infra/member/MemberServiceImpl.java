@@ -67,8 +67,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 	@Override
 	public int insert(Member dto) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.insert(dto);
 	}
 
 	@Override

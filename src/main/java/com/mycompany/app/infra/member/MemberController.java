@@ -98,7 +98,7 @@ public class MemberController {
 		// service 호출
 		service.insert(dto);
 		
-		return "redirect: /indexUsrView";
+		return "redirect: /memberXdmList";
 	}
 	
 	@RequestMapping("/memberUel")

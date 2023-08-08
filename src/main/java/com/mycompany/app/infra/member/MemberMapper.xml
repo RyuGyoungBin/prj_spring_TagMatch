@@ -28,7 +28,8 @@
 		,address
 		,addressDetail
 		,delNy
-		,type
+		,type as memberType
+		,sido
 
     </sql>
     
@@ -140,7 +141,7 @@
 	    	, address =	#{address}
 	    	, addressDetail =	#{addressDetail}	    	
 	    	, delNy = #{delNy}
-	    	, type = #{type}
+	    	, type = #{memberType}
         WHERE
         	seq = #{seq}
     </update>
@@ -168,12 +169,13 @@
 			,zipCode
 			,address
 			,addressDetail
+			,sido
 			,delNy
 			,type
 	    	
         ) VALUES (
-        	  #{id}
-   			, #{name}
+        	  #{name}
+   			, #{id}
 	    	, #{password}        	  
 	    	, #{emailFull}
 	    	, #{emailDomain}
@@ -182,9 +184,10 @@
 	    	, #{phone}
 	    	, #{zipCode}	    	
 	    	, #{address}
-	    	, #{addressDetail}	    	       	    	        	        	        	
+	    	, #{addressDetail}	
+	    	, #{sido}    	       	    	        	        	        	
         	, 0
-        	, 0
+        	, #{memberType}
 
         )
        		<selectKey resultType="String" keyProperty="seq" order="AFTER">

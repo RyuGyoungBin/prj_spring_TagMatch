@@ -17,7 +17,8 @@ public class MemberVo {
 	private String address;
 	private String addressDetail;	
 	private String delNy;
-
+	private String memberType;
+	private String sido;
 
 
 
@@ -42,6 +43,18 @@ public class MemberVo {
 	
 	
 	
+	public String getSido() {
+		return sido;
+	}
+	public void setSido(String sido) {
+		this.sido = sido;
+	}
+	public String getMemberType() {
+		return memberType;
+	}
+	public void setMemberType(String memberType) {
+		this.memberType = memberType;
+	}
 	public int getThisPage() {
 		return thisPage;
 	}

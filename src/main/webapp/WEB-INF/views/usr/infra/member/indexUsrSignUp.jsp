@@ -54,7 +54,7 @@
                 	<div id="login" style="margin:60px 0 71px;">
                     		<div class="text-center"><img src="resources/assets/img/logo_sticky.png" alt="Image" width="160" height="34"></div>
                             <hr>
-                            <form>
+                            <form name="form" method="post">
                                 <div class="form-group">
                                     <label>이름</label>
                                     <input type="text" class=" form-control "  id="name" name="name" placeholder="이름">
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label>비밀번호</label>
-                                    <input type="password" class=" form-control "  id="pwd" name="pwd" placeholder="비밀번호">
+                                    <input type="password" class=" form-control "  id="pwd" name="password" placeholder="비밀번호">
                                 </div>
                                 <div class="form-group">
                                     <label>비밀번호 확인</label>
@@ -73,11 +73,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>이메일</label>
-                                    <input type="text" class=" form-control "  id="email" name="email" placeholder="이메일">
+                                    <input type="text" class=" form-control "  id="email" name="emailFull" placeholder="이메일">
                                 </div>
                                 <div class="form-group">
                                     <label>생년월일</label>
-                                    <input type="date" class=" form-control "  id="date" name="date" placeholder="생년월일">
+                                    <input type="date" class=" form-control "  id="date" name="dob" placeholder="생년월일">
                                 </div>
 								<div class="form-group">
 									<label onclick="address1()"><i class="icon-search"></i> Zip code</label>
@@ -94,8 +94,9 @@
 								<input name="sido" id="sido" type="hidden">
                                 <div class="form-group">
                                     <label>전화번호</label>
-                                    <input type="text" class=" form-control "  id="tel" name="tel" placeholder="전화번호">
+                                    <input type="text" class=" form-control "  id="tel" name="phone" placeholder="전화번호">
                                 </div>
+                                <input type="hidden" value="0" name="memberType">
                                 <button type=button class="btn_full" id="btn">회원가입</button>
                             </form>
                         </div>
@@ -196,6 +197,7 @@
 	}	
  	$("#btn").on("click", function() {
  		if(validationinsert() == false) return false;
+ 		$("form[name=form]").attr("action", "/memberAdd").submit();
 		});
 //  	주소찾기
  	function address1() {
