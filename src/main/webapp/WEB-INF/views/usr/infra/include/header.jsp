@@ -76,8 +76,8 @@
                             <li class="submenu">
                                 <a href="javascript:void(0);" class="show-submenu">Tours <i class="icon-down-open-mini"></i></a>
                                 <ul>
-                                    <li><a href="all_tours_list.html">All tours list</a></li>
-                                    <li><a href="all_tours_grid.html">All tours grid</a></li>
+                                    <li><a href="bookingUsrView">예약 페이지</a></li>
+                                    <li><a href="all_tours_grid.html"></a></li>
                                     <li><a href="all_tours_grid_masonry.html">All tours Sort Masonry</a></li>
                                     <li><a href="all_tours_map_listing.html">All tours map listing</a></li>
                                     <li><a href="single_tour.html">Single tour page</a></li>
