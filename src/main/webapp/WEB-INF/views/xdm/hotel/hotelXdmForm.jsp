@@ -153,7 +153,7 @@
 				<c:when test="${empty param.seq }">
 					<div class="d-flex justify-content-between my-5 text-center">
 						<div class="col-2">
-							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/codeXdmList'"><i class="bi bi-list"></i></button>
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/hotelXdmList'"><i class="bi bi-list"></i></button>
 						</div>
 						<div class="col-2">
 							<button id="btnInsert" type="button" class="btn btn-success">save</button>
@@ -163,7 +163,7 @@
 				<c:otherwise>
 					<div class="d-flex justify-content-between my-5 text-center">
 						<div class="col-2">
-							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/codeXdmList'"><i class="bi bi-list"></i></button>
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/hotelXdmList'"><i class="bi bi-list"></i></button>
 							<button id="btnDelete" type="button" class="btn btn-danger">delete</button>
 							<button id="btnDelNy" type="button" class="btn btn-danger">uele</button>
 						</div>
@@ -210,7 +210,7 @@
 		$("form[name=form]").attr("action", "/hotelXdmDelete").submit();
 	})
 	$("#btnDelNy").on("click", function(){
-// 		$("form[name=form]").attr("action", "/codeXdmDelNy").submit();
+		$("form[name=form]").attr("action", "/hotelXdmUelete").submit();
 	})
 	//  	주소찾기
  	function address1() {

@@ -47,4 +47,13 @@ public class HotelServiceImpl implements HotelService{
 		return 0;
 	}
 
+	@Override
+	public int uelete(Hotel dto) {
+		dao.uelete(dto);
+		dao.ueleteHotelInfo(dto);
+		dao.ueleteHotelRoom(dto);
+		dao.ueleteHotelClose(dto);
+		return 0;
+	}
+
 }

@@ -32,7 +32,8 @@
     	d.roomType,
     	d.roomName,
     	d.price,
-    	d.roomNum
+    	d.roomNum,
+    	a.delNy
 	</sql>
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
@@ -61,7 +62,8 @@
 			tel,
 			checkInTime,
 			checkOutTime,
-			detailText
+			detailText,
+			delNy
     	) values(
     		#{hotelType},
     		#{name},
@@ -72,7 +74,8 @@
     		#{tel},
     		#{checkInTime},
     		#{checkOutTime},
-    		#{detailText}
+    		#{detailText},
+    		0
     	)
     	<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
@@ -113,10 +116,12 @@
     <insert id="insertHotelClose">
     	insert into `hotelCloseDay`(
     		date,
-    		hotel_seq
+    		hotel_seq,
+    		delNy
     	) values (
     		#{date},
-    		#{seq}
+    		#{seq},
+    		0
     	)
     </insert>
     
@@ -133,7 +138,8 @@
 			tel = #{tel},
 			checkInTime = #{checkInTime},
 			checkOutTime = #{checkOutTime},
-			detailText = #{detailText}
+			detailText = #{detailText},
+			delNy = #{delNY}
     	WHERE
     		seq = #{seq}
     </update>
@@ -164,7 +170,8 @@
     	UPDATE
     		hotelCloseDay
     	SET
-    		date = #{date}
+    		date = #{date},
+    		delNy = #{delNY}
     	WHERE
     		hotel_seq = #{seq}
     </update>
@@ -194,7 +201,44 @@
     		hotelCloseDay
 		WHERE
 			hotel_seq = #{seq}
-    
     </delete>
+    <update id="ueleteHotel">
+	    UPDATE
+	    	hotel	
+	    SET
+	    	delNy = "1"
+	    WHERE 1=1
+	    AND 
+	    	seq = #{seq}
+    </update>
+    <update id="ueleteHotelInfo">
+	    UPDATE
+	    	hotelInfo
+	    SET
+	    	delNy = "1"
+	    WHERE 1=1
+	    AND 
+	    	hotel_seq = #{seq}
+    </update>
+    <update id="ueleteHotelRoom">
+	    UPDATE
+	    	hotelRoom
+	    SET
+	    	delNy = "1"
+	    WHERE 1=1
+	    AND 
+	    	hotel_seq = #{seq}
+    </update>
+    <update id="ueleteHotelClose">
+	    UPDATE
+	    	hotelCloseDay
+	    SET
+	    	delNy = "1"
+	    WHERE 1=1
+	    AND 
+	    	hotel_seq = #{seq}
+    </update>
+    
+    
 	
 </mapper>

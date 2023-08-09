@@ -32,4 +32,9 @@ public class HotelDao {
 	public int deleteHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotelInfo", dto); }
 	public int deleteHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotelRoom", dto); }
 	public int deleteHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotelClose", dto); }
+	
+	public int uelete(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotel", dto); }
+	public int ueleteHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotelInfo", dto); }
+	public int ueleteHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotelRoom", dto); }
+	public int ueleteHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotelClose", dto); }
 }

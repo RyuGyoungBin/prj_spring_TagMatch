@@ -13,4 +13,6 @@ public interface HotelService {
 	public int update(Hotel dto);
 	
 	public int delete(Hotel dto);
+	
+	public int uelete(Hotel dto);
 }

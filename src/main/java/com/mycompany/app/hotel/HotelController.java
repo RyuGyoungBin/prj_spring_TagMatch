@@ -55,4 +55,10 @@ public class HotelController {
 		return "redirect:/hotelXdmList";
 	}
 	
+	@RequestMapping("hotelXdmUelete")
+	public String hotelXdmUelete(Hotel dto) {
+		hotelService.uelete(dto);
+		return "redirect:/hotelXdmList";
+	}
+	
 }
