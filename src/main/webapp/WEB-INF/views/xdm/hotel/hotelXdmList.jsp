@@ -236,7 +236,7 @@
 //paging
 	goList = function(thisPage) {
 		$("input:hidden[name=thisPage]").val(thisPage);
-		$("form[name=formList]").attr("action", "codeXdmList").submit();
+		$("form[name=formList]").attr("action", "hotelXdmList").submit();
 	}
 // search
  	$("#start_date").datepicker({

@@ -13,6 +13,7 @@
 	    	LEFT JOIN hotelCloseDay c on c.hotel_seq = a.seq
 	    	LEFT JOIN hotelRoom d on d.hotel_seq = a.seq AND d.defaultNy = 1
 		WHERE 1=1 
+			<if test="delNy != null and !delNy.equals('')">AND a.delNy = #{delNy}</if>
 		
     </sql>
     <sql id="selectHotel">
@@ -239,6 +240,31 @@
 	    	hotel_seq = #{seq}
     </update>
     
-    
+    <insert id="insertUploaded">
+		INSERT INTO ${tableName} (
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			,pseq
+			
+		) values (
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			,#{seq}
+		)
+	</insert>
 	
 </mapper>

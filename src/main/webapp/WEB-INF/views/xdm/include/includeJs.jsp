@@ -19,8 +19,8 @@
   
   
   
-<!--   <script src="/resources/assets/js/constantsXdm.js"></script> -->
-<!--   <script src="/resources/assets/xdm/js/commonXdm.js"></script> -->
+  <script src="/resources/assets/js/constantsXdm.js"></script>
+  <script src="/resources/assets/xdm/js/commonXdm.js"></script>
   
 
   <!-- Template Main JS File -->

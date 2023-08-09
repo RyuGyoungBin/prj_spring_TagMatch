@@ -37,4 +37,6 @@ public class HotelDao {
 	public int ueleteHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotelInfo", dto); }
 	public int ueleteHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotelRoom", dto); }
 	public int ueleteHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotelClose", dto); }
+	
+	public int insertUploaded(Hotel dto) { return sqlSession.insert(namespace + ".insertUploaded", dto); }
 }
