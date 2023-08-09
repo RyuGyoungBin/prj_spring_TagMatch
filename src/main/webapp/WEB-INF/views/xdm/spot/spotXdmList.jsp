@@ -42,16 +42,14 @@
 
 
   <main id="main" class="main">
-<c:forEach items="${listCodeGender }" var="list" varStatus="status">
-	<c:out value="${list.name }"></c:out>
-</c:forEach>
+
 
     <div class="pagetitle">
       <h1>Data Tables</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-Code</li>
+          <li class="breadcrumb-item active">Data-Spot</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -119,22 +117,19 @@
 								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 							</th>
 		                    <th>seq</th>
-		                    <th>hotelType</th>
+		                    <th>type</th>
 		                    <th>name</th>
 		                    <th>zipCode</th>
 		                    <th>address</th>
 		                    <th>addressDetail</th>
 		                    <th>sido</th>
 		                    <th>tel</th>
-		                    <th>checkIn</th>
-		                    <th>checkOut</th>
+		                    <th>openTime</th>
+		                    <th>closedTime</th>
+		                    <th>adultPrice</th>
+		                    <th>childPrice</th>
 		                    <th>detailText</th>
-		                    <th>info</th>
-		                    <th>date</th>
-		                    <th>roomType</th>
-		                    <th>roomName</th>
-		                    <th>price</th>
-		                    <th>roomNum</th>
+
 		                  </tr>
 		                </thead>
 		                <tbody>
@@ -144,22 +139,19 @@
 										<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 									</th>
 				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
-				                    <td scope="row"><c:out value="${list.hotelType }"></c:out></td>
-				                   <td><a href="/codeXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
+				                    <td scope="row"><c:out value="${list.type }"></c:out></td>
+				                   <td><a href="/spotXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
 				                   <td><c:out value="${list.zipCode}"></c:out></td>
 				                   <td><c:out value="${list.address}"></c:out></td>
 				                   <td><c:out value="${list.addressDetail}"></c:out></td>
 				                   <td><c:out value="${list.sido}"></c:out></td>
 				                   <td><c:out value="${list.tel}"></c:out></td>
-				                   <td><c:out value="${list.checkInTime}"></c:out></td>
-				                   <td><c:out value="${list.checkOutTime}"></c:out></td>
+				                   <td><c:out value="${list.openTime}"></c:out></td>
+				                   <td><c:out value="${list.closedTime}"></c:out></td>
+				                   <td><c:out value="${list.adultPrice}"></c:out></td>
+				                   <td><c:out value="${list.childPrice}"></c:out></td>
 				                   <td><c:out value="${list.detailText}"></c:out></td>
-				                   <td><c:out value="${list.info}"></c:out></td>
-				                   <td><c:out value="${list.date}"></c:out></td>
-				                   <td><c:out value="${list.roomType}"></c:out></td>
-				                   <td><c:out value="${list.roomName}"></c:out></td>
-				                   <td><c:out value="${list.price}"></c:out></td>
-				                   <td><c:out value="${list.roomNum}"></c:out></td>
+
 			                 	</tr>
 							</c:forEach>
 		                </tbody>
@@ -246,7 +238,7 @@
 //paging
 	goList = function(thisPage) {
 		$("input:hidden[name=thisPage]").val(thisPage);
-		$("form[name=formList]").attr("action", "codeXdmList").submit();
+		$("form[name=formList]").attr("action", "spotXdmList").submit();
 	}
 // search
  	$("#start_date").datepicker({
