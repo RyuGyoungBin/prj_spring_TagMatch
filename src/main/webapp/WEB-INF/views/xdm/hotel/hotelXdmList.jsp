@@ -42,10 +42,6 @@
 
 
   <main id="main" class="main">
-<c:forEach items="${listCodeGender }" var="list" varStatus="status">
-	<c:out value="${list.name }"></c:out>
-</c:forEach>
-
     <div class="pagetitle">
       <h1>Data Tables</h1>
       <nav>
@@ -63,7 +59,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
-			  <form autocomplete="off" action="codeXdmList" method="post" name="formList">
+			  <form autocomplete="off" action="hotelXdmList" method="post" name="formList">
 			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<div class="d-flex">
@@ -106,7 +102,7 @@
                   	<div class="overflow-hidden overflow-x-auto">
 		              <!-- Table with stripped rows -->
 		              <table class="table table-striped text-nowrap">
-		                <thead>
+		                <thead> 
 		                  <tr>
 		                  	<th scope="col">
 								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
@@ -240,7 +236,7 @@
 //paging
 	goList = function(thisPage) {
 		$("input:hidden[name=thisPage]").val(thisPage);
-		$("form[name=formList]").attr("action", "codeXdmList").submit();
+		$("form[name=formList]").attr("action", "hotelXdmList").submit();
 	}
 // search
  	$("#start_date").datepicker({

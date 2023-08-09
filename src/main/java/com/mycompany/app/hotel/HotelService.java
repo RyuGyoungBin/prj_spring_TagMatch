@@ -8,9 +8,11 @@ public interface HotelService {
 	public int selectOneCount(HotelVo vo);	
 	public Hotel selectOne(HotelVo vo);
 	
-	public int insert(Hotel dto);
+	public int insert(Hotel dto) throws Exception;
 	
 	public int update(Hotel dto);
 	
 	public int delete(Hotel dto);
+	
+	public int uelete(Hotel dto);
 }

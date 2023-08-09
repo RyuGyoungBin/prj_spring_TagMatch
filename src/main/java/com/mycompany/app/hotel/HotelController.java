@@ -38,7 +38,7 @@ public class HotelController {
 	}
 	
 	@RequestMapping("hotelXdmInsert")
-	public String hotelXdmInsert(Hotel dto) {
+	public String hotelXdmInsert(Hotel dto) throws Exception {
 		hotelService.insert(dto);
 		return "redirect:/hotelXdmList";
 	}
@@ -52,6 +52,12 @@ public class HotelController {
 	@RequestMapping("hotelXdmDelete")
 	public String hotelXdmDelete(Hotel dto) {
 		hotelService.delete(dto);
+		return "redirect:/hotelXdmList";
+	}
+	
+	@RequestMapping("hotelXdmUelete")
+	public String hotelXdmUelete(Hotel dto) {
+		hotelService.uelete(dto);
 		return "redirect:/hotelXdmList";
 	}
 	
