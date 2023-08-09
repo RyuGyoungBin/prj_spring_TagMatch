@@ -16,6 +16,7 @@
 	    	LEFT JOIN spotCloseDay c on c.spot_seq = a.seq
 
 		WHERE 1=1 
+		<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
 
     </sql>
         <sql id="selectSpot">
@@ -36,11 +37,27 @@
 		c.date
 		
 	</sql>
+	
+	
+	<select id="selecOne" resultMap="resultMapObj">
+	
+		SELECT
+			<include refid="selectSpot" />
+	    	<include refid="selectCommon" />
+	    AND a.seq = #{seq}
+	</select>
+	
+   	<select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectCommon" />
+		
+	</select>
     
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT
 			<include refid="selectSpot" />
 	    	<include refid="selectCommon" />
+	    
 	</select>
     
     
