@@ -102,7 +102,7 @@
                   	<div class="overflow-hidden overflow-x-auto">
 		              <!-- Table with stripped rows -->
 		              <table class="table table-striped text-nowrap">
-		                <thead>
+		                <thead> 
 		                  <tr>
 		                  	<th scope="col">
 								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
