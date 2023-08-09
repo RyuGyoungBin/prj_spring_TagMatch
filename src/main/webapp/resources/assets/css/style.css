@@ -414,12 +414,12 @@ header.sticky #logo .logo_sticky{ display:block; }
 }
 #logo_home h1 a, header.sticky #logo_home h1 a, header#plain #logo_home h1 a, header#colored #logo_home h1 a{
 	width:160px;
-	height:34px;
+	height:100px;
 	display:block;
 	background-image:url(../img/logo.png);
 	background-repeat:no-repeat;
 	background-position:left top;
-	background-size: 160px 34px;
+	background-size: 150px 100px;
 	text-indent:-9999px;
 }
 header.sticky #logo_home h1{
@@ -427,10 +427,14 @@ header.sticky #logo_home h1{
 	padding:0;
 }
 header.sticky #logo_home h1 a{
-	background-image:url(../img/logo_sticky.png);
+	background-image:url(../img/logo.png);
+	width:150px;
+	height:100px;
 }
 header#plain #logo_home h1 a{
-	background-image:url(../img/logo_sticky.png);
+	background-image:url(../img/logo.png);
+		width:150px;
+	height:100px;
 }
 header.sticky#colored #logo_home h1 a{
 	background-image:url(../img/logo_sticky_colored.png);

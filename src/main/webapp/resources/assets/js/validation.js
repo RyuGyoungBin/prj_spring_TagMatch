@@ -15,6 +15,16 @@
 	
 	var reqEmail = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+$/; //이메일
 	
+	var reqDelNy = /^[0-1]{1}$/;
+	
+	var reqName = /^[ㄱ-ㅎ가-힣-a-zA-Z]{2,20}$/;
+	
+	var reqCodeNum = /^[0-9]{1,6}$/;
+	
+	var reqSido = /^[가-힣]{1,6}$/;
+	
+	var reqTime = /^([1-9]|[01][0-9]|2[0-3]):([0-5][0-9])$/;
+	
 	check = function(obj){
 		if(reqEng.test($.trim(obj.val())) == false) {
 			obj.addClass("border-danger");
@@ -158,6 +168,8 @@
 		}
 	}
 	
+	
+	
 	checkDob = function(obj){
 		if($.trim(obj.val()) == "" || $.trim(obj.val()) == null) {
 			obj.addClass("border-danger");
@@ -196,5 +208,61 @@
 			obj.parent().siblings(".validation").remove();
 		}
 	}
+	
+		checkName = function(obj){
+		if(reqName.test($.trim(obj.val())) == false) {
+			obj.addClass("border-danger");
+			obj.siblings(".validation").remove();
+			obj.parent().append("<div class='p-2 text-danger validation'>이름 형식으로 입력해주세요</div>");
+			obj.focus();
+			return false;
+		} else {
+			obj.removeClass("border-danger");
+			obj.parent().siblings(".validation").remove();
+		}
+	}
+	
+		checkCodeNum = function(obj){
+		if(reqCodeNum.test($.trim(obj.val())) == false) {
+			obj.addClass("border-danger");
+			obj.siblings(".validation").remove();
+			obj.parent().append("<div class='p-2 text-danger validation'>숫자 형식으로 입력해주세요</div>");
+			obj.focus();
+			return false;
+		} else {
+			obj.removeClass("border-danger");
+			obj.parent().siblings(".validation").remove();
+		}
+	}
+	
+		checkDelNy = function(obj){
+		if(reqDelNy.test($.trim(obj.val())) == false) {
+			obj.addClass("border-danger");
+			obj.siblings(".validation").remove();
+			obj.parent().append("<div class='p-2 text-danger validation'>0 혹은 1 형식으로 입력해주세요</div>");
+			obj.focus();
+			return false;
+		} else {
+			obj.removeClass("border-danger");
+			obj.parent().siblings(".validation").remove();
+		}
+	}
+	
+		checkTime = function(obj){
+		if(reqTime.test($.trim(obj.val())) == false) {
+			obj.addClass("border-danger");
+			obj.siblings(".validation").remove();
+			obj.parent().append("<div class='p-2 text-danger validation'>00:00 형식으로 입력해주세요</div>");
+			obj.focus();
+			return false;
+		} else {
+			obj.removeClass("border-danger");
+			obj.parent().siblings(".validation").remove();
+		}
+	}
+	
+	
+	
+	
 	
 	

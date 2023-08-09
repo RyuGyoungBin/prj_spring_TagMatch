@@ -194,6 +194,7 @@
 
   <!-- Vendor JS Files -->
 <%@include file = "../include/includeJs.jsp"%>
+<script src="/resources/assets/js/validation.js"></script>
   <!-- Template Main JS File -->
   <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -233,6 +234,8 @@
             }
         }).open();
     }
+	
+
  		</script>
 	</body>
 </html>

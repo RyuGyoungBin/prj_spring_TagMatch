@@ -87,7 +87,7 @@
 	                </div>
 	                <div class=" col-5 mb-3">
 	                	<label for="dob" class=" col-form-label">dob</label>
-                    	<input type="text" class="form-control" name="dob" id="dob" value="<c:out value="${item.dob }"></c:out>">
+                    	<input type="date" class="form-control" name="dob" id="dob" value="<c:out value="${item.dob }"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                	<label for="phone" class=" col-form-label">phone</label>
@@ -164,6 +164,7 @@
 
   <!-- Vendor JS Files -->
 <%@include file = "../../include/includeJs.jsp"%>
+<script src="/resources/assets/js/validation.js"></script>
   <!-- Template Main JS File -->
   <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
@@ -171,9 +172,11 @@
 
 	
 	$("#btnInsert").on("click", function(){
+		if(validation()==false) return false;
 		$("form[name=form]").attr("action", "/memberAdd").submit();
 	})
 	$("#btnUpdate").on("click", function(){
+		if(validation()==false) return false;
 		$("form[name=form]").attr("action", "/memberUpdt").submit();
 	})
 	$("#btnDelete").on("click", function(){
@@ -203,6 +206,30 @@
             }
         }).open();
     }
+	
+	
+	var objname = $("#name");
+// 	var objreqEmailAccount = $("#email");
+	var objreqId = $("#id");
+	var objPw = $("#password");
+	var objcheckEmail = $("#emailFull");
+	var objreqDate = $("#dob");
+	var objreqPhone = $("#phone");
+	var objcheckAddress = $("#registerZipCode");   
+	var objreqDelNy = $("#delNy");
+
+	validation = function(){
+ 		if(checkKor(objname) == false) return false;
+ 		if(checkId(objreqId) == false) return false;
+ 		if(checkPw(objPw) == false) return false;
+ 		if(checkEmail(objcheckEmail) == false) return false;
+ 		if(checkDob(objreqDate) == false) return false;
+//  		if(checkEmailAccount(objreqEmailAccount) == false) return false;
+ 		if(checkPhone(objreqPhone) == false) return false;
+ 		if(checkAddress(objcheckAddress) == false) return false;
+ 		if(checkDelNy(objreqDelNy) == false) return false;
+	}	
+	
  		</script>
 	</body>
 </html>
