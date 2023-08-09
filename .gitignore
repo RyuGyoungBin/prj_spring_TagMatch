@@ -30,4 +30,5 @@ target/
 .factorypath
 .project
 .springBeans
-Constants.java
+
+constant/
