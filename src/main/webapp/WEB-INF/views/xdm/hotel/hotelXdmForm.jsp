@@ -60,7 +60,7 @@
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
 			  <form name="form" method="post" autocomplete="off" enctype="multipart/form-data">
-			  	<div class="d-flex flex-wrap justify-content-around">
+			  	<div class="d-flex flex-wrap justify-content-around border-bottom">
 	                <div class=" col-5 mb-3">
 	                  	<label for="seq" class=" col-form-label" >seq</label>
                     	<input type="text" class="form-control bg-dark-subtle" readonly name="seq" id="seq" placeholder="자동생성" value="<c:out value="${item.seq }"></c:out>">
@@ -105,8 +105,10 @@
 	                  	<label for="detailText" class=" col-form-label">detailText</label>
                     	<textarea id="detailText" name="detailText" style="width: 100%;"><c:out value="${item.detailText }"></c:out></textarea>
 	                </div>
+	                </div>
 	                <!--  -->
-	                <div class=" col-5 mb-3">
+        	        <div class="d-flex flex-wrap justify-content-around border-bottom">
+	                <div class=" col-5 mb-3">Hotel Info
 	                  	<label for="defaultNy" class=" col-form-label">defaultNy</label>
                     	<input type="text" class="form-control" name="defaultNy" id="defaultNy" value="<c:out value="${item.defaultNy }"></c:out>">
 	                </div>
@@ -118,8 +120,10 @@
 	                  	<label for="delNy" class=" col-form-label">delNy</label>
                     	<input type="text" class="form-control" name="delNy" id="delNy" value="<c:out value="${item.delNy }"></c:out>">
 	                </div>
+	                </div>
 	                <!--  -->
-	                <div class=" col-5 mb-3">
+	                <div class="d-flex flex-wrap justify-content-around border-bottom">
+	                <div class=" col-5 mb-3">Hotel Room
 	                  	<label for="roomType" class=" col-form-label">roomType</label>
                     	<input type="text" class="form-control" name="roomType" id="roomType" value="<c:out value="${item.roomType }"></c:out>">
 	                </div>
@@ -143,11 +147,15 @@
 	                  	<label for="roomNum" class=" col-form-label">roomNum</label>
                     	<input type="text" class="form-control" name="roomNum" id="roomNum" value="<c:out value="${item.roomNum }"></c:out>">
 	                </div>
+	                </div>
 	                <!--  -->
-	                <div class=" col-5 mb-3">
+	                <div class="d-flex flex-wrap justify-content-around border-bottom">
+	                <div class=" col-5 mb-3">Hotel Close Day
 	                  	<label for="date" class=" col-form-label">date</label>
                     	<input type="text" class="form-control" name="date" id="date" value="<c:out value="${item.date }"></c:out>">
 	                </div>
+	                </div>
+                <div class="col-12 d-flex justify-content-around border-bottom">
 	                <!--                     이미지첨부 -->
                     <div class="col-5 mb-3">
 			        	<c:set var="type" value="1"/>		<!-- #-> -->
@@ -177,7 +185,7 @@
 			        	<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
 			        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq"/>
 			        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile"/>
-			            <label for="uploadImgRoom" class="form-label input-file-button">이미지첨부</label>
+			            <label for="uploadImgRoom" class="form-label input-file-button">객실이미지첨부</label>
 			 			<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 1, 0, 0, 1);">
 						<div id="<c:out value="${name }"/>Preview" class="addScroll bg-dark-subtle" style="min-height: 200px;">
 							<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
@@ -191,6 +199,7 @@
 						</div>
                     </div>
 				</div>
+                </div>
 				<c:choose>
 				<c:when test="${empty param.seq }">
 					<div class="d-flex justify-content-between my-5 text-center">

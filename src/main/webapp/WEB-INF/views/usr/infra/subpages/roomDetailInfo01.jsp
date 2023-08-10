@@ -9,7 +9,26 @@
 <%@include file="../include/head.jsp"%>
 <%@include file="../include/header.jsp"%>
 
-	
+	<section class="parallax-window" data-parallax="scroll"  data-natural-width="1400" data-natural-height="470">
+<!-- 	data-image-src="/resources/assets/img/banner/spring.webp" -->
+		<div class="parallax-content-2">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
+						<h1>[서울] 신라호텔</h1>
+						<span>신라호텔</span>
+					</div>
+					<div class="col-md-4">
+						<div id="price_single_main" class="hotel">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End section -->
 
 	<main>
 		<div id="position">
