@@ -46,7 +46,7 @@ public class SpotController {
 	
 	
 	
-	@RequestMapping("/spotUpdt")
+	@RequestMapping("/spotXdmUpdate")
 	public String spotUpdt(Spot dto) throws Exception {
 		
 		
@@ -57,7 +57,7 @@ public class SpotController {
 		return "redirect: /spotXdmList";
 	}
 	
-	@RequestMapping("/spotDel")
+	@RequestMapping("/spotXdmDelete")
 	public String spotDel(Spot dto) {
 
 		// service 호출
@@ -66,7 +66,7 @@ public class SpotController {
 		return "redirect: /spotXdmList";
 	}
 	
-	@RequestMapping("/spotAdd")
+	@RequestMapping("/spotXdmInsert")
 	public String spotAdd(Spot dto) throws Exception {
 
 		// service 호출
@@ -75,7 +75,7 @@ public class SpotController {
 		return "redirect: /spotXdmList";
 	}
 	
-	@RequestMapping("/spotUel")
+	@RequestMapping("/spotXdmUelete")
 	public String spotUel(Spot dto) { 	
 
 		// service 호출

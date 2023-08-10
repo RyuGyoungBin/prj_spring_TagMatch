@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -27,7 +26,7 @@
   <!-- Vendor CSS Files -->
   <%@include file = "../include/includeCss.jsp"%>
   <!-- Template Main CSS File -->
-
+ 
 </head>
 
 <body>
@@ -42,14 +41,12 @@
 
 
   <main id="main" class="main">
-
-
     <div class="pagetitle">
       <h1>Data Tables</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-Spot</li>
+          <li class="breadcrumb-item active">Data-Code</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -61,7 +58,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
-			  <form autocomplete="off" action="codeXdmList" method="post" name="formList">
+			  <form autocomplete="off" action="hotelXdmList" method="post" name="formList">
 			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<div class="d-flex">
@@ -76,14 +73,6 @@
 						</div>
 					</div>
 					<div class="d-flex mb-3 align-items-center">
-						<div class="col-2 text-start ms-3 me-3">
-							<select class="form-control form-control-sm p-2" name="codeGroup_seq" id="codeGroup_seq">
-								<option value="">---codeGroup---</option>
-                    		<c:forEach items="${groupList}" var="group" varStatus="status">
-                    			<option  value="<c:out value='${group.seq }'></c:out>" <c:if test="${vo.codeGroup_seq eq group.seq}">selected</c:if>><c:out value="${group.name}"></c:out></option>
-                    		</c:forEach>
-							</select>
-						</div>
 						<div class="col-2 text-start ms-3 me-3">
 								<input class="form-control form-control-sm p-2" name="name" id="name" type="text" placeholder="name" value="<c:out value="${vo.name }"/>">
 						</div>
@@ -109,27 +98,31 @@
 					</c:when>
 					
 		                  	<c:otherwise>
+                  	<div class="overflow-hidden overflow-x-auto">
 		              <!-- Table with stripped rows -->
-		              <table class="table table-striped">
-		                <thead>
+		              <table class="table table-striped text-nowrap">
+		                <thead> 
 		                  <tr>
 		                  	<th scope="col">
 								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 							</th>
 		                    <th>seq</th>
-		                    <th>type</th>
+		                    <th>hotelType</th>
 		                    <th>name</th>
 		                    <th>zipCode</th>
 		                    <th>address</th>
 		                    <th>addressDetail</th>
 		                    <th>sido</th>
 		                    <th>tel</th>
-		                    <th>openTime</th>
-		                    <th>closedTime</th>
-		                    <th>adultPrice</th>
-		                    <th>childPrice</th>
+		                    <th>checkIn</th>
+		                    <th>checkOut</th>
 		                    <th>detailText</th>
-
+		                    <th>info</th>
+		                    <th>date</th>
+		                    <th>roomType</th>
+		                    <th>roomName</th>
+		                    <th>price</th>
+		                    <th>roomNum</th>
 		                  </tr>
 		                </thead>
 		                <tbody>
@@ -139,23 +132,27 @@
 										<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 									</th>
 				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
-				                    <td scope="row"><c:out value="${list.type }"></c:out></td>
-				                   <td><a href="/spotXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
+				                    <td scope="row"><c:out value="${list.hotelType }"></c:out></td>
+				                   <td><a href="/hotelXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
 				                   <td><c:out value="${list.zipCode}"></c:out></td>
 				                   <td><c:out value="${list.address}"></c:out></td>
 				                   <td><c:out value="${list.addressDetail}"></c:out></td>
 				                   <td><c:out value="${list.sido}"></c:out></td>
 				                   <td><c:out value="${list.tel}"></c:out></td>
-				                   <td><c:out value="${list.openTime}"></c:out></td>
-				                   <td><c:out value="${list.closedTime}"></c:out></td>
-				                   <td><c:out value="${list.adultPrice}"></c:out></td>
-				                   <td><c:out value="${list.childPrice}"></c:out></td>
+				                   <td><c:out value="${list.checkInTime}"></c:out></td>
+				                   <td><c:out value="${list.checkOutTime}"></c:out></td>
 				                   <td><c:out value="${list.detailText}"></c:out></td>
-
+				                   <td><c:out value="${list.info}"></c:out></td>
+				                   <td><c:out value="${list.date}"></c:out></td>
+				                   <td><c:out value="${list.roomType}"></c:out></td>
+				                   <td><c:out value="${list.roomName}"></c:out></td>
+				                   <td><c:out value="${list.price}"></c:out></td>
+				                   <td><c:out value="${list.roomNum}"></c:out></td>
 			                 	</tr>
 							</c:forEach>
 		                </tbody>
 		              </table>
+		              </div>
 					</c:otherwise>
 				</c:choose>
               <!-- End Table with stripped rows -->
@@ -196,7 +193,7 @@
 					</div>
 					<div class="col text-end">
 						<button type="button" class="btn btn-success btn-sm" id="excel"><i class="bi bi-file-earmark-excel"></i></button>
-						<button type="button" class="btn btn-primary btn-sm" id="plus" onclick = "location.href = '/codeXdmForm'">+</button>
+						<button type="button" class="btn btn-primary btn-sm" id="plus" onclick = "location.href = '/spotXdmForm'">+</button>
 					</div>
 				</div>
           </div>

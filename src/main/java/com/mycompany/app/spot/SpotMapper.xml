@@ -33,13 +33,14 @@
 		a.adultPrice,
 		a.childPrice,
 		a.detailText,
+		a.delNy,
 		b.info,
 		c.date
 		
 	</sql>
 	
 	
-	<select id="selecOne" resultMap="resultMapObj">
+	<select id="selectOne" resultMap="resultMapObj">
 	
 		SELECT
 			<include refid="selectSpot" />
