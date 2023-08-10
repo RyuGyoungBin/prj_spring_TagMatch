@@ -28,6 +28,7 @@
 			</div>
 		</div>
 	</section>
+					
 	<!-- End section -->
 
 	<main>      
@@ -52,7 +53,17 @@
 		<div class="container margin_60">
 			<div class="row">
 				<div class="col-lg-12" id="single_tour_desc">
-					
+					<div id="single_tour_feat" style="border-top:2px solid #555; padding-top:20px">
+						<ul>
+							<li><i class="icon_set_2_icon-116"></i>Plasma TV</li>
+							<li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
+							<li><i class="icon_set_2_icon-110"></i>Poll</li>
+							<li><i class="icon_set_1_icon-59"></i>Breakfast</li>
+							<li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
+							<li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
+							<li><i class="icon_set_1_icon-27"></i>Parking</li>
+						</ul>
+					</div>
 					<p class="d-block d-lg-none"><a class="btn_map" data-bs-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
 					</p>
 					<!-- Map button for tablets/mobiles -->
@@ -78,17 +89,7 @@
 					</div>
 					<hr>
 
-					<div id="single_tour_feat" style="border-top:2px solid #555; padding-top:20px">
-						<ul>
-							<li><i class="icon_set_2_icon-116"></i>Plasma TV</li>
-							<li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
-							<li><i class="icon_set_2_icon-110"></i>Poll</li>
-							<li><i class="icon_set_1_icon-59"></i>Breakfast</li>
-							<li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
-							<li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
-							<li><i class="icon_set_1_icon-27"></i>Parking</li>
-						</ul>
-					</div>
+					
 					<div class="row" style="justify-content: space-around;">
 						<div class="col-lg-9" >
 <!-- 						style="background-image: url(/resources/assets/img/h1.jpg); background-size: cover;" -->

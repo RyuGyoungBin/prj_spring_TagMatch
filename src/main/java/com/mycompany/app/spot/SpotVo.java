@@ -16,9 +16,12 @@ public class SpotVo {
 	private String adultPrice;
 	private String childPrice;
 	private String detailText;
+	private Integer delNy;
 	
 	
-	// paging
+
+
+		// paging
 		private int thisPage = 1;									// 현재 페이지
 //		private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
 //		private int pageNumToShow = Constants.PAGE_NUM_TO_SHOW;		// 화면에 보여줄 페이징 번호 갯수
@@ -278,7 +281,13 @@ public class SpotVo {
 			this.startRnumForMysql = startRnumForMysql;
 		}
 	
-		
+		public Integer getDelNy() {
+			return delNy;
+		}
+
+		public void setDelNy(Integer delNy) {
+			this.delNy = delNy;
+		}
 		
 		
 		

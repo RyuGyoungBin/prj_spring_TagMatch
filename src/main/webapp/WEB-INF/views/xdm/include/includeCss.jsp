@@ -10,13 +10,13 @@
 
 
   <!-- Vendor CSS Files -->
-  <link href="resources/assets/xdm/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="resources/assets/xdm/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="resources/assets/xdm/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="resources/assets/xdm/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="resources/assets/xdm/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="resources/assets/xdm/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="resources/assets/xdm/vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="/resources/assets/xdm/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/resources/assets/xdm/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/resources/assets/xdm/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="/resources/assets/xdm/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="/resources/assets/xdm/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="/resources/assets/xdm/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="/resources/assets/xdm/vendor/simple-datatables/style.css" rel="stylesheet">
   
     <!-- Template Main CSS File -->
-  <link href="resources/assets/xdm/css/styleAdmin.css" rel="stylesheet">
+  <link href="/resources/assets/xdm/css/styleAdmin.css" rel="stylesheet">
