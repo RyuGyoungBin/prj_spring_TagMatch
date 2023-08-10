@@ -137,15 +137,28 @@
   <!-- Vendor JS Files -->
 <%@include file = "../../include/includeJs.jsp"%>
   <!-- Template Main JS File -->
-
+  
+<script src="/resources/assets/js/validation.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <script type="text/javascript">
-
+  
+  
+	var objreqName = $("#name");
+	var objreqCodeNum = $("#codeNum");
+  	var objreqDelNy = $("#delNy");
+	
+	validation = function (){
+		if(checkName(objreqName) == false) return false;
+		if(checkCodeNum(objreqCodeNum) == false) return false;
+		if(checkDelNy(objreqDelNy) == false) return false;
+	}
 	
 	$("#btnInsert").on("click", function(){
+		if(validation() == false) return false;
 		$("form[name=form]").attr("action", "/codeXdmInsert").submit();
 	})
 	$("#btnUpdate").on("click", function(){
+		if(validation() == false) return false;
 		$("form[name=form]").attr("action", "/codeXdmUpdate").submit();
 	})
 	$("#btnDelete").on("click", function(){
@@ -154,6 +167,7 @@
 	$("#btnDelNy").on("click", function(){
 		$("form[name=form]").attr("action", "/codeXdmDelNy").submit();
 	})
+	
 	
  		</script>
 	</body>

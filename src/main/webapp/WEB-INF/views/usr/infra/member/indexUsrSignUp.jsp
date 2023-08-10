@@ -180,17 +180,17 @@
 	var objPw = $("#pwd");
 	var objreqPw = $("#pwdCheck");
 	var objreqDate = $("#date");
+	var objcheckEmail = $("#email");
 	var objcheckAddress = $("#registerZipCode");   
 	var objreqPhone = $("#tel");
-	var objcheckEmail = $("#email");
 
 	validationinsert = function(){
  		if(checkKor(objname) == false) return false;
  		if(checkId(objreqId) == false) return false;
  		if(checkPw(objPw) == false) return false;
  		if(pwCheck(objreqPw) == false) return false;
- 		if(checkDob(objreqDate) == false) return false;
  		if(checkEmail(objcheckEmail) == false) return false;
+ 		if(checkDob(objreqDate) == false) return false;
 //  		if(checkEmailAccount(objreqEmailAccount) == false) return false;
  		if(checkAddress(objcheckAddress) == false) return false;
  		if(checkPhone(objreqPhone) == false) return false;
