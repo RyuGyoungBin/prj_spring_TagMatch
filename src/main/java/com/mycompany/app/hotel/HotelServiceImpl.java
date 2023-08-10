@@ -26,6 +26,9 @@ public class HotelServiceImpl implements HotelService{
 
 	@Override
 	public Hotel selectOne(HotelVo vo) {return dao.selectOne(vo);}
+	
+	@Override
+	public List<Hotel> selectUploaded(HotelVo vo) {return dao.selectUploaded(vo);}
 
 	@Override
 	public int insert(Hotel dto) throws Exception {
@@ -34,8 +37,8 @@ public class HotelServiceImpl implements HotelService{
 		dao.insertHotelInfo(dto);
 		dao.insertHotelRoom(dto);
 		
-    	uploadFiles(dto.getUploadImg(), dto, "concertUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
-    	uploadFiles(dto.getUploadImgRoom(), dto, "concertUploaded", dto.getUploadImgRoomType(), dto.getUploadImgRoomMaxNumber());
+    	uploadFiles(dto.getUploadImg(), dto, "hotelUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
+    	uploadFiles(dto.getUploadImgRoom(), dto, "hotelUploaded", dto.getUploadImgRoomType(), dto.getUploadImgRoomMaxNumber());  
     	
 		return 0;
 	}
@@ -116,4 +119,6 @@ public class HotelServiceImpl implements HotelService{
     		}
 		}
 	}
+
+	
 }

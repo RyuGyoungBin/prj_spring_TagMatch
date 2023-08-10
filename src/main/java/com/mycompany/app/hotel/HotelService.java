@@ -7,6 +7,7 @@ public interface HotelService {
 	public List<Hotel> selectList(HotelVo vo);
 	public int selectOneCount(HotelVo vo);	
 	public Hotel selectOne(HotelVo vo);
+	public List<Hotel> selectUploaded(HotelVo vo);
 	
 	public int insert(Hotel dto) throws Exception;
 	

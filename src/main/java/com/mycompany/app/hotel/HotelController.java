@@ -32,7 +32,9 @@ public class HotelController {
 	public String hotelXdmForm(HotelVo vo, Model model) {
 
 		Hotel hotel = hotelService.selectOne(vo); 
+		List<Hotel> uploaded = hotelService.selectUploaded(vo);
 		model.addAttribute("item", hotel);
+		model.addAttribute("listUploaded", uploaded);
 
 		return "xdm/hotel/hotelXdmForm";
 	}
