@@ -38,7 +38,7 @@ public class SpotController {
 	@RequestMapping("/spotXdmForm")
 	public String spotXdmForm(SpotVo vo, Model model) {
 		Spot item = service.selectOne(vo);
-		model.addAttribute("list", item);
+		model.addAttribute("item", item);
 		return "/xdm/spot/spotXdmForm";
 	}
 	
@@ -47,10 +47,8 @@ public class SpotController {
 	
 	
 	@RequestMapping("/spotXdmUpdate")
-	public String spotUpdt(Spot dto) throws Exception {
-		
-		
-		
+	public String spotXdmUpdate(Spot dto) throws Exception {
+
 		// service 호출
 		service.update(dto);
 
@@ -58,7 +56,7 @@ public class SpotController {
 	}
 	
 	@RequestMapping("/spotXdmDelete")
-	public String spotDel(Spot dto) {
+	public String spotXdmDelete(Spot dto) {
 
 		// service 호출
 		service.delete(dto);
@@ -67,7 +65,7 @@ public class SpotController {
 	}
 	
 	@RequestMapping("/spotXdmInsert")
-	public String spotAdd(Spot dto) throws Exception {
+	public String spotXdmInsert(Spot dto) throws Exception {
 
 		// service 호출
 		service.insert(dto);
@@ -76,7 +74,7 @@ public class SpotController {
 	}
 	
 	@RequestMapping("/spotXdmUelete")
-	public String spotUel(Spot dto) { 	
+	public String spotXdmUelete(Spot dto) { 	
 
 		// service 호출
 		service.uelete(dto);

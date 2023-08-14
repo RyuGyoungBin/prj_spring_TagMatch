@@ -44,7 +44,11 @@ public class SpotServiceImpl implements SpotService{
 	@Override
 	public int insert(Spot dto) throws Exception {
 
-		return dao.insertSpot(dto);
+		
+		 dao.insertSpot(dto);
+		 dao.insertSpotCloseDay(dto);
+		 return 1;
+		
 	}
 
 	@Override

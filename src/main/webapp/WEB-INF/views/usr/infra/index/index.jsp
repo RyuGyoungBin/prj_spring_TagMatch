@@ -13,7 +13,7 @@
 <%@include file = "../include/head.jsp"%>
 <%@include file = "../include/header.jsp"%>
 
-	<section id="hero" class="background-image" data-background="url(resources/assets/img/mainSea.jpg)">
+	<section id="hero" class="background-image" data-background="url(resources/assets/img/mainTrain.jpg)">
 	
         <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
         
