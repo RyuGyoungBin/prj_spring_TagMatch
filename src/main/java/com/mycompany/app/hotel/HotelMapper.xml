@@ -25,8 +25,8 @@
     	a.addressDetail,
     	a.sido,
     	a.tel,
-    	a.checkInTime,
-    	a.checkOutTime,
+    	DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
+    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
     	a.detailText,
     	c.date,
     	d.roomType,
@@ -36,9 +36,12 @@
     	a.delNy
 	</sql>
 	<select id="selectList" resultMap="resultMapObj">
-		SELECT
-			<include refid="selectHotel" />
-	    	<include refid="selectCommon" />
+		SELECT aa.* FROM (   	
+	   		SELECT
+				<include refid="selectHotel" />
+	   			<include refid="selectCommon" />
+		) aa
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
 	<select id="selectOneCount" resultType="Integer">
 		SELECT count(*)
@@ -88,19 +91,19 @@
 			SELECT last_insert_id()
 		 </selectKey>
     </insert>
-    <insert id="insertHotelInfo">
-    	insert into `hotelInfo`(
-    		defaultNy,
-    		info,
-    		delNy,
-    		hotel_seq
-    	) values (
-    		#{defaultNy},
-    		#{info},
-    		0,
-    		#{seq}
-    	)
-    </insert>
+<!--     <insert id="insertHotelInfo"> -->
+<!--     	insert into `hotelInfo`( -->
+<!--     		defaultNy, -->
+<!--     		info, -->
+<!--     		delNy, -->
+<!--     		hotel_seq -->
+<!--     	) values ( -->
+<!--     		#{defaultNy}, -->
+<!--     		#{info}, -->
+<!--     		0, -->
+<!--     		#{seq} -->
+<!--     	) -->
+<!--     </insert> -->
     <insert id="insertHotelRoom">
     	insert into `hotelRoom`(
     		roomType,
@@ -150,16 +153,16 @@
     	WHERE
     		seq = #{seq}
     </update>
-	<update id="updateHotelInfo">
-    	UPDATE
-    		hotelInfo
-    	SET
-    		defaultNy = #{defaultNy},
-    		info= #{info},
-    		delNy= #{delNy}
-    	WHERE
-    		hotel_seq = #{seq}
-    </update>
+<!-- 	<update id="updateHotelInfo"> -->
+<!--     	UPDATE -->
+<!--     		hotelInfo -->
+<!--     	SET -->
+<!--     		defaultNy = #{defaultNy}, -->
+<!--     		info= #{info}, -->
+<!--     		delNy= #{delNy} -->
+<!--     	WHERE -->
+<!--     		hotel_seq = #{seq} -->
+<!--     </update> -->
     <update id="updateHotelRoom">
     	UPDATE
     		hotelRoom
@@ -189,13 +192,13 @@
 			seq = #{seq}
     
     </delete>
-    <delete id="deleteHotelInfo">
-    	DELETE FROM 
-    		hotelInfo
-		WHERE
-			hotel_seq = #{seq}
+<!--     <delete id="deleteHotelInfo"> -->
+<!--     	DELETE FROM  -->
+<!--     		hotelInfo -->
+<!-- 		WHERE -->
+<!-- 			hotel_seq = #{seq} -->
     
-    </delete>
+<!--     </delete> -->
     <delete id="deleteHotelRoom">
     	DELETE FROM 
     		hotelRoom
@@ -218,15 +221,15 @@
 	    AND 
 	    	seq = #{seq}
     </update>
-    <update id="ueleteHotelInfo">
-	    UPDATE
-	    	hotelInfo
-	    SET
-	    	delNy = "1"
-	    WHERE 1=1
-	    AND 
-	    	hotel_seq = #{seq}
-    </update>
+<!--     <update id="ueleteHotelInfo"> -->
+<!-- 	    UPDATE -->
+<!-- 	    	hotelInfo -->
+<!-- 	    SET -->
+<!-- 	    	delNy = "1" -->
+<!-- 	    WHERE 1=1 -->
+<!-- 	    AND  -->
+<!-- 	    	hotel_seq = #{seq} -->
+<!--     </update> -->
     <update id="ueleteHotelRoom">
 	    UPDATE
 	    	hotelRoom

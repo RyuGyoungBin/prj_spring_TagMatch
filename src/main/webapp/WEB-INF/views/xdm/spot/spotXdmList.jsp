@@ -128,6 +128,7 @@
 				                  	<th scope="col">
 										<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 									</th>
+
 				                    <td scope="row"><c:out value="${list.seq}"></c:out></td>
 				                    <td scope="row"><c:out value="${list.type}"></c:out></td>
 				                   <td><a href="/spotXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>

@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,7 +15,7 @@ public class CodeGroupController {
 	CodeGroupServiceImpl service;
 	
 	@RequestMapping ("/codeGroupXdmList")
-	public String codeGroupXdmList(CodeGroupVo vo, Model model) {
+	public String codeGroupXdmList(@ModelAttribute("vo")CodeGroupVo vo, Model model) {
 		List<CodeGroup> list = service.selectList(vo);
 		model.addAttribute("list", list);
 		return "/xdm/infra/codegroup/codeGroupXdmList";

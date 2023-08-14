@@ -155,6 +155,11 @@
               <i class="bi bi-circle"></i><span>Spot Tables</span>
             </a>
           </li>
+          <li>
+            <a href="infoXdmList" >
+              <i class="bi bi-circle"></i><span>Info Tables</span>
+            </a>
+          </li>
         </ul>
       </li><!-- End Tables Nav -->
 

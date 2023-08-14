@@ -59,7 +59,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
-			  <form autocomplete="off" action="codeXdmList" method="post" name="formList">
+			  <form autocomplete="off" action="codeGroupXdmList" method="post" name="formList">
 			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<div class="d-flex">

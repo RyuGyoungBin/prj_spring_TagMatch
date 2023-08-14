@@ -11,8 +11,8 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Tables / Data - King-Petition</title>
+	
+  <title>Tables / Data </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -27,7 +27,7 @@
   <!-- Vendor CSS Files -->
   <%@include file = "../include/includeCss.jsp"%>
   <!-- Template Main CSS File -->
- 
+
 </head>
 
 <body>
@@ -47,7 +47,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-Hotel</li>
+          <li class="breadcrumb-item active">Data-CodeGroup</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -59,9 +59,9 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
-			  <form autocomplete="off" action="hotelXdmList" method="post" name="formList">
-				  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
-				  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+			  <form autocomplete="off" action="infoXdmList" method="post" name="formList">
+			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<div class="d-flex">
 						<div class="mb-3 col-2 text-start ms-3 me-3">
 							<input class="form-control form-control-sm p-2" id="start_date" type="text" placeholder="시작일">
@@ -74,15 +74,18 @@
 						</div>
 					</div>
 					<div class="d-flex mb-3 align-items-center">
-						<div class="col-2 text-start ms-3 me-3">
-								<input class="form-control form-control-sm p-2" name="name" id="name" type="text" placeholder="name" value="<c:out value="${vo.name }"/>">
+						<div class="mb-3 col-2 text-start ms-3 me-3">
+
 						</div>
 						<div class="col-2 text-start ms-3 me-3">
-								<select class="form-control form-control-sm p-2" name="delNy" id="delNy">
-									<option value="">---delNy---</option>
-									<option value="0" <c:if test="${vo.delNy eq '0'}">selected</c:if>>Y</option>
-									<option value="1" <c:if test="${vo.delNy eq '1'}">selected</c:if>>N</option>
-								</select>
+							<input class="form-control form-control-sm p-2" name="hotel_seq" id="hotel_seq" type="text" placeholder="hotel_seq" value="<c:out value="${vo.hotel_seq }"/>">
+						</div>
+						<div class="col-2 text-start ms-3 me-3">
+							<select class="form-control form-control-sm p-2" name="delNy" id="delNy">
+								<option value="">---delNy---</option>
+								<option value="0" <c:if test="${vo.delNy eq '0'}">selected</c:if>>Y</option>
+								<option value="1" <c:if test="${vo.delNy eq '1'}">selected</c:if>>N</option>
+							</select>
 						</div>
 						<div class="col-2 text-start ms-3 me-3">
 							<button type="submit" class="btn btn-warning btn-sm me-2" id="search"><i class="bi bi-search"></i></button>
@@ -99,31 +102,18 @@
 					</c:when>
 					
 		                  	<c:otherwise>
-                  	<div class="overflow-hidden overflow-x-auto">
 		              <!-- Table with stripped rows -->
-		              <table class="table table-striped text-nowrap">
-		                <thead> 
+		              <table class="table table-striped">
+		                <thead>
 		                  <tr>
 		                  	<th scope="col">
 								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 							</th>
 		                    <th>seq</th>
-		                    <th>hotelType</th>
-		                    <th>name</th>
-		                    <th>zipCode</th>
-		                    <th>address</th>
-		                    <th>addressDetail</th>
-		                    <th>sido</th>
-		                    <th>tel</th>
-		                    <th>checkIn</th>
-		                    <th>checkOut</th>
-		                    <th>detailText</th>
 		                    <th>info</th>
-		                    <th>date</th>
-		                    <th>roomType</th>
-		                    <th>roomName</th>
-		                    <th>price</th>
-		                    <th>roomNum</th>
+		                    <th>iClass</th>
+		                    <th>defaultNy</th>
+		                    <th>delNy</th>
 		                  </tr>
 		                </thead>
 		                <tbody>
@@ -133,56 +123,44 @@
 										<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 									</th>
 				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
-				                    <td scope="row"><c:out value="${list.hotelType }"></c:out></td>
-				                   <td><a href="/hotelXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
-				                   <td><c:out value="${list.zipCode}"></c:out></td>
-				                   <td><c:out value="${list.address}"></c:out></td>
-				                   <td><c:out value="${list.addressDetail}"></c:out></td>
-				                   <td><c:out value="${list.sido}"></c:out></td>
-				                   <td><c:out value="${list.tel}"></c:out></td>
-				                   <td><c:out value="${list.checkInTime}"></c:out></td>
-				                   <td><c:out value="${list.checkOutTime}"></c:out></td>
-				                   <td><c:out value="${list.detailText}"></c:out></td>
-				                   <td><a class="btn btn-light" onclick = "location.href = '/infoXdmList?hotel_seq=<c:out value="${list.seq }" />'"  target=”_blank”>info</a></td>
-				                   <td><c:out value="${list.date}"></c:out></td>
-				                   <td><c:out value="${list.roomType}"></c:out></td>
-				                   <td><c:out value="${list.roomName}"></c:out></td>
-				                   <td><c:out value="${list.price}"></c:out></td>
-				                   <td><c:out value="${list.roomNum}"></c:out></td>
+				                   <td><a href="/infoXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.info }"></c:out></a></td>
+				                   <td><c:out value="${list.iClass}"></c:out></td>
+				                   <td><c:out value="${list.defaultNy}"></c:out></td>
+				                   <td><c:out value="${list.delNy}"></c:out></td>
 			                 	</tr>
 							</c:forEach>
 		                </tbody>
 		              </table>
-		              </div>
 					</c:otherwise>
 				</c:choose>
               <!-- End Table with stripped rows -->
               <div class="container-fluid px-0 mt-2">
-						    <div class="row">
-						        <div class="col">
-						            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
-						            <ul class="pagination justify-content-center mb-0">
-						                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
-						<c:if test="${vo.startPage gt vo.pageNumToShow}">
-						                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
-						</c:if>
-						<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
-							<c:choose>
-								<c:when test="${i.index eq vo.thisPage}">
-						                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
-								</c:when>
-								<c:otherwise>             
-						                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
-								</c:otherwise>
-							</c:choose>
-						</c:forEach>                
-						<c:if test="${vo.endPage ne vo.totalPages}">                
-						                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li></c:if>
-						                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
-						            </ul>
-						        </div>
-						    </div>
-						</div>
+			    <div class="row">
+			        <div class="col">
+			            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
+			            <ul class="pagination justify-content-center mb-0">
+			                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
+			<c:if test="${vo.startPage gt vo.pageNumToShow}">
+			                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="bi bi-chevron-double-left"></i></a></li>
+			</c:if>
+			<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
+				<c:choose>
+					<c:when test="${i.index eq vo.thisPage}">
+			                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+					</c:when>
+					<c:otherwise>             
+			                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+					</c:otherwise>
+				</c:choose>
+			</c:forEach>                
+			<c:if test="${vo.endPage ne vo.totalPages}">                
+			                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="bi bi-chevron-double-right"></i></a></li>
+			</c:if>
+			                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+			            </ul>
+			        </div>
+			    </div>
+			</div>
 
             </div>
            
@@ -193,7 +171,7 @@
 					</div>
 					<div class="col text-end">
 						<button type="button" class="btn btn-success btn-sm" id="excel"><i class="bi bi-file-earmark-excel"></i></button>
-						<button type="button" class="btn btn-primary btn-sm" id="plus" onclick = "location.href = '/hotelXdmForm'">+</button>
+						<button type="button" class="btn btn-primary btn-sm" id="plus" onclick = "location.href = '/infoXdmForm'">+</button>
 					</div>
 				</div>
           </div>
@@ -235,7 +213,7 @@
 //paging
 	goList = function(thisPage) {
 		$("input:hidden[name=thisPage]").val(thisPage);
-		$("form[name=formList]").attr("action", "hotelXdmList").submit();
+		$("form[name=formList]").attr("action", "codeGroupXdmList").submit();
 	}
 // search
  	$("#start_date").datepicker({

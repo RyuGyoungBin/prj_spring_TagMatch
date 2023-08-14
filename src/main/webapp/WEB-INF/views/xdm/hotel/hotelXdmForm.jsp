@@ -109,17 +109,9 @@
 	                <!--  -->
         	        <div class="d-flex flex-wrap justify-content-around border-bottom">
 	                <div class=" col-5 mb-3">Hotel Info
-	                  	<label for="defaultNy" class=" col-form-label">defaultNy</label>
-                    	<input type="text" class="form-control" name="defaultNy" id="defaultNy" value="<c:out value="${item.defaultNy }"></c:out>">
-	                </div>
-	                <div class=" col-5 mb-3">
-	                  	<label for="info" class=" col-form-label">info</label>
-                    	<input type="text" class="form-control" name="info" id="info" value="<c:out value="${item.info }"></c:out>">
-	                </div>
-	                <div class=" col-5 mb-3">
-	                  	<label for="delNy" class=" col-form-label">delNy</label>
-                    	<input type="text" class="form-control" name="delNy" id="delNy" value="<c:out value="${item.delNy }"></c:out>">
-	                </div>
+		                <div class=" col-5 mb-3">
+	                    	<input type="checkbox" class="form-control" name="info" id="info<c:out value="${info.info }"/>" value="<c:out value="${info.info }"/>">
+		                </div>
 	                </div>
 	                <!--  -->
 	                <div class="d-flex flex-wrap justify-content-around border-bottom">
