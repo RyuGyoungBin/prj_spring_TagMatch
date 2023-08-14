@@ -12,7 +12,6 @@
     <sql id ="selectCommon">
    		FROM    
 	    	spot a
-	    	LEFT JOIN spotInfo b on b.spot_seq = a.seq AND b.defaultNy = 1
 	    	LEFT JOIN spotCloseDay c on c.spot_seq = a.seq
 
 		WHERE 1=1 
@@ -34,8 +33,7 @@
 		a.childPrice,
 		a.detailText,
 		a.delNy,
-		b.info,
-		c.date
+		c.date closed
 		
 	</sql>
 	
@@ -64,7 +62,6 @@
     
     <insert id="insertSpot">
 	    insert into `spot` (
-	    	seq,
 	    	type,
 	    	name,
 	    	zipCode,
@@ -78,8 +75,7 @@
 			childPrice,
 			detailText
 		) values (
-			#{seq}
-			,#{type}
+			#{type}
 			,#{name}
 			,#{zipCode}
 			,#{address}
@@ -96,17 +92,8 @@
 			SELECT last_insert_id()
 		 </selectKey>
     </insert>
-    
-    <insert id="insertSpotInfo">
-   	    insert into `spotInfo` (
-			spot_seq
-			,info
-		) values (
-			#{seq}
-			,#{info}
-		)
-		
-	</insert>
+
+
 	
     <insert id="insertSpotCloseDay">
    	    insert into `spotCloseDay` (
@@ -114,7 +101,7 @@
 			,date
 		) values (
 			#{seq}
-			,#{date}
+			,#{closed}
 		)
 	</insert>
     

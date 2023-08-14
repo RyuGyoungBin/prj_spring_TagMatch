@@ -47,7 +47,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-Code</li>
+          <li class="breadcrumb-item active">Data-Hotel</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->

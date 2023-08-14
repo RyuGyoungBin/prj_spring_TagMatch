@@ -15,6 +15,7 @@ public class Spot {
 	private String adultPrice;
 	private String childPrice;
 	private String detailText;
+	private String closed;
 	
 	public String getSeq() {
 		return seq;
@@ -95,8 +96,13 @@ public class Spot {
 	public void setDetailText(String detailText) {
 		this.detailText = detailText;
 	}
-
+	public String getClosed() {
+		return closed;
+	}
+	public void setClosed(String closed) {
+		this.closed = closed;
 	
+	}
 	
 	
 	
