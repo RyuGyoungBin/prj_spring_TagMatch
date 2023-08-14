@@ -16,8 +16,7 @@
 				<div class="row">
 					<div class="col-md-8">
 						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
-						<h1>[서울] 신라호텔</h1>
-						<span>신라호텔</span>
+						<h1>[<c:out value="${hotel.sido }" />] <c:out value="${hotel.name }"/></h1>
 					</div>
 					<div class="col-md-4">
 						<div id="price_single_main" class="hotel">
@@ -70,7 +69,11 @@
 						<div class="sp-slides">
 
 							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg" data-src="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg" data-small="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg" data-medium="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg" data-large="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg" data-retina="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg">
+								<c:set var="type" value="1"/>		<!-- #-> -->
+			        			<c:set var="name" value="uploadImg"/>		<!-- #-> -->
+			        			<c:if test="${listUploaded.type eq type }">
+									<img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded" width= "85px" height="85px" style="cursor:pointer;" onClick="openViewer(<c:out value="${listUploaded.type }"/>, <c:out value="${listUploaded. sort }"/>);">
+								</c:if>
 							</div>
 							<div class="sp-slide">
 								<img alt="Image" class="sp-image" src="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-src="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-small="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-medium="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-large="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-retina="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg">

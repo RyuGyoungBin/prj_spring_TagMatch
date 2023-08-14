@@ -24,11 +24,6 @@ public class SongController {
 		return "/usr/infra/subpages/condo02";
 	}
 	
-	@RequestMapping ("/roomDetailInfo01")
-	public String roomDetailInfo01() {
-		
-		return "/usr/infra/subpages/roomDetailInfo01";
-	}
 	@RequestMapping ("/roomDetailInfo02")
 	public String roomDetailInfo02() {
 		
