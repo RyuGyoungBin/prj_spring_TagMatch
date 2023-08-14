@@ -53,13 +53,9 @@
 				<div class="col-lg-12" id="single_tour_desc">
 					<div id="single_tour_feat">
 						<ul>
-							<li><i class="icon_set_2_icon-116"></i>Plasma TV</li>
-							<li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
-							<li><i class="icon_set_2_icon-110"></i>Poll</li>
-							<li><i class="icon_set_1_icon-59"></i>Breakfast</li>
-							<li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
-							<li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
-							<li><i class="icon_set_1_icon-27"></i>Parking</li>
+							<c:forEach items="${info}" var="info" varStatus="statusUploaded">
+							<li><i class="<c:out value="${info.iClass }" />"></i><c:out value="${info.info }" /></li>
+							</c:forEach>
 						</ul>
 					</div>
 					<p class="d-block d-lg-none"><a class="btn_map" data-bs-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
@@ -71,21 +67,26 @@
 							<div class="sp-slide">
 								<c:set var="type" value="1"/>		<!-- #-> -->
 			        			<c:set var="name" value="uploadImg"/>		<!-- #-> -->
+			        			<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+				        			<c:if test="${listUploaded.type eq type }">
+										<img class="sp-image" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>">
+									</c:if>
+								</c:forEach>
+							</div>
+							<c:set var="type" value="2"/>		<!-- #-> -->
+		        			<c:set var="name" value="uploadImgRoom"/>		<!-- #-> -->
+		        			<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
 			        			<c:if test="${listUploaded.type eq type }">
-									<img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>" class="rounded" width= "85px" height="85px" style="cursor:pointer;" onClick="openViewer(<c:out value="${listUploaded.type }"/>, <c:out value="${listUploaded. sort }"/>);">
+			        			<div class="sp-slide">
+									<img class="sp-image" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>">
+								</div>
 								</c:if>
-							</div>
-							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-src="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-small="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-medium="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-large="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg" data-retina="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg">
-							</div>
-							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="/resources/assets/img/accommodation/hotel/seoul/01/01-2.jpg" data-src="/resources/assets/img/accommodation/hotel/seoul/01/01-2.jpg" data-small="/resources/assets/img/accommodation/hotel/seoul/01/01-2.jpg" data-medium="/resources/assets/img/accommodation/hotel/seoul/01/01-2.jpg" data-large="/resources/assets/img/accommodation/hotel/seoul/01/01-2.jpg" data-retina="/resources/assets/img/accommodation/hotel/seoul/01/01-2.jpg">
-							</div>
+							</c:forEach>
 						</div>
 						<div class="sp-thumbnails">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/accommodation/hotel/seoul/01/01-1.jpg">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/accommodation/hotel/seoul/01/01-2.jpg">
+						<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+								<img class="sp-thumbnail" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>">
+						</c:forEach>
 						</div>
 					</div>
 
@@ -97,25 +98,15 @@
 						</div>
 						<div class="col-lg-9">
 							<p>
-								롯데월드타워와 롯데월드몰에서 8km 떨어진 토요코인 서울강남은 무료 Wi-Fi를 완비하고 있습니다. 세븐럭카지노 강남코엑스점는 5km 이내 거리에 있습니다.
-
-								호텔의 모든 객실은 금연실이며 각각 냉장고와 책상, 평면 케이블 TV를 갖추고 있습니다. 전용 욕실에는 욕조와 헤어드라이어, 무료 세면도구가 구비되어 있습니다.
-								
-								토요코인 서울강남에서 미국식 조식을 즐겨보세요.
-								
-								구내에 비즈니스 센터와 신문이 완비되어 있습니다. 한국어, 영어, 일본어를 구사하는 24시간 프런트 데스크 직원들이 투숙객의 문의에 친절하게 응대해드립니다.
-								
-								토요코인 서울강남에서 국립중앙박물관과 노량진수산시장, 신라면세점 본점은 10km 떨어져 있습니다. 봉은사는 5km 거리에 있습니다.
-								
-								토요코인 서울강남에서는 2018년 7월 18일부터 Booking.com 고객을 맞이하고 있습니다.
+								<c:out value="${hotel.detailText }"/>
 							</p>
 							
 							<div class="row">
 								<div class="col-md-6" style="font-size:20px;">
 								<h3></h3>
-									<p><i class="icon-login-1"></i>체크인 : 15:00부터</p>
+									<p><i class="icon-login-1"></i>체크인 : <c:out value="${hotel.checkInTime }"/>부터</p>
 									<br>
-									<P><i class="icon-logout-1"></i>체크아웃 : 11:00까지</P>
+									<P><i class="icon-logout-1"></i>체크아웃 : <c:out value="${hotel.checkOutTime }"/>까지</P>
 									<br>
 									<p><i class="icon-info-1"></i>취소/선결제</p>
 								</div>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    
+<!--     전체 매퍼중에서 유일한 값을 사용하여야 한다.
+     해서 관계적으로 해당 파일의 패스와 파일이름 (확장자 제외)
+     그리고 dao에서 namespace와 일치하여야 한다. -->
+    
+<mapper namespace="com.mycompany.app.info.InfoMapper">		
+
+
+								<!-- select 결과를 받을 객체 -->
+    <resultMap id="resultMapObj" type="com.mycompany.app.info.Info"></resultMap>
+    
+    <sql id="abc">
+    	a.seq
+    	, a.defaultNy
+    	, a.info
+    	, a.iClass
+    	, a.delNy
+    </sql>
+    
+    <sql id ="selectCommon">
+   		FROM    
+	    	info a
+	    	<if test="hotel_seq != null and !hotel_seq.equals('')">Join hotelInfo b On b.info_seq = a.seq AND b.hotel_seq = #{hotel_seq}</if>
+		WHERE 1=1
+			<if test="seq != null and !name.equals('')">AND seq = #{seq}</if>
+			<if test="delNy != null and !delNy.equals('')">AND delNy = #{delNy}</if>
+    </sql>
+
+  	<select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectCommon" />
+	</select>
+	
+	<select id="selectList" resultMap="resultMapObj">
+		SELECT aa.* FROM (   	
+	   		SELECT
+				<include refid="abc" />
+	   			<include refid="selectCommon" />
+		) aa
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   			
+   	</select>
+
+   	<select id="selectOne" resultMap="resultMapObj">
+   		SELECT 
+   			<include refid="abc" />
+   		FROM
+   			info a
+		WHERE 1=1
+			AND a.seq = #{seq}	
+   	</select>   
+   	<select id="selectHotel" resultMap="resultMapObj">
+   		SELECT
+			a.*
+		FROM
+			info a
+		    Join hotelInfo b on b.info_seq = a.seq and b.hotel_seq = #{seq}
+		WHERE 1=1
+
+   	</select>
+   	
+
+
+<!-- 	 <select id="selectList" resultMap="resultMapObj">
+    	SELECT 
+			<include refid="abc" />
+    	FROM
+    		codeGroup
+    	WHERE 1=1
+			<if test="shKeyword != null and !shKeyword.equals('')">AND NAME LIKE CONCAT('%',#{shKeyword},'%')</if>		
+   	</select> -->
+
+   	<!-- ===================================== -->
+	
+   <update id="update">
+        UPDATE 
+        	info
+        SET 
+        	defaultNy = #{defaultNy},
+        	info = #{info},
+        	iClass = #{iClass},
+        	delNy = #{delNy}
+        WHERE 
+        	seq = #{seq}
+    </update>
+	
+   <delete id="delete">
+        DELETE 
+        FROM	
+        	info 
+        WHERE	
+        	seq = #{seq}
+   </delete>
+    
+   <insert id="insert">
+       INSERT INTO info(
+       	defaultNy
+       	,info
+       	,iClass
+       	,delNy
+       ) VALUES (
+       	#{defaultNy}
+       	,#{info}
+       	,#{iClass}
+       	,0
+       )
+   </insert>
+   		
+
+
+    <update id="uelete">
+        UPDATE 
+        	info
+        SET
+        	delNy = "1"
+       WHERE  1=1          
+       AND	seq = #{seq}
+    </update>
+
+</mapper>    

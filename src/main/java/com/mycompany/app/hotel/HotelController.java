@@ -8,11 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.app.info.Info;
+import com.mycompany.app.info.InfoServiceImpl;
+import com.mycompany.app.info.InfoVo;
+
 @Controller
 public class HotelController {
 
 	@Autowired
 	HotelServiceImpl hotelService;
+	
+	@Autowired
+	InfoServiceImpl infoService;
 	
 	@RequestMapping("/hotelXdmList")
 	public String hotelXdmList(@ModelAttribute("vo") HotelVo vo, Model model) {
@@ -29,13 +36,14 @@ public class HotelController {
 	}
 	
 	@RequestMapping("/hotelXdmForm")
-	public String hotelXdmForm(HotelVo vo, Model model) {
+	public String hotelXdmForm(HotelVo vo, Model model, InfoVo infoVo) {
 
 		Hotel hotel = hotelService.selectOne(vo); 
 		List<Hotel> uploaded = hotelService.selectUploaded(vo);
+		List<Info> info = infoService.selectList(infoVo);
 		model.addAttribute("item", hotel);
 		model.addAttribute("listUploaded", uploaded);
-
+		model.addAttribute("info", info);
 		return "xdm/hotel/hotelXdmForm";
 	}
 	
@@ -64,12 +72,14 @@ public class HotelController {
 	}
 	
 	@RequestMapping ("/roomDetailInfo")
-	public String roomDetailInfo01(HotelVo vo, Model model) {
+	public String roomDetailInfo01(HotelVo vo, Model model,InfoVo infoVo) {
 		Hotel hotel = hotelService.selectOne(vo);
 		List<Hotel> hotelImg = hotelService.selectUploaded(vo);
+		List<Info> info = infoService.selectHotel(infoVo);
 		
 		model.addAttribute("listUploaded", hotelImg);
 		model.addAttribute("hotel", hotel);
+		model.addAttribute("info", info);
 		return "/usr/infra/subpages/roomDetailInfo01";
 	}
 }
