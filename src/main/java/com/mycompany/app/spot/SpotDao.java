@@ -26,11 +26,7 @@ public class SpotDao {
 		return sqlSession.selectList(namespace + ".selectList", vo ); 
 		// selectList : 반환값 list, vo=가변 가능성 현저히 낮음.
 		}
-	
-	
 
-	
-	
 	
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(Spot dto) { return sqlSession.update(namespace + ".update", dto); }
