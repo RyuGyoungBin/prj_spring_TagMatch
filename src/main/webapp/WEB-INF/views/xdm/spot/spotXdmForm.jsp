@@ -47,7 +47,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-CodeGroup</li>
+          <li class="breadcrumb-item active">Data-Spot</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -63,55 +63,55 @@
 			  	<div class="d-flex flex-wrap justify-content-around">
 	                <div class=" col-5 mb-3">
 	                  	<label for="seq" class=" col-form-label" >seq</label>
-                    	<input type="text" class="form-control bg-dark-subtle" readonly name="seq" id="seq" placeholder="자동생성" value="<c:out value="${item.seq }"></c:out>">
+                    	<input type="text" class="form-control bg-dark-subtle" readonly name="seq" id="seq" placeholder="자동생성" value="<c:out value="${item.seq}"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="hotelType" class=" col-form-label">spotType</label>
-                    	<input type="text" class="form-control" name="type" id="type" value="<c:out value="${item.type }"></c:out>">
+                    	<input type="text" class="form-control" name="type" id="type" value="<c:out value="${item.type}"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="name" class=" col-form-label">name</label>
-                    	<input type="text" class="form-control" name="name" id="name" value="<c:out value="${item.name }"></c:out>">
+                    	<input type="text" class="form-control" name="name" id="name" value="<c:out value="${item.name}"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 						<label onclick="address1()"><i class="icon-search"></i> Zip code</label>
-						<input class="form-control" name="zipCode" id="registerZipCode" type="text" placeholder="우편번호" readonly value="<c:out value="${item.zipCode }"></c:out>">
+						<input class="form-control" name="zipCode" id="registerZipCode" type="text" placeholder="우편번호" readonly value="<c:out value="${item.zipCode}"></c:out>">
 					</div>
 					<div class=" col-5 mb-3">
 						<label>Address</label>
-						<input class="form-control" name="address" id="registerAddress" type="text" placeholder="주소" readonly value="<c:out value="${item.address }"></c:out>">
+						<input class="form-control" name="address" id="registerAddress" type="text" placeholder="주소" readonly value="<c:out value="${item.address}"></c:out>">
 					</div>
 					<div class=" col-5 mb-3">
 						<label>Address detail</label>
-						<input class="form-control" name="addressDetail" id="registerAddressDetail" type="text" placeholder="상세주소" value="<c:out value="${item.addressDetail }"></c:out>">
+						<input class="form-control" name="addressDetail" id="registerAddressDetail" type="text" placeholder="상세주소" value="<c:out value="${item.addressDetail}"></c:out>">
 					</div>
 					<div class=" col-5 mb-3">
 						<label>sido</label>
-						<input class="form-control" name="sido" id="sido" type="text" placeholder="도시" readonly value="<c:out value="${item.sido }"></c:out>">
+						<input class="form-control" name="sido" id="sido" type="text" placeholder="도시" readonly value="<c:out value="${item.sido}"></c:out>">
 					</div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="tel" class=" col-form-label">tel</label>
-                    	<input type="text" class="form-control" name="tel" id="tel" value="<c:out value="${item.tel }"></c:out>">
+                    	<input type="text" class="form-control" name="tel" id="tel" value="<c:out value="${item.tel}"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="checkInTime" class=" col-form-label">openTime</label>
-                    	<input type="text" class="form-control" name="openTime" id="openTime" value="<c:out value="${item.openTime }"></c:out>">
+                    	<input type="text" class="form-control" name="openTime" id="openTime" value="<c:out value="${item.openTime}"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="checkOutTime" class=" col-form-label">closedTime</label>
-                    	<input type="text" class="form-control" name="closedTime" id="closedTime" value="<c:out value="${item.closedTime }"></c:out>">
+                    	<input type="text" class="form-control" name="closedTime" id="closedTime" value="<c:out value="${item.closedTime}"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="defaultNy" class=" col-form-label">adultPrice</label>
-                    	<input type="text" class="form-control" name="adultPrice" id="adultPrice" value="<c:out value="${item.adultPrice }"></c:out>">
+                    	<input type="text" class="form-control" name="adultPrice" id="adultPrice" value="<c:out value="${item.adultPrice}"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="delNy" class=" col-form-label">childPrice</label>
-                    	<input type="text" class="form-control" name="childPrice" id="childPrice" value="<c:out value="${item.childPrice }"></c:out>">
+                    	<input type="text" class="form-control" name="childPrice" id="childPrice" value="<c:out value="${item.childPrice}"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="detailText" class=" col-form-label">detailText</label>
-                    	<textarea id="detailText" name="detailText" style="width: 100%;"><c:out value="${item.detailText }"></c:out></textarea>
+                    	<textarea id="detailText" name="detailText" style="width: 100%;"><c:out value="${item.detailText}"></c:out></textarea>
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="info" class=" col-form-label">delNy</label>
@@ -123,12 +123,14 @@
                     	<input type="text" class="form-control" name="info" id="info" value="<c:out value="${item.info }"></c:out>">
 	                </div>
 
-	                <!--  -->
+	                
 	                <div class=" col-5 mb-3">
-	                  	<label for="date" class=" col-form-label">date</label>
-                    	<input type="text" class="form-control" name="date" id="date" value="<c:out value="${item.date }"></c:out>">
+	                  	<label for="closed" class=" col-form-label">closed day</label>
+                    	<input type="text" class="form-control" name="closed" id="closed" value="<c:out value="${item.date }"></c:out>">
 	                </div>
-	                <!--                     이미지첨부 -->
+	                
+	                
+	                <!-- 이미지첨부 -->
                     <div class="col-5 mb-3">
 			        	<c:set var="type" value="1"/>		<!-- #-> -->
 			        	<c:set var="name" value="uploadImg"/>		<!-- #-> -->
@@ -149,7 +151,7 @@
 							</c:forEach>
 						</div>
                     </div>
-                    <!--                     이미지첨부 -->
+                    <!-- 이미지첨부 -->
                     <div class="col-5 mb-3">
 			        	<c:set var="type" value="2"/>		<!-- #-> -->
 			        	<c:set var="name" value="uploadImgRoom"/>		<!-- #-> -->
@@ -170,12 +172,14 @@
 							</c:forEach>
 						</div>
                     </div>
+                    
+                    
 				</div>
 				<c:choose>
 				<c:when test="${empty param.seq }">
 					<div class="d-flex justify-content-between my-5 text-center">
 						<div class="col-2">
-							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/hotelXdmList'"><i class="bi bi-list"></i></button>
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/SpotXdmList'"><i class="bi bi-list"></i></button>
 						</div>
 						<div class="col-2">
 							<button id="btnInsert" type="button" class="btn btn-success">save</button>
@@ -185,7 +189,7 @@
 				<c:otherwise>
 					<div class="d-flex justify-content-between my-5 text-center">
 						<div class="col-2">
-							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/hotelXdmList'"><i class="bi bi-list"></i></button>
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/SpotXdmList'"><i class="bi bi-list"></i></button>
 							<button id="btnDelete" type="button" class="btn btn-danger">delete</button>
 							<button id="btnDelNy" type="button" class="btn btn-danger">uele</button>
 						</div>

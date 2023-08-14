@@ -46,7 +46,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-Code</li>
+          <li class="breadcrumb-item active">Data-Spot</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -58,7 +58,7 @@
           <div class="card">
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
-			  <form autocomplete="off" action="hotelXdmList" method="post" name="formList">
+			  <form autocomplete="off" action="spotXdmList" method="post" name="formList">
 			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<div class="d-flex">
@@ -90,14 +90,7 @@
 					</div>
 				</form>
 				
-				<c:choose>
-					<c:when test="${fn:length(list) eq 0}">
-						<tr>
-							<td class="text-center" colspan="9">There is no data!</td>
-						</tr>	
-					</c:when>
-					
-		                  	<c:otherwise>
+				
                   	<div class="overflow-hidden overflow-x-auto">
 		              <!-- Table with stripped rows -->
 		              <table class="table table-striped text-nowrap">
@@ -107,54 +100,56 @@
 								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 							</th>
 		                    <th>seq</th>
-		                    <th>hotelType</th>
+		                    <th>type</th>
 		                    <th>name</th>
 		                    <th>zipCode</th>
 		                    <th>address</th>
 		                    <th>addressDetail</th>
 		                    <th>sido</th>
 		                    <th>tel</th>
-		                    <th>checkIn</th>
-		                    <th>checkOut</th>
+		                    <th>openTime</th>
+		                    <th>closedTime</th>
+		                    <th>adultPrice</th>		                    
+		                    <th>childPrice</th>
 		                    <th>detailText</th>
-		                    <th>info</th>
-		                    <th>date</th>
-		                    <th>roomType</th>
-		                    <th>roomName</th>
-		                    <th>price</th>
-		                    <th>roomNum</th>
+
 		                  </tr>
 		                </thead>
 		                <tbody>
+		                <c:choose>
+							<c:when test="${fn:length(list) eq 0}">
+								<tr>
+									<td class="text-center" colspan="9">There is no data!</td>
+								</tr>	
+							</c:when>
+				                  	<c:otherwise>
 							<c:forEach items="${list}" var="list" varStatus="status">
 		                  		<tr>
 				                  	<th scope="col">
 										<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 									</th>
-				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
-				                    <td scope="row"><c:out value="${list.type }"></c:out></td>
-				                   <td><a href="/hotelXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
+
+				                    <td scope="row"><c:out value="${list.seq}"></c:out></td>
+				                    <td scope="row"><c:out value="${list.type}"></c:out></td>
+				                   <td><a href="/spotXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
 				                   <td><c:out value="${list.zipCode}"></c:out></td>
 				                   <td><c:out value="${list.address}"></c:out></td>
 				                   <td><c:out value="${list.addressDetail}"></c:out></td>
 				                   <td><c:out value="${list.sido}"></c:out></td>
 				                   <td><c:out value="${list.tel}"></c:out></td>
-				                   <td><c:out value="${list.checkInTime}"></c:out></td>
-				                   <td><c:out value="${list.checkOutTime}"></c:out></td>
-				                   <td><c:out value="${list.detailText}"></c:out></td>
-				                   <td><c:out value="${list.info}"></c:out></td>
-				                   <td><c:out value="${list.date}"></c:out></td>
-				                   <td><c:out value="${list.roomType}"></c:out></td>
-				                   <td><c:out value="${list.roomName}"></c:out></td>
-				                   <td><c:out value="${list.price}"></c:out></td>
-				                   <td><c:out value="${list.roomNum}"></c:out></td>
+				                   <td><c:out value="${list.openTime}"></c:out></td>
+				                   <td><c:out value="${list.closedTime}"></c:out></td>
+				                   <td><c:out value="${list.adultPrice}"></c:out></td>				                   
+				                   <td><c:out value="${list.childPrice}"></c:out></td>
+				                   <td><c:out value="${list.detailText}"></c:out></td>		                
 			                 	</tr>
 							</c:forEach>
+						</c:otherwise>
+					</c:choose>
 		                </tbody>
 		              </table>
 		              </div>
-					</c:otherwise>
-				</c:choose>
+					
               <!-- End Table with stripped rows -->
               <div class="container-fluid px-0 mt-2">
 			    <div class="row">

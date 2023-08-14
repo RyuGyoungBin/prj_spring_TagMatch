@@ -13,7 +13,7 @@
 <%@include file = "../include/head.jsp"%>
 <%@include file = "../include/header.jsp"%>
 
-	<section id="hero" class="background-image" data-background="url(resources/assets/img/mainSea.jpg)">
+	<section id="hero" class="background-image" data-background="url(resources/assets/img/mainTrain.jpg)">
 	
         <div class="opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
         
@@ -22,7 +22,7 @@
                 <h3 class="animated fadeInDown">기차 여행 A to Z 는 여기에서! </h3>
                 <p class="animated fadeInDown">기차 승차권 / 숙소 / 모든 입장권</p>
                 <a href="#" class="animated fadeInUp button_intro">View Tours</a> <a href="#" class="animated fadeInUp button_intro outline">View Tickets</a>
-            </div>
+            </div>  
             <div id="search_bar_container">
                 <div class="container">
                     <div class="search_bar">
@@ -34,7 +34,7 @@
                                 <option value="TrainTickets" title="TrainTickets">승차권</option>
                                 <option value="Accommodation" title="Accommodation">숙소</option>
                                 <option value="Tickets" title="Tickets">입장권</option>
-
+ 
                             </select>
                         </span>
                         <div class="nav-searchfield-outer">

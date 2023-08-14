@@ -9,6 +9,7 @@
 	<sql id ="selectCommon">
    		FROM    
 	    	hotel a
+
 	    	LEFT JOIN hotelCloseDay c on c.hotel_seq = a.seq
 	    	LEFT JOIN hotelRoom d on d.hotel_seq = a.seq AND d.defaultNy = 1
 		WHERE 1=1 
