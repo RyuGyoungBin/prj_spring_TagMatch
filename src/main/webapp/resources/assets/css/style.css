@@ -410,7 +410,7 @@ header.sticky #logo .logo_sticky{ display:block; }
 /* logo home with h1 */
 #logo_home h1{
 	margin:10px 0 0 0;
-	padding:0;
+	padding:0; 
 }
 #logo_home h1 a, header.sticky #logo_home h1 a, header#plain #logo_home h1 a, header#colored #logo_home h1 a{
 	width:160px;
