@@ -147,6 +147,7 @@ hr {
 
 strong {
   font-weight: 600;
+  color: black;
 }
 /*-------- 1.2 Buttons --------*/
 a.button_intro, .button_intro  {
@@ -400,6 +401,8 @@ header{
 	top:0;
 	z-index:99999;
 	padding:10px 0;
+	background-image: url(/resources/assets/img/header1.jpg);
+	background-size: cover;
 }
 header#plain{background-color:#fff;}
 
@@ -537,7 +540,7 @@ ul#top_links li:first-child{
 	padding-left:0;
 }
 ul#top_links a{
-	color:#fff;
+	color:black;
 }
 
 /* Header  plain*/
