@@ -60,8 +60,8 @@
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
 			  <form autocomplete="off" action="hotelXdmList" method="post" name="formList">
-			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
-			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+				  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+				  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<div class="d-flex">
 						<div class="mb-3 col-2 text-start ms-3 me-3">
 							<input class="form-control form-control-sm p-2" id="start_date" type="text" placeholder="시작일">
@@ -158,32 +158,31 @@
 				</c:choose>
               <!-- End Table with stripped rows -->
               <div class="container-fluid px-0 mt-2">
-			    <div class="row">
-			        <div class="col">
-			            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
-			            <ul class="pagination justify-content-center mb-0">
-			                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
-			<c:if test="${vo.startPage gt vo.pageNumToShow}">
-			                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="bi bi-chevron-double-left"></i></a></li>
-			</c:if>
-			<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
-				<c:choose>
-					<c:when test="${i.index eq vo.thisPage}">
-			                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
-					</c:when>
-					<c:otherwise>             
-			                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
-					</c:otherwise>
-				</c:choose>
-			</c:forEach>                
-			<c:if test="${vo.endPage ne vo.totalPages}">                
-			                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="bi bi-chevron-double-right"></i></a></li>
-			</c:if>
-			                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
-			            </ul>
-			        </div>
-			    </div>
-			</div>
+						    <div class="row">
+						        <div class="col">
+						            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
+						            <ul class="pagination justify-content-center mb-0">
+						                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
+						<c:if test="${vo.startPage gt vo.pageNumToShow}">
+						                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
+						</c:if>
+						<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
+							<c:choose>
+								<c:when test="${i.index eq vo.thisPage}">
+						                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+								</c:when>
+								<c:otherwise>             
+						                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>                
+						<c:if test="${vo.endPage ne vo.totalPages}">                
+						                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li></c:if>
+						                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+						            </ul>
+						        </div>
+						    </div>
+						</div>
 
             </div>
            
