@@ -63,4 +63,13 @@ public class HotelController {
 		return "redirect:/hotelXdmList";
 	}
 	
+	@RequestMapping ("/roomDetailInfo")
+	public String roomDetailInfo01(HotelVo vo, Model model) {
+		Hotel hotel = hotelService.selectOne(vo);
+		List<Hotel> hotelImg = hotelService.selectUploaded(vo);
+		
+		model.addAttribute("listUploaded", hotelImg);
+		model.addAttribute("hotel", hotel);
+		return "/usr/infra/subpages/roomDetailInfo01";
+	}
 }
