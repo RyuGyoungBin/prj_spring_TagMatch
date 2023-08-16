@@ -21,7 +21,7 @@
 					</div>
 					<div class="col-md-4">
 						<div id="price_single_main" class="hotel">
-							from/per night <span><sup>$</sup>95</span>
+							입장권<span>1,000원</span>
 						</div>
 					</div>
 				</div>
