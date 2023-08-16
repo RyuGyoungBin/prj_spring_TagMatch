@@ -38,6 +38,22 @@
 			
 		</sql>
 	
+	<select id="selectListUploaded">
+	select * from spotUploaded
+	seq
+	,type
+	,defaultNy
+	,sort
+	,path
+	,originalName
+	,uuidName
+	,ext
+	,size
+	,delNy
+	,pseq
+	</select>
+	
+	
 	
 	<select id="selectOne" resultMap="resultMapObj">
 	
@@ -59,7 +75,7 @@
 	    	<include refid="selectCommon" />
 	    
 	</select>
-    
+  
     
     <insert id="insertSpot">
 	    insert into `spot` (
@@ -94,7 +110,35 @@
 		 </selectKey>
     </insert>
 
-
+  
+    <insert id="uploadFiles">
+    insert into `spotUploaded`(
+	type
+	,defaultNy
+	,sort
+	,path
+	,originalName
+	,uuidName
+	,ext
+	,size
+	,delNy
+	,pseq
+    )values(
+    #{type}
+	,#{defaultNy}
+	,#{sort}
+	,#{path}
+	,#{originalName}
+	,#{uuidName}
+	,#{ext}
+	,#{size}
+	,#{delNy}
+	,#{pseq}
+    )
+    <selectKey resultType="String" keyProperty="seq" order="AFTER">
+			SELECT last_insert_id()
+		 </selectKey>
+    </insert>
 	
     <insert id="insertSpotCloseDay">
    	    insert into `spotCloseDay` (
