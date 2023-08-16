@@ -22,8 +22,8 @@
         <div id="top_line">
             <div class="container">
                 <div class="row">
-                    <div class="col-6"><i class="icon-phone"></i><strong>02-1993-0914</strong></div>
-                    <div class="col-6">
+                    <div class="col-6" style="margin-top: 5px;"><i class="icon-phone"></i><strong>02-1993-0914</strong></div>
+                    <div class="col-6" style="margin-top: 5px;">
                         <ul id="top_links">
                             <li><a href="indexUsrLogin"  style="font-style: normal;" ><i class="icon-login-1"></i>Log in</a></li>
                             <li><a href="indexUsrSignUp" id="signUp"  style="font-style: normal;" ><i class="icon-user-add" > </i>Sign up</a></li>
