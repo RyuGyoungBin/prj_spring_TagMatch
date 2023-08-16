@@ -39,7 +39,7 @@
             <div class="row">
                 <div class="col-3">
                     <div id="logo_home">
-                    	<h1><a href="index.html" title="City tours travel template">City Tours travel template</a></h1>
+                    	<h1><a href="index.html" title="City tours travel template"style="background-image:url('/resources/');">City Tours travel template</a></h1>
                     </div>
                 </div>
                 <nav class="col-9">

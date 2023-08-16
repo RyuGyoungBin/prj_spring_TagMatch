@@ -20,6 +20,7 @@ public interface SpotService {
 
 
 	List<Spot> selectListUploaded(SpotVo vo) throws Exception; 
+	
 	public void uploadFiles(MultipartFile[] multipartFiles, Spot dto, String tableName, int type, int maxNumber) throws Exception;
 	
 }
