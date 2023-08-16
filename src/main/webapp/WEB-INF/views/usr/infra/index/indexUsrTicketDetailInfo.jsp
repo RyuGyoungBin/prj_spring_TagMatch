@@ -9,10 +9,10 @@
 <%@include file="../include/head.jsp"%>
 <%@include file="../include/header.jsp"%>
 
-	<section class="parallax-window" data-parallax="scroll"  data-natural-width="1400" data-natural-height="470">
+	<section class="parallax-window" data-parallax="scroll"  data-natural-width="1400" data-natural-height="470" style="background-image:url(resources/assets/img/h3.jpg);background-size: cover;">
 <!-- 	data-image-src="/resources/assets/img/banner/spring.webp" -->
 		<div class="parallax-content-2">
-			<div class="container">
+			<div class="container" >
 				<div class="row">
 					<div class="col-md-8">
 						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
