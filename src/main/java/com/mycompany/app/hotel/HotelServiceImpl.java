@@ -34,8 +34,12 @@ public class HotelServiceImpl implements HotelService{
 	public int insert(Hotel dto) throws Exception {
 		dao.insert(dto);
 		dao.insertHotelClose(dto);
-		dao.insertHotelInfo(dto);
 		dao.insertHotelRoom(dto);
+		
+//		for(int i = 0 ; i < dto.getInfo_seqArray().length ; i++) {
+//			dto.setInfo_seq(dto.getInfo_seqArray()[i]);
+//			dao.insertHotelInfo(dto);
+//		}
 		
     	uploadFiles(dto.getUploadImg(), dto, "hotelUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
     	uploadFiles(dto.getUploadImgRoom(), dto, "hotelUploaded", dto.getUploadImgRoomType(), dto.getUploadImgRoomMaxNumber());  

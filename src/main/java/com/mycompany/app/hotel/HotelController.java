@@ -40,10 +40,8 @@ public class HotelController {
 
 		Hotel hotel = hotelService.selectOne(vo); 
 		List<Hotel> uploaded = hotelService.selectUploaded(vo);
-		List<Info> info = infoService.selectList(infoVo);
 		model.addAttribute("item", hotel);
 		model.addAttribute("listUploaded", uploaded);
-		model.addAttribute("info", info);
 		return "xdm/hotel/hotelXdmForm";
 	}
 	
@@ -81,5 +79,18 @@ public class HotelController {
 		model.addAttribute("hotel", hotel);
 		model.addAttribute("info", info);
 		return "/usr/infra/subpages/roomDetailInfo01";
+	}
+	
+	@RequestMapping("/hotel")
+	public String hotelList(@ModelAttribute("vo") HotelVo vo, Model model) {
+		
+			vo.setParamsPaging(hotelService.selectOneCount(vo));
+			if(vo.getTotalRows() > 0) {
+			List<Hotel> list = hotelService.selectList(vo);
+			model.addAttribute("list", list);
+			} else {
+				
+			}
+		return "/usr/infra/subpages/hotel02";
 	}
 }

@@ -8,7 +8,14 @@ public class Info {
 	private String iClass;
 	private Integer delNy;
 	private String hotel_seq;
+	private String spot_seq;
 	
+	public String getSpot_seq() {
+		return spot_seq;
+	}
+	public void setSpot_seq(String spot_seq) {
+		this.spot_seq = spot_seq;
+	}
 	public String getSeq() {
 		return seq;
 	}

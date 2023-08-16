@@ -22,6 +22,9 @@ import org.springframework.stereotype.Service;
 	public List<Info> selectHotel(InfoVo vo) {return dao.selectHotel(vo);}
 	
 	@Override
+	public List<Info> selectSpot(InfoVo vo) {return dao.selectSpot(vo);}
+	
+	@Override
 	public Info selectOne(InfoVo vo) { return dao.selectOne(vo); }
 
 	@Override
@@ -35,6 +38,8 @@ import org.springframework.stereotype.Service;
 	
 	@Override
 	public int uelete(Info dto) {return dao.uelete(dto);}
+
+	
 
 	
 
