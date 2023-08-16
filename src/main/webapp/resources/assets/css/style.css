@@ -399,10 +399,8 @@ header{
 	position:fixed;
 	left:0;
 	top:0;
+	justify-content: center;
 	z-index:99999;
-	padding:10px 0;
-	background-image: url(/resources/assets/img/header1.jpg);
-	background-size: cover;
 }
 header#plain{background-color:#fff;}
 
@@ -419,7 +417,6 @@ header.sticky #logo .logo_sticky{ display:block; }
 	width:160px;
 	height:100px;
 	display:block;
-	background-image:url(../img/logo.png);
 	background-repeat:no-repeat;
 	background-position:left top;
 	background-size: 150px 100px;
@@ -501,6 +498,7 @@ ul#top_tools li i{font-size: 18px; font-weight: normal;}
 	 margin-bottom:5px;
 	 position:relative;
 	 z-index:999999;
+	 background-color: #fff;
 }
 ul#top_links{
 	list-style:none;
