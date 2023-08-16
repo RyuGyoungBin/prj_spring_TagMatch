@@ -25,6 +25,8 @@ public class InfoDao {
 	
 	public List<Info> selectHotel(InfoVo vo) {return sqlSession.selectList(namespace + ".selectHotel", vo ); }
 	
+	public List<Info> selectSpot(InfoVo vo) {return sqlSession.selectList(namespace + ".selectSpot", vo ); }
+	
 	public Info selectOne(InfoVo vo) {Info codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo); return codeGroup;	}
 
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!

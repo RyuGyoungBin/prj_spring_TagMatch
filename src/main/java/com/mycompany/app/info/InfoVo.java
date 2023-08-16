@@ -8,6 +8,9 @@ public class InfoVo {
 	private String iClass;
 	private Integer delNy;
 	private String hotel_seq;
+	private String spot_seq;
+	private String name;
+	
 	
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
@@ -180,4 +183,17 @@ public class InfoVo {
 	public void setHotel_seq(String hotel_seq) {
 		this.hotel_seq = hotel_seq;
 	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getSpot_seq() {
+		return spot_seq;
+	}
+	public void setSpot_seq(String spot_seq) {
+		this.spot_seq = spot_seq;
+	}
+	
 }

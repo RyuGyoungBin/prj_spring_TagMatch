@@ -57,9 +57,9 @@
         <div class="col-lg-12">
 
           <div class="card">
+		  <form name="form" method="post" autocomplete="off" enctype="multipart/form-data">
             <div class="card-body">
               <h5 class="card-title">Datatables</h5>
-			  <form name="form" method="post" autocomplete="off" enctype="multipart/form-data">
 			  	<div class="d-flex flex-wrap justify-content-around border-bottom">
 	                <div class=" col-5 mb-3">
 	                  	<label for="seq" class=" col-form-label" >seq</label>
@@ -107,10 +107,16 @@
 	                </div>
 	                </div>
 	                <!--  -->
-        	        <div class="d-flex flex-wrap justify-content-around border-bottom">
-	                <div class=" col-5 mb-3">Hotel Info
-		                <div class=" col-5 mb-3">
-	                    	<input type="checkbox" class="form-control" name="info" id="info<c:out value="${info.info }"/>" value="<c:out value="${info.info }"/>">
+        	        <div class="border-bottom text-center">Hotel Info
+		                <div class="d-flex col-10 mb-3">
+		                	<a class="btn btn-light" href="/infoGroupXdmForm?hotel_seq=<c:out value="${item.seq }"/>">Hotel Info</a>
+<%-- 		                	<c:forEach items="${info }" var="info" varStatus="status"> --%>
+<!-- 		                		<div class="m-2"> -->
+<%-- 			                		<label for="info<c:out value="${info.info }"/>"><c:out value="${info.info }"/></label> --%>
+<%-- 			                    	<input type="checkbox" class="" name="info_seqArray" id="info<c:out value="${info.info }"/>" value="<c:out value="${info.seq }"/>"> --%>
+<!-- 		                		</div> -->
+<%-- 		                	</c:forEach>		 --%>
+						
 		                </div>
 	                </div>
 	                <!--  -->
@@ -223,7 +229,6 @@
           </div>
 		  
         </div>
-      </div>
     </section>
     
 

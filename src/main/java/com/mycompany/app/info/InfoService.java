@@ -11,6 +11,7 @@ public interface InfoService {
 	public List<Info> selectList(InfoVo vo);
 	
 	public List<Info> selectHotel(InfoVo vo);
+	public List<Info> selectSpot(InfoVo vo);
 	
 	public Info selectOne(InfoVo vo);
 	

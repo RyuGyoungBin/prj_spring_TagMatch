@@ -14,10 +14,9 @@ public class HotelVo {
 	private String checkInTime;
 	private String checkOutTime;
 	private String detailText;
-//	hotelinfo
-	private Integer defaultNy;
-	private Integer info;
 	private Integer delNy;
+//	hotelinfo
+	private String info_seq;
 //	hotelCloseDay
 	private String date;
 //	hotelRoom
@@ -146,31 +145,7 @@ public class HotelVo {
 	public void setDetailText(String detailText) {
 		this.detailText = detailText;
 	}
-
-	public Integer getDefaultNy() {
-		return defaultNy;
-	}
-
-	public void setDefaultNy(Integer defaultNy) {
-		this.defaultNy = defaultNy;
-	}
-
-	public Integer getInfo() {
-		return info;
-	}
-
-	public void setInfo(Integer info) {
-		this.info = info;
-	}
-
-	public Integer getDelNy() {
-		return delNy;
-	}
-
-	public void setDelNy(Integer delNy) {
-		this.delNy = delNy;
-	}
-
+	
 	public String getDate() {
 		return date;
 	}
@@ -394,6 +369,15 @@ public class HotelVo {
 	public void setStartRnumForMysql(int startRnumForMysql) {
 		this.startRnumForMysql = startRnumForMysql;
 	}
+	
+	public String getInfo_seq() {
+		return info_seq;
+	}
+
+	public void setInfo_seq(String info_seq) {
+		this.info_seq = info_seq;
+	}
+
 	public void setParamsPaging(int totalRows) {
 
 //		setThisPage(3);
@@ -443,4 +427,13 @@ public class HotelVo {
 		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 
 	}
+
+	public Integer getDelNy() {
+		return delNy;
+	}
+
+	public void setDelNy(Integer delNy) {
+		this.delNy = delNy;
+	}
+	
 }
