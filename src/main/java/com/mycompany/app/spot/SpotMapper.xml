@@ -18,24 +18,25 @@
 		<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
 
     </sql>
+    
         <sql id="selectSpot">
-    	a.seq,
-    	a.type,
-    	a.name,
-    	a.zipCode,
-    	a.address,
-    	a.addressDetail,
-    	a.sido,
-    	a.tel,
-    	a.openTime,
-    	a.closedTime,
-		a.adultPrice,
-		a.childPrice,
-		a.detailText,
-		a.delNy,
-		c.date closed
-		
-	</sql>
+	    	a.seq,
+	    	a.type,
+	    	a.name,
+	    	a.zipCode,
+	    	a.address,
+	    	a.addressDetail,
+	    	a.sido,
+	    	a.tel,
+	    	a.openTime,
+	    	a.closedTime,
+			a.adultPrice,
+			a.childPrice,
+			a.detailText,
+			a.delNy,
+			c.date closed
+			
+		</sql>
 	
 	
 	<select id="selectOne" resultMap="resultMapObj">
@@ -143,4 +144,4 @@
     </update>
     
     
-    </mapper>
+</mapper>

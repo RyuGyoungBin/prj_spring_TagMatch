@@ -16,8 +16,9 @@ public class SpotVo {
 	private String adultPrice;
 	private String childPrice;
 	private String detailText;
+	private String closed;
 	private Integer delNy;
-	
+	private String info;
 	
 
 
@@ -193,6 +194,8 @@ public class SpotVo {
 			this.detailText = detailText;
 		}
 
+		
+//		================paging=================
 		public int getThisPage() {
 			return thisPage;
 		}
@@ -280,13 +283,35 @@ public class SpotVo {
 		public void setStartRnumForMysql(int startRnumForMysql) {
 			this.startRnumForMysql = startRnumForMysql;
 		}
+//		================paging=================		
+		
+		
+		
+		
+		
 	
+		public String getClosed() {
+			return closed;
+		}
+
+		public void setClosed(String closed) {
+			this.closed = closed;
+		}
+
 		public Integer getDelNy() {
 			return delNy;
 		}
 
 		public void setDelNy(Integer delNy) {
 			this.delNy = delNy;
+		}
+
+		public String getInfo() {
+			return info;
+		}
+
+		public void setInfo(String info) {
+			this.info = info;
 		}
 		
 		

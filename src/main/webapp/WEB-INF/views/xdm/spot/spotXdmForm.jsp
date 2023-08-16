@@ -114,19 +114,19 @@
                     	<textarea id="detailText" name="detailText" style="width: 100%;"><c:out value="${item.detailText}"></c:out></textarea>
 	                </div>
 	                <div class=" col-5 mb-3">
-	                  	<label for="info" class=" col-form-label">delNy</label>
+	                  	<label for="delNy" class=" col-form-label">delNy</label>
                     	<input type="text" class="form-control" name="delNy" id="delNy" value="<c:out value="${item.delNy }"></c:out>">
 	                </div>
 	                <!--  -->
 	                <div class=" col-5 mb-3">
-	                  	<label for="roomType" class=" col-form-label">info</label>
+	                  	<label for="info" class=" col-form-label">info</label>
                     	<input type="text" class="form-control" name="info" id="info" value="<c:out value="${item.info }"></c:out>">
 	                </div>
 
 	                
 	                <div class=" col-5 mb-3">
 	                  	<label for="closed" class=" col-form-label">closed day</label>
-                    	<input type="text" class="form-control" name="closed" id="closed" value="<c:out value="${item.date }"></c:out>">
+                    	<input type="text" class="form-control" name="closed" id="closed" value="<c:out value="${item.closed }"></c:out>">
 	                </div>
 	                
 	                
