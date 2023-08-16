@@ -51,7 +51,7 @@
                         <a href="#" class="open_close" id="close_in"><i class="icon_set_1_icon-77"></i></a>
                         <ul class="d-flex justify-content-end">
                             <li class="submenu">
-                                <a href="javascript:void(0);" class="show-submenu">Home <i class="icon-down-open-mini"></i></a>
+                                <a href="javascript:void(0);" class="show-submenu" style="color: black;">Home <i class="icon-down-open-mini"></i></a>
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="index_25.html">Train Route Map</a></li>
@@ -74,7 +74,7 @@
                                 </ul>
                             </li>
                             <li class="submenu">
-                                <a href="javascript:void(0);" class="show-submenu">Tours <i class="icon-down-open-mini"></i></a>
+                                <a href="javascript:void(0);" class="show-submenu" style="color: black;">Tours <i class="icon-down-open-mini"></i></a>
                                 <ul>
                                     <li><a href="bookingUsrView">예약 페이지</a></li>
                                     <li><a href="all_tours_grid.html"></a></li>
@@ -101,7 +101,7 @@
                     </div><!-- End main-menu -->
                     <ul id="top_tools">
                         <li>
-                            <a href="javascript:void(0);" class="search-overlay-menu-btn"><i class="icon_search"></i></a>
+                            <a href="javascript:void(0);" class="search-overlay-menu-btn" style="color: black;"><i class="icon_search"></i></a>
                         </li>
                     </ul>
                 </nav>
