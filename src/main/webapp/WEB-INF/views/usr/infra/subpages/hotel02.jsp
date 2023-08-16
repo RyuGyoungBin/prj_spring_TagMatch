@@ -203,7 +203,7 @@
 												to wishlist</span></span></a>
 								</div>
 								<div class="img_list">
-									<a href="/roomDetailInfo01"><img
+									<a href="/roomDetailInfo"><img
 										src="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg"
 										alt="Image">
 										<div class="short_info">
