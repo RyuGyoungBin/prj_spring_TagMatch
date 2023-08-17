@@ -56,7 +56,7 @@
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
                                     <li><a href="/trainUsrView">기차 노선</a></li>
-                                    <li><a href="/hotel02">숙소</a></li>
+                                    <li><a href="/hotel">숙소</a></li>
                                     <li><a href="/indexUsrTicket">입장권</a></li>
                                     <li class="third-level"><a href="javascript:void(0);">지역</a>
                                         <ul>
