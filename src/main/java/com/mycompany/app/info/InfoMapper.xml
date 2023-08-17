@@ -58,7 +58,7 @@
 			a.*
 		FROM
 			info a
-		    Join hotelInfo b on b.info_seq = a.seq and b.hotel_seq = #{hotel_seq}
+		    Join hotelInfo b on b.info_seq = a.seq and b.hotel_seq = #{seq}
 		WHERE 1=1
 
    	</select>
@@ -67,7 +67,7 @@
 			a.*
 		FROM
 			info a
-		    Join spotInfo b on b.info_seq = a.seq and b.spot_seq = #{spot_seq}
+		    Join spotInfo b on b.info_seq = a.seq and b.spot_seq = #{seq}
 		WHERE 1=1
 
    	</select>

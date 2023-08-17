@@ -63,7 +63,7 @@
 			  	<div class="d-flex flex-wrap justify-content-around">
 	                <div class=" col-5 mb-3">
 	                	<c:forEach items="${list }" var="list" varStatus="status">
-	                  	<label for="info_seq<c:out value="${list.seq }"/>" class=" col-form-label"><c:out value="${list.seq }"></c:out></label>
+	                  	<label for="info_seq<c:out value="${list.seq }"/>" class=" col-form-label"><c:out value="${list.info }"></c:out></label>
                     	<input type="checkbox" class="" name="info_seq" id="info_seq<c:out value="${list.seq }"/>" value="<c:out value="${list.seq }"></c:out>">
 	                	</c:forEach>
 	                </div>
