@@ -37,7 +37,7 @@
 
 
 	<main>
-	<form method="post" >
+	<form method="post" name="formList" >
 		
 	    
 	    
@@ -57,20 +57,19 @@
 
 
 		<div class="container margin_60">
-			 
 			<div class="row">
 				<aside class="col-lg-3">
 					<div class="box_style_cat">
 						<ul id="cat_nav">
-							<li><a href="#" id="active"><i
+							<li><a href="/hotel?hotelType=1" id="active"><i
 									class="icon_set_1_icon-51"></i>호텔 <span>(...)</span></a></li>
-							<li><a href="pension02"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
+							<li><a href="/hotel?hotelType=2"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
 							</li>
-							<li><a href="condo02"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a>
+							<li><a href="/hotel?hotelType=3"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a>
 							</li>
-							<li><a href="#"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a>
+							<li><a href="/hotel?hotelType=4"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a>
 							</li>
-							<li><a href="#"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a>
+							<li><a href="/hotel?hotelType=5"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a>
 							</li>
 						</ul>
 					</div>
@@ -173,13 +172,6 @@
 							  <option value="13">충청남도</option>
 							  <option value="13">충청북도</option>
 						 </select>
-				 		 <select class="form-select selectDistrict me-auto" aria-label="Default select example" >
-							  <option selected>-시/구/지역-</option>
-							  <option value="0">== 전체 ==</option>
-							  <option value="1">일구</option>
-							  <option value="2">이구</option>
-							  <option value="3">삼구</option>
-						 </select>
 						<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
 							<a href="all_tours_grid.html" class="bt_filters"><i
 								class="icon-th"></i></a> <a href="#" class="bt_filters"><i
@@ -189,7 +181,9 @@
 						</div>
 					</div>
 					<!--/tools -->
-
+					 <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+					  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
+					<c:forEach items="${list }" var="list" varStatus="status">
 					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.1s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
@@ -203,8 +197,8 @@
 												to wishlist</span></span></a>
 								</div>
 								<div class="img_list">
-									<a href="/roomDetailInfo"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/01/01.jpg"
+									<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>"><img
+										src="<c:out value="${list.path }"/><c:out value="${list.uuidName }"/>"
 										alt="Image">
 										<div class="short_info">
 											<i class="icon_set_1_icon-51"></i>
@@ -219,11 +213,9 @@
 											class="icon-star"></i><small>(75)</small>
 									</div>
 									<h3>
-										<strong>신라스테이 삼성</strong>
+										<strong><c:out value="${list.name }"/></strong>
 									</h3>
-									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
-										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
-										adipisci maiestatis inciderint no, eos in elit dicat.....</p>
+									<p><c:out value="${list.detailText }"/></p>
 									<ul class="add_info">
 										<li>
 											<div class="tooltip_styled tooltip-effect-4">
@@ -243,7 +235,7 @@
 													class="icon_set_1_icon-41"></i></span>
 												<div class="tooltip-content">
 													<h4>Address</h4>
-													Musée du Louvre, 75058 Paris - France <br>
+													<c:out value="${list.address }"/>, <c:out value="${list.addressDetail }"/> <br>
 												</div>
 											</div>
 										</li>
@@ -286,10 +278,10 @@
 							<div class="col-lg-2 col-md-2">
 								<div class="price_list">
 									<div>
-										₩120,000~<span class="normal_price_list"></span><small>*2인
+										₩<c:out value="${list.price }"/>~<span class="normal_price_list"></span><small>*1인 <c:out value="${list.roomName }"/>
 											기준</small>
 										<p>
-											<a href="single_tour.html" class="btn_1">Details</a>
+											<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>" class="btn_1">Details</a>
 										</p>
 									</div>
 
@@ -298,575 +290,40 @@
 						</div>
 					</div>
 					<!--End strip -->
-
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.2s">
-						<div class="row">
-							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3 popular">
-									<span>Popular</span>
-								</div>
-								<div class="wishlist">
-									<a class="tooltip_flip tooltip-effect-1"
-										href="javascript:void(0);">+<span
-										class="tooltip-content-flip"><span class="tooltip-back">Add
-												to wishlist</span></span></a>
-								</div>
-								<div class="img_list">
-									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/02/02_1.jpg"
-										alt="Image">
-										<div class="short_info">
-											<i class="icon_set_1_icon-51"></i>
-										</div> </a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="tour_list_desc">
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star  voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star"></i><small>(75)</small>
-									</div>
-									<h3>
-										<strong>AC호텔 바이 메리어트 서울 강남</strong>
-									</h3>
-									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
-										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
-										adipisci maiestatis inciderint no, eos in elit dicat.....</p>
-									<ul class="add_info">
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-83"></i></span>
-												<div class="tooltip-content">
-													<h4>Schedule</h4>
-													<strong>Monday to Friday</strong> 09.00 AM - 5.30 PM <br>
-													<strong>Saturday</strong> 09.00 AM - 5.30 PM <br> <strong>Sunday</strong>
-													<span class="label label-danger">Closed</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-41"></i></span>
-												<div class="tooltip-content">
-													<h4>Address</h4>
-													Musée du Louvre, 75058 Paris - France <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-97"></i></span>
-												<div class="tooltip-content">
-													<h4>Languages</h4>
-													English - French - Chinese - Russian - Italian
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-27"></i></span>
-												<div class="tooltip-content">
-													<h4>Parking</h4>
-													1-3 Rue Elisée Reclus <br> 76 Rue du Général Leclerc <br>
-													8 Rue Caillaux 94923 <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-25"></i></span>
-												<div class="tooltip-content">
-													<h4>Transport</h4>
-													<strong>Metro: </strong>Musée du Louvre station (line 1) <br>
-													<strong>Bus:</strong> 21, 24, 27, 39, 48, 68, 69, 72, 81,
-													95 <br>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-2">
-								<div class="price_list">
-									<div>
-										₩220,000~<span class="normal_price_list"></span><small>*2인
-											기준</small>
-										<p>
-											<a href="single_tour.html" class="btn_1">Details</a>
-										</p>
-									</div>
-
-								</div>
-							</div>
+					</c:forEach>
+					<div class="container-fluid px-0 mt-2">
+						    <div class="row">
+						        <div class="col">
+						            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
+						            <ul class="pagination justify-content-center mb-0">
+						                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
+						<c:if test="${vo.startPage gt vo.pageNumToShow}">
+						                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
+						</c:if>
+						<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
+							<c:choose>
+								<c:when test="${i.index eq vo.thisPage}">
+						                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+								</c:when>
+								<c:otherwise>             
+						                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>                
+						<c:if test="${vo.endPage ne vo.totalPages}">                
+						                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li></c:if>
+						                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+						            </ul>
+						        </div>
+						    </div>
 						</div>
-					</div>
-					<!--End strip -->
-
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.3s">
-						<div class="row">
-							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3">
-									<span>Top rated</span>
-								</div>
-								<div class="wishlist">
-									<a class="tooltip_flip tooltip-effect-1"
-										href="javascript:void(0);">+<span
-										class="tooltip-content-flip"><span class="tooltip-back">Add
-												to wishlist</span></span></a>
-								</div>
-								<div class="img_list">
-									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/03/03_1.jpg"
-										alt="Image">
-										<div class="short_info">
-											<i class="icon_set_1_icon-51"></i>
-										</div> </a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="tour_list_desc">
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star  voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star"></i><small>(75)</small>
-									</div>
-									<h3>
-										<strong>보코서울강남</strong>
-									</h3>
-									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
-										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
-										adipisci maiestatis inciderint no, eos in elit dicat.....</p>
-									<ul class="add_info">
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-83"></i></span>
-												<div class="tooltip-content">
-													<h4>Schedule</h4>
-													<strong>Monday to Friday</strong> 09.00 AM - 5.30 PM <br>
-													<strong>Saturday</strong> 09.00 AM - 5.30 PM <br> <strong>Sunday</strong>
-													<span class="label label-danger">Closed</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-41"></i></span>
-												<div class="tooltip-content">
-													<h4>Address</h4>
-													Musée du Louvre, 75058 Paris - France <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-97"></i></span>
-												<div class="tooltip-content">
-													<h4>Languages</h4>
-													English - French - Chinese - Russian - Italian
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-27"></i></span>
-												<div class="tooltip-content">
-													<h4>Parking</h4>
-													1-3 Rue Elisée Reclus <br> 76 Rue du Général Leclerc <br>
-													8 Rue Caillaux 94923 <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-25"></i></span>
-												<div class="tooltip-content">
-													<h4>Transport</h4>
-													<strong>Metro: </strong>Musée du Louvre station (line 1) <br>
-													<strong>Bus:</strong> 21, 24, 27, 39, 48, 68, 69, 72, 81,
-													95 <br>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-2">
-								<div class="price_list">
-									<div>
-										₩229,900~<span class="normal_price_list"></span><small>*2인
-											기준</small>
-										<p>
-											<a href="single_tour.html" class="btn_1">Details</a>
-										</p>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--End strip -->
-
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.4s">
-						<div class="row">
-							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3">
-									<span>Top rated</span>
-								</div>
-								<div class="wishlist">
-									<a class="tooltip_flip tooltip-effect-1"
-										href="javascript:void(0);">+<span
-										class="tooltip-content-flip"><span class="tooltip-back">Add
-												to wishlist</span></span></a>
-								</div>
-								<div class="img_list">
-									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/04/04_1.jpg"
-										alt="Image">
-										<div class="short_info">
-											<i class="icon_set_1_icon-51"></i>
-										</div> </a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="tour_list_desc">
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star  voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star"></i><small>(75)</small>
-									</div>
-									<h3>
-										<strong>글래드 강남 코엑스 센터</strong>
-									</h3>
-									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
-										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
-										adipisci maiestatis inciderint no, eos in elit dicat.....</p>
-									<ul class="add_info">
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-83"></i></span>
-												<div class="tooltip-content">
-													<h4>Schedule</h4>
-													<strong>Monday to Friday</strong> 09.00 AM - 5.30 PM <br>
-													<strong>Saturday</strong> 09.00 AM - 5.30 PM <br> <strong>Sunday</strong>
-													<span class="label label-danger">Closed</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-41"></i></span>
-												<div class="tooltip-content">
-													<h4>Address</h4>
-													Musée du Louvre, 75058 Paris - France <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-97"></i></span>
-												<div class="tooltip-content">
-													<h4>Languages</h4>
-													English - French - Chinese - Russian - Italian
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-27"></i></span>
-												<div class="tooltip-content">
-													<h4>Parking</h4>
-													1-3 Rue Elisée Reclus <br> 76 Rue du Général Leclerc <br>
-													8 Rue Caillaux 94923 <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-25"></i></span>
-												<div class="tooltip-content">
-													<h4>Transport</h4>
-													<strong>Metro: </strong>Musée du Louvre station (line 1) <br>
-													<strong>Bus:</strong> 21, 24, 27, 39, 48, 68, 69, 72, 81,
-													95 <br>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-2">
-								<div class="price_list">
-									<div>
-										₩181,500~<span class="normal_price_list"></span><small>*2인
-											기준</small>
-										<p>
-											<a href="single_tour.html" class="btn_1">Details</a>
-										</p>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--End strip -->
-
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.5s">
-						<div class="row">
-							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3">
-									<span>Top rated</span>
-								</div>
-								<div class="wishlist">
-									<a class="tooltip_flip tooltip-effect-1"
-										href="javascript:void(0);">+<span
-										class="tooltip-content-flip"><span class="tooltip-back">Add
-												to wishlist</span></span></a>
-								</div>
-								<div class="img_list">
-									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/05/05_1.jpg"
-										alt="Image">
-										<div class="short_info">
-											<i class="icon_set_1_icon-51"></i>
-										</div> </a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="tour_list_desc">
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star  voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star"></i><small>(75)</small>
-									</div>
-									<h3>
-										<strong>호텔 안테룸 서울</strong>
-									</h3>
-									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
-										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
-										adipisci maiestatis inciderint no, eos in elit dicat.....</p>
-									<ul class="add_info">
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-83"></i></span>
-												<div class="tooltip-content">
-													<h4>Schedule</h4>
-													<strong>Monday to Friday</strong> 09.00 AM - 5.30 PM <br>
-													<strong>Saturday</strong> 09.00 AM - 5.30 PM <br> <strong>Sunday</strong>
-													<span class="label label-danger">Closed</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-41"></i></span>
-												<div class="tooltip-content">
-													<h4>Address</h4>
-													Musée du Louvre, 75058 Paris - France <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-97"></i></span>
-												<div class="tooltip-content">
-													<h4>Languages</h4>
-													English - French - Chinese - Russian - Italian
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-27"></i></span>
-												<div class="tooltip-content">
-													<h4>Parking</h4>
-													1-3 Rue Elisée Reclus <br> 76 Rue du Général Leclerc$
-													<br> 8 Rue Caillaux 94923 <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-25"></i></span>
-												<div class="tooltip-content">
-													<h4>Transport</h4>
-													<strong>Metro: </strong>Musée du Louvre station (line 1) <br>
-													<strong>Bus:</strong> 21, 24, 27, 39, 48, 68, 69, 72, 81,
-													95 <br>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-2">
-								<div class="price_list">
-									<div>
-										₩182,000~<span class="normal_price_list"></span><small>*2인
-											기준</small>
-										<p>
-											<a href="single_tour.html" class="btn_1">Details</a>
-										</p>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--End strip -->
-
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.7s">
-						<div class="row">
-							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3">
-									<span>Top rated</span>
-								</div>
-								<div class="wishlist">
-									<a class="tooltip_flip tooltip-effect-1"
-										href="javascript:void(0);">+<span
-										class="tooltip-content-flip"><span class="tooltip-back">Add
-												to wishlist</span></span></a>
-								</div>
-								<div class="img_list">
-									<a href="single_tour.html"><img
-										src="/resources/assets/img/accommodation/hotel/seoul/06/06_1.jpg"
-										alt="Image">
-										<div class="short_info">
-											<i class="icon_set_1_icon-51"></i>
-										</div> 
-									</a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="tour_list_desc">
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star  voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star"></i><small>(75)</small>
-									</div>
-									<h3>
-										<strong>호텔 인 나인 강남</strong>
-									</h3>
-									<p>Lorem ipsum dolor sit amet, quem convenire interesset ut
-										vix, ad dicat sanctus detracto vis. Eos modus dolorum ex, qui
-										adipisci maiestatis inciderint no, eos in elit dicat.....</p>
-									<ul class="add_info">
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-83"></i></span>
-												<div class="tooltip-content">
-													<h4>Schedule</h4>
-													<strong>Monday to Friday</strong> 09.00 AM - 5.30 PM <br>
-													<strong>Saturday</strong> 09.00 AM - 5.30 PM <br> <strong>Sunday</strong>
-													<span class="label label-danger">Closed</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-41"></i></span>
-												<div class="tooltip-content">
-													<h4>Address</h4>
-													Musée du Louvre, 75058 Paris - France <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-97"></i></span>
-												<div class="tooltip-content">
-													<h4>Languages</h4>
-													English - French - Chinese - Russian - Italian
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-27"></i></span>
-												<div class="tooltip-content">
-													<h4>Parking</h4>
-													1-3 Rue Elisée Reclus <br> 76 Rue du Général Leclerc <br>
-													8 Rue Caillaux 94923 <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-25"></i></span>
-												<div class="tooltip-content">
-													<h4>Transport</h4>
-													<strong>Metro: </strong>Musée du Louvre station (line 1) <br>
-													<strong>Bus:</strong> 21, 24, 27, 39, 48, 68, 69, 72, 81,
-													95 <br>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-2">
-								<div class="price_list">
-									<div>
-										₩169,000~<span class="normal_price_list"></span><small>*2인
-											기준</small>
-										<p>
-											<a href="single_tour.html" class="btn_1">Details</a>
-										</p>
-									</div>
-
-								</div>
-							</div>
-						</div>
-					</div>
-					<!--End strip -->
-
-					<nav aria-label="Page navigation">
-						<ul class="pagination justify-content-center">
-							<li class="page-item"><a class="page-link" href="#"
-								aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
-									<span class="sr-only">Previous</span>
-							</a></li>
-							<li class="page-item active"><span class="page-link">1</span>
-							</li>
-							<li class="page-item"><a class="page-link" href="#">2</a></li>
-							<li class="page-item"><a class="page-link" href="#">3</a></li>
-							<li class="page-item"><a class="page-link" href="#"
-								aria-label="Next"> <span aria-hidden="true">&raquo;</span> <span
-									class="sr-only">Next</span>
-							</a></li>
-						</ul>
-					</nav>
 					<!-- end pagination-->
 
 				</div>
 				<!-- End col lg-9 -->
 			</div>
 			<!-- End row -->
+			
 		</div>
 		<!-- End container -->
 		</form>
@@ -881,8 +338,13 @@
 	<script src="/resources/assets/js/cat_nav_mobile.js"></script>
 	<script>
 		$('#cat_nav').mobileMenu();
+		//paging
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			$("form[name=formList]").attr("action", "/hotel").submit();
+		}
 	</script>
-
+	
 
 
 </body>

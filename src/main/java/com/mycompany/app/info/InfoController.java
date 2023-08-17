@@ -50,5 +50,21 @@ public class InfoController {
 		service.uelete(dto);
 		return "redirect:/infoXdmList";
 	}
+	@RequestMapping("/infoGroupXdmForm")
+	public String infoGroupXdmForm(InfoVo vo, Model model) {
+		List<Info> list = service.selectList(vo);
+		model.addAttribute("list", list);
+		System.out.println(vo.getHotel_seq());
+		System.out.println(vo.getSpot_seq());
+		if(vo.getHotel_seq() != null || vo.getHotel_seq() != "") {
+			List<Info> hotel = service.selectHotel(vo);
+			model.addAttribute("hotel", hotel);
+		}
+		if(vo.getSpot_seq() != null || vo.getSpot_seq() != "") {
+			List<Info> spot = service.selectSpot(vo);
+			model.addAttribute("spot", spot);
+		}
+		return "/xdm/info/infoGroupXdmForm";
+	}
 	
 }

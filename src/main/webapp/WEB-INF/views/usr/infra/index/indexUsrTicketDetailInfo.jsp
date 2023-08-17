@@ -9,10 +9,10 @@
 <%@include file="../include/head.jsp"%>
 <%@include file="../include/header.jsp"%>
 
-	<section class="parallax-window" data-parallax="scroll"  data-natural-width="1400" data-natural-height="470">
+	<section class="parallax-window" data-parallax="scroll"  data-natural-width="1400" data-natural-height="470" style="background-image:url(resources/assets/img/h3.jpg);background-size: cover;">
 <!-- 	data-image-src="/resources/assets/img/banner/spring.webp" -->
 		<div class="parallax-content-2">
-			<div class="container">
+			<div class="container" >
 				<div class="row">
 					<div class="col-md-8">
 						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
@@ -102,7 +102,7 @@
 						<img src="/resources/assets/img/detail/Detail1_6.jpg" alt="Image">
 						<img src="/resources/assets/img/detail/Detail1_7.jpg" alt="Image">
 						</div>
-							<p>
+							<p style="font-size: 15px;margin-top: 66px;">
 														이용안내
 							* 당일 구매 당일 사용 가능
 							<br>
@@ -147,7 +147,6 @@
 							<br>
 							운영정보는 현장 상황에 따라 변동될 수 있습니다.
 							</p>
-							
 							<div class="row">
 								<div class="col-md-6" style="font-size:20px;">
 								<h3></h3>

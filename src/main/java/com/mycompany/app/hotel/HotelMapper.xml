@@ -9,11 +9,12 @@
 	<sql id ="selectCommon">
    		FROM    
 	    	hotel a
-
 	    	LEFT JOIN hotelCloseDay c on c.hotel_seq = a.seq
 	    	LEFT JOIN hotelRoom d on d.hotel_seq = a.seq AND d.defaultNy = 1
+	    	LEFT JOIN hotelUploaded e on e.pseq = a.seq AND e.type = 1
 		WHERE 1=1 
 			<if test="delNy != null and !delNy.equals('')">AND a.delNy = #{delNy}</if>
+			<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if>
 		
     </sql>
     <sql id="selectHotel">
@@ -33,7 +34,10 @@
     	d.roomName,
     	d.price,
     	d.roomNum,
-    	a.delNy
+    	a.delNy,
+    	e.type,
+    	e.path,
+    	e.uuidName
 	</sql>
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT aa.* FROM (   	
@@ -41,6 +45,8 @@
 				<include refid="selectHotel" />
 	   			<include refid="selectCommon" />
 		) aa
+<!-- 		WHERE 1=1 -->
+<!-- 		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if> -->
 		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
 	<select id="selectOneCount" resultType="Integer">
@@ -59,6 +65,7 @@
 		FROM
 			hotelUploaded
 		WHERE 1=1
+			AND pseq = #{seq}
 	</select>
 	
 	<insert id="insertHotel">
@@ -132,6 +139,15 @@
     		#{date},
     		#{seq},
     		0
+    	)
+    </insert>
+    <insert id="insertHotelInfo">
+    	insert into `hotelInfo`(
+    		hotel_seq,
+    		info_seq
+    	) values (
+    		#{seq},
+    		#{info_seqArray}
     	)
     </insert>
     
