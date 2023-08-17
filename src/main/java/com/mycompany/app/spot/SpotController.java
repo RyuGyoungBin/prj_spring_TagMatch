@@ -58,7 +58,7 @@ public class SpotController {
 	@RequestMapping("/spotXdmDelete")
 	public String spotXdmDelete(Spot dto) {
 
-		// service 호출
+		// service 호출 
 		service.delete(dto);
 		
 		return "redirect: /spotXdmList";

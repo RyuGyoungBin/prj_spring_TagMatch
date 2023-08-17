@@ -18,7 +18,7 @@ public class Spot {
 	private String childPrice;
 	private String detailText;
 	private String closed;
-	private Integer delNy;
+	private Integer delNy; 
 	private String info;
 	
 //	uploaded
