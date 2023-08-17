@@ -55,7 +55,7 @@ public class SpotServiceImpl implements SpotService{
 	public int uelete(Spot dto) {
 
 		return dao.uelete(dto);	
-	}
+	} 
 
 	@Override
 	public List<Spot> selectListUploaded(SpotVo vo) throws Exception {

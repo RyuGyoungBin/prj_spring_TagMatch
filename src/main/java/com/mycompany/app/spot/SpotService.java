@@ -13,7 +13,7 @@ public interface SpotService {
 	
 	public Spot selectOne(SpotVo vo);
 	
-	public int update(Spot dto) throws Exception;
+	public int update(Spot dto) throws Exception; 
 	public int delete(Spot dto);
 	public int insert(Spot dto) throws Exception;	
 	public int uelete(Spot dto);

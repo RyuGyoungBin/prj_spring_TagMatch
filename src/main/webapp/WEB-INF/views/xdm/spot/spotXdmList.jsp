@@ -231,7 +231,7 @@
 	goList = function(thisPage) {
 		$("input:hidden[name=thisPage]").val(thisPage);
 		$("form[name=formList]").attr("action", "spotXdmList").submit();
-	}
+	} 
 // search
  	$("#start_date").datepicker({
  	});

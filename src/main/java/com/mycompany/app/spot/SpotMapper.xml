@@ -142,7 +142,7 @@
 	
     <insert id="insertSpotCloseDay">
    	    insert into `spotCloseDay` (
-   	    	spot_seq
+   	    	spot_seq 
 			,date
 		) values (
 			#{seq}

@@ -23,7 +23,7 @@ public class SpotDao {
 	public Spot selectOne(SpotVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
 	
 	public List<Spot> selectList(SpotVo vo) {
-		return sqlSession.selectList(namespace + ".selectList", vo ); 
+		return sqlSession.selectList(namespace + ".selectList", vo );  
 		// selectList : 반환값 list, vo=가변 가능성 현저히 낮음.
 		}
 
