@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.app.common.constant.Constants;
+import com.mycompany.app.gyoung.TrainController;
 import com.mycompany.app.info.Info;
 import com.mycompany.app.info.InfoServiceImpl;
 import com.mycompany.app.info.InfoVo;
@@ -82,11 +84,12 @@ public class HotelController {
 	}
 	
 	@RequestMapping("/hotel")
-	public String hotelList(@ModelAttribute("vo") HotelVo vo, Model model) {
+	public String hotelList(@ModelAttribute("vo") HotelVo vo, Model model) throws Exception {
 		
 			vo.setParamsPaging(hotelService.selectOneCount(vo));
 			if(vo.getTotalRows() > 0) {
 			List<Hotel> list = hotelService.selectList(vo);
+			Constants.train(model);
 			model.addAttribute("list", list);
 			} else {
 				

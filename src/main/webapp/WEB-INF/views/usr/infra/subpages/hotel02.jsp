@@ -143,23 +143,9 @@
 					<div id="tools">
 						<div class="d-flex justify-content-between">
 							<select class="form-select selectCity" aria-label="Default select example" >
-							  <option selected>-도/특별시-</option>
-							  <option value="0">== 전체 ==</option>
-							  <option value="1">서울특별시</option>
-							  <option value="2">부산광역시</option>
-							  <option value="3">인천광역시</option>
-							  <option value="4">대전광역시</option>
-							  <option value="5">광주광역시</option>
-							  <option value="6">울산광역시</option>
-							  <option value="7">대구광역시</option>
-							  <option value="8">강원도</option>
-							  <option value="9">경기도</option>
-							  <option value="10">경상남도</option>
-							  <option value="11">경상북도</option>
-							  <option value="12">전라남도</option>
-							  <option value="13">전라북도</option>
-							  <option value="13">충청남도</option>
-							  <option value="13">충청북도</option>
+							  <c:forEach items="${item}" var="item" varStatus="status">
+							  	<option><c:out value="${item.cityname }"/></option>
+							  </c:forEach>
 						 </select>
 						<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
 							<a href="all_tours_grid.html" class="bt_filters"><i
