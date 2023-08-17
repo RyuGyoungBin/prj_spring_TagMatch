@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+
 @Repository
 public class HotelDao {
 	@Inject
@@ -24,20 +25,20 @@ public class HotelDao {
 	public int insertHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".insertHotelRoom", dto); }
 	public int insertHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".insertHotelClose", dto); }
 	
-	public int update(Hotel dto) { return sqlSession.insert(namespace + ".updateHotel", dto); }
-	public int updateHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".updateHotelInfo", dto); }
-	public int updateHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".updateHotelRoom", dto); }
-	public int updateHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".updateHotelClose", dto); }
+	public int update(Hotel dto) { return sqlSession.update(namespace + ".updateHotel", dto); }
+	public int updateHotelInfo(Hotel dto) { return sqlSession.update(namespace + ".updateHotelInfo", dto); }
+	public int updateHotelRoom(Hotel dto) { return sqlSession.update(namespace + ".updateHotelRoom", dto); }
+	public int updateHotelClose(Hotel dto) { return sqlSession.update(namespace + ".updateHotelClose", dto); }
 	
-	public int delete(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotel", dto); }
-	public int deleteHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotelInfo", dto); }
-	public int deleteHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotelRoom", dto); }
-	public int deleteHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".deleteHotelClose", dto); }
+	public int delete(Hotel dto) { return sqlSession.delete(namespace + ".deleteHotel", dto); }
+	public int deleteHotelInfo(Hotel dto) { return sqlSession.delete(namespace + ".deleteHotelInfo", dto); }
+	public int deleteHotelRoom(Hotel dto) { return sqlSession.delete(namespace + ".deleteHotelRoom", dto); }
+	public int deleteHotelClose(Hotel dto) { return sqlSession.delete(namespace + ".deleteHotelClose", dto); }
 	
-	public int uelete(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotel", dto); }
-	public int ueleteHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotelInfo", dto); }
-	public int ueleteHotelRoom(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotelRoom", dto); }
-	public int ueleteHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".ueleteHotelClose", dto); }
+	public int uelete(Hotel dto) { return sqlSession.update(namespace + ".ueleteHotel", dto); }
+	public int ueleteHotelInfo(Hotel dto) { return sqlSession.update(namespace + ".ueleteHotelInfo", dto); }
+	public int ueleteHotelRoom(Hotel dto) { return sqlSession.update(namespace + ".ueleteHotelRoom", dto); }
+	public int ueleteHotelClose(Hotel dto) { return sqlSession.update(namespace + ".ueleteHotelClose", dto); }
 	
 	public int insertUploaded(Hotel dto) { return sqlSession.insert(namespace + ".insertUploaded", dto); }
 }
