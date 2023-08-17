@@ -14,6 +14,9 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="/resources/assets/img/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="/resources/assets/img/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="/resources/assets/img/apple-touch-icon-144x144-precomposed.png">
+    
+    <!-- bs modal -->
+<!-- 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 
     <!-- GOOGLE WEB FONT --> 
     <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">

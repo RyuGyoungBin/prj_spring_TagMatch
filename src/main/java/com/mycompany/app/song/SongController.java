@@ -24,6 +24,8 @@ public class SongController {
 		return "/usr/infra/subpages/condo02";
 	}
 	
+
+	
 	@RequestMapping ("/roomDetailInfo02")
 	public String roomDetailInfo02() {
 		
@@ -39,6 +41,11 @@ public class SongController {
 	@RequestMapping ("/registerUsrForm")
 	public String registerUsrForm() {
 		return "/usr/infra/member/registerUsrForm";
+	}
+	
+	@RequestMapping ("/trainUsrView")
+	public String trainUsrView() {
+		return "/usr/infra/train/trainUsrView";
 	}
 
 

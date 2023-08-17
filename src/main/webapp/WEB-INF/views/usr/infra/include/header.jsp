@@ -15,6 +15,7 @@
     <!-- End Preload -->
 
     <div class="layer"></div>
+    
     <!-- Mobile menu overlay mask -->
 
     <!-- Header================================================== -->
@@ -54,20 +55,18 @@
                                 <a href="javascript:void(0);" class="show-submenu" style="color: black;">Home <i class="icon-down-open-mini"></i></a>
                                 <ul>
                                     <li><a href="index.html">Home</a></li>
-                                    <li><a href="index_25.html">Train Route Map</a></li>
-                                    <li><a href="/hotel02">Accommodation</a></li>
-                                    <li><a href="index_23.html">Event / Festival</a></li>
-                                    <li class="third-level"><a href="javascript:void(0);">ABCDEFG <strong class="badge badge-danger">New!</strong></a>
+                                    <li><a href="/trainUsrView">기차 노선</a></li>
+                                    <li><a href="/hotel02">숙소</a></li>
+                                    <li><a href="/indexUsrTicket">입장권</a></li>
+                                    <li class="third-level"><a href="javascript:void(0);">지역</a>
                                         <ul>
-                                            <li><a href="index_24.html">H</a></li>
-                                            <li><a href="index_20.html">I</a></li>
-                                            <li><a href="index_14.html">J</a></li>
-                                            <li><a href="index_15.html">K</a></li>
-                                            <li><a href="index_17.html">L <strong class="badge badge-danger">New!</strong></a></li>
-                                            <li><a href="index_21.html">M <strong class="badge badge-danger">New!</strong></a></li>
-                                            <li><a href="index_16.html">N</a></li>
-                                            <li><a href="index_19.html">O</a></li>
-                                            <li><a href="index_18.html">P</a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#myModal">서울</a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#myModal">경기/인천</a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#myModal">충청</a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#myModal">강원</a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#myModal">전라</a></li>
+                                            <li><a href="#" data-toggle="modal" data-target="#myModal">경상</a></li>
+
                                         </ul>
                                     </li>
 
@@ -107,4 +106,27 @@
                 </nav>
             </div>
         </div><!-- container -->
+        
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		    <div class="modal-dialog modal-dialog-centered" role="document">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <h5 class="modal-title" id="myModalLabel">선택해주세요</h5>
+
+
+		            </div>
+		            <div class="modal-body d-flex  justify-content-around" id="modal-body">
+		                <button type="button" class="btn btn-primary ">기차 노선</button>
+		                <button type="button" class="btn btn-success ">숙소</button>
+		                <button type="button" class="btn btn-warning">입장권</button>
+		            </div>
+		            <div class="modal-footer">
+		                <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+		                <button type="button" class="btn btn-danger">확인</button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+        
+        
     </header><!-- End Header -->

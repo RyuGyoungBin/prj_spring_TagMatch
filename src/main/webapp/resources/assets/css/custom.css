@@ -1,3 +1,29 @@
 @charset "UTF-8";
 /* CSS Document */
 
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* Noto Sans KR */
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* HakgyoansimWoojuR */
+@font-face {
+    font-family: 'HakgyoansimWoojuR';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/HakgyoansimWoojuR.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#searchDropdownBox {
+	font-family : 'Noto Sans KR';
+	font-size: 20px;
+}
+
+    /* 추가한 CSS 스타일 */
+    #modal-body {
+        max-height: calc(100vh - 200px); /* 최대 높이 지정 */
+        overflow-y: auto; /* 스크롤이 넘칠 경우 스크롤 표시 */
+}
+        
