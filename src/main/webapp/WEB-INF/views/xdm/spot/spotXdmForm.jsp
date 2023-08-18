@@ -154,12 +154,12 @@
                     <!-- 이미지첨부 -->
                     <div class="col-5 mb-3">
 			        	<c:set var="type" value="2"/>		<!-- #-> -->
-			        	<c:set var="name" value="uploadImgRoom"/>		<!-- #-> -->
+			        	<c:set var="name" value="uploadImgSpot"/>		<!-- #-> -->
 			        	<input type="hidden" id="<c:out value="${name }"/>Type" name="<c:out value="${name }"/>Type" value="<c:out value="${type }"/>"/>
 			        	<input type="hidden" id="<c:out value="${name }"/>MaxNumber" name="<c:out value="${name }"/>MaxNumber" value="0"/>
 			        	<input type="hidden" id="<c:out value="${name }"/>DeleteSeq" name="<c:out value="${name }"/>DeleteSeq"/>
 			        	<input type="hidden" id="<c:out value="${name }"/>DeletePathFile" name="<c:out value="${name }"/>DeletePathFile"/>
-			            <label for="uploadImgRoom" class="form-label input-file-button">이미지첨부</label>
+			            <label for="uploadImgSpot" class="form-label input-file-button">이미지첨부</label>
 			 			<input class="form-control form-control-sm" id="<c:out value="${name }"/>" name="<c:out value="${name }"/>" type="file" multiple="multiple" style="display: none;" onChange="upload('<c:out value="${name }"/>', <c:out value="${type }"/>, 0, 1, 0, 0, 1);">
 						<div id="<c:out value="${name }"/>Preview" class="addScroll bg-dark-subtle" style="min-height: 200px;">
 							<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
@@ -179,7 +179,7 @@
 				<c:when test="${empty param.seq }">
 					<div class="d-flex justify-content-between my-5 text-center">
 						<div class="col-2">
-							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/SpotXdmList'"><i class="bi bi-list"></i></button>
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/spotXdmList'"><i class="bi bi-list"></i></button>
 						</div>
 						<div class="col-2">
 							<button id="btnInsert" type="button" class="btn btn-success">save</button>
@@ -189,7 +189,7 @@
 				<c:otherwise>
 					<div class="d-flex justify-content-between my-5 text-center">
 						<div class="col-2">
-							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/SpotXdmList'"><i class="bi bi-list"></i></button>
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/spotXdmList'"><i class="bi bi-list"></i></button>
 							<button id="btnDelete" type="button" class="btn btn-danger">delete</button>
 							<button id="btnDelNy" type="button" class="btn btn-danger">uele</button>
 						</div>

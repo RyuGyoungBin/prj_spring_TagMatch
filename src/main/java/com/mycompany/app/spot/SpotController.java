@@ -40,8 +40,9 @@ public class SpotController {
 	@RequestMapping("/spotXdmForm")
 	public String spotXdmForm(SpotVo vo, Model model) {
 		Spot item = service.selectOne(vo);
-		List<Spot> uploaded = SpotService.selectListUploaded(vo);
+		List<Spot> uploaded = service.selectListUploaded(vo);
 		model.addAttribute("item", item);
+		model.addAttribute("listUploaded", uploaded);
 		return "/xdm/spot/spotXdmForm";
 	}
 	

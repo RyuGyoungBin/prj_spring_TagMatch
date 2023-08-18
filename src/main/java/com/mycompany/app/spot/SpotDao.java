@@ -43,7 +43,7 @@ public class SpotDao {
 	public int uelete(Spot dto) { return sqlSession.update(namespace + ".uelete", dto); }
 	
 	// 파일업로드
+	public List<Spot> selectListUploaded(SpotVo vo) {return sqlSession.selectList(namespace + ".selectListUploaded", vo );}
 	public int insertUploaded(Spot dto) { return sqlSession.insert(namespace + ".insertUploaded", dto); }
 
-	public List<Spot> selectListUploaded(SpotVo vo) {return sqlSession.selectList(namespace +".selectListUploaded", vo);};
 }
