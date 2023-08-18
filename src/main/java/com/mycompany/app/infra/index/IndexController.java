@@ -12,6 +12,11 @@ public class IndexController {
 		
 		return "/usr/infra/index/index";
 	}
+	
+	@RequestMapping("/bookingUsrView")
+	public String bookingUsr() {
+		return "/usr/infra/index/bookingUsrView";
+	}
 
 }
  

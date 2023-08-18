@@ -15,6 +15,7 @@
 		WHERE 1=1 
 			<if test="delNy != null and !delNy.equals('')">AND a.delNy = #{delNy}</if>
 			<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if>
+			<if test="sido != null and !sido.equals('')">AND a.sido LIKE #{sido}</if>
 		
     </sql>
     <sql id="selectHotel">
