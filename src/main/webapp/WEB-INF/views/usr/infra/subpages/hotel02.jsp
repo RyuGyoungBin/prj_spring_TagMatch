@@ -16,7 +16,7 @@
 	<section class="parallax-window" data-parallax="scroll"
 		data-natural-height="470">
 		<img
-			src="url(resources/assets/img/shillaHotel.jpg);"
+			src="/resources/assets/img/shillaHotel.jpg;"
 			alt="" style="width: 100%; height: 470px;">
 		<div class="parallax-content-1 opacity-mask"
 			data-opacity-mask="rgba(0, 0, 0, 0.6)">
@@ -142,9 +142,10 @@
 				<div class="col-lg-9">
 					<div id="tools">
 						<div class="d-flex justify-content-between">
-							<select class="form-select selectCity" aria-label="Default select example" >
+							<select class="form-select selectCity" aria-label="Default select example" name="sido">
+								<option value="">---전체---</option>
 							  <c:forEach items="${item}" var="item" varStatus="status">
-							  	<option><c:out value="${item.cityname }"/></option>
+							  	<option value="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></option>
 							  </c:forEach>
 						 </select>
 						<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">

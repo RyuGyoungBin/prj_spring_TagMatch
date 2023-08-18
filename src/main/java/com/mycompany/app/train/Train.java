@@ -1,4 +1,4 @@
-package com.mycompany.app.gyoung;
+package com.mycompany.app.train;
 
 public class Train {
 
