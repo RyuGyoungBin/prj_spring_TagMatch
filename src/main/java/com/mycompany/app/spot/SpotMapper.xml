@@ -40,17 +40,6 @@
 	
 	<select id="selectListUploaded">
 	select * from spotUploaded
-	seq
-	,type
-	,defaultNy
-	,sort
-	,path
-	,originalName
-	,uuidName
-	,ext
-	,size
-	,delNy
-	,pseq
 	</select>
 	
 	
@@ -112,7 +101,7 @@
 
   
     <insert id="uploadFiles">
-    insert into `spotUploaded`(
+    insert into ${tableName}(
 	type
 	,defaultNy
 	,sort

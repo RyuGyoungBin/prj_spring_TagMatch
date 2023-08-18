@@ -8,6 +8,9 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import com.mycompany.app.hotel.Hotel;
+import com.mycompany.app.hotel.HotelVo;
+
 @Repository
 public class SpotDao {
 
@@ -41,5 +44,6 @@ public class SpotDao {
 	
 	// 파일업로드
 	public int insertUploaded(Spot dto) { return sqlSession.insert(namespace + ".insertUploaded", dto); }
-	
+
+	public List<Spot> selectListUploaded(SpotVo vo) {return sqlSession.selectList(namespace +".selectListUploaded", vo);};
 }
