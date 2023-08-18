@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.app.common.constant.Constants;
-import com.mycompany.app.hotel.Hotel;
 
 
 
@@ -50,12 +49,13 @@ public class SpotServiceImpl implements SpotService{
 
 	@Override
 	public int insert(Spot dto) throws Exception {
-
-		
 		 dao.insertSpot(dto);
 		 dao.insertSpotCloseDay(dto);
-		 return 1;
-		
+		 
+		uploadFiles(dto.getUploadImg(), dto, "spotUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
+    	uploadFiles(dto.getUploadImgSpot(), dto, "spotUploaded", dto.getUploadImgSpotType(), dto.getUploadImgSpotMaxNumber());
+    	return 0;
+    	
 	}
 
 	@Override
@@ -63,10 +63,8 @@ public class SpotServiceImpl implements SpotService{
 
 		return dao.uelete(dto);	
 	} 
-
 	@Override
 	public List<Spot> selectListUploaded(SpotVo vo){return dao.selectListUploaded(vo);}
-	
 
 	public static String nowString() throws Exception {
 		LocalDateTime localDateTime = LocalDateTime.now();
@@ -113,7 +111,7 @@ public class SpotServiceImpl implements SpotService{
 				dto.setSort(maxNumber + i);
 				dto.setPseq(dto.getSeq());
 
-				dao.insertSpot(dto);
+				dao.insertUploaded(dto);
     		}
 		}
 	}

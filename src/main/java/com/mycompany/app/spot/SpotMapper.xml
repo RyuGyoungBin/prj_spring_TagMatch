@@ -38,8 +38,12 @@
 			
 		</sql>
 	
-	<select id="selectListUploaded">
-	select * from spotUploaded
+	<select id="selectListUploaded" resultMap="resultMapObj">
+	SELECT
+			*
+		FROM
+			spotUploaded
+		WHERE 1=1
 	</select>
 	
 	
@@ -100,7 +104,7 @@
     </insert>
 
   
-    <insert id="uploadFiles">
+    <insert id="insertUploaded">
     insert into ${tableName}(
 	type
 	,defaultNy
@@ -114,7 +118,7 @@
 	,pseq
     )values(
     #{type}
-	,#{defaultNy}
+	,0
 	,#{sort}
 	,#{path}
 	,#{originalName}
@@ -124,9 +128,6 @@
 	,#{delNy}
 	,#{pseq}
     )
-    <selectKey resultType="String" keyProperty="seq" order="AFTER">
-			SELECT last_insert_id()
-		 </selectKey>
     </insert>
 	
     <insert id="insertSpotCloseDay">

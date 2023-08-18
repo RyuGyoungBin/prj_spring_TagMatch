@@ -43,11 +43,11 @@ public class SpotVo {
 	private String[] uploadImgDeleteSeq;
 	private String[] uploadImgDeletePathFile;	
 	
-	private MultipartFile[] uploadFile;
-	private Integer uploadFileType;	
-	private Integer uploadFileMaxNumber;
-	private String[] uploadFileDeleteSeq;
-	private String[] uploadFileDeletePathFile;	
+	private MultipartFile[] uploadImgSpot;
+	private Integer uploadImgSpotType;	
+	private Integer uploadImgSpotMaxNumber;
+	private String[] uploadImgSpotDeleteSeq;
+	private String[] uploadImgSpoteletePathFile;	
 
 		// paging 
 		private int thisPage = 1;									// 현재 페이지
@@ -448,45 +448,46 @@ public class SpotVo {
 			this.uploadImgDeletePathFile = uploadImgDeletePathFile;
 		}
 
-		public MultipartFile[] getUploadFile() {
-			return uploadFile;
+		public MultipartFile[] getUploadImgSpot() {
+			return uploadImgSpot;
 		}
 
-		public void setUploadFile(MultipartFile[] uploadFile) {
-			this.uploadFile = uploadFile;
+		public void setUploadImgSpot(MultipartFile[] uploadImgSpot) {
+			this.uploadImgSpot = uploadImgSpot;
 		}
 
-		public Integer getUploadFileType() {
-			return uploadFileType;
+		public Integer getUploadImgSpotType() {
+			return uploadImgSpotType;
 		}
 
-		public void setUploadFileType(Integer uploadFileType) {
-			this.uploadFileType = uploadFileType;
+		public void setUploadImgSpotType(Integer uploadImgSpotType) {
+			this.uploadImgSpotType = uploadImgSpotType;
 		}
 
-		public Integer getUploadFileMaxNumber() {
-			return uploadFileMaxNumber;
+		public Integer getUploadImgSpotMaxNumber() {
+			return uploadImgSpotMaxNumber;
 		}
 
-		public void setUploadFileMaxNumber(Integer uploadFileMaxNumber) {
-			this.uploadFileMaxNumber = uploadFileMaxNumber;
+		public void setUploadImgSpotMaxNumber(Integer uploadImgSpotMaxNumber) {
+			this.uploadImgSpotMaxNumber = uploadImgSpotMaxNumber;
 		}
 
-		public String[] getUploadFileDeleteSeq() {
-			return uploadFileDeleteSeq;
+		public String[] getUploadImgSpotDeleteSeq() {
+			return uploadImgSpotDeleteSeq;
 		}
 
-		public void setUploadFileDeleteSeq(String[] uploadFileDeleteSeq) {
-			this.uploadFileDeleteSeq = uploadFileDeleteSeq;
+		public void setUploadImgSpotDeleteSeq(String[] uploadImgSpotDeleteSeq) {
+			this.uploadImgSpotDeleteSeq = uploadImgSpotDeleteSeq;
 		}
 
-		public String[] getUploadFileDeletePathFile() {
-			return uploadFileDeletePathFile;
+		public String[] getUploadImgSpoteletePathFile() {
+			return uploadImgSpoteletePathFile;
 		}
 
-		public void setUploadFileDeletePathFile(String[] uploadFileDeletePathFile) {
-			this.uploadFileDeletePathFile = uploadFileDeletePathFile;
+		public void setUploadImgSpoteletePathFile(String[] uploadImgSpoteletePathFile) {
+			this.uploadImgSpoteletePathFile = uploadImgSpoteletePathFile;
 		}
+
 		
 		
 
