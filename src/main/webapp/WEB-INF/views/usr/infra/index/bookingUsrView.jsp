@@ -93,22 +93,22 @@
 						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">가는편</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">출발역</label>
-							<input type="text" class="form-control" value="서울역" readonly>
+							<input type="text" class="form-control train" value="서울역" readonly>
 						</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">도착역</label>
-							<input type="text" class="form-control" value="부산역" readonly>
+							<input type="text" class="form-control train" value="부산역" readonly>
 						</div>
 					</div>
 					<div class="d-flex justify-content-center mb-2">
 						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">오는편</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">출발역</label>
-							<input type="text" class="form-control" value="서울역" readonly>
+							<input type="text" class="form-control train" value="서울역" readonly>
 						</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">도착역</label>
-							<input type="text" class="form-control" value="부산역" readonly>
+							<input type="text" class="form-control train" value="부산역" readonly>
 						</div>
 					</div>
 					<div class="d-flex justify-content-around pb-3 border-bottom">
@@ -1127,6 +1127,28 @@
         </div>
      </div>   
 	</main>
+	<div class="modal fade" id="trainModal">
+		<div class="modal-dialog modal-dialog-centered">
+	    	<div class="modal-content">
+	   			<div class="modal-header">
+	      			<h1 class="modal-title fs-5">시/도 선택</h1>
+	        		<button type="button" class="btn-close" data-bs-dismiss="trainModal" aria-label="Close"></button>
+	      		</div>
+	      		<div class="modal-body">
+		      		<ul class="d-flex flex-wrap justify-content-around p-0">
+		      			<c:forEach items="${item}" var="item" varStatus="status">
+						  	<li class="mb-2">
+						  		<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label>
+						  		<input type="hidden" class="form-control" value="<c:out value="${item.citycode }"/>" name="<c:out value="${item.cityname }"/>" readonly>
+						  	</li>
+						  </c:forEach>
+		      		</ul>
+	      		</div>
+	      		<div class="modal-footer">
+	      		</div>
+	    	</div>
+	 	</div>
+	</div>
 	<!-- End main --> 
     
     <jsp:include page="../include/footer.jsp"></jsp:include>
@@ -1254,6 +1276,15 @@
 	          $(this).val('');
 	      });
 	    });
+// 	modal
+	var TrainModal = new bootstrap.Modal(document.getElementById('trainModal'), {
+		  keyboard: true,
+		  backdrop: "static"
+		});
+		
+		$(".train").on("click",function(){
+			TrainModal.show();
+		})
 </script>
 	
 

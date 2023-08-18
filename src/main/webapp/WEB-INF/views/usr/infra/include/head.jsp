@@ -33,6 +33,8 @@
 	<!-- CUSTOM CSS -->
 	<link href="/resources/assets/css/custom.css" rel="stylesheet">
 	<style>
-		
+		li {
+			list-style:none;
+		}
 	</style>
 </head>
