@@ -10,6 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.app.hotel.Hotel;
+
 @Controller
 public class SpotController {
 	
@@ -38,6 +40,7 @@ public class SpotController {
 	@RequestMapping("/spotXdmForm")
 	public String spotXdmForm(SpotVo vo, Model model) {
 		Spot item = service.selectOne(vo);
+		List<Spot> uploaded = SpotService.selectListUploaded(vo);
 		model.addAttribute("item", item);
 		return "/xdm/spot/spotXdmForm";
 	}
