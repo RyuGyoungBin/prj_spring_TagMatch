@@ -7,7 +7,7 @@
 <html lang="ko">
 
 <%@include file="../include/head.jsp"%>
-<%@include file="../include/header.jsp"%>
+<%@include file="../include/header.jsp"%> 
 
 	<section class="parallax-window" data-parallax="scroll"  data-natural-width="1400" data-natural-height="470">
 <!-- 	data-image-src="/resources/assets/img/banner/spring.webp" -->
