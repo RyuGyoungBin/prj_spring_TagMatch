@@ -25,16 +25,14 @@ public class SpotDao {
 	
 	public Spot selectOne(SpotVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
 	
-	public List<Spot> selectList(SpotVo vo) {
-		return sqlSession.selectList(namespace + ".selectList", vo );  
-		// selectList : 반환값 list, vo=가변 가능성 현저히 낮음.
-		}
+	public List<Spot> selectList(SpotVo vo) {return sqlSession.selectList(namespace + ".selectList", vo );  }
 
 	
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(Spot dto) { return sqlSession.update(namespace + ".update", dto); }
 	
 	public int delete(Spot dto) { return sqlSession.delete(namespace + ".delete", dto); }
+	public int deleteSpotCloseDay(Spot dto) { return sqlSession.delete(namespace + ".deleteSpotCloseDay", dto); }
 
 	public int insertSpot(Spot dto) { return sqlSession.insert(namespace + ".insertSpot", dto); }
 	public int insertSpotInfo(Spot dto) { return sqlSession.insert(namespace + ".insertSpotInfo", dto); }
@@ -45,5 +43,10 @@ public class SpotDao {
 	// 파일업로드
 	public List<Spot> selectListUploaded(SpotVo vo) {return sqlSession.selectList(namespace + ".selectListUploaded", vo );}
 	public int insertUploaded(Spot dto) { return sqlSession.insert(namespace + ".insertUploaded", dto); }
+	
+	
+//	//이미지 뿌리기
+//	public interface spotUploaded {
+//	    List<Spot> getSpotUploaded(int spotSeq);}
 
 }

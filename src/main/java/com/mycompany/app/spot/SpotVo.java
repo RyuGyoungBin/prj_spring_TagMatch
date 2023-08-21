@@ -22,6 +22,8 @@ public class SpotVo {
 	private Integer delNy;
 	private String info;
 	
+	//soptCloseDay
+	private String date;
 
 	// 이미지 업로드 
 	private String tableName;
@@ -312,7 +314,14 @@ public class SpotVo {
 		}
 //		================paging=================		
 		
-		
+		/*닫는날 S*/ 
+		public String getDate() {
+			return date;
+		}
+		public void setDate(String date) {
+			this.date = date;
+		}
+		/*닫는날 E*/ 
 		
 		
 		
@@ -320,6 +329,7 @@ public class SpotVo {
 		public String getClosed() {
 			return closed;
 		}
+
 
 		public void setClosed(String closed) {
 			this.closed = closed;
