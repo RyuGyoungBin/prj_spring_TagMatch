@@ -105,7 +105,7 @@
                     </ul>
                 </nav>
             </div>
-        </div><!-- container -->
+        </div><!-- container -->	
         
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		    <div class="modal-dialog modal-dialog-centered" role="document">
@@ -115,7 +115,8 @@
 
 
 		            </div>
-		            <div class="modal-body d-flex  justify-content-around" id="modal-body">
+		            <div class="modal-body d-flex  justify-content-around" id="m
+		            odal-body">`
 		                <button type="button" class="btn btn-primary ">기차 노선</button>
 		                <button type="button" class="btn btn-success ">숙소</button>
 		                <button type="button" class="btn btn-warning">입장권</button>
