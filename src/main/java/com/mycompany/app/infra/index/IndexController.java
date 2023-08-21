@@ -19,8 +19,13 @@ public class IndexController {
 	@RequestMapping("/bookingUsrView")
 	public String bookingUsr(Model model) throws Exception {
 		TrainProc.train(model);
+		TrainProc.trainStation(model);
 		return "/usr/infra/index/bookingUsrView";
 	}
+	
+	
+	
+	
 
 }
  

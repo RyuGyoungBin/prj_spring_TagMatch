@@ -113,10 +113,8 @@
 		            <div class="modal-header">
 		                <h5 class="modal-title" id="myModalLabel">선택해주세요</h5>
 
-
 		            </div>
-		            <div class="modal-body d-flex  justify-content-around" id="m
-		            odal-body">`
+		            <div class="modal-body d-flex  justify-content-around" id="modal-body">
 		                <button type="button" class="btn btn-primary ">기차 노선</button>
 		                <button type="button" class="btn btn-success ">숙소</button>
 		                <button type="button" class="btn btn-warning">입장권</button>

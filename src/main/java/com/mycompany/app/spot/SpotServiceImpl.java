@@ -12,40 +12,27 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.app.common.constant.Constants;
 
-
-
-
 @Service
 public class SpotServiceImpl implements SpotService{
 
-	
 	@Autowired
 	SpotDao dao;
 	
 //  paging
 	@Override
-	public int selectOneCount(SpotVo vo) {
-		return dao.selectOneCount(vo);
-	}
+	public int selectOneCount(SpotVo vo) {return dao.selectOneCount(vo); }
 
 	@Override
 	public List<Spot> selectList(SpotVo vo) { return dao.selectList(vo); }
 	
 	@Override
-	public Spot selectOne(SpotVo vo) { return dao.selectOne(vo); 
-}
+	public Spot selectOne(SpotVo vo) { return dao.selectOne(vo); }
 
 	@Override
-	public int update(Spot dto){
-
-		return dao.update(dto);	
-	}
+	public int update(Spot dto){return dao.update(dto); }
 
 	@Override
-	public int delete(Spot dto) {
-
-		return dao.delete(dto);	
-	}
+	public int delete(Spot dto) {return dao.delete(dto); }
 
 	@Override
 	public int insert(Spot dto) throws Exception {
@@ -59,12 +46,9 @@ public class SpotServiceImpl implements SpotService{
 	}
 
 	@Override
-	public int uelete(Spot dto) {
-
-		return dao.uelete(dto);	
-	} 
+	public int uelete(Spot dto) {return dao.uelete(dto); } 
 	@Override
-	public List<Spot> selectListUploaded(SpotVo vo){return dao.selectListUploaded(vo);}
+	public List<Spot> selectListUploaded(SpotVo vo){return dao.selectListUploaded(vo); }
 
 	public static String nowString() throws Exception {
 		LocalDateTime localDateTime = LocalDateTime.now();
