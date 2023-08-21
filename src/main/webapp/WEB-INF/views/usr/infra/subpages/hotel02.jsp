@@ -23,7 +23,7 @@
 
 			<div class="animated fadeInDown">
 
-				<h1>숙박</h1>
+				<h1>호텔</h1>
 				<p></p>
 			</div>
 		</div>

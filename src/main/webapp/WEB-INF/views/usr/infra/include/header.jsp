@@ -105,14 +105,13 @@
                     </ul>
                 </nav>
             </div>
-        </div><!-- container -->
+        </div><!-- container -->	
         
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		    <div class="modal-dialog modal-dialog-centered" role="document">
 		        <div class="modal-content">
 		            <div class="modal-header">
 		                <h5 class="modal-title" id="myModalLabel">선택해주세요</h5>
-
 
 		            </div>
 		            <div class="modal-body d-flex  justify-content-around" id="modal-body">

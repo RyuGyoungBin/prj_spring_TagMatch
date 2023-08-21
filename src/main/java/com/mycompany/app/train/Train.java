@@ -15,6 +15,14 @@ public class Train {
 	public Object[] item;
 	public String citycode;
 	public String cityname;
+	
+	// api
+	public String NodeId;
+	public String NodeName;
+	
+
+	
+	
 	public Object getHeader() {
 		return header;
 	}
@@ -80,6 +88,20 @@ public class Train {
 	}
 	public void setItem(Object[] item) {
 		this.item = item;
+	}
+	
+	
+	public String getNodeId() {
+		return NodeId;
+	}
+	public void setNodeId(String nodeId) {
+		NodeId = nodeId;
+	}
+	public String getNodeName() {
+		return NodeName;
+	}
+	public void setNodeName(String nodeName) {
+		NodeName = nodeName;
 	}
 	
 }

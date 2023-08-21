@@ -19,7 +19,7 @@
 	<section class="parallax-window" data-parallax="scroll"
 		data-natural-height="470">
 		<img
-			src="url(resources/assets/img/shillaHotel.jpg);"
+			src="resources/assets/img/maxresdefault.jpg;"
 			alt="" style="width: 100%; height: 470px;">
 		<div class="parallax-content-1 opacity-mask"
 			data-opacity-mask="rgba(0, 0, 0, 0.6)">
