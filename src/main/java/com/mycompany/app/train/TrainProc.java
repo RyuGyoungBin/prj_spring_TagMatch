@@ -1,6 +1,7 @@
 package com.mycompany.app.train;
 
 import java.io.BufferedReader;
+
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -15,6 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class TrainProc {
 	
+
 	public static void train(Model model) throws Exception {
 		
 		String apiUrl = "http://apis.data.go.kr/1613000/TrainInfoService/getCtyCodeList?serviceKey=5dx59Iz3XSezPb2EagGTegCQHvL4o%2BP3Er41IuBsQ1nAcKAhlD3zq8Sp2Dh1clbSsNFATVFrRahABEc6qxLc5A%3D%3D&_type=json";
@@ -98,9 +100,10 @@ public class TrainProc {
 	}
 	
 //	station api 
+
 public static void trainStation(Model model) throws Exception {
 		
-		String apiUrl = "https://apis.data.go.kr/1613000/TrainInfoService/getCtyAcctoTrainSttnList?serviceKey=5dx59Iz3XSezPb2EagGTegCQHvL4o%2BP3Er41IuBsQ1nAcKAhlD3zq8Sp2Dh1clbSsNFATVFrRahABEc6qxLc5A%3D%3D&numOfRows=10&pageNo=1&_type=json&cityCode=";
+		String apiUrl = "https://apis.data.go.kr/1613000/TrainInfoService/getCtyAcctoTrainSttnList?serviceKey=5dx59Iz3XSezPb2EagGTegCQHvL4o%2BP3Er41IuBsQ1nAcKAhlD3zq8Sp2Dh1clbSsNFATVFrRahABEc6qxLc5A%3D%3D&numOfRows=10&pageNo=1&_type=json&cityCode=11";
 		
 		URL url = new URL(apiUrl);
 		HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -176,6 +179,7 @@ public static void trainStation(Model model) throws Exception {
 		item = (List<Train>) items.get("item");
 		
 		System.out.println("items.size(): " + items.size());
+		
 		
 		model.addAttribute("item01",item);
 	}
