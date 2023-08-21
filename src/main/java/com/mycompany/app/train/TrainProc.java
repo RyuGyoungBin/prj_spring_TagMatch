@@ -16,7 +16,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class TrainProc {
 	
-
 	public static void train(Model model) throws Exception {
 		
 		String apiUrl = "http://apis.data.go.kr/1613000/TrainInfoService/getCtyCodeList?serviceKey=5dx59Iz3XSezPb2EagGTegCQHvL4o%2BP3Er41IuBsQ1nAcKAhlD3zq8Sp2Dh1clbSsNFATVFrRahABEc6qxLc5A%3D%3D&_type=json";
