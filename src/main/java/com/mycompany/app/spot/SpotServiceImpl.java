@@ -45,7 +45,7 @@ public class SpotServiceImpl implements SpotService{
 	public int delete(Spot dto) {
 		dao.deleteSpotCloseDay(dto);
 		dao.delete(dto);	
-		return 0;
+		return 0; 
 	}
 
 	@Override
@@ -114,7 +114,7 @@ public class SpotServiceImpl implements SpotService{
 
 				dao.insertUploaded(dto);
     		}
-		}
+		} 
 	}
 
 	
