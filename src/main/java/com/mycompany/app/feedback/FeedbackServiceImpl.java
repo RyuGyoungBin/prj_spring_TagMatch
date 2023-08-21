@@ -8,16 +8,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+
+
+
 import com.mycompany.app.common.constants.Constants;
 import com.mycompany.app.hotel.Hotel;
 import com.mycompany.app.hotel.HotelDao;
+
 
 @Service
 public class FeedbackServiceImpl implements FeedbackService {
 
 	
 	@Autowired
-	HotelDao dao;
+	FeedbackDao dao;
 
 	@Override
 	public List<Feedback> selectList(FeedbackVo vo) {return dao.selectList(vo); }
@@ -60,7 +64,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 		return 0;
 	}
 	
-public void uploadFiles(MultipartFile[] multipartFiles, Hotel dto, String tableName, int type, int maxNumber) throws Exception {
+public void uploadFiles(MultipartFile[] multipartFiles, Feedback dto, String tableName, int type, int maxNumber) throws Exception {
 		
 		for(int i=0; i<multipartFiles.length; i++) {
     	
