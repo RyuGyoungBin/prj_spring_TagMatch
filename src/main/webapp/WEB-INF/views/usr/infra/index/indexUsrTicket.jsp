@@ -330,12 +330,13 @@
 					<!--End tools -->
 
 					<div class="row">
+					<c:forEach items="${list}" var="list" varStatus="status">
 						<div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
 							<div class="hotel_container">
 								<div class="ribbon_3 popular"><span>Popular</span>
 								</div>
 								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
+									<a href="indexUsrTicketDetailInfo?seq=<c:out value="${list.seq}"/>">
 										<img src="/resources/assets/img/eastPalaceGarden.jpg" width="300" height="533" class="img-fluid" alt="Image">
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
@@ -344,297 +345,19 @@
 									</a>
 								</div>
 								<div class="hotel_title">
-									<h3 ><strong>[경주]동궁원</strong></h3>
+									<h3 ><strong><a href="indexUsrShopDetail?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></strong></h3>
 									<div class="rating">
 										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
 									</div>
-									<!-- end rating -->
-								
-									<!-- End wish list-->
 								</div>
 							</div>
-							<!-- End box tour -->
 						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/knowledgeSpaceSeoyuguandBingheogak.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[전주] 지식공간 서유구와빙허각</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/forestArboretum.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[해남]포레스트수목원</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/aproksangsangSchool.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[곡성] 압록상상스쿨(7/1~)</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/shushuBonbonKidsCafe.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[인천 논현]슈슈봉봉키즈카페</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/high1WaterWorld.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[강원 정선]하이원 워터월드...</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/kidsraraThemePark.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[화순]키즈라라 테마파크</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-						<div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/magicFlowWonderRabbit.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[고양]매직플로우 원더래빗(~7/31)...</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/oceanAdventure.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[천안]오션어드벤처 인근 사랑티켓 렌탈샵</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/high1WaterWorldSnowCountryWaterPlayEquipmentRental.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[정선]하이원 워터월드 눈의나라 ....</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/tinoljaAnimalPark.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[대전]티놀자 애니멀파크</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-                        <div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
-							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
-								</div>
-								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo">
-										<img src="/resources/assets/img/nationalNakdonggangBiologicalResourcesCenter.jpg" width="300" height="533" class="img-fluid" alt="Image">
-										<div class="score"><span>7.5</span>Good</div>
-										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
-										</div>
-									</a>
-								</div>
-								<div class="hotel_title">
-									<h3 ><strong>[경북]국립낙동강생물자원관</strong></h3>
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-									</div>
-									<!-- end rating -->
-									
-									<!-- End wish list-->
-								</div>
-							</div>
-							<!-- End box tour -->
-						</div>
-
-						<!-- End col-md-6 -->
-
+				  </c:forEach>
+				</div>
 			<!-- End row -->
 		</div>
+	</div>
+</div>
 		<!-- End container -->
 	</main>
 		<%@include file="../include/footer.jsp"%>

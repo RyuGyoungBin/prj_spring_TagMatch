@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mycompany.app.common.constant.Constants;
+import com.mycompany.app.common.constants.Constants;
 
 @Service
 public class SpotServiceImpl implements SpotService{
@@ -32,7 +32,13 @@ public class SpotServiceImpl implements SpotService{
 	public int update(Spot dto){return dao.update(dto); }
 
 	@Override
-	public int delete(Spot dto) {return dao.delete(dto); }
+
+	public int delete(Spot dto) {
+		dao.deleteSpotCloseDay(dto);
+		dao.delete(dto);	
+		return 0; 
+	}
+
 
 	@Override
 	public int insert(Spot dto) throws Exception {
@@ -97,8 +103,9 @@ public class SpotServiceImpl implements SpotService{
 
 				dao.insertUploaded(dto);
     		}
-		}
+		} 
 	}
+
 	
 
 }

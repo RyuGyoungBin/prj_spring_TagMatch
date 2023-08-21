@@ -8,7 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mycompany.app.common.constant.Constants;
+
+
+
+import com.mycompany.app.common.constants.Constants;
+import com.mycompany.app.hotel.Hotel;
+import com.mycompany.app.hotel.HotelDao;
+
 
 @Service
 public class FeedbackServiceImpl implements FeedbackService {
