@@ -18,7 +18,10 @@
 		<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
 
     </sql>
-    
+	
+	 
+	
+	
         <sql id="selectSpot">
 	    	a.seq,
 	    	a.type,
@@ -44,17 +47,47 @@
 		FROM
 			spotUploaded
 		WHERE 1=1
+		<if test="seq != null and !seq.equals('')">AND pseq =#{seq}</if>
 	</select>
 	
 	
 	
-	<select id="selectOne" resultMap="resultMapObj">
+<!-- 	<select id="selectOne" resultMap="resultMapObj"> -->
 	
-		SELECT
-			<include refid="selectSpot" />
-	    	<include refid="selectCommon" />
-	    AND a.seq = #{seq}
-	</select>
+<!-- 		SELECT -->
+<!-- 			<include refid="selectSpot" /> -->
+<!-- 	    	<include refid="selectCommon" /> -->
+<!-- 	    AND a.seq = #{seq} -->
+<!-- 	</select> -->
+	
+<select id="selectOne" resultMap="resultMapObj">
+SELECT
+	seq,
+		type
+		,name
+		,zipCode
+		,adderss
+		,adderssDetail
+		,sido
+		,tel
+		,checkInTime
+		,checkOutTime
+		,detailText
+	FORM
+		spot
+	WHERE 1=1
+		AND seq = #{seq}
+			<if test="type != null and !type.equals('')">AND type = #{type}</if>
+			<if test="name != null and name.equals('')">	AND name = #{name} </if>
+			<if test="zipCode != null and !zipCode.equals('')">AND zipCode = #{zipCode}</if>
+			<if test="adderss != null and !adderss.equals('')">AND adderss = #{adderss}</if>
+			<if test="adderssDetail != null and !adderssDetail.equals('')">AND adderssDetail = #{adderssDetail}</if>
+			<if test="sido != null and !sido.equals('')">AND sido = #{sido}</if>
+			<if test="tel != null and !tel.equals('')">AND tel = #{tel}</if>
+			<if test="checkInTime != null and !checkInTime.equals('')">AND checkInTime = #{checkInTime}</if>
+			<if test="checkOutTime != null and !checkOutTime.equals('')">AND checkOutTime = #{checkOutTime}</if>
+			<if test="detailText != null and !detailText.equals('')">AND detailText = #{detailText}</if>
+</select>
 	
    	<select id="selectOneCount" resultType="Integer">
 		SELECT count(*)
@@ -63,10 +96,14 @@
 	</select>
     
 	<select id="selectList" resultMap="resultMapObj">
-		SELECT
-			<include refid="selectSpot" />
-	    	<include refid="selectCommon" />
-	    
+		SELECT aa.* FROM (   	
+	   		SELECT
+				<include refid="selectSpot" />
+	   			<include refid="selectCommon" />
+		) aa
+<!-- 		WHERE 1=1 -->
+<!-- 		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if> -->
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
   
     
@@ -161,12 +198,19 @@
         	seq = #{seq}
 	</update>
     
-    <delete id="delete">
-        	DELETE FROM 
-    		spot
-		WHERE
-			seq = #{seq}
-	</delete>
+<delete id="delete">
+DELETE FROM 
+	spot
+WHERE
+	seq = #{seq}
+</delete>
+
+<delete id="deleteSpotCloseDay">
+DELETE FROM 
+	spotCloseDay
+WHERE
+    spot_seq = #{seq}
+</delete>
     
     <update id="updateDel">
    		UPDATE 
@@ -176,6 +220,9 @@
 		WHERE 
 			seq = #{seq}
     </update>
+    
+    
+ 
     
     
 </mapper>
