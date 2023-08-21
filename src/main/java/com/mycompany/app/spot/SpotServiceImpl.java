@@ -41,12 +41,12 @@ public class SpotServiceImpl implements SpotService{
 		return dao.update(dto);	
 	}
 
-//	@Override
-//	public int delete(Spot dto) {
-//		dao.deleteSpotCloseDay(dto);
-//		dao.delete(dto);	
-//		return 0; 
-//	}
+	@Override
+	public int delete(Spot dto) {
+		dao.deleteSpotCloseDay(dto);
+		dao.delete(dto);	
+		return 0; 
+	}
 
 	@Override
 	public int insert(Spot dto) throws Exception {
