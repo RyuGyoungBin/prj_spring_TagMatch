@@ -109,6 +109,7 @@ public String getHotelUsr_hotel_seq() {
 public void setHotelUsr_hotel_seq(String hotelUsr_hotel_seq) {
 	this.hotelUsr_hotel_seq = hotelUsr_hotel_seq;
 }
+
 	
 
 
