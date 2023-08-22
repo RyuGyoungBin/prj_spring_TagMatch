@@ -10,14 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-<<<<<<< HEAD
+
 import com.mycompany.app.common.constant.Constants; 
 
-
-
-=======
-import com.mycompany.app.common.constants.Constants;
->>>>>>> branch 'main' of https://github.com/RyuGyoungBin/prj_spring_TagMatch.git
 
 @Service
 public class SpotServiceImpl implements SpotService{
