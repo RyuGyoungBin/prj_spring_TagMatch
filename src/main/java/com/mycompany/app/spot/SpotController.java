@@ -26,22 +26,19 @@ public class SpotController {
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		if(vo.getTotalRows() > 0) {
-		List<Spot> list = service.selectList(vo);
-
+			List<Spot> list = service.selectList(vo);
 			model.addAttribute("list", list);
-//			model.addAttribute("vo", vo);
 		} else {
 //			by pass
 		}
-		
 		return "/xdm/spot/spotXdmList";
 	}
 	
 	@RequestMapping("/spotXdmForm")
 	public String spotXdmForm(SpotVo vo, Model model) {
-		Spot item = service.selectOne(vo);
+		Spot spot = service.selectOne(vo);
 		List<Spot> uploaded = service.selectListUploaded(vo);
-		model.addAttribute("item", item);
+		model.addAttribute("item", spot);
 		model.addAttribute("listUploaded", uploaded);
 		return "/xdm/spot/spotXdmForm";
 	}

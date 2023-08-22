@@ -1127,8 +1127,8 @@
         </div>
      </div>   
 	</main>
-	<div class="modal fade" id="trainModal">
-		<div class="modal-dialog modal-dialog-centered">
+	<div class="modal fade" id="trainModal" tabindex="-1" role="dialog" aria-labelledby="trainModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<div class="modal-content">
 	   			<div class="modal-header">
 	      			<h1 class="modal-title fs-5">시/도 선택</h1>
@@ -1138,8 +1138,8 @@
 		      		<ul class="d-flex flex-wrap justify-content-around p-0">
 		      			<c:forEach items="${item}" var="item" varStatus="status">
 						  	<li class="mb-2">
-						  		<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label>
-						  		<input type="hidden" class="form-control" value="<c:out value="${item.citycode }"/>" name="<c:out value="${item.cityname }"/>" readonly>
+						  	<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
+						  		<input type="button" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
 						  	</li>
 						  </c:forEach>
 		      		</ul>
@@ -1276,6 +1276,8 @@
 	          $(this).val('');
 	      });
 	    });
+	
+	
 // 	modal
 	var TrainModal = new bootstrap.Modal(document.getElementById('trainModal'), {
 		  keyboard: true,

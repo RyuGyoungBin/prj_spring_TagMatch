@@ -21,9 +21,13 @@ public class Spot {
 	private Integer delNy; 
 	private String info;
 	
+	private String date;
+	
+	
 //	uploaded
 	private String tableName;
 	private Integer sort;
+
 	private String path;
 	private String originalName;
 	private String uuidName;
@@ -43,11 +47,22 @@ public class Spot {
 	private Integer uploadImgSpotType;	
 	private Integer uploadImgSpotMaxNumber;
 	private String[] uploadImgSpotDeleteSeq;
-	private String[] uploadImgSpotDeletePathFile;	
+	private String[] uploadImgSpotDeletePathFile;
+	
+	
+	/*닫는날 S*/ 
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	/*닫는날 E*/ 
 	
 	public String getSeq() {
 		return seq;
 	}
+
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}

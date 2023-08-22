@@ -14,9 +14,10 @@ public interface SpotService {
 	
 	public int insert(Spot dto) throws Exception;	
 
-	public int update(Spot dto); 
+	public int update(Spot dto);
 	
 	public int delete(Spot dto);
+//	public int deleteSpotCloseDay(Spot dto);
 	
 	public int uelete(Spot dto);
 
