@@ -13,10 +13,12 @@ public class Train {
 
 	public Object[] items;
 	public Object[] item;
+	
+	// api
 	public String citycode;
 	public String cityname;
 	
-	// api
+
 	public String NodeId;
 	public String NodeName;
 	
