@@ -1127,19 +1127,19 @@
         </div>
      </div>   
 	</main>
-
+<div class="modal fade" id="trainStationModal" aria-hidden="true" aria-labelledby="trainStationModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<div class="modal-content">
 	   			<div class="modal-header">
 	      			<h1 class="modal-title fs-5">시/도 선택</h1>
-	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="trainModal" aria-label="Close"></button>
+	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="trainStationModal" aria-label="Close"></button>
 	      		</div>
 	      		<div class="modal-body">
 		      		<ul class="d-flex flex-wrap justify-content-around p-0">
 		      			<c:forEach items="${item}" var="item" varStatus="status">
 						  	<li class="mb-2">
 						  	<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
-						  		<input type="button" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
+						  		<input type="button" class="form-control" value="<c:out value="${item.nodename }"/>" name="<c:out value="${item.nodename }"/>" readonly>
 						  	</li>
 						  </c:forEach>
 		      		</ul>
@@ -1148,7 +1148,7 @@
 	      		</div>
 	    	</div>
 	 	</div>
-
+</div>
 	
 	
 <div class="modal fade" id="trainModal" aria-hidden="true" aria-labelledby="trainModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
@@ -1159,7 +1159,7 @@
         <button type="button" class="btn-close" ></button>
       </div>
       <div class="modal-body">
-        <ul class="d-flex flex-wrap justify-content-around p-0">
+        <ul class="d-flex flex-wrap justify-content-around p-0" id="sido">
 			<c:forEach items="${item}" var="item" varStatus="status">
 				<li class="mb-2">
 				<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
@@ -1310,9 +1310,77 @@
 		  backdrop: "static"
 		});
 		
+	var TrainModal2 = new bootstrap.Modal(document.getElementById('trainStationModal'), {
+		  keyboard: true,
+		  backdrop: "static"
+		});
+		
 		$(".train").on("click",function(){
 			TrainModal.show();
 		})
+		
+		$("#sido li input").on("click",function(){
+			var sidoval = $(this).val();
+			alert(sidoval);
+			
+			TrainModal.hide();
+			
+
+			 var cityMap = {
+				        "서울특별시": 11,
+				        "세종특별시": 12,
+				        "부산광역시": 21,
+				        "대구광역시": 22,
+				        "인천광역시": 23,
+				        "광주광역시": 24,
+				        "대전광역시": 25,
+				        "울산광역시": 26,
+				        "경기도": 31,
+				        "강원도": 32,
+				        "충청북도": 33,
+				        "충청남도": 34,
+				        "전라북도": 35,
+				        "전라남도": 36,
+				        "경상북도": 37,
+				        "경상남도": 38
+				        // ... 나머지 도시들의 매핑 정보 추가
+				    };
+
+				    // 선택한 도시 이름을 도시 코드로 변환
+				    var cityCode = cityMap[sidoval];
+			alert(cityCode);
+			
+			
+			/* $.ajax({
+				async: true,
+				cache:false,
+				type:"post",
+				url:"trainProc"
+				data: {
+					sidovalue : cityCode;
+				},
+				success:function(response){
+					if(response.rt === "success"){
+						
+					}else{
+						alert("실패");
+					}
+						
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+				
+			
+				
+			}) */
+			
+			
+			TrainModal2.show();
+		});
+		
+		
+		
+		
 		
 		
 </script>
