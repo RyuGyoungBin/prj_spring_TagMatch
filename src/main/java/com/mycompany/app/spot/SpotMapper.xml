@@ -51,41 +51,32 @@
 	</select>
 	
 	
-	
-<!-- 	<select id="selectOne" resultMap="resultMapObj"> -->
-	
-<!-- 		SELECT -->
-<!-- 			<include refid="selectSpot" /> -->
-<!-- 	    	<include refid="selectCommon" /> -->
-<!-- 	    AND a.seq = #{seq} -->
-<!-- 	</select> -->
-	
 <select id="selectOne" resultMap="resultMapObj">
-SELECT
-	seq,
-		type
+	SELECT
+		seq
+		,type
 		,name
 		,zipCode
-		,adderss
-		,adderssDetail
+		,address
+		,addressDetail
 		,sido
 		,tel
-		,checkInTime
-		,checkOutTime
+		,closedTime
+		,openTime
 		,detailText
-	FORM
+	FROM
 		spot
 	WHERE 1=1
 		AND seq = #{seq}
 			<if test="type != null and !type.equals('')">AND type = #{type}</if>
 			<if test="name != null and name.equals('')">	AND name = #{name} </if>
 			<if test="zipCode != null and !zipCode.equals('')">AND zipCode = #{zipCode}</if>
-			<if test="adderss != null and !adderss.equals('')">AND adderss = #{adderss}</if>
-			<if test="adderssDetail != null and !adderssDetail.equals('')">AND adderssDetail = #{adderssDetail}</if>
+			<if test="address != null and !address.equals('')">AND address = #{address}</if>
+			<if test="addressDetail != null and !addressDetail.equals('')">AND addressDetail = #{addressDetail}</if>
 			<if test="sido != null and !sido.equals('')">AND sido = #{sido}</if>
 			<if test="tel != null and !tel.equals('')">AND tel = #{tel}</if>
-			<if test="checkInTime != null and !checkInTime.equals('')">AND checkInTime = #{checkInTime}</if>
-			<if test="checkOutTime != null and !checkOutTime.equals('')">AND checkOutTime = #{checkOutTime}</if>
+			<if test="closedTime != null and !closedTime.equals('')">AND closedTime = #{closedTime}</if>
+			<if test="openTime != null and !openTime.equals('')">AND openTime = #{openTime}</if>
 			<if test="detailText != null and !detailText.equals('')">AND detailText = #{detailText}</if>
 </select>
 	
