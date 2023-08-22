@@ -1127,12 +1127,12 @@
         </div>
      </div>   
 	</main>
-	<div class="modal fade" id="trainModal" tabindex="-1" role="dialog" aria-labelledby="trainModalLabel" aria-hidden="true">
+
 		<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<div class="modal-content">
 	   			<div class="modal-header">
 	      			<h1 class="modal-title fs-5">시/도 선택</h1>
-	        		<button type="button" class="btn-close" data-bs-dismiss="trainModal" aria-label="Close"></button>
+	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="trainModal" aria-label="Close"></button>
 	      		</div>
 	      		<div class="modal-body">
 		      		<ul class="d-flex flex-wrap justify-content-around p-0">
@@ -1148,7 +1148,33 @@
 	      		</div>
 	    	</div>
 	 	</div>
-	</div>
+
+	
+	
+<div class="modal fade" id="trainModal" aria-hidden="true" aria-labelledby="trainModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">시/도 선택</h1>
+        <button type="button" class="btn-close" ></button>
+      </div>
+      <div class="modal-body">
+        <ul class="d-flex flex-wrap justify-content-around p-0">
+			<c:forEach items="${item}" var="item" varStatus="status">
+				<li class="mb-2">
+				<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
+					<input type="button" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
+				</li>
+			</c:forEach>
+   		</ul>
+      </div>
+      <div class="modal-footer"></div>
+    </div>
+  </div>
+</div>
+
+	
+	
 	<!-- End main --> 
     
     <jsp:include page="../include/footer.jsp"></jsp:include>
@@ -1287,6 +1313,8 @@
 		$(".train").on("click",function(){
 			TrainModal.show();
 		})
+		
+		
 </script>
 	
 
