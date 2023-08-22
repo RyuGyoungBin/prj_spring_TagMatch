@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.app.common.constant.Constants;
-import com.mycompany.app.hotel.Hotel;
-import com.mycompany.app.hotel.HotelDao;
+import com.mycompany.app.feedback.Feedback;
+import com.mycompany.app.feedback.FeedbackDao;
 
 
 @Service
@@ -61,7 +61,7 @@ public class FeedbackServiceImpl implements FeedbackService {
 		return 0;
 	}
 	
-public void uploadFiles(MultipartFile[] multipartFiles, Feedback dto, String tableName, int type, int maxNumber) throws Exception {
+public void uploadFiles(MultipartFile[] multipartFiles, Feedback dto, String tableName, String type, int maxNumber) throws Exception {
 		
 		for(int i=0; i<multipartFiles.length; i++) {
     	
