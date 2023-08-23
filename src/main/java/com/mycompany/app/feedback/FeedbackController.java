@@ -18,21 +18,21 @@ public class FeedbackController {
 	@RequestMapping ("/feedbackXdmList")
 	public String feedbackXdmList(@ModelAttribute("vo") FeedbackVo vo, Model model) {
 		
-		vo.setParamsPaging(service.selectOneCount(vo));
-		
-		if(vo.getTotalRows() > 0) {
-			List<Feedback> list = service.selectList(vo);
-			model.addAttribute("list", list);
-		} else {
-//			by pass
-		}
+		/*
+		 * vo.setParamsPaging(service.selectOneCount(vo));
+		 * 
+		 * if(vo.getTotalRows() > 0) { List<Feedback> list = service.selectList(vo);
+		 * model.addAttribute("list", list); } else { // by pass }
+		 */
 		return "xdm/feedback/feedbackXdmList";
 	}
 	
 	@RequestMapping("/feedbackXdmForm")
 	public String feedbackXdmForm(FeedbackVo vo, Model model) {
-		Feedback feedback = service.selectOne(vo);
-		model.addAttribute("item", feedback);
+		/*
+		 * Feedback feedback = service.selectOne(vo); model.addAttribute("item",
+		 * feedback);
+		 */
 		return "xdm/feedback/feedbackXdmForm";
 	}
 	

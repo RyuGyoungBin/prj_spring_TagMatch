@@ -10,20 +10,21 @@
 		  
 		  
 		  
-    <sql id ="selectCommon">
+    <!-- <sql id ="selectCommon"  resultMap="resultMapObj">
+    select *
    		FROM    
 	    	feedback a
-	    	LEFT JOIN trainUsr c on c.seq = a.seq AND c.type=1
-	    	LEFT JOIN hotelUsr d on d.seq = a.seq AND d.type=2
-	    	LEFT JOIN ticketUsr e on e.seq = a.seq AND e.type=3
+	    	 JOIN trainUsr c on c.seq = a.seq 
+	    	 JOIN hotelUsr d on d.seq = a.seq 
+	    	 JOIN ticketUsr e on e.seq = a.seq 
 		WHERE 1=1 
-		<if test="trainUsrType != null and !trainUsrType.equals('')">AND a.type = #{trainType}</if>
-		<if test="hotelUsrType != null and !hotelUsrType.equals('')">AND a.type = #{hotelType}</if>
-		<if test="ticketUsrType != null and !ticketUsrType.equals('')">AND a.type = #{ticketType}</if>
-    </sql>
+		AND c.type = #{trainType}
+		AND d.type = #{hotelType}
+		AND e.type = #{ticketType}
+    </sql> -->
 		
-		
-	 <sql id="selectFeedback">
+<!-- 		
+	  <sql id="selectFeedback">
     	a.seq,
     	a.type,
     	a.review,
@@ -52,7 +53,7 @@
     	e.adualtNum
     	e.childNum
     	e.price
-	</sql>
+	</sql> 
 		
 		
 		<select id="selectList" resultMap="resultMapObj">
@@ -61,8 +62,8 @@
 				<include refid="selectFeedback" />
 	   			<include refid="selectCommon" />
 		) aa
-<!-- 		WHERE 1=1 -->
-<!-- 		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if> -->
+		WHERE 1=1
+		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if>
 		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
 	
@@ -76,7 +77,7 @@
 			<include refid="selectFeedback" />
 	    	<include refid="selectCommon" />
 	    	AND a.seq = #{seq}
-	</select>
+	</select> -->
 
 	
 <!-- feedback  -->
