@@ -46,7 +46,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-Hotel</li>
+          <li class="breadcrumb-item active">Data-Feedback</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -107,12 +107,13 @@
 								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 							</th>
 		                    <th>seq</th>
-		                    <th>type</th>
+<!-- 		                    <th>type</th> -->
 		                    <th>review</th>
 		                    <th>reviewTitle</th>
 		                    <th>startRating</th>
 		                    <th>member_seq</th>
 		                    <th>defaultNy</th>
+		                    <th>type_seq</th>
 		                  </tr>
 		                </thead>
 		                <tbody>
@@ -122,12 +123,13 @@
 										<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 									</th>
 				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
-				                   <td><a href="/feedbackXdmForm?seq=<c:out value="${list.seq }"></c:out>&hotel_seq=<c:out value="${list.seq }"/>"><c:out value="${list.type }"></c:out></a></td>
+<%-- 				                   <td><a href="/feedbackXdmForm?seq=<c:out value="${list.seq }"></c:out>&feedback_seq=<c:out value="${list.seq }"/>"><c:out value="${list.type }"></c:out></a></td> --%>
 				                   <td><c:out value="${list.review}"></c:out></td>
 				                   <td><c:out value="${list.reviewTitle}"></c:out></td>
 				                   <td><c:out value="${list.startRating}"></c:out></td>
 				                   <td><c:out value="${list.member_seq}"></c:out></td>
 				                   <td><c:out value="${list.defaultNy}"></c:out></td>
+				                   <td><c:out value="${list.type_seq}"></c:out></td>
 			                 	</tr>
 							</c:forEach>
 		                </tbody>
@@ -215,19 +217,19 @@
 		$("input:hidden[name=thisPage]").val(thisPage);
 		$("form[name=formList]").attr("action", "feedbackXdmList").submit();
 	}
-// // search
-//  	$("#start_date").datepicker({
-//  	});
-//  	$("#end_date").datepicker({
-//  		maxDate : "+1m +1w",
-//  		minDate : "-1y"
-//  	});
-// 	$("#start_date").on("change", function(){
-// 		console.log($("#start_date").val())
-// 		$("#end_date").datepicker({
-// 			minDate: $("#start_date").val()
-// 		});
-// 	});
+// search
+ 	$("#start_date").datepicker({
+ 	});
+ 	$("#end_date").datepicker({
+ 		maxDate : "+1m +1w",
+ 		minDate : "-1y"
+ 	});
+	$("#start_date").on("change", function(){
+		console.log($("#start_date").val())
+		$("#end_date").datepicker({
+			minDate: $("#start_date").val()
+		});
+	});
 	
  		</script>
 	</body>
