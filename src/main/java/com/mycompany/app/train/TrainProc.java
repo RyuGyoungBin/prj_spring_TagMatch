@@ -10,6 +10,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+
 import org.springframework.ui.Model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -181,5 +183,9 @@ public static void trainStation(Model model) throws Exception {
 		
 		
 		model.addAttribute("item01",item);
+		
+		 String itemJson = objectMapper.writeValueAsString(item);
+
+		   
 	}
 }

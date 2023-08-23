@@ -19,8 +19,8 @@ public class Train {
 	public String cityname;
 	
 
-	public String NodeId;
-	public String NodeName;
+	public String nodeId;
+	public String nodeName;
 	
 
 	
@@ -91,19 +91,20 @@ public class Train {
 	public void setItem(Object[] item) {
 		this.item = item;
 	}
-	
-	
 	public String getNodeId() {
-		return NodeId;
+		return nodeId;
 	}
 	public void setNodeId(String nodeId) {
-		NodeId = nodeId;
+		this.nodeId = nodeId;
 	}
 	public String getNodeName() {
-		return NodeName;
+		return nodeName;
 	}
 	public void setNodeName(String nodeName) {
-		NodeName = nodeName;
+		this.nodeName = nodeName;
 	}
+	
+	
+
 	
 }
