@@ -1,5 +1,6 @@
 package com.mycompany.app.feedback;
 
+//dto
 public class Feedback {
 
 
@@ -23,7 +24,139 @@ private String hotelUsr_price;
 private String hotelUsr_hotel_seq; 
 
 
+// ticketUsr
+private String tickeUsr_seq;
+private String tickeUsr_title;
+private String tickeUsr_type;
+private String	 tickeUsr_ticktcol;
+private String tickeUsr_adualtNum;
+private String tickeUsr_childNum;
+private String tickeUsr_price;
 
+//trainUsr
+private String trainUsr_seq;
+private String trainUsr_start;
+private String trainUsr_startDateTime;
+private String	 trainUsr_end;
+private String trainUsr_endDateTime;
+private String trainUsr_type;
+private String trainUsr_sort;
+private String trainUsr_adualtNum;
+private String trainUsr_childNum;
+private String trainUsr_price;
+
+
+
+				//ticketUsr S
+public String getTickeUsr_seq() {
+	return tickeUsr_seq;
+}
+public void setTickeUsr_seq(String tickeUsr_seq) {
+	this.tickeUsr_seq = tickeUsr_seq;
+}
+public String getTickeUsr_title() {
+	return tickeUsr_title;
+}
+public void setTickeUsr_title(String tickeUsr_title) {
+	this.tickeUsr_title = tickeUsr_title;
+}
+public String getTickeUsr_type() {
+	return tickeUsr_type;
+}
+public void setTickeUsr_type(String tickeUsr_type) {
+	this.tickeUsr_type = tickeUsr_type;
+}
+public String getTickeUsr_ticktcol() {
+	return tickeUsr_ticktcol;
+}
+public void setTickeUsr_ticktcol(String tickeUsr_ticktcol) {
+	this.tickeUsr_ticktcol = tickeUsr_ticktcol;
+}
+public String getTickeUsr_adualtNum() {
+	return tickeUsr_adualtNum;
+}
+public void setTickeUsr_adualtNum(String tickeUsr_adualtNum) {
+	this.tickeUsr_adualtNum = tickeUsr_adualtNum;
+}
+public String getTickeUsr_childNum() {
+	return tickeUsr_childNum;
+}
+public void setTickeUsr_childNum(String tickeUsr_childNum) {
+	this.tickeUsr_childNum = tickeUsr_childNum;
+}
+public String getTickeUsr_price() {
+	return tickeUsr_price;
+}
+public void setTickeUsr_price(String tickeUsr_price) {
+	this.tickeUsr_price = tickeUsr_price;
+}
+
+				//ticketUsr E
+
+				//trainUsr S
+public String getTrainUsr_seq() {
+	return trainUsr_seq;
+}
+public void setTrainUsr_seq(String trainUsr_seq) {
+	this.trainUsr_seq = trainUsr_seq;
+}
+public String getTrainUsr_start() {
+	return trainUsr_start;
+}
+public void setTrainUsr_start(String trainUsr_start) {
+	this.trainUsr_start = trainUsr_start;
+}
+public String getTrainUsr_startDateTime() {
+	return trainUsr_startDateTime;
+}
+public void setTrainUsr_startDateTime(String trainUsr_startDateTime) {
+	this.trainUsr_startDateTime = trainUsr_startDateTime;
+}
+public String getTrainUsr_end() {
+	return trainUsr_end;
+}
+public void setTrainUsr_end(String trainUsr_end) {
+	this.trainUsr_end = trainUsr_end;
+}
+public String getTrainUsr_endDateTime() {
+	return trainUsr_endDateTime;
+}
+public void setTrainUsr_endDateTime(String trainUsr_endDateTime) {
+	this.trainUsr_endDateTime = trainUsr_endDateTime;
+}
+public String getTrainUsr_type() {
+	return trainUsr_type;
+}
+public void setTrainUsr_type(String trainUsr_type) {
+	this.trainUsr_type = trainUsr_type;
+}
+public String getTrainUsr_sort() {
+	return trainUsr_sort;
+}
+public void setTrainUsr_sort(String trainUsr_sort) {
+	this.trainUsr_sort = trainUsr_sort;
+}
+public String getTrainUsr_adualtNum() {
+	return trainUsr_adualtNum;
+}
+public void setTrainUsr_adualtNum(String trainUsr_adualtNum) {
+	this.trainUsr_adualtNum = trainUsr_adualtNum;
+}
+public String getTrainUsr_childNum() {
+	return trainUsr_childNum;
+}
+public void setTrainUsr_childNum(String trainUsr_childNum) {
+	this.trainUsr_childNum = trainUsr_childNum;
+}
+public String getTrainUsr_price() {
+	return trainUsr_price;
+}
+public void setTrainUsr_price(String trainUsr_price) {
+	this.trainUsr_price = trainUsr_price;
+}
+
+
+				//trainUsr E
 
 public String getSeq() {
 	return seq;
@@ -110,7 +243,4 @@ public void setHotelUsr_hotel_seq(String hotelUsr_hotel_seq) {
 	this.hotelUsr_hotel_seq = hotelUsr_hotel_seq;
 }
 	
-
-
-
 }

@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.mycompany.app.hotel.Hotel;
+
 
 @Controller
 public class SpotController {
@@ -43,7 +43,44 @@ public class SpotController {
 		return "/xdm/spot/spotXdmForm";
 	}
 	
+	@RequestMapping("/indexUsrTicket")
+	public String indexUsrTicket(@ModelAttribute("vo") SpotVo vo, Model model) {
+		
+		if(vo.getTotalRows() > 0) {
+			List<Spot> list = service.selectList(vo);
+			model.addAttribute("list", list);
+//			model.addAttribute("vo", vo);
+		} else {
+//			by pass
+		}
+		
+		return "/usr/infra/index/indexUsrTicket";
+	}
 	
+	
+	@RequestMapping("/indexUsrTicketDetailInfo")
+	public String indexUsrTiketMoreInformation() {
+		return "/usr/infra/index/indexUsrTicketDetailInfo";
+	}
+	
+	@RequestMapping("/detailInfo01")
+	public String detaillnfo01() {
+		return "/usr/infra/index/detailInfo01";
+	}
+	
+	@RequestMapping("/indexUsrLogin")
+	public String indexUsrLogin() {
+		return "/usr/infra/member/indexUsrLogin";
+	}
+	@RequestMapping("/indexUsrSignUp")
+	public String indexUsrSignUp() {
+		return "/usr/infra/member/indexUsrSignUp";
+	}
+
+	@RequestMapping("/indexUsrMypage")
+	public String indexUsrMyPage() {
+		return "/usr/infra/index/indexUsrMypage";
+	}
 	
 	
 	
