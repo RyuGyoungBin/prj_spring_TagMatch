@@ -1,7 +1,6 @@
 package com.mycompany.app.feedback;
 
-import org.springframework.web.multipart.MultipartFile;
-
+//dto
 public class Feedback {
 
 
@@ -25,33 +24,139 @@ private String hotelUsr_price;
 private String hotelUsr_hotel_seq; 
 
 
+// ticketUsr
+private String tickeUsr_seq;
+private String tickeUsr_title;
+private String tickeUsr_type;
+private String	 tickeUsr_ticktcol;
+private String tickeUsr_adualtNum;
+private String tickeUsr_childNum;
+private String tickeUsr_price;
 
-//이미지 업로드 
-		private String tableName;
-		
-		private Integer sort;
-		private String path;
-		private String originalName;
+//trainUsr
+private String trainUsr_seq;
+private String trainUsr_start;
+private String trainUsr_startDateTime;
+private String	 trainUsr_end;
+private String trainUsr_endDateTime;
+private String trainUsr_type;
+private String trainUsr_sort;
+private String trainUsr_adualtNum;
+private String trainUsr_childNum;
+private String trainUsr_price;
 
-		private String uuidName;
-		private String ext;
-		private long size;
-		private String pseq;
-		
 
 
-		private MultipartFile[] uploadImg;
-		private Integer uploadImgType;	
-		private Integer uploadImgMaxNumber;
-		private String[] uploadImgDeleteSeq;
-		private String[] uploadImgDeletePathFile;	
-		
-		private MultipartFile[] uploadImghotelUsr;
-		private Integer uploadImghotelUsrType;	
-		private Integer uploadImghotelUsrMaxNumber;
-		private String[] uploadImghotelUsrDeleteSeq;
-		private String[] uploadImghotelUsreletePathFile;	
+				//ticketUsr S
+public String getTickeUsr_seq() {
+	return tickeUsr_seq;
+}
+public void setTickeUsr_seq(String tickeUsr_seq) {
+	this.tickeUsr_seq = tickeUsr_seq;
+}
+public String getTickeUsr_title() {
+	return tickeUsr_title;
+}
+public void setTickeUsr_title(String tickeUsr_title) {
+	this.tickeUsr_title = tickeUsr_title;
+}
+public String getTickeUsr_type() {
+	return tickeUsr_type;
+}
+public void setTickeUsr_type(String tickeUsr_type) {
+	this.tickeUsr_type = tickeUsr_type;
+}
+public String getTickeUsr_ticktcol() {
+	return tickeUsr_ticktcol;
+}
+public void setTickeUsr_ticktcol(String tickeUsr_ticktcol) {
+	this.tickeUsr_ticktcol = tickeUsr_ticktcol;
+}
+public String getTickeUsr_adualtNum() {
+	return tickeUsr_adualtNum;
+}
+public void setTickeUsr_adualtNum(String tickeUsr_adualtNum) {
+	this.tickeUsr_adualtNum = tickeUsr_adualtNum;
+}
+public String getTickeUsr_childNum() {
+	return tickeUsr_childNum;
+}
+public void setTickeUsr_childNum(String tickeUsr_childNum) {
+	this.tickeUsr_childNum = tickeUsr_childNum;
+}
+public String getTickeUsr_price() {
+	return tickeUsr_price;
+}
+public void setTickeUsr_price(String tickeUsr_price) {
+	this.tickeUsr_price = tickeUsr_price;
+}
 
+				//ticketUsr E
+
+				//trainUsr S
+public String getTrainUsr_seq() {
+	return trainUsr_seq;
+}
+public void setTrainUsr_seq(String trainUsr_seq) {
+	this.trainUsr_seq = trainUsr_seq;
+}
+public String getTrainUsr_start() {
+	return trainUsr_start;
+}
+public void setTrainUsr_start(String trainUsr_start) {
+	this.trainUsr_start = trainUsr_start;
+}
+public String getTrainUsr_startDateTime() {
+	return trainUsr_startDateTime;
+}
+public void setTrainUsr_startDateTime(String trainUsr_startDateTime) {
+	this.trainUsr_startDateTime = trainUsr_startDateTime;
+}
+public String getTrainUsr_end() {
+	return trainUsr_end;
+}
+public void setTrainUsr_end(String trainUsr_end) {
+	this.trainUsr_end = trainUsr_end;
+}
+public String getTrainUsr_endDateTime() {
+	return trainUsr_endDateTime;
+}
+public void setTrainUsr_endDateTime(String trainUsr_endDateTime) {
+	this.trainUsr_endDateTime = trainUsr_endDateTime;
+}
+public String getTrainUsr_type() {
+	return trainUsr_type;
+}
+public void setTrainUsr_type(String trainUsr_type) {
+	this.trainUsr_type = trainUsr_type;
+}
+public String getTrainUsr_sort() {
+	return trainUsr_sort;
+}
+public void setTrainUsr_sort(String trainUsr_sort) {
+	this.trainUsr_sort = trainUsr_sort;
+}
+public String getTrainUsr_adualtNum() {
+	return trainUsr_adualtNum;
+}
+public void setTrainUsr_adualtNum(String trainUsr_adualtNum) {
+	this.trainUsr_adualtNum = trainUsr_adualtNum;
+}
+public String getTrainUsr_childNum() {
+	return trainUsr_childNum;
+}
+public void setTrainUsr_childNum(String trainUsr_childNum) {
+	this.trainUsr_childNum = trainUsr_childNum;
+}
+public String getTrainUsr_price() {
+	return trainUsr_price;
+}
+public void setTrainUsr_price(String trainUsr_price) {
+	this.trainUsr_price = trainUsr_price;
+}
+
+
+				//trainUsr E
 
 public String getSeq() {
 	return seq;
@@ -137,117 +242,5 @@ public String getHotelUsr_hotel_seq() {
 public void setHotelUsr_hotel_seq(String hotelUsr_hotel_seq) {
 	this.hotelUsr_hotel_seq = hotelUsr_hotel_seq;
 }
-public String getTableName() {
-	return tableName;
-}
-public void setTableName(String tableName) {
-	this.tableName = tableName;
-}
-public Integer getSort() {
-	return sort;
-}
-public void setSort(Integer sort) {
-	this.sort = sort;
-}
-public String getPath() {
-	return path;
-}
-public void setPath(String path) {
-	this.path = path;
-}
-public String getOriginalName() {
-	return originalName;
-}
-public void setOriginalName(String originalName) {
-	this.originalName = originalName;
-}
-public String getUuidName() {
-	return uuidName;
-}
-public void setUuidName(String uuidName) {
-	this.uuidName = uuidName;
-}
-public String getExt() {
-	return ext;
-}
-public void setExt(String ext) {
-	this.ext = ext;
-}
-public long getSize() {
-	return size;
-}
-public void setSize(long size) {
-	this.size = size;
-}
-public String getPseq() {
-	return pseq;
-}
-public void setPseq(String pseq) {
-	this.pseq = pseq;
-}
-public MultipartFile[] getUploadImg() {
-	return uploadImg;
-}
-public void setUploadImg(MultipartFile[] uploadImg) {
-	this.uploadImg = uploadImg;
-}
-public Integer getUploadImgType() {
-	return uploadImgType;
-}
-public void setUploadImgType(Integer uploadImgType) {
-	this.uploadImgType = uploadImgType;
-}
-public Integer getUploadImgMaxNumber() {
-	return uploadImgMaxNumber;
-}
-public void setUploadImgMaxNumber(Integer uploadImgMaxNumber) {
-	this.uploadImgMaxNumber = uploadImgMaxNumber;
-}
-public String[] getUploadImgDeleteSeq() {
-	return uploadImgDeleteSeq;
-}
-public void setUploadImgDeleteSeq(String[] uploadImgDeleteSeq) {
-	this.uploadImgDeleteSeq = uploadImgDeleteSeq;
-}
-public String[] getUploadImgDeletePathFile() {
-	return uploadImgDeletePathFile;
-}
-public void setUploadImgDeletePathFile(String[] uploadImgDeletePathFile) {
-	this.uploadImgDeletePathFile = uploadImgDeletePathFile;
-}
-public MultipartFile[] getUploadImghotelUsr() {
-	return uploadImghotelUsr;
-}
-public void setUploadImghotelUsr(MultipartFile[] uploadImghotelUsr) {
-	this.uploadImghotelUsr = uploadImghotelUsr;
-}
-public Integer getUploadImghotelUsrType() {
-	return uploadImghotelUsrType;
-}
-public void setUploadImghotelUsrType(Integer uploadImghotelUsrType) {
-	this.uploadImghotelUsrType = uploadImghotelUsrType;
-}
-public Integer getUploadImghotelUsrMaxNumber() {
-	return uploadImghotelUsrMaxNumber;
-}
-public void setUploadImghotelUsrMaxNumber(Integer uploadImghotelUsrMaxNumber) {
-	this.uploadImghotelUsrMaxNumber = uploadImghotelUsrMaxNumber;
-}
-public String[] getUploadImghotelUsrDeleteSeq() {
-	return uploadImghotelUsrDeleteSeq;
-}
-public void setUploadImghotelUsrDeleteSeq(String[] uploadImghotelUsrDeleteSeq) {
-	this.uploadImghotelUsrDeleteSeq = uploadImghotelUsrDeleteSeq;
-}
-public String[] getUploadImghotelUsreletePathFile() {
-	return uploadImghotelUsreletePathFile;
-}
-public void setUploadImghotelUsreletePathFile(String[] uploadImghotelUsreletePathFile) {
-	this.uploadImghotelUsreletePathFile = uploadImghotelUsreletePathFile;
-}
-
 	
-
-
-
 }
