@@ -6,5 +6,149 @@
 <mapper namespace="com.mycompany.app.feedback.FeedbackMapper">
 
 	<resultMap type="com.mycompany.app.feedback.Feedback" id="resultMapObj"></resultMap>
+		  
+		  
+		  
+		  
+    <sql id ="selectCommon">
+   		FROM    
+	    	feedback a
+	    	LEFT JOIN trainUsr c on c.seq = a.seq AND c.type=1
+	    	LEFT JOIN hotelUsr d on d.seq = a.seq AND d.type=2
+	    	LEFT JOIN ticketUsr e on e.seq = a.seq AND e.type=3
+		WHERE 1=1 
+		<if test="trainUsrType != null and !trainUsrType.equals('')">AND a.type = #{trainType}</if>
+		<if test="hotelUsrType != null and !hotelUsrType.equals('')">AND a.type = #{hotelType}</if>
+		<if test="ticketUsrType != null and !ticketUsrType.equals('')">AND a.type = #{ticketType}</if>
+    </sql>
+		
+		
+	 <sql id="selectFeedback">
+    	a.seq,
+    	a.type,
+    	a.review,
+    	a.reviewTitle,
+    	a.starRating,
+    	a.member_seq,
+    	a.defaultNy,
+    	c.start
+    	c.startDateTime
+    	c.end
+    	c.endDateTime
+    	c.trainUsrType
+    	c.sort
+    	c.adualtNum
+    	c.childNum
+    	c.price
+    	d.title
+    	d.start
+    	d.end
+    	d.hotelUsrType
+    	d.price
+    	d.totalPrice
+    	e.title
+    	e.ticketUsrType
+    	e.ticketcol
+    	e.adualtNum
+    	e.childNum
+    	e.price
+	</sql>
+		
+		
+		<select id="selectList" resultMap="resultMapObj">
+		SELECT aa.* FROM (   	
+	   		SELECT
+				<include refid="selectFeedback" />
+	   			<include refid="selectCommon" />
+		) aa
+<!-- 		WHERE 1=1 -->
+<!-- 		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if> -->
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
+	</select>
 	
+	<select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectCommon" />
+	</select>
+	
+	<select id="selectOne" resultMap="resultMapObj">
+		SELECT
+			<include refid="selectFeedback" />
+	    	<include refid="selectCommon" />
+	    	AND a.seq = #{seq}
+	</select>
+
+	
+<!-- feedback  -->
+<!-- <select id="selectOne" resultMap="resultMapObj"> -->
+<!-- 	seq -->
+<!-- 		,type -->
+<!-- 		,review -->
+<!-- 		,reviewTitle -->
+<!-- 		,starRating -->
+<!-- 		,member_seq -->
+<!-- 		,defaultNy -->
+<!-- 	FROM -->
+<!-- 		feedback -->
+<!-- 	WHERE 1=1 -->
+<!-- 		AND seq = #{seq} -->
+<!-- 		<if test="type != null and !type.equals('')">AND type = #{type}</if> -->
+<!-- 		<if test="review != null and !review.equals('')">AND review = #{review}</if> -->
+<!-- 		<if test="reviewTitle != null and !reviewTitle.equals('')">AND reviewTitle = #{reviewTitle}</if> -->
+<!-- 		<if test="starRating != null and !starRating.equals('')">AND starRating = #{starRating}</if> -->
+<!-- 		<if test="member_seq != null and !member_seq.equals('')">AND member_seq = #{member_seq}</if> -->
+<!-- 		<if test="defaultNy != null and !defaultNy.equals('')">AND defaultNy = #{defaultNy}</if> -->
+<!-- </select> -->
+
+	<!-- trainUsr -->
+<select id="selectTrainUsr" resultMap="resultMapObj">
+	 select * from trainUsr
+</select>
+
+<select id="selectHotelUsr" resultMap="resultMapObj">
+	select * from hotelUsr
+</select>
+	
+<select id="selectTicketUsr" resultMap="resultMapObj">
+	select * from ticketUsr
+</select>	
+	
+	
+<insert id="insert">
+	insert into feedback
+		seq
+		,type
+		,review
+		,reviewTitle
+		,starRating
+		,member_seq
+		,defaultNy
+		)values (
+		#{seq}
+			,#{type}
+			,#{review}
+			,#{reviewTitle}
+			,#{starRating}
+			,#{member_seq}
+			,#{defaultNy}
+		)
+	<selectKey resultType="String" keyProperty="seq" order="AFTER">
+	SELECT last_insert_id()
+	</selectKey>
+</insert>
+
+ <update id="update">
+UPDATE feedback
+SET
+			type = #{type}
+			,review = #{review}
+			,reviewTitle = #{reviewTitle}
+			,starRating = #{starRating}
+			,member_seq = #{member_seq}
+			,defaultNy = #{defaultNy}
+WHERE
+	seq= #{seq}
+</update> 
+
+
 </mapper>

@@ -95,4 +95,8 @@ public class HotelController {
 			}
 		return "/usr/infra/subpages/hotel02";
 	}
+	@RequestMapping("/home")
+	public String home() {
+		return "/home";
+	}
 }
