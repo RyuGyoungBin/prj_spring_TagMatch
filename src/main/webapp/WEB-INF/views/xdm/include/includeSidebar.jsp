@@ -160,6 +160,11 @@
               <i class="bi bi-circle"></i><span>Info Tables</span>
             </a>
           </li>
+          <li>
+            <a href="feedbackXdmList" >
+              <i class="bi bi-circle"></i><span>feedback Tables</span>
+            </a>
+          </li>
         </ul>
       </li><!-- End Tables Nav -->
 
