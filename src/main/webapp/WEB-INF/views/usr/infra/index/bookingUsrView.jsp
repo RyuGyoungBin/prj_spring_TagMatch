@@ -1127,12 +1127,39 @@
         </div>
      </div>   
 	</main>
+	
+	<!-- 시/도 선택 -->
+<div class="modal fade" id="trainModal" aria-hidden="true" aria-labelledby="trainModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5">시/도 선택</h1>
+        <button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul class="d-flex flex-wrap justify-content-around p-0" id="sido">
+			<c:forEach items="${item}" var="item" varStatus="status">
+				<li class="mb-2">
+				<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
+					<input type="button" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
+				</li>
+			</c:forEach>
+   		</ul>
+      </div>
+      <div class="modal-footer">
+      	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>	
+	<!-- 출발역 선택 -->	
 <div class="modal fade" id="trainStationModal" aria-hidden="true" aria-labelledby="trainStationModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 	    	<div class="modal-content">
 	   			<div class="modal-header">
-	      			<h1 class="modal-title fs-5">시/도 선택</h1>
-	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="trainStationModal" aria-label="Close"></button>
+	      			<h1 class="modal-title fs-5">출발역 선택</h1>
+	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
 	      		</div>
 	      		<div class="modal-body">
 		      		<ul class="d-flex flex-wrap justify-content-around p-0">
@@ -1145,33 +1172,15 @@
 		      		</ul>
 	      		</div>
 	      		<div class="modal-footer">
+	      			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      				<button type="button" class="btn btn-primary">Save changes</button>
 	      		</div>
 	    	</div>
 	 	</div>
 </div>
 	
 	
-<div class="modal fade" id="trainModal" aria-hidden="true" aria-labelledby="trainModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5">시/도 선택</h1>
-        <button type="button" class="btn-close" ></button>
-      </div>
-      <div class="modal-body">
-        <ul class="d-flex flex-wrap justify-content-around p-0" id="sido">
-			<c:forEach items="${item}" var="item" varStatus="status">
-				<li class="mb-2">
-				<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
-					<input type="button" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
-				</li>
-			</c:forEach>
-   		</ul>
-      </div>
-      <div class="modal-footer"></div>
-    </div>
-  </div>
-</div>
+
 
 	
 	
@@ -1316,7 +1325,7 @@
 		});
 		
 		$(".train").on("click",function(){
-			TrainModal.show();
+			TrainModal.toggle();
 		})
 		
 		$("#sido li input").on("click",function(){
@@ -1348,34 +1357,34 @@
 
 				    // 선택한 도시 이름을 도시 코드로 변환
 				    var cityCode = cityMap[sidoval];
-			alert(cityCode);
+						alert(cityCode);
 			
 			
-			/* $.ajax({
-				async: true,
-				cache:false,
-				type:"post",
-				url:"trainProc"
-				data: {
-					sidovalue : cityCode;
-				},
-				success:function(response){
-					if(response.rt === "success"){
+// 			 $.ajax({
+// 				async: true,
+// 				cache:false,
+// 				type:"post",
+// 				url:"trainProc"
+// 				data: {
+// 					"sidovalue" : cityCode
+// 				},
+// 				success:function(response){
+// 					if(response.rt === "success"){
 						
-					}else{
-						alert("실패");
-					}
+// 					}else{
+// 						alert("실패");
+// 					}
 						
-				},
-				error: function(jqXHR, textStatus, errorThrown) {
-		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+// 				},
+// 				error: function(jqXHR, textStatus, errorThrown) {
+// 		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
 				
 			
 				
-			}) */
+// 			}) 
 			
 			
-			TrainModal2.show();
+			TrainModal2.toggle();
 		});
 		
 		
