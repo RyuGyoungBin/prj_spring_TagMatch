@@ -70,7 +70,7 @@
                 <div class="tour_container">
 					<div class="ribbon_3 popular"><span>Popular</span></div>
                     <div class="img_container">
-                        <a href="roomDetailInfo01">
+                        <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/hotel/seoul/01/01.jpg" width="800" height="533" class="img-fluid" alt="Image">
 
                         </a>
@@ -91,7 +91,7 @@
                 <div class="tour_container">
 					<div class="ribbon_3 popular"><span>Popular</span></div>
                     <div class="img_container">
-                        <a href="single_tour.html">
+                        <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/hotel/seoul/02/02_1.jpg" width="800" height="533" class="img-fluid" alt="Image">
                         <div class="badge_save">Save<strong>30%</strong></div>
                         <div class="short_info">
@@ -115,7 +115,7 @@
                 <div class="tour_container">
 					<div class="ribbon_3 popular"><span>Popular</span></div>
                     <div class="img_container">
-                        <a href="roomDetailInfo02">
+                        <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/pension/gyunggido/01/01.jpg" width="800" height="533" class="img-fluid" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>48</span>
@@ -138,7 +138,7 @@
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
                     <div class="img_container">
-                        <a href="roomDetailInfo02">
+                        <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/pension/gyunggido/02/02.jpg" width="800" height="533" class="img-fluid" alt="Image">
                         <div class="badge_save">Save<strong>30%</strong></div>
                         <div class="short_info">
@@ -162,7 +162,7 @@
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
                     <div class="img_container">
-                        <a href="roomDetailInfo03">
+                        <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/condo/gangwondo/01/01.jpg" width="800" height="533" class="img-fluid" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-28"></i>Skyline tours<span class="price"><sup>$</sup>42</span>
@@ -185,7 +185,7 @@
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
                     <div class="img_container">
-                        <a href="single_tour.html">
+                        <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/condo/gangwondo/02/02.jpg" width="800" height="533" class="img-fluid" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>40</span>
@@ -208,7 +208,7 @@
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
                     <div class="img_container">
-                        <a href="single_tour.html">
+                        <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/condo/gangwondo/03/03.jpg" width="800" height="533" class="img-fluid" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-3"></i>City sightseeing<span class="price"><sup>$</sup>35</span>
@@ -231,7 +231,7 @@
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
                     <div class="img_container">
-                        <a href="single_tour.html">
+                        <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/condo/gangwondo/04/04.jpg" width="800" height="533" class="img-fluid" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-4"></i>Museums<span class="price"><sup>$</sup>38</span>
@@ -254,7 +254,7 @@
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
                     <div class="img_container">
-                        <a href="single_tour.html">
+                        <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/condo/gangwondo/05/05.jpg" width="800" height="533" class="img-fluid" alt="Image">
                         <div class="short_info">
                             <i class="icon_set_1_icon-14"></i>Eat &amp; drink<span class="price"><sup>$</sup>25</span>
