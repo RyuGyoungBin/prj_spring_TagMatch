@@ -110,28 +110,32 @@
         select * from ticketUsr
     </select>
     
-    <insert id="insert">
+    <insert id="insertFeedback">
         insert into 
         	feedback (
-		        seq
-		        , type
+
+		         type
 		        , review
 		        , reviewTitle
 		        , starRating
 		        , member_seq
 		        , defaultNy
 		        , type_seq
+		        , date
+		        , dateRe
 		        
 		        ) values (
 		        
-		        #{seq}
-		        , #{type}
+
+		         #{type}
 		        , #{review}
 		        , #{reviewTitle}
 		        , #{starRating}
 		        , #{member_seq}
-		        , #{defaultNy}
+		        , 0
 		        , #{type_seq}
+		        , now()
+		        , now()
         )
         <selectKey resultType="String" keyProperty="seq" order="AFTER">
             SELECT last_insert_id()

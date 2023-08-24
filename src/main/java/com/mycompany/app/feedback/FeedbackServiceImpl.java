@@ -26,10 +26,17 @@ public class FeedbackServiceImpl implements FeedbackService {
 
 	@Override
 	public int insert(Feedback dto) {
+		dao.insert(dto);
+
 		
-		
-		return dao.insert(dto);
+		return 0;
 	}
+	
+	public int insertFeedback(Feedback dto) {
+		dao.insertFeedback(dto);
+		return 0;
+	}
+
 
 	@Override
 	public int update(Feedback dto) {
@@ -51,6 +58,9 @@ public class FeedbackServiceImpl implements FeedbackService {
 		
 		return 0;
 	}
+
+
+
 	
 
 	

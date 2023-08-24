@@ -22,7 +22,7 @@
                 <h3 class="animated fadeInDown">기차 여행 A to Z 는 여기에서! </h3>
                 <p class="animated fadeInDown">기차 승차권 / 숙소 예약 / 모든 입장권</p>
                 <a href="/trainUsrView" class="animated fadeInUp button_intro outline">기차 노선도 보러가기</a>                 
-                <a href="/hotel02" class="animated fadeInUp button_intro outline">숙소 보러가기</a> 
+                <a href="/hotel" class="animated fadeInUp button_intro outline">숙소 보러가기</a> 
                 <a href="/indexUsrTicket" class="animated fadeInUp button_intro outline">입장권 보러가기</a>
                 <a href="/bookingUsrView" class="animated fadeInUp button_intro ">바로 예약하기</a>
             </div>  
@@ -276,7 +276,7 @@
         </div><!-- End row -->
 		<div class="d-flex justify-content-around">
         <p class="text-center nopadding">
-            <a href="hotel02" class="btn_1 medium"><i class="icon-eye-7"></i>View hotel tours (144) </a>
+            <a href="hotel" class="btn_1 medium"><i class="icon-eye-7"></i>View hotel tours (144) </a>
         </p>
                 <p class="text-center nopadding">
             <a href="pension02" class="btn_1 medium"><i class="icon-eye-7"></i>View pension tours (144) </a>
