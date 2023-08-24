@@ -59,7 +59,7 @@ public class SpotController {
 		} else {
 //			by pass
 		}
-		
+		 
 		return "/usr/infra/index/indexUsrTicket";
 	}
 	

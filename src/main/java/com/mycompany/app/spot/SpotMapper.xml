@@ -37,7 +37,7 @@
 			a.delNy,
 			c.date closed
 		</sql>
-	
+	 
 	<select id="selectListUploaded" resultMap="resultMapObj">
 	SELECT
 			*

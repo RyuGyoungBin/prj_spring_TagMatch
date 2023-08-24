@@ -13,7 +13,7 @@ import com.mycompany.app.hotel.HotelVo;
 
 @Repository
 public class SpotDao {
-
+ 
 	@Inject
 	@Resource(name = "sqlSession")
 	private SqlSession sqlSession; // 변수명 선언

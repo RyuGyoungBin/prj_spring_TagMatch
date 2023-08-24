@@ -112,7 +112,7 @@
 		                    <th>adultPrice</th>		                    
 		                    <th>childPrice</th>
 		                    <th>detailText</th>
-
+ 
 		                  </tr>
 		                </thead>
 		                <tbody>

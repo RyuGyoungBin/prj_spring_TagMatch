@@ -119,7 +119,7 @@
 									<p><i class="icon-info-1"></i>취소/선결제</p>
 								</div>
 							</div>
-						
+						 
 						</div>
 						
 						<!-- End col-md-9  -->
