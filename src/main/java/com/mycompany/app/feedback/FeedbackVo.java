@@ -2,7 +2,7 @@ package com.mycompany.app.feedback;
 
 public class FeedbackVo {
 
-	
+	private String b;
 	private String seq;
 	private String type;
 	private String review; 
@@ -27,22 +27,25 @@ public class FeedbackVo {
 	private String ticketUsr_seq;
 	private String ticketUsr_title;
 	private String ticketUsrType;
-	private String	 ticketUsr_ticktcol;
+	private String ticketUsr_ticktcol;
 	private String ticketUsr_adualtNum;
 	private String ticketUsr_childNum;
 	private String ticketUsr_price;
 
 	//trainUsr
+
 	private String trainUsr_seq;
+	private String trainUsr_title;
 	private String trainUsr_start;
 	private String trainUsr_startDateTime;
-	private String	 trainUsr_end;
+	private String trainUsr_end;
 	private String trainUsr_endDateTime;
 	private String trainUsrType;
 	private String trainUsr_sort;
-	private String trainUsr_adualtNum;
+	private String trainUsr_adultNum;
 	private String trainUsr_childNum;
 	private String trainUsr_price;
+	
 
 	// paging 
 	private int thisPage = 1;									// 현재 페이지
@@ -286,12 +289,7 @@ public class FeedbackVo {
 	public void setTrainUsr_sort(String trainUsr_sort) {
 		this.trainUsr_sort = trainUsr_sort;
 	}
-	public String getTrainUsr_adualtNum() {
-		return trainUsr_adualtNum;
-	}
-	public void setTrainUsr_adualtNum(String trainUsr_adualtNum) {
-		this.trainUsr_adualtNum = trainUsr_adualtNum;
-	}
+
 	public String getTrainUsr_childNum() {
 		return trainUsr_childNum;
 	}
@@ -393,6 +391,30 @@ public class FeedbackVo {
 	}
 	public void setHotelUsr_hotel_seq(String hotelUsr_hotel_seq) {
 		this.hotelUsr_hotel_seq = hotelUsr_hotel_seq;
+	}
+
+	public String getTrainUsr_title() {
+		return trainUsr_title;
+	}
+
+	public void setTrainUsr_title(String trainUsr_title) {
+		this.trainUsr_title = trainUsr_title;
+	}
+
+	public String getTrainUsr_adultNum() {
+		return trainUsr_adultNum;
+	}
+
+	public void setTrainUsr_adultNum(String trainUsr_adultNum) {
+		this.trainUsr_adultNum = trainUsr_adultNum;
+	}
+
+	public String getB() {
+		return b;
+	}
+
+	public void setB(String b) {
+		this.b = b;
 	}
 	
 }

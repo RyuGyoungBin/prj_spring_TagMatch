@@ -47,7 +47,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-CodeGroup</li>
+          <li class="breadcrumb-item active">Data-Feedback</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -91,6 +91,34 @@
 	                </div>
 	                </div>
 	            </div>
+	            
+	            <c:choose>
+				<c:when test="${empty param.seq }">
+					<div class="d-flex justify-content-between my-5 text-center">
+						<div class="col-2">
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/feedbackXdmList'"><i class="bi bi-list"></i></button>
+						</div>
+						<div class="col-2">
+							<button id="btnInsert" type="button" class="btn btn-success">save</button>
+						</div>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="d-flex justify-content-between my-5 text-center">
+						<div class="col-2">
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/feedbackXdmList'"><i class="bi bi-list"></i></button>
+							<button id="btnDelete" type="button" class="btn btn-danger">delete</button>
+							<button id="btnDelNy" type="button" class="btn btn-danger">uele</button>
+						</div>
+						<div class="col-2">
+							<button id="btnUpdate" type="button" class="btn btn-success">update</button>
+						</div>
+					</div>
+				</c:otherwise>
+				</c:choose>
+	            
+	            
+	            
               </form>
             </div>
           </div>
@@ -113,16 +141,16 @@
 
 	
 	$("#btnInsert").on("click", function(){
-		$("form[name=form]").attr("action", "/feedbackInsert").submit();
+		$("form[name=form]").attr("action", "/feedbackXdmInsert").submit();
 	})
 	$("#btnUpdate").on("click", function(){
-		$("form[name=form]").attr("action", "/feedbackUpdate").submit();
+		$("form[name=form]").attr("action", "/feedbackXdmUpdate").submit();
 	})
 	$("#btnDelete").on("click", function(){
-		$("form[name=form]").attr("action", "/feedbackDelete").submit();
+		$("form[name=form]").attr("action", "/feedbackXdmDelete").submit();
 	})
 	$("#btnDelNy").on("click", function(){
-		$("form[name=form]").attr("action", "/feedbackUelete").submit();
+		$("form[name=form]").attr("action", "/feedbackXdmUelete").submit();
 	})
 // 	//  	주소찾기
 //  	function address1() {
