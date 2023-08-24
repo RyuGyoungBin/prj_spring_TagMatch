@@ -3,8 +3,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="rb" uri="http://www.springframework.org/tags" %>
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <%@include file="../include/head.jsp"%>
 <%@include file="../include/header.jsp"%>
 
@@ -310,7 +312,8 @@
 				<!--End aside -->
 
 				<div class="col-lg-9">
-
+			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
+			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<div id="tools">
 						<div class="row justify-content-between">
                             <div class="col-md-3 col-sm-4">
@@ -337,15 +340,16 @@
 								</div>
 								<div class="img_container">
 									<a href="indexUsrTicketDetailInfo?seq=<c:out value="${list.seq}"/>">
-										<img src="/resources/assets/img/eastPalaceGarden.jpg" width="300" height="533" class="img-fluid" alt="Image">
+										<img src="/resources/assets/img/knowledgeSpaceSeoyuguandBingheogak.jpg" width="300" height="533" class="img-fluid" alt="Image">
+<%-- 										<img src="<c:out value="${list.path}"/>"><c:out value="${list.uuidName}"></c:out><c:out value="${list.ext}"></c:out> --%>
+									</a>
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
-											<span class="price"><sup>$</sup>59</span>
+											<span class="price"><sup>3000</sup>원</span>
 										</div>
-									</a>
 								</div>
 								<div class="hotel_title">
-									<h3 ><strong><a href="indexUsrShopDetail?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></strong></h3>
+									<h3><strong><a  style="color: black;" href="indexUsrTicketDetailInfo?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></strong></h3>
 									<div class="rating">
 										<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
 									</div>
@@ -354,10 +358,38 @@
 						</div>
 				  </c:forEach>
 				</div>
-			<!-- End row -->
+					<div class="container-fluid px-0 mt-2">
+			    <div class="row">
+			        <div class="col">
+			            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
+			            <ul class="pagination justify-content-center mb-0">
+			                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
+								<c:if test="${vo.startPage gt vo.pageNumToShow}">
+								                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
+								</c:if>
+								<c:forEach begin="${vo.startPage}" end="${vo.endPage}" varStatus="i">
+									<c:choose>
+										<c:when test="${i.index eq vo.thisPage}">
+								                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+										</c:when>
+										<c:otherwise>             
+								                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+										</c:otherwise>
+									</c:choose>
+								</c:forEach>                
+								<c:if test="${vo.endPage ne vo.totalPages}">                
+								                <li class="page-item"><a class="page-link" href="javascript:goList(${vo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li>
+								</c:if>
+			                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+			            </ul>
+			        </div>
+			    </div>
+			</div>
 		</div>
 	</div>
+
 </div>
+
 		<!-- End container -->
 	</main>
 		<%@include file="../include/footer.jsp"%>
@@ -373,6 +405,13 @@
 	<script src="/resources/assets/js/map_hotels.js"></script>
 	<script src="/resources/assets/js/infobox.js"></script>
 
+<script type="text/javascript">
+//paging
+goList = function(thisPage) {
+	$("input:hidden[name=thisPage]").val(thisPage);
+	$("form[name=formList]").attr("action", "indexUsrTicket").submit();
+}
+</script>
 
   </body>
 </html>

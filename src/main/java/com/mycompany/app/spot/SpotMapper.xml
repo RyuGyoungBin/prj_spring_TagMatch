@@ -13,10 +13,8 @@
    		FROM    
 	    	spot a
 	    	LEFT JOIN spotCloseDay c on c.spot_seq = a.seq
-
 		WHERE 1=1 
 		<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
-
     </sql>
 	
 	 
@@ -38,7 +36,6 @@
 			a.detailText,
 			a.delNy,
 			c.date closed
-			
 		</sql>
 	
 	<select id="selectListUploaded" resultMap="resultMapObj">
@@ -63,6 +60,8 @@
 		,tel
 		,closedTime
 		,openTime
+		,adultPrice
+		,childPrice
 		,detailText
 	FROM
 		spot
@@ -77,14 +76,16 @@
 			<if test="tel != null and !tel.equals('')">AND tel = #{tel}</if>
 			<if test="closedTime != null and !closedTime.equals('')">AND closedTime = #{closedTime}</if>
 			<if test="openTime != null and !openTime.equals('')">AND openTime = #{openTime}</if>
+			<if test="adultPrice != null and !adultPrice.equals('')">AND adultPrice = #{adultPrice}</if>
+			<if test="childPrice != null and !childPrice.equals('')">AND childPrice = #{childPrice}</if>
 			<if test="detailText != null and !detailText.equals('')">AND detailText = #{detailText}</if>
 </select>
 	
    	<select id="selectOneCount" resultType="Integer">
 		SELECT count(*)
 		<include refid="selectCommon" />
-		
 	</select>
+	
     
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT aa.* FROM (   	
@@ -96,6 +97,8 @@
 <!-- 		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if> -->
 		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
+  
+  
   
     
     <insert id="insertSpot">

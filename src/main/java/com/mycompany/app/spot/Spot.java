@@ -23,6 +23,9 @@ public class Spot {
 	
 	private String date;
 	
+	//spot info
+	private String info_seq;
+	private String[] info_seqArray;
 	
 //	uploaded
 	private String tableName;
@@ -49,6 +52,21 @@ public class Spot {
 	private String[] uploadImgSpotDeleteSeq;
 	private String[] uploadImgSpotDeletePathFile;
 	
+	
+	//info S
+	public String getInfo_seq() {
+		return info_seq;
+	}
+	public void setInfo_seq(String info_seq) {
+		this.info_seq = info_seq;
+	}
+	public String[] getInfo_seqArray() {
+		return info_seqArray;
+	}
+	public void setInfo_seqArray(String[] info_seqArray) {
+		this.info_seqArray = info_seqArray;
+	}
+	//info E
 	
 	/*닫는날 S*/ 
 	public String getDate() {

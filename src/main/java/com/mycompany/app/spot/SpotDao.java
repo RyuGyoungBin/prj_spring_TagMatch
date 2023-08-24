@@ -21,12 +21,11 @@ public class SpotDao {
 	private static String namespace = "com.mycompany.app.spot.SpotMapper";
 	
 //	paging
+	public List<Spot> selectList(SpotVo vo) {return sqlSession.selectList(namespace + ".selectList", vo );  }
+	
 	public int selectOneCount(SpotVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
 	
 	public Spot selectOne(SpotVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
-	
-	public List<Spot> selectList(SpotVo vo) {return sqlSession.selectList(namespace + ".selectList", vo );  }
-
 	
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(Spot dto) { return sqlSession.update(namespace + ".update", dto); }

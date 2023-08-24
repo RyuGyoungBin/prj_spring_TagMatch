@@ -16,12 +16,13 @@
 				<div class="row">
 					<div class="col-md-8">
 						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
-						<h1>[전주] 지식공간 서유구와빙허각</h1>
-						<span>서유구와 빙허각</span>
+						<h1><c:out value="${spot.name}"></c:out></h1>
+						<span><c:out value="${spot.addressDetail}"></c:out></span>
 					</div>
 					<div class="col-md-4">
 						<div id="price_single_main" class="hotel">
-							입장권<span>1,000원</span>
+							성인 입장권<span><c:out value="${spot.adultPrice}"></c:out></span><br>
+							어린이 입장권<span><c:out value="${spot.childPrice}"></c:out></span>
 						</div>
 					</div>
 				</div>
@@ -62,114 +63,64 @@
 							<li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
 							<li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
 							<li><i class="icon_set_1_icon-27"></i>Parking</li>
+<%-- 							<c:forEach items="${info}" var="info" varStatus="statusUploaded"> --%>
+<%-- 							<li><i class="<c:out value="${info.iClass }" />"></i><c:out value="${info.info }" /></li> --%>
+<%-- 							</c:forEach> --%>
 						</ul>
 					</div>
 					<p class="d-block d-lg-none"><a class="btn_map" data-bs-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
 					</p>
 					<!-- Map button for tablets/mobiles -->
-					<div id="Img_carousel" class="slider-pro">
+										<div id="Img_carousel" class="slider-pro">
 						<div class="sp-slides">
 
 							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-src="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-small="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-medium="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-large="/resources/assets/img/detailsSlide/detailSlide1.jpg" data-retina="/resources/assets/img/detailsSlide/detailSlide1.jpg">
+								<c:set var="type" value="1"/>		<!-- #-> -->
+			        			<c:set var="name" value="uploadImg"/>		<!-- #-> -->
+			        			<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+				        			<c:if test="${listUploaded.type eq type }">
+										<img class="sp-image" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>">
+									</c:if>
+								</c:forEach>
 							</div>
-							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="/resources/assets/img/detailsSlide/detailSlide2.png" data-src="/resources/assets/img/detailsSlide/detailSlide2.png" data-small="/resources/assets/img/detailsSlide/detailSlide2.png" data-medium="/resources/assets/img/detailsSlide/detailSlide2.png" data-large="/resources/assets/img/detailsSlide/detailSlide2.png" data-retina="/resources/assets/img/detailsSlide/detailSlide2.png">
-							</div>
-
-							<div class="sp-slide">
-								<img alt="Image" class="sp-image" src="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-src="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-small="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-medium="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-large="/resources/assets/img/detailsSlide/detailSlide3.jpg" data-retina="/resources/assets/img/detailsSlide/detailSlide3.jpg">
-							</div>
+							<c:set var="type" value="2"/>		<!-- #-> -->
+		        			<c:set var="name" value="uploadImgRoom"/>		<!-- #-> -->
+		        			<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+			        			<c:if test="${listUploaded.type eq type }">
+			        			<div class="sp-slide">
+									<img class="sp-image" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>">
+								</div>
+								</c:if>
+							</c:forEach>
 						</div>
 						<div class="sp-thumbnails">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/detailsSlide/detailSlide1.jpg">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/detailsSlide/detailSlide2.png">
-							<img alt="Image" class="sp-thumbnail" src="/resources/assets/img/detailsSlide/detailSlide3.jpg">
+						<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+								<img class="sp-thumbnail" src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>">
+						</c:forEach>
 						</div>
 					</div>
-					<hr>
-
-					
-					<div class="row" style="justify-content: space-around;">
-						<div class="col-lg-9" >
-<!-- 						style="background-image: url(/resources/assets/img/h1.jpg); background-size: cover;" -->
-						<div >
-						<img src="/resources/assets/img/detail/Detail1_1.jpg" alt="Image" style="width: 98%;">
-						<img src="/resources/assets/img/detail/Detail1_2.jpg" alt="Image">
-						<img src="/resources/assets/img/detail/Detail1_3.jpg" alt="Image">
-						<img src="/resources/assets/img/detail/Detail1_4.jpg" alt="Image">
-						<img src="/resources/assets/img/detail/Detail1_5.jpg" alt="Image">
-						<img src="/resources/assets/img/detail/Detail1_6.jpg" alt="Image">
-						<img src="/resources/assets/img/detail/Detail1_7.jpg" alt="Image">
-						</div>
-							<p style="font-size: 15px;margin-top: 66px;">
-														이용안내
-							* 당일 구매 당일 사용 가능
-							<br>
-							* 현장 무인발권기에서 구매정보 입력 후 입장권 발권
-							<br>
-							<br>
-							★ 해당 시설은 입장시설업체와 연동되어있는 티켓으로 영업일 외 구매시 즉시사용이 어려울 수 있습니다
-							<br>
-							<br>
-							취소/환불 규정
-							<br>
-							아래규정은 특별규정약관으로 실제 이용시설들과 수수료규정이 상이합니다.
-							<br>
-							<br>
-							-단품만 구매시 예약일 날짜로 영업일 기준 +5일내 에만 취소 환불처리 가능합니다. (이외 경우는 연장 및 취소, 환불처리 불가)
-							<br>
-							<br>
-							- 미사용티켓은 변경 및 취소환불처리가 불가합니다.
-							<br>
-							- 상품유효기간과는 무관하게 지정날짜에만 이용하셔야하며
-							<br>
-							지정날짜외 입장시에는 별도 문의부탁드립니다.
-							<br>
-							<br>
-							-본 레저/티켓 정보는 야놀자에서 제공합니다.
-							<br>
-							야놀자 고객센터정보
-							<br>
-							<br>
-							-문의전화 : 1644-1346 (야놀자 고객센터)
-							<br>
-							-상담시간 : 09:00~18:00 (연중무휴)
-							<br>
-							업체 정보
-							<br>
-							* 주소: 전북 전주시 완산구 향교길 104 1층
-							<br>
-							* 문의전화: 063-291-2583
-							<br>
-							* 주차정보: 주차불가
-							<br>
-							<br>
-							운영정보는 현장 상황에 따라 변동될 수 있습니다.
-							</p>
-							<div class="row">
-								<div class="col-md-6" style="font-size:20px;">
-								<h3></h3>
-									<p><i class="icon-clock-6"></i>운영시간: 09:00시 ~ 18:00시 까지</p>
-									
-									<br>
-<!-- 									<P><i class="icon-logout-1"></i>체크아웃 : 18:30까지</P> -->
-									<br>
-<!-- 									<p><i class="icon-info-1"></i>취소/선결제</p><p>숙소 유형에 따라 취소 및 선결제 정책이 달라집니다. 옵션을 선택할 때는 반드시 예약조건을 확인해주시기 바랍니다.</p> -->
-									<br>
-<!-- 									<p><i class="icon-user-5"></i>연령제한</p><p>만 19세 이상만 체크인 가능합니다</p> -->
-								</div>
-							</div>
-							<!-- End row  -->
-						</div>
-						<!-- End col-md-9  -->
-					</div>
-					<!-- End row  -->
-
 					<hr>
 
 					<div class="row">
+						<div class="col-lg-3">
+							<h3>Description</h3>
+						</div>
+						<div class="col-lg-9">
+							<p>
+								<c:out value="${spot.detailText }"></c:out>
+							</p>
+						<div class="row">
+								<div class="col-md-6" style="font-size:20px;">
+								<h3></h3>
+									<p><i class="icon-login-1"></i>개장시간 : <c:out value="${spot.openTime }"/>부터</p>
+									<br>
+									<P><i class="icon-logout-1"></i>폐장시간 : <c:out value="${spot.closedTime }"/>까지</P>
+									<br>
+									<p><i class="icon-info-1"></i>취소/선결제</p>
+								</div>
+							</div>
 						
+						</div>
 						
 						<!-- End col-md-9  -->
 					</div>
