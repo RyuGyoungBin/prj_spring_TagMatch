@@ -114,6 +114,10 @@
 		                    <th>startRating</th>
 		                    <th>member_seq</th>
 		                    <th>defaultNy</th>
+	                        <th>member_seq</th>
+		                    <th>type_seq</th>
+		                    <th>date</th>
+		                    <th>dateRe</th>
 		                  </tr>
 		                </thead>
 		                <tbody>
@@ -131,6 +135,10 @@
 				                   <td><c:out value="${list.starRating}"></c:out></td>
 				                   <td><c:out value="${list.member_seq}"></c:out></td>
 				                   <td><c:out value="${list.defaultNy}"></c:out></td>
+				                   <td><c:out value="${list.member_seq}"></c:out></td>
+				                   <td><c:out value="${list.type_seq}"></c:out></td>
+				                   <td><c:out value="${list.date}"></c:out></td>
+				                   <td><c:out value="${list.dateRe}"></c:out></td>
 			                 	</tr>
 							</c:forEach>
 		                </tbody>

@@ -75,19 +75,23 @@
 	                </div>
 					<div class=" col-5 mb-3">
 						<label>reviewTitle</label>
-						<input class="form-control" name="reviewTitle" id="reviewTitle" type="text" placeholder="리뷰제목" readonly value="<c:out value="${item.reviewTitle }"></c:out>">
+						<input class="form-control" name="reviewTitle" id="reviewTitle" type="text" placeholder="리뷰제목"  value="<c:out value="${item.reviewTitle }"></c:out>">
 					</div>
 					<div class=" col-5 mb-3">
-						<label>startRating detail</label>
-						<input class="form-control" name="startRating" id="startRating" type="text" placeholder="평가" value="<c:out value="${item.startRating }"></c:out>">
+						<label>starRating detail</label>
+						<input class="form-control" name="starRating" id="starRating" type="text" placeholder="평가" value="<c:out value="${item.starRating }"></c:out>">
 					</div>
 					<div class=" col-5 mb-3">
 						<label>member_seq</label>
-						<input class="form-control" name="member_seq" id="member_seq" type="text" readonly value="<c:out value="${item.member_seq}"></c:out>">
+						<input class="form-control" name="member_seq" id="member_seq" type="text"  value="<c:out value="${item.member_seq}"></c:out>">
 					</div>
+					<div class=" col-5 mb-3">
+	                  	<label>type_seq</label>
+                    	<input type="text" class="form-control" name="type_seq" id="type_seq"  value="<c:out value="${item.type_seq }"></c:out>">
+	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label>defaultNy</label>
-                    	<input type="text" class="form-control" name="defaultNy" id="defaultNy" value="<c:out value="${item.defaultNy }"></c:out>">
+                    	<input type="text" class="form-control" name="defaultNy" id="defaultNy"  value="<c:out value="${item.defaultNy }"></c:out>">
 	                </div>
 	                </div>
 	            </div>

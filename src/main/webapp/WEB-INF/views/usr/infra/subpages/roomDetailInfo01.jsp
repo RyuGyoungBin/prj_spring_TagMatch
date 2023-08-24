@@ -149,7 +149,7 @@
 								<p>
 									"<c:out value="${feedback.review }"/>"
 								</p>
-								<div class="rating" id="rating<c:out value="${feedback.member_seq }"/>">
+								<div class="rating" id="rating<c:out value="${feedback.seq }"/>">
 								</div>
 							</div>
 						</c:forEach>
@@ -232,7 +232,8 @@
 						<div class="form-group">
 							<textarea name="review" id="review_text" class="form-control" style="height:100px" placeholder="리뷰 작성"></textarea>
 						</div>
-						<button type="button" class="btn_1" id="submit-review">등록</button>
+						<button type="button" id="btnInsert" class="btn_1" id="submit-review">등록</button>
+						
 					</form>
 				</div>
 			</div>
@@ -248,6 +249,25 @@
 	<!-- Gallery -->
 	<script src="/resources/assets/js/jquery.sliderPro.min.js"></script>
 	<script type="text/javascript">
+	
+	$("#btnInsert").on("click", function(){
+		$("form[name=form]").attr("action", "/feedbackXdmInsert").submit();
+		alert("리뷰가 등록되었습니다.");
+	})
+	$("#btnUpdate").on("click", function(){
+		$("form[name=form]").attr("action", "/feedbackXdmUpdate").submit();
+	})
+	$("#btnDelete").on("click", function(){
+		$("form[name=form]").attr("action", "/feedbackXdmDelete").submit();
+	})
+	$("#btnDelNy").on("click", function(){
+		$("form[name=form]").attr("action", "/feedbackXdmUelete").submit();
+	})
+	
+	
+	
+	
+	
 		$(document).ready(function ($) {
 			$('#Img_carousel').sliderPro({
 				width: 960,
@@ -314,16 +334,19 @@
 	});
 		
 		<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
-			var reviewRating<c:out value="${feedback.member_seq }"/> = $("#rating<c:out value="${feedback.member_seq }"/>");
-			var rating<c:out value="${feedback.member_seq }"/> = <c:out value="${feedback.starRating }"/>;
+			var reviewRating<c:out value="${feedback.seq }"/> = $("#rating<c:out value="${feedback.seq }"/>");
+			var rating<c:out value="${feedback.seq }"/> = <c:out value="${feedback.starRating }"/>;
 		</c:forEach>
 		
-		for(var i=0; i<4; i++){
-			reviewRating1.append('<i class="icon-smile voted"></i>')
-		}
-		for(var j=0; j<5-i; j++){
-			reviewRating1.append('<i class="icon-smile"></i>');
-		}
+		
+		<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
+			for(var i=0; i<rating<c:out value="${feedback.seq }"/> ; i++){
+				reviewRating<c:out value="${feedback.seq }"/> .append('<i class="icon-smile voted"></i>')
+			}
+			for(var j=0; j<5-i; j++){
+				reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile"></i>');
+			}
+		</c:forEach>
 	</script>
 
 	<!--Review modal validation -->
