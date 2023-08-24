@@ -11,10 +11,11 @@
     <sql id="selectCommon" > 
 	    FROM    
 	        feedback a
-	        JOIN trainUsr b ON b.seq = a.type_seq 
-	        JOIN hotelUsr c ON c.seq = a.type_seq  
-	        JOIN ticketUsr d ON d.seq = a.type_seq 
-	    WHERE 1=1 
+	        LEFT JOIN trainUsr b ON b.seq = a.type_seq 
+	        LEFT JOIN hotelUsr c ON c.seq = a.type_seq  
+	        LEFT JOIN ticketUsr d ON d.seq = a.type_seq 
+	    WHERE 1=1
+	    	<if test="type != null and !type.equals('')">AND a.type = #{type}</if>
 	</sql> 
     
     <sql id="selectFeedback">
@@ -25,60 +26,46 @@
         a.starRating,
         a.member_seq,
         a.defaultNy,
-        b.title,
-        b.start, 
-        b.startDateTime,
-        b.end,
-        b.endDateTime,
-        b.trainUsrType,
-        b.sort,
-        b.adultNum,
-        b.childNum,
-        b.price,
-        b.member_seq,
-        c.title,
-        c.start,
-        c.end,
-        c.hotelUsrType,
-        c.price,
-        c.totalPrice,
-        c.member_seq,
-        c.hotel_seq,
-        d.title,
-        d.ticketUsrType,
-        d.adultNum,
-        d.childNum,
-        d.price,
-        d.member_seq,
-        d.ticket_seq
+        a.date,
+        a.dateRe,
+        a.type_seq,
+        b.start trainUsr_start, 
+        b.startDateTime trainUsr_startDateTime,
+        b.end trainUsr_end,
+        b.endDateTime trainUsr_endDateTime,
+        b.type trainUsrType,
+        b.sort trainUsr_sort,
+        b.adultNum trainUsr_adultNum,
+        b.childNum trainUsr_childNum,
+        b.price trainUsr_price,
+        c.start hotelUsr_start,
+        c.end hotelUsr_end,
+        c.type hotelUsr_type,
+        c.price hotelUsr_price,
+        c.hotel_seq hotelUsr_hotel_seq,
+        c.hotelRoomSeq,
+        d.title tickeUsr_title,
+        d.type ticketUsrType,
+        d.adultNum tickeUsr_adultNum,
+        d.childNum tickeUsr_childNum,
+        d.price tickeUsr_price,
+        d.ticketSeq tickeUsr_seq
     </sql>
     
-<!--     <select id="selectList" resultMap="resultMapObj"> -->
-<!--         SELECT aa.* FROM (     -->
-<!--         SELECT -->
-<!--             <include refid="selectFeedback" /> -->
-<!--             <include refid="selectCommon" /> -->
-<!--         ) aa -->
-<!--         WHERE 1=1 -->
-<!--         <if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if> -->
-<!--         LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql} -->
-<!--     </select> -->
     
     <select id="selectList" resultMap="resultMapObj">
-	    SELECT aa * FROM (    
+	    SELECT aa. * FROM (    
 	        SELECT
-	            <include refid="selectFeedback" />,
+	            <include refid="selectFeedback" />
 	            <include refid="selectCommon" />
 	    ) aa
  	    WHERE 1=1
-	  <!--  <if test="hotelType != null and !hotelType.equals('')">AND c.hotelType = #{hotelType}</if> -->
 	    LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
     
     
     <select id="selectOneCount" resultType="Integer">
         SELECT count(*)
-	        <include refid="selectFeedback" />,
 	        <include refid="selectCommon" />
     </select>
     
@@ -107,8 +94,8 @@
 			<if test="type != null and !type.equals('')">AND type = #{type}</if>
 			<if test="review != null and review.equals('')">	AND review = #{review} </if>
 			<if test="reviewTitle != null and !reviewTitle.equals('')">AND reviewTitle = #{reviewTitle}</if>
-
 </select>
+	<select id="select"></select>
     
 
     <select id="selectTrainUsr" resultMap="resultMapObj">

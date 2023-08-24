@@ -68,6 +68,14 @@
 		WHERE 1=1
 			AND pseq = #{seq}
 	</select>
+	<select id="selectHotelRoom" resultMap="resultMapObj">
+		SELECT
+			*
+		FROM
+			hotelRoom
+		WHERE 1=1
+			AND hotel_seq = #{seq}
+	</select>
 	
 	<insert id="insertHotel">
     	insert into `hotel` (

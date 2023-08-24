@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.app.feedback.Feedback;
+import com.mycompany.app.feedback.FeedbackServiceImpl;
+import com.mycompany.app.feedback.FeedbackVo;
 import com.mycompany.app.info.Info;
 import com.mycompany.app.info.InfoServiceImpl;
 import com.mycompany.app.info.InfoVo;
@@ -21,6 +24,9 @@ public class HotelController {
 	
 	@Autowired
 	InfoServiceImpl infoService;
+	
+	@Autowired
+	FeedbackServiceImpl feedbackService;
 	
 	@RequestMapping("/hotelXdmList")
 	public String hotelXdmList(@ModelAttribute("vo") HotelVo vo, Model model) {
@@ -71,14 +77,18 @@ public class HotelController {
 	}
 	
 	@RequestMapping ("/roomDetailInfo")
-	public String roomDetailInfo01(HotelVo vo, Model model,InfoVo infoVo) {
+	public String roomDetailInfo01(HotelVo vo, Model model,InfoVo infoVo, FeedbackVo feedbackVo) {
 		Hotel hotel = hotelService.selectOne(vo);
 		List<Hotel> hotelImg = hotelService.selectUploaded(vo);
 		List<Info> info = infoService.selectHotel(infoVo);
+		List<Hotel> hotelRoom = hotelService.selectHotelRoom(vo);
+		List<Feedback> feedback = feedbackService.selectList(feedbackVo);
 		
 		model.addAttribute("listUploaded", hotelImg);
 		model.addAttribute("hotel", hotel);
 		model.addAttribute("info", info);
+		model.addAttribute("room", hotelRoom);
+		model.addAttribute("feedback", feedback);
 		return "/usr/infra/subpages/roomDetailInfo01";
 	}
 	
