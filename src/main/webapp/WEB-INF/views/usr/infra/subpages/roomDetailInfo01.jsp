@@ -318,7 +318,7 @@
 			var rating<c:out value="${feedback.member_seq }"/> = <c:out value="${feedback.starRating }"/>;
 		</c:forEach>
 		
-		for(var i=0; i<4; i++){
+		for(var i=0; i<rating1; i++){
 			reviewRating1.append('<i class="icon-smile voted"></i>')
 		}
 		for(var j=0; j<5-i; j++){
