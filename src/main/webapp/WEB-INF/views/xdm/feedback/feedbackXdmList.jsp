@@ -107,13 +107,13 @@
 								<input class="form-check-input" type="checkbox" id="checkboxNoLabel" value="0" aria-label="..." name="tabel_check">
 							</th>
 		                    <th>seq</th>
-<!-- 		                    <th>type</th> -->
+		                    <th>type</th>
+		                    <th>type_seq</th>
 		                    <th>review</th>
 		                    <th>reviewTitle</th>
 		                    <th>startRating</th>
 		                    <th>member_seq</th>
 		                    <th>defaultNy</th>
-		                    <th>type_seq</th>
 		                  </tr>
 		                </thead>
 		                <tbody>
@@ -124,12 +124,13 @@
 									</th>
 				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
 <%-- 				                   <td><a href="/feedbackXdmForm?seq=<c:out value="${list.seq }"></c:out>&feedback_seq=<c:out value="${list.seq }"/>"><c:out value="${list.type }"></c:out></a></td> --%>
+				                   <td><c:out value="${list.type}"></c:out></td>
+				                   <td><c:out value="${list.type_seq}"></c:out></td>
 				                   <td><c:out value="${list.review}"></c:out></td>
 				                   <td><c:out value="${list.reviewTitle}"></c:out></td>
-				                   <td><c:out value="${list.startRating}"></c:out></td>
+				                   <td><c:out value="${list.starRating}"></c:out></td>
 				                   <td><c:out value="${list.member_seq}"></c:out></td>
 				                   <td><c:out value="${list.defaultNy}"></c:out></td>
-				                   <td><c:out value="${list.type_seq}"></c:out></td>
 			                 	</tr>
 							</c:forEach>
 		                </tbody>

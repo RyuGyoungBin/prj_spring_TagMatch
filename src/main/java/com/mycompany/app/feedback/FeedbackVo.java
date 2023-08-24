@@ -13,6 +13,8 @@ public class FeedbackVo {
 	private String member_seq; 
 	private String type_seq;
 
+	private String date;
+	private String dateRe;
 
 	// hotelUsr
 	private String hotelUsr_seq; 
@@ -21,6 +23,7 @@ public class FeedbackVo {
 	private String hotelUsrType; 
 	private String hotelUsr_price; 
 	private String hotelUsr_hotel_seq;
+	private String hotelRoomSeq;
 	
 	
 	// ticketUsr
@@ -31,6 +34,7 @@ public class FeedbackVo {
 	private String ticketUsr_adualtNum;
 	private String ticketUsr_childNum;
 	private String ticketUsr_price;
+	private String ticketSeq;
 
 	//trainUsr
 
@@ -415,6 +419,38 @@ public class FeedbackVo {
 
 	public void setB(String b) {
 		this.b = b;
+	}
+
+	public String getHotelRoomSeq() {
+		return hotelRoomSeq;
+	}
+
+	public void setHotelRoomSeq(String hotelRoomSeq) {
+		this.hotelRoomSeq = hotelRoomSeq;
+	}
+
+	public String getTicketSeq() {
+		return ticketSeq;
+	}
+
+	public void setTicketSeq(String ticketSeq) {
+		this.ticketSeq = ticketSeq;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getDateRe() {
+		return dateRe;
+	}
+
+	public void setDateRe(String dateRe) {
+		this.dateRe = dateRe;
 	}
 	
 }

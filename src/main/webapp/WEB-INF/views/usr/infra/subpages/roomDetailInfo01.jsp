@@ -134,78 +134,25 @@
 							<a href="#" class="btn_1 add_bottom_30" data-bs-toggle="modal" data-bs-target="#myReview">Leave a review</a>
 						</div>
 						<div class="col-lg-9">
-							<div id="score_detail"><span>7.5</span>Good <small>(Based on 34 reviews)</small>
+							<div id="score_detail"><span>7.5</span> 
+							<small class="rating">
+								<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
+							</small>
+							<small>(Based on 34 reviews)</small>
 							</div>
 							<!-- End general_rating -->
-							<div class="row" id="rating_summary">
-								<div class="col-md-6">
-									<ul>
-										<li>Position
-											<div class="rating">
-												<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-											</div>
-										</li>
-										<li>Comfort
-											<div class="rating">
-												<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i>
-											</div>
-										</li>
-									</ul>
-								</div>
-								<div class="col-md-6">
-									<ul>
-										<li>Price
-											<div class="rating">
-												<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-											</div>
-										</li>
-										<li>Quality
-											<div class="rating">
-												<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<!-- End row -->
 							<hr>
+							<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
 							<div class="review_strip_single">
-								<img src="img/avatar1.jpg" alt="Image" class="rounded-circle">
-								<small> - 10 March 2015 -</small>
-								<h4>Jhon Doe</h4>
+								<small><c:out value="${feedback.date }"/></small>
+								<h4><c:out value="${feedback.member_seq }"/></h4>
 								<p>
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
+									"<c:out value="${feedback.review }"/>"
 								</p>
-								<div class="rating">
-									<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
+								<div class="rating" id="rating<c:out value="${feedback.member_seq }"/>">
 								</div>
 							</div>
-							<!-- End review strip -->
-
-							<div class="review_strip_single">
-								<img src="img/avatar2.jpg" alt="Image" class="rounded-circle">
-								<small> - 10 March 2015 -</small>
-								<h4>Jhon Doe</h4>
-								<p>
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-								</p>
-								<div class="rating">
-									<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-								</div>
-							</div>
-							<!-- End review strip -->
-
-							<div class="review_strip_single last">
-								<img src="img/avatar3.jpg" alt="Image" class="rounded-circle">
-								<small> - 10 March 2015 -</small>
-								<h4>Jhon Doe</h4>
-								<p>
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-								</p>
-								<div class="rating">
-									<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-								</div>
-							</div>
+						</c:forEach>
 							<!-- End review strip -->
 						</div>
 					</div>
@@ -224,138 +171,13 @@
 	</main>
 	<!-- End main -->
 
-	<footer class="revealed">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Need help?</h3>
-                    <a href="tel://004542344599" id="phone">+45 423 445 99</a>
-                    <a href="mailto:help@citytours.com" id="email_footer">help@citytours.com</a>
-                </div>
-                <div class="col-md-3">
-                    <h3>About</h3>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
-                         <li><a href="#">Terms and condition</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3">
-                    <h3>Discover</h3>
-                    <ul>
-                        <li><a href="#">Community blog</a></li>
-                        <li><a href="#">Tour guide</a></li>
-                        <li><a href="#">Wishlist</a></li>
-                         <li><a href="#">Gallery</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-2">
-                    <h3>Settings</h3>
-                    <div class="styled-select">
-                        <select name="lang" id="lang">
-                            <option value="English" selected>English</option>
-                            <option value="French">French</option>
-                            <option value="Spanish">Spanish</option>
-                            <option value="Russian">Russian</option>
-                        </select>
-                    </div>
-                    <div class="styled-select">
-                        <select name="currency" id="currency">
-                            <option value="USD" selected>USD</option>
-                            <option value="EUR">EUR</option>
-                            <option value="GBP">GBP</option>
-                            <option value="RUB">RUB</option>
-                        </select>
-                    </div>
-                </div>
-            </div><!-- End row -->
-            <div class="row">
-                <div class="col-md-12">
-                    <div id="social_footer">
-                        <ul>
-                            <li><a href="#"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#"><i class="icon-google"></i></a></li>
-                            <li><a href="#"><i class="icon-instagram"></i></a></li>
-                            <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                            <li><a href="#"><i class="icon-vimeo"></i></a></li>
-                            <li><a href="#"><i class="icon-youtube-play"></i></a></li>
-                        </ul>
-                        <p>© Citytours 2022</p>
-                    </div>
-                </div>
-            </div><!-- End row -->
-        </div><!-- End container -->
-    </footer><!-- End footer -->
-
-	<div id="toTop"></div><!-- Back to top button -->
-	
-	<!-- Search Menu -->
-	<div class="search-overlay-menu">
-		<span class="search-overlay-close"><i class="icon_set_1_icon-77"></i></span>
-		<form role="search" id="searchform" method="get">
-			<input value="" name="q" type="text" placeholder="Search..." />
-			<button type="submit"><i class="icon_set_1_icon-78"></i>
-			</button>
-		</form>
-	</div><!-- End Search Menu -->
-	
-	<!-- Sign In Popup -->
-	<div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide">
-		<div class="small-dialog-header">
-			<h3>Sign In</h3>
-		</div>
-		<form>
-			<div class="sign-in-wrapper">
-				<a href="#0" class="social_bt facebook">Login with Facebook</a>
-				<a href="#0" class="social_bt google">Login with Google</a>
-				<div class="divider"><span>Or</span></div>
-				<div class="form-group">
-					<label>Email</label>
-					<input type="email" class="form-control" name="email" id="email">
-					<i class="icon_mail_alt"></i>
-				</div>
-				<div class="form-group">
-					<label>Password</label>
-					<input type="password" class="form-control" name="password" id="password" value="">
-					<i class="icon_lock_alt"></i>
-				</div>
-				<div class="clearfix add_bottom_15">
-					<div class="checkboxes float-start">
-						<label class="container_check">Remember me
-                          <input type="checkbox">
-                          <span class="checkmark"></span>
-                        </label>
-					</div>
-					<div class="float-end"><a id="forgot" href="javascript:void(0);">Forgot Password?</a></div>
-				</div>
-				<div class="text-center"><input type="submit" value="Log In" class="btn_login"></div>
-				<div class="text-center">
-					Don’t have an account? <a href="javascript:void(0);">Sign up</a>
-				</div>
-				<div id="forgot_pw">
-					<div class="form-group">
-						<label>Please confirm login email below</label>
-						<input type="email" class="form-control" name="email_forgot" id="email_forgot">
-						<i class="icon_mail_alt"></i>
-					</div>
-					<p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
-					<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
-				</div>
-			</div>
-		</form>
-		<!--form -->
-	</div>
-	<!-- /Sign In Popup -->	
-
+	<%@include file = "../include/footer.jsp"%>
 	<!-- Modal Review -->
 	<div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="myReviewLabel" aria-hidden="true">
-		<div class="modal-dialog">
+		<div class="modal-dialog" style="margin-top:150px;">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h4 class="modal-title" id="myReviewLabel">Write your review</h4>
+					<h4 class="modal-title" id="myReviewLabel">리뷰 작성</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
@@ -366,12 +188,12 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input name="name_review" id="name_review" type="text" placeholder="Your name" class="form-control">
+									<input name="name_review" id="name_review" type="text" placeholder="이름" class="form-control">
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
-									<input name="lastname_review" id="lastname_review" type="text" placeholder="Your last name" class="form-control">
+									<input name="email_review" id="email_review" type="email" placeholder="이메일" class="form-control">
 								</div>
 							</div>
 						</div>
@@ -379,91 +201,38 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<input name="email_review" id="email_review" type="email" placeholder="Your email" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
 									<select class="form-select" name="room_type_review" id="room_type_review">
-										<option value="">Select room type</option>
-										<option value="Single room">Single Room</option>
-										<option value="Double Room">Double Room</option>
-										<option value="King double room">King Double Room</option>
+										<option value="">객실 선택</option>
+										<c:forEach items="${room}" var="room" varStatus="statusUploaded">
+											<option value="<c:out value="${room.seq }"/>"><c:out value="${room.roomName }"/></option>
+										</c:forEach>
 									</select>
 								</div>
 							</div>
 						</div>
 						<!-- End row -->
 						<hr>
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Cleanliness</label>
-									<select class="form-select" name="cleanliness_review" id="cleanliness_review">
-										<option value="">Please review</option>
-										<option value="Low">Low</option>
-										<option value="Sufficient">Sufficient</option>
-										<option value="Good">Good</option>
-										<option value="Excellent">Excellent</option>
-										<option value="Superb">Super</option>
-										<option value="Not rated">I don't know</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Comfort</label>
-									<select class="form-select" name="comfort_review" id="comfort_review">
-										<option value="">Please review</option>
-										<option value="Low">Low</option>
-										<option value="Sufficient">Sufficient</option>
-										<option value="Good">Good</option>
-										<option value="Excellent">Excellent</option>
-										<option value="Superb">Super</option>
-										<option value="Not rated">I don't know</option>
-									</select>
-								</div>
-							</div>
-						</div>
 						<!-- End row -->
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<label>Price</label>
-									<select class="form-select" name="price_review" id="price_review">
-										<option value="">Please review</option>
-										<option value="Low">Low</option>
-										<option value="Sufficient">Sufficient</option>
-										<option value="Good">Good</option>
-										<option value="Excellent">Excellent</option>
-										<option value="Superb">Super</option>
-										<option value="Not rated">I don't know</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Quality</label>
-									<select class="form-select" name="quality_review" id="quality_review">
-										<option value="">Please review</option>
-										<option value="Low">Low</option>
-										<option value="Sufficient">Sufficient</option>
-										<option value="Good">Good</option>
-										<option value="Excellent">Excellent</option>
-										<option value="Superb">Super</option>
-										<option value="Not rated">I don't know</option>
+									<label>별점</label>
+									<select class="form-select" name="starRating" id="quality_review">
+										<option value="">별점 선택</option>
+										<option value="1">매우 불만족</option>
+										<option value="2">불만족</option>
+										<option value="3">보통</option>
+										<option value="4">만족</option>
+										<option value="5">매우 만족</option>
 									</select>
 								</div>
 							</div>
 						</div>
 						<!-- End row -->
 						<div class="form-group">
-							<textarea name="review_text" id="review_text" class="form-control" style="height:100px" placeholder="Write your review"></textarea>
+							<textarea name="review" id="review_text" class="form-control" style="height:100px" placeholder="리뷰 작성"></textarea>
 						</div>
-						<div class="form-group">
-							<input type="text" id="verify_review" class=" form-control" placeholder="Are you human? 3 + 1 =">
-						</div>
-						<input type="submit" value="Submit" class="btn_1" id="submit-review">
+						<button type="button" class="btn_1" id="submit-review">등록</button>
 					</form>
 				</div>
 			</div>
@@ -543,6 +312,18 @@
 			}
 		}
 	});
+		
+		<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
+			var reviewRating<c:out value="${feedback.member_seq }"/> = $("#rating<c:out value="${feedback.member_seq }"/>");
+			var rating<c:out value="${feedback.member_seq }"/> = <c:out value="${feedback.starRating }"/>;
+		</c:forEach>
+		
+		for(var i=0; i<4; i++){
+			reviewRating1.append('<i class="icon-smile voted"></i>')
+		}
+		for(var j=0; j<5-i; j++){
+			reviewRating1.append('<i class="icon-smile"></i>');
+		}
 	</script>
 
 	<!--Review modal validation -->

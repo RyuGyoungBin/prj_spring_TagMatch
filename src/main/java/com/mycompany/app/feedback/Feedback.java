@@ -14,6 +14,9 @@ private String defaultNy;
 private String member_seq; 
 private String type_seq;
 
+private String date;
+private String dateRe;
+
 
 // hotelUsr
 private String hotelUsr_seq; 
@@ -22,14 +25,15 @@ private String hotelUsr_end;
 private String hotelUsr_type; 
 private String hotelUsr_price; 
 private String hotelUsr_hotel_seq; 
+private String hotelRoomSeq;
 
 
 // ticketUsr
 private String tickeUsr_seq;
 private String tickeUsr_title;
 private String tickeUsr_type;
-private String	 tickeUsr_ticktcol;
-private String tickeUsr_adualtNum;
+private String tickeUsr_ticktcol;
+private String tickeUsr_adultNum;
 private String tickeUsr_childNum;
 private String tickeUsr_price;
 
@@ -37,11 +41,11 @@ private String tickeUsr_price;
 private String trainUsr_seq;
 private String trainUsr_start;
 private String trainUsr_startDateTime;
-private String	 trainUsr_end;
+private String trainUsr_end;
 private String trainUsr_endDateTime;
 private String trainUsr_type;
 private String trainUsr_sort;
-private String trainUsr_adualtNum;
+private String trainUsr_adultNum;
 private String trainUsr_childNum;
 private String trainUsr_price;
 
@@ -72,11 +76,11 @@ public String getTickeUsr_ticktcol() {
 public void setTickeUsr_ticktcol(String tickeUsr_ticktcol) {
 	this.tickeUsr_ticktcol = tickeUsr_ticktcol;
 }
-public String getTickeUsr_adualtNum() {
-	return tickeUsr_adualtNum;
+public String getTickeUsr_adultNum() {
+	return tickeUsr_adultNum;
 }
-public void setTickeUsr_adualtNum(String tickeUsr_adualtNum) {
-	this.tickeUsr_adualtNum = tickeUsr_adualtNum;
+public void setTickeUsr_adultNum(String tickeUsr_adultNum) {
+	this.tickeUsr_adultNum = tickeUsr_adultNum;
 }
 public String getTickeUsr_childNum() {
 	return tickeUsr_childNum;
@@ -136,11 +140,11 @@ public String getTrainUsr_sort() {
 public void setTrainUsr_sort(String trainUsr_sort) {
 	this.trainUsr_sort = trainUsr_sort;
 }
-public String getTrainUsr_adualtNum() {
-	return trainUsr_adualtNum;
+public String getTrainUsr_adultNum() {
+	return trainUsr_adultNum;
 }
-public void setTrainUsr_adualtNum(String trainUsr_adualtNum) {
-	this.trainUsr_adualtNum = trainUsr_adualtNum;
+public void setTrainUsr_adultNum(String trainUsr_adultNum) {
+	this.trainUsr_adultNum = trainUsr_adultNum;
 }
 public String getTrainUsr_childNum() {
 	return trainUsr_childNum;
@@ -241,6 +245,24 @@ public String getHotelUsr_hotel_seq() {
 }
 public void setHotelUsr_hotel_seq(String hotelUsr_hotel_seq) {
 	this.hotelUsr_hotel_seq = hotelUsr_hotel_seq;
+}
+public String getDate() {
+	return date;
+}
+public void setDate(String date) {
+	this.date = date;
+}
+public String getDateRe() {
+	return dateRe;
+}
+public void setDateRe(String dateRe) {
+	this.dateRe = dateRe;
+}
+public String getHotelRoomSeq() {
+	return hotelRoomSeq;
+}
+public void setHotelRoomSeq(String hotelRoomSeq) {
+	this.hotelRoomSeq = hotelRoomSeq;
 }
 	
 }

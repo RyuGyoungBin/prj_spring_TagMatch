@@ -20,8 +20,10 @@ public class FeedbackController {
 		
 		  vo.setParamsPaging(service.selectOneCount(vo));
 		  
-		  if(vo.getTotalRows() > 0) { List<Feedback> list = service.selectList(vo);
-		  model.addAttribute("list", list); } else { 
+		  if(vo.getTotalRows() > 0) { 
+			  List<Feedback> list = service.selectList(vo);
+			  model.addAttribute("list", list); 
+		  } else { 
 			  // by pass }
 		  }
 		 
