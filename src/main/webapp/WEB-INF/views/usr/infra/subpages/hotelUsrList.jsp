@@ -129,14 +129,7 @@
 						<!--End collapse -->
 					</div>
 					<!--End filters col-->
-					<div class="box_style_2 d-none d-sm-block">
-						<i class="icon_set_1_icon-57"></i>
-						<h4>
-							Need <span>Help?</span>
-						</h4>
-						<a href="tel://004542344599" class="phone">+45 423 445 99</a> <small>Monday
-							to Friday 9.00am - 7.30pm</small>
-					</div>
+					
 				</aside>
 				<!--End aside -->
 				<div class="col-lg-9">
@@ -147,12 +140,13 @@
 							  <c:forEach items="${item}" var="item" varStatus="status">
 							  	<option value="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></option>
 							  </c:forEach>
-						 </select>
-						<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
-							<a href="all_tours_grid.html" class="bt_filters"><i
-								class="icon-th"></i></a> <a href="#" class="bt_filters"><i
-								class=" icon-list"></i></a>
-						</div>
+						 	</select>
+							<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
+								<a href="#none" class="bt_filters"><i class="icon-th"></i></a> 
+								<a href="#none" class="bt_filters"><i class="icon-list"></i></a>
+							</div>
+
+
 
 						</div>
 					</div>
