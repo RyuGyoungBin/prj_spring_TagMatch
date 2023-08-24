@@ -340,8 +340,11 @@
 								</div>
 								<div class="img_container">
 									<a href="indexUsrTicketDetailInfo?seq=<c:out value="${list.seq}"/>">
-										<img src="/resources/assets/img/knowledgeSpaceSeoyuguandBingheogak.jpg" width="300" height="533" class="img-fluid" alt="Image">
-<%-- 										<img src="<c:out value="${list.path}"/>"><c:out value="${list.uuidName}"></c:out><c:out value="${list.ext}"></c:out> --%>
+										<c:set var="type" value="1"/>		<!-- #-> -->
+			        					<c:set var="name" value="uploadImg"/>		<!-- #-> -->
+										<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+											<img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>">
+										</c:forEach>
 									</a>
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">

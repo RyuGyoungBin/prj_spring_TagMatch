@@ -13,6 +13,7 @@
    		FROM    
 	    	spot a
 	    	LEFT JOIN spotCloseDay c on c.spot_seq = a.seq
+	    	
 		WHERE 1=1 
 		<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
     </sql>

@@ -6,6 +6,7 @@ public class SpotVo {
 
 	
 	private String seq;
+	private Integer type;
 	private Integer spottype;
 	private String name;
 	private String zipCode;
@@ -31,7 +32,7 @@ public class SpotVo {
 	// 이미지 업로드 
 	private String tableName;
 		 
-	private Integer type;
+//	private Integer imgType;
 	private Integer sort;
 	private String path;
 	private String originalName;
@@ -124,6 +125,18 @@ public class SpotVo {
 
 		
 		
+//		public Integer getimgType() {
+//			return imgType;
+//		}
+//
+//
+//
+//		public void setimgType(Integer imgtype) {
+//			imgType = imgtype;
+//		}
+
+
+
 		public String getInfo_seq() {
 			return info_seq;
 		}
