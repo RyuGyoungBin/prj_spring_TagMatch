@@ -28,6 +28,12 @@ public class HotelController {
 	@Autowired
 	FeedbackServiceImpl feedbackService;
 	
+	@RequestMapping ("/hotelUsrList")
+	public String hotelUsrList() {
+		
+		return "/usr/infra/subpages/hotelUsrList";
+	}
+	
 	@RequestMapping("/hotelXdmList")
 	public String hotelXdmList(@ModelAttribute("vo") HotelVo vo, Model model) {
 		
@@ -89,7 +95,7 @@ public class HotelController {
 		model.addAttribute("info", info);
 		model.addAttribute("room", hotelRoom);
 		model.addAttribute("feedback", feedback);
-		return "/usr/infra/subpages/roomDetailInfo01";
+		return "/usr/infra/subpages/roomDetailInfo";
 	}
 	
 	@RequestMapping("/hotel")
@@ -103,7 +109,7 @@ public class HotelController {
 			} else {
 				
 			}
-		return "/usr/infra/subpages/hotel02";
+		return "/usr/infra/subpages/hotel";
 	}
 	@RequestMapping("/home")
 	public String home() {

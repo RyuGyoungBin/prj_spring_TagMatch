@@ -9,8 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import com.mycompany.app.hotel.Hotel;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 
 
@@ -75,9 +76,9 @@ public class SpotController {
 		
 	}
 	
-	@RequestMapping("/detailInfo01")
-	public String detaillnfo01() {
-		return "/usr/infra/index/detailInfo01";
+	@RequestMapping("/detailInfo")
+	public String detaillnfo() {
+		return "/usr/infra/index/detailInfo";
 	}
 	
 	@RequestMapping("/indexUsrLogin")
@@ -131,5 +132,28 @@ public class SpotController {
 		
 		return "redirect: /spotXdmList";
 	}
+	
+//	 @RequestMapping(value = "/upload", method = RequestMethod.GET)
+//	    public String showUploadForm() {
+//	        return "uploadForm";
+//	    }
+//
+//	    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+//	    public String handleFileUpload(@RequestParam("file") MultipartFile file, Model model) {
+//	        if (!file.isEmpty()) {
+//	            try {
+//	                byte[] bytes = file.getBytes();
+//	                String fileName = file.getOriginalFilename();
+//	                // 이미지 파일을 서버의 지정된 위치에 저장합니다.
+//	                // ...
+//	                model.addAttribute("message", "파일 업로드 성공: " + fileName);
+//	            } catch (Exception e) {
+//	                model.addAttribute("message", "파일 업로드 실패: " + e.getMessage());
+//	            }
+//	        } else {
+//	            model.addAttribute("message", "파일이 비어 있습니다.");
+//	        }
+//	        return "uploadResult";
+//	    }
 	
 }
