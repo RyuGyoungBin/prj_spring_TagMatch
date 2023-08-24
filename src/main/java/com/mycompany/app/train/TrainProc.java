@@ -1,7 +1,6 @@
 package com.mycompany.app.train;
 
 import java.io.BufferedReader;
-
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -9,7 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 
 import org.springframework.ui.Model;
@@ -102,9 +100,11 @@ public class TrainProc {
 	
 //	station api 
 
-public static void trainStation(Model model) throws Exception {
+public static void trainStation(Model model, Train train) throws Exception {
 		
-		String apiUrl = "https://apis.data.go.kr/1613000/TrainInfoService/getCtyAcctoTrainSttnList?serviceKey=5dx59Iz3XSezPb2EagGTegCQHvL4o%2BP3Er41IuBsQ1nAcKAhlD3zq8Sp2Dh1clbSsNFATVFrRahABEc6qxLc5A%3D%3D&numOfRows=10&pageNo=1&_type=json&cityCode=11";
+		String citycode = train.getCitycode();
+	
+		String apiUrl = "https://apis.data.go.kr/1613000/TrainInfoService/getCtyAcctoTrainSttnList?serviceKey=5dx59Iz3XSezPb2EagGTegCQHvL4o%2BP3Er41IuBsQ1nAcKAhlD3zq8Sp2Dh1clbSsNFATVFrRahABEc6qxLc5A%3D%3D&numOfRows=10&pageNo=1&_type=json&cityCode= " + citycode;
 		
 		URL url = new URL(apiUrl);
 		HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -185,6 +185,7 @@ public static void trainStation(Model model) throws Exception {
 		model.addAttribute("item01",item);
 		
 		 String itemJson = objectMapper.writeValueAsString(item);
+		 
 
 		   
 	}

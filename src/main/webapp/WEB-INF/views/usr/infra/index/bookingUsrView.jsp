@@ -1140,8 +1140,8 @@
         <ul class="d-flex flex-wrap justify-content-around p-0" id="sido">
 			<c:forEach items="${item}" var="item" varStatus="status">
 				<li class="mb-2">
-				<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
-					<input type="button" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
+					<label><c:out value="${item.cityname }"/></label>
+					<input type="hidden" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
 				</li>
 			</c:forEach>
    		</ul>
@@ -1155,28 +1155,28 @@
 </div>	
 	<!-- 출발역 선택 -->	
 <div class="modal fade" id="trainStationModal" aria-hidden="true" aria-labelledby="trainStationModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-	    	<div class="modal-content">
-	   			<div class="modal-header">
-	      			<h1 class="modal-title fs-5">출발역 선택</h1>
-	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
-	      		</div>
-	      		<div class="modal-body">
-		      		<ul class="d-flex flex-wrap justify-content-around p-0">
-		      			<c:forEach items="${item}" var="item" varStatus="status">
-						  	<li class="mb-2">
-						  	<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
-						  		<input type="button" class="form-control" value="<c:out value="${item.nodename }"/>" name="<c:out value="${item.nodename }"/>" readonly>
-						  	</li>
-						  </c:forEach>
-		      		</ul>
-	      		</div>
-	      		<div class="modal-footer">
-	      			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      				<button type="button" class="btn btn-primary">Save changes</button>
-	      		</div>
-	    	</div>
-	 	</div>
+	<div class="modal-dialog modal-dialog-centered" role="document">
+    	<div class="modal-content">
+   			<div class="modal-header">
+      			<h1 class="modal-title fs-5">출발역 선택</h1>
+        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
+      		</div>
+      		<div class="modal-body">
+	      		<ul class="d-flex flex-wrap justify-content-around p-0">
+	      			<c:forEach items="${item}" var="item" varStatus="status">
+					  	<li class="mb-2">
+					  		<label>"><c:out value="${item.nodeName }"/></label>
+					  		<input type="hidden" class="form-control" value="<c:out value="${item.nodeName }"/>" name="<c:out value="${item.nodeName }"/>" readonly>
+					  	</li>
+					  </c:forEach>
+	      		</ul>
+      		</div>
+      		<div class="modal-footer">
+      			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+     				<button type="button" class="btn btn-primary">Save changes</button>
+      		</div>
+    	</div>
+ 	</div>
 </div>
 	
 	
@@ -1328,7 +1328,7 @@
 			TrainModal.toggle();
 		})
 		
-		$("#sido li input").on("click",function(){
+		$("#sido li label").on("click",function(){
 			var sidoval = $(this).val();
 			alert(sidoval);
 			
@@ -1360,28 +1360,26 @@
 						alert(cityCode);
 			
 			
-// 			 $.ajax({
-// 				async: true,
-// 				cache:false,
-// 				type:"post",
-// 				url:"trainProc"
-// 				data: {
-// 					"sidovalue" : cityCode
-// 				},
-// 				success:function(response){
-// 					if(response.rt === "success"){
+			 $.ajax({
+				async: true,
+				cache:false,
+				type:"post",
+				url:"trainProc"
+				data: {
+					"citycode" : $(this).next().val();
+				},
+				success:function(response){
+					if(response.rt === "success"){
 						
-// 					}else{
-// 						alert("실패");
-// 					}
+					}else{
+						alert("실패");
+					}
 						
-// 				},
-// 				error: function(jqXHR, textStatus, errorThrown) {
-// 		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
-				
-			
-				
-// 			}) 
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+		            
+			}) 
 			
 			
 			TrainModal2.toggle();
