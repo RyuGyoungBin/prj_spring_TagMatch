@@ -20,16 +20,21 @@ public class SpotServiceImpl implements SpotService{
 	
 //  paging
 	@Override
-	public int selectOneCount(SpotVo vo) {return dao.selectOneCount(vo); }
-
-	@Override
 	public List<Spot> selectList(SpotVo vo) { return dao.selectList(vo); }
+	
+	@Override
+	public int selectOneCount(SpotVo vo) {return dao.selectOneCount(vo); }
 	
 	@Override
 	public Spot selectOne(SpotVo vo) { return dao.selectOne(vo); }
 
 	@Override
-	public int update(Spot dto){return dao.update(dto); }
+	public int update(Spot dto){
+		
+		dao.update(dto);
+		
+		return 0;
+		}
 
 	@Override
 
@@ -38,7 +43,7 @@ public class SpotServiceImpl implements SpotService{
 		dao.delete(dto);	
 		return 0; 
 	}
-
+ 
 
 	@Override
 	public int insert(Spot dto) throws Exception {
