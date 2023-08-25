@@ -66,6 +66,15 @@
 		FROM
 			hotelUploaded
 		WHERE 1=1
+			<if test="seq != null and !seq.equals('')"> AND pseq = #{seq} </if>
+			
+	</select>
+	<select id="selectUploadedOne" resultMap="resultMapObj">
+		SELECT
+			*
+		FROM
+			hotelUploaded
+		WHERE 1=1
 			AND pseq = #{seq}
 	</select>
 	<select id="selectHotelRoom" resultMap="resultMapObj">
@@ -98,6 +107,7 @@
 		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq
 		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 1
 		    LEFT JOIN hotelUploaded d on d.pseq = a.seq AND d.type = 1
+		    LEFT JOIN hotelRoom e on e.
 		WHERE 1=1
 			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq}</if>
 		
@@ -123,7 +133,9 @@
 			COUNT(c.review) cnt,
 			d.path,
 			d.type,
-			d.uuidName
+			d.uuidName,
+			b.hotel_seq,
+			b.seq hotelUsr_seq
 		FROM
 			hotel a
 		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq

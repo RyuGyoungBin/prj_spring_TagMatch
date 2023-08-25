@@ -59,7 +59,7 @@ public class HotelController {
 	public String hotelXdmForm(HotelVo vo, Model model, InfoVo infoVo) {
 
 		Hotel hotel = hotelService.selectOne(vo); 
-		List<Hotel> uploaded = hotelService.selectUploaded(vo);
+		List<Hotel> uploaded = hotelService.selectUploadedOne(vo);
 		model.addAttribute("item", hotel);
 		model.addAttribute("listUploaded", uploaded);
 		return "xdm/hotel/hotelXdmForm";
@@ -91,8 +91,8 @@ public class HotelController {
 	
 	@RequestMapping ("/roomDetailInfo")
 	public String roomDetailInfo01(HotelVo vo,InfoVo infoVo, FeedbackVo feedbackVo, Model model) {
-		System.out.println("feedback"+feedbackVo.getFeedbackType());
-		System.out.println("seq"+vo.getSeq());
+		System.out.println("feedback : "+feedbackVo.getFeedbackType());
+		System.out.println("seq : "+vo.getSeq());
 		Hotel hotel = hotelService.selectRatingOne(vo);
 		List<Hotel> hotelImg = hotelService.selectUploaded(vo);
 		List<Info> info = infoService.selectHotel(infoVo);
