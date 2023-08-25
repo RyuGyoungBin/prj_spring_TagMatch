@@ -97,6 +97,35 @@
 	                    </div>
 	                </div><!-- End box tour -->
 	            </div><!-- End col -->
+	            
+	              <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
+	                <div class="tour_container">
+						<div class="ribbon_3 popular"><span>Popular</span></div>
+	                    <div class="img_container">
+	                    
+	<!--                         <a href="roomDetailInfo"> -->
+	<%--                         <a href="/roomDetailInfo?seq= --%>
+	<%--                         	<c:out value="${list.seq }"></c:out> --%>
+	<%--                         	<c:out value="${list.seq }"/>"> --%>
+	<%--                         		<c:out value="${list.name }"></c:out> --%>
+	                        		<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>">
+	                        		
+	                        <img src="resources/assets/img/accommodation/hotel/seoul/02/02_1.jpg" width="800" height="533" class="img-fluid" alt="Image">
+	
+	                        
+	                        </a>
+	                    </div>
+	                    <div class="tour_title">
+	                        <h3><strong>AC호텔 바이 메리어트 서울 강남</strong></h3>
+	                        <div class="rating">
+	                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+	                        </div><!-- end rating -->
+	                        <div class="wishlist">
+	                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+	                        </div><!-- End wish list-->
+	                    </div>
+	                </div><!-- End box tour -->
+	            </div><!-- End col -->
             </c:forEach>
             
 
