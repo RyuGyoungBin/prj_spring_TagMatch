@@ -137,11 +137,10 @@
 							<a href="#" class="btn_1 add_bottom_30" data-bs-toggle="modal" data-bs-target="#myReview">Leave a review</a>
 						</div>
 						<div class="col-lg-9">
-							<div id="score_detail"><span>7.5</span> 
-							<small class="rating">
-								<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
+							<div id="score_detail"><span><c:out value="${hotel.starRating }"/></span> 
+							<small class="rating" id="reviewRating">
 							</small>
-							<small>(Based on 34 reviews)</small>
+							<small>(Based on <c:out value="${hotel.cnt }"/> reviews)</small>
 							</div>
 							<!-- End general_rating -->
 							<hr>
@@ -335,12 +334,14 @@
 			}
 		}
 	});
-			var hotelrating = <c:out value="${hotel.starRating }"/>;
+			var hotelrating = Math.floor(<c:out value="${hotel.starRating }"/>);
 			for(var i=0; i<hotelrating ; i++){
 				$("#hotelRating").append('<i class="icon-smile voted"></i>')
+				$("#reviewRating").append('<i class="icon-smile voted"></i>')
 			}
 			for(var j=0; j<5-i; j++){
 				$("#hotelRating").append('<i class="icon-smile"></i>');
+				$("#reviewRating").append('<i class="icon-smile"></i>')
 			}
 		
 		<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">

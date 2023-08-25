@@ -90,7 +90,9 @@ public class HotelController {
 	}
 	
 	@RequestMapping ("/roomDetailInfo")
-	public String roomDetailInfo01(HotelVo vo, Model model,InfoVo infoVo, FeedbackVo feedbackVo) {
+	public String roomDetailInfo01(HotelVo vo,InfoVo infoVo, FeedbackVo feedbackVo, Model model) {
+		System.out.println("feedback"+feedbackVo.getFeedbackType());
+		System.out.println("seq"+vo.getSeq());
 		Hotel hotel = hotelService.selectRatingOne(vo);
 		List<Hotel> hotelImg = hotelService.selectUploaded(vo);
 		List<Info> info = infoService.selectHotel(infoVo);

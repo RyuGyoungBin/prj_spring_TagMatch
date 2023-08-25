@@ -120,6 +120,7 @@
 	    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
 	    	a.detailText,
 			ROUND(avg(c.starRating),1) starRating,
+			COUNT(c.review) cnt,
 			d.path,
 			d.type,
 			d.uuidName

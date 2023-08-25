@@ -54,8 +54,15 @@ public class Hotel {
 	private String[] uploadImgRoomDeletePathFile;
 	
 	private Double starRating;
+	private Integer cnt;
 	
 	
+	public Integer getCnt() {
+		return cnt;
+	}
+	public void setCnt(Integer cnt) {
+		this.cnt = cnt;
+	}
 	public Double getStarRating() {
 		return starRating;
 	}
