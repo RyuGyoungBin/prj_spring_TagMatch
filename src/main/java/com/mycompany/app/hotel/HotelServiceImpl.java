@@ -32,6 +32,12 @@ public class HotelServiceImpl implements HotelService{
 	
 	@Override
 	public List<Hotel> selectHotelRoom(HotelVo vo) {return dao.selectHotelRoom(vo);}
+	
+	@Override
+	public List<Hotel> selectRating(HotelVo vo) {return dao.selectRating(vo);}
+	
+	@Override
+	public Hotel selectRatingOne(HotelVo vo) {return dao.selectRatingOne(vo);}
 
 	@Override
 	public int insert(Hotel dto) throws Exception {

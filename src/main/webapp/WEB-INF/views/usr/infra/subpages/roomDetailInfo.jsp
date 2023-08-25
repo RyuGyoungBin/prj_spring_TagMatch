@@ -15,7 +15,10 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">
-						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
+						<span class="rating" id="hotelRating">
+<!-- 							<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i> -->
+						</span>
+						<small>${hotel.starRating }</small>
 						<h1>[<c:out value="${hotel.sido }" />] <c:out value="${hotel.name }"/></h1>
 					</div>
 					<div class="col-md-4">
@@ -332,6 +335,13 @@
 			}
 		}
 	});
+			var hotelrating = <c:out value="${hotel.starRating }"/>;
+			for(var i=0; i<hotelrating ; i++){
+				$("#hotelRating").append('<i class="icon-smile voted"></i>')
+			}
+			for(var j=0; j<5-i; j++){
+				$("#hotelRating").append('<i class="icon-smile"></i>');
+			}
 		
 		<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
 			var reviewRating<c:out value="${feedback.seq }"/> = $("#rating<c:out value="${feedback.seq }"/>");
@@ -341,7 +351,7 @@
 		
 		<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
 			for(var i=0; i<rating<c:out value="${feedback.seq }"/> ; i++){
-				reviewRating<c:out value="${feedback.seq }"/> .append('<i class="icon-smile voted"></i>')
+				reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile voted"></i>')
 			}
 			for(var j=0; j<5-i; j++){
 				reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile"></i>');

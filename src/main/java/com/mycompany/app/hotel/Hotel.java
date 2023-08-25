@@ -53,7 +53,15 @@ public class Hotel {
 	private String[] uploadImgRoomDeleteSeq;
 	private String[] uploadImgRoomDeletePathFile;
 	
+	private Double starRating;
 	
+	
+	public Double getStarRating() {
+		return starRating;
+	}
+	public void setStarRating(Double starRating) {
+		this.starRating = starRating;
+	}
 	public String[] getInfo_seqArray() {
 		return info_seqArray;
 	}
