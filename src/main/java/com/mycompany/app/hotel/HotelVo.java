@@ -57,6 +57,25 @@ public class HotelVo {
 	private Integer RNUM;
 
 	private int startRnumForMysql = 0;							// 쿼리 시작 row
+	
+	private Integer rating;
+	private Integer cnt;
+
+	public Integer getCnt() {
+		return cnt;
+	}
+
+	public void setCnt(Integer cnt) {
+		this.cnt = cnt;
+	}
+
+	public Integer getRating() {
+		return rating;
+	}
+
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
 
 	public String getSeq() {
 		return seq;

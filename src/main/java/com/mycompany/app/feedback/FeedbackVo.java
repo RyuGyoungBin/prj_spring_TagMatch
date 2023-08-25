@@ -4,7 +4,7 @@ public class FeedbackVo {
 
 	private String b;
 	private String seq;
-	private String type;
+	private Integer feedbackType;
 	private String review; 
 	private String reviewTitle; 
 
@@ -316,11 +316,11 @@ public class FeedbackVo {
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
-	public String getType() {
-		return type;
+	public Integer getFeedbackType() {
+		return feedbackType;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setType(Integer feedbackType) {
+		this.feedbackType = feedbackType;
 	}
 	public String getReview() {
 		return review;
