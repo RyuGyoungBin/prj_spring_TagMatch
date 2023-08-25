@@ -312,7 +312,7 @@
 		
 		<c:forEach items="${list}" var="list" varStatus="statusUploaded">
 			var ratingStar<c:out value="${list.seq }"/> = $("#rating<c:out value="${list.seq }"/>");
-			var rating<c:out value="${list.seq }"/> = <c:out value="${list.starRating }"/>;
+			var rating<c:out value="${list.seq }"/> = Math.floor(<c:out value="${list.starRating }"/>);
 			
 			for(var i=0; i<rating<c:out value="${list.seq }"/> ; i++){
 				ratingStar<c:out value="${list.seq }"/>.append('<i class="icon-smile voted"></i>')
