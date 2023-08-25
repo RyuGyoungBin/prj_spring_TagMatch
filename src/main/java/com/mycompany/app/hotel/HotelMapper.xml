@@ -69,6 +69,7 @@
 		hotelUploaded
 		WHERE 1=1
 			<if test="seq != null and !seq.equals('')"> AND pseq = #{seq} </if>
+
 			
 	</select>
 	<select id="selectUploadedOne" resultMap="resultMapObj">
@@ -78,6 +79,7 @@
 			hotelUploaded
 		WHERE 1=1
 			AND pseq = #{seq}
+
 
 	</select>
 	<select id="selectHotelRoom" resultMap="resultMapObj">
@@ -165,7 +167,9 @@
 		checkOutTime,
 		detailText,
 		delNy
+		
 		) values(
+		
 		#{hotelType},
 		#{name},
 		#{zipCode},
@@ -178,8 +182,7 @@
 		#{detailText},
 		0
 		)
-		<selectKey resultType="String" keyProperty="seq"
-			order="AFTER">
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
 		</selectKey>
 	</insert>
@@ -250,7 +253,7 @@
 		checkInTime = #{checkInTime},
 		checkOutTime = #{checkOutTime},
 		detailText = #{detailText},
-		delNy = #{delNY}
+		delNy = #{roomDelNY}
 		WHERE
 		seq = #{seq}
 	</update>
@@ -282,7 +285,7 @@
 		hotelCloseDay
 		SET
 		date = #{date},
-		delNy = #{delNY}
+		delNy = #{roomDelNY}
 		WHERE
 		hotel_seq = #{seq}
 	</update>
