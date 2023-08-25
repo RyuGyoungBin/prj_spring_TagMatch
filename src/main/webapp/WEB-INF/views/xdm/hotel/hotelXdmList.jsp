@@ -91,14 +91,14 @@
 					</div>
 				</form>
 				
-				<c:choose>
-					<c:when test="${fn:length(list) eq 0}">
-						<tr>
-							<td class="text-center" colspan="9">There is no data!</td>
-						</tr>	
-					</c:when>
-					
-		                  	<c:otherwise>
+					<c:choose>
+						<c:when test="${fn:length(list) eq 0}">
+							<tr>
+								<td class="text-center" colspan="9">There is no data!</td>
+							</tr>	
+						</c:when>
+						
+	                  	<c:otherwise>
                   	<div class="overflow-hidden overflow-x-auto">
 		              <!-- Table with stripped rows -->
 		              <table class="table table-striped text-nowrap">
@@ -234,6 +234,7 @@
 //paging
 	goList = function(thisPage) {
 		$("input:hidden[name=thisPage]").val(thisPage);
+		
 		$("form[name=formList]").attr("action", "hotelXdmList").submit();
 	}
 // search
