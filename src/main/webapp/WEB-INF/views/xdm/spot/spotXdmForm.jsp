@@ -150,7 +150,7 @@
 								</c:if>
 							</c:forEach>
 						</div>
-                    </div>
+                    </div> 
                     <!-- 이미지첨부 -->
                     <div class="col-5 mb-3">
 			        	<c:set var="type" value="2"/>		<!-- #-> -->

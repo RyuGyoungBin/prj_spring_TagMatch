@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
 import org.springframework.ui.Model;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -100,7 +101,6 @@ public class TrainProc {
 //	station api 
 
 public static List<Train> trainStation(Train train, Model model) throws Exception {
-		
 		String citycode = "";
 		citycode = train.getCitycode();
 		System.out.println(citycode);

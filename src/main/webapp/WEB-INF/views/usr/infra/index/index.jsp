@@ -22,7 +22,7 @@
                 <h3 class="animated fadeInDown">기차 여행 A to Z 는 여기에서! </h3>
                 <p class="animated fadeInDown">기차 승차권 / 숙소 예약 / 모든 입장권</p>
                 <a href="/trainUsrView" class="animated fadeInUp button_intro outline">기차 노선도 보러가기</a>                 
-                <a href="/hotel02" class="animated fadeInUp button_intro outline">숙소 보러가기</a> 
+                <a href="/hotelUsrList" class="animated fadeInUp button_intro outline">숙소 보러가기</a> 
                 <a href="/indexUsrTicket" class="animated fadeInUp button_intro outline">입장권 보러가기</a>
                 <a href="/bookingUsrView" class="animated fadeInUp button_intro ">바로 예약하기</a>
             </div>  
@@ -65,14 +65,13 @@
         </div>
         
         <div class="row">
-        
+        <!-- 1번 -->
             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
                 <div class="tour_container">
 					<div class="ribbon_3 popular"><span>Popular</span></div>
                     <div class="img_container">
                         <a href="roomDetailInfo">
                         <img src="resources/assets/img/accommodation/hotel/seoul/01/01.jpg" width="800" height="533" class="img-fluid" alt="Image">
-
                         </a>
                     </div>
                     <div class="tour_title">
@@ -87,16 +86,21 @@
                 </div><!-- End box tour -->
             </div><!-- End col -->
             
+            <!-- 2번 -->
             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
                 <div class="tour_container">
 					<div class="ribbon_3 popular"><span>Popular</span></div>
                     <div class="img_container">
-                        <a href="roomDetailInfo">
+<!--                         <a href="roomDetailInfo"> -->
+<%--                         <a href="/roomDetailInfo?seq= --%>
+<%--                         	<c:out value="${list.seq }"></c:out> --%>
+<%--                         	<c:out value="${list.seq }"/>"> --%>
+<%--                         		<c:out value="${list.name }"></c:out> --%>
+                        		<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>">
+                        		
                         <img src="resources/assets/img/accommodation/hotel/seoul/02/02_1.jpg" width="800" height="533" class="img-fluid" alt="Image">
-                        <div class="badge_save">Save<strong>30%</strong></div>
-                        <div class="short_info">
-                            <i class="icon_set_1_icon-43"></i>Churches<span class="price"><sup>$</sup>45</span>
-                        </div>
+
+                        
                         </a>
                     </div>
                     <div class="tour_title">
@@ -111,6 +115,7 @@
                 </div><!-- End box tour -->
             </div><!-- End col -->
             
+            <!-- 3번 -->
             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
                 <div class="tour_container">
 					<div class="ribbon_3 popular"><span>Popular</span></div>
@@ -134,6 +139,7 @@
                 </div><!-- End box tour -->
             </div><!-- End col -->
             
+            <!-- 4번 -->
             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.4s">
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
@@ -158,6 +164,7 @@
                 </div><!-- End box tour -->
             </div><!-- End col -->
             
+            <!-- 5번 -->
             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.5s">
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
@@ -181,6 +188,7 @@
                 </div><!-- End box tour -->
             </div><!-- End col -->
             
+            <!-- 6번 -->
             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
@@ -204,6 +212,7 @@
                 </div><!-- End box tour -->
             </div><!-- End col -->
             
+            <!-- 7번 -->
             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s">
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
@@ -227,6 +236,7 @@
                 </div><!-- End box tour -->
             </div><!-- End col -->
             
+            <!-- 8번 -->
             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.8s">
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
@@ -250,6 +260,7 @@
                 </div><!-- End box tour -->
             </div><!-- End col -->
             
+            <!-- 9번 -->
             <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
                 <div class="tour_container">
 					<div class="ribbon_3"><span>Top rated</span></div>
@@ -276,7 +287,7 @@
         </div><!-- End row -->
 		<div class="d-flex justify-content-around">
         <p class="text-center nopadding">
-            <a href="hotel02" class="btn_1 medium"><i class="icon-eye-7"></i>View hotel tours (144) </a>
+            <a href="/hotelUsrList" class="btn_1 medium"><i class="icon-eye-7"></i>View hotel tours (144) </a>
         </p>
                 <p class="text-center nopadding">
             <a href="pension02" class="btn_1 medium"><i class="icon-eye-7"></i>View pension tours (144) </a>

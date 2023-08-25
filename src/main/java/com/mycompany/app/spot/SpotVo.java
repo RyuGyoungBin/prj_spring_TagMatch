@@ -7,6 +7,7 @@ public class SpotVo {
 	
 	private String seq;
 	private Integer type;
+	private Integer spottype;
 	private String name;
 	private String zipCode;
 	private String address;
@@ -22,16 +23,19 @@ public class SpotVo {
 	private Integer delNy;
 	private String info;
 	
+	
+//	spotInfo
+	private String info_seq;
 	//soptCloseDay
 	private String date;
 
 	// 이미지 업로드 
 	private String tableName;
-	
+		 
+//	private Integer imgType;
 	private Integer sort;
 	private String path;
 	private String originalName;
-
 	private String uuidName;
 	private String ext;
 	private long size;
@@ -62,7 +66,7 @@ public class SpotVo {
 		private int totalPages;										// 전체 페이지 번호
 		private int startPage;										// 시작 페이지 번호
 		private int endPage;										// 마지막 페이지 번호
-		
+
 		private int startRnumForOracle = 1;							// 쿼리 시작 row
 		private int endRnumForOracle;								// 쿼리 끝 row
 		private Integer RNUM;
@@ -118,6 +122,32 @@ public class SpotVo {
 			System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 			
 		}
+
+		
+		
+//		public Integer getimgType() {
+//			return imgType;
+//		}
+//
+//
+//
+//		public void setimgType(Integer imgtype) {
+//			imgType = imgtype;
+//		}
+
+
+
+		public String getInfo_seq() {
+			return info_seq;
+		}
+
+
+
+		public void setInfo_seq(String info_seq) {
+			this.info_seq = info_seq;
+		}
+
+
 
 		public String getSeq() {
 			return seq;
@@ -224,7 +254,19 @@ public class SpotVo {
 		}
 
 		
-//		================paging=================
+		public Integer getSpottype() {
+			return spottype;
+		}
+
+
+
+		public void setSpottype(Integer spottype) {
+			this.spottype = spottype;
+		}
+
+
+
+		//		================paging=================
 		public int getThisPage() {
 			return thisPage;
 		}
