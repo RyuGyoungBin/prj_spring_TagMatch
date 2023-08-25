@@ -64,73 +64,51 @@
             <p>현재 가장 인기있는 숙소를 살펴보세요! </p>
         </div>
         
-        <div class="row">
-       
-            
-            <!-- 1번 -->
-            <c:forEach items="${list}" var="list" varStatus="status">
-	            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-	                <div class="tour_container">
-						<div class="ribbon_3 popular"><span>Popular</span></div>
-	                    <div class="img_container">
-	                    
-	<!--                         <a href="roomDetailInfo"> -->
-	<%--                         <a href="/roomDetailInfo?seq= --%>
-	<%--                         	<c:out value="${list.seq }"></c:out> --%>
-	<%--                         	<c:out value="${list.seq }"/>"> --%>
-	<%--                         		<c:out value="${list.name }"></c:out> --%>
-	                        		<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>">
-	                        		
-	                        <img src="resources/assets/img/accommodation/hotel/seoul/02/02_1.jpg" width="800" height="533" class="img-fluid" alt="Image">
-	
-	                        
-	                        </a>
-	                    </div>
-	                    <div class="tour_title">
-	                        <h3><strong>AC호텔 바이 메리어트 서울 강남</strong></h3>
-	                        <div class="rating">
-	                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-	                        </div><!-- end rating -->
-	                        <div class="wishlist">
-	                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-	                        </div><!-- End wish list-->
-	                    </div>
-	                </div><!-- End box tour -->
-	            </div><!-- End col -->
-	            
-	              <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-	                <div class="tour_container">
-						<div class="ribbon_3 popular"><span>Popular</span></div>
-	                    <div class="img_container">
-	                    
-	<!--                         <a href="roomDetailInfo"> -->
-	<%--                         <a href="/roomDetailInfo?seq= --%>
-	<%--                         	<c:out value="${list.seq }"></c:out> --%>
-	<%--                         	<c:out value="${list.seq }"/>"> --%>
-	<%--                         		<c:out value="${list.name }"></c:out> --%>
-	                        		<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>">
-	                        		
-	                        <img src="resources/assets/img/accommodation/hotel/seoul/02/02_1.jpg" width="800" height="533" class="img-fluid" alt="Image">
-	
-	                        
-	                        </a>
-	                    </div>
-	                    <div class="tour_title">
-	                        <h3><strong>AC호텔 바이 메리어트 서울 강남</strong></h3>
-	                        <div class="rating">
-	                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-	                        </div><!-- end rating -->
-	                        <div class="wishlist">
-	                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-	                        </div><!-- End wish list-->
-	                    </div>
-	                </div><!-- End box tour -->
-	            </div><!-- End col -->
-            </c:forEach>
-            
-
-            
-        </div><!-- End row -->
+        <c:choose>
+			<c:when test="${fn:length(list) eq 0}">
+				<tr>
+					<td class="text-center" colspan="9">There is no data!</td>
+				</tr>	
+			</c:when>
+			
+	           	<c:otherwise>
+	           	<div class="overflow-hidden overflow-x-auto">
+        
+			        <div class="row">
+			            <!-- 1번 -->
+			            <c:forEach items="${list}" var="list">
+				            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
+				                <div class="tour_container">
+			                    	<div class="img_container">
+				                        <a href="/roomDetailInfo?seq=${list.seq}">
+										    <c:out value="${list.name}"></c:out>
+											    <c:set var="type" value="1"/>    <!--  -->
+	<%-- 										    <c:set var="seq" value="${list.seq }"/> --%>
+										        <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+											         <c:if test="${list.seq eq listUploaded.pseq && listUploaded.type eq 1}">
+											            <img src="${listUploaded.path}${listUploaded.uuidName}" width="800" height="533" class="img-fluid" alt="Image">
+										             </c:if>
+										        </c:forEach>
+										</a>
+				                    </div>
+				                    <div class="tour_title">
+				                        <h3><strong>  <c:out value="${list.name }"/> </strong></h3>
+				                        <div class="rating">
+				                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+				                        </div><!-- end rating -->
+				                        <div class="wishlist">
+				                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+				                        </div><!-- End wish list-->
+				                    </div>
+				                </div><!-- End box tour -->
+				            </div><!-- End col -->
+			            </c:forEach>
+			        </div><!-- End row -->
+        </div>
+	</c:otherwise>
+</c:choose>
+        
+        
 		<div class="d-flex justify-content-around">
         <p class="text-center nopadding">
             <a href="/hotelUsrList" class="btn_1 medium"><i class="icon-eye-7"></i>View hotel tours (144) </a>
@@ -289,6 +267,13 @@
 				$("#nav-search-in-content").text(Search_Str);
 			});
 		});
+		
+		
+		//paging
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			$("form[name=formList]").attr("action", "hotelUsrList").submit();
+		}
 	</script>
 	
 
