@@ -1140,8 +1140,8 @@
         <ul class="d-flex flex-wrap justify-content-around p-0" id="sido">
 			<c:forEach items="${item}" var="item" varStatus="status">
 				<li class="mb-2">
-					<label><c:out value="${item.cityname }"/></label>
-					<input type="hidden" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
+					<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label>
+					<input type="hidden" class="form-control" value="<c:out value="${item.citycode }"/>" name="<c:out value="${item.citycode }"/>" readonly>
 				</li>
 			</c:forEach>
    		</ul>
@@ -1151,28 +1151,19 @@
 </div>	
 	<!-- 출발역 선택 -->	
 <div class="modal fade" id="trainStationModal" aria-hidden="true" aria-labelledby="trainStationModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-    	<div class="modal-content">
-   			<div class="modal-header">
-      			<h1 class="modal-title fs-5">출발역 선택</h1>
-        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
-      		</div>
-      		<div class="modal-body">
-	      		<ul class="d-flex flex-wrap justify-content-around p-0">
-	      			<c:forEach items="${item}" var="item" varStatus="status">
-					  	<li class="mb-2">
-					  		<label>"><c:out value="${item.nodeName }"/></label>
-					  		<input type="hidden" class="form-control" value="<c:out value="${item.nodeName }"/>" name="<c:out value="${item.nodeName }"/>" readonly>
-					  	</li>
-					  </c:forEach>
-	      		</ul>
-      		</div>
-      		<div class="modal-footer">
-      			<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-     				<button type="button" class="btn btn-primary">Save changes</button>
-      		</div>
-    	</div>
- 	</div>
+		<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	   			<div class="modal-header">
+	      			<h1 class="modal-title fs-5">기차역 선택</h1>
+	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
+	      		</div>
+	      		<div class="modal-body">
+		      		<ul class="d-flex flex-wrap justify-content-around p-0" id="trainStation">
+		      			
+		      		</ul>
+	      		</div>
+	    	</div>
+	 	</div>
 </div>
 	
 	
@@ -1325,62 +1316,35 @@
 		})
 		
 		$("#sido li label").on("click",function(){
-			var sidoval = $(this).val();
-			alert(sidoval);
-			
-			TrainModal.hide();
-			
-
-			 var cityMap = {
-				        "서울특별시": 11,
-				        "세종특별시": 12,
-				        "부산광역시": 21,
-				        "대구광역시": 22,
-				        "인천광역시": 23,
-				        "광주광역시": 24,
-				        "대전광역시": 25,
-				        "울산광역시": 26,
-				        "경기도": 31,
-				        "강원도": 32,
-				        "충청북도": 33,
-				        "충청남도": 34,
-				        "전라북도": 35,
-				        "전라남도": 36,
-				        "경상북도": 37,
-				        "경상남도": 38
-				        // ... 나머지 도시들의 매핑 정보 추가
-				    };
-
-				    // 선택한 도시 이름을 도시 코드로 변환
-				    var cityCode = cityMap[sidoval];
-						alert(cityCode);
-			
 			
 			 $.ajax({
 				async: true,
 				cache:false,
 				type:"post",
-				url:"trainProc"
-				data: {
-					"citycode" : $(this).next().val();
-				},
+				url:"/trainStation",
+				data: {"citycode" : $(this).next().val()},
 				success:function(response){
-					if(response.rt === "success"){
-						
-					}else{
-						alert("실패");
-					}
-						
+					console.log(response.rtTrain);
+					$("#trainStation").empty();
+			 		$.each(response.rtTrain,function(index, value) {
+				 		stationLi = "";
+				 		stationLi += "<li>"+value.nodename+"</li>";
+				 		stationLi += "<input hidden='hidden' value="+value.nodeid+">";
+				 		$("#trainStation").append(stationLi);
+		 			})
+					
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
-		            
-			}) 
+				
 			
+				
+			}
+		
 			
+		});
 			TrainModal2.toggle();
 		});
-		
 		
 		
 		

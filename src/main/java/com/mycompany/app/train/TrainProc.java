@@ -100,11 +100,11 @@ public class TrainProc {
 	
 //	station api 
 
-public static void trainStation(Model model, Train train) throws Exception {
-		
-		String citycode = train.getCitycode();
-	
-		String apiUrl = "https://apis.data.go.kr/1613000/TrainInfoService/getCtyAcctoTrainSttnList?serviceKey=5dx59Iz3XSezPb2EagGTegCQHvL4o%2BP3Er41IuBsQ1nAcKAhlD3zq8Sp2Dh1clbSsNFATVFrRahABEc6qxLc5A%3D%3D&numOfRows=10&pageNo=1&_type=json&cityCode= " + citycode;
+public static List<Train> trainStation(Train train, Model model) throws Exception {
+		String citycode = "";
+		citycode = train.getCitycode();
+		System.out.println(citycode);
+		String apiUrl = "https://apis.data.go.kr/1613000/TrainInfoService/getCtyAcctoTrainSttnList?serviceKey=5dx59Iz3XSezPb2EagGTegCQHvL4o%2BP3Er41IuBsQ1nAcKAhlD3zq8Sp2Dh1clbSsNFATVFrRahABEc6qxLc5A%3D%3D&numOfRows=10&pageNo=1&_type=json&cityCode="+citycode;
 		
 		URL url = new URL(apiUrl);
 		HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -180,13 +180,6 @@ public static void trainStation(Model model, Train train) throws Exception {
 		item = (List<Train>) items.get("item");
 		
 		System.out.println("items.size(): " + items.size());
-		
-		
-		model.addAttribute("item01",item);
-		
-		 String itemJson = objectMapper.writeValueAsString(item);
-		 
-
-		   
+		return item;
 	}
 }
