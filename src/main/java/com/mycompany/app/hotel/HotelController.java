@@ -65,7 +65,7 @@ public class HotelController {
 	}
 	
 	@RequestMapping("hotelXdmUpdate")
-	public String hotelXdmUpdate(Hotel dto) {
+	public String hotelXdmUpdate(Hotel dto) throws Exception {
 		hotelService.update(dto);
 		return "redirect:/hotelXdmList";
 	}

@@ -12,7 +12,7 @@ public interface HotelService {
 	
 	public int insert(Hotel dto) throws Exception;
 	
-	public int update(Hotel dto);
+	public int update(Hotel dto) throws Exception;
 	
 	public int delete(Hotel dto);
 	

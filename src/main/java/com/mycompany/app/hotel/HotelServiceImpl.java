@@ -51,11 +51,14 @@ public class HotelServiceImpl implements HotelService{
 	}
 
 	@Override
-	public int update(Hotel dto) {
+	public int update(Hotel dto) throws Exception {
 		dao.update(dto);
 		dao.updateHotelClose(dto);
 		dao.updateHotelInfo(dto);
 		dao.updateHotelRoom(dto);
+		
+    	uploadFiles(dto.getUploadImg(), dto, "hotelUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
+    	uploadFiles(dto.getUploadImgRoom(), dto, "hotelUploaded", dto.getUploadImgRoomType(), dto.getUploadImgRoomMaxNumber());  
 		return 0;
 	}
 
