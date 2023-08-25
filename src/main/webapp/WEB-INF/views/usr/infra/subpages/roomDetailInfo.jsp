@@ -16,7 +16,6 @@
 				<div class="row">
 					<div class="col-md-8">
 						<span class="rating" id="hotelRating">
-<!-- 							<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i> -->
 						</span>
 						<small>${hotel.starRating }</small>
 						<h1>[<c:out value="${hotel.sido }" />] <c:out value="${hotel.name }"/></h1>
@@ -144,17 +143,20 @@
 							</div>
 							<!-- End general_rating -->
 							<hr>
+							<c:set var="type" value="1"/>
 							<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
-							<div class="review_strip_single">
-								<small><c:out value="${feedback.date }"/></small>
-								<h4><c:out value="${feedback.member_seq }"/></h4>
-								<p>
-									"<c:out value="${feedback.review }"/>"
-								</p>
-								<div class="rating" id="rating<c:out value="${feedback.seq }"/>">
-								</div>
-							</div>
-						</c:forEach>
+								<c:if test="${feedback.type eq type && feedback.type_seq eq hotel.hotelUsr_seq}">
+									<div class="review_strip_single">
+										<small><c:out value="${feedback.date }"/></small>
+										<h4><c:out value="${feedback.member_seq }"/></h4>
+										<p>
+											"<c:out value="${feedback.review }"/>"
+										</p>
+										<div class="rating" id="rating<c:out value="${feedback.seq }"/>">
+										</div>
+									</div>
+								</c:if>
+							</c:forEach>
 							<!-- End review strip -->
 						</div>
 					</div>
