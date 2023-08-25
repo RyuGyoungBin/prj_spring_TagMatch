@@ -15,7 +15,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8">
-						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
+						<span class="rating" id="hotelRating">
+						</span>
+						<small>${hotel.starRating }</small>
 						<h1>[<c:out value="${hotel.sido }" />] <c:out value="${hotel.name }"/></h1>
 					</div>
 					<div class="col-md-4">
@@ -134,25 +136,27 @@
 							<a href="#" class="btn_1 add_bottom_30" data-bs-toggle="modal" data-bs-target="#myReview">Leave a review</a>
 						</div>
 						<div class="col-lg-9">
-							<div id="score_detail"><span>7.5</span> 
-							<small class="rating">
-								<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
+							<div id="score_detail"><span><c:out value="${hotel.starRating }"/></span> 
+							<small class="rating" id="reviewRating">
 							</small>
-							<small>(Based on 34 reviews)</small>
+							<small>(Based on <c:out value="${hotel.cnt }"/> reviews)</small>
 							</div>
 							<!-- End general_rating -->
 							<hr>
+							<c:set var="type" value="1"/>
 							<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
-							<div class="review_strip_single">
-								<small><c:out value="${feedback.date }"/></small>
-								<h4><c:out value="${feedback.member_seq }"/></h4>
-								<p>
-									"<c:out value="${feedback.review }"/>"
-								</p>
-								<div class="rating" id="rating<c:out value="${feedback.seq }"/>">
-								</div>
-							</div>
-						</c:forEach>
+								<c:if test="${feedback.type eq type && feedback.type_seq eq hotel.hotelUsr_seq}">
+									<div class="review_strip_single">
+										<small><c:out value="${feedback.date }"/></small>
+										<h4><c:out value="${feedback.member_seq }"/></h4>
+										<p>
+											"<c:out value="${feedback.review }"/>"
+										</p>
+										<div class="rating" id="rating<c:out value="${feedback.seq }"/>">
+										</div>
+									</div>
+								</c:if>
+							</c:forEach>
 							<!-- End review strip -->
 						</div>
 					</div>
@@ -332,6 +336,15 @@
 			}
 		}
 	});
+			var hotelrating = Math.floor(<c:out value="${hotel.starRating }"/>);
+			for(var i=0; i<hotelrating ; i++){
+				$("#hotelRating").append('<i class="icon-smile voted"></i>')
+				$("#reviewRating").append('<i class="icon-smile voted"></i>')
+			}
+			for(var j=0; j<5-i; j++){
+				$("#hotelRating").append('<i class="icon-smile"></i>');
+				$("#reviewRating").append('<i class="icon-smile"></i>')
+			}
 		
 		<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
 			var reviewRating<c:out value="${feedback.seq }"/> = $("#rating<c:out value="${feedback.seq }"/>");
@@ -341,7 +354,7 @@
 		
 		<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
 			for(var i=0; i<rating<c:out value="${feedback.seq }"/> ; i++){
-				reviewRating<c:out value="${feedback.seq }"/> .append('<i class="icon-smile voted"></i>')
+				reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile voted"></i>')
 			}
 			for(var j=0; j<5-i; j++){
 				reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile"></i>');
