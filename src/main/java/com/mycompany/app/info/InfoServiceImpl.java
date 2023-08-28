@@ -39,6 +39,60 @@ import org.springframework.stereotype.Service;
 	@Override
 	public int uelete(Info dto) {return dao.uelete(dto);}
 
+	@Override
+	public List<Info> selectInfoGroup(InfoVo vo) {return dao.selectInfoGroup(vo);}
+
+	@Override
+	public int insertHotelInfo(Info dto) {
+		for(int i = 0 ; i < dto.getInfo_seqArray().length ; i++) {
+			dto.setInfo_seq(dto.getInfo_seqArray()[i]);
+		dao.insertHotelInfo(dto);
+		}
+		return 0;
+	}
+
+	@Override
+	public int deleteHotelInfo(Info dto) {
+		dao.deleteHotelInfo(dto);
+		return 0;
+	}
+	
+	@Override
+	public int updateHotelInfo(Info dto, InfoVo vo) {
+		for(int i = 0 ; i < dto.getInfo_seqArray().length ; i++) {
+			dto.setInfo_seq(dto.getInfo_seqArray()[i]);
+			if(dao.selectInfoGroup(vo)!= null) {
+				
+			} else if(dao.selectInfoGroup(vo) == null) {
+				dao.insert(dto);
+			} else {
+				dao.deleteHotelInfo(dto);
+			}
+		}
+		return 0;
+	}
+
+	@Override
+	public int insertSpotInfo(Info dto) {
+		for(int i = 0 ; i < dto.getInfo_seqArray().length ; i++) {
+			dto.setInfo_seq(dto.getInfo_seqArray()[i]);
+			dao.insertSpotInfo(dto);
+		}
+		return 0;
+	}
+
+	@Override
+	public int deleteSpotInfo(Info dto) {
+		dao.deleteSpotInfo(dto);
+		return 0;
+	}
+
+	@Override
+	public int updateSpotInfo(Info dto, InfoVo vo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 	
 
 	

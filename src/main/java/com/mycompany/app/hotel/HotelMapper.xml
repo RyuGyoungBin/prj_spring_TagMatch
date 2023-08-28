@@ -211,7 +211,7 @@
 		#{roomType},
 		#{roomName},
 		#{price},
-		#{roomDefaultNy},
+		#{defaultNy},
 		0,
 		#{roomNum},
 		#{seq}
@@ -273,7 +273,7 @@
 		roomType = #{roomType},
 		roomName = #{roomName},
 		price = #{price},
-		defaultNy = #{roomDefaultNy},
+		defaultNy = #{defaultNy},
 		delNy = #{roomDelNy},
 		roomNum = #{roomNum}
 		WHERE

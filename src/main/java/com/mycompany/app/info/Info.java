@@ -10,6 +10,21 @@ public class Info {
 	private String hotel_seq;
 	private String spot_seq;
 	
+	private String info_seq;
+	private String[] info_seqArray;
+	
+	public String getInfo_seq() {
+		return info_seq;
+	}
+	public void setInfo_seq(String info_seq) {
+		this.info_seq = info_seq;
+	}
+	public String[] getInfo_seqArray() {
+		return info_seqArray;
+	}
+	public void setInfo_seqArray(String[] info_seqArray) {
+		this.info_seqArray = info_seqArray;
+	}
 	public String getSpot_seq() {
 		return spot_seq;
 	}

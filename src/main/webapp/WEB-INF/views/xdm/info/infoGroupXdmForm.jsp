@@ -64,8 +64,16 @@
 	                <div class=" col-5 mb-3">
 	                	<c:forEach items="${list }" var="list" varStatus="status">
 	                  	<label for="info_seq<c:out value="${list.seq }"/>" class=" col-form-label"><c:out value="${list.info }"></c:out></label>
-                    	<input type="checkbox" class="" name="info_seq" id="info_seq<c:out value="${list.seq }"/>" value="<c:out value="${list.seq }"></c:out>">
+	                  	<c:forEach items="${group }" var="group" varStatus="status">
+	                  	<c:when test="${list.seq eq group.seq }">
+                    		<input type="checkbox" class="" name="info_seq" id="info_seq<c:out value="${list.seq }"/>" value="<c:out value="${list.seq }"></c:out>" checked>
+                    	</c:when>
+                    	<c:otherwise>
+                    		<input type="checkbox" class="" name="info_seq" id="info_seq<c:out value="${list.seq }"/>" value="<c:out value="${list.seq }"></c:out>">
+                    	</c:otherwise>
+                    	</c:forEach>
 	                	</c:forEach>
+	                	<input type="hidden" name="info_seqArray">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                <c:choose>
@@ -89,11 +97,20 @@
 						<div class="col-2">
 						</div>
 						<div class="col-2">
-							<button id="hotelInsert" type="button" class="btn btn-success">hotel insert</button>
+							<button id="hotelInsert" type="button" class="btn btn-success">hotel info</button>
 						</div>
 					</div>
 				</c:when>
 				<c:otherwise>
+					<div class="d-flex justify-content-between my-5 text-center">
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+							<button id="spotInsert" type="button" class="btn btn-success">spot info</button>
+						</div>
+					</div>
+				</c:otherwise>
+				</c:choose>
 					<div class="d-flex justify-content-between my-5 text-center">
 						<div class="col-2">
 							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/infoXdmList'"><i class="bi bi-list"></i></button>
@@ -104,8 +121,6 @@
 							<button id="btnUpdate" type="button" class="btn btn-success">update</button>
 						</div>
 					</div>
-				</c:otherwise>
-				</c:choose>
               </form>
               <!-- End Table with stripped rows -->
 
@@ -139,20 +154,35 @@
 // 		if(checkName(objreqName)==false) return false;
 // 		if(checkDelNy(objreqDelNy)==false) return false;
 // 	}
+	$(document).on("click",function(){
+		var infoSeq = $("input:checkbox[name=info_seq]:checked");
+		var infoSeqVal = "";
+		for(var k=0; k<infoSeq.length; k++){
+			infoSeqVal += infoSeq.eq(k).attr("value");
+			if(k<infoSeq.length-1){
+				infoSeqVal += ",";
+			}
+		}
+	$("input[name=info_seqArray]").attr("value",infoSeqVal);
+	})
   
-	$("#btnInsert").on("click", function(){
+	$("#hotelInsert").on("click", function(){
 // 		if(validation()==false) return false;
-		$("form[name=form]").attr("action", "infoXdmInsert").submit();
+		$("form[name=form]").attr("action", "infoHotelInsert").submit();
+	})
+	$("#spotInsert").on("click", function(){
+// 		if(validation()==false) return false;
+		$("form[name=form]").attr("action", "infoSpotInsert").submit();
 	})
 	$("#btnUpdate").on("click", function(){
 // 		if(validation()==false) return false;
-		$("form[name=form]").attr("action", "infoXdmUpdate").submit();
+// 		$("form[name=form]").attr("action", "infoXdmUpdate").submit();
 	})
 	$("#btnDelete").on("click", function(){
-		$("form[name=form]").attr("action", "infoXdmDelete").submit();
+// 		$("form[name=form]").attr("action", "infoXdmDelete").submit();
 	})
 	$("#btnDelNy").on("click", function(){
-		$("form[name=form]").attr("action", "infoXdmDelNy").submit();
+// 		$("form[name=form]").attr("action", "infoXdmDelNy").submit();
 	})
 	
  		</script>
