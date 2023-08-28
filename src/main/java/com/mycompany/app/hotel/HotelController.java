@@ -28,12 +28,19 @@ public class HotelController {
 	@Autowired
 	FeedbackServiceImpl feedbackService;
 	
-	@RequestMapping ("/hotelUsrList")
-	public String hotelUsrList() {
+	@RequestMapping("/hotelUsrList")
+	public String hotelList(@ModelAttribute("vo") HotelVo vo, Model model) throws Exception {
 		
+			vo.setParamsPaging(hotelService.selectOneCount(vo));
+			if(vo.getTotalRows() > 0) {
+			List<Hotel> list = hotelService.selectRating(vo);
+			TrainProc.train(model);
+			model.addAttribute("list", list);
+			} else {
+				
+			}
 		return "/usr/infra/subpages/hotelUsrList";
 	}
-	
 	@RequestMapping("/hotelXdmList")
 	public String hotelXdmList(@ModelAttribute("vo") HotelVo vo, Model model) {
 		
@@ -52,7 +59,7 @@ public class HotelController {
 	public String hotelXdmForm(HotelVo vo, Model model, InfoVo infoVo) {
 
 		Hotel hotel = hotelService.selectOne(vo); 
-		List<Hotel> uploaded = hotelService.selectUploaded(vo);
+		List<Hotel> uploaded = hotelService.selectUploadedOne(vo);
 		model.addAttribute("item", hotel);
 		model.addAttribute("listUploaded", uploaded);
 		return "xdm/hotel/hotelXdmForm";
@@ -83,8 +90,10 @@ public class HotelController {
 	}
 	
 	@RequestMapping ("/roomDetailInfo")
-	public String roomDetailInfo01(HotelVo vo, Model model,InfoVo infoVo, FeedbackVo feedbackVo) {
-		Hotel hotel = hotelService.selectOne(vo);
+	public String roomDetailInfo01(HotelVo vo,InfoVo infoVo, FeedbackVo feedbackVo, Model model) {
+		System.out.println("feedback : "+feedbackVo.getFeedbackType());
+		System.out.println("seq : "+vo.getSeq());
+		Hotel hotel = hotelService.selectRatingOne(vo);
 		List<Hotel> hotelImg = hotelService.selectUploaded(vo);
 		List<Info> info = infoService.selectHotel(infoVo);
 		List<Hotel> hotelRoom = hotelService.selectHotelRoom(vo);
@@ -98,19 +107,6 @@ public class HotelController {
 		return "/usr/infra/subpages/roomDetailInfo";
 	}
 	
-	@RequestMapping("/hotel")
-	public String hotelList(@ModelAttribute("vo") HotelVo vo, Model model) throws Exception {
-		
-			vo.setParamsPaging(hotelService.selectOneCount(vo));
-			if(vo.getTotalRows() > 0) {
-			List<Hotel> list = hotelService.selectList(vo);
-			TrainProc.train(model);
-			model.addAttribute("list", list);
-			} else {
-				
-			}
-		return "/usr/infra/subpages/hotel";
-	}
 	@RequestMapping("/home")
 	public String home() {
 		return "/home";

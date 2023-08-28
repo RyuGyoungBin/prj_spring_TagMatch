@@ -69,6 +69,18 @@
 		hotelUploaded
 		WHERE 1=1
 			<if test="seq != null and !seq.equals('')"> AND pseq = #{seq} </if>
+
+			
+	</select>
+	<select id="selectUploadedOne" resultMap="resultMapObj">
+		SELECT
+			*
+		FROM
+			hotelUploaded
+		WHERE 1=1
+			AND pseq = #{seq}
+
+
 	</select>
 	<select id="selectHotelRoom" resultMap="resultMapObj">
 		SELECT
@@ -78,6 +90,68 @@
 		WHERE 1=1
 		AND hotel_seq = #{seq}
 	</select>
+
+	<select id="selectRating" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+	    	a.hotelType,
+	    	a.name,
+	    	a.zipCode,
+	    	a.address,
+	    	a.addressDetail,
+	    	a.sido,
+	    	a.tel,
+	    	DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
+	    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
+	    	a.detailText,
+			ROUND(avg(c.starRating),1) starRating,
+			d.path,
+			d.type,
+			d.uuidName
+		FROM
+			hotel a
+		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq
+		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 1
+		    LEFT JOIN hotelUploaded d on d.pseq = a.seq AND d.type = 1
+		WHERE 1=1
+			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq}</if>
+		
+		GROUP BY a.seq
+		
+		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
+		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
+	</select>
+	<select id="selectRatingOne" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+	    	a.hotelType,
+	    	a.name,
+	    	a.zipCode,
+	    	a.address,
+	    	a.addressDetail,
+	    	a.sido,
+	    	a.tel,
+	    	DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
+	    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
+	    	a.detailText,
+			ROUND(avg(c.starRating),1) starRating,
+			COUNT(c.review) cnt,
+			d.path,
+			d.type,
+			d.uuidName,
+			b.hotel_seq,
+			b.seq hotelUsr_seq
+		FROM
+			hotel a
+		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq
+		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 1
+		    LEFT JOIN hotelUploaded d on d.pseq = a.seq AND d.type = 1
+		WHERE 1=1
+			AND a.seq = #{seq}
+		
+		GROUP BY a.seq
+	</select>
+	
 
 	<insert id="insertHotel">
 		insert into `hotel` (
@@ -178,7 +252,11 @@
 		checkInTime = #{checkInTime},
 		checkOutTime = #{checkOutTime},
 		detailText = #{detailText},
+
 		roomDelNy = #{roomDelNy}
+
+		delNy = #{roomDelNy}
+
 		WHERE
 		seq = #{seq}
 	</update>

@@ -93,22 +93,26 @@
 						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">가는편</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">출발역</label>
-							<input type="text" class="form-control train" value="서울역" readonly>
+							<input type="text" class="form-control train" value="서울역" readonly name="t1departStation">
+							<input type="hidden" id="t1departStation">
 						</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">도착역</label>
-							<input type="text" class="form-control train" value="부산역" readonly>
+							<input type="text" class="form-control train" value="부산역" readonly name="t1arriveStation">
+							<input type="hidden" id="t1arriveStation">
 						</div>
 					</div>
 					<div class="d-flex justify-content-center mb-2">
 						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">오는편</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">출발역</label>
-							<input type="text" class="form-control train" value="서울역" readonly>
+							<input type="text" class="form-control train" value="서울역" readonly name="t2departStation">
+							<input type="hidden" id="t2departStation">
 						</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">도착역</label>
-							<input type="text" class="form-control train" value="부산역" readonly>
+							<input type="text" class="form-control train" value="부산역" readonly name="t2arriveStation">
+							<input type="hidden" id="t2arriveStation">
 						</div>
 					</div>
 					<div class="d-flex justify-content-around pb-3 border-bottom">
@@ -145,7 +149,7 @@
 								</select>
 							</div>
 						</div>
-						<button type="button" class="col-1 btn btn-secondary">조회</button>
+						<button type="button" class="col-1 btn btn-secondary" id="searchTrain">조회</button>
 					</div>
 					<div>
 						<h4 class="p-3 fw-bold">가는 철도편 선택</h4>
@@ -1137,10 +1141,10 @@
         <button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="d-flex flex-wrap justify-content-around p-0" id="sido">
+        <ul class="d-flex flex-wrap justify-content-around p-0 text-center" id="sido">
 			<c:forEach items="${item}" var="item" varStatus="status">
-				<li class="mb-2">
-					<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label>
+				<li class="mb-2 col-5">
+					<label for="<c:out value="${item.cityname }"/>" class="form-control"><c:out value="${item.cityname }"/></label>
 					<input type="hidden" class="form-control" value="<c:out value="${item.citycode }"/>" name="<c:out value="${item.citycode }"/>" readonly>
 				</li>
 			</c:forEach>
@@ -1158,7 +1162,7 @@
 	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
 	      		</div>
 	      		<div class="modal-body">
-		      		<ul class="d-flex flex-wrap justify-content-around p-0" id="trainStation">
+		      		<ul class="d-flex flex-wrap justify-content-around p-0 text-center" id="trainStation">
 		      			
 		      		</ul>
 	      		</div>
@@ -1310,8 +1314,10 @@
 		  keyboard: true,
 		  backdrop: "static"
 		});
-		
+		var target = "";
 		$(".train").on("click",function(){
+			target = "#"+$(this).attr("name");
+			console.log(target);
 			TrainModal.toggle();
 		})
 		
@@ -1326,26 +1332,53 @@
 				success:function(response){
 					console.log(response.rtTrain);
 					$("#trainStation").empty();
+			 		stationLi = "";
 			 		$.each(response.rtTrain,function(index, value) {
-				 		stationLi = "";
-				 		stationLi += "<li>"+value.nodename+"</li>";
+				 		stationLi += "<li class='mb-2 col-5'><span class='form-control station'>"+value.nodename+"</span></li>";
 				 		stationLi += "<input hidden='hidden' value="+value.nodeid+">";
-				 		$("#trainStation").append(stationLi);
 		 			})
+			 		$("#trainStation").append(stationLi);
 					
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
-				
-			
-				
 			}
-		
-			
 		});
 			TrainModal2.toggle();
 		});
 		
+		$(document).on("click", "#trainStation span", function(){
+			$(target).prev().val($(this).text());
+			$(target).val($(this).parent().next().val());
+			TrainModal2.hide();
+			TrainModal.hide();
+		})
+		
+		$("#searchTrain").on("click", function(){
+			
+			$.ajax({
+				async: true,
+				cache:false,
+				type:"post",
+				url:"/trainStation",
+				data: {"citycode" : $(this).next().val()},
+				success:function(response){
+					console.log(response.rtTrain);
+					$("#trainStation").empty();
+			 		stationLi = "";
+			 		$.each(response.rtTrain,function(index, value) {
+				 		stationLi += "<li class='mb-2 col-5'><span class='form-control station'>"+value.nodename+"</span></li>";
+				 		stationLi += "<input hidden='hidden' value="+value.nodeid+">";
+		 			})
+			 		$("#trainStation").append(stationLi);
+					
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+			}
+		});
+			
+		})
 		
 		
 		
