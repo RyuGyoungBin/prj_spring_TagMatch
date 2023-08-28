@@ -185,12 +185,17 @@ public class Hotel {
 	public void setRoomDefaultNy(Integer roomDefaultNy) {
 		this.roomDefaultNy = roomDefaultNy;
 	}
-	public Integer getRoomDelNy() {
-		return roomDelNy;
-	}
-	public void setRoomDelNy(Integer roomDelNy) {
-		this.roomDelNy = roomDelNy;
-	}
+
+	
+
+	    public Integer getRoomDelNy() {
+	        return roomDelNy;
+	    }
+	    
+	    public void setRoomDelNy(Integer roomDelNy) {
+	        this.roomDelNy = roomDelNy;
+	    }
+	
 	public Integer getRoomNum() {
 		return roomNum;
 	}

@@ -203,8 +203,8 @@
 		roomType,
 		roomName,
 		price,
-		defaultNy,
-		delNy,
+		roomDefaultNy,
+		roomDelNy,
 		roomNum,
 		hotel_seq
 		) values (
@@ -221,7 +221,7 @@
 		insert into `hotelCloseDay`(
 		date,
 		hotel_seq,
-		delNy
+		roomDelNy
 		) values (
 		#{date},
 		#{seq},
