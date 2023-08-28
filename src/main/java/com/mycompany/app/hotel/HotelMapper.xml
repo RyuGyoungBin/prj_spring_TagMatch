@@ -129,8 +129,8 @@
 		roomType,
 		roomName,
 		price,
-		defaultNy,
-		delNy,
+		roomDefaultNy,
+		roomDelNy,
 		roomNum,
 		hotel_seq
 		) values (
@@ -147,7 +147,7 @@
 		insert into `hotelCloseDay`(
 		date,
 		hotel_seq,
-		delNy
+		roomDelNy
 		) values (
 		#{date},
 		#{seq},
@@ -178,7 +178,7 @@
 		checkInTime = #{checkInTime},
 		checkOutTime = #{checkOutTime},
 		detailText = #{detailText},
-		delNy = #{roomDelNY}
+		roomDelNy = #{roomDelNy}
 		WHERE
 		seq = #{seq}
 	</update>
@@ -210,7 +210,7 @@
 		hotelCloseDay
 		SET
 		date = #{date},
-		delNy = #{roomDelNY}
+		delNy = #{roomDelNy}
 		WHERE
 		hotel_seq = #{seq}
 	</update>
