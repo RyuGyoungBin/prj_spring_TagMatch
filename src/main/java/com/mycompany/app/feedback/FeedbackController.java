@@ -61,21 +61,28 @@ public class FeedbackController {
 	public String feedbackXdmInsert(Feedback dto) throws Exception {
 
 		// service 호출
-	    int result = service.insertFeedback(dto);
+		service.insertFeedback(dto);
 
-	    if (result > 0) {
-	        // 데이터 삽입 성공
-	        return "redirect:/feedbackXdmList";
-	    } else {
-//	        // 데이터 삽입 실패
-//	    	// 데이터 삽입 실패 시 에러 메시지를 세션에 저장하고 리다이렉트
-//	        httpSession.setAttribute("errorMsg", "등록 실패");
-	    }
-	    
+//	    if (result > 0) {
+//	        // 데이터 삽입 성공
+//	        return "redirect:/feedbackXdmList";
+//	    } else {
+//	    	System.out.println("실패");
+////	        // 데이터 삽입 실패
+////	    	// 데이터 삽입 실패 시 에러 메시지를 세션에 저장하고 리다이렉트
+////	        httpSession.setAttribute("errorMsg", "등록 실패");
+//	    }
+//	    
 	    return "redirect:/feedbackXdmList"; // 또는 다른 적절한 처리
-		
 
 	}
+
+	
+	
+	
+	
+	
+	
 
 	@RequestMapping("/feedbackXdmUelete")
 	public String feedbackXdmUelete(Feedback dto) {

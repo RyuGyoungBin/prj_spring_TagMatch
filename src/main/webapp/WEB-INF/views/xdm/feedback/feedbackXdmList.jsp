@@ -45,7 +45,7 @@
       <h1>Data Tables</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
+          <li class="breadcrumb-item"><a href="/index">Home</a></li>
           <li class="breadcrumb-item active">Data-Feedback</li>
         </ol>
       </nav>
@@ -74,9 +74,10 @@
 					</div>
 					<div class="d-flex mb-3 align-items-center">
 						<div class="col-2 text-start ms-3 me-3">
-								<input class="form-control form-control-sm p-2" name="type" id="type" type="text" placeholder="type" value="<c:out value="${vo.type }"/>">
+<%-- 								<input class="form-control form-control-sm p-2" name="type" id="type" type="text" placeholder="type" value="<c:out value="${vo.type }"/>"> --%>
 						</div>
 						<div class="col-2 text-start ms-3 me-3">
+						
 								<select class="form-control form-control-sm p-2" name="defaultNy" id="defaultNy">
 									<option value="">---defaultNy---</option>
 									<option value="0" <c:if test="${vo.defaultNy eq '0'}">selected</c:if>>Y</option>
@@ -111,7 +112,7 @@
 		                    <th>type_seq</th>
 		                    <th>review</th>
 		                    <th>reviewTitle</th>
-		                    <th>startRating</th>
+		                    <th>starRating</th>
 		                    <th>member_seq</th>
 		                    <th>defaultNy</th>
 	                        <th>member_seq</th>
@@ -130,7 +131,8 @@
 <%-- 				                   <td><a href="/feedbackXdmForm?seq=<c:out value="${list.seq }"></c:out>&feedback_seq=<c:out value="${list.seq }"/>"><c:out value="${list.type }"></c:out></a></td> --%>
 				                   <td><c:out value="${list.type}"></c:out></td>
 				                   <td><c:out value="${list.type_seq}"></c:out></td>
-				                   <td><c:out value="${list.review}"></c:out></td>
+				                   <td><a href="/feedbackXdmForm?seq=<c:out value="${list.seq }"></c:out>&feedback_seq=<c:out value="${list.seq }"/>"><c:out value="${list.review }"></c:out></a></td>
+<%-- 				                   <a href="/feedbackXdmForm?seq=<c:out value="${list.seq }"></c:out>&feedback_seq=<c:out value="${list.seq }"/>"><c:out value="${list.review }"></c:out></a></td> --%>
 				                   <td><c:out value="${list.reviewTitle}"></c:out></td>
 				                   <td><c:out value="${list.starRating}"></c:out></td>
 				                   <td><c:out value="${list.member_seq}"></c:out></td>

@@ -130,6 +130,7 @@
 
 					<hr>
 
+<!-- review  section start -->
 					<div class="row">
 						<div class="col-lg-3">
 							<h3>Reviews</h3>
@@ -160,6 +161,7 @@
 							<!-- End review strip -->
 						</div>
 					</div>
+					<!-- review  section end -->
 				</div>
 				<!--End  single_tour_desc-->
 
@@ -176,6 +178,8 @@
 	<!-- End main -->
 
 	<%@include file = "../include/footer.jsp"%>
+	
+	
 	<!-- Modal Review -->
 	<div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="myReviewLabel" aria-hidden="true">
 		<div class="modal-dialog" style="margin-top:150px;">
@@ -187,25 +191,25 @@
 				<div class="modal-body">
 					<div id="message-review">
 					</div>
-					<form method="post" action="assets/review_hotel.php" name="review_hotel" id="review_hotel">
+					<form method="post" action="" name="review_hotel" id="review_hotel">
 						<input name="hotel_name" id="hotel_name" type="hidden" value="Mariott Hotel Paris">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input name="name_review" id="name_review" type="text" placeholder="이름" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input name="email_review" id="email_review" type="email" placeholder="이메일" class="form-control">
-								</div>
-							</div>
-						</div>
+<!-- 						<div class="row"> -->
+<!-- 							<div class="col-md-6"> -->
+<!-- 								<div class="form-group"> -->
+<!-- 									<input name="name_review" id="name_review" type="text" placeholder="이름" class="form-control"> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 							<div class="col-md-6"> -->
+<!-- 								<div class="form-group"> -->
+<!-- 									<input name="email_review" id="email_review" type="email" placeholder="이메일" class="form-control"> -->
+<!-- 								</div> -->
+<!-- 							</div> -->
+<!-- 						</div> -->
 						<!-- End row -->
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<select class="form-select" name="room_type_review" id="room_type_review">
+									<select class="form-select" name="hotelRoom_seq" id="hotelRoom_seq">
 										<option value="">객실 선택</option>
 										<c:forEach items="${room}" var="room" varStatus="statusUploaded">
 											<option value="<c:out value="${room.seq }"/>"><c:out value="${room.roomName }"/></option>
@@ -221,7 +225,7 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label>별점</label>
-									<select class="form-select" name="starRating" id="quality_review">
+									<select class="form-select" name="starRating" id="starRating">
 										<option value="">별점 선택</option>
 										<option value="1">매우 불만족</option>
 										<option value="2">불만족</option>
@@ -236,7 +240,7 @@
 						<div class="form-group">
 							<textarea name="review" id="review_text" class="form-control" style="height:100px" placeholder="리뷰 작성"></textarea>
 						</div>
-						<button type="button" id="btnInsert" class="btn_1" id="submit-review">등록</button>
+						<button type="button" id="btnInsert" class="btn_1" >등록</button>
 						
 					</form>
 				</div>
@@ -255,7 +259,8 @@
 	<script type="text/javascript">
 	
 	$("#btnInsert").on("click", function(){
-		$("form[name=form]").attr("action", "/feedbackXdmInsert").submit();
+		alert("1");
+		$("form[name=review_hotel]").attr("action", "/feedbackXdmInsert").submit();
 		alert("리뷰가 등록되었습니다.");
 	})
 	$("#btnUpdate").on("click", function(){
@@ -336,6 +341,7 @@
 			}
 		}
 	});
+		/* 별점 표시 부분 시작 */
 			var hotelrating = Math.floor(<c:out value="${hotel.starRating }"/>);
 			for(var i=0; i<hotelrating ; i++){
 				$("#hotelRating").append('<i class="icon-smile voted"></i>')
@@ -346,6 +352,7 @@
 				$("#reviewRating").append('<i class="icon-smile"></i>')
 			}
 		
+			
 		<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
 			var reviewRating<c:out value="${feedback.seq }"/> = $("#rating<c:out value="${feedback.seq }"/>");
 			var rating<c:out value="${feedback.seq }"/> = <c:out value="${feedback.starRating }"/>;
@@ -360,6 +367,8 @@
 				reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile"></i>');
 			}
 		</c:forEach>
+		/* 별점 표시 부분 끝 */		
+		
 	</script>
 
 	<!--Review modal validation -->
