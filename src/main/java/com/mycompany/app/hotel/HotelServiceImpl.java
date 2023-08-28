@@ -68,6 +68,12 @@ public class HotelServiceImpl implements HotelService{
 
 //		dao.updateHotelInfo(dto);
 
+
+		dao.updateHotelInfo(dto); 
+
+//		dao.updateHotelInfo(dto);
+
+
 		dao.updateHotelRoom(dto);
 		
     	uploadFiles(dto.getUploadImg(), dto, "hotelUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
