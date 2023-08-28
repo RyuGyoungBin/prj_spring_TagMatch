@@ -56,15 +56,26 @@ public class InfoController {
 		model.addAttribute("list", list);
 		System.out.println(vo.getHotel_seq());
 		System.out.println(vo.getSpot_seq());
-//		if(vo.getHotel_seq() != null || vo.getHotel_seq() != "") {
-//			List<Info> hotel = service.selectHotel(vo);
-//			model.addAttribute("hotel", hotel);
-//		}
-//		if(vo.getSpot_seq() != null || vo.getSpot_seq() != "") {
-//			List<Info> spot = service.selectSpot(vo);
-//			model.addAttribute("spot", spot);
-//		}
+		if(vo.getHotel_seq() != null || vo.getHotel_seq() != "") {
+			List<Info> hotel = service.selectHotel(vo);
+			model.addAttribute("group", hotel);
+		} else if(vo.getSpot_seq() != null || vo.getSpot_seq() != "") {
+			List<Info> spot = service.selectSpot(vo);
+			model.addAttribute("group", spot);
+		}
 		return "/xdm/info/infoGroupXdmForm";
+	}
+	
+	@RequestMapping("/infoHotelInsert")
+	public String infoHotelInsert(Info dto) {
+		service.insertHotelInfo(dto);
+		System.out.println(dto.getInfo_seqArray());
+		return "redirect:/hotelXdmList";
+	}
+	@RequestMapping("/infoSpotInsert")
+	public String infoSpotInsert(Info dto) {
+		service.insertSpotInfo(dto);
+		return "redirect:/spotXdmList";
 	}
 	
 }

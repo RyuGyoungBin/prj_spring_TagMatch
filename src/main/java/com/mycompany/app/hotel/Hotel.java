@@ -33,6 +33,7 @@ public class Hotel {
 	private String tableName;
 
 	private Integer type;
+	private Integer defaultNy;
 	private Integer sort;
 	private String path;
 	private String originalName;
@@ -321,6 +322,12 @@ public class Hotel {
 	}
 	public void setUploadImgRoomDeletePathFile(String[] uploadImgRoomDeletePathFile) {
 		this.uploadImgRoomDeletePathFile = uploadImgRoomDeletePathFile;
+	}
+	public Integer getDefaultNy() {
+		return defaultNy;
+	}
+	public void setDefaultNy(Integer defaultNy) {
+		this.defaultNy = defaultNy;
 	}
 	
 	

@@ -28,18 +28,25 @@ public class InfoDao {
 	public List<Info> selectSpot(InfoVo vo) {return sqlSession.selectList(namespace + ".selectSpot", vo ); }
 	
 	public Info selectOne(InfoVo vo) {Info codeGroup = sqlSession.selectOne(namespace + ".selectOne", vo); return codeGroup;	}
+	
+	public List<Info> selectInfoGroup(InfoVo vo) {return sqlSession.selectList(namespace + ".selectInfoGroup", vo ); }
 
-	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!
 	public int update(Info dto) { return sqlSession.update(namespace + ".update", dto); }
 	
 	public int delete(Info dto) { return sqlSession.delete(namespace + ".delete", dto); }
 
 	public int insert(Info dto) { return sqlSession.insert(namespace + ".insert", dto); }
+	
+	public int insertHotelInfo(Info dto) { return sqlSession.insert(namespace + ".insertHotelInfo", dto); }
+	
+	public int insertSpotInfo(Info dto) { return sqlSession.insert(namespace + ".insertSpotInfo", dto); }
 
 	public int uelete(Info dto) { return sqlSession.update(namespace + ".uelete", dto); }
+	
+	public int deleteHotelInfo(Info dto) { return sqlSession.update(namespace + ".deleteHotelInfo", dto); }
+	
+	public int deleteSpotInfo(Info dto) { return sqlSession.update(namespace + ".deleteSpotInfo", dto); }
 
-// sqlSession 객체를 쓴다 => mybatis 를 쓰겠다는 뜻
-	// delete , insert , update , select - 반환값 int
 
 
 	

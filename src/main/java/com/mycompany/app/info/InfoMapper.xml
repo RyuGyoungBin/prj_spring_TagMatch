@@ -25,7 +25,8 @@
     <sql id ="selectCommon">
    		FROM    
 	    	info a
-	    	<if test="hotel_seq != null and !hotel_seq.equals('')">Join hotelInfo b On b.info_seq = a.seq AND b.hotel_seq = #{hotel_seq}</if>
+	    	<if test="hotel_seq != null and !hotel_seq.equals('')">LEFT Join hotelInfo b On b.info_seq = a.seq AND b.hotel_seq = #{hotel_seq}</if>
+	    	<if test="spot_seq != null and !spot_seq.equals('')">LEFT Join spotInfo b On b.info_seq = a.seq AND b.spot_seq = #{spot_seq}</if>
 		WHERE 1=1
 			<if test="seq != null and !name.equals('')">AND seq = #{seq}</if>
 			<if test="delNy != null and !delNy.equals('')">AND delNy = #{delNy}</if>
@@ -58,7 +59,7 @@
 			a.*
 		FROM
 			info a
-		    Join hotelInfo b on b.info_seq = a.seq and b.hotel_seq = #{seq}
+		    Join hotelInfo b on b.info_seq = a.seq and b.hotel_seq = #{hotel_seq}
 		WHERE 1=1
 
    	</select>
@@ -67,9 +68,20 @@
 			a.*
 		FROM
 			info a
-		    Join spotInfo b on b.info_seq = a.seq and b.spot_seq = #{seq}
+		    Join spotInfo b on b.info_seq = a.seq and b.spot_seq = #{spot_seq}
 		WHERE 1=1
 
+   	</select>
+   	<select id="selectInfoGroup" resultMap="resultMapObj">
+   		SELECT
+   			*
+   		FROM
+   			<if test="hotel_seq != null and !hotel_seq.equals('')">hotelInfo</if>
+   			<if test="spot_seq != null and !spot_seq.equals('')">spotInfo</if>
+   		WHERE 1=1
+   			AND info_seq = #{info_seq}
+   			<if test="hotel_seq != null and !hotel_seq.equals('')">AND hotel_seq = #{hotel_seq}</if>
+   			<if test="spot_seq != null and !spot_seq.equals('')">AND spot_seq = #{spot_seq}</if>
    	</select>
    	
 
@@ -120,6 +132,40 @@
        	,0
        )
    </insert>
+   <insert id="insertHotelInfo">
+   		INSERT INTO hotelInfo(
+   			hotel_seq,
+   			info_seq
+   		) VALUES (
+   			#{hotel_seq},
+   			#{info_seq}
+   		)
+   
+   </insert>
+   <delete id="deleteHotelInfo">
+   		DELETE
+   			hotelInfo
+   		WHERE 1=1
+   			AND hotel_seq = #{hotel_seq}
+   			AND info_seq = #{info_seq}
+   </delete>
+   
+   <insert id="insertSpotInfo">
+   		INSERT INTO spotInfo(
+   			spot_seq,
+   			info_seq
+   		) VALUES (
+   			#{spot_seq},
+   			#{info_seq}
+   		)
+   </insert>
+   <delete id="deleteSpotInfo">
+   		DELETE
+   			spotInfo
+   		WHERE 1=1
+   			AND spot_seq = #{spot_seq}
+   			AND info_seq = #{info_seq}
+   </delete>
    		
 
 
