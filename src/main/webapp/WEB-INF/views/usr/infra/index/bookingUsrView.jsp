@@ -165,7 +165,7 @@
 									<th>좌석조회</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="trainDate">
 								<tr>
 									<th>ktx</th>
 									<th>서울-부산</th>
@@ -1354,24 +1354,38 @@
 			TrainModal.hide();
 		})
 		
+		
+		
+		
+
+		
 		$("#searchTrain").on("click", function(){
 			
 			$.ajax({
 				async: true,
 				cache:false,
 				type:"post",
-				url:"/trainStation",
-				data: {"citycode" : $(this).next().val()},
+				url:"/trainStationYY",
+				
+				data: {
+						   "depPlaceId": $("#t1departStation").val(),
+						   "arrPlaceId": $("#t1arriveStation").val()
+					},
 				success:function(response){
 					console.log(response.rtTrain);
-					$("#trainStation").empty();
+					$("#trainDate").empty();
 			 		stationLi = "";
 			 		$.each(response.rtTrain,function(index, value) {
-				 		stationLi += "<li class='mb-2 col-5'><span class='form-control station'>"+value.nodename+"</span></li>";
-				 		stationLi += "<input hidden='hidden' value="+value.nodeid+">";
+				 		stationLi += "<tr>";
+				 		stationLi += "<th>"+value.traingradename+"</th>";
+				 		stationLi += "<th>"+value.depplacename+" - "+value.arrplacename+"</th>";
+				 		stationLi += "<th>"+value.depplandtime+" - "+value.arrplandtime+"</th>";
+				 		stationLi += "<th>"+value.arrplandtime-value.depplandtime+"</th>";
+				 		stationLi += "<th>성인:59,800원<br>아동:26,900원</th>";
+				 		stationLi +=  "<th><a>좌석조회</a></th>";
+				 		stationLi +=  "</tr>";
 		 			})
-			 		$("#trainStation").append(stationLi);
-					
+			 		$("#trainDate").append(stationLi);
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
 		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
@@ -1379,7 +1393,6 @@
 		});
 			
 		})
-		
 		
 		
 		

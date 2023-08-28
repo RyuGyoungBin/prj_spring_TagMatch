@@ -22,9 +22,32 @@ public class Train {
 	public String nodeId;
 	public String nodeName;
 	
-
+	// 출발시간 도착 
+	public String depPlaceId;
+	public String arrPlaceId;
+	//줄발일
+	public String depPlandTime;
 	
 	
+	
+	public String getDepPlaceId() {
+		return depPlaceId;
+	}
+	public void setDepPlaceId(String depPlaceId) {
+		this.depPlaceId = depPlaceId;
+	}
+	public String getArrPlaceId() {
+		return arrPlaceId;
+	}
+	public void setArrPlaceId(String arrPlaceId) {
+		this.arrPlaceId = arrPlaceId;
+	}
+	public String getDepPlandTime() {
+		return depPlandTime;
+	}
+	public void setDepPlandTime(String depPlandTime) {
+		this.depPlandTime = depPlandTime;
+	}
 	public Object getHeader() {
 		return header;
 	}

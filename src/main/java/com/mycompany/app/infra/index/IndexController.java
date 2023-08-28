@@ -71,6 +71,13 @@ public class IndexController {
 		return resultMap;
 	}
 	
+	@RequestMapping("/trainStationYY")
+	@ResponseBody
+	public  Map<String, List<Train>> trainStationYY(Train train, Model model) throws Exception {
+		 Map<String, List<Train>> resultMap = new HashMap<>();
+		resultMap.put("rtTrain", TrainProc.trainStationYY(train, model));
+		return resultMap;
+	}
 
 	
 	
