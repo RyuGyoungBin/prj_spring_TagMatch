@@ -44,12 +44,12 @@
         c.price hotelUsr_price,
         c.hotel_seq hotelUsr_hotel_seq,
         c.hotelRoomSeq,
-        d.title tickeUsr_title,
+        d.title ticketUsr_title,
         d.type ticketUsrType,
-        d.adultNum tickeUsr_adultNum,
-        d.childNum tickeUsr_childNum,
-        d.price tickeUsr_price,
-        d.ticketSeq tickeUsr_seq
+        d.adultNum ticketUsr_adultNum,
+        d.childNum ticketUsr_childNum,
+        d.price ticketUsr_price,
+        d.ticketSeq ticketUsr_seq
     </sql>
     
     
@@ -141,6 +141,10 @@
             SELECT last_insert_id()
         </selectKey>
     </insert>
+    
+    
+    
+    
 
     <update id="update">
         UPDATE feedback

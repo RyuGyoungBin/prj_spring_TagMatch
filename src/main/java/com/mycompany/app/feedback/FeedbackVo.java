@@ -11,6 +11,7 @@ public class FeedbackVo {
 	private String starRating; 
 	private String defaultNy; 
 	private String member_seq; 
+	private String type;
 	private String type_seq;
 
 	private String date;
@@ -30,8 +31,7 @@ public class FeedbackVo {
 	private String ticketUsr_seq;
 	private String ticketUsr_title;
 	private String ticketUsrType;
-	private String ticketUsr_ticktcol;
-	private String ticketUsr_adualtNum;
+	private String ticketUsr_adultNum;
 	private String ticketUsr_childNum;
 	private String ticketUsr_price;
 	private String ticketSeq;
@@ -50,8 +50,32 @@ public class FeedbackVo {
 	private String trainUsr_childNum;
 	private String trainUsr_price;
 	
+	private String typ;;
+	
+	
 
 	// paging 
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getTyp() {
+		return typ;
+	}
+
+	public void setTyp(String typ) {
+		this.typ = typ;
+	}
+
+	public void setFeedbackType(Integer feedbackType) {
+		this.feedbackType = feedbackType;
+	}
+
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
 //	private int pageNumToShow = Constants.PAGE_NUM_TO_SHOW;		// 화면에 보여줄 페이징 번호 갯수
@@ -212,20 +236,14 @@ public class FeedbackVo {
 		this.ticketUsrType = ticketUsrType;
 	}
 
-	public String getTicketUsr_ticktcol() {
-		return ticketUsr_ticktcol;
+
+
+	public String getTicketUsr_adultNum() {
+		return ticketUsr_adultNum;
 	}
 
-	public void setTicketUsr_ticktcol(String ticketUsr_ticktcol) {
-		this.ticketUsr_ticktcol = ticketUsr_ticktcol;
-	}
-
-	public String getTicketUsr_adualtNum() {
-		return ticketUsr_adualtNum;
-	}
-
-	public void setTicketUsr_adualtNum(String ticketUsr_adualtNum) {
-		this.ticketUsr_adualtNum = ticketUsr_adualtNum;
+	public void setTicketUsr_adultNum(String ticketUsr_adultNum) {
+		this.ticketUsr_adultNum = ticketUsr_adultNum;
 	}
 
 	public String getTicketUsr_childNum() {

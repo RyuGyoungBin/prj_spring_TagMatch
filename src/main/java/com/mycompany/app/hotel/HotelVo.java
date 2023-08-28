@@ -29,6 +29,7 @@ public class HotelVo {
 	private String hotel_seq;
 //	hotelUploaded
 	private String tableName;
+	
 
 	private Integer type;
 	private Integer sort;
