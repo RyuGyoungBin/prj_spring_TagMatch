@@ -336,16 +336,25 @@
 					<c:forEach items="${list}" var="list" varStatus="status">
 						<div class="col-md-4 wow zoomIn" data-wow-delay="0.1s">
 							<div class="hotel_container">
-								<div class="ribbon_3 popular"><span>Popular</span>
+								
 								</div>
 								<div class="img_container">
-									<a href="indexUsrTicketDetailInfo?seq=<c:out value="${list.seq}"/>">
-										<c:set var="type" value="1"/>		<!-- #-> -->
-			        					<c:set var="name" value="uploadImg"/>		<!-- #-> -->
-										<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-											<img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>">
-										</c:forEach>
-									</a>
+<%-- 									<a href="indexUsrTicketDetailInfo?seq=<c:out value="${list.seq}"/>"> --%>
+<%-- 										<c:set var="type" value="1"/>		<!-- #-> --> --%>
+<%-- 			        					<c:set var="name" value="uploadImg"/>		<!-- #-> --> --%>
+<%-- 										<c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded"> --%>
+<%-- 											<img src="<c:out value="${listUploaded.path }"/><c:out value="${listUploaded.uuidName }"/>"> --%>
+<%-- 										</c:forEach> --%>
+<!-- 									</a> -->
+									
+										<a href="indexUsrTicketDetailInfo?seq=${list.seq}">
+										    <c:set var="type" value="1"/>
+										    <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+										        <c:if test="${list.seq eq listUploaded.pseq && listUploaded.type eq 1}">
+											            <img src="${listUploaded.path}${listUploaded.uuidName}">
+									             </c:if>
+										    </c:forEach>
+										</a>
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
 											<span class="price"><sup>3000</sup>원</span>
@@ -358,8 +367,9 @@
 									</div>
 								</div>
 							</div>
+						  </c:forEach>
 						</div>
-				  </c:forEach>
+
 				</div>
 					<div class="container-fluid px-0 mt-2">
 			    <div class="row">
