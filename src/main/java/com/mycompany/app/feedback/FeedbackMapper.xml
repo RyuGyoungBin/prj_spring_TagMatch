@@ -15,7 +15,7 @@
 	        LEFT JOIN hotelUsr c ON c.seq = a.type_seq  
 	        LEFT JOIN ticketUsr d ON d.seq = a.type_seq 
 	    WHERE 1=1
-	    	<if test="type != null and !type.equals('')">AND a.type = #{type}</if>
+	    	<if test="feedbackType == '1'">and c.hotel_seq = #{seq}</if>
 	</sql> 
     
     <sql id="selectFeedback">
