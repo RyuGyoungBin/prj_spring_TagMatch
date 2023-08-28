@@ -63,7 +63,7 @@ public class HotelServiceImpl implements HotelService{
 	public int update(Hotel dto) throws Exception {
 		dao.update(dto);
 		dao.updateHotelClose(dto);
-		dao.updateHotelInfo(dto);
+//		dao.updateHotelInfo(dto);
 		dao.updateHotelRoom(dto);
 		
     	uploadFiles(dto.getUploadImg(), dto, "hotelUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
@@ -74,7 +74,7 @@ public class HotelServiceImpl implements HotelService{
 	@Override
 	public int delete(Hotel dto) {
 		dao.deleteHotelClose(dto);
-		dao.deleteHotelInfo(dto);
+//		dao.deleteHotelInfo(dto);
 		dao.deleteHotelRoom(dto);
 		dao.delete(dto);
 		return 0;
@@ -83,7 +83,7 @@ public class HotelServiceImpl implements HotelService{
 	@Override
 	public int uelete(Hotel dto) {
 		dao.uelete(dto);
-		dao.ueleteHotelInfo(dto);
+//		dao.ueleteHotelInfo(dto);
 		dao.ueleteHotelRoom(dto);
 		dao.ueleteHotelClose(dto);
 		return 0;
