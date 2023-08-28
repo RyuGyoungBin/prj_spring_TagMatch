@@ -13,7 +13,7 @@
    		FROM    
 	    	spot a
 	    	LEFT JOIN spotCloseDay c on c.spot_seq = a.seq
-	    	
+	    	LEFT JOIN spotUploaded e on e.pseq = a.seq AND e.type = 1
 		WHERE 1=1 
 		<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
     </sql>
@@ -23,7 +23,7 @@
 	
         <sql id="selectSpot">
 	    	a.seq,
-	    	a.type,
+	    	a.type spotType,
 	    	a.name,
 	    	a.zipCode,
 	    	a.address,
@@ -36,7 +36,11 @@
 			a.childPrice,
 			a.detailText,
 			a.delNy,
-			c.date closed
+			c.date closed,
+			e.pseq,
+			e.type,
+			e.path,
+			e.uuidName
 		</sql>
 	 
 	<select id="selectListUploaded" resultMap="resultMapObj">
