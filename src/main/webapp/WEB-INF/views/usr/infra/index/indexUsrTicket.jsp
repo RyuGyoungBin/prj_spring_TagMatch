@@ -349,9 +349,10 @@
 									
 										<a href="indexUsrTicketDetailInfo?seq=${list.seq}">
 										    <c:set var="type" value="1"/>
-										    <c:set var="name" value="uploadImg"/>
 										    <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
-										        <img src="${listUploaded.path}${listUploaded.uuidName}">
+										        <c:if test="${list.seq eq listUploaded.pseq && listUploaded.type eq 1}">
+											            <img src="${listUploaded.path}${listUploaded.uuidName}">
+									             </c:if>
 										    </c:forEach>
 										</a>
 										<div class="score"><span>7.5</span>Good</div>
