@@ -113,7 +113,6 @@
 		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq
 		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 1
 		    LEFT JOIN hotelUploaded d on d.pseq = a.seq AND d.type = 1
-		    LEFT JOIN hotelRoom e on e.
 		WHERE 1=1
 			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq}</if>
 		
@@ -253,7 +252,7 @@
 		checkInTime = #{checkInTime},
 		checkOutTime = #{checkOutTime},
 		detailText = #{detailText},
-		delNy = #{roomDelNY}
+		delNy = #{roomDelNy}
 		WHERE
 		seq = #{seq}
 	</update>
@@ -285,7 +284,7 @@
 		hotelCloseDay
 		SET
 		date = #{date},
-		delNy = #{roomDelNY}
+		delNy = #{roomDelNy}
 		WHERE
 		hotel_seq = #{seq}
 	</update>
