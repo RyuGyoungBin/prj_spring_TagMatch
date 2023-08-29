@@ -78,8 +78,19 @@ public class IndexController {
 		resultMap.put("rtTrain", TrainProc.trainStationYY(train, model));
 		return resultMap;
 	}
-
 	
+	@RequestMapping("/trainStationXX")
+	@ResponseBody
+	public  Map<String, List<Train>> trainStationXX(Train train, Model model) throws Exception {
+		 Map<String, List<Train>> resultMap = new HashMap<>();
+		resultMap.put("rtTrain2", TrainProc.trainStationYY(train, model));
+		return resultMap;
+	}
+
+	@RequestMapping("/loginXdmForm")
+	public String loginXdmForm() {
+		return "xdm/infra/index/loginXdmForm";
+	}
 	
 	
 

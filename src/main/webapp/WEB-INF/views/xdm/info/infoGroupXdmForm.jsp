@@ -173,7 +173,7 @@
 	})
 	$("#btnUpdate").on("click", function(){
 // 		if(validation()==false) return false;
-// 		$("form[name=form]").attr("action", "infoXdmUpdate").submit();
+		$("form[name=form]").attr("action", "infoHotelUpdate").submit();
 	})
 	$("#btnDelete").on("click", function(){
 // 		$("form[name=form]").attr("action", "infoXdmDelete").submit();

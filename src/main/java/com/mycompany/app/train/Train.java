@@ -1,5 +1,9 @@
 package com.mycompany.app.train;
 
+import java.sql.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Train {
 
 	public Object header;
@@ -28,8 +32,24 @@ public class Train {
 	//줄발일
 	public String depPlandTime;
 	
+	@JsonFormat(pattern = "yyyyMMdd") //데이터 포맷 변환
+    private Date depplandtime;
+  	private Date arrplandtime;
 	
 	
+	
+	public Date getDepplandtime() {
+		return depplandtime;
+	}
+	public void setDepplandtime(Date depplandtime) {
+		this.depplandtime = depplandtime;
+	}
+	public Date getArrplandtime() {
+		return arrplandtime;
+	}
+	public void setArrplandtime(Date arrplandtime) {
+		this.arrplandtime = arrplandtime;
+	}
 	public String getDepPlaceId() {
 		return depPlaceId;
 	}
