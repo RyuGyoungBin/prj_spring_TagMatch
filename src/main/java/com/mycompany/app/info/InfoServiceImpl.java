@@ -59,16 +59,15 @@ import org.springframework.stereotype.Service;
 	
 	@Override
 	public int updateHotelInfo(Info dto, InfoVo vo) {
-		for(int i = 0 ; i < dto.getInfo_seqArray().length ; i++) {
-			dto.setInfo_seq(dto.getInfo_seqArray()[i]);
-			if(dao.selectInfoGroup(vo)!= null) {
-				
-			} else if(dao.selectInfoGroup(vo) == null) {
-				dao.insert(dto);
-			} else {
-				dao.deleteHotelInfo(dto);
+//		for(int j = 0; j < dto.getSeq().length(); j++) {
+			dao.deleteHotelInfo(dto);
+			for(int i = 0 ; i < dto.getInfo_seqArray().length ; i++) {
+				dto.setInfo_seq(dto.getInfo_seqArray()[i]);
+				dao.insertHotelInfo(dto);
+					
 			}
-		}
+			
+//		}
 		return 0;
 	}
 

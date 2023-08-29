@@ -72,6 +72,11 @@ public class InfoController {
 		System.out.println(dto.getInfo_seqArray());
 		return "redirect:/hotelXdmList";
 	}
+	@RequestMapping("/infoHotelUpdate")
+	public String infoHotelUpdate(Info dto, InfoVo vo) {
+		service.updateHotelInfo(dto, vo);
+		return "redirect:/hotelXdmList";
+	}
 	@RequestMapping("/infoSpotInsert")
 	public String infoSpotInsert(Info dto) {
 		service.insertSpotInfo(dto);

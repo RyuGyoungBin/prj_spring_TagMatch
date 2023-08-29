@@ -11,6 +11,7 @@ public class Info {
 	private String spot_seq;
 	
 	private String info_seq;
+	private String seqArray;
 	private String[] info_seqArray;
 	
 	public String getInfo_seq() {
@@ -66,6 +67,12 @@ public class Info {
 	}
 	public void setHotel_seq(String hotel_seq) {
 		this.hotel_seq = hotel_seq;
+	}
+	public String getSeqArray() {
+		return seqArray;
+	}
+	public void setSeqArray(String seqArray) {
+		this.seqArray = seqArray;
 	}
 	
 }

@@ -20,3 +20,6 @@
   
     <!-- Template Main CSS File -->
   <link href="/resources/assets/xdm/css/styleAdmin.css" rel="stylesheet">
+	<link href="/resources/assets/css/vendors.css" rel="stylesheet">
+	<link href="/resources/assets/css/admin.css" rel="stylesheet">
+	<link href="/resources/assets/css/custom.css" rel="stylesheet">

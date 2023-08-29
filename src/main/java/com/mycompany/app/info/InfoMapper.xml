@@ -43,7 +43,7 @@
 				<include refid="abc" />
 	   			<include refid="selectCommon" />
 		) aa
-		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}	   			
+		<if test="startRnumForMysql != null and !startRnumForMysql.equals('')">LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}</if> 			
    	</select>
 
    	<select id="selectOne" resultMap="resultMapObj">
@@ -59,7 +59,8 @@
 			a.*
 		FROM
 			info a
-		    Join hotelInfo b on b.info_seq = a.seq and b.hotel_seq = #{hotel_seq}
+		    <if test="hotel_seq != null and !hotel_seq.equals('')">Join hotelInfo b on b.info_seq = a.seq and b.hotel_seq = #{hotel_seq}</if>
+		    <if test="seq != null and !seq.equals('')">Join hotelInfo b on b.info_seq = a.seq and b.hotel_seq = #{seq}</if>
 		WHERE 1=1
 
    	</select>
@@ -79,7 +80,7 @@
    			<if test="hotel_seq != null and !hotel_seq.equals('')">hotelInfo</if>
    			<if test="spot_seq != null and !spot_seq.equals('')">spotInfo</if>
    		WHERE 1=1
-   			AND info_seq = #{info_seq}
+   			<if test="info_seq != null and !info_seq.equals('')">AND info_seq = #{info_seq}</if>
    			<if test="hotel_seq != null and !hotel_seq.equals('')">AND hotel_seq = #{hotel_seq}</if>
    			<if test="spot_seq != null and !spot_seq.equals('')">AND spot_seq = #{spot_seq}</if>
    	</select>
@@ -143,11 +144,11 @@
    
    </insert>
    <delete id="deleteHotelInfo">
-   		DELETE
+   		DELETE FROM
    			hotelInfo
    		WHERE 1=1
    			AND hotel_seq = #{hotel_seq}
-   			AND info_seq = #{info_seq}
+<!--    			AND info_seq = #{info_seq} -->
    </delete>
    
    <insert id="insertSpotInfo">
@@ -160,11 +161,11 @@
    		)
    </insert>
    <delete id="deleteSpotInfo">
-   		DELETE
+   		DELETE FROM
    			spotInfo
    		WHERE 1=1
    			AND spot_seq = #{spot_seq}
-   			AND info_seq = #{info_seq}
+<!--    			AND info_seq = #{info_seq} -->
    </delete>
    		
 

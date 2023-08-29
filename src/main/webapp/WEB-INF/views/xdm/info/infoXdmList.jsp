@@ -112,6 +112,7 @@
 		                    <th>seq</th>
 		                    <th>info</th>
 		                    <th>iClass</th>
+		                    <th>icon</th>
 		                    <th>defaultNy</th>
 		                    <th>delNy</th>
 		                  </tr>
@@ -125,6 +126,7 @@
 				                    <td scope="row"><c:out value="${list.seq }"></c:out></td>
 				                   <td><a href="/infoXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.info }"></c:out></a></td>
 				                   <td><c:out value="${list.iClass}"></c:out></td>
+				                   <td><i class="<c:out value="${list.iClass }"/>"></i></td>
 				                   <td><c:out value="${list.defaultNy}"></c:out></td>
 				                   <td><c:out value="${list.delNy}"></c:out></td>
 			                 	</tr>
