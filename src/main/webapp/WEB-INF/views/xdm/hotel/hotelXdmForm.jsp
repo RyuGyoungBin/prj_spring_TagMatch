@@ -148,10 +148,10 @@
 	                </div>
 	                <!--  -->
 	                <div class="d-flex flex-wrap justify-content-around border-bottom">
-	                <div class=" col-5 mb-3">Hotel Close Day
-	                  	<label for="date" class=" col-form-label">date</label>
-                    	<input type="text" class="form-control" name="date" id="date" value="<c:out value="${item.date }"></c:out>">
-	                </div>
+		                <div class=" col-5 mb-3">Hotel Close Day
+		                  	<label for="date" class=" col-form-label">date</label>
+	                    	<input type="text" class="form-control" name="date" id="date" value="<c:out value="${item.date }"></c:out>">
+		                </div>
 	                </div>
                 <div class="col-12 d-flex justify-content-around border-bottom">
 	                <!--                     이미지첨부 -->
