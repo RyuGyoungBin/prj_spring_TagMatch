@@ -9,9 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
+
+import com.mycompany.app.feedback.Feedback;
+import com.mycompany.app.feedback.FeedbackServiceImpl;
+import com.mycompany.app.feedback.FeedbackVo;
 
 
 
@@ -21,6 +22,9 @@ public class SpotController {
 	@Autowired
 	SpotServiceImpl service;
 	private HttpSession httpSession;
+	
+	@Autowired
+	FeedbackServiceImpl feedbackService;
 
 	
 	@RequestMapping ("/spotXdmList")
@@ -66,12 +70,15 @@ public class SpotController {
 	
 	
 	@RequestMapping("/indexUsrTicketDetailInfo")
-	public String indexUsrTiketMoreInformation(SpotVo vo, Model model) {
-		
+	public String indexUsrTiketMoreInformation(SpotVo vo, FeedbackVo feedbackVo, Model model) {
+		System.out.println("feedback : "+feedbackVo.getFeedbackType());
+		System.out.println("seq : "+vo.getSeq());
 		Spot spot = service.selectOne(vo);
 		List<Spot> spotImg = service.selectListUploaded(vo); 
+		List<Feedback>feedback = feedbackService.selectList(feedbackVo);
 		model.addAttribute("spot",spot);
 		model.addAttribute("listUploaded",spotImg);
+		model.addAttribute("feedback",feedback);
 		return "/usr/infra/index/indexUsrTicketDetailInfo";
 		
 	}
