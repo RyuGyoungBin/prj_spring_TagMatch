@@ -33,6 +33,7 @@ public class Hotel {
 	private String tableName;
 
 	private Integer type;
+	private Integer defaultNy;
 	private Integer sort;
 	private String path;
 	private String originalName;
@@ -53,7 +54,29 @@ public class Hotel {
 	private String[] uploadImgRoomDeleteSeq;
 	private String[] uploadImgRoomDeletePathFile;
 	
+	private Double starRating;
+	private Integer cnt;
+	private String hotelUsr_seq;
 	
+	
+	public String getHotelUsr_seq() {
+		return hotelUsr_seq;
+	}
+	public void setHotelUsr_seq(String hotelUsr_seq) {
+		this.hotelUsr_seq = hotelUsr_seq;
+	}
+	public Integer getCnt() {
+		return cnt;
+	}
+	public void setCnt(Integer cnt) {
+		this.cnt = cnt;
+	}
+	public Double getStarRating() {
+		return starRating;
+	}
+	public void setStarRating(Double starRating) {
+		this.starRating = starRating;
+	}
 	public String[] getInfo_seqArray() {
 		return info_seqArray;
 	}
@@ -163,12 +186,17 @@ public class Hotel {
 	public void setRoomDefaultNy(Integer roomDefaultNy) {
 		this.roomDefaultNy = roomDefaultNy;
 	}
-	public Integer getRoomDelNy() {
-		return roomDelNy;
-	}
-	public void setRoomDelNy(Integer roomDelNy) {
-		this.roomDelNy = roomDelNy;
-	}
+
+	
+
+	    public Integer getRoomDelNy() {
+	        return roomDelNy;
+	    }
+	    
+	    public void setRoomDelNy(Integer roomDelNy) {
+	        this.roomDelNy = roomDelNy;
+	    }
+	
 	public Integer getRoomNum() {
 		return roomNum;
 	}
@@ -294,6 +322,12 @@ public class Hotel {
 	}
 	public void setUploadImgRoomDeletePathFile(String[] uploadImgRoomDeletePathFile) {
 		this.uploadImgRoomDeletePathFile = uploadImgRoomDeletePathFile;
+	}
+	public Integer getDefaultNy() {
+		return defaultNy;
+	}
+	public void setDefaultNy(Integer defaultNy) {
+		this.defaultNy = defaultNy;
 	}
 	
 	

@@ -47,7 +47,7 @@
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/concertList">Home</a></li>
-          <li class="breadcrumb-item active">Data-CodeGroup</li>
+          <li class="breadcrumb-item active">Data-Feedback</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
@@ -75,22 +75,54 @@
 	                </div>
 					<div class=" col-5 mb-3">
 						<label>reviewTitle</label>
-						<input class="form-control" name="reviewTitle" id="reviewTitle" type="text" placeholder="리뷰제목" readonly value="<c:out value="${item.reviewTitle }"></c:out>">
+						<input class="form-control" name="reviewTitle" id="reviewTitle" type="text" placeholder="리뷰제목"  value="<c:out value="${item.reviewTitle }"></c:out>">
 					</div>
 					<div class=" col-5 mb-3">
-						<label>startRating detail</label>
-						<input class="form-control" name="startRating" id="startRating" type="text" placeholder="평가" value="<c:out value="${item.startRating }"></c:out>">
+						<label>starRating detail</label>
+						<input class="form-control" name="starRating" id="starRating" type="text" placeholder="평가" value="<c:out value="${item.starRating }"></c:out>">
 					</div>
 					<div class=" col-5 mb-3">
 						<label>member_seq</label>
-						<input class="form-control" name="member_seq" id="member_seq" type="text" readonly value="<c:out value="${item.member_seq}"></c:out>">
+						<input class="form-control" name="member_seq" id="member_seq" type="text"  value="<c:out value="${item.member_seq}"></c:out>">
 					</div>
+					<div class=" col-5 mb-3">
+	                  	<label>type_seq</label>
+                    	<input type="text" class="form-control" name="type_seq" id="type_seq"  value="<c:out value="${item.type_seq }"></c:out>">
+	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label>defaultNy</label>
-                    	<input type="text" class="form-control" name="defaultNy" id="defaultNy" value="<c:out value="${item.defaultNy }"></c:out>">
+                    	<input type="text" class="form-control" name="defaultNy" id="defaultNy"  value="<c:out value="${item.defaultNy }"></c:out>">
 	                </div>
 	                </div>
 	            </div>
+	            
+	            <c:choose>
+				<c:when test="${empty param.seq }">
+					<div class="d-flex justify-content-between my-5 text-center">
+						<div class="col-2">
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/feedbackXdmList'"><i class="bi bi-list"></i></button>
+						</div>
+						<div class="col-2">
+							<button id="btnInsert" type="button" class="btn btn-success">save</button>
+						</div>
+					</div>
+				</c:when>
+				<c:otherwise>
+					<div class="d-flex justify-content-between my-5 text-center">
+						<div class="col-2">
+							<button id="btnList" type="button" class="btn btn-secondary" onclick = "location.href = '/feedbackXdmList'"><i class="bi bi-list"></i></button>
+							<button id="btnDelete" type="button" class="btn btn-danger">delete</button>
+							<button id="btnDelNy" type="button" class="btn btn-danger">uele</button>
+						</div>
+						<div class="col-2">
+							<button id="btnUpdate" type="button" class="btn btn-success">update</button>
+						</div>
+					</div>
+				</c:otherwise>
+				</c:choose>
+	            
+	            
+	            
               </form>
             </div>
           </div>
@@ -113,16 +145,16 @@
 
 	
 	$("#btnInsert").on("click", function(){
-		$("form[name=form]").attr("action", "/feedbackInsert").submit();
+		$("form[name=form]").attr("action", "/feedbackXdmInsert").submit();
 	})
 	$("#btnUpdate").on("click", function(){
-		$("form[name=form]").attr("action", "/feedbackUpdate").submit();
+		$("form[name=form]").attr("action", "/feedbackXdmUpdate").submit();
 	})
 	$("#btnDelete").on("click", function(){
-		$("form[name=form]").attr("action", "/feedbackDelete").submit();
+		$("form[name=form]").attr("action", "/feedbackXdmDelete").submit();
 	})
 	$("#btnDelNy").on("click", function(){
-		$("form[name=form]").attr("action", "/feedbackUelete").submit();
+		$("form[name=form]").attr("action", "/feedbackXdmUelete").submit();
 	})
 // 	//  	주소찾기
 //  	function address1() {

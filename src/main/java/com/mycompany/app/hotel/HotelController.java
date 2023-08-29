@@ -8,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.mycompany.app.feedback.Feedback;
+import com.mycompany.app.feedback.FeedbackServiceImpl;
+import com.mycompany.app.feedback.FeedbackVo;
 import com.mycompany.app.info.Info;
 import com.mycompany.app.info.InfoServiceImpl;
 import com.mycompany.app.info.InfoVo;
@@ -22,6 +25,22 @@ public class HotelController {
 	@Autowired
 	InfoServiceImpl infoService;
 	
+	@Autowired
+	FeedbackServiceImpl feedbackService;
+	
+	@RequestMapping("/hotelUsrList")
+	public String hotelList(@ModelAttribute("vo") HotelVo vo, Model model) throws Exception {
+		
+			vo.setParamsPaging(hotelService.selectOneCount(vo));
+			if(vo.getTotalRows() > 0) {
+			List<Hotel> list = hotelService.selectRating(vo);
+			TrainProc.train(model);
+			model.addAttribute("list", list);
+			} else {
+				
+			}
+		return "/usr/infra/subpages/hotelUsrList";
+	}
 	@RequestMapping("/hotelXdmList")
 	public String hotelXdmList(@ModelAttribute("vo") HotelVo vo, Model model) {
 		
@@ -40,7 +59,7 @@ public class HotelController {
 	public String hotelXdmForm(HotelVo vo, Model model, InfoVo infoVo) {
 
 		Hotel hotel = hotelService.selectOne(vo); 
-		List<Hotel> uploaded = hotelService.selectUploaded(vo);
+		List<Hotel> uploaded = hotelService.selectUploadedOne(vo);
 		model.addAttribute("item", hotel);
 		model.addAttribute("listUploaded", uploaded);
 		return "xdm/hotel/hotelXdmForm";
@@ -53,7 +72,7 @@ public class HotelController {
 	}
 	
 	@RequestMapping("hotelXdmUpdate")
-	public String hotelXdmUpdate(Hotel dto) {
+	public String hotelXdmUpdate(Hotel dto) throws Exception {
 		hotelService.update(dto);
 		return "redirect:/hotelXdmList";
 	}
@@ -71,30 +90,23 @@ public class HotelController {
 	}
 	
 	@RequestMapping ("/roomDetailInfo")
-	public String roomDetailInfo01(HotelVo vo, Model model,InfoVo infoVo) {
-		Hotel hotel = hotelService.selectOne(vo);
+	public String roomDetailInfo01(HotelVo vo,InfoVo infoVo, FeedbackVo feedbackVo, Model model) {
+		System.out.println("feedback : "+feedbackVo.getFeedbackType());
+		System.out.println("seq : "+vo.getSeq());
+		Hotel hotel = hotelService.selectRatingOne(vo);
 		List<Hotel> hotelImg = hotelService.selectUploaded(vo);
 		List<Info> info = infoService.selectHotel(infoVo);
+		List<Hotel> hotelRoom = hotelService.selectHotelRoom(vo);
+		List<Feedback> feedback = feedbackService.selectList(feedbackVo);
 		
 		model.addAttribute("listUploaded", hotelImg);
 		model.addAttribute("hotel", hotel);
 		model.addAttribute("info", info);
-		return "/usr/infra/subpages/roomDetailInfo01";
+		model.addAttribute("room", hotelRoom);
+		model.addAttribute("feedback", feedback);
+		return "/usr/infra/subpages/roomDetailInfo";
 	}
 	
-	@RequestMapping("/hotel")
-	public String hotelList(@ModelAttribute("vo") HotelVo vo, Model model) throws Exception {
-		
-			vo.setParamsPaging(hotelService.selectOneCount(vo));
-			if(vo.getTotalRows() > 0) {
-			List<Hotel> list = hotelService.selectList(vo);
-			TrainProc.train(model);
-			model.addAttribute("list", list);
-			} else {
-				
-			}
-		return "/usr/infra/subpages/hotel02";
-	}
 	@RequestMapping("/home")
 	public String home() {
 		return "/home";

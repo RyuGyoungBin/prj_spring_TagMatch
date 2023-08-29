@@ -134,8 +134,8 @@
                     	<input type="text" class="form-control" name="price" id="price" value="<c:out value="${item.price }"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
-	                  	<label for="roomDefaultNy" class=" col-form-label">roomDefaultNy</label>
-                    	<input type="text" class="form-control" name="roomDefaultNy" id="roomDefaultNy" value="<c:out value="${item.roomDefaultNy }"></c:out>">
+	                  	<label for="defaultNy" class=" col-form-label">defaultNy</label>
+                    	<input type="text" class="form-control" name="defaultNy" id="defaultNy" value="<c:out value="${item.defaultNy }"></c:out>">
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="roomDelNy" class=" col-form-label">roomDelNy</label>

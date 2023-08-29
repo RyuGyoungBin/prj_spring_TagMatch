@@ -22,7 +22,7 @@
                 <h3 class="animated fadeInDown">기차 여행 A to Z 는 여기에서! </h3>
                 <p class="animated fadeInDown">기차 승차권 / 숙소 예약 / 모든 입장권</p>
                 <a href="/trainUsrView" class="animated fadeInUp button_intro outline">기차 노선도 보러가기</a>                 
-                <a href="/hotel02" class="animated fadeInUp button_intro outline">숙소 보러가기</a> 
+                <a href="/hotelUsrList" class="animated fadeInUp button_intro outline">숙소 보러가기</a> 
                 <a href="/indexUsrTicket" class="animated fadeInUp button_intro outline">입장권 보러가기</a>
                 <a href="/bookingUsrView" class="animated fadeInUp button_intro ">바로 예약하기</a>
             </div>  
@@ -64,219 +64,54 @@
             <p>현재 가장 인기있는 숙소를 살펴보세요! </p>
         </div>
         
-        <div class="row">
+        <c:choose>
+			<c:when test="${fn:length(list) eq 0}">
+				<tr>
+					<td class="text-center" colspan="9">There is no data!</td>
+				</tr>	
+			</c:when>
+			
+	           	<c:otherwise>
+	           	<div class="overflow-hidden overflow-x-auto">
         
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.1s">
-                <div class="tour_container">
-					<div class="ribbon_3 popular"><span>Popular</span></div>
-                    <div class="img_container">
-                        <a href="roomDetailInfo">
-                        <img src="resources/assets/img/accommodation/hotel/seoul/01/01.jpg" width="800" height="533" class="img-fluid" alt="Image">
-
-                        </a>
-                    </div>
-                    <div class="tour_title">
-                        <h3><strong>신라 스테이 삼성</strong></h3>
-                        <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-                        </div><!-- end rating -->
-                        <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                        </div><!-- End wish list-->
-                    </div>
-                </div><!-- End box tour -->
-            </div><!-- End col -->
-            
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
-                <div class="tour_container">
-					<div class="ribbon_3 popular"><span>Popular</span></div>
-                    <div class="img_container">
-                        <a href="roomDetailInfo">
-                        <img src="resources/assets/img/accommodation/hotel/seoul/02/02_1.jpg" width="800" height="533" class="img-fluid" alt="Image">
-                        <div class="badge_save">Save<strong>30%</strong></div>
-                        <div class="short_info">
-                            <i class="icon_set_1_icon-43"></i>Churches<span class="price"><sup>$</sup>45</span>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="tour_title">
-                        <h3><strong>AC호텔 바이 메리어트 서울 강남</strong></h3>
-                        <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-                        </div><!-- end rating -->
-                        <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                        </div><!-- End wish list-->
-                    </div>
-                </div><!-- End box tour -->
-            </div><!-- End col -->
-            
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.3s">
-                <div class="tour_container">
-					<div class="ribbon_3 popular"><span>Popular</span></div>
-                    <div class="img_container">
-                        <a href="roomDetailInfo">
-                        <img src="resources/assets/img/accommodation/pension/gyunggido/01/01.jpg" width="800" height="533" class="img-fluid" alt="Image">
-                        <div class="short_info">
-                            <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>48</span>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="tour_title">
-                        <h3><strong>스마일카라반 펜션</strong></h3>
-                        <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-                        </div><!-- end rating -->
-                        <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                        </div><!-- End wish list-->
-                    </div>
-                </div><!-- End box tour -->
-            </div><!-- End col -->
-            
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.4s">
-                <div class="tour_container">
-					<div class="ribbon_3"><span>Top rated</span></div>
-                    <div class="img_container">
-                        <a href="roomDetailInfo">
-                        <img src="resources/assets/img/accommodation/pension/gyunggido/02/02.jpg" width="800" height="533" class="img-fluid" alt="Image">
-                        <div class="badge_save">Save<strong>30%</strong></div>
-                        <div class="short_info">
-                            <i class="icon_set_1_icon-30"></i>Walking tour<span class="price"><sup>$</sup>36</span>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="tour_title">
-                        <h3><strong>풀빌라 림</strong> </h3>
-                        <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-                        </div><!-- end rating -->
-                        <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                        </div><!-- End wish list-->
-                    </div>
-                </div><!-- End box tour -->
-            </div><!-- End col -->
-            
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.5s">
-                <div class="tour_container">
-					<div class="ribbon_3"><span>Top rated</span></div>
-                    <div class="img_container">
-                        <a href="roomDetailInfo">
-                        <img src="resources/assets/img/accommodation/condo/gangwondo/01/01.jpg" width="800" height="533" class="img-fluid" alt="Image">
-                        <div class="short_info">
-                            <i class="icon_set_1_icon-28"></i>Skyline tours<span class="price"><sup>$</sup>42</span>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="tour_title">
-                        <h3><strong>하이원리조트 마운틴콘도</strong></h3>
-                        <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-                        </div><!-- end rating -->
-                        <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                        </div><!-- End wish list-->
-                    </div>
-                </div><!-- End box tour -->
-            </div><!-- End col -->
-            
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.6s">
-                <div class="tour_container">
-					<div class="ribbon_3"><span>Top rated</span></div>
-                    <div class="img_container">
-                        <a href="roomDetailInfo">
-                        <img src="resources/assets/img/accommodation/condo/gangwondo/02/02.jpg" width="800" height="533" class="img-fluid" alt="Image">
-                        <div class="short_info">
-                            <i class="icon_set_1_icon-44"></i>Historic Buildings<span class="price"><sup>$</sup>40</span>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="tour_title">
-                        <h3><strong>하이원리조트 힐콘도</strong></h3>
-                        <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-                        </div><!-- end rating -->
-                        <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                        </div><!-- End wish list-->
-                    </div>
-                </div><!-- End box tour -->
-            </div><!-- End col -->
-            
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.7s">
-                <div class="tour_container">
-					<div class="ribbon_3"><span>Top rated</span></div>
-                    <div class="img_container">
-                        <a href="roomDetailInfo">
-                        <img src="resources/assets/img/accommodation/condo/gangwondo/03/03.jpg" width="800" height="533" class="img-fluid" alt="Image">
-                        <div class="short_info">
-                            <i class="icon_set_1_icon-3"></i>City sightseeing<span class="price"><sup>$</sup>35</span>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="tour_title">
-                        <h3><strong>현대아이파크콘도</strong></h3>
-                        <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-                        </div><!-- end rating -->
-                        <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                        </div><!-- End wish list-->
-                    </div>
-                </div><!-- End box tour -->
-            </div><!-- End col -->
-            
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.8s">
-                <div class="tour_container">
-					<div class="ribbon_3"><span>Top rated</span></div>
-                    <div class="img_container">
-                        <a href="roomDetailInfo">
-                        <img src="resources/assets/img/accommodation/condo/gangwondo/04/04.jpg" width="800" height="533" class="img-fluid" alt="Image">
-                        <div class="short_info">
-                            <i class="icon_set_1_icon-4"></i>Museums<span class="price"><sup>$</sup>38</span>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="tour_title">
-                        <h3><strong>오션투유리조트 설악비치 호텔&콘도</strong></h3>
-                        <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-                        </div><!-- end rating -->
-                        <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                        </div><!-- End wish list-->
-                    </div>
-                </div><!-- End box tour -->
-            </div><!-- End col -->
-            
-            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.9s">
-                <div class="tour_container">
-					<div class="ribbon_3"><span>Top rated</span></div>
-                    <div class="img_container">
-                        <a href="roomDetailInfo">
-                        <img src="resources/assets/img/accommodation/condo/gangwondo/05/05.jpg" width="800" height="533" class="img-fluid" alt="Image">
-                        <div class="short_info">
-                            <i class="icon_set_1_icon-14"></i>Eat &amp; drink<span class="price"><sup>$</sup>25</span>
-                        </div>
-                        </a>
-                    </div>
-                    <div class="tour_title">
-                        <h3><strong>금강산 콘도</strong></h3>
-                        <div class="rating">
-                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
-                        </div><!-- end rating -->
-                        <div class="wishlist">
-                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
-                        </div><!-- End wish list-->
-                    </div>
-                </div><!-- End box tour -->
-            </div><!-- End col -->
-            
-        </div><!-- End row -->
+			        <div class="row">
+			            <!-- 1번 -->
+			            <c:forEach items="${list}" var="list">
+				            <div class="col-lg-4 col-md-6 wow zoomIn" data-wow-delay="0.2s">
+				                <div class="tour_container">
+			                    	<div class="img_container">
+				                        <a href="/roomDetailInfo?seq=${list.seq}">
+										    <c:out value="${list.name}"></c:out>
+											    <c:set var="type" value="1"/>    <!--  -->
+	<%-- 										    <c:set var="seq" value="${list.seq }"/> --%>
+										        <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
+											         <c:if test="${list.seq eq listUploaded.pseq && listUploaded.type eq 1}">
+											            <img src="${listUploaded.path}${listUploaded.uuidName}" width="800" height="533" class="img-fluid" alt="Image">
+										             </c:if>
+										        </c:forEach>
+										</a>
+				                    </div>
+				                    <div class="tour_title">
+				                        <h3><strong>  <c:out value="${list.name }"/> </strong></h3>
+				                        <div class="rating">
+				                            <i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><small>(75)</small>
+				                        </div><!-- end rating -->
+				                        <div class="wishlist">
+				                            <a class="tooltip_flip tooltip-effect-1" href="javascript:void(0);">+<span class="tooltip-content-flip"><span class="tooltip-back">Add to wishlist</span></span></a>
+				                        </div><!-- End wish list-->
+				                    </div>
+				                </div><!-- End box tour -->
+				            </div><!-- End col -->
+			            </c:forEach>
+			        </div><!-- End row -->
+        </div>
+	</c:otherwise>
+</c:choose>
+        
+        
 		<div class="d-flex justify-content-around">
         <p class="text-center nopadding">
-            <a href="hotel02" class="btn_1 medium"><i class="icon-eye-7"></i>View hotel tours (144) </a>
+            <a href="/hotelUsrList" class="btn_1 medium"><i class="icon-eye-7"></i>View hotel tours (144) </a>
         </p>
                 <p class="text-center nopadding">
             <a href="pension02" class="btn_1 medium"><i class="icon-eye-7"></i>View pension tours (144) </a>
@@ -432,6 +267,13 @@
 				$("#nav-search-in-content").text(Search_Str);
 			});
 		});
+		
+		
+		//paging
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			$("form[name=formList]").attr("action", "hotelUsrList").submit();
+		}
 	</script>
 	
 

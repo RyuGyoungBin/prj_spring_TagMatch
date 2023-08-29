@@ -30,7 +30,6 @@ public class SpotVo {
 
 	// 이미지 업로드 
 	private String tableName;
-		 
 	private Integer type;
 	private Integer sort;
 	private String path;

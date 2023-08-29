@@ -229,7 +229,14 @@
 		$("#end_date").datepicker({
 			minDate: $("#start_date").val()
 		});
+		
 	});
+	
+	//paging
+	goList = function(thisPage) {
+		$("input:hidden[name=thisPage]").val(thisPage);
+		$("form[name=formList]").attr("action", "infoXdmList").submit();
+	}
 	
  		</script>
 	</body>

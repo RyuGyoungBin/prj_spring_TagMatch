@@ -93,22 +93,26 @@
 						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">가는편</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">출발역</label>
-							<input type="text" class="form-control train" value="서울역" readonly>
+							<input type="text" class="form-control train" value="서울역" readonly name="t1departStation">
+							<input type="hidden" id="t1departStation">
 						</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">도착역</label>
-							<input type="text" class="form-control train" value="부산역" readonly>
+							<input type="text" class="form-control train" value="부산역" readonly name="t1arriveStation">
+							<input type="hidden" id="t1arriveStation">
 						</div>
 					</div>
 					<div class="d-flex justify-content-center mb-2">
 						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">오는편</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">출발역</label>
-							<input type="text" class="form-control train" value="서울역" readonly>
+							<input type="text" class="form-control train" value="서울역" readonly name="t2departStation">
+							<input type="hidden" id="t2departStation">
 						</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">도착역</label>
-							<input type="text" class="form-control train" value="부산역" readonly>
+							<input type="text" class="form-control train" value="부산역" readonly name="t2arriveStation">
+							<input type="hidden" id="t2arriveStation">
 						</div>
 					</div>
 					<div class="d-flex justify-content-around pb-3 border-bottom">
@@ -145,7 +149,7 @@
 								</select>
 							</div>
 						</div>
-						<button type="button" class="col-1 btn btn-secondary">조회</button>
+						<button type="button" class="col-1 btn btn-secondary" id="searchTrain">조회</button>
 					</div>
 					<div>
 						<h4 class="p-3 fw-bold">가는 철도편 선택</h4>
@@ -161,7 +165,7 @@
 									<th>좌석조회</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody id="trainDate">
 								<tr>
 									<th>ktx</th>
 									<th>서울-부산</th>
@@ -1127,51 +1131,47 @@
         </div>
      </div>   
 	</main>
-
-		<div class="modal-dialog modal-dialog-centered" role="document">
-	    	<div class="modal-content">
-	   			<div class="modal-header">
-	      			<h1 class="modal-title fs-5">시/도 선택</h1>
-	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="trainModal" aria-label="Close"></button>
-	      		</div>
-	      		<div class="modal-body">
-		      		<ul class="d-flex flex-wrap justify-content-around p-0">
-		      			<c:forEach items="${item}" var="item" varStatus="status">
-						  	<li class="mb-2">
-						  	<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
-						  		<input type="button" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
-						  	</li>
-						  </c:forEach>
-		      		</ul>
-	      		</div>
-	      		<div class="modal-footer">
-	      		</div>
-	    	</div>
-	 	</div>
-
 	
-	
+	<!-- 시/도 선택 -->
 <div class="modal fade" id="trainModal" aria-hidden="true" aria-labelledby="trainModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5">시/도 선택</h1>
-        <button type="button" class="btn-close" ></button>
+        <button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <ul class="d-flex flex-wrap justify-content-around p-0">
+        <ul class="d-flex flex-wrap justify-content-around p-0 text-center" id="sido">
 			<c:forEach items="${item}" var="item" varStatus="status">
-				<li class="mb-2">
-				<%-- 	<label for="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></label> --%>
-					<input type="button" class="form-control" value="<c:out value="${item.cityname }"/>" name="<c:out value="${item.cityname }"/>" readonly>
+				<li class="mb-2 col-5">
+					<label for="<c:out value="${item.cityname }"/>" class="form-control"><c:out value="${item.cityname }"/></label>
+					<input type="hidden" class="form-control" value="<c:out value="${item.citycode }"/>" name="<c:out value="${item.citycode }"/>" readonly>
 				</li>
 			</c:forEach>
    		</ul>
       </div>
-      <div class="modal-footer"></div>
     </div>
   </div>
+</div>	
+	<!-- 출발역 선택 -->	
+<div class="modal fade" id="trainStationModal" aria-hidden="true" aria-labelledby="trainStationModalLabel" role="dialog" aria-hidden="true" tabindex="-1">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+	    	<div class="modal-content">
+	   			<div class="modal-header">
+	      			<h1 class="modal-title fs-5">기차역 선택</h1>
+	        		<button type="button" class="btn-close" data-toggle="modal" data-bs-dismiss="modal" aria-label="Close"></button>
+	      		</div>
+	      		<div class="modal-body">
+		      		<ul class="d-flex flex-wrap justify-content-around p-0 text-center" id="trainStation">
+		      			
+		      		</ul>
+	      		</div>
+	    	</div>
+	 	</div>
 </div>
+	
+	
+
 
 	
 	
@@ -1310,9 +1310,90 @@
 		  backdrop: "static"
 		});
 		
+	var TrainModal2 = new bootstrap.Modal(document.getElementById('trainStationModal'), {
+		  keyboard: true,
+		  backdrop: "static"
+		});
+		var target = "";
 		$(".train").on("click",function(){
-			TrainModal.show();
+			target = "#"+$(this).attr("name");
+			console.log(target);
+			TrainModal.toggle();
 		})
+		
+		$("#sido li label").on("click",function(){
+			
+			 $.ajax({
+				async: true,
+				cache:false,
+				type:"post",
+				url:"/trainStation",
+				data: {"citycode" : $(this).next().val()},
+				success:function(response){
+					console.log(response.rtTrain);
+					$("#trainStation").empty();
+			 		stationLi = "";
+			 		$.each(response.rtTrain,function(index, value) {
+				 		stationLi += "<li class='mb-2 col-5'><span class='form-control station'>"+value.nodename+"</span></li>";
+				 		stationLi += "<input hidden='hidden' value="+value.nodeid+">";
+		 			})
+			 		$("#trainStation").append(stationLi);
+					
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+			}
+		});
+			TrainModal2.toggle();
+		});
+		
+		$(document).on("click", "#trainStation span", function(){
+			$(target).prev().val($(this).text());
+			$(target).val($(this).parent().next().val());
+			TrainModal2.hide();
+			TrainModal.hide();
+		})
+		
+		
+		
+		
+
+		
+		$("#searchTrain").on("click", function(){
+			
+			$.ajax({
+				async: true,
+				cache:false,
+				type:"post",
+				url:"/trainStationYY",
+				
+				data: {
+						   "depPlaceId": $("#t1departStation").val(),
+						   "arrPlaceId": $("#t1arriveStation").val()
+					},
+				success:function(response){
+					console.log(response.rtTrain);
+					$("#trainDate").empty();
+			 		stationLi = "";
+			 		$.each(response.rtTrain,function(index, value) {
+				 		stationLi += "<tr>";
+				 		stationLi += "<th>"+value.traingradename+"</th>";
+				 		stationLi += "<th>"+value.depplacename+" - "+value.arrplacename+"</th>";
+				 		stationLi += "<th>"+value.depplandtime+" - "+value.arrplandtime+"</th>";
+				 		stationLi += "<th>"+value.arrplandtime-value.depplandtime+"</th>";
+				 		stationLi += "<th>성인:59,800원<br>아동:26,900원</th>";
+				 		stationLi +=  "<th><a>좌석조회</a></th>";
+				 		stationLi +=  "</tr>";
+		 			})
+			 		$("#trainDate").append(stationLi);
+				},
+				error: function(jqXHR, textStatus, errorThrown) {
+		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+			}
+		});
+			
+		})
+		
 		
 		
 </script>

@@ -29,6 +29,18 @@ public class HotelServiceImpl implements HotelService{
 	
 	@Override
 	public List<Hotel> selectUploaded(HotelVo vo) {return dao.selectUploaded(vo);}
+	
+	@Override
+	public List<Hotel> selectUploadedOne(HotelVo vo) {return dao.selectUploadedOne(vo);}
+	
+	@Override
+	public List<Hotel> selectHotelRoom(HotelVo vo) {return dao.selectHotelRoom(vo);}
+	
+	@Override
+	public List<Hotel> selectRating(HotelVo vo) {return dao.selectRating(vo);}
+	
+	@Override
+	public Hotel selectRatingOne(HotelVo vo) {return dao.selectRatingOne(vo);}
 
 	@Override
 	public int insert(Hotel dto) throws Exception {
@@ -48,18 +60,31 @@ public class HotelServiceImpl implements HotelService{
 	}
 
 	@Override
-	public int update(Hotel dto) {
+	public int update(Hotel dto) throws Exception {
 		dao.update(dto);
 		dao.updateHotelClose(dto);
-		dao.updateHotelInfo(dto);
+
+		dao.updateHotelInfo(dto); 
+
+//		dao.updateHotelInfo(dto);
+
+
+		dao.updateHotelInfo(dto); 
+
+//		dao.updateHotelInfo(dto);
+
+
 		dao.updateHotelRoom(dto);
+		
+    	uploadFiles(dto.getUploadImg(), dto, "hotelUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
+    	uploadFiles(dto.getUploadImgRoom(), dto, "hotelUploaded", dto.getUploadImgRoomType(), dto.getUploadImgRoomMaxNumber());  
 		return 0;
 	}
 
 	@Override
 	public int delete(Hotel dto) {
 		dao.deleteHotelClose(dto);
-		dao.deleteHotelInfo(dto);
+//		dao.deleteHotelInfo(dto);
 		dao.deleteHotelRoom(dto);
 		dao.delete(dto);
 		return 0;
@@ -68,7 +93,7 @@ public class HotelServiceImpl implements HotelService{
 	@Override
 	public int uelete(Hotel dto) {
 		dao.uelete(dto);
-		dao.ueleteHotelInfo(dto);
+//		dao.ueleteHotelInfo(dto);
 		dao.ueleteHotelRoom(dto);
 		dao.ueleteHotelClose(dto);
 		return 0;

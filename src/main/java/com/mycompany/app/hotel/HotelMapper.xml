@@ -2,52 +2,54 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
+
 <mapper namespace="com.mycompany.app.hotel.HotelMapper">
 
-	<resultMap type="com.mycompany.app.hotel.Hotel" id="resultMapObj"></resultMap>
-	<sql id ="selectCommon">
-   		FROM    
-	    	hotel a
-	    	LEFT JOIN hotelCloseDay c on c.hotel_seq = a.seq
-	    	LEFT JOIN hotelRoom d on d.hotel_seq = a.seq AND d.defaultNy = 1
-	    	LEFT JOIN hotelUploaded e on e.pseq = a.seq AND e.type = 1
-		WHERE 1=1 
-			<if test="delNy != null and !delNy.equals('')">AND a.delNy = #{delNy}</if>
-			<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if>
-			<if test="sido != null and !sido.equals('')">AND a.sido LIKE #{sido}</if>
-		
-    </sql>
-    <sql id="selectHotel">
-    	a.seq,
-    	a.hotelType,
-    	a.name,
-    	a.zipCode,
-    	a.address,
-    	a.addressDetail,
-    	a.sido,
-    	a.tel,
-    	DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
-    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
-    	a.detailText,
-    	c.date,
-    	d.roomType,
-    	d.roomName,
-    	d.price,
-    	d.roomNum,
-    	a.delNy,
-    	e.type,
-    	e.path,
-    	e.uuidName
+	<resultMap type="com.mycompany.app.hotel.Hotel"
+		id="resultMapObj"></resultMap>
+	<sql id="selectCommon">
+		FROM
+		hotel a
+		LEFT JOIN hotelCloseDay c on c.hotel_seq = a.seq
+		LEFT JOIN hotelRoom d on d.hotel_seq = a.seq AND d.defaultNy = 1
+		LEFT JOIN hotelUploaded e on e.pseq = a.seq AND e.type = 1
+		WHERE 1=1
+		<if test="delNy != null and !delNy.equals('')">AND a.delNy = #{delNy}</if>
+		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if>
+		<if test="sido != null and !sido.equals('')">AND a.sido LIKE #{sido}</if>
+
+	</sql>
+	<sql id="selectHotel">
+		a.seq,
+		a.hotelType,
+		a.name,
+		a.zipCode,
+		a.address,
+		a.addressDetail,
+		a.sido,
+		a.tel,
+		DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
+		DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
+		a.detailText,
+		c.date,
+		d.roomType,
+		d.roomName,
+		d.price,
+		d.roomNum,
+		a.delNy,
+		e.type,
+		e.path,
+		e.uuidName
 	</sql>
 	<select id="selectList" resultMap="resultMapObj">
-		SELECT aa.* FROM (   	
-	   		SELECT
-				<include refid="selectHotel" />
-	   			<include refid="selectCommon" />
+		SELECT aa.* FROM (
+		SELECT
+		<include refid="selectHotel" />
+		<include refid="selectCommon" />
 		) aa
-<!-- 		WHERE 1=1 -->
-<!-- 		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if> -->
+		<!-- WHERE 1=1 -->
+		<!-- <if test="hotelType != null and !hotelType.equals('')">AND a.hotelType 
+			= #{hotelType}</if> -->
 		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
 	<select id="selectOneCount" resultType="Integer">
@@ -56,241 +58,331 @@
 	</select>
 	<select id="selectOne" resultMap="resultMapObj">
 		SELECT
-			<include refid="selectHotel" />
-	    	<include refid="selectCommon" />
-	    	AND a.seq = #{seq}
+		<include refid="selectHotel" />
+		<include refid="selectCommon" />
+		AND a.seq = #{seq}
 	</select>
 	<select id="selectUploaded" resultMap="resultMapObj">
+		SELECT
+		*
+		FROM
+		hotelUploaded
+		WHERE 1=1
+			<if test="seq != null and !seq.equals('')"> AND pseq = #{seq} </if>
+
+			
+	</select>
+	<select id="selectUploadedOne" resultMap="resultMapObj">
 		SELECT
 			*
 		FROM
 			hotelUploaded
 		WHERE 1=1
 			AND pseq = #{seq}
+
+
+	</select>
+	<select id="selectHotelRoom" resultMap="resultMapObj">
+		SELECT
+		*
+		FROM
+		hotelRoom
+		WHERE 1=1
+		AND hotel_seq = #{seq}
+	</select>
+
+	<select id="selectRating" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+	    	a.hotelType,
+	    	a.name,
+	    	a.zipCode,
+	    	a.address,
+	    	a.addressDetail,
+	    	a.sido,
+	    	a.tel,
+	    	DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
+	    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
+	    	a.detailText,
+			ROUND(avg(c.starRating),1) starRating,
+			d.path,
+			d.type,
+			d.uuidName
+		FROM
+			hotel a
+		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq
+		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 1
+		    LEFT JOIN hotelUploaded d on d.pseq = a.seq AND d.type = 1
+		WHERE 1=1
+			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq}</if>
+		
+		GROUP BY a.seq
+		
+		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
+		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
+	</select>
+	<select id="selectRatingOne" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+	    	a.hotelType,
+	    	a.name,
+	    	a.zipCode,
+	    	a.address,
+	    	a.addressDetail,
+	    	a.sido,
+	    	a.tel,
+	    	DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
+	    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
+	    	a.detailText,
+			ROUND(avg(c.starRating),1) starRating,
+			COUNT(c.review) cnt,
+			d.path,
+			d.type,
+			d.uuidName,
+			b.hotel_seq,
+			b.seq hotelUsr_seq
+		FROM
+			hotel a
+		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq
+		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 1
+		    LEFT JOIN hotelUploaded d on d.pseq = a.seq AND d.type = 1
+		WHERE 1=1
+			AND a.seq = #{seq}
+		
+		GROUP BY a.seq
 	</select>
 	
+
 	<insert id="insertHotel">
-    	insert into `hotel` (
-    		hotelType,
-			name,
-			zipCode,
-			address,
-			addressDetail,
-			sido,
-			tel,
-			checkInTime,
-			checkOutTime,
-			detailText,
-			delNy
-    	) values(
-    		#{hotelType},
-    		#{name},
-    		#{zipCode},
-    		#{address},
-    		#{addressDetail},
-    		#{sido},
-    		#{tel},
-    		#{checkInTime},
-    		#{checkOutTime},
-    		#{detailText},
-    		0
-    	)
-    	<selectKey resultType="String" keyProperty="seq" order="AFTER">
+		insert into `hotel` (
+		hotelType,
+		name,
+		zipCode,
+		address,
+		addressDetail,
+		sido,
+		tel,
+		checkInTime,
+		checkOutTime,
+		detailText,
+		delNy
+		
+		) values(
+		
+		#{hotelType},
+		#{name},
+		#{zipCode},
+		#{address},
+		#{addressDetail},
+		#{sido},
+		#{tel},
+		#{checkInTime},
+		#{checkOutTime},
+		#{detailText},
+		0
+		)
+		<selectKey resultType="String" keyProperty="seq" order="AFTER">
 			SELECT last_insert_id()
-		 </selectKey>
-    </insert>
-<!--     <insert id="insertHotelInfo"> -->
-<!--     	insert into `hotelInfo`( -->
-<!--     		defaultNy, -->
-<!--     		info, -->
-<!--     		delNy, -->
-<!--     		hotel_seq -->
-<!--     	) values ( -->
-<!--     		#{defaultNy}, -->
-<!--     		#{info}, -->
-<!--     		0, -->
-<!--     		#{seq} -->
-<!--     	) -->
-<!--     </insert> -->
-    <insert id="insertHotelRoom">
-    	insert into `hotelRoom`(
-    		roomType,
-    		roomName,
-    		price,
-    		defaultNy,
-    		delNy,
-    		roomNum,
-    		hotel_seq
-    	) values (
-    		#{roomType},
-    		#{roomName},
-    		#{price},
-    		#{roomDefaultNy},
-    		0,
-    		#{roomNum},
-    		#{seq}
-    	)
-    </insert>
-    <insert id="insertHotelClose">
-    	insert into `hotelCloseDay`(
-    		date,
-    		hotel_seq,
-    		delNy
-    	) values (
-    		#{date},
-    		#{seq},
-    		0
-    	)
-    </insert>
-    <insert id="insertHotelInfo">
-    	insert into `hotelInfo`(
-    		hotel_seq,
-    		info_seq
-    	) values (
-    		#{seq},
-    		#{info_seqArray}
-    	)
-    </insert>
-    
-    <update id="updateHotel">
-    	UPDATE
-    		hotel
-    	SET
-    		hotelType = #{hotelType},
-			name = #{name},
-			zipCode = #{zipCode},
-			address = #{address},
-			addressDetail = #{addressDetail},
-			sido = #{sido},
-			tel = #{tel},
-			checkInTime = #{checkInTime},
-			checkOutTime = #{checkOutTime},
-			detailText = #{detailText},
-			delNy = #{delNY}
-    	WHERE
-    		seq = #{seq}
-    </update>
-<!-- 	<update id="updateHotelInfo"> -->
-<!--     	UPDATE -->
-<!--     		hotelInfo -->
-<!--     	SET -->
-<!--     		defaultNy = #{defaultNy}, -->
-<!--     		info= #{info}, -->
-<!--     		delNy= #{delNy} -->
-<!--     	WHERE -->
-<!--     		hotel_seq = #{seq} -->
-<!--     </update> -->
-    <update id="updateHotelRoom">
-    	UPDATE
-    		hotelRoom
-    	SET
-    		roomType = #{roomType},
-    		roomName = #{roomName},
-    		price = #{price},
-    		defaultNy = #{roomDefaultNy},
-    		delNy = #{roomDelNy},
-    		roomNum = #{roomNum}
-    	WHERE
-    		hotel_seq = #{seq}
-    </update>
-    <update id="updateHotelClose">
-    	UPDATE
-    		hotelCloseDay
-    	SET
-    		date = #{date},
-    		delNy = #{delNY}
-    	WHERE
-    		hotel_seq = #{seq}
-    </update>
-    <delete id="deleteHotel">
-    	DELETE FROM 
-    		hotel
-		WHERE
-			seq = #{seq}
-    
-    </delete>
-<!--     <delete id="deleteHotelInfo"> -->
-<!--     	DELETE FROM  -->
-<!--     		hotelInfo -->
-<!-- 		WHERE -->
-<!-- 			hotel_seq = #{seq} -->
-    
-<!--     </delete> -->
-    <delete id="deleteHotelRoom">
-    	DELETE FROM 
-    		hotelRoom
-		WHERE
-			hotel_seq = #{seq}
-    
-    </delete>
-    <delete id="deleteHotelClose">
-    	DELETE FROM 
-    		hotelCloseDay
-		WHERE
-			hotel_seq = #{seq}
-    </delete>
-    <update id="ueleteHotel">
-	    UPDATE
-	    	hotel	
-	    SET
-	    	delNy = "1"
-	    WHERE 1=1
-	    AND 
-	    	seq = #{seq}
-    </update>
-<!--     <update id="ueleteHotelInfo"> -->
-<!-- 	    UPDATE -->
-<!-- 	    	hotelInfo -->
-<!-- 	    SET -->
-<!-- 	    	delNy = "1" -->
-<!-- 	    WHERE 1=1 -->
-<!-- 	    AND  -->
-<!-- 	    	hotel_seq = #{seq} -->
-<!--     </update> -->
-    <update id="ueleteHotelRoom">
-	    UPDATE
-	    	hotelRoom
-	    SET
-	    	delNy = "1"
-	    WHERE 1=1
-	    AND 
-	    	hotel_seq = #{seq}
-    </update>
-    <update id="ueleteHotelClose">
-	    UPDATE
-	    	hotelCloseDay
-	    SET
-	    	delNy = "1"
-	    WHERE 1=1
-	    AND 
-	    	hotel_seq = #{seq}
-    </update>
-    
-    <insert id="insertUploaded">
-		INSERT INTO ${tableName} (
-			type
-			,defaultNy
-			,sort
-			,path
-			,originalName
-			,uuidName
-			,ext
-			,size
-			,delNy
-			,pseq
-			
+		</selectKey>
+	</insert>
+	<!-- <insert id="insertHotelInfo"> -->
+	<!-- insert into `hotelInfo`( -->
+	<!-- defaultNy, -->
+	<!-- info, -->
+	<!-- delNy, -->
+	<!-- hotel_seq -->
+	<!-- ) values ( -->
+	<!-- #{defaultNy}, -->
+	<!-- #{info}, -->
+	<!-- 0, -->
+	<!-- #{seq} -->
+	<!-- ) -->
+	<!-- </insert> -->
+	<insert id="insertHotelRoom">
+		insert into `hotelRoom`(
+		roomType,
+		roomName,
+		price,
+		roomDefaultNy,
+		roomDelNy,
+		roomNum,
+		hotel_seq
 		) values (
-			#{type}
-			,#{defaultNy}
-			,#{sort}
-			,#{path}
-			,#{originalName}
-			,#{uuidName}
-			,#{ext}
-			,#{size}
-			,0
-			,#{seq}
+		#{roomType},
+		#{roomName},
+		#{price},
+		#{defaultNy},
+		0,
+		#{roomNum},
+		#{seq}
+		)
+	</insert>
+	<insert id="insertHotelClose">
+		insert into `hotelCloseDay`(
+		date,
+		hotel_seq,
+		roomDelNy
+		) values (
+		#{date},
+		#{seq},
+		0
+		)
+	</insert>
+	<insert id="insertHotelInfo">
+		insert into `hotelInfo`(
+		hotel_seq,
+		info_seq
+		) values (
+		#{seq},
+		#{info_seqArray}
+		)
+	</insert>
+
+	<update id="updateHotel">
+		UPDATE
+		hotel
+		SET
+		hotelType = #{hotelType},
+		name = #{name},
+		zipCode = #{zipCode},
+		address = #{address},
+		addressDetail = #{addressDetail},
+		sido = #{sido},
+		tel = #{tel},
+		checkInTime = #{checkInTime},
+		checkOutTime = #{checkOutTime},
+		detailText = #{detailText},
+
+		roomDelNy = #{roomDelNy}
+
+		delNy = #{roomDelNy}
+
+		WHERE
+		seq = #{seq}
+	</update>
+	<!-- <update id="updateHotelInfo"> -->
+	<!-- UPDATE -->
+	<!-- hotelInfo -->
+	<!-- SET -->
+	<!-- defaultNy = #{defaultNy}, -->
+	<!-- info= #{info}, -->
+	<!-- delNy= #{delNy} -->
+	<!-- WHERE -->
+	<!-- hotel_seq = #{seq} -->
+	<!-- </update> -->
+	<update id="updateHotelRoom">
+		UPDATE
+		hotelRoom
+		SET
+		roomType = #{roomType},
+		roomName = #{roomName},
+		price = #{price},
+		defaultNy = #{defaultNy},
+		delNy = #{roomDelNy},
+		roomNum = #{roomNum}
+		WHERE
+		hotel_seq = #{seq}
+	</update>
+	<update id="updateHotelClose">
+		UPDATE
+		hotelCloseDay
+		SET
+		date = #{date},
+		delNy = #{roomDelNy}
+		WHERE
+		hotel_seq = #{seq}
+	</update>
+	<delete id="deleteHotel">
+		DELETE FROM
+		hotel
+		WHERE
+		seq = #{seq}
+
+	</delete>
+	<!-- <delete id="deleteHotelInfo"> -->
+	<!-- DELETE FROM -->
+	<!-- hotelInfo -->
+	<!-- WHERE -->
+	<!-- hotel_seq = #{seq} -->
+
+	<!-- </delete> -->
+	<delete id="deleteHotelRoom">
+		DELETE FROM
+		hotelRoom
+		WHERE
+		hotel_seq = #{seq}
+
+	</delete>
+	<delete id="deleteHotelClose">
+		DELETE FROM
+		hotelCloseDay
+		WHERE
+		hotel_seq = #{seq}
+	</delete>
+	<update id="ueleteHotel">
+		UPDATE
+		hotel
+		SET
+		delNy = "1"
+		WHERE 1=1
+		AND
+		seq = #{seq}
+	</update>
+	<!-- <update id="ueleteHotelInfo"> -->
+	<!-- UPDATE -->
+	<!-- hotelInfo -->
+	<!-- SET -->
+	<!-- delNy = "1" -->
+	<!-- WHERE 1=1 -->
+	<!-- AND -->
+	<!-- hotel_seq = #{seq} -->
+	<!-- </update> -->
+	<update id="ueleteHotelRoom">
+		UPDATE
+		hotelRoom
+		SET
+		delNy = "1"
+		WHERE 1=1
+		AND
+		hotel_seq = #{seq}
+	</update>
+	<update id="ueleteHotelClose">
+		UPDATE
+		hotelCloseDay
+		SET
+		delNy = "1"
+		WHERE 1=1
+		AND
+		hotel_seq = #{seq}
+	</update>
+
+	<insert id="insertUploaded">
+		INSERT INTO ${tableName} (
+		type
+		,defaultNy
+		,sort
+		,path
+		,originalName
+		,uuidName
+		,ext
+		,size
+		,delNy
+		,pseq
+
+		) values (
+		#{type}
+		,#{defaultNy}
+		,#{sort}
+		,#{path}
+		,#{originalName}
+		,#{uuidName}
+		,#{ext}
+		,#{size}
+		,0
+		,#{seq}
 		)
 	</insert>
 	
+		
+
 </mapper>

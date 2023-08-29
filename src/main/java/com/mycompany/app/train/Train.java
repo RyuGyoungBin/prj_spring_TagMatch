@@ -19,12 +19,35 @@ public class Train {
 	public String cityname;
 	
 
-	public String NodeId;
-	public String NodeName;
+	public String nodeId;
+	public String nodeName;
 	
-
+	// 출발시간 도착 
+	public String depPlaceId;
+	public String arrPlaceId;
+	//줄발일
+	public String depPlandTime;
 	
 	
+	
+	public String getDepPlaceId() {
+		return depPlaceId;
+	}
+	public void setDepPlaceId(String depPlaceId) {
+		this.depPlaceId = depPlaceId;
+	}
+	public String getArrPlaceId() {
+		return arrPlaceId;
+	}
+	public void setArrPlaceId(String arrPlaceId) {
+		this.arrPlaceId = arrPlaceId;
+	}
+	public String getDepPlandTime() {
+		return depPlandTime;
+	}
+	public void setDepPlandTime(String depPlandTime) {
+		this.depPlandTime = depPlandTime;
+	}
 	public Object getHeader() {
 		return header;
 	}
@@ -91,19 +114,20 @@ public class Train {
 	public void setItem(Object[] item) {
 		this.item = item;
 	}
-	
-	
 	public String getNodeId() {
-		return NodeId;
+		return nodeId;
 	}
 	public void setNodeId(String nodeId) {
-		NodeId = nodeId;
+		this.nodeId = nodeId;
 	}
 	public String getNodeName() {
-		return NodeName;
+		return nodeName;
 	}
 	public void setNodeName(String nodeName) {
-		NodeName = nodeName;
+		this.nodeName = nodeName;
 	}
+	
+	
+
 	
 }

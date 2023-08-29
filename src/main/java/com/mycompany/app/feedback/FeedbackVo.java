@@ -2,17 +2,20 @@ package com.mycompany.app.feedback;
 
 public class FeedbackVo {
 
-	
+	private String b;
 	private String seq;
-	private String type;
+	private Integer feedbackType;
 	private String review; 
 	private String reviewTitle; 
 
 	private String starRating; 
 	private String defaultNy; 
 	private String member_seq; 
+	private String type;
 	private String type_seq;
 
+	private String date;
+	private String dateRe;
 
 	// hotelUsr
 	private String hotelUsr_seq; 
@@ -21,30 +24,58 @@ public class FeedbackVo {
 	private String hotelUsrType; 
 	private String hotelUsr_price; 
 	private String hotelUsr_hotel_seq;
+	private String hotelRoomSeq;
 	
 	
 	// ticketUsr
 	private String ticketUsr_seq;
 	private String ticketUsr_title;
 	private String ticketUsrType;
-	private String	 ticketUsr_ticktcol;
-	private String ticketUsr_adualtNum;
+	private String ticketUsr_adultNum;
 	private String ticketUsr_childNum;
 	private String ticketUsr_price;
+	private String ticketSeq;
 
 	//trainUsr
+
 	private String trainUsr_seq;
+	private String trainUsr_title;
 	private String trainUsr_start;
 	private String trainUsr_startDateTime;
-	private String	 trainUsr_end;
+	private String trainUsr_end;
 	private String trainUsr_endDateTime;
 	private String trainUsrType;
 	private String trainUsr_sort;
-	private String trainUsr_adualtNum;
+	private String trainUsr_adultNum;
 	private String trainUsr_childNum;
 	private String trainUsr_price;
+	
+	private String typ;;
+	
+	
 
 	// paging 
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getTyp() {
+		return typ;
+	}
+
+	public void setTyp(String typ) {
+		this.typ = typ;
+	}
+
+	public void setFeedbackType(Integer feedbackType) {
+		this.feedbackType = feedbackType;
+	}
+
 	private int thisPage = 1;									// 현재 페이지
 //	private int rowNumToShow = Constants.ROW_NUM_TO_SHOW;		// 화면에 보여줄 데이터 줄 갯수
 //	private int pageNumToShow = Constants.PAGE_NUM_TO_SHOW;		// 화면에 보여줄 페이징 번호 갯수
@@ -205,20 +236,14 @@ public class FeedbackVo {
 		this.ticketUsrType = ticketUsrType;
 	}
 
-	public String getTicketUsr_ticktcol() {
-		return ticketUsr_ticktcol;
+
+
+	public String getTicketUsr_adultNum() {
+		return ticketUsr_adultNum;
 	}
 
-	public void setTicketUsr_ticktcol(String ticketUsr_ticktcol) {
-		this.ticketUsr_ticktcol = ticketUsr_ticktcol;
-	}
-
-	public String getTicketUsr_adualtNum() {
-		return ticketUsr_adualtNum;
-	}
-
-	public void setTicketUsr_adualtNum(String ticketUsr_adualtNum) {
-		this.ticketUsr_adualtNum = ticketUsr_adualtNum;
+	public void setTicketUsr_adultNum(String ticketUsr_adultNum) {
+		this.ticketUsr_adultNum = ticketUsr_adultNum;
 	}
 
 	public String getTicketUsr_childNum() {
@@ -286,12 +311,7 @@ public class FeedbackVo {
 	public void setTrainUsr_sort(String trainUsr_sort) {
 		this.trainUsr_sort = trainUsr_sort;
 	}
-	public String getTrainUsr_adualtNum() {
-		return trainUsr_adualtNum;
-	}
-	public void setTrainUsr_adualtNum(String trainUsr_adualtNum) {
-		this.trainUsr_adualtNum = trainUsr_adualtNum;
-	}
+
 	public String getTrainUsr_childNum() {
 		return trainUsr_childNum;
 	}
@@ -314,11 +334,11 @@ public class FeedbackVo {
 	public void setSeq(String seq) {
 		this.seq = seq;
 	}
-	public String getType() {
-		return type;
+	public Integer getFeedbackType() {
+		return feedbackType;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setType(Integer feedbackType) {
+		this.feedbackType = feedbackType;
 	}
 	public String getReview() {
 		return review;
@@ -393,6 +413,62 @@ public class FeedbackVo {
 	}
 	public void setHotelUsr_hotel_seq(String hotelUsr_hotel_seq) {
 		this.hotelUsr_hotel_seq = hotelUsr_hotel_seq;
+	}
+
+	public String getTrainUsr_title() {
+		return trainUsr_title;
+	}
+
+	public void setTrainUsr_title(String trainUsr_title) {
+		this.trainUsr_title = trainUsr_title;
+	}
+
+	public String getTrainUsr_adultNum() {
+		return trainUsr_adultNum;
+	}
+
+	public void setTrainUsr_adultNum(String trainUsr_adultNum) {
+		this.trainUsr_adultNum = trainUsr_adultNum;
+	}
+
+	public String getB() {
+		return b;
+	}
+
+	public void setB(String b) {
+		this.b = b;
+	}
+
+	public String getHotelRoomSeq() {
+		return hotelRoomSeq;
+	}
+
+	public void setHotelRoomSeq(String hotelRoomSeq) {
+		this.hotelRoomSeq = hotelRoomSeq;
+	}
+
+	public String getTicketSeq() {
+		return ticketSeq;
+	}
+
+	public void setTicketSeq(String ticketSeq) {
+		this.ticketSeq = ticketSeq;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+	public String getDateRe() {
+		return dateRe;
+	}
+
+	public void setDateRe(String dateRe) {
+		this.dateRe = dateRe;
 	}
 	
 }

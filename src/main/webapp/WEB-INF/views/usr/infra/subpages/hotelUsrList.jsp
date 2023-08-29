@@ -50,15 +50,15 @@
 				<aside class="col-lg-3">
 					<div class="box_style_cat">
 						<ul id="cat_nav">
-							<li><a href="/hotel?hotelType=1" id="active"><i
+							<li><a href="/hotelUsrList?hotelType=1" id="active"><i
 									class="icon_set_1_icon-51"></i>호텔 <span>(...)</span></a></li>
-							<li><a href="/hotel?hotelType=2"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
+							<li><a href="/hotelUsrList?hotelType=2"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
 							</li>
-							<li><a href="/hotel?hotelType=3"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a>
+							<li><a href="/hotelUsrList?hotelType=3"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a>
 							</li>
-							<li><a href="/hotel?hotelType=4"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a>
+							<li><a href="/hotelUsrList?hotelType=4"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a>
 							</li>
-							<li><a href="/hotel?hotelType=5"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a>
+							<li><a href="/hotelUsrList?hotelType=5"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a>
 							</li>
 						</ul>
 					</div>
@@ -129,14 +129,7 @@
 						<!--End collapse -->
 					</div>
 					<!--End filters col-->
-					<div class="box_style_2 d-none d-sm-block">
-						<i class="icon_set_1_icon-57"></i>
-						<h4>
-							Need <span>Help?</span>
-						</h4>
-						<a href="tel://004542344599" class="phone">+45 423 445 99</a> <small>Monday
-							to Friday 9.00am - 7.30pm</small>
-					</div>
+					
 				</aside>
 				<!--End aside -->
 				<div class="col-lg-9">
@@ -147,12 +140,13 @@
 							  <c:forEach items="${item}" var="item" varStatus="status">
 							  	<option value="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></option>
 							  </c:forEach>
-						 </select>
-						<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
-							<a href="all_tours_grid.html" class="bt_filters"><i
-								class="icon-th"></i></a> <a href="#" class="bt_filters"><i
-								class=" icon-list"></i></a>
-						</div>
+						 	</select>
+							<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
+								<a href="#none" class="bt_filters"><i class="icon-th"></i></a> 
+								<a href="#none" class="bt_filters"><i class="icon-list"></i></a>
+							</div>
+
+
 
 						</div>
 					</div>
@@ -176,17 +170,13 @@
 									<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>"><img
 										src="<c:out value="${list.path }"/><c:out value="${list.uuidName }"/>"
 										alt="Image">
-										<div class="short_info">
-											<i class="icon_set_1_icon-51"></i>
-										</div> </a>
+										</a>
 								</div>
 							</div>
 							<div class="col-lg-6 col-md-6">
 								<div class="tour_list_desc">
-									<div class="rating">
-										<i class="icon-star voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star  voted"></i><i class="icon-star  voted"></i><i
-											class="icon-star"></i><small>(75)</small>
+									<div>
+										<span id="rating<c:out value="${list.seq }"/>" class="rating"></span><small><c:out value="${list.starRating }"/></small>
 									</div>
 									<h3>
 										<strong><c:out value="${list.name }"/></strong>
@@ -317,8 +307,20 @@
 		//paging
 		goList = function(thisPage) {
 			$("input:hidden[name=thisPage]").val(thisPage);
-			$("form[name=formList]").attr("action", "/hotel").submit();
+			$("form[name=formList]").attr("action", "/hotelUsrList").submit();
 		}
+		
+		<c:forEach items="${list}" var="list" varStatus="statusUploaded">
+			var ratingStar<c:out value="${list.seq }"/> = $("#rating<c:out value="${list.seq }"/>");
+			var rating<c:out value="${list.seq }"/> = Math.floor(<c:out value="${list.starRating }"/>);
+			
+			for(var i=0; i<rating<c:out value="${list.seq }"/> ; i++){
+				ratingStar<c:out value="${list.seq }"/>.append('<i class="icon-smile voted"></i>')
+			}
+			for(var j=0; j<5-i; j++){
+				ratingStar<c:out value="${list.seq }"/>.append('<i class="icon-smile"></i>');
+			}
+		</c:forEach>
 	</script>
 	
 
