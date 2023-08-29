@@ -75,7 +75,7 @@
 						<div class="d-flex me-3 text-nowrap justify-content-center align-items-center mb-3">
 							<label class="me-3">여행일자</label>
 							<div>
-								<input class="date-pick form-control" type="text" placeholder="Select dates">
+								<input class="date-pick form-control" type="text" placeholder="Select dates" id="datePick">
 							</div>
 						</div>
 						<div class="d-flex">
@@ -120,7 +120,7 @@
 							<div class="d-flex me-3 text-nowrap align-items-center fw-bold">예약 인원</div>
 							<div class="d-flex me-3 text-nowrap align-items-center">
 								<label>성인(만 13세 이상)</label>
-								<select class="form-control">
+								<select class="form-control" id="trainAdult">
 									<option value="0">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -135,7 +135,7 @@
 							</div>
 							<div class="d-flex me-3 text-nowrap align-items-center">
 								<label>아동(만 6세 ~ 13세)</label>
-								<select class="form-control">
+								<select class="form-control" id="trainChild">
 									<option value="0">0</option>
 									<option value="1">1</option>
 									<option value="2">2</option>
@@ -153,83 +153,70 @@
 					</div>
 					<div>
 						<h4 class="p-3 fw-bold">가는 철도편 선택</h4>
-						<table class="table">
+						<table class="table text-center">
 							<thead>
 								<tr>
 									<th>열차종</th>
 									<th>출도착역</th>
 									<th>여정시간</th>
-									<th>소요시간</th>
-									<th>예약여부</th>
 									<th>요금</th>
-									<th>좌석조회</th>
+									<th>좌석</th>
 								</tr>
 							</thead>
-							<tbody id="trainDate">
-								<tr>
-									<th>ktx</th>
-									<th>서울-부산</th>
-									<th>05:12 - 07:49</th>
-									<th>02:37</th>
-									<th class="text-danger">예약여부</th>
-									<th>성인:59,800원<br>아동:26,900원</th>
-									<th><a>좌석조회</a></th>
-								</tr>
+							<tbody id="t1trainDate" class="trainDate">
 							</tbody>
 						
 						</table>
 					</div>
 					<div>
 						<h4 class="p-3 fw-bold">오는 철도편 선택</h4>
-						<table class="table">
+						<table class="table text-center">
 							<thead>
 								<tr>
 									<th>열차종</th>
 									<th>출도착역</th>
 									<th>여정시간</th>
-									<th>소요시간</th>
-									<th>예약여부</th>
 									<th>요금</th>
-									<th>좌석조회</th>
+									<th>좌석</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<th>ktx</th>
-									<th>서울-부산</th>
-									<th>05:12 - 07:49</th>
-									<th>02:37</th>
-									<th class="text-danger">예약여부</th>
-									<th>성인:59,800원<br>아동:26,900원</th>
-									<th><a>좌석조회</a></th>
-								</tr>
+							<tbody id="t2trainDate" class="trainDate">
 							</tbody>
 						
 						</table>
 					</div>
 					<div class="d-flex flex-column border p-3 text-center">
-						<div class="mb-1 d-flex">
+						<div class="mb-1 d-flex align-items-center">
 							<span class="border border-danger rounded-pill px-2 col-1">가는편</span>
-							<div class="d-flex justify-content-around col-11">
-								<span>서울역 - 부산역</span>
-								<span class="mx-3">ktx 1편</span>
-								<span>07/24(월) 05:12 출발</span>
-								<span class="ms-3">좌석정보 : </span>
-								<span class="me-3">7호차 14B</span>
-								<span>59,800원</span>
+							<div class="d-flex justify-content-around col-11 align-items-center">
+								<span></span>
+								<span class="mx-3"></span>
+								<span></span>
+								<span class="ms-3"></span>
+								<span class="me-3"></span>
+								<span id="t1Price"></span>원
+								<button type="button" class="trainClose btn btn-danger">X</button>
 							</div>
 						</div>
-						<div class="mb-1 d-flex">
+						<div class="mb-1 d-flex align-items-center">
 							<span class="border border-info rounded-pill px-2 col-1">오는편</span>
-							<div class="d-flex justify-content-around col-11">
-								<span>부산역 - 서울역</span>
-								<span class="mx-3">ktx 2편</span>
-								<span>07/26(월) 05:12 출발</span>
-								<span class="ms-3">좌석정보 : </span>
-								<span class="me-3">8호차 15B</span>
-								<span>59,800원</span>
+							<div class="d-flex justify-content-around col-11 align-items-center">
+								<span></span>
+								<span class="mx-3"></span>
+								<span></span>
+								<span class="ms-3"></span>
+								<span class="me-3"></span>
+								<span id="t2Price"></span>원
+								<button type="button" class="trainClose btn btn-danger">X</button>
 							</div>
 						</div>
+						<div class="mb-1 d-flex justify-content-between align-items-center">
+						<div class="d-flex align-items-center">
+							<div style="font-size: 9px;">선택된 총 기차요금</div>
+							<div class="mx-2"><span id="trainTotal"></span>원</div>
+						</div>
+						<button type="button" class="btn btn-sm btn-primary" id="trainBtn">선택완료</button>
+					</div>
 					</div>
 			        <div class="border-bottom border-primary py-3 mb-3"></div>
 			        <div class="col-12 d-flex justify-content-end mb-3">
@@ -324,282 +311,6 @@
 								</div>
 								<!-- End box tour -->
 							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[전주] 지식공간 서유구와빙허각</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[해남]포레스트수목원</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[곡성] 압록상상스쿨(7/1~)</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[인천 논현]슈슈봉봉키즈카페</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[강원 정선]하이원 워터월드...</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[화순]키즈라라 테마파크</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-							<div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[고양]매직플로우 원더래빗(~7/31)...</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[천안]오션어드벤처 인근 사랑티켓 렌탈샵</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[정선]하이원 워터월드 눈의나라 ....</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[대전]티놀자 애니멀파크</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[경북]국립낙동강생물자원관</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-							<!-- End col-md-6 -->
 					<!-- End row -->
 				</div>
 			<!-- 				상세정보 				 -->
@@ -754,281 +465,6 @@
 										</div>
 										<!-- end rating -->
 									
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[전주] 지식공간 서유구와빙허각</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[해남]포레스트수목원</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[곡성] 압록상상스쿨(7/1~)</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[인천 논현]슈슈봉봉키즈카페</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[강원 정선]하이원 워터월드...</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[화순]키즈라라 테마파크</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-							<div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[고양]매직플로우 원더래빗(~7/31)...</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[천안]오션어드벤처 인근 사랑티켓 렌탈샵</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[정선]하이원 워터월드 눈의나라 ....</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[대전]티놀자 애니멀파크</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
-										<!-- End wish list-->
-									</div>
-								</div>
-								<!-- End box tour -->
-							</div>
-	                        <div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
-									<div class="img_container">
-										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[경북]국립낙동강생물자원관</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
-										
 										<!-- End wish list-->
 									</div>
 								</div>
@@ -1259,6 +695,10 @@
 		$("#ticketTotal").text(allTicketPrice);
 		
 	})
+	$("#trainBtn").on("click", function(){
+		$("#trainPriceF").text($("#trainTotal").text());
+		$("#totalPrice").text(parseInt($("#ticketPriceF").text()) + parseInt($("#hotelPriceF").text()) + parseInt($("#trainPriceF").text()));
+	})
 	$("#hotelBtn").on("click", function(){
 		$("#hotelPriceF").text($("#hotelTotal").text());
 		$("#totalPrice").text(parseInt($("#ticketPriceF").text()) + parseInt($("#hotelPriceF").text()) + parseInt($("#trainPriceF").text()));
@@ -1296,7 +736,7 @@
 	          }
 	      });
 	      $('input.date-pick').on('apply.daterangepicker', function(ev, picker) {
-	          $(this).val(picker.startDate.format('MM-DD-YY') + ' > ' + picker.endDate.format('MM-DD-YY'));
+	          $(this).val(picker.startDate.format('YYYYMMDD') + '>' + picker.endDate.format('YYYYMMDD'));
 	      });
 	      $('input.date-pick').on('cancel.daterangepicker', function(ev, picker) {
 	          $(this).val('');
@@ -1360,7 +800,7 @@
 
 		
 		$("#searchTrain").on("click", function(){
-			
+			console.log($("#datePick").val())
 			$.ajax({
 				async: true,
 				cache:false,
@@ -1368,30 +808,109 @@
 				url:"/trainStationYY",
 				
 				data: {
+						   "depPlandTime" : $("#datePick").val(),
 						   "depPlaceId": $("#t1departStation").val(),
 						   "arrPlaceId": $("#t1arriveStation").val()
 					},
 				success:function(response){
 					console.log(response.rtTrain);
-					$("#trainDate").empty();
+					$("#t1trainDate").empty();
 			 		stationLi = "";
 			 		$.each(response.rtTrain,function(index, value) {
+		 				var depplandtime = (value.depplandtime.toString()).substr(8,2);
+		 				var arrplandtime = (value.arrplandtime.toString()).substr(8,2);
+		 				var depplandMin = (value.depplandtime.toString()).substr(10,2);
+		 				var arrplandMin = (value.arrplandtime.toString()).substr(10,2);
 				 		stationLi += "<tr>";
 				 		stationLi += "<th>"+value.traingradename+"</th>";
 				 		stationLi += "<th>"+value.depplacename+" - "+value.arrplacename+"</th>";
-				 		stationLi += "<th>"+value.depplandtime+" - "+value.arrplandtime+"</th>";
-				 		stationLi += "<th>"+value.arrplandtime-value.depplandtime+"</th>";
-				 		stationLi += "<th>성인:59,800원<br>아동:26,900원</th>";
-				 		stationLi +=  "<th><a>좌석조회</a></th>";
+				 		stationLi += "<th>"+arrplandtime+" : "+arrplandMin+" - "+depplandtime+" : "+depplandMin+"</th>";
+				 		stationLi += "<th>성인:30,000원<br>아동:15,000원</th>";
+				 		stationLi += "<th>입석</th>";
 				 		stationLi +=  "</tr>";
 		 			})
-			 		$("#trainDate").append(stationLi);
+			 		$("#t1trainDate").append(stationLi);
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
-		            alert("ajaxUpdate " + textStatus + " : " + errorThrown);
+		            alert("기차가 없습니다");
 			}
-		});
+			});
+				$.ajax({
+					async: true,
+					cache:false,
+					type:"post",
+					url:"/trainStationXX",
+					
+					data: {
+							   "depPlandTime" : $("#datePick").val(),
+							   "depPlaceId": $("#t2departStation").val(),
+							   "arrPlaceId": $("#t2arriveStation").val()
+						},
+					success:function(response){
+						console.log(response.rtTrain);
+						$("#t2trainDate").empty();
+				 		stationLi2 = "";
+				 		$.each(response.rtTrain2,function(index, value) {
+			 				var depplandtime = (value.depplandtime.toString()).substr(8,2);
+			 				var arrplandtime = (value.arrplandtime.toString()).substr(8,2);
+			 				var depplandMin = (value.depplandtime.toString()).substr(10,2);
+			 				var arrplandMin = (value.arrplandtime.toString()).substr(10,2);
+					 		stationLi2 += "<tr>";
+					 		stationLi2 += "<th>"+value.traingradename+"</th>";
+					 		stationLi2 += "<th>"+value.depplacename+" - "+value.arrplacename+"</th>";
+					 		stationLi2 += "<th>"+arrplandtime+" : "+arrplandMin+" - "+depplandtime+" : "+depplandMin+"</th>";
+					 		stationLi2 += "<th>성인:30,000원<br>아동:15,000원</th>";
+					 		stationLi2 += "<th>입석</th>";
+					 		stationLi2 +=  "</tr>";
+			 			})
+				 		$("#t2trainDate").append(stationLi2);
+					},
+					error: function(jqXHR, textStatus, errorThrown) {
+						alert("기차가 없습니다");
+					}
+				})
+		
 			
+		})
+		$(document).on("click", "#t1trainDate tr", function(){
+			var trainArr = $(this).children("th:eq(2)").text().split("-");
+			var trainStr = trainArr[0];
+			var trainDatArr = $("#datePick").val().split(">");
+			var trainDatMM = trainDatArr[0].substr(4,2);
+			var trainDatDD = trainDatArr[0].substr(6,2);
+			var trainAdult = $("#trainAdult").val();
+			var trainChild = $("#trainChild").val();
+			
+			$("#t1Price").prev().prev().prev().prev().prev().text($(this).children("th:eq(1)").text());
+			$("#t1Price").prev().prev().prev().prev().text($(this).children("th:eq(0)").text());
+			$("#t1Price").prev().prev().prev().text(trainDatMM +"/"+trainDatDD+" "+trainStr+" 출발");
+			$("#t1Price").prev().prev().text("좌석정보 : ");
+			$("#t1Price").prev().text($(this).children("th:eq(4)").text());
+			$("#t1Price").text((30000*trainAdult + 15000*trainChild));
+			$("#trainTotal").text($("#t1Price").text()+$("#t2Price").text())
+		})
+		
+		$(document).on("click", "#t2trainDate tr", function(){
+			var trainArr = $(this).children("th:eq(2)").text().split("-");
+			var trainStr = trainArr[0];
+			var trainDatArr = $("#datePick").val().split(">");
+			var trainDatMM = trainDatArr[1].substr(4,2);
+			var trainDatDD = trainDatArr[1].substr(6,2);
+			var trainAdult = $("#trainAdult").val();
+			var trainChild = $("#trainChild").val();
+			
+			$("#t2Price").prev().prev().prev().prev().prev().text($(this).children("th:eq(1)").text());
+			$("#t2Price").prev().prev().prev().prev().text($(this).children("th:eq(0)").text());
+			$("#t2Price").prev().prev().prev().text(trainDatMM +"/"+trainDatDD+" "+trainStr+" 출발");
+			$("#t2Price").prev().prev().text("좌석정보 : ");
+			$("#t2Price").prev().text($(this).children("th:eq(4)").text());
+			$("#t2Price").text((30000*trainAdult + 15000*trainChild));
+			
+			$("#trainTotal").text(parseInt($("#t1Price").text())+parseInt($("#t2Price").text()))
+		})
+		
+		$(".trainClose").on("click", function(){
+			$(this).siblings("span").empty();
 		})
 		
 		

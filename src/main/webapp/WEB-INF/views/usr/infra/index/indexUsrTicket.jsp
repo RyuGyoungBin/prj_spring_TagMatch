@@ -357,7 +357,7 @@
 										</a>
 										<div class="score"><span>7.5</span>Good</div>
 										<div class="short_info hotel">
-											<span class="price"><sup>3000</sup>원</span>
+											<span class="price"><c:out value="${list.adultPrice}"></c:out>원</span>
 										</div>
 								</div>
 								<div class="hotel_title">

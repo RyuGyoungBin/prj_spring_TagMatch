@@ -7,6 +7,7 @@ public class InfoVo {
 	private Integer info;
 	private String iClass;
 	private Integer delNy;
+	private String info_seq;
 	private String hotel_seq;
 	private String spot_seq;
 	private String name;
@@ -194,6 +195,12 @@ public class InfoVo {
 	}
 	public void setSpot_seq(String spot_seq) {
 		this.spot_seq = spot_seq;
+	}
+	public String getInfo_seq() {
+		return info_seq;
+	}
+	public void setInfo_seq(String info_seq) {
+		this.info_seq = info_seq;
 	}
 	
 }
