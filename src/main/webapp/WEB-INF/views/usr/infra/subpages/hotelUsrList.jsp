@@ -23,7 +23,7 @@
 
 			<div class="animated fadeInDown">
 
-				<h1>호텔</h1>
+				<h1>숙소</h1>
 				<p></p>
 			</div>
 		</div>
@@ -37,8 +37,8 @@
 			<div class="container">
 				<ul>
 					<li><a href="#">Home</a></li>
-					<li><a href="#">Category</a></li>
-					<li>Page active</li>
+					<li><a href="/hotelUsrList"> 숙소 전체 보기 </a></li>
+					
 				</ul>
 			</div>
 		</div>
@@ -50,17 +50,14 @@
 				<aside class="col-lg-3">
 					<div class="box_style_cat">
 						<ul id="cat_nav">
-							<li><a href="/hotelUsrList?hotelType=1" id="active"><i
-									class="icon_set_1_icon-51"></i>호텔 <span>(...)</span></a></li>
-							<li><a href="/hotelUsrList?hotelType=2"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a>
-							</li>
-							<li><a href="/hotelUsrList?hotelType=3"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a>
-							</li>
-							<li><a href="/hotelUsrList?hotelType=4"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a>
-							</li>
-							<li><a href="/hotelUsrList?hotelType=5"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a>
-							</li>
+							<li><a href="/hotelUsrList?hotelType=1" data-hotel-type="1"><i class="icon_set_1_icon-51"></i>호텔 <span>(...)</span></a></li>
+							<li><a href="/hotelUsrList?hotelType=2" data-hotel-type="2"><i class="icon_set_1_icon-3"></i>펜션 <span>(...)</span></a></li>
+							<li><a href="/hotelUsrList?hotelType=3" data-hotel-type="3"><i class="icon_set_1_icon-4"></i>콘도<span>(...)</span></a></li>
+							<li><a href="/hotelUsrList?hotelType=4" data-hotel-type="4"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a></li>
+							<li><a href="/hotelUsrList?hotelType=5" data-hotel-type="5"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a></li>
 						</ul>
+						
+						
 					</div>
 
 					<div id="filters_col">
@@ -321,6 +318,25 @@
 				ratingStar<c:out value="${list.seq }"/>.append('<i class="icon-smile"></i>');
 			}
 		</c:forEach>
+		
+		
+		
+// 		const listItems = document.querySelectorAll("#cat_nav li a");
+// 		listItems.forEach(item => {
+// 		    item.addEventListener("click", () => {
+// 		        listItems.forEach(i => i.removeAttribute("id"));
+// 		        item.setAttribute("id", "active");
+// 		    });
+// 		});
+		
+		const hotelType = document.body.dataset.hotelType;
+		const listItems = document.querySelectorAll("#cat_nav li a");
+		listItems.forEach(item => {
+		    const itemHotelType = new URL(item.href).searchParams.get("hotelType");
+		    if (itemHotelType === hotelType) {
+		        item.setAttribute("id", "active");
+		    }
+		});
 	</script>
 	
 
