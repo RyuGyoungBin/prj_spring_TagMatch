@@ -49,7 +49,7 @@
         d.adultNum spotUsr_adultNum,
         d.childNum spotUsr_childNum,
         d.price spotUsr_price,
-        d.ticketSeq spotUsr_seq
+        d.spotSeq spotUsr_seq
     </sql>
     
     

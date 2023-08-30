@@ -147,10 +147,14 @@ public class MemberController {
 		
 		Member rtMember = service.selectUsr(vo);
 		
+		
 		if(rtMember != null) {
 			
 			 // 로그인 성공 시 세션에 사용자 정보 저장
-	        session.setAttribute("sessionId", vo.getId());
+	        httpSession.setMaxInactiveInterval(60 * 60);
+	        session.setAttribute("sessionId", rtMember.getId());
+	        session.setAttribute("sessionSeq", rtMember.getSeq());
+	        session.setAttribute("sessionType", rtMember.getType());
 	        
 			returnMap.put("rtMember", rtMember);
 			returnMap.put("rt", "success");

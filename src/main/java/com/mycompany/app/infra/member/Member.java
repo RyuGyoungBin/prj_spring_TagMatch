@@ -17,6 +17,7 @@ public class Member {
 	private String delNy;
 	private String memberType;
 	private String sido;
+	private Integer type;
 	
 	
 
@@ -109,6 +110,12 @@ public class Member {
 	}
 	public void setDelNy(String delNy) {
 		this.delNy = delNy;
+	}
+	public Integer getType() {
+		return type;
+	}
+	public void setType(Integer type) {
+		this.type = type;
 	}
 
 	
