@@ -45,7 +45,7 @@ public class HotelServiceImpl implements HotelService{
 	@Override
 	public int insert(Hotel dto) throws Exception {
 		dao.insert(dto);
-		dao.insertHotelClose(dto);
+//		dao.insertHotelClose(dto);
 		dao.insertHotelRoom(dto);
 		
 //		for(int i = 0 ; i < dto.getInfo_seqArray().length ; i++) {
@@ -62,7 +62,7 @@ public class HotelServiceImpl implements HotelService{
 	@Override
 	public int update(Hotel dto) throws Exception {
 		dao.update(dto);
-		dao.updateHotelClose(dto);
+//		dao.updateHotelClose(dto);
 //		dao.updateHotelInfo(dto); 
 		dao.updateHotelRoom(dto);
 		
@@ -73,7 +73,7 @@ public class HotelServiceImpl implements HotelService{
 
 	@Override
 	public int delete(Hotel dto) {
-		dao.deleteHotelClose(dto);
+//		dao.deleteHotelClose(dto);
 //		dao.deleteHotelInfo(dto);
 		dao.deleteHotelRoom(dto);
 		dao.delete(dto);
@@ -85,7 +85,7 @@ public class HotelServiceImpl implements HotelService{
 		dao.uelete(dto);
 //		dao.ueleteHotelInfo(dto);
 		dao.ueleteHotelRoom(dto);
-		dao.ueleteHotelClose(dto);
+//		dao.ueleteHotelClose(dto);
 		return 0;
 	}
 

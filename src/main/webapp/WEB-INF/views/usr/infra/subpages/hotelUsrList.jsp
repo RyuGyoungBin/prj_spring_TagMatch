@@ -151,108 +151,106 @@
 					 <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 					  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<c:forEach items="${list }" var="list" varStatus="status">
-					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.1s">
-						<div class="row">
-							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3 popular">
-									<span>Popular</span>
-								</div>
-								<div class="wishlist">
-									<a class="tooltip_flip tooltip-effect-1"
-										href="javascript:void(0);">+<span
-										class="tooltip-content-flip"><span class="tooltip-back">Add
-												to wishlist</span></span></a>
-								</div>
-								<div class="img_list">
-									<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>"><img
-										src="<c:out value="${list.path }"/><c:out value="${list.uuidName }"/>"
-										alt="Image">
-										</a>
-								</div>
-							</div>
-							<div class="col-lg-6 col-md-6">
-								<div class="tour_list_desc">
-									<div>
-										<span id="rating<c:out value="${list.seq }"/>" class="rating"></span><small><c:out value="${list.starRating }"/></small>
-									</div>
-									<h3>
-										<strong><c:out value="${list.name }"/></strong>
-									</h3>
-									<p><c:out value="${list.detailText }"/></p>
-									<ul class="add_info">
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-83"></i></span>
-												<div class="tooltip-content">
-													<h4>Schedule</h4>
-													<strong>Monday to Friday</strong> 09.00 AM - 5.30 PM <br>
-													<strong>Saturday</strong> 09.00 AM - 5.30 PM <br> <strong>Sunday</strong>
-													<span class="label label-danger">Closed</span>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-41"></i></span>
-												<div class="tooltip-content">
-													<h4>Address</h4>
-													<c:out value="${list.address }"/>, <c:out value="${list.addressDetail }"/> <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-97"></i></span>
-												<div class="tooltip-content">
-													<h4>Languages</h4>
-													English - French - Chinese - Russian - Italian
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-27"></i></span>
-												<div class="tooltip-content">
-													<h4>Parking</h4>
-													1-3 Rue Elisée Reclus <br> 76 Rue du Général Leclerc <br>
-													8 Rue Caillaux 94923 <br>
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="tooltip_styled tooltip-effect-4">
-												<span class="tooltip-item"><i
-													class="icon_set_1_icon-25"></i></span>
-												<div class="tooltip-content">
-													<h4>Transport</h4>
-													<strong>Metro: </strong>Musée du Louvre station (line 1) <br>
-													<strong>Bus:</strong> 21, 24, 27, 39, 48, 68, 69, 72, 81,
-													95 <br>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-lg-2 col-md-2">
-								<div class="price_list">
-									<div>
-										₩<c:out value="${list.price }"/>~<span class="normal_price_list"></span><small>*1인 <c:out value="${list.roomName }"/>
-											기준</small>
-										<p>
-											<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>" class="btn_1">Details</a>
-										</p>
-									</div>
+						<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.1s">
+							<div class="row">
+								<div class="col-lg-4 col-md-4 position-relative">
 
+									<div class="wishlist">
+										<a class="tooltip_flip tooltip-effect-1"
+											href="javascript:void(0);">+<span
+											class="tooltip-content-flip"><span class="tooltip-back">Add
+													to wishlist</span></span></a>
+									</div>
+									<div class="img_list">
+										<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>"><img
+											src="<c:out value="${list.path }"/><c:out value="${list.uuidName }"/>"
+											alt="Image">
+											</a>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6">
+									<div class="tour_list_desc">
+										<div>
+											<span id="rating<c:out value="${list.seq }"/>" class="rating"></span><small><c:out value="${list.starRating }"/></small>
+										</div>
+										<h3>
+											<strong><c:out value="${list.name }"/></strong>
+										</h3>
+										<p><c:out value="${list.detailText }"/></p>
+<!-- 										<ul class="add_info"> -->
+<!-- 											<li> -->
+<!-- 												<div class="tooltip_styled tooltip-effect-4"> -->
+<!-- 													<span class="tooltip-item"><i -->
+<!-- 														class="icon_set_1_icon-83"></i></span> -->
+<!-- 													<div class="tooltip-content"> -->
+<!-- 														<h4>Schedule</h4> -->
+<!-- 														<strong>Monday to Friday</strong> 09.00 AM - 5.30 PM <br> -->
+<!-- 														<strong>Saturday</strong> 09.00 AM - 5.30 PM <br> <strong>Sunday</strong> -->
+<!-- 														<span class="label label-danger">Closed</span> -->
+<!-- 													</div> -->
+<!-- 												</div> -->
+<!-- 											</li> -->
+<!-- 											<li> -->
+<!-- 												<div class="tooltip_styled tooltip-effect-4"> -->
+<!-- 													<span class="tooltip-item"><i -->
+<!-- 														class="icon_set_1_icon-41"></i></span> -->
+<!-- 													<div class="tooltip-content"> -->
+<!-- 														<h4>Address</h4> -->
+<%-- 														<c:out value="${list.address }"/>, <c:out value="${list.addressDetail }"/> <br> --%>
+<!-- 													</div> -->
+<!-- 												</div> -->
+<!-- 											</li> -->
+<!-- 											<li> -->
+<!-- 												<div class="tooltip_styled tooltip-effect-4"> -->
+<!-- 													<span class="tooltip-item"><i -->
+<!-- 														class="icon_set_1_icon-97"></i></span> -->
+<!-- 													<div class="tooltip-content"> -->
+<!-- 														<h4>Languages</h4> -->
+<!-- 														English - French - Chinese - Russian - Italian -->
+<!-- 													</div> -->
+<!-- 												</div> -->
+<!-- 											</li> -->
+<!-- 											<li> -->
+<!-- 												<div class="tooltip_styled tooltip-effect-4"> -->
+<!-- 													<span class="tooltip-item"><i -->
+<!-- 														class="icon_set_1_icon-27"></i></span> -->
+<!-- 													<div class="tooltip-content"> -->
+<!-- 														<h4>Parking</h4> -->
+<!-- 														1-3 Rue Elisée Reclus <br> 76 Rue du Général Leclerc <br> -->
+<!-- 														8 Rue Caillaux 94923 <br> -->
+<!-- 													</div> -->
+<!-- 												</div> -->
+<!-- 											</li> -->
+<!-- 											<li> -->
+<!-- 												<div class="tooltip_styled tooltip-effect-4"> -->
+<!-- 													<span class="tooltip-item"><i -->
+<!-- 														class="icon_set_1_icon-25"></i></span> -->
+<!-- 													<div class="tooltip-content"> -->
+<!-- 														<h4>Transport</h4> -->
+<!-- 														<strong>Metro: </strong>Musée du Louvre station (line 1) <br> -->
+<!-- 														<strong>Bus:</strong> 21, 24, 27, 39, 48, 68, 69, 72, 81, -->
+<!-- 														95 <br> -->
+<!-- 													</div> -->
+<!-- 												</div> -->
+<!-- 											</li> -->
+<!-- 										</ul> -->
+									</div>
+								</div>
+								<div class="col-lg-2 col-md-2">
+									<div class="price_list">
+										<div>
+											₩<c:out value="${list.price }"/>~<span class="normal_price_list"></span><small>*1인 <c:out value="${list.roomName }"/>
+												기준</small>
+											<p>
+												<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>" class="btn_1">Details</a>
+											</p>
+										</div>
+	
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<!--End strip -->
+						<!--End strip -->
 					</c:forEach>
 					<div class="container-fluid px-0 mt-2">
 						    <div class="row">
