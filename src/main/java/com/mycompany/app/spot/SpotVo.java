@@ -69,8 +69,27 @@ public class SpotVo {
 		private int endRnumForOracle;								// 쿼리 끝 row
 		private Integer RNUM;
 
-		private int startRnumForMysql = 0;							// 쿼리 시작 row
+		private int startRnumForMysql = 0;						// 쿼리 시작 row
 		
+		//리뷰 S
+		private Integer rating;
+		private Integer cnt;
+		
+		public Integer getRating() {
+			return rating;
+		}
+		public void setRating(Integer rating) {
+			this.rating = rating;
+		}
+		public Integer getCnt() {
+			return cnt;
+		}
+		public void setCnt(Integer cnt) {
+			this.cnt = cnt;
+		}
+		//리뷰 E
+
+
 		public void setParamsPaging(int totalRows) {
 			
 //			setThisPage(3);

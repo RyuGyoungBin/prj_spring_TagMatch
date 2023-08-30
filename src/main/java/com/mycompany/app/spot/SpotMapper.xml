@@ -86,6 +86,72 @@
 			<if test="detailText != null and !detailText.equals('')">AND detailText = #{detailText}</if>
 </select>
 	
+	<select id="selectRating" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+	    	a.spotType,
+	    	a.name,
+	    	a.zipCode,
+	    	a.address,
+	    	a.addressDetail,
+	    	a.sido,
+	    	a.tel,
+	    	a.openTime,
+	    	a.closedTime,
+	    	a.adultPrice,
+	    	a.childPrice,
+	    	a.detailText,
+			ROUND(avg(c.starRating),1) starRating,
+			d.path,
+			d.type,
+			d.uuidName
+		FROM
+			spot a
+		    LEFT JOIN spotUsr b on b.spot_seq = a.seq
+		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 2
+		    LEFT JOIN spotUploaded d on d.pseq = a.seq AND d.type = 1
+		WHERE 1=1
+			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq}</if>
+		
+		GROUP BY a.seq
+		
+		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
+		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
+	</select>
+	<select id="selectRatingOne" resultMap="resultMapObj">
+		SELECT
+			a.seq,
+	    	a.spotType,
+	    	a.name,
+	    	a.zipCode,
+	    	a.address,
+	    	a.addressDetail,
+	    	a.sido,
+	    	a.tel,
+	    	a.openTime,
+	    	a.closedTime,
+	    	a.adultPrice,
+	    	a.childPrice,
+	    	a.detailText,
+			ROUND(avg(c.starRating),1) starRating,
+			COUNT(c.review) cnt,
+			d.path,
+			d.type,
+			d.uuidName,
+			b.spot_seq,
+			b.seq spotUsr_seq
+		FROM
+			hotel a
+		    LEFT JOIN spotUsr b on b.spot_seq = a.seq
+		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 2
+		    LEFT JOIN spotUploaded d on d.pseq = a.seq AND d.type = 1
+		WHERE 1=1
+			AND a.seq = #{seq}
+		
+		GROUP BY a.seq
+	</select>
+	
+	
    	<select id="selectOneCount" resultType="Integer">
 		SELECT count(*)
 		<include refid="selectCommon" />

@@ -29,6 +29,12 @@ public class SpotServiceImpl implements SpotService{
 	public Spot selectOne(SpotVo vo) { return dao.selectOne(vo); }
 
 	@Override
+	public List<Spot> selectRating(SpotVo vo) {return dao.selectRating(vo);}
+	
+	@Override
+	public Spot selectRatingOne(SpotVo vo) {return dao.selectRatingOne(vo);}
+	
+	@Override
 	public int update(Spot dto){
 		
 		dao.update(dto);

@@ -12,6 +12,11 @@ public interface SpotService {
 	public Spot selectOne(SpotVo vo);
 	public List<Spot> selectListUploaded(SpotVo vo);
 	
+	public List<Spot>selectRating(SpotVo vo);
+	public Spot selectRatingOne(SpotVo vo);
+	
+	
+	
 	public int insert(Spot dto) throws Exception;	
 
 	public int update(Spot dto);

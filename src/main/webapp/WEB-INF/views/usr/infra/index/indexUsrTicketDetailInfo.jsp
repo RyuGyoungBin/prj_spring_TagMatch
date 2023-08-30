@@ -21,8 +21,8 @@
 					</div>
 					<div class="col-md-4">
 						<div id="price_single_main" class="hotel">
-							성인 입장권<span><c:out value="${spot.adultPrice}"></c:out></span><br>
-							어린이 입장권<span><c:out value="${spot.childPrice}"></c:out></span>
+							성인 입장권<span id="adultPrice"><c:out value="${spot.adultPrice}"></c:out></span><br>
+							어린이 입장권<span id="childPrice"><c:out value="${spot.childPrice}"></c:out></span>
 						</div>
 					</div>
 				</div>
@@ -103,7 +103,7 @@
 
 					<div class="row">
 						<div class="col-lg-3">
-							<h3>Description</h3>
+							<h3>상세내용</h3>
 						</div>
 						<div class="col-lg-9">
 							<p>
@@ -130,8 +130,8 @@
 
 					<div class="row">
 						<div class="col-lg-3">
-							<h3>Reviews</h3>
-							<a href="#" class="btn_1 add_bottom_30" data-bs-toggle="modal" data-bs-target="#myReview">Leave a review</a>
+							<h3>리뷰</h3>
+							<a href="#" class="btn_1 add_bottom_30" data-bs-toggle="modal" data-bs-target="#myReview">리뷰작성하기</a>
 						</div>
 						<div class="col-lg-9">
 							<div id="score_detail"><span>7.5</span>Good <small>(Based on 34 reviews)</small>
@@ -169,43 +169,30 @@
 							</div>
 							<!-- End row -->
 							<hr>
-							<div class="review_strip_single">
-								<img src="img/avatar1.jpg" alt="Image" class="rounded-circle">
-								<small> - 10 March 2015 -</small>
-								<h4>Jhon Doe</h4>
-								<p>
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-								</p>
-								<div class="rating">
-									<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-								</div>
+							<div class="col-lg-9">
+							<div id="score_detail"><span><c:out value="${spot.starRating }"/></span> 
+							<small class="rating" id="reviewRating">
+							</small>
+							<small>(Based on <c:out value="${spot.cnt }"/> reviews)</small>
 							</div>
-							<!-- End review strip -->
-
-							<div class="review_strip_single">
-								<img src="img/avatar2.jpg" alt="Image" class="rounded-circle">
-								<small> - 10 March 2015 -</small>
-								<h4>Jhon Doe</h4>
-								<p>
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-								</p>
-								<div class="rating">
-									<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-								</div>
-							</div>
-							<!-- End review strip -->
-
-							<div class="review_strip_single last">
-								<img src="img/avatar3.jpg" alt="Image" class="rounded-circle">
-								<small> - 10 March 2015 -</small>
-								<h4>Jhon Doe</h4>
-								<p>
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-								</p>
-								<div class="rating">
-									<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-								</div>
-							</div>
+							End general_rating
+							<hr>
+							<c:set var="type" value="1"/>
+							<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
+								<c:if test="${feedback.type eq type && feedback.type_seq eq spot.spotUsr_seq}">
+									<div class="review_strip_single">
+										<small><c:out value="${feedback.date}"/></small>
+										<h4><c:out value="${feedback.member_seq}"/></h4>
+										<p>
+											"<c:out value="${feedback.review}"/>"
+										</p>
+										<div class="rating" id="rating<c:out value="${feedback.seq}"/>">
+										</div>
+									</div>
+								</c:if>
+							</c:forEach>
+							End review strip
+						</div>
 							<!-- End review strip -->
 						</div>
 					</div>
@@ -342,7 +329,7 @@
 						<i class="icon_mail_alt"></i>
 					</div>
 					<p>You will receive an email containing a link allowing you to reset your password to a new preferred one.</p>
-					<div class="text-center"><input type="submit" value="Reset Password" class="btn_1"></div>
+					<div class="text-center"><input type="button" value="Reset Password" class="btn_1"></div>
 				</div>
 			</div>
 		</form>
@@ -353,42 +340,19 @@
 	<!-- Modal Review -->
 	<div class="modal fade" id="myReview" tabindex="-1" role="dialog" aria-labelledby="myReviewLabel" aria-hidden="true">
 		<div class="modal-dialog">
-			<div class="modal-content">
+			<div class="modal-content" style="bottom: -150px;">
 				<div class="modal-header">
-					<h4 class="modal-title" id="myReviewLabel">Write your review</h4>
+					<h4 class="modal-title" id="myReviewLabel">리뷰 작성하기</h4>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
-					<div id="message-review">
-					</div>
 					<form method="post" action="assets/review_hotel.php" name="review_hotel" id="review_hotel">
 						<input name="hotel_name" id="hotel_name" type="hidden" value="Mariott Hotel Paris">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input name="name_review" id="name_review" type="text" placeholder="Your name" class="form-control">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<input name="lastname_review" id="lastname_review" type="text" placeholder="Your last name" class="form-control">
-								</div>
-							</div>
-						</div>
-						<!-- End row -->
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<input name="email_review" id="email_review" type="email" placeholder="Your email" class="form-control">
-								</div>
-							</div>
+							<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<select class="form-select" name="room_type_review" id="room_type_review">
-										<option value="">Select room type</option>
-										<option value="Single room">Single Room</option>
-										<option value="Double Room">Double Room</option>
-										<option value="King double room">King Double Room</option>
+										<option value="">입장권</option>
 									</select>
 								</div>
 							</div>
@@ -398,72 +362,23 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									<label>Cleanliness</label>
-									<select class="form-select" name="cleanliness_review" id="cleanliness_review">
-										<option value="">Please review</option>
-										<option value="Low">Low</option>
-										<option value="Sufficient">Sufficient</option>
-										<option value="Good">Good</option>
-										<option value="Excellent">Excellent</option>
-										<option value="Superb">Super</option>
-										<option value="Not rated">I don't know</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Comfort</label>
-									<select class="form-select" name="comfort_review" id="comfort_review">
-										<option value="">Please review</option>
-										<option value="Low">Low</option>
-										<option value="Sufficient">Sufficient</option>
-										<option value="Good">Good</option>
-										<option value="Excellent">Excellent</option>
-										<option value="Superb">Super</option>
-										<option value="Not rated">I don't know</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<!-- End row -->
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Price</label>
+									<label>별점 별점</label>
 									<select class="form-select" name="price_review" id="price_review">
-										<option value="">Please review</option>
-										<option value="Low">Low</option>
-										<option value="Sufficient">Sufficient</option>
-										<option value="Good">Good</option>
-										<option value="Excellent">Excellent</option>
-										<option value="Superb">Super</option>
-										<option value="Not rated">I don't know</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Quality</label>
-									<select class="form-select" name="quality_review" id="quality_review">
-										<option value="">Please review</option>
-										<option value="Low">Low</option>
-										<option value="Sufficient">Sufficient</option>
-										<option value="Good">Good</option>
-										<option value="Excellent">Excellent</option>
-										<option value="Superb">Super</option>
-										<option value="Not rated">I don't know</option>
+										<option value="">별점 선택</option>
+										<option value="Low">매우 불만족</option>
+										<option value="Sufficient">불만족</option>
+										<option value="Good">보통</option>
+										<option value="Excellent">만족</option>
+										<option value="Superb">매우 만족</option>
 									</select>
 								</div>
 							</div>
 						</div>
 						<!-- End row -->
 						<div class="form-group">
-							<textarea name="review_text" id="review_text" class="form-control" style="height:100px" placeholder="Write your review"></textarea>
+							<textarea name="review_text" id="review_text" class="form-control" style="height:100px" placeholder="리뷰를 작성해 주세요"></textarea>
 						</div>
-						<div class="form-group">
-							<input type="text" id="verify_review" class=" form-control" placeholder="Are you human? 3 + 1 =">
-						</div>
-						<input type="submit" value="Submit" class="btn_1" id="submit-review">
+						<input type="button" value="등록하기" class="btn_1" id="submit-review">
 					</form>
 				</div>
 			</div>
@@ -495,6 +410,31 @@
 				autoplay: false
 			});
 		});
+		
+	    // 단위마다 쉼표 추가하는 함수 ---------------------------------
+	     document.addEventListener("DOMContentLoaded", function() {
+        const priceElement = document.getElementById("adultPrice");
+        const productPrice = parseFloat(priceElement.textContent.replace("원", "").replace(/,/g, "")); // 가격에서 쉼표 제거
+
+        // 천 단위마다 쉼표 추가하는 함수  맨위 메인 가격
+        function addCommasToPrice(price) {
+            return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        priceElement.textContent = addCommasToPrice(productPrice) + "원";
+    });
+	     document.addEventListener("DOMContentLoaded", function() {
+	         const priceElement = document.getElementById("childPrice");
+	         const productPrice = parseFloat(priceElement.textContent.replace("원", "").replace(/,/g, "")); // 가격에서 쉼표 제거
+
+	         // 천 단위마다 쉼표 추가하는 함수  맨위 메인 가격
+	         function addCommasToPrice(price) {
+	             return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	         }
+
+	         priceElement.textContent = addCommasToPrice(productPrice) + "원";
+	     });
+	     
 	</script>
 
     <!-- DATEPICKER  -->
@@ -516,6 +456,8 @@
           $(this).val('');
       });
     });
+    
+    
     </script>
 	
 	<!-- Map -->

@@ -52,6 +52,31 @@ public class Spot {
 	private String[] uploadImgSpotDeleteSeq;
 	private String[] uploadImgSpotDeletePathFile;
 	
+	//리뷰 S
+	private Double starRating;
+	private Integer cnt;
+	private String spotUsr_seq;
+	
+	public Double getStarRating() {
+		return starRating;
+	}
+	public void setStarRating(Double starRating) {
+		this.starRating = starRating;
+	}
+	public Integer getCnt() {
+		return cnt;
+	}
+	public void setCnt(Integer cnt) {
+		this.cnt = cnt;
+	}
+	public String getSpotUsr_seq() {
+		return spotUsr_seq;
+	}
+	public void setSpotUsr_seq(String spotUsr_seq) {
+		this.spotUsr_seq = spotUsr_seq;
+	}
+	//리뷰 E
+	
 	
 	//info S
 	public String getInfo_seq() {
