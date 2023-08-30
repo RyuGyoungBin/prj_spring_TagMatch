@@ -58,8 +58,10 @@ public class IndexController {
 	}
 	
 	@RequestMapping("/bookingUsrView")
-	public String bookingUsr(Model model) throws Exception {
+	public String bookingUsr(Model model, HotelVo hotelvo) throws Exception {
+		List<Hotel> hotel = hotelService.selectRating(hotelvo);
 		TrainProc.train(model);
+		model.addAttribute("hotel", hotel);
 		return "/usr/infra/index/bookingUsrView";
 	}
 	

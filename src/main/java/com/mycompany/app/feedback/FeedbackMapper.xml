@@ -13,7 +13,7 @@
 	        feedback a
 	        LEFT JOIN trainUsr b ON b.seq = a.type_seq 
 	        LEFT JOIN hotelUsr c ON c.seq = a.type_seq  
-	        LEFT JOIN ticketUsr d ON d.seq = a.type_seq 
+	        LEFT JOIN spotUsr d ON d.seq = a.type_seq 
 	    WHERE 1=1
 	    	<if test="feedbackType == '1'">and c.hotel_seq = #{seq}</if>
 	</sql> 
@@ -44,12 +44,12 @@
         c.price hotelUsr_price,
         c.hotel_seq hotelUsr_hotel_seq,
         c.hotelRoomSeq,
-        d.title ticketUsr_title,
-        d.type ticketUsrType,
-        d.adultNum ticketUsr_adultNum,
-        d.childNum ticketUsr_childNum,
-        d.price ticketUsr_price,
-        d.ticketSeq ticketUsr_seq
+        d.title spotUsr_title,
+        d.type spotUsrType,
+        d.adultNum spotUsr_adultNum,
+        d.childNum spotUsr_childNum,
+        d.price spotUsr_price,
+        d.ticketSeq spotUsr_seq
     </sql>
     
     
@@ -106,8 +106,8 @@
         select * from hotelUsr
     </select>
     
-    <select id="selectTicketUsr" resultMap="resultMapObj">
-        select * from ticketUsr
+    <select id="selectspotUsr" resultMap="resultMapObj">
+        select * from spotUsr
     </select>
     
     <insert id="insertFeedback">
