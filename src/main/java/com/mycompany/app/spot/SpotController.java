@@ -80,7 +80,6 @@ public class SpotController {
 		model.addAttribute("listUploaded",spotImg);
 		model.addAttribute("feedback",feedback);
 		return "/usr/infra/index/indexUsrTicketDetailInfo";
-		
 	}
 	
 	@RequestMapping("/detailInfo")

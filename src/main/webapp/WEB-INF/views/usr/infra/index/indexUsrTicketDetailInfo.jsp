@@ -169,17 +169,30 @@
 							</div>
 							<!-- End row -->
 							<hr>
-							<div class="review_strip_single">
-								<img src="img/avatar1.jpg" alt="Image" class="rounded-circle">
-								<small> - 10 March 2015 -</small>
-								<h4>Jhon Doe</h4>
-								<p>
-									"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a lorem quis neque interdum consequat ut sed sem. Duis quis tempor nunc. Interdum et malesuada fames ac ante ipsum primis in faucibus."
-								</p>
-								<div class="rating">
-									<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-								</div>
+							<div class="col-lg-9">
+							<div id="score_detail"><span><c:out value="${spot.starRating }"/></span> 
+							<small class="rating" id="reviewRating">
+							</small>
+							<small>(Based on <c:out value="${spot.cnt }"/> reviews)</small>
 							</div>
+							End general_rating
+							<hr>
+							<c:set var="type" value="1"/>
+							<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
+								<c:if test="${feedback.type eq type && feedback.type_seq eq spot.spotUsr_seq}">
+									<div class="review_strip_single">
+										<small><c:out value="${feedback.date}"/></small>
+										<h4><c:out value="${feedback.member_seq}"/></h4>
+										<p>
+											"<c:out value="${feedback.review}"/>"
+										</p>
+										<div class="rating" id="rating<c:out value="${feedback.seq}"/>">
+										</div>
+									</div>
+								</c:if>
+							</c:forEach>
+							End review strip
+						</div>
 							<!-- End review strip -->
 						</div>
 					</div>
