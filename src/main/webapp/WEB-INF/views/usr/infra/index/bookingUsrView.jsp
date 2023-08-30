@@ -286,23 +286,18 @@
 				</div>
 				<div class="overflow-auto mb-3 ticketBox" style="height: 650px;">
 					<div class="d-flex flex-wrap pt-2">
+					<c:forEach items="${hotel }" var="hotel" varStatus="status">
 							<div class="col-md-4 px-2">
 								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
 									<div class="img_container">
 										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
+											<img src="<c:out value="${hotel.path }"/><c:out value="${hotel.uuidName }"/>" width="300" height="533" class="img-fluid" alt="Image">
+											<div class="score"><span><c:out value="${hotel.starRating }"/></span>Good</div>
 										</a>
 									</div>
 									<div class="hotel_title">
-										<h3 ><strong>[경주]동궁원</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
+										<h3 ><strong>[<c:out value="${hotel.sido }"/>]<c:out value="${hotel.name }"/></strong></h3>
+										<div class="rating" id="rating<c:out value="${hotel.seq }"/>">
 										</div>
 										<!-- end rating -->
 									
@@ -311,6 +306,7 @@
 								</div>
 								<!-- End box tour -->
 							</div>
+					</c:forEach>
 					<!-- End row -->
 				</div>
 			<!-- 				상세정보 				 -->
@@ -906,13 +902,23 @@
 			$("#t2Price").prev().text($(this).children("th:eq(4)").text());
 			$("#t2Price").text((30000*trainAdult + 15000*trainChild));
 			
-			$("#trainTotal").text(parseInt($("#t1Price").text())+parseInt($("#t2Price").text()))
+			$("#trainTotal").text((parseInt($("#t1Price").text())+parseInt($("#t2Price").text())))
 		})
 		
 		$(".trainClose").on("click", function(){
 			$(this).siblings("span").empty();
 		})
-		
+		<c:forEach items="${hotel}" var="hotel" varStatus="statusUploaded">
+			var ratingStar<c:out value="${hotel.seq }"/> = $("#rating<c:out value="${hotel.seq }"/>");
+			var rating<c:out value="${hotel.seq }"/> = Math.floor(<c:out value="${hotel.starRating }"/>);
+			
+			for(var i=0; i<rating<c:out value="${hotel.seq }"/> ; i++){
+				ratingStar<c:out value="${hotel.seq }"/>.append('<i class="icon-smile voted"></i>')
+			}
+			for(var j=0; j<5-i; j++){
+				ratingStar<c:out value="${hotel.seq }"/>.append('<i class="icon-smile"></i>');
+			}
+		</c:forEach>
 		
 		
 </script>
