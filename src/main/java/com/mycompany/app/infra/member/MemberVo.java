@@ -19,6 +19,7 @@ public class MemberVo {
 	private String delNy;
 	private String memberType;
 	private String sido;
+	private Integer type;
 
 
 
@@ -286,6 +287,12 @@ public void setParamsPaging(int totalRows) {
 		System.out.println("getStartRnumForMysql(): " + getStartRnumForMysql());
 		
 	}
+public Integer getType() {
+	return type;
+}
+public void setType(Integer type) {
+	this.type = type;
+}
 
 	
 

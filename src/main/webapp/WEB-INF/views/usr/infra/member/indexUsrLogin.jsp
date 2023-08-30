@@ -144,7 +144,33 @@
 	<script src="/resources/assets/js/jquery-3.6.4.min.js"></script>
 	<script src="/resources/assets/js/common_scripts_min.js"></script>
 	<script src="/resources/assets/js/functions.js"></script>
-   
+    <script type="text/javascript">
+    
+    	$("#btn").on("click", function(){
+    		$.ajax({
+    			async: true 
+    			,cache: false
+    			,type: "post"
+    			/* ,dataType:"json" */
+    			,url: "/loginUsrProc"
+    			/* ,data : $("#formLogin").serialize() */
+    			,data : { "id" : $("#id").val(),
+    				"password" : $("#pass").val()}
+    			,success: function(response) {
+    				if(response.rt == "success") {
+    					location.href = "/index";
+    				} else {
+    					alert("그런 회원 없습니다.");
+    				}
+    			}
+    			,error : function(jqXHR, textStatus, errorThrown){
+    				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+    			}
+    		});
+    	})
+    	
+    
+    </script>
 
 
   </body>
