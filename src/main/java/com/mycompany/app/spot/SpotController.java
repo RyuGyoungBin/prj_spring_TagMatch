@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.mycompany.app.feedback.Feedback;
 import com.mycompany.app.feedback.FeedbackServiceImpl;
 import com.mycompany.app.feedback.FeedbackVo;
+import com.mycompany.app.info.Info;
+import com.mycompany.app.info.InfoServiceImpl;
+import com.mycompany.app.info.InfoVo;
 
 
 
@@ -25,6 +28,9 @@ public class SpotController {
 	
 	@Autowired
 	FeedbackServiceImpl feedbackService;
+	
+	@Autowired
+	InfoServiceImpl infoService;
 
 	
 	@RequestMapping ("/spotXdmList")
@@ -70,14 +76,16 @@ public class SpotController {
 	
 	
 	@RequestMapping("/indexUsrTicketDetailInfo")
-	public String indexUsrTiketMoreInformation(SpotVo vo, FeedbackVo feedbackVo, Model model) {
+	public String indexUsrTiketMoreInformation(SpotVo vo, FeedbackVo feedbackVo, InfoVo infoVo,  Model model) {
 		System.out.println("feedback : "+feedbackVo.getFeedbackType());
 		System.out.println("seq : "+vo.getSeq());
-		Spot spot = service.selectOne(vo);
+		Spot spot = service.selectRatingOne(vo);
 		List<Spot> spotImg = service.selectListUploaded(vo); 
+		List<Info>info = infoService.selectSpot(infoVo);
 		List<Feedback>feedback = feedbackService.selectList(feedbackVo);
 		model.addAttribute("spot",spot);
 		model.addAttribute("listUploaded",spotImg);
+		model.addAttribute("info",info);
 		model.addAttribute("feedback",feedback);
 		return "/usr/infra/index/indexUsrTicketDetailInfo";
 	}

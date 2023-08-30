@@ -56,6 +56,7 @@ public class Spot {
 	private Double starRating;
 	private Integer cnt;
 	private String spotUsr_seq;
+	private String spot_seq;
 	
 	public Double getStarRating() {
 		return starRating;
@@ -75,9 +76,16 @@ public class Spot {
 	public void setSpotUsr_seq(String spotUsr_seq) {
 		this.spotUsr_seq = spotUsr_seq;
 	}
+	public String getSpot_seq() {
+		return spot_seq;
+	}
+	public void setSpot_seq(String spot_seq) {
+		this.spot_seq = spot_seq;
 	//리뷰 E
 	
 	
+
+	}
 	//info S
 	public String getInfo_seq() {
 		return info_seq;

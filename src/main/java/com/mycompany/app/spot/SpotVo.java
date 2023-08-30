@@ -21,9 +21,11 @@ public class SpotVo {
 	private String closed;
 	private Integer delNy;
 	private String info;
+	private String spot_seq;
 	
 	
-//	spotInfo
+
+	//	spotInfo
 	private String info_seq;
 	//soptCloseDay
 	private String date;
@@ -160,6 +162,12 @@ public class SpotVo {
 
 
 
+		public String getSpot_seq() {
+			return spot_seq;
+		}
+		public void setSpot_seq(String spot_seq) {
+			this.spot_seq = spot_seq;
+		}
 		public void setInfo_seq(String info_seq) {
 			this.info_seq = info_seq;
 		}
