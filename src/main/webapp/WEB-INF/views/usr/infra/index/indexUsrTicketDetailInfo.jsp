@@ -56,16 +56,9 @@
 				<div class="col-lg-12" id="single_tour_desc">
 					<div id="single_tour_feat" style="border-top:2px solid #555; padding-top:20px">
 						<ul>
-							<li><i class="icon_set_2_icon-116"></i>Plasma TV</li>
-							<li><i class="icon_set_1_icon-86"></i>Free Wifi</li>
-							<li><i class="icon_set_2_icon-110"></i>Poll</li>
-							<li><i class="icon_set_1_icon-59"></i>Breakfast</li>
-							<li><i class="icon_set_1_icon-22"></i>Pet allowed</li>
-							<li><i class="icon_set_1_icon-13"></i>Accessibiliy</li>
-							<li><i class="icon_set_1_icon-27"></i>Parking</li>
-<%-- 							<c:forEach items="${info}" var="info" varStatus="statusUploaded"> --%>
-<%-- 							<li><i class="<c:out value="${info.iClass }" />"></i><c:out value="${info.info }" /></li> --%>
-<%-- 							</c:forEach> --%>
+							<c:forEach items="${info}" var="info" varStatus="statusUploaded">
+							<li><i class="<c:out value="${info.iClass }" />"></i><c:out value="${info.info}" /></li>
+							</c:forEach>
 						</ul>
 					</div>
 					<p class="d-block d-lg-none"><a class="btn_map" data-bs-toggle="collapse" href="#collapseMap" aria-expanded="false" aria-controls="collapseMap" data-text-swap="Hide map" data-text-original="View on map">View on map</a>
@@ -134,40 +127,6 @@
 							<a href="#" class="btn_1 add_bottom_30" data-bs-toggle="modal" data-bs-target="#myReview">리뷰작성하기</a>
 						</div>
 						<div class="col-lg-9">
-							<div id="score_detail"><span>7.5</span>Good <small>(Based on 34 reviews)</small>
-							</div>
-							<!-- End general_rating -->
-							<div class="row" id="rating_summary">
-								<div class="col-md-6">
-									<ul>
-										<li>Position
-											<div class="rating">
-												<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-											</div>
-										</li>
-										<li>Comfort
-											<div class="rating">
-												<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i>
-											</div>
-										</li>
-									</ul>
-								</div>
-								<div class="col-md-6">
-									<ul>
-										<li>Price
-											<div class="rating">
-												<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile"></i><i class="icon-smile"></i>
-											</div>
-										</li>
-										<li>Quality
-											<div class="rating">
-												<i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i><i class="icon-smile voted"></i>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-							<!-- End row -->
 							<hr>
 							<div class="col-lg-9">
 							<div id="score_detail"><span><c:out value="${spot.starRating }"/></span> 
@@ -175,9 +134,8 @@
 							</small>
 							<small>(Based on <c:out value="${spot.cnt }"/> reviews)</small>
 							</div>
-							End general_rating
 							<hr>
-							<c:set var="type" value="1"/>
+							<c:set var="type" value="2"/>
 							<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
 								<c:if test="${feedback.type eq type && feedback.type_seq eq spot.spotUsr_seq}">
 									<div class="review_strip_single">
@@ -191,7 +149,6 @@
 									</div>
 								</c:if>
 							</c:forEach>
-							End review strip
 						</div>
 							<!-- End review strip -->
 						</div>
@@ -485,6 +442,32 @@
 			}
 		}
 	});
+		
+		/* 별점 표시 부분 시작 */
+		var hotelrating = Math.floor(<c:out value="${spot.starRating }"/>);
+		for(var i=0; i<hotelrating ; i++){
+			$("#reviewRating").append('<i class="icon-smile voted"></i>')
+		}
+		for(var j=0; j<5-i; j++){
+			$("#reviewRating").append('<i class="icon-smile"></i>')
+		}
+	
+		
+	<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
+		var reviewRating<c:out value="${feedback.seq }"/> = $("#rating<c:out value="${feedback.seq }"/>");
+		var rating<c:out value="${feedback.seq }"/> = <c:out value="${feedback.starRating }"/>;
+	</c:forEach>
+	
+	
+	<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
+		for(var i=0; i<rating<c:out value="${feedback.seq }"/> ; i++){
+			reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile voted"></i>')
+		}
+		for(var j=0; j<5-i; j++){
+			reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile"></i>');
+		}
+	</c:forEach>
+	/* 별점 표시 부분 끝 */	
 	</script>
 
 	<!--Review modal validation -->

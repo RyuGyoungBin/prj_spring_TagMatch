@@ -16,6 +16,7 @@
 	    	LEFT JOIN spotUploaded e on e.pseq = a.seq AND e.type = 1
 		WHERE 1=1 
 		<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
+    	<if test="spotType != null and !spotType.equals('')">AND a.spotType = #{spotlType}</if>
     </sql>
 	
 	 
@@ -107,7 +108,7 @@
 			d.uuidName
 		FROM
 			spot a
-		    LEFT JOIN spotUsr b on b.spot_seq = a.seq
+		    LEFT JOIN spotUsr b on b.spotSeq = a.seq
 		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 2
 		    LEFT JOIN spotUploaded d on d.pseq = a.seq AND d.type = 1
 		WHERE 1=1
@@ -121,7 +122,7 @@
 	<select id="selectRatingOne" resultMap="resultMapObj">
 		SELECT
 			a.seq,
-	    	a.spotType,
+	    	a.type spotType,
 	    	a.name,
 	    	a.zipCode,
 	    	a.address,
@@ -138,11 +139,11 @@
 			d.path,
 			d.type,
 			d.uuidName,
-			b.spot_seq,
+			b.spotSeq spot_seq,
 			b.seq spotUsr_seq
 		FROM
-			hotel a
-		    LEFT JOIN spotUsr b on b.spot_seq = a.seq
+			spot a
+		    LEFT JOIN spotUsr b on b.spotSeq = a.seq
 		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 2
 		    LEFT JOIN spotUploaded d on d.pseq = a.seq AND d.type = 1
 		WHERE 1=1
