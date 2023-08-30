@@ -218,26 +218,26 @@
 		#{seq}
 		)
 	</insert>
-	<insert id="insertHotelClose">
-		insert into `hotelCloseDay`(
-		date,
-		hotel_seq,
-		roomDelNy
-		) values (
-		#{date},
-		#{seq},
-		0
-		)
-	</insert>
-	<insert id="insertHotelInfo">
-		insert into `hotelInfo`(
-		hotel_seq,
-		info_seq
-		) values (
-		#{seq},
-		#{info_seqArray}
-		)
-	</insert>
+<!-- 	<insert id="insertHotelClose"> -->
+<!-- 		insert into `hotelCloseDay`( -->
+<!-- 		date, -->
+<!-- 		hotel_seq, -->
+<!-- 		roomDelNy -->
+<!-- 		) values ( -->
+<!-- 		#{date}, -->
+<!-- 		#{seq}, -->
+<!-- 		0 -->
+<!-- 		) -->
+<!-- 	</insert> -->
+<!-- 	<insert id="insertHotelInfo"> -->
+<!-- 		insert into `hotelInfo`( -->
+<!-- 		hotel_seq, -->
+<!-- 		info_seq -->
+<!-- 		) values ( -->
+<!-- 		#{seq}, -->
+<!-- 		#{info_seqArray} -->
+<!-- 		) -->
+<!-- 	</insert> -->
 
 	<update id="updateHotel">
 		UPDATE
@@ -254,50 +254,48 @@
 		checkOutTime = #{checkOutTime},
 		detailText = #{detailText},
 
-		roomDelNy = #{roomDelNy}
-
 		delNy = #{roomDelNy}
 
 		WHERE
 		seq = #{seq}
 	</update>
-	<!-- <update id="updateHotelInfo"> -->
-	<!-- UPDATE -->
-	<!-- hotelInfo -->
-	<!-- SET -->
-	<!-- defaultNy = #{defaultNy}, -->
-	<!-- info= #{info}, -->
-	<!-- delNy= #{delNy} -->
-	<!-- WHERE -->
-	<!-- hotel_seq = #{seq} -->
-	<!-- </update> -->
+<!-- 	<update id="updateHotelInfo"> -->
+<!-- 		UPDATE -->
+<!-- 			hotelInfo -->
+<!-- 		SET -->
+<!--  			defaultNy = #{defaultNy}, --> 
+<!-- 				info= #{info}, -->
+<!-- 				delNy= #{delNy} -->
+<!-- 			WHERE -->
+<!-- 				hotel_seq = #{seq} -->
+<!-- 	</update> -->
 	<update id="updateHotelRoom">
 		UPDATE
-		hotelRoom
+			hotelRoom
 		SET
-		roomType = #{roomType},
-		roomName = #{roomName},
-		price = #{price},
-		defaultNy = #{defaultNy},
-		delNy = #{roomDelNy},
-		roomNum = #{roomNum}
+			roomType = #{roomType},
+			roomName = #{roomName},
+			price = #{price},
+<!-- 			defaultNy = #{defaultNy}, -->
+			delNy = #{roomDelNy},
+			roomNum = #{roomNum}
 		WHERE
-		hotel_seq = #{seq}
+			hotel_seq = #{seq}
 	</update>
 	<update id="updateHotelClose">
 		UPDATE
-		hotelCloseDay
+			hotelCloseDay
 		SET
-		date = #{date},
-		delNy = #{roomDelNy}
+			date = #{date},
+			delNy = #{roomDelNy}
 		WHERE
-		hotel_seq = #{seq}
+			hotel_seq = #{seq}
 	</update>
 	<delete id="deleteHotel">
 		DELETE FROM
-		hotel
+			hotel
 		WHERE
-		seq = #{seq}
+			seq = #{seq}
 
 	</delete>
 	<!-- <delete id="deleteHotelInfo"> -->
@@ -309,25 +307,25 @@
 	<!-- </delete> -->
 	<delete id="deleteHotelRoom">
 		DELETE FROM
-		hotelRoom
+			hotelRoom
 		WHERE
-		hotel_seq = #{seq}
+			hotel_seq = #{seq}
 
 	</delete>
 	<delete id="deleteHotelClose">
 		DELETE FROM
-		hotelCloseDay
+			hotelCloseDay
 		WHERE
-		hotel_seq = #{seq}
+			hotel_seq = #{seq}
 	</delete>
 	<update id="ueleteHotel">
 		UPDATE
-		hotel
+			hotel
 		SET
-		delNy = "1"
+			delNy = "1"
 		WHERE 1=1
 		AND
-		seq = #{seq}
+			seq = #{seq}
 	</update>
 	<!-- <update id="ueleteHotelInfo"> -->
 	<!-- UPDATE -->
@@ -340,47 +338,47 @@
 	<!-- </update> -->
 	<update id="ueleteHotelRoom">
 		UPDATE
-		hotelRoom
+			hotelRoom
 		SET
-		delNy = "1"
+			delNy = "1"
 		WHERE 1=1
 		AND
-		hotel_seq = #{seq}
+			hotel_seq = #{seq}
 	</update>
 	<update id="ueleteHotelClose">
 		UPDATE
-		hotelCloseDay
+			hotelCloseDay
 		SET
-		delNy = "1"
+			delNy = "1"
 		WHERE 1=1
 		AND
-		hotel_seq = #{seq}
+			hotel_seq = #{seq}
 	</update>
 
 	<insert id="insertUploaded">
 		INSERT INTO ${tableName} (
-		type
-		,defaultNy
-		,sort
-		,path
-		,originalName
-		,uuidName
-		,ext
-		,size
-		,delNy
-		,pseq
+			type
+			,defaultNy
+			,sort
+			,path
+			,originalName
+			,uuidName
+			,ext
+			,size
+			,delNy
+			,pseq
 
 		) values (
-		#{type}
-		,#{defaultNy}
-		,#{sort}
-		,#{path}
-		,#{originalName}
-		,#{uuidName}
-		,#{ext}
-		,#{size}
-		,0
-		,#{seq}
+			#{type}
+			,#{defaultNy}
+			,#{sort}
+			,#{path}
+			,#{originalName}
+			,#{uuidName}
+			,#{ext}
+			,#{size}
+			,0
+			,#{seq}
 		)
 	</insert>
 	
