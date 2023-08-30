@@ -30,7 +30,7 @@ public class HotelDao {
 	public int insertHotelClose(Hotel dto) { return sqlSession.insert(namespace + ".insertHotelClose", dto); }
 	
 	public int update(Hotel dto) { return sqlSession.update(namespace + ".updateHotel", dto); }
-	public int updateHotelInfo(Hotel dto) { return sqlSession.update(namespace + ".updateHotelInfo", dto); }
+//	public int updateHotelInfo(Hotel dto) { return sqlSession.update(namespace + ".updateHotelInfo", dto); }
 	public int updateHotelRoom(Hotel dto) { return sqlSession.update(namespace + ".updateHotelRoom", dto); }
 	public int updateHotelClose(Hotel dto) { return sqlSession.update(namespace + ".updateHotelClose", dto); }
 	

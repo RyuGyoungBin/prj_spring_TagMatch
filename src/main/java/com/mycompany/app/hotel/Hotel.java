@@ -16,7 +16,10 @@ public class Hotel {
 	private String checkInTime;
 	private String checkOutTime;
 	private String detailText;
+	private String delNy;
+	
 //	hotelinfo
+	private String info;
 	private String info_seq;
 	private String[] info_seqArray;
 //	hotelCloseDay
@@ -76,6 +79,15 @@ public class Hotel {
 	}
 	public void setStarRating(Double starRating) {
 		this.starRating = starRating;
+	}
+	
+	
+	
+	public String getInfo() {
+		return info;
+	}
+	public void setInfo(String info) {
+		this.info = info;
 	}
 	public String[] getInfo_seqArray() {
 		return info_seqArray;
@@ -150,6 +162,15 @@ public class Hotel {
 		this.detailText = detailText;
 	}
 	
+	
+	
+	
+	public String getDelNy() {
+		return delNy;
+	}
+	public void setDelNy(String delNy) {
+		this.delNy = delNy;
+	}
 	public String getInfo_seq() {
 		return info_seq;
 	}
