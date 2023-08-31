@@ -62,6 +62,8 @@ public class InfoController {
 		} else if(vo.getSpot_seq() != null || vo.getSpot_seq() != "") {
 			List<Info> spot = service.selectSpot(vo);
 			model.addAttribute("group", spot);
+		} else {
+			
 		}
 		return "/xdm/info/infoGroupXdmForm";
 	}

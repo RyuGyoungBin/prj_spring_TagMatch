@@ -60,14 +60,14 @@
                             <form>
                                 <div class="form-group">
                                     <label>아이디</label>
-                                    <input type="text" class="form-control"  id=id placeholder="아이디">
+                                    <input type="text" class="form-control"  id="id" placeholder="아이디">
                                 </div>
                                 <div class="form-group">
                                     <label >비밀번호</label>
-                                    <input type="password" class=" form-control" id=pass placeholder="비밀번호">
+                                    <input type="password" class=" form-control" id="pass" placeholder="비밀번호">
                                 </div>
                                 
-                                <button type=button class="btn_full" id=btn >로그인</button>
+                                <button type=button class="btn_full" id="btn" >로그인</button>
                                 <a href="indexUsrSignUp"><button type=button class="btn_full" >회원가입</button></a>
                                 <button type=button class="btn_full" >비밀번호 찾기</button>
                             </form>

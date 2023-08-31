@@ -94,11 +94,6 @@ public class SpotController {
 		return "/usr/infra/index/indexUsrTicketDetailInfo";
 	}
 	
-	@RequestMapping("/detailInfo")
-	public String detaillnfo() {
-		return "/usr/infra/index/detailInfo";
-	}
-	
 	@RequestMapping("/indexUsrLogin")
 	public String indexUsrLogin() {
 		return "/usr/infra/member/indexUsrLogin";
