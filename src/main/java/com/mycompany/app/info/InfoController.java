@@ -56,10 +56,10 @@ public class InfoController {
 		model.addAttribute("list", list);
 		System.out.println(vo.getHotel_seq());
 		System.out.println(vo.getSpot_seq());
-		if(vo.getHotel_seq() != null || vo.getHotel_seq() != "") {
+		if(vo.getHotel_seq() != null ) {
 			List<Info> hotel = service.selectHotel(vo);
 			model.addAttribute("group", hotel);
-		} else if(vo.getSpot_seq() != null || vo.getSpot_seq() != "") {
+		} else if(vo.getSpot_seq() != null ) {
 			List<Info> spot = service.selectSpot(vo);
 			model.addAttribute("group", spot);
 		}

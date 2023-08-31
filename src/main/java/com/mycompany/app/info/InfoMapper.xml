@@ -69,9 +69,9 @@
 			a.*
 		FROM
 			info a
-		    Join spotInfo b on b.info_seq = a.seq and b.spot_seq = #{spot_seq}
-		WHERE 1=1
-
+		    Join spotInfo b on b.info_seq = a.seq  
+		WHERE 
+				b.spot_seq = #{spot_seq}
    	</select>
    	<select id="selectInfoGroup" resultMap="resultMapObj">
    		SELECT
