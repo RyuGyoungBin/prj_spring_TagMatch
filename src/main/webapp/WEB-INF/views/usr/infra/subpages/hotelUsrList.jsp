@@ -56,8 +56,7 @@
 							<li><a href="/hotelUsrList?hotelType=4" data-hotel-type="4"><i class="icon_set_1_icon-44"></i>레지던스<span>(...)</span></a></li>
 							<li><a href="/hotelUsrList?hotelType=5" data-hotel-type="5"><i class="icon_set_1_icon-37"></i>캠핑카<span>(...)</span></a></li>
 						</ul>
-						
-						
+						<input type="hidden" name="hotelType" value="${vo.hotelType }"></input>
 					</div>
 
 					<div id="filters_col">
@@ -66,44 +65,10 @@
 							id="filters_col_bt"><i class="icon_set_1_icon-65"></i>Filters</a>
 						<div class="collapse show" id="collapseFilters">
 							<div class="filter_type">
-								<h6>Price</h6>
-								<input type="text" id="range" name="range" value="">
-							</div>
-							<div class="filter_type">
 								<h6>Rating</h6>
-								<ul>
-									<li><label class="container_check"> <span
-											class="rating"> <i class="icon-star voted"></i><i
-												class="icon-star voted"></i><i class="icon-star voted"></i><i
-												class="icon-star voted"></i><i class="icon-star voted"></i>
-										</span> <input type="checkbox"> <span class="checkmark"></span>
-									</label></li>
-									<li><label class="container_check"> <span
-											class="rating"> <i class="icon-star voted"></i><i
-												class="icon-star voted"></i><i class="icon-star voted"></i><i
-												class="icon-star voted"></i><i class="icon-star"></i>
-										</span> <input type="checkbox"> <span class="checkmark"></span>
-									</label></li>
-									<li><label class="container_check"> <span
-											class="rating"> <i class="icon-star voted"></i><i
-												class="icon-star voted"></i><i class="icon-star voted"></i><i
-												class="icon-star"></i><i class="icon-star"></i>
-										</span> <input type="checkbox"> <span class="checkmark"></span>
-									</label></li>
-									<li><label class="container_check"> <span
-											class="rating"> <i class="icon-star voted"></i><i
-												class="icon-star voted"></i><i class="icon-star"></i><i
-												class="icon-star"></i><i class="icon-star"></i>
-										</span> <input type="checkbox"> <span class="checkmark"></span>
-									</label></li>
-									<li><label class="container_check"> <span
-											class="rating"> <i class="icon-star voted"></i><i
-												class="icon-star"></i><i class="icon-star"></i><i
-												class="icon-star"></i><i class="icon-star"></i>
-										</span> <input type="checkbox"> <span class="checkmark"></span>
-									</label></li>
-								</ul>
+								<input type="text" id="starRatingVo" value="" name="starRatingVo">
 							</div>
+							
 							<div class="filter_type">
 								<h6>태그</h6>
 								<ul class="mb-0">
@@ -139,8 +104,7 @@
 							  </c:forEach>
 						 	</select>
 							<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
-								<a href="#none" class="bt_filters"><i class="icon-th"></i></a> 
-								<a href="#none" class="bt_filters"><i class="icon-list"></i></a>
+								<button type="button" class="btn btn-light" id="hotelListBtn"><i class="bi bi-search"></i></button> 
 							</div>
 
 
@@ -303,7 +267,11 @@
 			$("input:hidden[name=thisPage]").val(thisPage);
 			$("form[name=formList]").attr("action", "/hotelUsrList").submit();
 		}
+		$("#hotelListBtn").on("click", function(){
+			$("form[name=formList]").submit();
+		})
 		
+// 		rating
 		<c:forEach items="${list}" var="list" varStatus="statusUploaded">
 			var ratingStar<c:out value="${list.seq }"/> = $("#rating<c:out value="${list.seq }"/>");
 			var rating<c:out value="${list.seq }"/> = Math.floor(<c:out value="${list.starRating }"/>);
@@ -334,13 +302,6 @@
 		        item.setAttribute("id", "active");
 		    }
 		});
-		
-		//paging
-		goList = function(thisPage) {
-			$("input:hidden[name=thisPage]").val(thisPage);
-			
-			$("form[name=formList]").attr("action", "hotelUsrList").submit();
-		}
 	</script>
 	
 
