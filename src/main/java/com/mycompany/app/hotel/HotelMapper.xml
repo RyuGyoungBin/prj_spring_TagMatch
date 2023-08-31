@@ -245,25 +245,21 @@
 
 	<update id="updateHotel">
 		UPDATE
-		hotel
+			hotel
 		SET
-		hotelType = #{hotelType},
-		name = #{name},
-		zipCode = #{zipCode},
-		address = #{address},
-		addressDetail = #{addressDetail},
-		sido = #{sido},
-		tel = #{tel},
-		checkInTime = #{checkInTime},
-		checkOutTime = #{checkOutTime},
-		detailText = #{detailText},
-
-		roomDelNy = #{roomDelNy}
-
-		delNy = #{roomDelNy}
-
+			hotelType = #{hotelType},
+			name = #{name},
+			zipCode = #{zipCode},
+			address = #{address},
+			addressDetail = #{addressDetail},
+			sido = #{sido},
+			tel = #{tel},
+			checkInTime = #{checkInTime},
+			checkOutTime = #{checkOutTime},
+			detailText = #{detailText},
+			delNy = #{roomDelNy}
 		WHERE
-		seq = #{seq}
+			seq = #{seq}
 	</update>
 	<!-- <update id="updateHotelInfo"> -->
 	<!-- UPDATE -->
