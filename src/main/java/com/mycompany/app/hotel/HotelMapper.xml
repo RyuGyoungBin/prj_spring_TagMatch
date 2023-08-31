@@ -92,6 +92,7 @@
 	</select>
 
 	<select id="selectRating" resultMap="resultMapObj">
+	SELECT aa.* FROM (
 		SELECT
 			a.seq,
 	    	a.hotelType,
@@ -121,6 +122,9 @@
 		
 		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
 		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
+		) aa
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
+		
 	</select>
 	<select id="selectRatingOne" resultMap="resultMapObj">
 		SELECT

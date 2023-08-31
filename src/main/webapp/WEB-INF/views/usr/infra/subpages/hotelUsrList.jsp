@@ -335,6 +335,13 @@
 		        item.setAttribute("id", "active");
 		    }
 		});
+		
+		//paging
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			
+			$("form[name=formList]").attr("action", "hotelUsrList").submit();
+		}
 	</script>
 	
 
