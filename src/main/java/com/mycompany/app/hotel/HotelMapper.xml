@@ -220,7 +220,7 @@
 		#{roomType},
 		#{roomName},
 		#{price},
-		#{defaultNy},
+		1,
 		0,
 		#{roomNum},
 		#{seq}
