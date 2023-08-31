@@ -30,6 +30,9 @@ public class HotelVo {
 //	hotelUploaded
 	private String tableName;
 	
+//	hotelRating
+	private Integer starRating;
+	
 
 	private Integer type;
 	private Integer sort;
@@ -454,6 +457,14 @@ public class HotelVo {
 
 	public void setDelNy(Integer delNy) {
 		this.delNy = delNy;
+	}
+
+	public Integer getStarRating() {
+		return starRating;
+	}
+
+	public void setStarRating(Integer starRating) {
+		this.starRating = starRating;
 	}
 	
 }

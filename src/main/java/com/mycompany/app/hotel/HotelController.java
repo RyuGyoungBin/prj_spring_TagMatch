@@ -31,14 +31,16 @@ public class HotelController {
 	@RequestMapping("/hotelUsrList")
 	public String hotelList(@ModelAttribute("vo") HotelVo vo, Model model) throws Exception {
 		
-			vo.setParamsPaging(hotelService.selectOneCount(vo));
-			if(vo.getTotalRows() > 0) {
-			List<Hotel> list = hotelService.selectRating(vo);
-			TrainProc.train(model);
-			model.addAttribute("list", list);
-			} else {
-				
-			}
+		vo.setHotelType(vo.getHotelType());
+		vo.setStarRating(vo.getStarRating());
+		vo.setParamsPaging(hotelService.selectOneCount(vo));
+		if(vo.getTotalRows() > 0) {
+		List<Hotel> list = hotelService.selectRating(vo);
+		TrainProc.train(model);
+		model.addAttribute("list", list);
+		} else {
+			
+		}
 		return "/usr/infra/subpages/hotelUsrList";
 	}
 	@RequestMapping("/hotelXdmList")
