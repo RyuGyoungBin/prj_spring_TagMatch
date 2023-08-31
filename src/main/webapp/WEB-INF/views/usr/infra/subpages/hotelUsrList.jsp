@@ -162,10 +162,9 @@
 													to wishlist</span></span></a>
 									</div>
 									<div class="img_list">
-										<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>"><img
-											src="<c:out value="${list.path }"/><c:out value="${list.uuidName }"/>"
-											alt="Image">
-											</a>
+										<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>">
+											<img src="<c:out value="${list.path }"/><c:out value="${list.uuidName }"/>" alt="Image">
+										</a>
 									</div>
 								</div>
 								<div class="col-lg-6 col-md-6">

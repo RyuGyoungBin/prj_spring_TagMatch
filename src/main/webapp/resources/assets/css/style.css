@@ -8190,5 +8190,14 @@ only screen and (min-device-pixel-ratio: 2) and (max-width: 991px) {
 }
 
 
+/* hotelDesc */
+.hotelDesc > p > h3 {
+	font-weight : 700;
+}
+.hotelDesc > p > p {
+	font-size : 12px;
+	text-indent : 30px;
+}
+
 
 
