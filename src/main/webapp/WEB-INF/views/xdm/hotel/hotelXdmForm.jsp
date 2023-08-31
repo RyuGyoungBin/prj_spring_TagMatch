@@ -63,7 +63,9 @@
 			  	<div class="d-flex flex-wrap justify-content-around border-bottom">
 	                <div class=" col-5 mb-3">
 	                  	<label for="seq" class=" col-form-label" >seq</label>
-                    	<input type="text" class="form-control bg-dark-subtle" readonly name="seq" id="seq" placeholder="자동생성" value="<c:out value="${item.seq }"></c:out>">
+                    	<input type="text" class="form-control bg-dark-subtle" readonly name="seq" id="seq" placeholder="자동생성" value="<c:out value="${item.seq }"/>" ${empty item.seq ? 'disabled' : ''}>
+                    	
+                    	
 	                </div>
 	                <div class=" col-5 mb-3">
 	                  	<label for="name" class=" col-form-label">name</label>

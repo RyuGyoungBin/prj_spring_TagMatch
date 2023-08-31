@@ -119,12 +119,6 @@
 							<div class="row">
 								<div class="col-lg-4 col-md-4 position-relative">
 
-									<div class="wishlist">
-										<a class="tooltip_flip tooltip-effect-1"
-											href="javascript:void(0);">+<span
-											class="tooltip-content-flip"><span class="tooltip-back">Add
-													to wishlist</span></span></a>
-									</div>
 									<div class="img_list">
 										<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>">
 											<img src="<c:out value="${list.path }"/><c:out value="${list.uuidName }"/>" alt="Image">
@@ -202,7 +196,7 @@
 								<div class="col-lg-2 col-md-2">
 									<div class="price_list">
 										<div>
-											₩<c:out value="${list.price }"/>~<span class="normal_price_list"></span><small>*1인 <c:out value="${list.roomName }"/>
+											<c:out value="${list.price }"/>₩<span class="normal_price_list"></span><small>*1인 <c:out value="${list.roomName }"/>
 												기준</small>
 											<p>
 												<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>" class="btn_1">Details</a>
@@ -281,6 +275,7 @@
 			}
 			for(var j=0; j<5-i; j++){
 				ratingStar<c:out value="${list.seq }"/>.append('<i class="icon-smile"></i>');
+				
 			}
 		</c:forEach>
 		
