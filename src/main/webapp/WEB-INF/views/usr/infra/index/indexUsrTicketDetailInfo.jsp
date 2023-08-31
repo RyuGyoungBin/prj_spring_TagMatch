@@ -15,7 +15,7 @@
 			<div class="container" >
 				<div class="row">
 					<div class="col-md-8">
-						<span class="rating"><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class=" icon-star-empty"></i></span>
+						<span class="rating" id="spotRating" style="font-size: 20px;font-weight: bold;"><c:out value="${spot.starRating }"/></span>
 						<h1><c:out value="${spot.name}"></c:out></h1>
 						<span><c:out value="${spot.addressDetail}"></c:out></span>
 					</div>
@@ -444,12 +444,14 @@
 	});
 		
 		/* 별점 표시 부분 시작 */
-		var hotelrating = Math.floor(<c:out value="${spot.starRating }"/>);
-		for(var i=0; i<hotelrating ; i++){
+		var spotrating = Math.floor(<c:out value="${spot.starRating }"/>);
+		for(var i=0; i<spotrating ; i++){
 			$("#reviewRating").append('<i class="icon-smile voted"></i>')
+			$("#spotRating").append('<i class="icon-smile voted"></i>')
 		}
 		for(var j=0; j<5-i; j++){
 			$("#reviewRating").append('<i class="icon-smile"></i>')
+			$("#spotRating").append('<i class="icon-smile"></i>')
 		}
 	
 		
@@ -464,7 +466,7 @@
 			reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile voted"></i>')
 		}
 		for(var j=0; j<5-i; j++){
-			reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile"></i>');
+			spotRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile"></i>');
 		}
 	</c:forEach>
 	/* 별점 표시 부분 끝 */	

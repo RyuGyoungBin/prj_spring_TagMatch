@@ -57,15 +57,19 @@ public class SpotController {
 	}
 	
 	@RequestMapping("/indexUsrTicket")
-	public String indexUsrTicket(@ModelAttribute("vo") SpotVo vo, Model model) {
+	public String indexUsrTicket(@ModelAttribute("vo") SpotVo vo, FeedbackVo feedbackVo,Model model) {
 		
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		if(vo.getTotalRows() > 0) {
+			Spot spot = service.selectRatingOne(vo);
 			List<Spot> list = service.selectList(vo);
 			List<Spot> spotImg = service.selectListUploaded(vo); 
+			List<Feedback>feedback = feedbackService.selectList(feedbackVo);
+			model.addAttribute("list",spot);
 			model.addAttribute("list", list);
 			model.addAttribute("listUploaded",spotImg);
+			model.addAttribute("feedback",feedback);
 //			model.addAttribute("vo", vo);
 		} else {
 //			by pass
