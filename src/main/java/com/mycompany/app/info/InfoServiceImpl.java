@@ -88,11 +88,15 @@ import org.springframework.stereotype.Service;
 
 	@Override
 	public int updateSpotInfo(Info dto, InfoVo vo) {
-		// TODO Auto-generated method stub
+		dao.deleteSpotInfo(dto);
+		for(int i = 0 ; i < dto.getInfo_seqArray().length ; i++) {
+			dto.setInfo_seq(dto.getInfo_seqArray()[i]);
+			dao.insertSpotInfo(dto);
+		}
 		return 0;
 	}
 
-	
+
 
 	
 

@@ -83,4 +83,10 @@ public class InfoController {
 		return "redirect:/spotXdmList";
 	}
 	
+	@RequestMapping("/infoSpotUpdate")
+	public String infoSpotUpdate(Info dto, InfoVo vo) {
+		service.updateSpotInfo(dto, vo);
+		return "redirect:/spotXdmList";
+	}
+	
 }

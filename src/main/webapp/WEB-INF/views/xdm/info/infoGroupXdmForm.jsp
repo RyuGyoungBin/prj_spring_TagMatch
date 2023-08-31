@@ -99,6 +99,7 @@
 					</div>
 				</c:when>
 				<c:otherwise>
+				
 					<div class="d-flex justify-content-between my-5 text-center">
 						<div class="col-2">
 						</div>
@@ -114,9 +115,22 @@
 							<button id="btnDelete" type="button" class="btn btn-danger">delete</button>
 							<button id="btnDelNy" type="button" class="btn btn-danger">uele</button>
 						</div>
+						<c:choose>
+				<c:when test="${not empty param.hotel_seq}">
 						<div class="col-2">
-							<button id="btnUpdate" type="button" class="btn btn-success">update</button>
 						</div>
+						<div class="col-2">
+							<button id="btnHotelUpdate" type="button" class="btn btn-success">update</button>
+						</div>
+				</c:when>
+				<c:otherwise>
+						<div class="col-2">
+						</div>
+						<div class="col-2">
+							<button id="btnSpotUpdate" type="button" class="btn btn-success">update</button>
+						</div>
+				</c:otherwise>
+				</c:choose>
 					</div>
               </form>
               <!-- End Table with stripped rows -->
@@ -171,9 +185,13 @@
 // 		if(validation()==false) return false;
 		$("form[name=form]").attr("action", "infoSpotInsert").submit();
 	})
-	$("#btnUpdate").on("click", function(){
+	$("#btnHotelUpdate").on("click", function(){
 // 		if(validation()==false) return false;
 		$("form[name=form]").attr("action", "infoHotelUpdate").submit();
+	})
+	$("#btnSpotUpdate").on("click", function(){
+// 		if(validation()==false) return false;
+		$("form[name=form]").attr("action", "infoSpotUpdate").submit();
 	})
 	$("#btnDelete").on("click", function(){
 // 		$("form[name=form]").attr("action", "infoXdmDelete").submit();
