@@ -22,7 +22,7 @@
 			data-opacity-mask="rgba(0, 0, 0, 0.6)">
 
 			<div class="animated fadeInDown">
-
+   
 				<h1>숙소</h1>
 				<p></p>
 			</div>
