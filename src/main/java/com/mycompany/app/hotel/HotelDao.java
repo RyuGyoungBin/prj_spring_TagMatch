@@ -17,6 +17,7 @@ public class HotelDao {
 	
 	public List<Hotel> selectList(HotelVo vo){return sqlSession.selectList(namespace +".selectList", vo);}
 	public int selectOneCount(HotelVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
+	public int selectOneRatingCount(HotelVo vo){ return sqlSession.selectOne(namespace + ".selectOneRatingCount", vo); }
 	public Hotel selectOne(HotelVo vo) {return sqlSession.selectOne(namespace +".selectOne", vo);}
 	public List<Hotel> selectUploaded(HotelVo vo) {return sqlSession.selectList(namespace +".selectUploaded", vo);};
 	public List<Hotel> selectUploadedOne(HotelVo vo) {return sqlSession.selectList(namespace +".selectUploadedOne", vo);};

@@ -33,8 +33,8 @@ public class HotelVo {
 //	hotelRating
 	private String starRating;
 	private String starRatingVo;
-	private String starRatingMin;
-	private String starRatingMax;
+	private Integer starRatingMin;
+	private Integer starRatingMax;
 
 	private Integer type;
 	private Integer sort;
@@ -469,19 +469,19 @@ public class HotelVo {
 		this.starRating = starRating;
 	}
 
-	public String getStarRatingMin() {
+	public Integer getStarRatingMin() {
 		return starRatingMin;
 	}
 
-	public void setStarRatingMin(String starRatingMin) {
+	public void setStarRatingMin(Integer starRatingMin) {
 		this.starRatingMin = starRatingMin;
 	}
 
-	public String getStarRatingMax() {
+	public Integer getStarRatingMax() {
 		return starRatingMax;
 	}
 
-	public void setStarRatingMax(String starRatingMax) {
+	public void setStarRatingMax(Integer starRatingMax) {
 		this.starRatingMax = starRatingMax;
 	}
 

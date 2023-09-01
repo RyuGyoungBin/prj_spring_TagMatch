@@ -57,7 +57,7 @@ public class TrainProc {
 //		System.out.println("######## Response");
 		for (String key : response.keySet()) {
 			String value = String.valueOf(response.get(key));	// ok
-			System.out.println("[key re]:" + key + ", [value]:" + value);
+//			System.out.println("[key re]:" + key + ", [value]:" + value);
 		}
 		
 		Map<String, Object> header = new HashMap<String, Object>();
