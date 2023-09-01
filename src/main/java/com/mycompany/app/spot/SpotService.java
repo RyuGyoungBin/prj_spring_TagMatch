@@ -15,7 +15,7 @@ public interface SpotService {
 	public List<Spot>selectRating(SpotVo vo);
 	public Spot selectRatingOne(SpotVo vo);
 	
-	
+	  
 	
 	public int insert(Spot dto) throws Exception;	
 
@@ -28,5 +28,5 @@ public interface SpotService {
 
 
 	
-	
+	 
 }
