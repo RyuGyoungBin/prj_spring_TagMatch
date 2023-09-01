@@ -90,7 +90,7 @@
 	<select id="selectRating" resultMap="resultMapObj">
 		SELECT
 			a.seq,
-	    	a.spotType,
+	    	a.type spotType,
 	    	a.name,
 	    	a.zipCode,
 	    	a.address,

@@ -363,7 +363,7 @@
 								<div class="hotel_title">
 									<h3><strong><a  style="color: black;max-width: 330px; display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" href="indexUsrTicketDetailInfo?seq=<c:out value="${list.seq}"/>"><c:out value="${list.name}"></c:out></a></strong></h3>
 									<div>
-											<span id="rating<c:out value="${list.seq }"/>" class="rating"></span><small><c:out value="${list.starRating }"/></small>
+											<span id="rating<c:out value="${list.seq }"/>" class="rating"></span><small><c:out value="${list.starRating}"/></small>
 									</div>
 								</div>
 							</div>
@@ -439,15 +439,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 /* 별점 표시 부분 시작 */
-	<c:forEach items="${list}" var="list" varStatus="statusUploaded">
+		<c:forEach items="${list}" var="list" varStatus="statusUploaded">
 			var ratingStar<c:out value="${list.seq }"/> = $("#rating<c:out value="${list.seq }"/>");
-			var rating<c:out value="${list.seq }"/> = Math.floor(<c:out value="${list.starRating }"/>);
+			var rating<c:out value="${list.seq }"/> = Math.floor(<c:out value="${list.starRating}"/>);
 			
 			for(var i=0; i<rating<c:out value="${list.seq }"/> ; i++){
 				ratingStar<c:out value="${list.seq }"/>.append('<i class="icon-smile voted"></i>')
 			}
 			for(var j=0; j<5-i; j++){
 				ratingStar<c:out value="${list.seq }"/>.append('<i class="icon-smile"></i>');
+
 			}
 		</c:forEach>
 /* 별점 표시 부분 끝 */	
