@@ -41,7 +41,6 @@ public class SpotDao {
 	public Spot selectRatingOne(SpotVo vo) { return sqlSession.selectOne(namespace + ".selectRatingOne", vo); }
 	
 	
-	
 	public int uelete(Spot dto) { return sqlSession.update(namespace + ".uelete", dto); }
 	
 	// 파일업로드
