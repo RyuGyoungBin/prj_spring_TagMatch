@@ -306,14 +306,12 @@
 					<form method="post" action="assets/review_hotel.php" name="review_hotel" id="review_hotel">
 						<input name="hotel_name" id="hotel_name" type="hidden" value="Mariott Hotel Paris">
 							<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-6" style="width: 100%;">
 								<div class="form-group">
-									<select class="form-select" name="room_type_review" id="room_type_review">
-										<option value="">입장권</option>
-									</select>
-								</div>
+								<h3><입장권><br><c:out value="${spot.name}"></c:out></h3>
 							</div>
-						</div>
+							</div>
+						</div>  
 						<!-- End row -->
 						<hr>
 						<div class="row">
@@ -335,7 +333,7 @@
 						<div class="form-group">
 							<textarea name="review_text" id="review_text" class="form-control" style="height:100px" placeholder="리뷰를 작성해 주세요"></textarea>
 						</div>
-						<input type="button" value="등록하기" class="btn_1" id="submit-review">
+						<button type="button" value="등록하기" class="btn_1" id="btnInsert"></button>
 					</form>
 				</div>
 			</div>
@@ -351,6 +349,14 @@
 	<!-- Gallery -->
 	<script src="/resources/assets/js/jquery.sliderPro.min.js"></script>
 	<script type="text/javascript">
+	
+	$("#btnInsert").on("click", function(){
+		alert("2");
+		$("form[name=review_spot]").attr("action", "/feedbackXdmInsert").submit();
+		alert("리뷰가 등록되었습니다.");
+	})
+	
+	
 		$(document).ready(function ($) {
 			$('#Img_carousel').sliderPro({
 				width: 960,
