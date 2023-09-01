@@ -81,6 +81,10 @@
 				                <div class="tour_container">
 			                    	<div class="img_container">
 				                        <a href="/roomDetailInfo?seq=${list.seq}">
+<<<<<<< HEAD
+=======
+<%-- 										    <c:out value="${list.name}"></c:out> --%>
+>>>>>>> branch 'main' of https://github.com/RyuGyoungBin/prj_spring_TagMatch.git
 											    <c:set var="type" value="1"/>    <!--  -->
 	<%-- 										    <c:set var="seq" value="${list.seq }"/> --%>
 										        <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">

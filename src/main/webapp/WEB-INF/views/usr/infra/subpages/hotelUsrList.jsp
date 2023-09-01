@@ -23,7 +23,12 @@
 
 			<div class="animated fadeInDown">
 
+
+				<h1 class="backFonts">숙 소</h1>
+
+   
 				<h1>숙소</h1>
+
 				<p></p>
 			</div>
 		</div>
@@ -96,7 +101,7 @@
 				<!--End aside -->
 				<div class="col-lg-9">
 					<div id="tools">
-						<div class="d-flex justify-content-between">
+						<div class="d-flex justify-content-between">`1
 							<select class="form-select selectCity" aria-label="Default select example" name="sido">
 								<option value="">---전체---</option>
 							  <c:forEach items="${item}" var="item" varStatus="status">
@@ -106,9 +111,6 @@
 							<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
 								<button type="button" class="btn btn-light" id="hotelListBtn"><i class="bi bi-search"></i></button> 
 							</div>
-
-
-
 						</div>
 					</div>
 					<!--/tools -->
@@ -206,6 +208,7 @@
 									</div>
 								</div>
 							</div>
+							
 						</div>
 						<!--End strip -->
 					</c:forEach>

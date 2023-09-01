@@ -62,11 +62,9 @@ public class SpotController {
 		vo.setParamsPaging(service.selectOneCount(vo));
 		
 		if(vo.getTotalRows() > 0) {
-			Spot spot = service.selectRatingOne(vo);
-			List<Spot> list = service.selectList(vo);
+			List<Spot> list = service.selectRating(vo);
 			List<Spot> spotImg = service.selectListUploaded(vo); 
 			List<Feedback>feedback = feedbackService.selectList(feedbackVo);
-			model.addAttribute("list",spot);
 			model.addAttribute("list", list);
 			model.addAttribute("listUploaded",spotImg);
 			model.addAttribute("feedback",feedback);
