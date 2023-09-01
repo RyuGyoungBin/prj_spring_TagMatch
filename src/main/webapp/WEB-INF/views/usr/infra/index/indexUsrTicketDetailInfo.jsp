@@ -311,7 +311,7 @@
 								<h3><입장권><br><c:out value="${spot.name}"></c:out></h3>
 							</div>
 							</div>
-						</div> 
+						</div>  
 						<!-- End row -->
 						<hr>
 						<div class="row">
