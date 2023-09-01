@@ -6,6 +6,7 @@ public interface HotelService {
 
 	public List<Hotel> selectList(HotelVo vo);
 	public int selectOneCount(HotelVo vo);	
+	public int selectOneRatingCount(HotelVo vo);	
 	public Hotel selectOne(HotelVo vo);
 	public List<Hotel> selectUploaded(HotelVo vo);
 	public List<Hotel> selectUploadedOne(HotelVo vo);

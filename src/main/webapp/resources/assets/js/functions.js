@@ -218,22 +218,7 @@ $(function () {
 
 });
 
-$(function () {
-	'use strict';
-	$("#starRatingVo").ionRangeSlider({
-		hide_min_max: false,
-		keyboard: true,
-		min: 0,
-		max: 5,
-		from: 30,
-		to: 100,
-		type: 'Integer',
-		step: 1,
-		prefix: "☆",
-		grid: false
-	});
 
-});
 
 /* Footer reveal */
 if ($(window).width() >= 768) {

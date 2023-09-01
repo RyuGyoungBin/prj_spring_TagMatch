@@ -23,6 +23,9 @@ public class HotelServiceImpl implements HotelService{
 
 	@Override
 	public int selectOneCount(HotelVo vo) {return dao.selectOneCount(vo);}
+	
+	@Override
+	public int selectOneRatingCount(HotelVo vo) {return dao.selectOneRatingCount(vo);}
 
 	@Override
 	public Hotel selectOne(HotelVo vo) {return dao.selectOne(vo);}

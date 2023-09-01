@@ -87,7 +87,7 @@
 											type="checkbox"> <span class="checkmark"></span>
 									</label></li>
 									<li><label class="container_check"> Access for
-											disabled <input type="checkbox"> <span
+											disabled <input type="checkbox"><span
 											class="checkmark"></span>
 									</label></li>
 								</ul>
@@ -258,6 +258,10 @@
 	<!-- Cat nav mobile -->
 	<script src="/resources/assets/js/cat_nav_mobile.js"></script>
 	<script>
+	<c:if test="${vo.starRatingMin != null}">
+		var starRatingMin = ${vo.starRatingMin};
+		var starRatingMax = ${vo.starRatingMax};
+	</c:if>
 		$('#cat_nav').mobileMenu();
 		//paging
 		goList = function(thisPage) {
@@ -281,6 +285,30 @@
 				
 			}
 		</c:forEach>
+	
+		$(function () {
+				'use strict';
+				$("#starRatingVo").ionRangeSlider({
+					hide_min_max: false,
+					keyboard: true,
+					min: 0,
+					max: 5,
+					from: 0,
+					to: 5,
+					type: 'Integer',
+					step: 1,
+					prefix: "☆",
+					grid: false
+				});
+				
+				<c:if test="${vo.starRatingMin != null}">
+				 let ratingrange = $("#starRatingVo").data("ionRangeSlider");
+					ratingrange.update({
+					   from: starRatingMin,
+					   to: starRatingMax
+					 });
+				</c:if>
+			});
 		
 		
 		

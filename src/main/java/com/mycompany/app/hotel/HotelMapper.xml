@@ -41,6 +41,33 @@
 		e.path,
 		e.uuidName
 	</sql>
+	<sql id="selectHotelRating">
+		a.seq,
+    	a.hotelType,
+    	a.name,
+    	a.zipCode,
+    	a.address,
+    	a.addressDetail,
+    	a.sido,
+    	a.tel,
+    	DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
+    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
+    	a.detailText,
+		ROUND(avg(c.starRating),1) starRating,
+		d.path,
+		d.type,
+		d.uuidName
+	</sql>
+	<sql id="selectRatingCommon">
+		FROM
+			hotel a
+		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq
+		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 1
+		    LEFT JOIN hotelUploaded d on d.pseq = a.seq AND d.type = 1
+		WHERE 1=1
+			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq} </if>
+			<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType} </if>
+	</sql>
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT aa.* FROM (
 		SELECT
@@ -94,31 +121,8 @@
 	<select id="selectRating" resultMap="resultMapObj">
 	SELECT aa.* FROM (
 		SELECT
-			a.seq,
-	    	a.hotelType,
-	    	a.name,
-	    	a.zipCode,
-	    	a.address,
-	    	a.addressDetail,
-	    	a.sido,
-	    	a.tel,
-	    	DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
-	    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
-	    	a.detailText,
-			ROUND(avg(c.starRating),1) starRating,
-			d.path,
-			d.type,
-			d.uuidName
-		FROM
-			hotel a
-		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq
-		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 1
-		    LEFT JOIN hotelUploaded d on d.pseq = a.seq AND d.type = 1
-		WHERE 1=1
-			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq} </if>
-			<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType} </if>
-			
-		
+		<include refid="selectHotelRating" />
+		<include refid="selectRatingCommon" />
 		GROUP BY a.seq
 		
 		HAVING 1=1
@@ -132,33 +136,26 @@
 	</select>
 	<select id="selectRatingOne" resultMap="resultMapObj">
 		SELECT
-			a.seq,
-	    	a.hotelType,
-	    	a.name,
-	    	a.zipCode,
-	    	a.address,
-	    	a.addressDetail,
-	    	a.sido,
-	    	a.tel,
-	    	DATE_FORMAT (a.checkInTime, '%H:%i')as checkInTime,
-	    	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
-	    	a.detailText,
-			ROUND(avg(c.starRating),1) starRating,
-			COUNT(c.review) cnt,
-			d.path,
-			d.type,
-			d.uuidName,
-			b.hotel_seq,
-			b.seq hotelUsr_seq
-		FROM
-			hotel a
-		    LEFT JOIN hotelUsr b on b.hotel_seq = a.seq
-		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 1
-		    LEFT JOIN hotelUploaded d on d.pseq = a.seq AND d.type = 1
-		WHERE 1=1
+		<include refid="selectHotelRating" />
+		<include refid="selectRatingCommon" />
 			AND a.seq = #{seq}
 		
 		GROUP BY a.seq
+	</select>
+	<select id="selectOneRatingCount" resultType="Integer">
+		SELECT count(starRating) cnt
+		FROM	(
+		SELECT
+		a.seq,
+		ROUND(avg(c.starRating),1) starRating
+		<include refid="selectRatingCommon" />
+		GROUP BY a.seq
+		HAVING 1=1
+			<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} </if>
+		
+		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
+		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
+		) as aa
 	</select>
 	
 

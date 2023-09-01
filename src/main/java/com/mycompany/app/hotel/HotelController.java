@@ -30,13 +30,17 @@ public class HotelController {
 	
 	@RequestMapping("/hotelUsrList")
 	public String hotelList(@ModelAttribute("vo") HotelVo vo, Model model) throws Exception {
-		String StarRatingMin = (vo.getStarRatingVo() == null ? "":vo.getStarRatingVo().split(";")[0]);
-		String StarRatingMax = (vo.getStarRatingVo() == null ? "":vo.getStarRatingVo().split(";")[1]);
-		vo.setStarRatingMax(StarRatingMax);
-		vo.setStarRatingMin(StarRatingMin);
+		Integer StarRatingMin = (vo.getStarRatingVo() == null ? null:Integer.parseInt(vo.getStarRatingVo().split(";")[0]));
+		Integer StarRatingMax = (vo.getStarRatingVo() == null ? null:Integer.parseInt(vo.getStarRatingVo().split(";")[1]));
+		System.out.println(StarRatingMin);
+		System.out.println(StarRatingMax);
+		if(StarRatingMin != null) {
+			vo.setStarRatingMax(StarRatingMax);
+			vo.setStarRatingMin(StarRatingMin);
+		}
 		vo.setStarRatingVo(vo.getStarRatingVo());
 		vo.setHotelType(vo.getHotelType());
-		vo.setParamsPaging(hotelService.selectOneCount(vo));
+		vo.setParamsPaging(hotelService.selectOneRatingCount(vo));
 		if(vo.getTotalRows() > 0) {
 		List<Hotel> list = hotelService.selectRating(vo);
 		TrainProc.train(model);
