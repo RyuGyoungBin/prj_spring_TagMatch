@@ -81,7 +81,7 @@
 				                <div class="tour_container">
 			                    	<div class="img_container">
 				                        <a href="/roomDetailInfo?seq=${list.seq}">
-										    <c:out value="${list.name}"></c:out>
+<%-- 										    <c:out value="${list.name}"></c:out> --%>
 											    <c:set var="type" value="1"/>    <!--  -->
 	<%-- 										    <c:set var="seq" value="${list.seq }"/> --%>
 										        <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">

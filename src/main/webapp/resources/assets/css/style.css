@@ -87,6 +87,14 @@ Author URI: http://themeforest.net/user/Ansonika/
     font-style: normal;
 }
 
+/* 강원교육튼튼체 */
+@font-face {
+    font-family: 'GangwonEduPowerExtraBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /*-------- 1.1 Typography --------*/
 html, body {
     -webkit-font-smoothing: antialiased;
@@ -8201,3 +8209,6 @@ only screen and (min-device-pixel-ratio: 2) and (max-width: 991px) {
 
 
 
+.backFonts {
+	font-family: 'GangwonEduPowerExtraBoldA';
+}

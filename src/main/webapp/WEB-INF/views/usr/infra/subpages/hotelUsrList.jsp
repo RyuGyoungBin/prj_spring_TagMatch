@@ -23,7 +23,7 @@
 
 			<div class="animated fadeInDown">
 
-				<h1>숙소</h1>
+				<h1 class="backFonts">숙 소</h1>
 				<p></p>
 			</div>
 		</div>
