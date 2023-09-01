@@ -96,7 +96,7 @@
 				<!--End aside -->
 				<div class="col-lg-9">
 					<div id="tools">
-						<div class="d-flex justify-content-between">
+						<div class="d-flex justify-content-between">`1
 							<select class="form-select selectCity" aria-label="Default select example" name="sido">
 								<option value="">---전체---</option>
 							  <c:forEach items="${item}" var="item" varStatus="status">
@@ -106,9 +106,6 @@
 							<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
 								<button type="button" class="btn btn-light" id="hotelListBtn"><i class="bi bi-search"></i></button> 
 							</div>
-
-
-
 						</div>
 					</div>
 					<!--/tools -->
