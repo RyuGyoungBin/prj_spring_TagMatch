@@ -54,6 +54,8 @@
     	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
     	a.detailText,
 		ROUND(avg(c.starRating),1) starRating,
+		COUNT(c.seq) ctn,
+		b.seq hotelUsr_seq,
 		d.path,
 		d.type,
 		d.uuidName
