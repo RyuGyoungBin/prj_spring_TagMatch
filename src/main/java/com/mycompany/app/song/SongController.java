@@ -39,9 +39,9 @@ public class SongController {
 		return "/usr/infra/member/registerUsrForm";
 	}
 	
-	@RequestMapping ("/trainUsrView")
-	public String trainUsrView() {
-		return "/usr/infra/train/trainUsrView";
+	@RequestMapping ("/trainUsrList")
+	public String trainUsrList() {
+		return "/usr/infra/train/trainUsrList";
 	}
 
 

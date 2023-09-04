@@ -44,9 +44,9 @@
 		<div id="position">
 			<div class="container">
 				<ul>
-					<li><a href="#">Home</a></li>
-					<li><a href="#">Category</a></li>
-					<li>Page active</li>
+					<li><a href="/index">Home</a></li>
+					<li><a href="/trainUsrList">기차 노선도</a></li>
+
 				</ul>
 			</div>
 		</div>
@@ -190,17 +190,10 @@
 					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.1s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3 popular">
-									<span>Popular</span>
-								</div>
-								<div class="wishlist">
-									<a class="tooltip_flip tooltip-effect-1"
-										href="javascript:void(0);">+<span
-										class="tooltip-content-flip"><span class="tooltip-back">Add
-												to wishlist</span></span></a>
-								</div>
+
+
 								<div class="img_list">
-									<a href="/roomDetailInfo"><img
+									<a href="/trainDetailInfo"><img
 										src="/resources/assets/img/train/경부선.png"
 										alt="Image">
 										 </a>
@@ -286,15 +279,8 @@
 					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.2s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3 popular">
-									<span>Popular</span>
-								</div>
-								<div class="wishlist">
-									<a class="tooltip_flip tooltip-effect-1"
-										href="javascript:void(0);">+<span
-										class="tooltip-content-flip"><span class="tooltip-back">Add
-												to wishlist</span></span></a>
-								</div>
+
+
 								<div class="img_list">
 									<a href="single_tour.html"><img
 										src="/resources/assets/img/train/호남선.png"
@@ -380,15 +366,8 @@
 					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.3s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3">
-									<span>Top rated</span>
-								</div>
-								<div class="wishlist">
-									<a class="tooltip_flip tooltip-effect-1"
-										href="javascript:void(0);">+<span
-										class="tooltip-content-flip"><span class="tooltip-back">Add
-												to wishlist</span></span></a>
-								</div>
+
+
 								<div class="img_list">
 									<a href="single_tour.html"><img
 										src="/resources/assets/img/train/경전선.png"
@@ -474,9 +453,7 @@
 					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.4s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3">
-									<span>Top rated</span>
-								</div>
+
 								<div class="wishlist">
 									<a class="tooltip_flip tooltip-effect-1"
 										href="javascript:void(0);">+<span
@@ -570,9 +547,7 @@
 					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.5s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3">
-									<span>Top rated</span>
-								</div>
+
 								<div class="wishlist">
 									<a class="tooltip_flip tooltip-effect-1"
 										href="javascript:void(0);">+<span
@@ -666,9 +641,7 @@
 					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.7s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3">
-									<span>Top rated</span>
-								</div>
+
 								<div class="wishlist">
 									<a class="tooltip_flip tooltip-effect-1"
 										href="javascript:void(0);">+<span
@@ -763,9 +736,7 @@
 					<div class="strip_hotel_seoul wow fadeIn" data-wow-delay="0.7s">
 						<div class="row">
 							<div class="col-lg-4 col-md-4 position-relative">
-								<div class="ribbon_3">
-									<span>Top rated</span>
-								</div>
+
 								<div class="wishlist">
 									<a class="tooltip_flip tooltip-effect-1"
 										href="javascript:void(0);">+<span

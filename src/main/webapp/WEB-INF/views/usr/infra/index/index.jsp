@@ -21,7 +21,7 @@
             
                 <h3 class="animated fadeInDown">기차 여행 A to Z 는 여기에서! </h3>
                 <p class="animated fadeInDown">기차 승차권 / 숙소 예약 / 모든 입장권</p>
-                <a href="/trainUsrView" class="animated fadeInUp button_intro outline">기차 노선도 보러가기</a>                 
+                <a href="/trainUsrList" class="animated fadeInUp button_intro outline">기차 노선도 보러가기</a>                 
                 <a href="/hotelUsrList" class="animated fadeInUp button_intro outline">숙소 보러가기</a> 
                 <a href="/indexUsrTicket" class="animated fadeInUp button_intro outline">입장권 보러가기</a>
                 <a href="/bookingUsrView" class="animated fadeInUp button_intro ">바로 예약하기</a>
@@ -121,114 +121,7 @@
         </div>
     </div><!-- End container -->
     
-    <div class="white_bg">
-			<div class="container margin_60">
-				<div class="main_title">
-					<h2>Now <span>Popular</span> Train Tours</h2>
-					<p>
-						현재 가장 예약률이 높은 승차권 순이에요! 
-					</p>
-				</div>
-				<div class="row add_bottom_45">
-					<div class="col-lg-4 other_tours">
-						<ul>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>서울 <-> 부산<span class="other_tours_price">$42</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>서울 <-> 강릉<span class="other_tours_price">$35</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>서울 <-> 여수<span class="other_tours_price">$20</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>서울 <-> 정동진<span class="other_tours_price">$26</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>서울 <-> 신경주<span class="other_tours_price">$26</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>서울 <-> 광주송정<span class="other_tours_price">$32</span></a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-4 other_tours">
-						<ul>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>부산 <-> 천안아산(온양온천)<span class="other_tours_price">$48</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>부산 <-> 영등포<span class="other_tours_price">$55</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>부산 <-> 동대구<span class="other_tours_price">$76</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>김천 <-> 동대구	<span class="other_tours_price">$55</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>진주 <-> 서울<span class="other_tours_price">$24</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>진주 <->천안아산(온양온천) <span class="other_tours_price">$24</span></a>
-							</li>
-						</ul>
-					</div>
-					<div class="col-lg-4 other_tours">
-						<ul>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>여수(엑스포) <-> 용산<span class="other_tours_price">$36</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>여수(엑스포) <-> 천안아산(온양온천)<span class="other_tours_price">$28</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>남원 <-> 용산<span class="other_tours_price">$44</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>청량리 <-> 안동<span class="other_tours_price">$56</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>부발 <-> 충주<span class="other_tours_price">$16</span></a>
-							</li>
-							<li><a href="#"><i class=" icon_set_1_icon-5"></i>행신 <-> 나주<span class="other_tours_price">$26</span></a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- End row -->
 
-				<div class="banner colored">
-					<h4>ㄱㄴㄷㄹㅁㅂㅅ <span> 이벤트! </span></h4>
-					<p>
-						한 번도 경험해보지 못한 특가 상품! 지금 당장 이용해보세요!
-					</p>
-					<a href="single_tour.html" class="btn_1 white">Read more</a>
-				</div>
-				
-				<div class="row">
-					<div class="col-lg-3 col-md-6 text-center">
-						<p>
-							<a href="#"><img src="resources/assets/img/accommodation/hotel/event/event01.jpg" alt="Pic" class="img-fluid rounded"></a>
-						</p>
-						<h4><span>라마다 앙코르 바이 윈덤 천안호텔</span></h4>
-						<p>천안 KTX 천안아산역 차량 10분거리</p>
-						<p>113,000원~</p>
-					</div>
-					<div class="col-lg-3 col-md-6 text-center">
-						<p>
-							<a href="#"><img src="resources/assets/img/accommodation/hotel/event/event02.png" alt="Pic" class="img-fluid rounded"></a>
-						</p>
-						<h4><span>신라스테이 여수</span> </h4>
-						<p>여수 엑스포역 KTX 차량 4분 거리</p>
-						<p>115,000원~</p>
-					</div>
-					<div class="col-lg-3 col-md-6 text-center">
-						<p>
-							<a href="#"><img src="resources/assets/img/accommodation/hotel/event/event03.jpg" alt="Pic" class="img-fluid rounded"></a>
-						</p>
-						<h4><span>베스트 루이스 해밀턴 해운대</span></h4>
-						<p>해운대해수욕장 7번출구 800m</p>
-						<p>180,000원~</p>
-					</div>
-					<div class="col-lg-3 col-md-6 text-center">
-						<p>
-							<a href="#"><img src="resources/assets/img/accommodation/hotel/event/event04.jpg" alt="Pic" class="img-fluid rounded"></a>
-						</p>
-						<h4><span>군산 호텔 은파팰리스</span> </h4>
-						<p>은파관광지 도보 3분</p>
-						<p>155,000원~</p>
-					</div>
-				</div>
-				<!-- End row -->
-				
-			</div>
-			<!-- End container -->
-		</div>
-		<!-- End white_bg -->
 
 		<section class="promo_full">
 		
