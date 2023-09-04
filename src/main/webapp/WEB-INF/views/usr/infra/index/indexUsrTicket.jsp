@@ -13,8 +13,8 @@
    <section class="parallax-window" data-parallax="scroll" data-image-src="/resources/assets/img/view123.jpg" data-natural-width="1400" data-natural-height="470">
 		<div class="parallax-content-1 opacity-mask" data-opacity-mask="rgba(0, 0, 0, 0.6)">
 			<div class="animated fadeInDown" >
-				<h1>입장권</h1>
-				<p>즐기고 싶은 이벤트 / 축제를 직접 골라보세요.</p>
+				<h1 class="backFonts">입장권</h1>
+				<p class="backFonts">즐기고 싶은 이벤트 / 축제를 직접 골라보세요.</p>
 			</div>
 		</div>
 	</section>

@@ -26,7 +26,7 @@
 
 			<div class="animated fadeInDown">
 
-				<h1>기차 노선도</h1>
+				<h1 class="backFonts">기차 노선도</h1>
 				<p></p>
 			</div>
 		</div>
