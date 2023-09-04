@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mycompany.app.train.TrainMapper">		
+
+
+    <resultMap id="resultMapObj" type="com.mycompany.app.train.Train"></resultMap>
+    
+    <select id="selectTrain">
+    	SELECT
+    		*
+    	FROM
+    		trainUsr
+    	WHERE 1=1
+    </select>
+    
+    <insert id="insertTrain">
+    	INSERT INTO trainUsr (
+    		adultNum,
+    		childNum,
+    		price,
+    		member_seq,
+    		tid,
+    		delNy
+    	) VALUES (
+    		#{adultNum},
+    		#{childNum},
+    		#{price},
+    		#{sessionSeq},
+    		#{tid},
+    		0
+    	)
+    </insert>
+    
+    <update id="updateTrain">
+    	UPDATE
+    		trainUsr
+    	SET
+    		start = #{start},
+    		startDateTime = #{startDateTime},
+    		end = #{end},
+    		endDateTime = #{endDateTime},
+    		type = #{type},
+    		sort = #{sort}
+    	WHERE 1=1
+    		AND tid = #{tid}
+    </update>
+    
+	<update id="UeleteTrain">
+		UPDATE
+			trainUsr
+		SET
+			delNy = 1
+		WHERE 1=1
+			AND tid = #{tid}
+	</update>    
+    
+    
+    
+</mapper>

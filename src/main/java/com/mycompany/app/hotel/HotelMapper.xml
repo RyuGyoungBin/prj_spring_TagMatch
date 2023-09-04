@@ -69,6 +69,7 @@
 		WHERE 1=1
 			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq} </if>
 			<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType} </if>
+			<if test="sido != null and !sido.equals('')">AND a.sido = #{sido} </if>
 	</sql>
 	<select id="selectList" resultMap="resultMapObj">
 		SELECT aa.* FROM (
@@ -129,6 +130,7 @@
 		
 		HAVING 1=1
 			<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} </if>
+			<if test="starRatingMin != null and starRatingMin.equals('0')">OR starRating is null</if>
 		
 		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
 		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>

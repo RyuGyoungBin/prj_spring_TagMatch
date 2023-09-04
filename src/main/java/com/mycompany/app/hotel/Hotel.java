@@ -27,7 +27,7 @@ public class Hotel {
 //	hotelRoom
 	private Integer roomType;
 	private String roomName;
-	private String price;
+	private Integer price;
 	private Integer roomDefaultNy;
 	private Integer roomDelNy;
 	private Integer roomNum;
@@ -60,6 +60,8 @@ public class Hotel {
 	private Double starRating;
 	private Integer cnt;
 	private String hotelUsr_seq;
+	private String member_seq;
+	private String tid;
 	
 	
 	public String getHotelUsr_seq() {
@@ -195,10 +197,10 @@ public class Hotel {
 	public void setRoomName(String roomName) {
 		this.roomName = roomName;
 	}
-	public String getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 	public Integer getRoomDefaultNy() {
@@ -349,6 +351,18 @@ public class Hotel {
 	}
 	public void setDefaultNy(Integer defaultNy) {
 		this.defaultNy = defaultNy;
+	}
+	public String getMember_seq() {
+		return member_seq;
+	}
+	public void setMember_seq(String member_seq) {
+		this.member_seq = member_seq;
+	}
+	public String getTid() {
+		return tid;
+	}
+	public void setTid(String tid) {
+		this.tid = tid;
 	}
 	
 	
