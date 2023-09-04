@@ -1,5 +1,8 @@
 package com.mycompany.app.spot;
 
+import java.util.List;
+
+import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 public class Spot {

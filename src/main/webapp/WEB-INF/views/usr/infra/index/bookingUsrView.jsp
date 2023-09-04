@@ -445,7 +445,7 @@
 							<div class="col-md-4 px-2">
 								<div class="hotel_container">
 									<div class="img_container">
-										<a>
+										<a class="spotModal" name="<c:out value="${spot.seq }"></c:out>">
 											<img src="<c:out value="${spot.path }"/><c:out value="${spot.uuidName }"/>" width="300" height="533" class="img-fluid" alt="Image">
 											<div class="score"><span><c:out value="${spot.starRating }"></c:out></span></div>
 											
@@ -468,8 +468,8 @@
 				</c:forEach>
 				</div>
 			</div>
-			<div class="overflow-auto mb-3 border d-none ticketDetail ticketSelect" style="height: 650px;">
-				<div class="d-flex flex-column">
+			<div class="overflow-auto mb-3 border d-none ticketDetail ticketSelect" style="height: 650px;" id="spotModal">
+				<div class="d-flex flex-column" >
 					<div class="p-4 border-bottom d-flex justify-content-between align-items-center">
 						상품상세정보
 						<a class="btn btn-light text-secondary detailCloseBtn">X</a>
@@ -491,16 +491,7 @@
 					<div class="px-3">
 						아래에서 원하는 날짜와 입장권을 선택하세요
 					</div>
-					<div class="d-flex justify-content-end px-3">
-						<div class="me-2">
-							<label>07/25</label>
-							<input type="radio" name="ticketDate" checked>
-						</div>
-						<div class="me-2">
-							<label>07/26</label>
-							<input type="radio" name="ticketDate">
-						</div>
-					</div>
+					
 					<div class="p-3">
 						<div class="border p-3">
 							<div class="mb-2">성인</div>
@@ -613,11 +604,10 @@
 		$(this).parent().parent().parent().parent().parent().addClass("d-none");
 		$(this).parent().parent().parent().parent().parent().next().removeClass("d-none");
 	})
-	$(".detailCloseBtn").on("click", function(){
+	$(document).on("click",".detailCloseBtn", function(){
 		$(this).parent().parent().parent().prev().removeClass("d-none");
 		$(this).parent().parent().parent().addClass("d-none");
 	})
-	
 	$(function(){
 		var hotelPrice = 113637;
 		var hotelLen = parseInt($("#sleep").val());
@@ -631,52 +621,28 @@
 			hotelLen =  parseInt($("#sleep").val());
 			$("#hotelTotal").text(hotelPrice * hotelLen); 
 		});
+			
+		$(document).on("click", ".delBtn", function(){
+			 allTicketPrice = 0;
+			$(this).parent().parent().remove();
+			for(var i = 0; i<$(".ticketPrice").length; i++){
+				allTicketPrice += parseInt($(".ticketPrice").eq(i).text());
+			}
+			$("#ticketTotal").text(allTicketPrice);
+		})
+		
+		var adultCount  = 0;
+		var youthCount  = 0;
+		var ageupPrice = 3000;
+		var agedownPrice = 2000;
 		
 	})
-	$(document).on("click", ".delBtn", function(){
-		$(this).parent().parent().remove();
-	})
-	var ageup = 0;
-	var agedown = 0;
-	var ageupPrice = 3000;
-	var agedownPrice = 2000;
-	
-	$("#18up").find(".fw-bold").text(ageup);
-	$("#18down").find(".fw-bold").text(agedown);
-	
-	$("#18up .PBtn").on("click",function(){
-		ageup ++;
-		$("#18up").find(".fw-bold").text(ageup);
-	})
-	
-	$("#18up .MBtn").on("click",function(){
-		if(ageup > 0){
-			ageup --;
-			$("#18up").find(".fw-bold").text(ageup);
-		} else {
-			
-		}
-	})
-	
-	$("#18down .PBtn").on("click",function(){
-		agedown ++;
-		$("#18down").find(".fw-bold").text(agedown);
-	})
-	
-	$("#18down .MBtn").on("click",function(){
-		if(agedown > 0){
-			agedown --;
-			$("#18down").find(".fw-bold").text(agedown);
-		} else {
-			
-		}
-	})
-	$("#selectTicket").on("click", function(){
-		if(ageup == 0 && agedown == 0) {
+	$(document).on("click","#selectTicket", function(){
+		if(adultCount == 0 && youthCount == 0) {
 			
 		} else {
-			var ticketPrice = ageup * ageupPrice + agedown * agedownPrice;
-			$("#ticketView").append('<tr><td><span>[강원 속초]</span></td><td><span class="mx-3">파아란 스쿠버 다이빙 프리다이빙 자격증 체험 2인이상</span></td><td><span>('+ (ageup+agedown) +'명)</span></td><td><span class="me-3 ticketPrice">'+ticketPrice+'</span><span>원</span></td><td><a class="btn btn-light text-danger delBtn">X</a></td></tr>');
+			var ticketPrice = adultCount  * ageupPrice + youthCount  * agedownPrice;
+			$("#ticketView").append('<tr><td><span>[강원 속초]</span></td><td><span class="mx-3">파아란 스쿠버 다이빙 프리다이빙 자격증 체험 2인이상</span></td><td><span>('+ (adultCount +youthCount ) +'명)</span></td><td><span class="me-3 ticketPrice">'+ticketPrice+'</span><span>원</span></td><td><a class="btn btn-light text-danger delBtn">X</a></td></tr>');
 		}
 		var allTicketPrice = 0;
 		console.log($(".ticketPrice").length)
@@ -685,7 +651,6 @@
 		}
 		console.log(allTicketPrice)
 		$("#ticketTotal").text(allTicketPrice);
-		
 	})
 	$("#trainBtn").on("click", function(){
 		$("#trainPriceF").text($("#trainTotal").text());
@@ -929,7 +894,130 @@
 		}
 		</c:forEach>
 	  /*spot 별점 E*/
-		
+	  
+	  //Ticket 수량 증감 S
+	  // 성인 수량 증가
+$(document).on("click", "#18up .PBtn", function(){
+    console.log("aaaaaaaaaa");
+     adultCount = parseInt($(this).parent().siblings().find(".fw-bold").text()); // 현재 수량 가져오기
+    adultCount++; // 수량 증가
+    $(this).parent().siblings().find(".fw-bold").text(adultCount); // 수량 업데이트
+});
+
+// 성인 수량 감소
+$(document).on("click", "#18up .MBtn", function(){
+    console.log("bbbbbbbbb");
+     adultCount = parseInt($(this).parent().siblings().find(".fw-bold").text()); // 현재 수량 가져오기
+    if (adultCount > 0) {
+        adultCount--; // 수량 감소 (0보다 작아지지 않도록 확인)
+        $(this).parent().siblings().find(".fw-bold").text(adultCount); // 수량 업데이트
+    }
+});
+
+// 청소년 수량 증가
+$(document).on("click", "#18down .PBtn", function(){
+    console.log("ccccccccc");
+     youthCount = parseInt($(this).parent().siblings().find(".fw-bold").text()); // 현재 수량 가져오기
+    youthCount++; // 수량 증가
+    $(this).parent().siblings().find(".fw-bold").text(youthCount); // 수량 업데이트
+});
+
+// 청소년 수량 감소
+$(document).on("click", "#18down .MBtn", function(){
+    console.log("ddddddddd");
+     youthCount = parseInt($(this).parent().siblings().find(".fw-bold").text()); // 현재 수량 가져오기
+    if (youthCount > 0) {
+        youthCount--; // 수량 감소 (0보다 작아지지 않도록 확인)
+        $(this).parent().siblings().find(".fw-bold").text(youthCount); // 수량 업데이트
+    }
+});
+//Ticket 수량 증감 E
+	  
+	  
+// 	  $(document).on("click", "#18down .PBtn", function(){
+// 		  console.log("aaaaaaaaaa")
+// 			agedown ++;
+// 		$(this).find(".fw-bold").text(agedown);
+// 	  })
+	  
+	  $(document).on()
+	  
+    $(".spotModal").click(function(){
+            $.ajax({
+                type : "POST",            
+                url : "/spotModal",    
+                data :{
+                   "seq" : $(this).attr("name")
+                },
+                success : function(res){ 
+//                     alert(res);
+                	$("#spotModal").empty();
+                	ageupPrice = res.spot.adultPrice;
+                	agedownPrice = res.spot.childPrice;
+                	spotModal = "";
+				console.log(res)
+                    spotModal="";
+                    spotModal +='<div class="d-flex flex-column">';
+                    spotModal +='<div class="p-4 border-bottom d-flex justify-content-between align-items-center">';
+                    spotModal +='상품상세정보';
+                    spotModal +='<a class="btn btn-light text-secondary detailCloseBtn">X</a>';
+                    spotModal +='</div>';
+                    spotModal +='<div class="d-flex p-3">';
+                    spotModal +='<div class="col-4 p-3 border-bottom">';
+                    spotModal +='<img src="'+res.spot.path+res.spot.uuidName+'" width="300" height="533" class="img-fluid" alt="Image">';
+                    spotModal +='</div>';
+                    spotModal +='<div class="col-6 d-flex flex-column border-bottom justify-content-around">';
+                    spotModal +='<span class="h4 fw-bold text-center border-bottom pb-3">'+res.spot.name+'</span>';
+                    spotModal +='<span>주소 : '+res.spot.address+" "+res.spot.addressDetail+'</span>';
+                    spotModal +='</div>';
+                    spotModal +='<div class="col-2 p-3">';
+                    spotModal +='<a class="btn btn-secondary">지도보기</a>';
+                    spotModal +='</div>';
+                    spotModal +='</div>';
+                    spotModal +='<div class="px-3">';
+                    spotModal +='<p>'+res.spot.detailText+'</p>';
+                    spotModal +='아래에서 원하는 입장권을 선택하세요';
+                    spotModal +='</div>';
+                    spotModal +='<div class="p-3">';
+                    spotModal +='<div class="border p-3">';
+                    spotModal +='<div class="mb-2">성인</div>';
+                    spotModal +='<div class="d-flex justify-content-between">';
+                    spotModal +='<div class="d-flex justify-content-center align-items-center" id="18up">';
+                    spotModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
+                    spotModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
+                    spotModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
+                    spotModal +='</div>';
+                    spotModal +='<div>';
+                    spotModal +='<span>'+res.spot.adultPrice+'</span>원';
+                    spotModal +='</div>';
+                    spotModal +='</div>';
+                    spotModal +='</div>';
+                    spotModal +='<div class="border p-3">';
+                    spotModal +='<div class="mb-2">청소년</div>';
+                    spotModal +='<div class="d-flex justify-content-between">';
+                    spotModal +='<div class="d-flex justify-content-center align-items-center" id="18down">';
+                    spotModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
+                    spotModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
+                    spotModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
+                    spotModal +='</div>';
+                    spotModal +='<div>';
+                    spotModal +='<span>'+res.spot.childPrice+'</span>원';
+                    spotModal +='</div>';
+                    spotModal +='</div>';
+                    spotModal +='</div>';
+                    spotModal +='</div>';
+                    spotModal +='<button type="button" class="btn btn-info" id="selectTicket">선택 완료</button>';
+                    spotModal +='</div>';
+                    $("#spotModal").append(spotModal);
+                },
+                error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+                    alert("통신 실패.")
+                }
+            })
+    });
+
+
+
 </script>
 	
 

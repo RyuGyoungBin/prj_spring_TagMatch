@@ -401,7 +401,6 @@
 		</div>
 	</div>
 
-
 		<!-- End container -->
 	</main>
 		<%@include file="../include/footer.jsp"%>
