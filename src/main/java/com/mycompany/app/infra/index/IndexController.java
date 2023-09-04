@@ -47,15 +47,6 @@ public class IndexController {
 //			by pass
 		}
 		
-		
-
-		
-		
-		
-		
-		
-		
-		
 		return "/usr/infra/index/index";
 	}
 	
@@ -67,6 +58,15 @@ public class IndexController {
 		model.addAttribute("hotel", hotel);
 		model.addAttribute("spot", spot);
 		return "/usr/infra/index/bookingUsrView";
+	}
+	
+	@RequestMapping("/spotModal")
+	@ResponseBody
+	public  Map<String, Spot> selectRatingOne(SpotVo vo){
+		 Map<String, Spot> resultMap = new HashMap<>();
+		 Spot spot = spotService.selectRatingOne(vo);
+		resultMap.put("spot",spot);
+		return resultMap;
 	}
 	
 	@RequestMapping("/trainStation")

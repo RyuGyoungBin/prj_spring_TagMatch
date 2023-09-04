@@ -8,6 +8,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.mycompany.app.common.constant.Constants; 
@@ -32,7 +33,9 @@ public class SpotServiceImpl implements SpotService{
 	public List<Spot> selectRating(SpotVo vo) {return dao.selectRating(vo);}
 	
 	@Override
-	public Spot selectRatingOne(SpotVo vo) {return dao.selectRatingOne(vo);}
+	public  Spot selectRatingOne(SpotVo vo) {return dao.selectRatingOne(vo);}
+	
+	
 	
 	@Override
 	public int update(Spot dto){
@@ -116,6 +119,10 @@ public class SpotServiceImpl implements SpotService{
     		}
 		} 
 	}
+
+
+	
+
 
 	
 
