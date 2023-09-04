@@ -22,7 +22,7 @@ public class HotelVo {
 //	hotelRoom
 	private Integer roomType;
 	private String roomName;
-	private String price;
+	private Integer price;
 	private Integer roomDefaultNy;
 	private Integer roomDelNy;
 	private Integer roomNum;
@@ -195,11 +195,11 @@ public class HotelVo {
 		this.roomName = roomName;
 	}
 
-	public String getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
 

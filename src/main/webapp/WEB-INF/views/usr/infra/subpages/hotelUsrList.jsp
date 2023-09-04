@@ -26,9 +26,6 @@
 
 				<h1 class="backFonts">숙 소</h1>
 
-   
-				<h1>숙소</h1>
-
 				<p></p>
 			</div>
 		</div>
@@ -101,11 +98,11 @@
 				<!--End aside -->
 				<div class="col-lg-9">
 					<div id="tools">
-						<div class="d-flex justify-content-between">`1
+						<div class="d-flex justify-content-between">
 							<select class="form-select selectCity" aria-label="Default select example" name="sido">
 								<option value="">---전체---</option>
 							  <c:forEach items="${item}" var="item" varStatus="status">
-							  	<option value="<c:out value="${item.cityname }"/>"><c:out value="${item.cityname }"/></option>
+							  	<option value="<c:out value="${item.cityname }"/>" <c:if test="${item.cityname eq vo.sido }">selected</c:if> ><c:out value="${item.cityname }"/></option>
 							  </c:forEach>
 						 	</select>
 							<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">

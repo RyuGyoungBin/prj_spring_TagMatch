@@ -60,11 +60,11 @@
                             <form>
                                 <div class="form-group">
                                     <label>아이디</label>
-                                    <input type="text" class="form-control"  id="id" placeholder="아이디">
+                                    <input type="text" class="form-control"  id="id" placeholder="아이디" value="test1">
                                 </div>
                                 <div class="form-group">
                                     <label >비밀번호</label>
-                                    <input type="password" class=" form-control" id="pass" placeholder="비밀번호">
+                                    <input type="password" class=" form-control" id="pass" placeholder="비밀번호" value="asdf!123A">
                                 </div>
                                 
                                 <button type=button class="btn_full" id="btn" >로그인</button>

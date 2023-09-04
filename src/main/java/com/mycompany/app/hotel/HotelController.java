@@ -40,6 +40,8 @@ public class HotelController {
 		}
 		vo.setStarRatingVo(vo.getStarRatingVo());
 		vo.setHotelType(vo.getHotelType());
+		vo.setSido(vo.getSido());
+		System.out.println(vo.getSido());
 		vo.setParamsPaging(hotelService.selectOneRatingCount(vo));
 		if(vo.getTotalRows() > 0) {
 		List<Hotel> list = hotelService.selectRating(vo);

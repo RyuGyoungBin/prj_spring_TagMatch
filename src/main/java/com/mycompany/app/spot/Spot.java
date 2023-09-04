@@ -17,8 +17,8 @@ public class Spot {
 	private String tel;
 	private String openTime;
 	private String closedTime;
-	private String adultPrice;
-	private String childPrice;
+	private Integer adultPrice;
+	private Integer childPrice;
 	private String detailText;
 	private String closed;
 	private Integer delNy; 
@@ -40,6 +40,9 @@ public class Spot {
 	private String ext;
 	private long size;
 	private String pseq;
+	
+	private String member_seq;
+	private String tid;
 	
 
 
@@ -175,16 +178,16 @@ public class Spot {
 	public void setClosedTime(String closedTime) {
 		this.closedTime = closedTime;
 	}
-	public String getAdultPrice() {
+	public Integer getAdultPrice() {
 		return adultPrice;
 	}
-	public void setAdultPrice(String adultPrice) {
+	public void setAdultPrice(Integer adultPrice) {
 		this.adultPrice = adultPrice;
 	}
-	public String getChildPrice() {
+	public Integer getChildPrice() {
 		return childPrice;
 	}
-	public void setChildPrice(String childPrice) {
+	public void setChildPrice(Integer childPrice) {
 		this.childPrice = childPrice;
 	}
 	public String getDetailText() {
@@ -322,6 +325,18 @@ public class Spot {
 	}
 	public void setUploadImgSpotDeletePathFile(String[] uploadImgSpotDeletePathFile) {
 		this.uploadImgSpotDeletePathFile = uploadImgSpotDeletePathFile;
+	}
+	public String getMember_seq() {
+		return member_seq;
+	}
+	public void setMember_seq(String member_seq) {
+		this.member_seq = member_seq;
+	}
+	public String getTid() {
+		return tid;
+	}
+	public void setTid(String tid) {
+		this.tid = tid;
 	}
 
 	

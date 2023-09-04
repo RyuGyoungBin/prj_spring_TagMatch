@@ -15,8 +15,8 @@ public class SpotVo {
 	private String tel;
 	private String openTime;
 	private String closedTime;
-	private String adultPrice;
-	private String childPrice;
+	private Integer adultPrice;
+	private Integer childPrice;
 	private String detailText;
 	private String closed;
 	private Integer delNy;
@@ -254,19 +254,19 @@ public class SpotVo {
 			this.closedTime = closedTime;
 		}
 
-		public String getAdultPrice() {
+		public Integer getAdultPrice() {
 			return adultPrice;
 		}
 
-		public void setAdultPrice(String adultPrice) {
+		public void setAdultPrice(Integer adultPrice) {
 			this.adultPrice = adultPrice;
 		}
 
-		public String getChildPrice() {
+		public Integer getChildPrice() {
 			return childPrice;
 		}
 
-		public void setChildPrice(String childPrice) {
+		public void setChildPrice(Integer childPrice) {
 			this.childPrice = childPrice;
 		}
 

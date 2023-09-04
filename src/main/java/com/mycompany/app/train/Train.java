@@ -35,6 +35,20 @@ public class Train {
 	@JsonFormat(pattern = "yyyyMMdd") //데이터 포맷 변환
     private Date depplandtime;
   	private Date arrplandtime;
+  	
+  	private String seq;
+  	private String start;
+  	private String startDateTime;
+  	private String end;
+  	private String endDateTime;
+  	private String type;
+  	private Integer sort;
+  	private Integer adultNum;
+  	private Integer childNum;
+  	private Integer price;
+  	private String member_seq;
+  	private String tid;
+  	
 	
 	
 	
@@ -145,6 +159,78 @@ public class Train {
 	}
 	public void setNodeName(String nodeName) {
 		this.nodeName = nodeName;
+	}
+	public String getSeq() {
+		return seq;
+	}
+	public void setSeq(String seq) {
+		this.seq = seq;
+	}
+	public String getStart() {
+		return start;
+	}
+	public void setStart(String start) {
+		this.start = start;
+	}
+	public String getStartDateTime() {
+		return startDateTime;
+	}
+	public void setStartDateTime(String startDateTime) {
+		this.startDateTime = startDateTime;
+	}
+	public String getEnd() {
+		return end;
+	}
+	public void setEnd(String end) {
+		this.end = end;
+	}
+	public String getEndDateTime() {
+		return endDateTime;
+	}
+	public void setEndDateTime(String endDateTime) {
+		this.endDateTime = endDateTime;
+	}
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public Integer getSort() {
+		return sort;
+	}
+	public void setSort(Integer sort) {
+		this.sort = sort;
+	}
+	public Integer getAdultNum() {
+		return adultNum;
+	}
+	public void setAdultNum(Integer adultNum) {
+		this.adultNum = adultNum;
+	}
+	public Integer getChildNum() {
+		return childNum;
+	}
+	public void setChildNum(Integer childNum) {
+		this.childNum = childNum;
+	}
+	public Integer getPrice() {
+		return price;
+	}
+	public void setPrice(Integer price) {
+		this.price = price;
+	}
+	public String getMember_seq() {
+		return member_seq;
+	}
+	public void setMember_seq(String member_seq) {
+		this.member_seq = member_seq;
+	}
+	public String getTid() {
+		return tid;
+	}
+	public void setTid(String tid) {
+		this.tid = tid;
 	}
 	
 	
