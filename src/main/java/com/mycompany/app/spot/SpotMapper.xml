@@ -19,7 +19,38 @@
     	<if test="spotType != null and !spotType.equals('')">AND a.spotType = #{spotlType}</if>
     </sql>
 	
-	 
+	 <sql id="selectRating">
+	    	a.seq,
+	    	a.type spotType,
+	    	a.name,
+	    	a.zipCode,
+	    	a.address,
+	    	a.addressDetail,
+	    	a.sido,
+	    	a.tel,
+	    	a.openTime,
+	    	a.closedTime,
+	    	a.adultPrice,
+	    	a.childPrice,
+	    	a.detailText,
+			ROUND(avg(c.starRating),1) starRating,
+			COUNT(c.review) cnt,
+			d.path,
+			d.type,
+			d.uuidName,
+			b.spotSeq spot_seq,
+			b.seq spotUsr_seq
+		</sql>
+		
+		 <sql id="selectRatingCommon">
+			FROM
+			spot a
+		    LEFT JOIN spotUsr b on b.spotSeq = a.seq
+		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 2
+		    LEFT JOIN spotUploaded d on d.pseq = a.seq AND d.type = 1
+		WHERE 1=1
+			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq}</if>
+		</sql>
 	
 	
         <sql id="selectSpot">
@@ -89,66 +120,20 @@
 	
 	<select id="selectRating" resultMap="resultMapObj">
 		SELECT
-			a.seq,
-	    	a.type spotType,
-	    	a.name,
-	    	a.zipCode,
-	    	a.address,
-	    	a.addressDetail,
-	    	a.sido,
-	    	a.tel,
-	    	a.openTime,
-	    	a.closedTime,
-	    	a.adultPrice,
-	    	a.childPrice,
-	    	a.detailText,
-			ROUND(avg(c.starRating),1) starRating,
-			d.path,
-			d.type,
-			d.uuidName
-		FROM
-			spot a
-		    LEFT JOIN spotUsr b on b.spotSeq = a.seq
-		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 2
-		    LEFT JOIN spotUploaded d on d.pseq = a.seq AND d.type = 1
-		WHERE 1=1
-			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq}</if>
-		
+		<include refid="selectRating"></include>
+		<include refid="selectRatingCommon"></include>
 		GROUP BY a.seq
 		
 		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
 		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
+		
 	</select>
 	<select id="selectRatingOne" resultMap="resultMapObj">
 		SELECT
-			a.seq,
-	    	a.type spotType,
-	    	a.name,
-	    	a.zipCode,
-	    	a.address,
-	    	a.addressDetail,
-	    	a.sido,
-	    	a.tel,
-	    	a.openTime,
-	    	a.closedTime,
-	    	a.adultPrice,
-	    	a.childPrice,
-	    	a.detailText,
-			ROUND(avg(c.starRating),1) starRating,
-			COUNT(c.review) cnt,
-			d.path,
-			d.type,
-			d.uuidName,
-			b.spotSeq spot_seq,
-			b.seq spotUsr_seq
-		FROM
-			spot a
-		    LEFT JOIN spotUsr b on b.spotSeq = a.seq
-		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 2
-		    LEFT JOIN spotUploaded d on d.pseq = a.seq AND d.type = 1
-		WHERE 1=1
+		<include refid="selectRating"></include>
+		<include refid="selectRatingCommon"></include>
 			AND a.seq = #{seq}
-		
+			
 		GROUP BY a.seq
 	</select>
 	
@@ -156,6 +141,22 @@
    	<select id="selectOneCount" resultType="Integer">
 		SELECT count(*)
 		<include refid="selectCommon" />
+	</select>
+	
+		<select id="selectCount" resultType="Integer">
+		SELECT count(seq) cnt
+		FROM	(
+		SELECT
+		a.seq,
+		ROUND(avg(c.starRating),1) starRating
+		<include refid="selectRatingCommon" />
+		GROUP BY a.seq
+		HAVING 1=1
+			<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} </if>
+		
+		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
+		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
+		) as aa
 	</select>
 	
     
