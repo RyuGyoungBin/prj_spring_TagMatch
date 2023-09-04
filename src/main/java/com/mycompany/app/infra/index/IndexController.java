@@ -11,11 +11,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.mycompany.app.feedback.FeedbackServiceImpl;
 import com.mycompany.app.hotel.Hotel;
 import com.mycompany.app.hotel.HotelServiceImpl;
 import com.mycompany.app.hotel.HotelVo;
-import com.mycompany.app.info.InfoServiceImpl;
+import com.mycompany.app.spot.Spot;
+import com.mycompany.app.spot.SpotServiceImpl;
+import com.mycompany.app.spot.SpotVo;
 import com.mycompany.app.train.Train;
 import com.mycompany.app.train.TrainProc;
 
@@ -25,7 +26,8 @@ public class IndexController {
 	
 	@Autowired
 	HotelServiceImpl hotelService;
-	
+	@Autowired
+	SpotServiceImpl spotService;
 
 	
 
@@ -58,10 +60,12 @@ public class IndexController {
 	}
 	
 	@RequestMapping("/bookingUsrView")
-	public String bookingUsr(Model model, HotelVo hotelvo) throws Exception {
+	public String bookingUsr(Model model, HotelVo hotelvo, SpotVo spotvo) throws Exception {
 		List<Hotel> hotel = hotelService.selectRating(hotelvo);
+		List<Spot> spot = spotService.selectRating(spotvo);
 		TrainProc.train(model);
 		model.addAttribute("hotel", hotel);
+		model.addAttribute("spot", spot);
 		return "/usr/infra/index/bookingUsrView";
 	}
 	
