@@ -17,8 +17,8 @@
                             <div class="row justify-content-center justify-content-md-start">
                                 <div class="col-lg-12 static">
                                     <div class="slide-text text-center white">
-                                        <h2 class="owl-slide-animated owl-slide-title">예약하기<br></h2>
-                                        <p class="owl-slide-animated owl-slide-subtitle">
+                                        <h2 class="owl-slide-animated owl-slide-title backFonts">예약하기<br></h2>
+                                        <p class="owl-slide-animated owl-slide-subtitle backFonts">
                                             기차편과 숙소, 기타 입장권을 한 번에 예약하세요!
                                         </p>
                                         <div class="owl-slide-animated owl-slide-cta"><a class="btn_1" href="" role="button">Read more</a></div>
