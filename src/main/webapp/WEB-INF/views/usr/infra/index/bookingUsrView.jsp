@@ -322,10 +322,10 @@
 							<img src="/resources/assets/img/2022011314264525694731.jpg" width="300" height="533" class="img-fluid" alt="Image">
 						</div>
 						<div class="col-6 d-flex flex-column border-bottom justify-content-around">
-							<span class="h4 fw-bold text-center border-bottom pb-3">글래드 강남 코엑스센터</span>
-							<span>주소 : 서울 강남구 테헤란로 610</span>
-							<span>객 실수 : 10</span>
-							<span>특이사항 : 삼성역 주변</span>
+							<span class="h4 fw-bold text-center border-bottom pb-3"> </span>
+							<span>주소 : </span>
+							<span>객 실수 : </span>
+							<span>특이사항 : </span>
 						</div>
 						<div class="col-2 p-3">
 							<a class="btn btn-secondary">지도보기</a>
@@ -348,13 +348,13 @@
 								<tr>
 									<td>스탠다드 트원</td>
 									<td>07/24(월)</td>
-									<td>113637</td>
+									<td></td>
 									<td>O</td>
 								</tr>
 								<tr>
 									<td>스탠다드 더블</td>
 									<td>07/24(월)</td>
-									<td>118182</td>
+									<td></td>
 									<td>O</td>
 								</tr>
 							</tbody>
@@ -379,24 +379,56 @@
 					</div>
 				</div>
 			</div>
+			
+			
+			
+			
+			
+			
+<!-- 			<div class="d-flex flex-column border p-3"> -->
+<!-- 				<div><h5 class="ms-2 mb-2">글래드 강남 코엑스센터</h5></div> -->
+<!-- 				<div class="d-flex justify-content-between align-items-center"> -->
+<!-- 					<div class="col-6 d-flex justify-content-around flex-wrap"> -->
+<!-- 						<div class="col-5">객실명 : </div> -->
+<!-- 						<div class="col-5">이용박수 : </div> -->
+<!-- 						<div class="col-5">입실일 : </div> -->
+<!-- 						<div class="col-5">객실수 : </div> -->
+<!-- 					</div> -->
+<!-- 					<div class="col-3 d-flex justify-content-between"> -->
+<!-- 						<div> -->
+<!-- 							<div style="font-size: 9px;">선택된 총 숙박요금</div> -->
+<!-- 							<div class="mx-2"><span id="hotelTotal"></span>원</div> -->
+<!-- 						</div> -->
+<!-- 						<button type="button" class="btn btn-sm btn-primary" id="hotelBtn">선택완료</button> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+			
 			<div class="d-flex flex-column border p-3">
-				<div><h5 class="ms-2 mb-2">글래드 강남 코엑스센터</h5></div>
-				<div class="d-flex justify-content-between align-items-center">
-					<div class="col-6 d-flex justify-content-around flex-wrap">
-						<div class="col-5">객실명 : </div>
-						<div class="col-5">이용박수 : </div>
-						<div class="col-5">입실일 : </div>
-						<div class="col-5">객실수 : </div>
-					</div>
-					<div class="col-3 d-flex justify-content-between">
-						<div>
-							<div style="font-size: 9px;">선택된 총 숙박요금</div>
-							<div class="mx-2"><span id="hotelTotal"></span>원</div>
-						</div>
-						<button type="button" class="btn btn-sm btn-primary" id="hotelBtn">선택완료</button>
-					</div>
-				</div>
+			<div><h5 class="ms-2 mb-2"></h5></div>
+				<table class="mb-3 text-center">
+					<thead class="border-bottom">
+						<tr>
+							<td>객실명</td>
+							<td>이용일수</td>
+							<td>매수</td>
+							<td>입실일</td>
+							<td>객실수</td>
+							<td>선택 취소</td>
+						</tr>
+					</thead>
+					<tbody id="hotelView">
+					</tbody>
+				</table>
+				<div class="d-flex justify-content-end align-items-center">
+					<div style="font-size: 9px;">선택된 총 숙소요금</div>
+					<div class="mx-2"><span id="hotelTotal"></span><span>원</span></div>
+					<button type="button" class="btn btn-sm btn-primary" id="ticketBtn">선택완료</button>
+				</div> 
 			</div>
+			
+			
+			
 			
 			<div class="border-bottom border-primary py-3 mb-3"></div>
 			<!--------------------입장권----------------------------- -->
@@ -609,7 +641,7 @@
 		$(this).parent().parent().parent().addClass("d-none");
 	})
 	$(function(){
-		var hotelPrice = 113637;
+		var hotelPrice = 0;
 		var hotelLen = parseInt($("#sleep").val());
 		$("#hotelTotal").text(hotelPrice * hotelLen);
 		$(".hotelSelect tbody tr").on("click", $("tbody tr"), function(){
@@ -621,6 +653,15 @@
 			hotelLen =  parseInt($("#sleep").val());
 			$("#hotelTotal").text(hotelPrice * hotelLen); 
 		});
+		
+		$(document).on("click", ".delBtn", function(){
+			allHotelPrice = 0;
+			$(this).parent().parent().remove();
+			for(var i = 0; i<$(".hotelPrice").length; i++){
+				allHotelPrice += parseInt($(".hotelPrice").eq(i).text());
+			}
+			$("#hotelTotal").text(allHotelPrice);
+		})
 			
 		$(document).on("click", ".delBtn", function(){
 			 allTicketPrice = 0;
@@ -1015,6 +1056,80 @@ $(document).on("click", "#18down .MBtn", function(){
                 }
             })
     });
+    
+	  $(".hotelModal").click(function(){
+          $.ajax({
+              type : "POST",            
+              url : "/hotelModal",    
+              data :{
+                 "seq" : $(this).attr("name")
+              },
+              success : function(res){ 
+//                   alert(res);
+              	$("#hotelModal").empty()sp
+              	ageupPrice = res.hotel.adultPrice;
+              	agedownPrice = res.hotel.childPrice;
+              	spotModal = "";
+				console.log(res)
+                  hotelModal="";
+				hotelModal +='<div class="d-flex flex-column">';
+				hotelModal +='<div class="p-4 border-bottom d-flex justify-content-between align-items-center">';
+				hotelModal +='숙소상세정보';
+				hotelModal +='<a class="btn btn-light text-secondary detailCloseBtn">X</a>';
+				hotelModal +='</div>';
+				hotelModal +='<div class="d-flex p-3">';
+				hotelModal +='<div class="col-4 p-3 border-bottom">';
+				hotelModal +='<img src="'+res.hotel.path+res.hotel.uuidName+'" width="300" height="533" class="img-fluid" alt="Image">';
+				hotelModal +='</div>';
+                  hotelModal +='<div class="col-6 d-flex flex-column border-bottom justify-content-around">';
+                  hotelModal +='<span class="h4 fw-bold text-center border-bottom pb-3">'+res.hotel.name+'</span>';
+                  hotelModal +='<span>주소 : '+res.hotel.address+" "+res.hotel.addressDetail+'</span>';
+                  hotelModal +='</div>';
+                  hotelModal +='<div class="col-2 p-3">';
+                  hotelModal +='<a class="btn btn-secondary">지도보기</a>';
+                  hotelModal +='</div>';
+                  hotelModal +='</div>';
+                  hotelModal +='<div class="px-3">';
+                  hotelModal +='<p>'+res.hotel.detailText+'</p>';
+                  hotelModal +='아래에서 원하는 입장권을 선택하세요';
+                  hotelModal +='</div>';
+                  hotelModal +='<div class="p-3">';
+                  hotelModal +='<div class="border p-3">';
+                  hotelModal +='<div class="mb-2">성인</div>';
+                  hotelModal +='<div class="d-flex justify-content-between">';
+                  hotelModal +='<div class="d-flex justify-content-center align-items-center" id="18up">';
+                  hotelModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
+                  hotelModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
+                  hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
+                  hotelModal +='</div>';
+                  hotelModal +='<div>';
+                  hotelModal +='<span>'+res.hotel.adultPrice+'</span>원';
+                  hotelModal +='</div>';
+                  hotelModal +='</div>';
+                  hotelModal +='</div>';
+                  hotelModal +='<div class="border p-3">';
+                  hotelModal +='<div class="mb-2">청소년</div>';
+                  hotelModal +='<div class="d-flex justify-content-between">';
+                  hotelModal +='<div class="d-flex justify-content-center align-items-center" id="18down">';
+                  hotelModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
+                  hotelModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
+                  hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
+                  hotelModal +='</div>';
+                  hotelModal +='<div>';
+                  hotelModal +='<span>'+res.hotel.childPrice+'</span>원';
+                  hotelModal +='</div>';
+                  hotelModal +='</div>';
+                  hotelModal +='</div>';
+                  hotelModal +='</div>';
+                  hotelModal +='<button type="button" class="btn btn-info" id="selectTicket">선택 완료</button>';
+                  hotelModal +='</div>';
+                  $("#hotelModal").append(hotelModal);
+              },
+              error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
+                  alert("통신 실패.")
+              }
+          })
+  });
 
 
 
