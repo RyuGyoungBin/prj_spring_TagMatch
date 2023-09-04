@@ -296,7 +296,7 @@
 										</a>
 									</div>
 									<div class="hotel_title">
-										<h3 ><strong>[<c:out value="${hotel.sido }"/>]<c:out value="${hotel.name }"/></strong></h3>
+										<h3 style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"  ><strong>[<c:out value="${hotel.sido }"/>]<c:out value="${hotel.name }"/></strong></h3>
 										<div class="rating" id="rating<c:out value="${hotel.seq }"/>">
 										</div>
 										<!-- end rating -->
@@ -441,28 +441,23 @@
 				</div>
 				<div class="overflow-auto mb-3 ticketBox" style="height: 650px;">
 					<div class="d-flex flex-wrap pt-2">
+				<c:forEach items="${spot}" var="spot" varStatus="statusUploaded">
 							<div class="col-md-4 px-2">
 								<div class="hotel_container">
-									<div class="ribbon_3 popular"><span>Popular</span>
-									</div>
 									<div class="img_container">
 										<a>
-											<img src="/resources/assets/img/서울.jpg" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span>7.5</span>Good</div>
-											<div class="short_info hotel">
-												<span class="price"><sup>$</sup>59</span>
-											</div>
+											<img src="<c:out value="${spot.path }"/><c:out value="${spot.uuidName }"/>" width="300" height="533" class="img-fluid" alt="Image">
+											<div class="score"><span><c:out value="${spot.starRating }"></c:out></span></div>
+											
 										</a>
 									</div>
-									<div class="hotel_title">
-										<h3 ><strong>[경주]동궁원</strong></h3>
-										<div class="rating">
-											<i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star voted"></i><i class="icon-star-empty"></i>
-										</div>
-										<!-- end rating -->
 									
-										<!-- End wish list-->
+									<div class="hotel_title"  >
+										<h3 style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" ><strong><c:out value="${spot.name }"></c:out></strong></h3>
+										<div class="rating" id="spotRating<c:out value="${spot.seq }"/>">
+										</div>
 									</div>
+									
 								</div>
 								<!-- End box tour -->
 							</div>
@@ -470,6 +465,7 @@
 							<!-- End col-md-6 -->
 	
 					<!-- End row -->
+				</c:forEach>
 				</div>
 			</div>
 			<div class="overflow-auto mb-3 border d-none ticketDetail ticketSelect" style="height: 650px;">
@@ -920,6 +916,19 @@
 			}
 		</c:forEach>
 		
+		/*spot 별점 S*/
+		<c:forEach items="${spot}" var="spot" varStatus="statusUploaded">
+		var ratingStar<c:out value="${spot.seq }"/> = $("#spotRating<c:out value="${spot.seq }"/>");
+		var rating<c:out value="${spot.seq }"/> = Math.floor(<c:out value="${spot.starRating }"/>);
+		
+		for(var i=0; i<rating<c:out value="${spot.seq }"/> ; i++){
+			ratingStar<c:out value="${spot.seq }"/>.append('<i class="icon-smile voted"></i>')
+		}
+		for(var j=0; j<5-i; j++){
+			ratingStar<c:out value="${spot.seq }"/>.append('<i class="icon-smile"></i>');
+		}
+		</c:forEach>
+	  /*spot 별점 E*/
 		
 </script>
 	

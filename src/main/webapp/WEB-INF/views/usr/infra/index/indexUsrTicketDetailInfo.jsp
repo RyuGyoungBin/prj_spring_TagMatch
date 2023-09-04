@@ -110,6 +110,7 @@
 									<P><i class="icon-logout-1"></i>폐장시간 : <c:out value="${spot.closedTime }"/>까지</P>
 									<br>
 									<p><i class="icon-info-1"></i>취소/선결제</p>
+									<p>찾아오시는 길:<c:out value="${spot.address }"></c:out><c:out value="${spot.addressDetail }"></c:out></p>
 								</div>
 							</div>
 						 
