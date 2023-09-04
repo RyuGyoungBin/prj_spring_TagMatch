@@ -9,6 +9,7 @@ public interface SpotService {
 	
 	public List<Spot> selectList(SpotVo vo);
 	public int selectOneCount(SpotVo vo);	
+	public int selectCount(SpotVo vo);	
 	public Spot selectOne(SpotVo vo);
 	public List<Spot> selectListUploaded(SpotVo vo);
 	

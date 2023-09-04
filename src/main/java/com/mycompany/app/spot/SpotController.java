@@ -59,7 +59,7 @@ public class SpotController {
 	@RequestMapping("/indexUsrTicket")
 	public String indexUsrTicket(@ModelAttribute("vo") SpotVo vo, FeedbackVo feedbackVo,Model model) {
 		
-		vo.setParamsPaging(service.selectOneCount(vo));
+		vo.setParamsPaging(service.selectCount(vo));
 		
 		if(vo.getTotalRows() > 0) {
 			List<Spot> list = service.selectRating(vo);

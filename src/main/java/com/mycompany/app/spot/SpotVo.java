@@ -41,6 +41,13 @@ public class SpotVo {
 	private long size;
 	private String pseq;
 	
+	//별점 S
+	private String starRating;
+	private String starRatingVo;
+	private Integer starRatingMin;
+	private Integer starRatingMax;
+	//별점 E
+
 
 
 	private MultipartFile[] uploadImg;
@@ -154,7 +161,30 @@ public class SpotVo {
 //			imgType = imgtype;
 //		}
 
-
+		public String getStarRating() {
+			return starRating;
+		}
+		public void setStarRating(String starRating) {
+			this.starRating = starRating;
+		}
+		public String getStarRatingVo() {
+			return starRatingVo;
+		}
+		public void setStarRatingVo(String starRatingVo) {
+			this.starRatingVo = starRatingVo;
+		}
+		public Integer getStarRatingMin() {
+			return starRatingMin;
+		}
+		public void setStarRatingMin(Integer starRatingMin) {
+			this.starRatingMin = starRatingMin;
+		}
+		public Integer getStarRatingMax() {
+			return starRatingMax;
+		}
+		public void setStarRatingMax(Integer starRatingMax) {
+			this.starRatingMax = starRatingMax;
+		}
 
 		public String getInfo_seq() {
 			return info_seq;

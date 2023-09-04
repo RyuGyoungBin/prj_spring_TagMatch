@@ -27,6 +27,9 @@ public class SpotServiceImpl implements SpotService{
 	public int selectOneCount(SpotVo vo) {return dao.selectOneCount(vo); }
 	
 	@Override
+	public int selectCount(SpotVo vo) {return dao.selectCount(vo); }
+	
+	@Override
 	public Spot selectOne(SpotVo vo) { return dao.selectOne(vo); }
 
 	@Override

@@ -33,84 +33,7 @@
 			</div>
 		</div>
 		<!-- Position -->
-<div class=" text-bg-dark p-3">
-    <span class="d-flex justify-content-center me-2">카테고리</span>
-	   <div class="d-flex justify-content-center me-2 text-bg-dark p-3">
-		   <div class="form-check form-check-inline">
-		       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-		       <label class="form-check-label" for="inlineCheckbox1">전체</label>
-		     </div>
-		     <div class="form-check form-check-inline">
-		       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-		       <label class="form-check-label" for="inlineCheckbox2">레저/액티비티</label>
-		     </div>
-		     <div class="form-check form-check-inline">
-		       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-		       <label class="form-check-label" for="inlineCheckbox2">입장권/티켓</label>
-		     </div>
-		     <div class="form-check form-check-inline">
-		       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-		       <label class="form-check-label" for="inlineCheckbox2">투어</label>
-		     </div>
-		     <div class="form-check form-check-inline">
-		       <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-		       <label class="form-check-label" for="inlineCheckbox2">클래스</label>
-		     </div>
-		     <div class="form-check form-check-inline">
-		       <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="option2">
-		       <label class="form-check-label" for="inlineCheckbox2">미식/맛집</label>
-		     </div>
-		     <div class="form-check form-check-inline">
-		       <input class="form-check-input " type="checkbox" id="inlineCheckbox2" value="option2">
-		       <label class="form-check-label" for="inlineCheckbox2">뷰티/힐링</label>
-		     </div>
-		     <div class="d-grid gap-2 d-md-block">
-				  <button class="btn btn-dark" type="button"><i class="bi bi-search">조회</i></button>
-			</div>
-    </div>
-    <div class="d-flex justify-content-center me-2 text-bg-dark p-3">
-        <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-            <label class="form-check-label" for="inlineCheckbox1">공연/전시</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">웨딩/스냅</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">여행/교통편의</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-            <label class="form-check-label" for="inlineCheckbox2">숙박권</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control text-bg-secondary p-2" id="floatingInput" >
-            <label for="floatingInput">출발</label>
-        </div>
-        <div class="dropdown ms-3">
-		  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-		    전체지역
-		  </button><!-- 정체를 알 수 없음 -->
-			  <ul class="dropdown-menu">
-				    <li><a class="dropdown-item" href="#">==전체==</a></li>
-				    <li><a class="dropdown-item" href="#">서울특별시</a></li>
-				    <li><a class="dropdown-item" href="#">부산광역시</a></li>
-				    <li><a class="dropdown-item" href="#">인천광역시</a></li>
-				    <li><a class="dropdown-item" href="#">대구 광역시</a></li>
-				    <li><a class="dropdown-item" href="#">강원도</a></li>
-				    <li><a class="dropdown-item" href="#">경기도</a></li>
-				    <li><a class="dropdown-item" href="#">경남/울산</a></li>
-				    <li><a class="dropdown-item" href="#">경상북도</a></li>
-			     	<li><a class="dropdown-item" href="#">전남/광주</a></li>
-				    <li><a class="dropdown-item" href="#">전라북도</a></li>
-				    <li><a class="dropdown-item" href="#">충남/대전/세종</a></li>
-				    <li><a class="dropdown-item" href="#">충천북도</a></li>
-			  </ul>
-		</div>
-	</div>
-</div>
+
 		<div class="collapse" id="collapseMap">
 			<div id="map" class="map"></div>
 		</div>
@@ -119,195 +42,49 @@
 		<div class="container margin_60">
 			<div class="row">
 				<aside class="col-lg-3">
-					
+					<div class="box_style_cat">
+						<ul id="cat_nav">
+							<li><a href="/hotelUsrList?hotelType=1" data-hotel-type="1"><i class="icon_set_1_icon-51"></i>입장권/티켓 <span>(...)</span></a></li>
+							<li><a href="/hotelUsrList?hotelType=2" data-hotel-type="2"><i class="icon_set_1_icon-3"></i>미식/맛집 <span>(...)</span></a></li>
+							<li><a href="/hotelUsrList?hotelType=3" data-hotel-type="3"><i class="icon_set_1_icon-4"></i>뷰티/힐링<span>(...)</span></a></li>
+							<li><a href="/hotelUsrList?hotelType=4" data-hotel-type="4"><i class="icon_set_1_icon-44"></i>투어<span>(...)</span></a></li>
+						</ul>
+						<input type="hidden" name="spotType" value="${vo.spotType }"></input>
+					</div>
 
 					<div id="filters_col">
-                        <a data-bs-toggle="collapse" href="#collapseFilters" aria-expanded="false" aria-controls="collapseFilters" id="filters_col_bt"><i class="icon_set_1_icon-65"></i>Filters</a>
-                        <div class="collapse show" id="collapseFilters">
-                            <div class="filter_type">
-                                <h6>Price</h6>
-                                <input type="text" id="range" name="range" value="">
-                            </div>
-                            <div class="filter_type">
-                                <h6>Star Category</h6>
-                                <ul>
-                                    <li>
-                                        <label class="container_check">
-                                            <span class="rating">
-                                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i>
-                                            </span>(15)
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                            <span class="rating">
-                                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i>
-                                            </span>(10)
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                            <span class="rating">
-                                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
-                                            </span>(22)
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check"> 
-                                            <span class="rating">
-                                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
-                                            </span>(08)
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                            <span class="rating">
-                                                <i class="icon_set_1_icon-81 voted"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i><i class="icon_set_1_icon-81"></i>
-                                            </span>(08)
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>  
-                            <div class="filter_type">
-                                <h6>Review Score</h6>
-                                <ul>
-                                    <li>
-                                        <label class="container_check">
-                                            Superb: 9+ (77)
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                            Good: 7+ (909)
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                            Pleasant: 6+ (1196)
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                             No rating (198)
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="filter_type">
-                                <h6>Facility</h6>
-                                <ul>
-                                    <li>
-                                        <label class="container_check">
-                                             Pet allowed
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                             Wifi
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                             Spa
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                             Restaurant
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                             Pool
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_check">
-                                             Parking
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                     <li>
-                                        <label class="container_check">
-                                             Fitness center
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="filter_type">
-                                <h6>District</h6>
-                                <ul class="mb-0">
-                                    <li>
-                                        <label class="container_radio">
-                                             Paris Centre
-                                            <input type="radio" name="location">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_radio">
-                                             La Defance
-                                            <input type="radio" name="location">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_radio">
-                                            La Marais
-                                            <input type="radio" name="location">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                    <li>
-                                        <label class="container_radio">
-                                            Latin Quarter
-                                            <input type="radio" name="location">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--End collapse -->
-                    </div>
-                    <!--End filters col-->
-                    <div class="box_style_2 d-none d-sm-block">
-                        <i class="icon_set_1_icon-57"></i>
-                        <h4>Need <span>Help?</span></h4>
-                        <a href="tel://004542344599" class="phone">+45 423 445 99</a>
-                        <small>Monday to Friday 9.00am - 7.30pm</small>
-                    </div>
+						<a data-bs-toggle="collapse" href="#collapseFilters"
+							aria-expanded="false" aria-controls="collapseFilters"
+							id="filters_col_bt"><i class="icon_set_1_icon-65"></i>Filters</a>
+						<div class="collapse show" id="collapseFilters">
+							<div class="filter_type">
+								<h6>Rating</h6>
+								<input type="text" id="starRatingVo" value="" name="starRatingVo">
+							</div>
+							
+							<div class="filter_type">
+								<h6>태그</h6>
+								<ul class="mb-0">
+									<li><label class="container_check"> Pet allowed <input
+											type="checkbox"> <span class="checkmark"></span>
+									</label></li>
+									<li><label class="container_check"> Groups allowed
+											<input type="checkbox"> <span class="checkmark"></span>
+									</label></li>
+									<li><label class="container_check"> Tour guides <input
+											type="checkbox"> <span class="checkmark"></span>
+									</label></li>
+									<li><label class="container_check"> Access for
+											disabled <input type="checkbox"><span
+											class="checkmark"></span>
+									</label></li>
+								</ul>
+							</div>
+						</div>
+						<!--End collapse -->
+					</div>
+					<!--End filters col-->
+					
 				</aside>
 				<!--End aside -->
 
@@ -316,18 +93,15 @@
 			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<div id="tools">
-						<div class="row justify-content-between">
-                            <div class="col-md-3 col-sm-4">
-                                <div class="styled-select-filters">
-                                    <select name="sort_price" id="sort_price">
-                                        <option value="" selected>Sort by price</option>
-                                        <option value="lower">Lowest price</option>
-                                        <option value="higher">Highest price</option>
-                                    </select>
-                                </div>
-                            </div>
+						<div class="d-flex justify-content-between">
+							<select class="form-select selectCity" aria-label="Default select example" name="sido">
+								<option value="">---전체---</option>
+							  <c:forEach items="${item}" var="item" varStatus="status">
+							  	<option value="<c:out value="${item.cityname }"/>" <c:if test="${item.cityname eq vo.sido }">selected</c:if> ><c:out value="${item.cityname }"/></option>
+							  </c:forEach>
+						 	</select>
 							<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
-								<a href="#" class="bt_filters"><i class="icon-th"></i></a> <a href="all_hotels_list.html" class="bt_filters"><i class=" icon-list"></i></a>
+								<button type="button" class="btn btn-light" id="hotelListBtn"><i class="bi bi-search"></i></button> 
 							</div>
 						</div>
 					</div>
