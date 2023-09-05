@@ -51,7 +51,7 @@ public class SpotServiceImpl implements SpotService{
 	@Override
 
 	public int delete(Spot dto) {
-		dao.deleteSpotCloseDay(dto);
+//		dao.deleteSpotCloseDay(dto);
 		dao.delete(dto);	
 		return 0; 
 	}
@@ -60,7 +60,7 @@ public class SpotServiceImpl implements SpotService{
 	@Override
 	public int insert(Spot dto) throws Exception {
 		 dao.insertSpot(dto);
-		 dao.insertSpotCloseDay(dto);
+//		 dao.insertSpotCloseDay(dto);
 		 
 		uploadFiles(dto.getUploadImg(), dto, "spotUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
     	uploadFiles(dto.getUploadImgSpot(), dto, "spotUploaded", dto.getUploadImgSpotType(), dto.getUploadImgSpotMaxNumber());
