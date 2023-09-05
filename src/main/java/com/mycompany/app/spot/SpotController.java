@@ -58,8 +58,17 @@ public class SpotController {
 	
 	@RequestMapping("/indexUsrTicket")
 	public String indexUsrTicket(@ModelAttribute("vo") SpotVo vo, FeedbackVo feedbackVo,Model model) {
-		
+		Integer StarRatingMin = (vo.getStarRatingVo() == null ? null:Integer.parseInt(vo.getStarRatingVo().split(";")[0]));
+		Integer StarRatingMax = (vo.getStarRatingVo() == null ? null:Integer.parseInt(vo.getStarRatingVo().split(";")[1]));
+		System.out.println(StarRatingMin);
+		System.out.println(StarRatingMax);
+		if(StarRatingMin != null) {
+			vo.setStarRatingMax(StarRatingMax);
+			vo.setStarRatingMin(StarRatingMin);
+		}
+		vo.setStarRatingVo(vo.getStarRatingVo());
 		vo.setParamsPaging(service.selectCount(vo));
+		
 		
 		if(vo.getTotalRows() > 0) {
 			List<Spot> list = service.selectRating(vo);
