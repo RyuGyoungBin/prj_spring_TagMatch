@@ -21,6 +21,8 @@
 	<!-- End section -->
 
 	<main>
+<form autocomplete="off" action="indexUsrTicket" method="post" name="formList">
+	
 		<div id="position">
 			<div class="container">
 				<ul>
@@ -89,7 +91,7 @@
 				<!--End aside -->
 
 				<div class="col-lg-9">
-				<form autocomplete="off" action="indexUsrTicket" method="post" name="formList">
+				
 			  <input type="hidden" name="thisPage" value="<c:out value="${vo.thisPage}" default="1"/>">
 			  <input type="hidden" name="rowNumToShow" value="<c:out value="${vo.rowNumToShow}"/>">
 					<div id="tools">
@@ -101,7 +103,7 @@
 							  </c:forEach>
 						 	</select>
 							<div class="col-md-6 col-sm-4 d-none d-sm-block text-end">
-								<button type="button" class="btn btn-light" id="hotelListBtn"><i class="bi bi-search"></i></button> 
+								<button type="button" class="btn btn-light" id="spotListBtn"><i class="bi bi-search"></i></button> 
 							</div>
 						</div>
 					</div>
@@ -126,7 +128,7 @@
 										    <c:set var="type" value="1"/>
 										    <c:forEach items="${listUploaded}" var="listUploaded" varStatus="statusUploaded">
 										        <c:if test="${list.seq eq listUploaded.pseq && listUploaded.type eq 1}">
-											            <img src="${listUploaded.path}${listUploaded.uuidName}">
+											            <img src="${listUploaded.path}${listUploaded.uuidName}" style="max-height: 221px;">
 									             </c:if>
 										    </c:forEach>
 										</a>
@@ -143,7 +145,7 @@
 							</div>
 						  </c:forEach>
 						</div>
-					</form>
+					
 				</div>
 					 <div class="container-fluid px-0 mt-2">
 			    <div class="row">
@@ -174,7 +176,7 @@
 			</div>
 		</div>
 	</div>
-
+</form>
 		<!-- End container -->
 	</main>
 		<%@include file="../include/footer.jsp"%>
@@ -196,6 +198,9 @@ goList = function(thisPage) {
 	$("input:hidden[name=thisPage]").val(thisPage);
 	$("form[name=formList]").attr("action", "indexUsrTicket").submit();
 }
+$("#spotListBtn").on("click", function(){
+	$("form[name=formList]").submit();
+})
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -225,6 +230,35 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		</c:forEach>
 /* 별점 표시 부분 끝 */	
+ /* 별바 표시 부분 S */	
+ 	<c:if test="${vo.starRatingMin != null}">
+		var starRatingMin = ${vo.starRatingMin};
+		var starRatingMax = ${vo.starRatingMax};
+	</c:if>
+ 	$(function () {
+				'use strict';
+				$("#starRatingVo").ionRangeSlider({
+					hide_min_max: false,
+					keyboard: true,
+					min: 0,
+					max: 5,
+					from: 0,
+					to: 5,
+					type: 'Integer',
+					step: 1,
+					prefix: "☆",
+					grid: false
+				});
+				<c:if test="${vo.starRatingMin != null}">
+				 let ratingrange = $("#starRatingVo").data("ionRangeSlider");
+					ratingrange.update({
+					   from: starRatingMin,
+					   to: starRatingMax
+					 });
+				</c:if>
+ 	 	
+			});
+ 	 /* 별바 표시 부분 E */	
 </script>
 
   </body>

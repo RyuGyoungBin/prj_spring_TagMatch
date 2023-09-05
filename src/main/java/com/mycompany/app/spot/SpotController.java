@@ -16,6 +16,7 @@ import com.mycompany.app.feedback.FeedbackVo;
 import com.mycompany.app.info.Info;
 import com.mycompany.app.info.InfoServiceImpl;
 import com.mycompany.app.info.InfoVo;
+import com.mycompany.app.train.TrainProc;
 
 
 
@@ -57,7 +58,7 @@ public class SpotController {
 	}
 	
 	@RequestMapping("/indexUsrTicket")
-	public String indexUsrTicket(@ModelAttribute("vo") SpotVo vo, FeedbackVo feedbackVo,Model model) {
+	public String indexUsrTicket(@ModelAttribute("vo") SpotVo vo,Model model) throws Exception {
 		Integer StarRatingMin = (vo.getStarRatingVo() == null ? null:Integer.parseInt(vo.getStarRatingVo().split(";")[0]));
 		Integer StarRatingMax = (vo.getStarRatingVo() == null ? null:Integer.parseInt(vo.getStarRatingVo().split(";")[1]));
 		System.out.println(StarRatingMin);
@@ -73,10 +74,9 @@ public class SpotController {
 		if(vo.getTotalRows() > 0) {
 			List<Spot> list = service.selectRating(vo);
 			List<Spot> spotImg = service.selectListUploaded(vo); 
-			List<Feedback>feedback = feedbackService.selectList(feedbackVo);
+			TrainProc.train(model);
 			model.addAttribute("list", list);
 			model.addAttribute("listUploaded",spotImg);
-			model.addAttribute("feedback",feedback);
 //			model.addAttribute("vo", vo);
 		} else {
 //			by pass
