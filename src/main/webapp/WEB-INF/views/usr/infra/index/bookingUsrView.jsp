@@ -75,16 +75,16 @@
 						<div class="d-flex me-3 text-nowrap justify-content-center align-items-center mb-3">
 							<label class="me-3">여행일자</label>
 							<div>
-								<input class="date-pick form-control" type="text" placeholder="Select dates" id="datePick">
+								<input class="date-pick form-control" type="text" placeholder="Select dates" id="datePick" value="20230905>20230908">
 							</div>
 						</div>
 						<div class="d-flex">
 							<div class="me-3">
-								<input type="radio" name="itinerary" id="itineraryOne">
+								<input type="radio" name="itinerary" id="itineraryOne" value="0">
 								<label for="itineraryOne">편도</label>
 							</div>
 							<div>
-								<input type="radio" name="itinerary" id="itineraryTwo" checked>
+								<input type="radio" name="itinerary" id="itineraryTwo" value="1" checked>
 								<label for="itineraryTwo">왕복</label>
 							</div>
 						</div>
@@ -94,25 +94,25 @@
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">출발역</label>
 							<input type="text" class="form-control train" value="서울역" readonly name="t1departStation">
-							<input type="hidden" id="t1departStation">
+							<input type="hidden" id="t1departStation" value="NAT010000">
 						</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">도착역</label>
 							<input type="text" class="form-control train" value="부산역" readonly name="t1arriveStation">
-							<input type="hidden" id="t1arriveStation">
+							<input type="hidden" id="t1arriveStation" value="NAT014445">
 						</div>
 					</div>
 					<div class="d-flex justify-content-center mb-2">
 						<div class="d-flex me-3 text-nowrap align-items-center fw-bold">오는편</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">출발역</label>
-							<input type="text" class="form-control train" value="서울역" readonly name="t2departStation">
-							<input type="hidden" id="t2departStation">
+							<input type="text" class="form-control train" value="부산역" readonly name="t2departStation">
+							<input type="hidden" id="t2departStation" value="NAT014445">
 						</div>
 						<div class="d-flex me-3 text-nowrap align-items-center">
 							<label class="me-3">도착역</label>
-							<input type="text" class="form-control train" value="부산역" readonly name="t2arriveStation">
-							<input type="hidden" id="t2arriveStation">
+							<input type="text" class="form-control train" value="서울역" readonly name="t2arriveStation">
+							<input type="hidden" id="t2arriveStation" value="NAT010000">
 						</div>
 					</div>
 					<div class="d-flex justify-content-around pb-3 border-bottom">
@@ -122,7 +122,7 @@
 								<label>성인(만 13세 이상)</label>
 								<select class="form-control" id="trainAdult">
 									<option value="0">0</option>
-									<option value="1">1</option>
+									<option value="1" selected>1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
 									<option value="4">4</option>
@@ -420,7 +420,7 @@
 				<div class="d-flex justify-content-end align-items-center">
 					<div style="font-size: 9px;">선택된 총 숙소요금</div>
 					<div class="mx-2"><span id="hotelTotal"></span><span>원</span></div>
-					<button type="button" class="btn btn-sm btn-primary" id="ticketBtn">선택완료</button>
+					<button type="button" class="btn btn-sm btn-primary" id="hotelBtn">선택완료</button>
 				</div> 
 			</div>
 			
@@ -662,12 +662,12 @@
 			$("#ticketTotal").text(allTicketPrice);
 		})
 		
-		var adultCount  = 0;
-		var youthCount  = 0;
-		var ageupPrice = 3000;
-		var agedownPrice = 2000;
 		
 	})
+		var adultCount  = 0;
+		var youthCount  = 0;
+		var ageupPrice = 0;
+		var agedownPrice = 0;
 	$(document).on("click","#selectTicket", function(){
 		if(adultCount == 0 && youthCount == 0) {
 			
@@ -766,6 +766,7 @@
 				 		stationLi += "<input hidden='hidden' value="+value.nodeid+">";
 		 			})
 			 		$("#trainStation").append(stationLi);
+			 		$("#searchTrain").removeClass("btn-secondary").addClass("btn-info");
 					
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
@@ -789,6 +790,7 @@
 		
 		$("#searchTrain").on("click", function(){
 			console.log($("#datePick").val())
+			$(".trainClose").click();
 			$.ajax({
 				async: true,
 				cache:false,
@@ -816,13 +818,19 @@
 				 		stationLi += "<th>성인:30,000원<br>아동:15,000원</th>";
 				 		stationLi += "<th>입석</th>";
 				 		stationLi +=  "</tr>";
+				 		if($("input:radio[name=itinerary]:checked").val() == 0){
+				 			$("#searchTrain").removeClass("btn-info").addClass("btn-secondary");
+				 		}
 		 			})
 			 		$("#t1trainDate").append(stationLi);
+			 		
 				},
 				error: function(jqXHR, textStatus, errorThrown) {
+					$("#t1trainDate").empty();
 		            alert("기차가 없습니다");
 			}
 			});
+			if($("input:radio[name=itinerary]:checked").val() == 1){
 				$.ajax({
 					async: true,
 					cache:false,
@@ -852,12 +860,17 @@
 					 		stationLi2 +=  "</tr>";
 			 			})
 				 		$("#t2trainDate").append(stationLi2);
+				 		$("#searchTrain").removeClass("btn-info").addClass("btn-secondary");
 					},
 					error: function(jqXHR, textStatus, errorThrown) {
 						alert("기차가 없습니다");
 					}
 				})
-		
+				
+			} else {
+				$("#t2trainDate").empty();
+			}
+			$("#searchTrain").removeClass("btn-info").addClass("btn-secondary");
 			
 		})
 		$(document).on("click", "#t1trainDate tr", function(){

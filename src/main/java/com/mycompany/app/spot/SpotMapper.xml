@@ -6,7 +6,7 @@
 <mapper namespace="com.mycompany.app.spot.SpotMapper">		
 
 
-								<!-- select 결과를 받을 객체 -->
+				 				<!-- select 결과를 받을 객체 -->
     <resultMap id="resultMapObj" type="com.mycompany.app.spot.Spot"></resultMap>
     
     <sql id ="selectCommon">

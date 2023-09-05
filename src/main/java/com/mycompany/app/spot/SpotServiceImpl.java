@@ -60,7 +60,7 @@ public class SpotServiceImpl implements SpotService{
 		dao.delete(dto);	
 		return 0; 
 	}
-  
+   
 
 	@Override
 	public int insert(Spot dto) throws Exception {
