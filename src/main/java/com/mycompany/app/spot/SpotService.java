@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.mycompany.app.hotel.Hotel;
+import com.mycompany.app.hotel.HotelVo;
+
 public interface SpotService {
 
 	
@@ -12,7 +15,7 @@ public interface SpotService {
 	public int selectCount(SpotVo vo);	
 	public Spot selectOne(SpotVo vo);
 	public List<Spot> selectListUploaded(SpotVo vo);
-	
+	public List<Spot> selectUploadedOne(SpotVo vo);
 	public List<Spot>selectRating(SpotVo vo);
 	public Spot selectRatingOne(SpotVo vo);
 	
@@ -20,7 +23,7 @@ public interface SpotService {
 	
 	public int insert(Spot dto) throws Exception;	
 
-	public int update(Spot dto);
+	public int update(Spot dto) throws Exception ;
 	 
 	public int delete(Spot dto);
 //	public int deleteSpotCloseDay(Spot dto);

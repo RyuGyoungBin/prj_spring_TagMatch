@@ -25,7 +25,7 @@ public class SpotDao {
 	
 	public int selectOneCount(SpotVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); }
 	public int selectCount(SpotVo vo){ return sqlSession.selectOne(namespace + ".selectCount", vo); }
-	
+	public List<Spot> selectUploadedOne(SpotVo vo) {return sqlSession.selectList(namespace +".selectUploadedOne", vo);};
 	
 	public Spot selectOne(SpotVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
 	

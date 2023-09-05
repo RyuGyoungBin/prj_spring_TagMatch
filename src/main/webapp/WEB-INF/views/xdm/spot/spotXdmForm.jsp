@@ -118,10 +118,6 @@
                     	<input type="text" class="form-control" name="delNy" id="delNy" value="<c:out value="${item.delNy }"></c:out>">
 	                </div>
 	                <!--  -->
-	                <div class=" col-5 mb-3">
-	                  	<label for="closed" class=" col-form-label">closed day</label>
-                    	<input type="text" class="form-control" name="closed" id="closed" value="<c:out value="${item.closed }"></c:out>">
-	                </div>
                 	 <div class="border-bottom text-center" style="width: 100%;">spot Info
 		                <div class="d-flex col-10 mb-3" >
 		                	<a class="btn btn-light" href="/infoGroupXdmForm?spot_seq=<c:out value="${item.seq }"/>">spot Info</a>
