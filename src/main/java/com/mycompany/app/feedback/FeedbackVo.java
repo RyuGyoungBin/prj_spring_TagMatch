@@ -10,7 +10,8 @@ public class FeedbackVo {
 
 	private String starRating; 
 	private String defaultNy; 
-	private String member_seq; 
+	private String member_seq;
+	private String memberSeq;
 	private String type;
 	private String type_seq;
 
@@ -469,6 +470,14 @@ public class FeedbackVo {
 
 	public void setDateRe(String dateRe) {
 		this.dateRe = dateRe;
+	}
+
+	public String getMemberSeq() {
+		return memberSeq;
+	}
+
+	public void setMemberSeq(String memberSeq) {
+		this.memberSeq = memberSeq;
 	}
 	
 }

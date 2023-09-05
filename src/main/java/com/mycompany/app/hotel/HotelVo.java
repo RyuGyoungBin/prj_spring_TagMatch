@@ -20,6 +20,7 @@ public class HotelVo {
 //	hotelCloseDay
 	private String date;
 //	hotelRoom
+	private String hotelRoom_seq;
 	private Integer roomType;
 	private String roomName;
 	private Integer price;
@@ -66,6 +67,8 @@ public class HotelVo {
 	
 	private Integer rating;
 	private Integer cnt;
+	private String memberSeq;
+	
 
 	public Integer getCnt() {
 		return cnt;
@@ -492,5 +495,23 @@ public class HotelVo {
 	public void setStarRatingVo(String starRatingVo) {
 		this.starRatingVo = starRatingVo;
 	}
+
+	public String getHotelRoom_seq() {
+		return hotelRoom_seq;
+	}
+
+	public void setHotelRoom_seq(String hotelRoom_seq) {
+		this.hotelRoom_seq = hotelRoom_seq;
+	}
+
+	public String getMemberSeq() {
+		return memberSeq;
+	}
+
+	public void setMemberSeq(String memberSeq) {
+		this.memberSeq = memberSeq;
+	}
+
+	
 	
 }

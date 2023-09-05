@@ -12,6 +12,7 @@ private String reviewTitle;
 private String starRating; 
 private String defaultNy; 
 private String member_seq; 
+private String memberSeq;
 private String type_seq;
 
 private String date;
@@ -263,6 +264,12 @@ public String getHotelRoomSeq() {
 }
 public void setHotelRoomSeq(String hotelRoomSeq) {
 	this.hotelRoomSeq = hotelRoomSeq;
+}
+public String getMemberSeq() {
+	return memberSeq;
+}
+public void setMemberSeq(String memberSeq) {
+	this.memberSeq = memberSeq;
 }
 	
 }

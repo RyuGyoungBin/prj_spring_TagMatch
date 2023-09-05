@@ -111,57 +111,11 @@
 									<P><i class="icon-logout-1"></i>체크아웃 : <c:out value="${hotel.checkOutTime }"/>까지</P>
 									<br>
 									<p><i class="icon-info-1"></i>숙소정보 : 
-<h3>주변정보</h3>
-<p>신논현역 도보 3분
-<p>강남역 도보 15분
-<p>코엑스 차량 15분
-<h3>기본 정보</h3>
-<p>체크인 : 15:00 | 체크아웃 : 12:00
-<p>무료 Wi-Fi
-<p>전 객실 금연
-<p>Bath Amenity (치약, 칫솔 제외)
-<p>주차가능
-<h3>인원 추가 정보</h3>
-<p>슈페리어 더블 객실 엑스트라 베드 추가 시 최대 투숙 가능 인원 : 성인 2인+16세 미만 소인 2인 투숙 가능
-<p>침구 추가 : 1채당 22,000원
-<p>침대 추가 : 1개당 55,000원
-<p>최대인원 초과불가
-<p>현장 결제 및 추가비용 호텔 프론트 문의
-<h3>투숙객 혜택</h3>
-<p>Inbalance by Novotel 피트니스 및 실내 수영장 무료 이용
-<p>수영장 이용 : 객실 1박당 1번 입장 가능
-<h3>부대시설 정보</h3>
-<p>더 스퀘어 (뷔페 레스토랑) / 2층 / 중식 : 12:00~14:30 / 석식 : 주중 18:00~21:00, 주말 : 17:30~21:00 / 중식&석식 수~일요일 운영 / 방문 전 사전예약 필수
-<p>그랑아 / 1층
-<p>앙뜨레 / 1층 / 11:30~22:00 (라스트 오더 21:10) / 중식, 석식 이용 가능
-<p>로비 라운지 / 1층 / 10:00~22:00
-<p>인룸 서비스 / 07:00~22:00
-<p>비즈니스 센터
-<p>인발란스 (수영장, 사우나, 헬스클럽, 골프연습장) / 3층 / 06:00~22:00
-<p>수영장, 피트니스, 사우나 : 매월 첫째 주 월요일 휴관
-<p>사우나, 피트니스는 15세 이상 이용 가능
-<p>수영장 이용 시 5부제로 진행되며 프론트 데스크에서 예약 가능합니다
-<p>피트니스 센터의 운동복, 양말, 가운, 수건은 당분간 대여해 드리지 않으므로 이용 시 본인 물품을 지참하여 이용 부탁드립니다
-<h3>이그제큐티브 라운지 이용 안내</h3>
-<p>이그제큐티브 라운지 혜택 포함 객실 예약 고객에 한하여 이용 가능 (외부 고객 이용 시 추가 요금 발생)
-<p>이용 장소 : 프리미어 라운지 / 16층
-<p>입장 제한 : 14세 이상 입장 가능
-<p>운영시간 : 07:00~22:00
-<p>애프터눈 티 : 15:00~16:00
-<p>해피아워 : 17:00~19:00
-<p>조식 : 07:00~10:30 (마감 30분 전까지 입장 시 이용 가능) / 이용 장소 : 더 스퀘어
-<p>조식 및 해피아워 이용 시 인원수에 따라 2부제로 변경될 수 있습니다
-<h3>조식 정보</h3>
-<p>더 스퀘어 / 2층 / 07:00~10:30 (마지막 입장 가능 시간 10:00)
-<p>1인 : 55,000원 (14세~성인), 35,000원 (만 4세~만 12세 / 2023년도 기준 : 2011년 01월 01일~2019년 12월 31일생 기준 적용)
-<p>현장결제
+
 <h3>취소 및 환불 규정</h3>
 <p>체크인 기준 1일 전 18:00 이전 : 100% 환불
 <p>체크인 기준 1일 전 18:00 이후~당일 : 환불불가
 <p>취소, 환불시 수수료가 발생할 수 있습니다
-<p>아래 객실은 예약 후 취소, 변경, 환불 불가합니다
-<p>[레이트버드 19시 체크인] , [최저가] [19시 레이트버드 특가] 객실 예약 후 취소, 변경, 환불 불가
-<h3>확인사항 및 기타</h3>
 <p>침대 (엑스트라 베드) 추가시 객실이 좁을 수 있습니다
 <p>해피아워 이용 시 만 18세 이하 입장 불가입니다
 <p>최대인원 초과시 입실 불가합니다
@@ -170,8 +124,6 @@
 <p>체크인 시 배정 또는 베드타입 미기재 상품은 특정객실과 베드타입을 보장하지 않습니다
 <p>해당 객실가는 세금, 봉사료가 포함된 금액입니다
 <p>미성년자는 보호자 동반없이 이용하실 수 없습니다
-<p>아코르는 고객의 안전을 기하기 위해 위생 및 예방 조치를 강화했습니다
-<p>ALLSAFE 라벨 인증은 아코르의 새로운 청결 및 예방 기준을 나타내며 전 세계 아코르 브랜드 호텔에서 해당 기준들이 충족되었음을 보증합니다
 									
 									</p>
 								</div>
@@ -254,7 +206,7 @@
 				<div class="modal-body">
 					<div id="message-review">
 					</div>
-					<form method="post" action="" name="review_hotel" id="review_hotel">
+					<form method="post" name="review_hotel" id="review_hotel">
 						<input name="hotel_name" id="hotel_name" type="hidden" value="Mariott Hotel Paris">
 <!-- 						<div class="row"> -->
 <!-- 							<div class="col-md-6"> -->
@@ -302,6 +254,9 @@
 						<!-- End row -->
 						<div class="form-group">
 							<textarea name="review" id="review_text" class="form-control" style="height:100px" placeholder="리뷰 작성"></textarea>
+							<input type="hidden" name="type" value="1">
+							<input type="hidden" name="type_seq" id="type_seq">
+							<input type="hidden" name="memberSeq" value="${sessionSeq }">
 						</div>
 						<button type="button" id="btnInsert" class="btn_1" >등록</button>
 						
@@ -322,9 +277,34 @@
 	<script type="text/javascript">
 	
 	$("#btnInsert").on("click", function(){
-		alert("1");
-		$("form[name=review_hotel]").attr("action", "/feedbackXdmInsert").submit();
-		alert("리뷰가 등록되었습니다.");
+		
+		$.ajax({
+			async: true,
+			cache:false,
+			type:"post",
+			url:"/hotelUsr",
+			
+			data: {
+					"seq" : <c:out value="${hotel.seq}"/>,
+					"hotelRoom_seq" : $("#hotelRoom_seq").val()
+				},
+			success:function(response){
+				if(response.rt == "success") {
+					$("#type_seq").val(response.rtUsr.seq);
+					$("form[name=review_hotel]").attr("action", "/feedbackXdmInsert").submit();
+					alert("리뷰가 등록되었습니다.");
+				} else {
+					alert("객실을 다시 선택해주세요.")
+					return false;
+				}
+			},
+			error: function(jqXHR, textStatus, errorThrown) {
+				alert("객실을 다시 선택해주세요.");
+				return false;
+			}
+		})
+		
+		
 	})
 	$("#btnUpdate").on("click", function(){
 		$("form[name=form]").attr("action", "/feedbackXdmUpdate").submit();

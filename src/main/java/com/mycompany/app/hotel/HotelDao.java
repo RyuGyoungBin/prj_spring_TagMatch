@@ -24,6 +24,7 @@ public class HotelDao {
 	public List<Hotel> selectHotelRoom(HotelVo vo) {return sqlSession.selectList(namespace +".selectHotelRoom", vo);};
 	public List<Hotel> selectRating(HotelVo vo) {return sqlSession.selectList(namespace +".selectRating", vo);};
 	public Hotel selectRatingOne(HotelVo vo) {return sqlSession.selectOne(namespace +".selectRatingOne", vo);}
+	public List<Hotel> selectHotelUsr(HotelVo vo){return sqlSession.selectList(namespace +".selectHotelUsr", vo);}
 	
 	public int insert(Hotel dto) { return sqlSession.insert(namespace + ".insertHotel", dto); }
 	public int insertHotelInfo(Hotel dto) { return sqlSession.insert(namespace + ".insertHotelInfo", dto); }

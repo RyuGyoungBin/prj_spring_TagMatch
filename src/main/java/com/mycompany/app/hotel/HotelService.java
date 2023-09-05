@@ -13,6 +13,7 @@ public interface HotelService {
 	public List<Hotel> selectHotelRoom(HotelVo vo);
 	public List<Hotel> selectRating(HotelVo vo);
 	public Hotel selectRatingOne(HotelVo vo);
+	public List<Hotel> selectHotelUsr(HotelVo vo);
 	
 	public int insert(Hotel dto) throws Exception;
 	

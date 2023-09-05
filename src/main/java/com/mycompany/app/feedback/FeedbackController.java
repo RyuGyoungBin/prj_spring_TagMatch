@@ -58,7 +58,7 @@ public class FeedbackController {
 	}
 
 	@RequestMapping("/feedbackXdmInsert")
-	public String feedbackXdmInsert(Feedback dto) throws Exception {
+	public String feedbackXdmInsert(Feedback dto){
 
 		// service 호출
 		service.insertFeedback(dto);

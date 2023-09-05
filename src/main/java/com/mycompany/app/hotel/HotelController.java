@@ -1,12 +1,17 @@
 package com.mycompany.app.hotel;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mycompany.app.feedback.Feedback;
 import com.mycompany.app.feedback.FeedbackServiceImpl;
@@ -14,6 +19,8 @@ import com.mycompany.app.feedback.FeedbackVo;
 import com.mycompany.app.info.Info;
 import com.mycompany.app.info.InfoServiceImpl;
 import com.mycompany.app.info.InfoVo;
+import com.mycompany.app.infra.member.Member;
+import com.mycompany.app.infra.member.MemberVo;
 import com.mycompany.app.train.TrainProc;
 
 @Controller
@@ -119,5 +126,22 @@ public class HotelController {
 	@RequestMapping("/home")
 	public String home() {
 		return "/home";
+	}
+	
+	@RequestMapping("/hotelUsr")
+	@ResponseBody
+	public Map<String, Object> hotelUsr(HotelVo vo , HttpSession session) {
+		Map<String, Object> returnMap = new HashMap<String, Object>();
+		vo.setMemberSeq((String)session.getAttribute("sessionSeq"));
+		List<Hotel> rtUsr = hotelService.selectHotelUsr(vo);
+		
+		if(rtUsr.size() > 0) {
+			returnMap.put("rtUsr", "rtUsr");
+			returnMap.put("rt", "success");
+		} else {
+			returnMap.put("rt","fail");
+		}
+		
+		return returnMap;
 	}
 }
