@@ -213,8 +213,8 @@
 		roomType,
 		roomName,
 		price,
-		roomDefaultNy,
-		roomDelNy,
+		defaultNy,
+		delNy,
 		roomNum,
 		hotel_seq
 		) values (
