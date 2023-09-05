@@ -18,7 +18,27 @@
 		<if test="name != null and !name.equals('')">AND name LIKE CONCAT('%',#{name},'%')</if>
     	<if test="spotType != null and !spotType.equals('')">AND a.spotType = #{spotlType}</if>
     </sql>
-	
+	   <sql id="selectSpot">
+	    	a.seq,
+	    	a.type spotType,
+	    	a.name,
+	    	a.zipCode,
+	    	a.address,
+	    	a.addressDetail,
+	    	a.sido,
+	    	a.tel,
+	    	a.openTime,
+	    	a.closedTime,
+			a.adultPrice,
+			a.childPrice,
+			a.detailText,
+			a.delNy,
+			c.date closed,
+			e.pseq,
+			e.type,
+			e.path,
+			e.uuidName
+		</sql>
 	 <sql id="selectRating">
 	    	a.seq,
 	    	a.type spotType,
@@ -41,7 +61,6 @@
 			b.spotSeq spot_seq,
 			b.seq spotUsr_seq
 		</sql>
-		
 		 <sql id="selectRatingCommon">
 			FROM
 			spot a
@@ -51,41 +70,21 @@
 		WHERE 1=1
 			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq}</if>
 		</sql>
-	
-	
-        <sql id="selectSpot">
-	    	a.seq,
-	    	a.type spotType,
-	    	a.name,
-	    	a.zipCode,
-	    	a.address,
-	    	a.addressDetail,
-	    	a.sido,
-	    	a.tel,
-	    	a.openTime,
-	    	a.closedTime,
-			a.adultPrice,
-			a.childPrice,
-			a.detailText,
-			a.delNy,
-			c.date closed,
-			e.pseq,
-			e.type,
-			e.path,
-			e.uuidName
-		</sql>
-	 
-	<select id="selectListUploaded" resultMap="resultMapObj">
-	SELECT
-			*
-		FROM
-			spotUploaded
-		WHERE 1=1
-		<if test="seq != null and !seq.equals('')">AND pseq =#{seq}</if>
+		<select id="selectList" resultMap="resultMapObj">
+		SELECT aa.* FROM (   	
+	   		SELECT
+				<include refid="selectSpot" />
+	   			<include refid="selectCommon" />
+		) aa
+<!-- 		WHERE 1=1 -->
+<!-- 		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if> -->
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
-	
-	
-<select id="selectOne" resultMap="resultMapObj">
+	   	<select id="selectOneCount" resultType="Integer">
+		SELECT count(*)
+		<include refid="selectCommon" />
+	</select>
+     <select id="selectOne" resultMap="resultMapObj">
 	SELECT
 		seq
 		,type
@@ -117,19 +116,30 @@
 			<if test="childPrice != null and !childPrice.equals('')">AND childPrice = #{childPrice}</if>
 			<if test="detailText != null and !detailText.equals('')">AND detailText = #{detailText}</if>
 </select>
-	
+	<select id="selectListUploaded" resultMap="resultMapObj">
+	SELECT
+			*
+		FROM
+			spotUploaded
+		WHERE 1=1
+		<if test="seq != null and !seq.equals('')">AND pseq =#{seq}</if>
+	</select>
+
 	<select id="selectRating" resultMap="resultMapObj">
-		SELECT
+		SELECT aa.* FROM(
+		select
 		<include refid="selectRating"></include>
 		<include refid="selectRatingCommon"></include>
 		GROUP BY a.seq
 		
-		<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} </if>
+		HAVING 1=1
+		<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} 
 		<if test="starRatingMin != null and starRatingMin.equals('0')">OR starRating is null</if>
-		
+		</if>
 		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
 		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
-		
+		) aa
+		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
 	<select id="selectRatingOne" resultMap="resultMapObj">
 		SELECT
@@ -138,12 +148,6 @@
 			AND a.seq = #{seq}
 			
 		GROUP BY a.seq
-	</select>
-	
-	
-   	<select id="selectOneCount" resultType="Integer">
-		SELECT count(*)
-		<include refid="selectCommon" />
 	</select>
 	
 		<select id="selectCount" resultType="Integer">
@@ -155,24 +159,14 @@
 		<include refid="selectRatingCommon" />
 		GROUP BY a.seq
 		HAVING 1=1
-		<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} </if>
-		
-		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
-		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
+		<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} 
+		<if test="starRatingMin.equals(0)">OR starRating is null</if>
+		</if>
 		) as aa
 	</select>
 	
     
-	<select id="selectList" resultMap="resultMapObj">
-		SELECT aa.* FROM (   	
-	   		SELECT
-				<include refid="selectSpot" />
-	   			<include refid="selectCommon" />
-		) aa
-<!-- 		WHERE 1=1 -->
-<!-- 		<if test="hotelType != null and !hotelType.equals('')">AND a.hotelType = #{hotelType}</if> -->
-		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
-	</select>
+
   
   
   
