@@ -45,8 +45,8 @@
 					<div class="box_style_cat">
 						<ul id="cat_nav">
 							<li><a href="/indexUsrTicket?spotType=1" data-hotel-type="1"><i class="icon_set_1_icon-51"></i>입장권/티켓 <span>(...)</span></a></li>
-							<li><a href="/indexUsrTicket?spotlType=2" data-hotel-type="2"><i class="icon_set_1_icon-3"></i>미식/맛집 <span>(...)</span></a></li>
-							<li><a href="/indexUsrTicket?spotlType=3" data-hotel-type="3"><i class="icon_set_1_icon-4"></i>뷰티/힐링<span>(...)</span></a></li>
+							<li><a href="/indexUsrTicket?spotType=2" data-hotel-type="2"><i class="icon_set_1_icon-3"></i>미식/맛집 <span>(...)</span></a></li>
+							<li><a href="/indexUsrTicket?spotType=3" data-hotel-type="3"><i class="icon_set_1_icon-4"></i>뷰티/힐링<span>(...)</span></a></li>
 							<li><a href="/indexUsrTicket?spotType=4" data-hotel-type="4"><i class="icon_set_1_icon-44"></i>투어<span>(...)</span></a></li>
 						</ul>
 						<input type="hidden" name="spotType" value="${vo.spotType }"></input>

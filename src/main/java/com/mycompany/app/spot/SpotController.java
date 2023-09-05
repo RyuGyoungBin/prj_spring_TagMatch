@@ -50,7 +50,7 @@ public class SpotController {
 	@RequestMapping("/spotXdmForm")
 	public String spotXdmForm(SpotVo vo, Model model) {
 		Spot spot = service.selectOne(vo);
-		List<Spot> uploaded = service.selectListUploaded(vo);
+		List<Spot> uploaded = service.selectUploadedOne(vo);
 		model.addAttribute("item", spot);
 		model.addAttribute("listUploaded", uploaded);
 		return "/xdm/spot/spotXdmForm";
@@ -113,7 +113,7 @@ public class SpotController {
 	@RequestMapping("/indexUsrMypage")
 	public String indexUsrMyPage() {
 		return "/usr/infra/index/indexUsrMypage";
-	}
+	} 
 	
 	
 	
@@ -128,7 +128,7 @@ public class SpotController {
 	
 	@RequestMapping("/spotXdmDelete")
 	public String spotXdmDelete(Spot dto) {
-
+ 
 		// service 호출 
 		service.delete(dto);
 		

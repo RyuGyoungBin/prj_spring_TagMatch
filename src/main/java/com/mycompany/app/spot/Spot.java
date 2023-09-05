@@ -9,6 +9,7 @@ public class Spot {
 
 	private String seq;
 	private Integer type;
+	private Integer spotType;
 	private String name;
 	private String zipCode;
 	private String address;
@@ -337,6 +338,12 @@ public class Spot {
 	}
 	public void setTid(String tid) {
 		this.tid = tid;
+	}
+	public Integer getSpotType() {
+		return spotType;
+	}
+	public void setSpotType(Integer spotType) {
+		this.spotType = spotType;
 	}
 
 	
