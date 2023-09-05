@@ -1013,7 +1013,7 @@ $(document).on("click", "#18down .MBtn", function(){
                     spotModal +='<div class="border p-3">';
                     spotModal +='<div class="mb-2">성인</div>';
                     spotModal +='<div class="d-flex justify-content-between">';
-                    spotModal +='<div class="d-flex justify-content-center align-items-center" id="18up">';
+                    spotModal +='<div class="d-flex justify-content-center aliㅑㅡㅁㅎㄷgn-items-center" id="18up">';
                     spotModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
                     spotModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
                     spotModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
@@ -1055,10 +1055,10 @@ $(document).on("click", "#18down .MBtn", function(){
                  "seq" : $(this).attr("name")
               },
               success : function(res){ 
-//                   alert(res);
+                  alert(res);
               	$("#hotelModal").empty()
-              	ageupPrice = res.hotel.adultPrice;
-              	agedownPrice = res.hotel.childPrice;
+//               	ageupPrice = res.hotel.adultPrice;
+//               	agedownPrice = res.hotel.childPrice;
               	hotelModal = "";
 				console.log(res)
                 hotelModal="";
@@ -1093,7 +1093,7 @@ $(document).on("click", "#18down .MBtn", function(){
                 hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
                 hotelModal +='</div>';
                 hotelModal +='<div>';
-                hotelModal +='<span>'+res.hotel.adultPrice+'</span>원';
+//                 hotelModal +='<span>'+res.hotel.adultPrice+'</span>원';
                 hotelModal +='</div>';
                 hotelModal +='</div>';
                 hotelModal +='</div>';
@@ -1106,7 +1106,7 @@ $(document).on("click", "#18down .MBtn", function(){
                 hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
                 hotelModal +='</div>';
                 hotelModal +='<div>';
-                hotelModal +='<span>'+res.hotel.childPrice+'</span>원';
+//                 hotelModal +='<span>'+res.hotel.childPrice+'</span>원';
                 hotelModal +='</div>';
                 hotelModal +='</div>';
                 hotelModal +='</div>';
