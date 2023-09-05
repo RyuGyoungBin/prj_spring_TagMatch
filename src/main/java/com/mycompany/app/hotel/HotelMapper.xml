@@ -54,7 +54,7 @@
     	DATE_FORMAT (a.checkOutTime, '%H:%i')as checkOutTime,
     	a.detailText,
 		ROUND(avg(c.starRating),1) starRating,
-		COUNT(c.seq) ctn,
+		COUNT(c.seq) cnt,
 		b.seq hotelUsr_seq,
 		d.path,
 		d.type,
@@ -388,7 +388,16 @@
 		,#{seq}
 		)
 	</insert>
-	
+	<select id="selectHotelUsr" resultMap="resultMapObj">
+		SELECT
+			*
+		FROM
+			hotelUsr
+		WHERE 1=1
+			<if test="memberSeq != null and !memberSeq.equals('')">AND member_seq = #{memberSeq}</if>
+			<if test="seq != null and !seq.equals('')">AND hotel_seq = #{seq}</if>
+			<if test="hotelRoom_seq != null and !hotelRoom_seq.equals('')">AND hotelRoomSeq = #{hotelRoom_seq}</if>
+	</select>
 		
 
 </mapper>

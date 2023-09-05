@@ -131,7 +131,7 @@
 		        , #{review}
 		        , #{reviewTitle}
 		        , #{starRating}
-		        , #{member_seq}
+		        , #{memberSeq}
 		        , 0
 		        , #{type_seq}
 		        , now()
