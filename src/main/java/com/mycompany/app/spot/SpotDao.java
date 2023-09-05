@@ -41,7 +41,7 @@ public class SpotDao {
 
 	public List<Spot> selectRating(SpotVo vo) {return sqlSession.selectList(namespace + ".selectRating", vo );  }
 	public Spot selectRatingOne(SpotVo vo) { return sqlSession.selectOne(namespace + ".selectRatingOne", vo); }
-	
+	 
 	
 	public int uelete(Spot dto) { return sqlSession.update(namespace + ".uelete", dto); }
 	

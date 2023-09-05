@@ -113,7 +113,7 @@ public class SpotController {
 	@RequestMapping("/indexUsrMypage")
 	public String indexUsrMyPage() {
 		return "/usr/infra/index/indexUsrMypage";
-	}
+	} 
 	
 	
 	

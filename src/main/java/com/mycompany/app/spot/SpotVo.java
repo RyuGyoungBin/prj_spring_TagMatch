@@ -12,7 +12,7 @@ public class SpotVo {
 	private String address;
 	private String addressDetail;
 	private String sido;
-	private String tel;
+	private String tel; 
 	private String openTime;
 	private String closedTime;
 	private Integer adultPrice;
