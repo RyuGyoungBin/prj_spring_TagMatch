@@ -240,7 +240,7 @@
 	<!-- Search Menu -->
 	<div class="search-overlay-menu">
 		<span class="search-overlay-close"><i class="icon_set_1_icon-77"></i></span>
-		<form role="search" id="searchform" method="get">
+		<form role="search" id="searchform" method="get" name="review_spot">
 			<input value="" name="q" type="text" placeholder="Search..." />
 			<button type="submit"><i class="icon_set_1_icon-78"></i>
 			</button>
@@ -333,8 +333,11 @@
 						<!-- End row -->
 						<div class="form-group">
 							<textarea name="review_text" id="review_text" class="form-control" style="height:100px" placeholder="리뷰를 작성해 주세요"></textarea>
+							<input type="hidden" name="type" value="2">
+							<input type="hidden" name="type_seq" id="type_seq">
+							<input type="hidden" name="memberSeq" value="${sessionSeq }">
 						</div>
-						<button type="button" value="등록하기" class="btn_1" id="btnInsert"></button>
+						<button type="button" class="btn_1" id="btnInsert">등록하기</button>
 					</form>
 				</div>
 			</div>
@@ -352,9 +355,7 @@
 	<script type="text/javascript">
 	
 	$("#btnInsert").on("click", function(){
-		alert("2");
 		$("form[name=review_spot]").attr("action", "/feedbackXdmInsert").submit();
-		alert("리뷰가 등록되었습니다.");
 	})
 	
 	
@@ -477,6 +478,31 @@
 		}
 	</c:forEach>
 	/* 별점 표시 부분 끝 */	
+	
+	
+	  $("#btnInsert").click(function(){
+          $.ajax({
+              type : "POST",            
+              url : "/indexUsrTicketDetailInfo",    
+              data :{
+            	  "seq" : <c:out value="${spot.seq}"/>,
+					"spotSeq" : $("#spotSeq").val()
+					"member_seq" : $(1).val
+              },
+              success:function(response){
+  				if(response.rt == "success") {
+  					$("#type_seq").val(response.rtUsr.seq);
+  					$("form[name=review_spot]").attr("action", "/feedbackXdmInsert").submit();
+  					alert("리뷰가 등록되었습니다.");
+  				} else {
+  					alert("리뷰등록에 실패했습니다.")
+  					return false;
+  				}
+  			},
+  		})
+  		
+  		
+  	})
 	</script>
 
 	<!--Review modal validation -->

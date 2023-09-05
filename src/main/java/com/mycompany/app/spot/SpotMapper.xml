@@ -68,7 +68,9 @@
 		    LEFT JOIN feedback c on c.type_seq = b.seq AND c.type = 2
 		    LEFT JOIN spotUploaded d on d.pseq = a.seq AND d.type = 1
 		WHERE 1=1
+			<if test="spotType != null and !spotType.equals('')">AND a.type = #{spotType}</if>
 			<if test="seq != null and !seq.equals('')">AND a.seq = #{seq}</if>
+			<if test="sido != null and !sido.equals('')">AND a.sido LIKE CONCAT(#{sido},'%') </if>
 		</sql>
 		<select id="selectList" resultMap="resultMapObj">
 		SELECT aa.* FROM (   	
@@ -143,11 +145,11 @@
 		
 		HAVING 1=1
 		<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} 
-		<if test="starRatingMin != null and starRatingMin.equals('0')">OR starRating is null</if>
+		<if test="starRatingMin.equals(0)">OR starRating is null</if>
 		</if>
 		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
 		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
-		) aa
+		)  aa
 		LIMIT #{rowNumToShow} OFFSET #{startRnumForMysql}
 	</select>
 	<select id="selectRatingOne" resultMap="resultMapObj">
