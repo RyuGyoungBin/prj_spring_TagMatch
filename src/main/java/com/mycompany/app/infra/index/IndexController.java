@@ -69,6 +69,27 @@ public class IndexController {
 		return resultMap;
 	}
 	
+	@RequestMapping("/hotelModal")
+	@ResponseBody
+	public  Map<String, Map> selectRatingOne(HotelVo vo){
+		
+		 Map <String, Map> map = new HashMap<>();
+		 Map<String, Hotel> resultMap = new HashMap<>();
+		 Map<String, List<Hotel> > listHotel = new HashMap<>();
+		 
+		 
+		 Hotel hotel = hotelService.selectRatingOne(vo);
+		 List<Hotel> hotelRoom = hotelService.selectHotelRoom(vo); 
+		 
+		 resultMap.put("hotel",hotel);
+		 listHotel.put("hotelRoom",hotelRoom);
+		 
+		 map.put("hotelMap" , resultMap);
+		 map.put("hotelList" , listHotel);
+
+		return map;
+	}
+	
 	@RequestMapping("/trainStation")
 	@ResponseBody
 	public  Map<String, List<Train>> trainStation(Train train, Model model) throws Exception {
