@@ -286,32 +286,29 @@
 				</div>
 				<div class="overflow-auto mb-3 ticketBox" style="height: 650px;">
 					<div class="d-flex flex-wrap pt-2">
-					<c:forEach items="${hotel }" var="hotel" varStatus="status">
-							<div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="img_container">
-										<a>
-											<img src="<c:out value="${hotel.path }"/><c:out value="${hotel.uuidName }"/>" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span><c:out value="${hotel.starRating }"/></span>Good</div>
-										</a>
-									</div>
-									<div class="hotel_title">
-										<h3 style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"  ><strong>[<c:out value="${hotel.sido }"/>]<c:out value="${hotel.name }"/></strong></h3>
-										<div class="rating" id="rating<c:out value="${hotel.seq }"/>">
+						<c:forEach items="${hotel}" var="hotel" varStatus="statusUploaded">
+								<div class="col-md-4 px-2">
+									<div class="hotel_container">
+										<div class="img_container">
+											<a class="hotelModal" name="<c:out value="${hotel.seq }"></c:out>">
+												<img src="<c:out value="${hotel.path }"/><c:out value="${hotel.uuidName }"/>" width="300" height="533" class="img-fluid" alt="Image">
+												<div class="score"><span><c:out value="${hotel.starRating }"></c:out></span>Good</div>
+											</a>
 										</div>
-										<!-- end rating -->
-									
-										<!-- End wish list-->
+										<div class="hotel_title">
+											<h3 style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" ><strong>[<c:out value="${hotel.sido }"/>]<c:out value="${hotel.name }"/></strong></h3>
+											<div class="rating" id="hotelRating<c:out value="${hotel.seq }"/>">
+											</div>
+										</div>
 									</div>
+									<!-- End box tour -->
 								</div>
-								<!-- End box tour -->
-							</div>
-					</c:forEach>
+						</c:forEach>
 					<!-- End row -->
 				</div>
 			<!-- 				상세정보 				 -->
 			</div>
-			<div class="overflow-auto mb-3 border d-none ticketDetail hotelSelect" style="height: 650px;">
+			<div class="overflow-auto mb-3 border d-none ticketDetail hotelSelect" style="height: 650px;" id="hotelModal">
 				<div class="d-flex flex-column">
 					<div class="p-4 border-bottom d-flex justify-content-between align-items-center">
 						숙소상세정보
@@ -473,31 +470,24 @@
 				</div>
 				<div class="overflow-auto mb-3 ticketBox" style="height: 650px;">
 					<div class="d-flex flex-wrap pt-2">
-				<c:forEach items="${spot}" var="spot" varStatus="statusUploaded">
-							<div class="col-md-4 px-2">
-								<div class="hotel_container">
-									<div class="img_container">
-										<a class="spotModal" name="<c:out value="${spot.seq }"></c:out>">
-											<img src="<c:out value="${spot.path }"/><c:out value="${spot.uuidName }"/>" width="300" height="533" class="img-fluid" alt="Image">
-											<div class="score"><span><c:out value="${spot.starRating }"></c:out></span></div>
-											
-										</a>
-									</div>
-									
-									<div class="hotel_title"  >
-										<h3 style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" ><strong><c:out value="${spot.name }"></c:out></strong></h3>
-										<div class="rating" id="spotRating<c:out value="${spot.seq }"/>">
+						<c:forEach items="${spot}" var="spot" varStatus="statusUploaded">
+								<div class="col-md-4 px-2">
+									<div class="hotel_container">
+										<div class="img_container">
+											<a class="spotModal" name="<c:out value="${spot.seq }"></c:out>">
+												<img src="<c:out value="${spot.path }"/><c:out value="${spot.uuidName }"/>" width="300" height="533" class="img-fluid" alt="Image">
+												<div class="score"><span><c:out value="${spot.starRating }"></c:out></span></div>
+											</a>
+										</div>
+										<div class="hotel_title">
+											<h3 style="display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" ><strong><c:out value="${spot.name }"></c:out></strong></h3>
+											<div class="rating" id="spotRating<c:out value="${spot.seq }"/>">
+											</div>
 										</div>
 									</div>
-									
+									<!-- End box tour -->
 								</div>
-								<!-- End box tour -->
-							</div>
-	
-							<!-- End col-md-6 -->
-	
-					<!-- End row -->
-				</c:forEach>
+						</c:forEach>
 				</div>
 			</div>
 			<div class="overflow-auto mb-3 border d-none ticketDetail ticketSelect" style="height: 650px;" id="spotModal">
@@ -1066,12 +1056,12 @@ $(document).on("click", "#18down .MBtn", function(){
               },
               success : function(res){ 
 //                   alert(res);
-              	$("#hotelModal").empty()sp
+              	$("#hotelModal").empty()
               	ageupPrice = res.hotel.adultPrice;
               	agedownPrice = res.hotel.childPrice;
-              	spotModal = "";
+              	hotelModal = "";
 				console.log(res)
-                  hotelModal="";
+                hotelModal="";
 				hotelModal +='<div class="d-flex flex-column">';
 				hotelModal +='<div class="p-4 border-bottom d-flex justify-content-between align-items-center">';
 				hotelModal +='숙소상세정보';
@@ -1081,49 +1071,49 @@ $(document).on("click", "#18down .MBtn", function(){
 				hotelModal +='<div class="col-4 p-3 border-bottom">';
 				hotelModal +='<img src="'+res.hotel.path+res.hotel.uuidName+'" width="300" height="533" class="img-fluid" alt="Image">';
 				hotelModal +='</div>';
-                  hotelModal +='<div class="col-6 d-flex flex-column border-bottom justify-content-around">';
-                  hotelModal +='<span class="h4 fw-bold text-center border-bottom pb-3">'+res.hotel.name+'</span>';
-                  hotelModal +='<span>주소 : '+res.hotel.address+" "+res.hotel.addressDetail+'</span>';
-                  hotelModal +='</div>';
-                  hotelModal +='<div class="col-2 p-3">';
-                  hotelModal +='<a class="btn btn-secondary">지도보기</a>';
-                  hotelModal +='</div>';
-                  hotelModal +='</div>';
-                  hotelModal +='<div class="px-3">';
-                  hotelModal +='<p>'+res.hotel.detailText+'</p>';
-                  hotelModal +='아래에서 원하는 입장권을 선택하세요';
-                  hotelModal +='</div>';
-                  hotelModal +='<div class="p-3">';
-                  hotelModal +='<div class="border p-3">';
-                  hotelModal +='<div class="mb-2">성인</div>';
-                  hotelModal +='<div class="d-flex justify-content-between">';
-                  hotelModal +='<div class="d-flex justify-content-center align-items-center" id="18up">';
-                  hotelModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
-                  hotelModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
-                  hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
-                  hotelModal +='</div>';
-                  hotelModal +='<div>';
-                  hotelModal +='<span>'+res.hotel.adultPrice+'</span>원';
-                  hotelModal +='</div>';
-                  hotelModal +='</div>';
-                  hotelModal +='</div>';
-                  hotelModal +='<div class="border p-3">';
-                  hotelModal +='<div class="mb-2">청소년</div>';
-                  hotelModal +='<div class="d-flex justify-content-between">';
-                  hotelModal +='<div class="d-flex justify-content-center align-items-center" id="18down">';
-                  hotelModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
-                  hotelModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
-                  hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
-                  hotelModal +='</div>';
-                  hotelModal +='<div>';
-                  hotelModal +='<span>'+res.hotel.childPrice+'</span>원';
-                  hotelModal +='</div>';
-                  hotelModal +='</div>';
-                  hotelModal +='</div>';
-                  hotelModal +='</div>';
-                  hotelModal +='<button type="button" class="btn btn-info" id="selectTicket">선택 완료</button>';
-                  hotelModal +='</div>';
-                  $("#hotelModal").append(hotelModal);
+                hotelModal +='<div class="col-6 d-flex flex-column border-bottom justify-content-around">';
+                hotelModal +='<span class="h4 fw-bold text-center border-bottom pb-3">'+res.hotel.name+'</span>';
+                hotelModal +='<span>주소 : '+res.hotel.address+" "+res.hotel.addressDetail+'</span>';
+                hotelModal +='</div>';
+                hotelModal +='<div class="col-2 p-3">';
+                hotelModal +='<a class="btn btn-secondary">지도보기</a>';
+                hotelModal +='</div>';
+                hotelModal +='</div>';
+                hotelModal +='<div class="px-3">';
+                hotelModal +='<p>'+res.hotel.detailText+'</p>';
+                hotelModal +='아래에서 원하는 입장권을 선택하세요';
+                hotelModal +='</div>';
+                hotelModal +='<div class="p-3">';
+                hotelModal +='<div class="border p-3">';
+                hotelModal +='<div class="mb-2">성인</div>';
+                hotelModal +='<div class="d-flex justify-content-between">';
+                hotelModal +='<div class="d-flex justify-content-center align-items-center" id="18up">';
+                hotelModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
+                hotelModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
+                hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
+                hotelModal +='</div>';
+                hotelModal +='<div>';
+                hotelModal +='<span>'+res.hotel.adultPrice+'</span>원';
+                hotelModal +='</div>';
+                hotelModal +='</div>';
+                hotelModal +='</div>';
+                hotelModal +='<div class="border p-3">';
+                hotelModal +='<div class="mb-2">청소년</div>';
+                hotelModal +='<div class="d-flex justify-content-between">';
+                hotelModal +='<div class="d-flex justify-content-center align-items-center" id="18down">';
+                hotelModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
+                hotelModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
+                hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
+                hotelModal +='</div>';
+                hotelModal +='<div>';
+                hotelModal +='<span>'+res.hotel.childPrice+'</span>원';
+                hotelModal +='</div>';
+                hotelModal +='</div>';
+                hotelModal +='</div>';
+                hotelModal +='</div>';
+                hotelModal +='<button type="button" class="btn btn-info" id="selectTicket">선택 완료</button>';
+                hotelModal +='</div>';
+                $("#hotelModal").append(hotelModal);
               },
               error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
                   alert("통신 실패.")
