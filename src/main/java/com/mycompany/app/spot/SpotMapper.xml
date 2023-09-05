@@ -124,6 +124,9 @@
 		<include refid="selectRatingCommon"></include>
 		GROUP BY a.seq
 		
+		<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} </if>
+		<if test="starRatingMin != null and starRatingMin.equals('0')">OR starRating is null</if>
+		
 		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
 		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
 		
@@ -152,7 +155,7 @@
 		<include refid="selectRatingCommon" />
 		GROUP BY a.seq
 		HAVING 1=1
-			<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} </if>
+		<if test="starRatingVo != null and !starRatingVo.equals('')">AND starRating <![CDATA[<=]]> #{starRatingMax} AND starRating <![CDATA[>=]]> #{starRatingMin} </if>
 		
 		<if test="rating != null and !rating.equals('') and rating.equals('1')">order by avg(c.starRating) DESC</if>
 		<if test="rating != null and !rating.equals('') and rating.equals('2')">order by avg(c.starRating) </if>
