@@ -316,7 +316,7 @@
 					</div>
 					<div class="d-flex p-3">
 						<div class="col-4 p-3 border-bottom">
-							<img src="/resources/assets/img/2022011314264525694731.jpg" width="300" height="533" class="img-fluid" alt="Image">
+							<img src="" width="300" height="533" class="img-fluid" alt="Image">
 						</div>
 						<div class="col-6 d-flex flex-column border-bottom justify-content-around">
 							<span class="h4 fw-bold text-center border-bottom pb-3"> </span>
@@ -498,7 +498,7 @@
 					</div>
 					<div class="d-flex p-3">
 						<div class="col-4 p-3 border-bottom">
-							<img src="/resources/assets/img/2022011314264525694731.jpg" width="300" height="533" class="img-fluid" alt="Image">
+							<img src="" width="300" height="533" class="img-fluid" alt="Image">
 						</div>
 						<div class="col-6 d-flex flex-column border-bottom justify-content-around">
 							<span class="h4 fw-bold text-center border-bottom pb-3">글래드 강남 코엑스센터</span>
@@ -1068,7 +1068,7 @@ $(document).on("click", "#18down .MBtn", function(){
                  "seq" : $(this).attr("name")
               },
               success : function(res){ 
-                  alert(res);
+                  alert("1");
               	$("#hotelModal").empty()
 //               	ageupPrice = res.hotel.adultPrice;
 //               	agedownPrice = res.hotel.childPrice;
