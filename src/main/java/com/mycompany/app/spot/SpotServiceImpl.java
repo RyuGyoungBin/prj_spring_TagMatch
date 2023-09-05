@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.mycompany.app.common.constant.Constants; 
+import com.mycompany.app.common.constant.Constants;
+import com.mycompany.app.hotel.Hotel;
+import com.mycompany.app.hotel.HotelVo; 
 
 @Service
 public class SpotServiceImpl implements SpotService{
@@ -30,6 +32,10 @@ public class SpotServiceImpl implements SpotService{
 	public int selectCount(SpotVo vo) {return dao.selectCount(vo); }
 	
 	@Override
+	public List<Spot> selectUploadedOne(SpotVo vo) {return dao.selectUploadedOne(vo);}
+	
+	
+	@Override
 	public Spot selectOne(SpotVo vo) { return dao.selectOne(vo); }
 
 	@Override
@@ -41,7 +47,7 @@ public class SpotServiceImpl implements SpotService{
 	
 	
 	@Override
-	public int update(Spot dto){
+	public int update(Spot dto) throws Exception{
 		
 		dao.update(dto);
 		
@@ -51,16 +57,14 @@ public class SpotServiceImpl implements SpotService{
 	@Override
 
 	public int delete(Spot dto) {
-		dao.deleteSpotCloseDay(dto);
 		dao.delete(dto);	
 		return 0; 
 	}
- 
+   
 
 	@Override
 	public int insert(Spot dto) throws Exception {
 		 dao.insertSpot(dto);
-		 dao.insertSpotCloseDay(dto);
 		 
 		uploadFiles(dto.getUploadImg(), dto, "spotUploaded", dto.getUploadImgType(), dto.getUploadImgMaxNumber());
     	uploadFiles(dto.getUploadImgSpot(), dto, "spotUploaded", dto.getUploadImgSpotType(), dto.getUploadImgSpotMaxNumber());

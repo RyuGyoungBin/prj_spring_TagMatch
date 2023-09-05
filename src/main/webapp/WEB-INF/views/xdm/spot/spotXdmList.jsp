@@ -130,7 +130,7 @@
 									</th>
 
 				                    <td scope="row"><c:out value="${list.seq}"></c:out></td>
-				                    <td scope="row"><c:out value="${list.type}"></c:out></td>
+				                    <td scope="row"><c:out value="${list.spotType}"></c:out></td>
 				                   <td><a href="/spotXdmForm?seq=<c:out value="${list.seq }"></c:out>"><c:out value="${list.name }"></c:out></a></td>
 				                   <td><c:out value="${list.zipCode}"></c:out></td>
 				                   <td><c:out value="${list.address}"></c:out></td>
