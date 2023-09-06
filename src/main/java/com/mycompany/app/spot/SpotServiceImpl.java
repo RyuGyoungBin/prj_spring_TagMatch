@@ -44,7 +44,8 @@ public class SpotServiceImpl implements SpotService{
 	@Override
 	public  Spot selectRatingOne(SpotVo vo) {return dao.selectRatingOne(vo);}
 	
-	
+	@Override
+	public List<Spot> spotUsr(SpotVo vo) {return dao.spotUsr(vo);}
 	
 	@Override
 	public int update(Spot dto) throws Exception{

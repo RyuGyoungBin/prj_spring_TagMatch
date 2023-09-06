@@ -1,8 +1,5 @@
 package com.mycompany.app.spot;
 
-import java.util.List;
-
-import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 
 public class Spot {
@@ -43,6 +40,7 @@ public class Spot {
 	private String pseq;
 	
 	private String member_seq;
+	private String memberSeq;
 	private String tid;
 	
 
@@ -64,6 +62,9 @@ public class Spot {
 	private Integer cnt;
 	private String spotUsr_seq;
 	private String spot_seq;
+	private String spotSeq;
+	
+	private String memeberSeq;
 	
 	public Double getStarRating() {
 		return starRating;
@@ -344,6 +345,24 @@ public class Spot {
 	}
 	public void setSpotType(Integer spotType) {
 		this.spotType = spotType;
+	}
+	public String getMemeberSeq() {
+		return memeberSeq;
+	}
+	public void setMemeberSeq(String memeberSeq) {
+		this.memeberSeq = memeberSeq;
+	}
+	public String getSpotSeq() {
+		return spotSeq;
+	}
+	public void setSpotSeq(String spotSeq) {
+		this.spotSeq = spotSeq;
+	}
+	public String getMemberSeq() {
+		return memberSeq;
+	}
+	public void setMemberSeq(String memberSeq) {
+		this.memberSeq = memberSeq;
 	}
 
 	

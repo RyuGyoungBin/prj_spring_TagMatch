@@ -17,6 +17,7 @@ public interface SpotService {
 	public List<Spot> selectListUploaded(SpotVo vo);
 	public List<Spot> selectUploadedOne(SpotVo vo);
 	public List<Spot>selectRating(SpotVo vo);
+	public List<Spot>spotUsr(SpotVo vo);
 	public Spot selectRatingOne(SpotVo vo);
 	
 	    

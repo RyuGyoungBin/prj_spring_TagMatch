@@ -177,7 +177,13 @@
 	</select>
 	
     
-
+       <select id="spotUsr" resultType="Integer">
+    	SELECT * FROM 
+    	spotUsr
+		WHERE 1=1
+			<if test="spotSeq != null and !spotSeq.equals('')">AND spotSeq = #{spotSeq}</if>
+			<if test="memberSeq != null and !memberSeq.equals('')">AND member_seq = #{memberSeq}</if>
+    </select>
   
   
   

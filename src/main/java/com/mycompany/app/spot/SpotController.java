@@ -1,6 +1,8 @@
 package com.mycompany.app.spot;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.mycompany.app.feedback.Feedback;
 import com.mycompany.app.feedback.FeedbackServiceImpl;
@@ -175,5 +178,25 @@ public class SpotController {
 //	        }
 //	        return "uploadResult";
 //	    }
-	
+
+	@RequestMapping("/spotUsr")
+	@ResponseBody
+	public Map <String,Object> spotUsr (SpotVo vo, HttpSession httpSession, Feedback dto ) { 	
+		Map<String,Object> returnMap = new HashMap<String, Object>();
+		vo.setMemberSeq((String)httpSession.getAttribute("sessionSeq"));
+		List<Spot> spotUsr = service.spotUsr(vo);
+		
+		if(spotUsr.size() > 0){
+		  	returnMap.put("spotUsr", spotUsr);
+		  	returnMap.put("rt", "success");
+		  	dto.setMemberSeq((String)httpSession.getAttribute("sessionSeq"));
+//		  	dto.setType_seq(spotUsr.get(0).getSeq());
+		  	System.out.println("a1"+spotUsr.get(0).getSeq());
+		  	 System.out.println("member"+dto.getMemberSeq());
+		  	 feedbackService.insert(dto);
+		  }else {
+			  returnMap.put("rt","fail");
+		  }
+		  return returnMap;
+	  }
 }
