@@ -301,14 +301,12 @@
 											</div>
 										</div>
 									</div>
-									<!-- End box tour -->
 								</div>
 						</c:forEach>
 					<!-- End row -->
 				</div>
-			<!-- 				상세정보 				 -->
 			</div>
-			<div class="overflow-auto mb-3 border d-none ticketDetail hotelSelect" style="height: 650px;" id="hotelModal">
+			<div class="overflow-auto mb-3 border d-none ticketDetail ticketSelect" style="height: 650px;" id="hotelModal">
 				<div class="d-flex flex-column">
 					<div class="p-4 border-bottom d-flex justify-content-between align-items-center">
 						숙소상세정보
@@ -402,7 +400,7 @@
 <!-- 			</div> -->
 			
 			<div class="d-flex flex-column border p-3">
-			<div><h5 class="ms-2 mb-2"></h5></div>
+				<div><h5 class="ms-2 mb-2"></h5></div>
 				<table class="mb-3 text-center">
 					<thead class="border-bottom">
 						<tr>
@@ -669,7 +667,7 @@
 		var ageupPrice = 0;
 		var agedownPrice = 0;
 	$(document).on("click","#selectTicket", function(){
-		if(adultCount == 0 && youthCount == 0) {
+		if(adultCount == 0 || youthCount == 0) {
 			
 		} else {
 			var ticketPrice = adultCount  * ageupPrice + youthCount  * agedownPrice;
@@ -873,14 +871,23 @@
 			$("#searchTrain").removeClass("btn-info").addClass("btn-secondary");
 			
 		})
+		
+			var trainArr ;
+			var trainStr ;
+			var trainDatArr ; 
+			var trainDatMM ;
+			var trainDatDD ; 
+			var trainAdult ; 
+			var trainChild ; 
+		
 		$(document).on("click", "#t1trainDate tr", function(){
-			var trainArr = $(this).children("th:eq(2)").text().split("-");
-			var trainStr = trainArr[0];
-			var trainDatArr = $("#datePick").val().split(">");
-			var trainDatMM = trainDatArr[0].substr(4,2);
-			var trainDatDD = trainDatArr[0].substr(6,2);
-			var trainAdult = $("#trainAdult").val();
-			var trainChild = $("#trainChild").val();
+			 trainArr = $(this).children("th:eq(2)").text().split("-");
+			 trainStr = trainArr[0];
+			 trainDatArr = $("#datePick").val().split(">");
+			 trainDatMM = trainDatArr[0].substr(4,2);
+			 trainDatDD = trainDatArr[0].substr(6,2);
+			 trainAdult = $("#trainAdult").val();
+			 trainChild = $("#trainChild").val();
 			
 			$("#t1Price").prev().prev().prev().prev().prev().text($(this).children("th:eq(1)").text());
 			$("#t1Price").prev().prev().prev().prev().text($(this).children("th:eq(0)").text());
@@ -892,13 +899,13 @@
 		})
 		
 		$(document).on("click", "#t2trainDate tr", function(){
-			var trainArr = $(this).children("th:eq(2)").text().split("-");
-			var trainStr = trainArr[0];
-			var trainDatArr = $("#datePick").val().split(">");
-			var trainDatMM = trainDatArr[1].substr(4,2);
-			var trainDatDD = trainDatArr[1].substr(6,2);
-			var trainAdult = $("#trainAdult").val();
-			var trainChild = $("#trainChild").val();
+			 trainArr = $(this).children("th:eq(2)").text().split("-");
+			 trainStr = trainArr[0];
+			 trainDatArr = $("#datePick").val().split(">");
+			 trainDatMM = trainDatArr[1].substr(4,2);
+			 trainDatDD = trainDatArr[1].substr(6,2);
+			 trainAdult = $("#trainAdult").val();
+			 trainChild = $("#trainChild").val();
 			
 			$("#t2Price").prev().prev().prev().prev().prev().text($(this).children("th:eq(1)").text());
 			$("#t2Price").prev().prev().prev().prev().text($(this).children("th:eq(0)").text());
@@ -1026,7 +1033,7 @@ $(document).on("click", "#18down .MBtn", function(){
                     spotModal +='<div class="border p-3">';
                     spotModal +='<div class="mb-2">성인</div>';
                     spotModal +='<div class="d-flex justify-content-between">';
-                    spotModal +='<div class="d-flex justify-content-center aliㅑㅡㅁㅎㄷgn-items-center" id="18up">';
+                    spotModal +='<div class="d-flex justify-content-center align-items-center" id="18up">';
                     spotModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
                     spotModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
                     spotModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
@@ -1068,7 +1075,7 @@ $(document).on("click", "#18down .MBtn", function(){
                  "seq" : $(this).attr("name")
               },
               success : function(res){ 
-                  alert("1");
+//                   alert("1");
               	$("#hotelModal").empty()
 //               	ageupPrice = res.hotel.adultPrice;
 //               	agedownPrice = res.hotel.childPrice;
@@ -1082,50 +1089,74 @@ $(document).on("click", "#18down .MBtn", function(){
 				hotelModal +='</div>';
 				hotelModal +='<div class="d-flex p-3">';
 				hotelModal +='<div class="col-4 p-3 border-bottom">';
-				hotelModal +='<img src="'+res.hotel.path+res.hotel.uuidName+'" width="300" height="533" class="img-fluid" alt="Image">';
+				hotelModal +='<img src="'+res.hotelMap.hotel.path+res.hotelMap.hotel.uuidName+'" width="300" height="533" class="img-fluid" alt="Image">';
 				hotelModal +='</div>';
                 hotelModal +='<div class="col-6 d-flex flex-column border-bottom justify-content-around">';
-                hotelModal +='<span class="h4 fw-bold text-center border-bottom pb-3">'+res.hotel.name+'</span>';
-                hotelModal +='<span>주소 : '+res.hotel.address+" "+res.hotel.addressDetail+'</span>';
+                hotelModal +='<span class="h4 fw-bold text-center border-bottom pb-3">'+res.hotelMap.hotel.name+'</span>';
+                hotelModal +='<span>주소 : '+res.hotelMap.hotel.address+" "+res.hotelMap.hotel.addressDetail+'</span>';
                 hotelModal +='</div>';
                 hotelModal +='<div class="col-2 p-3">';
                 hotelModal +='<a class="btn btn-secondary">지도보기</a>';
                 hotelModal +='</div>';
                 hotelModal +='</div>';
                 hotelModal +='<div class="px-3">';
-                hotelModal +='<p>'+res.hotel.detailText+'</p>';
-                hotelModal +='아래에서 원하는 입장권을 선택하세요';
+                hotelModal +='<p>'+res.hotelMap.hotel.detailText+'</p>';
+                hotelModal +='아래에서 원하는 객실을 선택하세요';
                 hotelModal +='</div>';
                 hotelModal +='<div class="p-3">';
-                hotelModal +='<div class="border p-3">';
-                hotelModal +='<div class="mb-2">성인</div>';
-                hotelModal +='<div class="d-flex justify-content-between">';
-                hotelModal +='<div class="d-flex justify-content-center align-items-center" id="18up">';
-                hotelModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
-                hotelModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
-                hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
-                hotelModal +='</div>';
-                hotelModal +='<div>';
-//                 hotelModal +='<span>'+res.hotel.adultPrice+'</span>원';
-                hotelModal +='</div>';
-                hotelModal +='</div>';
-                hotelModal +='</div>';
-                hotelModal +='<div class="border p-3">';
-                hotelModal +='<div class="mb-2">청소년</div>';
-                hotelModal +='<div class="d-flex justify-content-between">';
-                hotelModal +='<div class="d-flex justify-content-center align-items-center" id="18down">';
-                hotelModal +='<div><h3 class="m-0 MBtn">-</h3></div>';
-                hotelModal +='<div><h3 class="my-0 mx-3 fw-bold">0</h3></div>';
-                hotelModal +='<div><h3 class="m-0 PBtn">+</h3></div>';
-                hotelModal +='</div>';
-                hotelModal +='<div>';
-//                 hotelModal +='<span>'+res.hotel.childPrice+'</span>원';
-                hotelModal +='</div>';
-                hotelModal +='</div>';
-                hotelModal +='</div>';
-                hotelModal +='</div>';
-                hotelModal +='<button type="button" class="btn btn-info" id="selectTicket">선택 완료</button>';
-                hotelModal +='</div>';
+                hotelModal +='<div class="d-flex flex-column border p-3">';
+              	hotelModal +='<div><h5 class="ms-2 mb-2"></h5></div>';
+          		hotelModal +='<table class="mb-3 text-center">';
+       			hotelModal +='<thead class="border-bottom">';
+
+				hotelModal +='</thead>';
+				hotelModal +='<tbody id="hotelView">';
+				hotelModal +='</tbody>';
+				hotelModal +='</table>';
+				hotelModal +='<div class="p-3">';
+				hotelModal +='<table class="col-12 text-center">';
+				hotelModal +='<thead class="border-bottom">';
+				hotelModal +='	<tr>';
+				hotelModal +='<th>객실 타입</th>';
+				hotelModal +='									<th>날짜</th>';
+				hotelModal +='										<th>비용(원)</th>';
+				hotelModal +='	<th>예약가능</th>';
+				hotelModal +='</tr>';
+				hotelModal +='</thead>';
+				hotelModal +='<tbody;>';
+				$.each(res.hotelList.hotelRoom,function(index, value) {
+				hotelModal +='<tr>';
+				hotelModal +='<td>'+value.roomName+'</td> <td></td>';
+				hotelModal +='<td>'+value.price+'</td>';
+				hotelModal +='<td>O</td>';
+				hotelModal +='			</tr>';
+				})
+				hotelModal +='</tbody>';
+				hotelModal +='	</table>';
+				hotelModal +='<div class="detail">';
+				hotelModal +='<div class="d-flex align-items-center justify-content-around">';
+				hotelModal +='<div class="col-2">';
+				hotelModal +=	'<span >옵션선택</span>';
+				hotelModal +=	'</div>';
+				hotelModal +=	'<div class="col-8 px-5 py-2">';
+				hotelModal +=	'<input type="text" value="" class="form-control" readonly>';
+				hotelModal +=	'</div>';
+				hotelModal +=	'<div class="col-2 p-2">';
+				hotelModal +=	'<select class="form-select" id="sleep">';
+				hotelModal +=									'<option value="1" selected>1객실</option>';
+				hotelModal +=									'<option value="2">2객실</option>';
+				hotelModal +=									'<option value="3">3객실</option>';
+				hotelModal +=	'</select>';
+				hotelModal +=	'</div>';
+				hotelModal +='</div>';
+				hotelModal +=	'</div>';
+				hotelModal +=	'</div>';
+				hotelModal +='<div class="d-flex justify-content-end align-items-center">';
+				hotelModal +='<div style="font-size: 9px;">선택된 총 숙소요금</div>';
+				hotelModal +='<div class="mx-2"><span id="hotelTotal"></span><span>원</span></div>';
+				hotelModal +='<button type="button" class="btn btn-sm btn-primary" id="hotelBtn">선택완료</button>';
+				hotelModal +='</div>'; 
+				hotelModal +='</div 	>';
                 $("#hotelModal").append(hotelModal);
               },
               error : function(XMLHttpRequest, textStatus, errorThrown){ // 비동기 통신이 실패할경우 error 콜백으로 들어옵니다.
@@ -1133,6 +1164,16 @@ $(document).on("click", "#18down .MBtn", function(){
               }
           })
   });
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  	
 
 
 
