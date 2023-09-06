@@ -58,7 +58,8 @@
 		b.seq hotelUsr_seq,
 		d.path,
 		d.type,
-		d.uuidName
+		d.uuidName,
+		getMinPrice(a.seq) minPrice
 	</sql>
 	<sql id="selectRatingCommon">
 		FROM
@@ -119,6 +120,7 @@
 		hotelRoom
 		WHERE 1=1
 		AND hotel_seq = #{seq}
+		
 	</select>
 
 	<select id="selectRating" resultMap="resultMapObj">

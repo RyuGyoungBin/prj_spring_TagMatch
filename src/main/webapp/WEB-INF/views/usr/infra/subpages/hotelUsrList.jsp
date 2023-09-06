@@ -70,25 +70,6 @@
 								<h6>Rating</h6>
 								<input type="text" id="starRatingVo" value="" name="starRatingVo">
 							</div>
-							
-							<div class="filter_type">
-								<h6>태그</h6>
-								<ul class="mb-0">
-									<li><label class="container_check"> Pet allowed <input
-											type="checkbox"> <span class="checkmark"></span>
-									</label></li>
-									<li><label class="container_check"> Groups allowed
-											<input type="checkbox"> <span class="checkmark"></span>
-									</label></li>
-									<li><label class="container_check"> Tour guides <input
-											type="checkbox"> <span class="checkmark"></span>
-									</label></li>
-									<li><label class="container_check"> Access for
-											disabled <input type="checkbox"><span
-											class="checkmark"></span>
-									</label></li>
-								</ul>
-							</div>
 						</div>
 						<!--End collapse -->
 					</div>
@@ -195,8 +176,8 @@
 								<div class="col-lg-2 col-md-2">
 									<div class="price_list">
 										<div>
-											<c:out value="${list.price }"/>₩<span class="normal_price_list"></span><small>*1인 <c:out value="${list.roomName }"/>
-												기준</small>
+											₩<fmt:formatNumber value="${list.minPrice }" pattern="#,###" /><span class="normal_price_list"></span><small>*1인
+												기준 최저가</small>
 											<p>
 												<a href="/roomDetailInfo?seq=<c:out value="${list.seq }"/>" class="btn_1">Details</a>
 											</p>

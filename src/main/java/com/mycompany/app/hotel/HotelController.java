@@ -108,18 +108,28 @@ public class HotelController {
 	}
 	
 	@RequestMapping ("/roomDetailInfo")
-	public String roomDetailInfo01(HotelVo vo,InfoVo infoVo, FeedbackVo feedbackVo, Model model) {
+	public String roomDetailInfo01(HotelVo vo,InfoVo infoVo, @ModelAttribute("feedbackVo") FeedbackVo feedbackVo, Model model) {
+		
 		Hotel hotel = hotelService.selectRatingOne(vo);
 		List<Hotel> hotelImg = hotelService.selectUploaded(vo);
 		List<Info> info = infoService.selectHotel(infoVo);
 		List<Hotel> hotelRoom = hotelService.selectHotelRoom(vo);
-		List<Feedback> feedback = feedbackService.selectList(feedbackVo);
-		
 		model.addAttribute("listUploaded", hotelImg);
 		model.addAttribute("hotel", hotel);
 		model.addAttribute("info", info);
 		model.addAttribute("room", hotelRoom);
-		model.addAttribute("feedback", feedback);
+		
+		feedbackVo.setFeedbackType(1);
+		System.out.println(feedbackVo.getFeedbackType());
+		 feedbackVo.setParamsPaging(feedbackService.selectOneCount(feedbackVo));
+		  
+		  if(feedbackVo.getTotalRows() > 0) { 
+			List<Feedback> feedback = feedbackService.selectList(feedbackVo);
+			model.addAttribute("feedback", feedback);
+		  } else {
+			  
+		  }
+		
 		return "/usr/infra/subpages/roomDetailInfo";
 	}
 	
@@ -130,7 +140,7 @@ public class HotelController {
 	
 	@RequestMapping("/hotelUsr")
 	@ResponseBody
-	public Map<String, Object> hotelUsr(HotelVo vo , HttpSession session) {
+	public Map<String, Object> hotelUsr(HotelVo vo , HttpSession session, Feedback dto) {
 		Map<String, Object> returnMap = new HashMap<String, Object>();
 		vo.setMemberSeq((String)session.getAttribute("sessionSeq"));
 		List<Hotel> rtUsr = hotelService.selectHotelUsr(vo);
@@ -138,6 +148,10 @@ public class HotelController {
 		if(rtUsr.size() > 0) {
 			returnMap.put("rtUsr", "rtUsr");
 			returnMap.put("rt", "success");
+			dto.setType_seq(rtUsr.get(0).getSeq());
+			dto.setMemberSeq((String)session.getAttribute("sessionSeq"));
+			System.out.println("member "+dto.getMemberSeq());
+			feedbackService.insert(dto);
 		} else {
 			returnMap.put("rt","fail");
 		}

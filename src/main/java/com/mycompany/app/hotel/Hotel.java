@@ -32,6 +32,7 @@ public class Hotel {
 	private Integer roomDelNy;
 	private Integer roomNum;
 	private String hotel_seq;
+	private Integer minPrice;
 //	hotelUploaded
 	private String tableName;
 
@@ -363,6 +364,12 @@ public class Hotel {
 	}
 	public void setTid(String tid) {
 		this.tid = tid;
+	}
+	public Integer getMinPrice() {
+		return minPrice;
+	}
+	public void setMinPrice(Integer minPrice) {
+		this.minPrice = minPrice;
 	}
 	
 	

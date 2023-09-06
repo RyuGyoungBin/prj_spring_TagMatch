@@ -11,11 +11,11 @@
     <sql id="selectCommon" > 
 	    FROM    
 	        feedback a
-	        LEFT JOIN trainUsr b ON b.seq = a.type_seq 
-	        LEFT JOIN hotelUsr c ON c.seq = a.type_seq  
-	        LEFT JOIN spotUsr d ON d.seq = a.type_seq 
+	        <if test="feedbackType == 0">LEFT JOIN trainUsr b ON b.seq = a.type_seq</if> 
+	        <if test="feedbackType == 1">LEFT JOIN hotelUsr c ON c.seq = a.type_seq</if>
+	        <if test="feedbackType == 2">LEFT JOIN spotUsr d ON d.seq = a.type_seq</if>
 	    WHERE 1=1
-	    	<if test="feedbackType == '1'">and c.hotel_seq = #{seq}</if>
+	    	<if test="feedbackType == 1">and c.hotel_seq = #{seq}</if>
 	</sql> 
     
     <sql id="selectFeedback">
@@ -25,11 +25,13 @@
         a.reviewTitle,
         a.starRating,
         a.member_seq,
+        getMemberName(a.member_seq) as memberName,
         a.defaultNy,
         a.date,
         a.dateRe,
-        a.type_seq,
-        b.start trainUsr_start, 
+        a.type_seq
+        <if test="feedbackType == 0">
+        , b.start trainUsr_start, 
         b.startDateTime trainUsr_startDateTime,
         b.end trainUsr_end,
         b.endDateTime trainUsr_endDateTime,
@@ -37,19 +39,24 @@
         b.sort trainUsr_sort,
         b.adultNum trainUsr_adultNum,
         b.childNum trainUsr_childNum,
-        b.price trainUsr_price,
-        c.start hotelUsr_start,
+        b.price trainUsr_price
+        </if>
+        <if test="feedbackType == 1">
+        , c.start hotelUsr_start,
         c.end hotelUsr_end,
         c.type hotelUsr_type,
         c.price hotelUsr_price,
         c.hotel_seq hotelUsr_hotel_seq,
-        c.hotelRoomSeq,
-        d.title spotUsr_title,
+        c.hotelRoomSeq
+        </if>
+        <if test="feedbackType == 2">
+        , d.title spotUsr_title,
         d.type spotUsrType,
         d.adultNum spotUsr_adultNum,
         d.childNum spotUsr_childNum,
         d.price spotUsr_price,
         d.spotSeq spotUsr_seq
+        </if>
     </sql>
     
     
@@ -111,9 +118,7 @@
     </select>
     
     <insert id="insertFeedback">
-        insert into 
-        	feedback (
-
+        insert into feedback (
 		         type
 		        , review
 		        , reviewTitle
@@ -123,10 +128,7 @@
 		        , type_seq
 		        , date
 		        , dateRe
-		        
 		        ) values (
-		        
-
 		         #{type}
 		        , #{review}
 		        , #{reviewTitle}

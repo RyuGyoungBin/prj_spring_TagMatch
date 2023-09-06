@@ -12,6 +12,7 @@ private String reviewTitle;
 private String starRating; 
 private String defaultNy; 
 private String member_seq; 
+private String memberName; 
 private String memberSeq;
 private String type_seq;
 
@@ -270,6 +271,12 @@ public String getMemberSeq() {
 }
 public void setMemberSeq(String memberSeq) {
 	this.memberSeq = memberSeq;
+}
+public String getMemberName() {
+	return memberName;
+}
+public void setMemberName(String memberName) {
+	this.memberName = memberName;
 }
 	
 }

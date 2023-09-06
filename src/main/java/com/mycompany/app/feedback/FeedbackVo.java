@@ -12,6 +12,7 @@ public class FeedbackVo {
 	private String defaultNy; 
 	private String member_seq;
 	private String memberSeq;
+	private String memberName; 
 	private String type;
 	private String type_seq;
 
@@ -478,6 +479,14 @@ public class FeedbackVo {
 
 	public void setMemberSeq(String memberSeq) {
 		this.memberSeq = memberSeq;
+	}
+
+	public String getMemberName() {
+		return memberName;
+	}
+
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
 	}
 	
 }

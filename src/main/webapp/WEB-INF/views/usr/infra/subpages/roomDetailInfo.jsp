@@ -146,8 +146,11 @@
 					<hr>
 
 <!-- review  section start -->
+					<form method="post" name="formList">
 					<div class="row">
 						<div class="col-lg-3">
+						<input type="hidden" name="thisPage" value="<c:out value="${feedbackVo.thisPage}" default="1"/>">
+					 	 <input type="hidden" name="rowNumToShow" value="<c:out value="${feedbackVo.rowNumToShow}"/>">
 							<h3>Reviews</h3>
 							<a href="#" class="btn_1 add_bottom_30" data-bs-toggle="modal" data-bs-target="#myReview">Leave a review</a>
 						</div>
@@ -161,10 +164,10 @@
 							<hr>
 							<c:set var="type" value="1"/>
 							<c:forEach items="${feedback}" var="feedback" varStatus="statusUploaded">
-								<c:if test="${feedback.type eq type && feedback.type_seq eq hotel.hotelUsr_seq}">
+								<c:if test="${feedback.type eq type && feedback.hotelUsr_hotel_seq eq hotel.seq}">
 									<div class="review_strip_single">
 										<small><c:out value="${feedback.date }"/></small>
-										<h4><c:out value="${feedback.member_seq }"/></h4>
+										<h4><c:out value="${feedback.memberName }"/></h4>
 										<p>
 											"<c:out value="${feedback.review }"/>"
 										</p>
@@ -174,8 +177,36 @@
 								</c:if>
 							</c:forEach>
 							<!-- End review strip -->
+							<div class="container-fluid px-0 mt-2">
+						    <div class="row">
+						        <div class="col">
+						            <!-- <ul class="pagination pagination-sm justify-content-center mb-0"> -->
+						            <ul class="pagination justify-content-center mb-0">
+						                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-left"></i></a></li> -->
+						<c:if test="${feedbackVo.startPage gt feedbackVo.pageNumToShow}">
+						                <li class="page-item"><a class="page-link" href="javascript:goList(${feedbackVo.startPage - 1})"><i class="fa-solid fa-angle-left"></i></a></li>
+						</c:if>
+						<c:forEach begin="${feedbackVo.startPage}" end="${feedbackVo.endPage}" varStatus="i">
+							<c:choose>
+								<c:when test="${i.index eq feedbackVo.thisPage}">
+						                <li class="page-item active"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+								</c:when>
+								<c:otherwise>             
+						                <li class="page-item"><a class="page-link" href="javascript:goList(${i.index})">${i.index}</a></li>
+								</c:otherwise>
+							</c:choose>
+						</c:forEach>                
+						<c:if test="${feedbackVo.endPage ne feedbackVo.totalPages}">                
+						                <li class="page-item"><a class="page-link" href="javascript:goList(${feedbackVo.endPage + 1})"><i class="fa-solid fa-angle-right"></i></a></li></c:if>
+						                <!-- <li class="page-item"><a class="page-link" href="#"><i class="fa-solid fa-angles-right"></i></a></li> -->
+						            </ul>
+						        </div>
+						    </div>
+						</div>
+					<!-- end pagination-->
 						</div>
 					</div>
+					</form>
 					<!-- review  section end -->
 				</div>
 				<!--End  single_tour_desc-->
@@ -256,7 +287,7 @@
 							<textarea name="review" id="review_text" class="form-control" style="height:100px" placeholder="리뷰 작성"></textarea>
 							<input type="hidden" name="type" value="1">
 							<input type="hidden" name="type_seq" id="type_seq">
-							<input type="hidden" name="memberSeq" value="${sessionSeq }">
+							<input type="hidden" name="memberSeq" value="${sessionSeq}">
 						</div>
 						<button type="button" id="btnInsert" class="btn_1" >등록</button>
 						
@@ -286,13 +317,15 @@
 			
 			data: {
 					"seq" : <c:out value="${hotel.seq}"/>,
-					"hotelRoom_seq" : $("#hotelRoom_seq").val()
+					"hotelRoom_seq" : $("#hotelRoom_seq").val(),
+					"review" : $("#review_text").val(),
+					"type" : $("input[name=type]").val(),
+					"starRating" : $("#starRating").val()
 				},
 			success:function(response){
 				if(response.rt == "success") {
 					$("#type_seq").val(response.rtUsr.seq);
-					$("form[name=review_hotel]").attr("action", "/feedbackXdmInsert").submit();
-					alert("리뷰가 등록되었습니다.");
+					
 				} else {
 					alert("객실을 다시 선택해주세요.")
 					return false;
@@ -303,9 +336,15 @@
 				return false;
 			}
 		})
-		
+		alert("리뷰가 등록되었습니다.");
+		location.reload();
 		
 	})
+	//paging
+		goList = function(thisPage) {
+			$("input:hidden[name=thisPage]").val(thisPage);
+			$("form[name=formList]").attr("action", "/roomDetailInfo?seq=<c:out value="${hotel.seq}"/>").submit();
+		}
 	$("#btnUpdate").on("click", function(){
 		$("form[name=form]").attr("action", "/feedbackXdmUpdate").submit();
 	})
