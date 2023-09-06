@@ -22,6 +22,7 @@ public class SpotVo {
 	private Integer delNy;
 	private String info;
 	private String spot_seq;
+	private String spotSeq;
 	
 	
 
@@ -83,6 +84,8 @@ public class SpotVo {
 		//리뷰 S
 		private Integer rating;
 		private Integer cnt;
+		private String memberSeq;
+		private String member_seq;
 		
 		public Integer getRating() {
 			return rating;
@@ -593,6 +596,24 @@ public class SpotVo {
 
 		public void setUploadImgSpoteletePathFile(String[] uploadImgSpoteletePathFile) {
 			this.uploadImgSpoteletePathFile = uploadImgSpoteletePathFile;
+		}
+		public String getMemberSeq() {
+			return memberSeq;
+		}
+		public void setMemberSeq(String memberSeq) {
+			this.memberSeq = memberSeq;
+		}
+		public String getSpotSeq() {
+			return spotSeq;
+		}
+		public void setSpotSeq(String spotSeq) {
+			this.spotSeq = spotSeq;
+		}
+		public String getMember_seq() {
+			return member_seq;
+		}
+		public void setMember_seq(String member_seq) {
+			this.member_seq = member_seq;
 		}
 
 		

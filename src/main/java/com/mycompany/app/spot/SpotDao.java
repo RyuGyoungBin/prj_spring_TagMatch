@@ -27,6 +27,8 @@ public class SpotDao {
 	public int selectCount(SpotVo vo){ return sqlSession.selectOne(namespace + ".selectCount", vo); }
 	public List<Spot> selectUploadedOne(SpotVo vo) {return sqlSession.selectList(namespace +".selectUploadedOne", vo);};
 	
+	public List<Spot> spotUsr(SpotVo vo) {return sqlSession.selectList(namespace +".spotUsr", vo);};
+	
 	public Spot selectOne(SpotVo vo) { return sqlSession.selectOne(namespace + ".selectOne", vo); }
 	
 	// selectList , selectOne과는 다르게 무조건 dto를 써야한다. vo 사용 불가능!!!

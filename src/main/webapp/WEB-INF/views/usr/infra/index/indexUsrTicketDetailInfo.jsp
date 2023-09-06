@@ -319,13 +319,13 @@
 							<div class="col-md-6">
 								<div class="form-group">
 									<label>별점 별점</label>
-									<select class="form-select" name="price_review" id="price_review">
+									<select class="form-select" name="starRating" id="starRating">
 										<option value="">별점 선택</option>
-										<option value="Low">매우 불만족</option>
-										<option value="Sufficient">불만족</option>
-										<option value="Good">보통</option>
-										<option value="Excellent">만족</option>
-										<option value="Superb">매우 만족</option>
+										<option value="1">매우 불만족</option>
+										<option value="2">불만족</option>
+										<option value="3">보통</option>
+										<option value="4">만족</option>
+										<option value="5">매우 만족</option>
 									</select>
 								</div>
 							</div>
@@ -353,11 +353,6 @@
 	<!-- Gallery -->
 	<script src="/resources/assets/js/jquery.sliderPro.min.js"></script>
 	<script type="text/javascript">
-	
-	$("#btnInsert").on("click", function(){
-		$("form[name=review_spot]").attr("action", "/feedbackXdmInsert").submit();
-	})
-	
 	
 		$(document).ready(function ($) {
 			$('#Img_carousel').sliderPro({
@@ -432,6 +427,33 @@
 	
 	<!-- Carousel -->
 	<script>
+	  $("#btnInsert").click(function(){
+          $.ajax({
+              type : "POST",            
+              url : "/spotUsr",    
+              data :{
+            	"spotSeq" : <c:out value="${spot.seq}"/>,
+				"type" : $("input[name=type]").val(),
+				"review" : $("#review_text").val(),
+				"starRating" : $("#starRating").val()
+              },
+              success:function(response){
+  				if(response.rt == "success") {
+  					alert("리뷰가 등록되었습니다.");
+  					location.reload()
+  				} else {
+  					alert("리뷰등록에 실패했습니다.")
+  					return false;
+  				}
+  			},
+  			error: function(jqXHR, textStatus, errorThrown) {
+				alert("객실을 다시 선택해주세요.");
+				return false;
+  			}
+  		})
+  	});
+	
+	
 		$('.carousel-thumbs-2').owlCarousel({
 		loop:false,
 		margin:5,
@@ -474,35 +496,11 @@
 			reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile voted"></i>')
 		}
 		for(var j=0; j<5-i; j++){
-			spotRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile"></i>');
+			reviewRating<c:out value="${feedback.seq }"/>.append('<i class="icon-smile"></i>');
 		}
 	</c:forEach>
 	/* 별점 표시 부분 끝 */	
-	
-	
-	  $("#btnInsert").click(function(){
-          $.ajax({
-              type : "POST",            
-              url : "/indexUsrTicketDetailInfo",    
-              data :{
-            	  "seq" : <c:out value="${spot.seq}"/>,
-					"spotSeq" : $("#spotSeq").val()
-					"spotUsr" : $("member_seq").val
-              },
-              success:function(response){
-  				if(response.rt == "success") {
-  					$("#type_seq").val(response.rtUsr.seq);
-  					$("form[name=review_spot]").attr("action", "/feedbackXdmInsert").submit();
-  					alert("리뷰가 등록되었습니다.");
-  				} else {
-  					alert("리뷰등록에 실패했습니다.")
-  					return false;
-  				}
-  			},
-  		})
-  		
-  		
-  	})
+
 	</script>
 
 	<!--Review modal validation -->
