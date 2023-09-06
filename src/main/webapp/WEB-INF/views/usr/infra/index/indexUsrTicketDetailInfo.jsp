@@ -487,7 +487,7 @@
               data :{
             	  "seq" : <c:out value="${spot.seq}"/>,
 					"spotSeq" : $("#spotSeq").val()
-					"member_seq" : $(1).val
+					"spotUsr" : $("member_seq").val
               },
               success:function(response){
   				if(response.rt == "success") {
