@@ -28,6 +28,7 @@ public class HotelVo {
 	private Integer roomDelNy;
 	private Integer roomNum;
 	private String hotel_seq;
+	private Integer minPrice;
 //	hotelUploaded
 	private String tableName;
 	
@@ -510,6 +511,14 @@ public class HotelVo {
 
 	public void setMemberSeq(String memberSeq) {
 		this.memberSeq = memberSeq;
+	}
+
+	public Integer getMinPrice() {
+		return minPrice;
+	}
+
+	public void setMinPrice(Integer minPrice) {
+		this.minPrice = minPrice;
 	}
 
 	

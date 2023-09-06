@@ -61,7 +61,7 @@ public class FeedbackController {
 	public String feedbackXdmInsert(Feedback dto){
 
 		// service 호출
-		service.insertFeedback(dto);
+		service.insert(dto);
 
 //	    if (result > 0) {
 //	        // 데이터 삽입 성공

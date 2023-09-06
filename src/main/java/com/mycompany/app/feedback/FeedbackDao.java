@@ -21,7 +21,6 @@ public class FeedbackDao {
 	  public int selectOneCount(FeedbackVo vo){ return sqlSession.selectOne(namespace + ".selectOneCount", vo); } 
 	  public Feedback selectOne(FeedbackVo vo) {return sqlSession.selectOne(namespace +".selectOne", vo);}
 	 
-	public int insert(Feedback dto) { return sqlSession.insert(namespace + ".insert", dto); }
 	public int insertFeedback(Feedback dto) { return sqlSession.insert(namespace + ".insertFeedback", dto); }
 	
 	public int update(Feedback dto) { return sqlSession.update(namespace + ".update", dto); }
