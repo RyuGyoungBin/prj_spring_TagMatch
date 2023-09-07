@@ -28,7 +28,6 @@ public class SpotController {
 	
 	@Autowired
 	SpotServiceImpl service;
-	private HttpSession httpSession;
 	
 	@Autowired
 	FeedbackServiceImpl feedbackService;
@@ -175,10 +174,8 @@ public class SpotController {
 		  	returnMap.put("spotUsr", spotUsr);
 		  	returnMap.put("rt", "success");
 		  	dto.setMemberSeq((String)httpSession.getAttribute("sessionSeq"));
-//		  	dto.setType_seq(spotUsr.get(0).getSeq());
-		  	System.out.println("a1"+spotUsr.get(0).getSeq());
-		  	 System.out.println("member"+dto.getMemberSeq());
-		  	 feedbackService.insert(dto);
+		  	System.out.println("1spot "+spotUsr.get(0).getSeq());
+//		  	 feedbackService.insert(dto);
 		  }else {
 			  returnMap.put("rt","fail");
 		  }

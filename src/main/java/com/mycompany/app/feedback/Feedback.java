@@ -5,7 +5,7 @@ public class Feedback {
 
 
 private String seq;
-private String type;
+private Integer type;
 private String review; 
 private String reviewTitle; 
 
@@ -170,11 +170,11 @@ public String getSeq() {
 public void setSeq(String seq) {
 	this.seq = seq;
 }
-public String getType() {
+public Integer getType() {
 	return type;
 }
-public void setType(String type) {
-	this.type = type;
+public void setType(Integer integer) {
+	this.type = integer;
 }
 public String getReview() {
 	return review;

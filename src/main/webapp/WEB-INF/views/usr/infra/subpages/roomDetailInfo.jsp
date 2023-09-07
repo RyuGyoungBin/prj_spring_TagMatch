@@ -325,7 +325,8 @@
 			success:function(response){
 				if(response.rt == "success") {
 					$("#type_seq").val(response.rtUsr.seq);
-					
+					alert("리뷰가 등록되었습니다.");
+					location.reload();
 				} else {
 					alert("객실을 다시 선택해주세요.")
 					return false;
@@ -336,8 +337,6 @@
 				return false;
 			}
 		})
-		alert("리뷰가 등록되었습니다.");
-		location.reload();
 		
 	})
 	//paging
