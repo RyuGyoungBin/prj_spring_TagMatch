@@ -10,10 +10,10 @@
 	<!-- NOTIFY BUBBLES  -->
 <!-- 	<script src="/resources/assets/js/notify_func.js"></script> -->
 
-	<!-- Map -->
-	<script src="http://maps.googleapis.com/maps/api/js"></script>
-	<script src="/resources/assets/js/map.js"></script>
-	<script src="/resources/assets/js/infobox.js"></script>
+<!-- 	<!-- Map --> -->
+<!-- 	<script src="http://maps.googleapis.com/maps/api/js"></script> -->
+<!-- 	<script src="/resources/assets/js/map.js"></script> -->
+<!-- 	<script src="/resources/assets/js/infobox.js"></script> -->
 	
 	
 	
@@ -22,3 +22,27 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+	$(".logOutBtn").on("click", function(){
+		$.ajax({
+			async: true 
+			,cache: false
+			,type: "post"
+			/* ,dataType:"json" */
+			,url: "/logoutProc"
+			/* ,data : $("#formLogin").serialize() */
+			,data : {}
+			,success: function(response) {
+				if(response.rt == "success") {
+					location.href = "/index";
+				} else {
+					alert("그런 회원 없습니다.");
+				}
+			}
+			,error : function(jqXHR, textStatus, errorThrown){
+				alert("ajaxUpdate " + jqXHR.textStatus + " : " + jqXHR.errorThrown);
+			}
+		});
+	})
+	
+	</script>

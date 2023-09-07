@@ -217,5 +217,14 @@ public class MemberController {
 		
 		return returnMap;
 	}
+	
+	@RequestMapping("/indexUsrLogin")
+	public String indexUsrLogin() {
+		return "usr/infra/member/indexUsrLogin";
+	}
+	@RequestMapping("/indexUsrSignUp")
+	public String indexUsrSignUp() {
+		return "usr/infra/member/indexUsrSignUp";
+	}
 
 }
