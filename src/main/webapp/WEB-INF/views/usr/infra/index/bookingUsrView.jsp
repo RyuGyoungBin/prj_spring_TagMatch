@@ -618,6 +618,17 @@
     
     <jsp:include page="../include/footer.jsp"></jsp:include>
 	<jsp:include page="../include/script.jsp"></jsp:include>
+	<!-- kakao map -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=85c0c885a814cd3619fd903a7c7f6b2d"></script>
+ 	<script type="text/javascript">
+  	  var container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+ 	  var options = { //지도를 생성할 때 필요한 기본 옵션
+ 	  center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+ 	  level: 3 //지도의 레벨(확대, 축소 정도)
+ 	  var map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+	  };
+	  </script>
+	  
 	<script>
 // 		new CBPFWTabs(document.getElementById('tabs'));
 	$(".ticketBox a").on("click", function(){
@@ -1096,7 +1107,24 @@ $(document).on("click", "#18down .MBtn", function(){
                 hotelModal +='<span>주소 : '+res.hotelMap.hotel.address+" "+res.hotelMap.hotel.addressDetail+'</span>';
                 hotelModal +='</div>';
                 hotelModal +='<div class="col-2 p-3">';
-                hotelModal +='<a class="btn btn-secondary">지도보기</a>';
+                hotelModal +='<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#map">지도보기</button>';
+//                 hotelModal +='<div class="modal fade" id="map"  tabindex="-1" aria-labelledby="mapLabel" aria-hidden="true" style="width:500px;height:400px;">
+//             	hotelModal +='<div class="modal-dialog">';
+//                	hotelModal +='<div class="modal-content">';
+//                	hotelModal +='<div class="modal-header">';
+//                 hotelModal +='<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>';
+//                 hotelModal +='<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>';
+//                 hotelModal +='</div>';
+//                 hotelModal +='<div class="modal-body">';
+//                 hotelModal +='<span></span>';
+//                 hotelModal +='</div>';
+//                 hotelModal +='<div class="modal-footer">';
+//                 hotelModal +='<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>';
+//                 hotelModal +='<button type="button" class="btn btn-primary">Save changes</button>';
+//                 hotelModal +='</div>';
+//                 hotelModal +='</div>';
+//                 hotelModal +='</div>';
+//                 hotelModal +='</div>';
                 hotelModal +='</div>';
                 hotelModal +='</div>';
                 hotelModal +='<div class="px-3">';
@@ -1126,7 +1154,8 @@ $(document).on("click", "#18down .MBtn", function(){
 				hotelModal +='<tbody;>';
 				$.each(res.hotelList.hotelRoom,function(index, value) {
 				hotelModal +='<tr>';
-				hotelModal +='<td>'+value.roomName+'</td> <td></td>';
+				hotelModal +='<td>'+value.roomName+'</td>';
+				hotelModal +='<td></td>';
 				hotelModal +='<td>'+value.price+'</td>';
 				hotelModal +='<td>O</td>';
 				hotelModal +='			</tr>';
@@ -1165,13 +1194,13 @@ $(document).on("click", "#18down .MBtn", function(){
           })
   });
 	  
+
 	  
 	  
 	  
 	  
 	  
-	  
-	  
+
 	  
 	  	
 
