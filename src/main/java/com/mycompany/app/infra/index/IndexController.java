@@ -119,6 +119,11 @@ public class IndexController {
 		return "xdm/infra/index/loginXdmForm";
 	}
 	
+	@RequestMapping("/indexUsrMypage")
+	public String indexUsrMypage() {
+		
+		return "usr/infra/index/indexUsrMypage";
+	}
 	
 
 }

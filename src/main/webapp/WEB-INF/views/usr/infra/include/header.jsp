@@ -23,28 +23,29 @@
 
     <!-- Header================================================== -->
     <header>
+    <c:choose>
+        <c:when test="${null eq sessionId}">
         <div id="top_line">
             <div class="container">
                 <div class="row">
                     <div class="col-6" style="margin-top: 5px;"></div>
                     <div class="col-6" style="margin-top: 5px;">
                         <ul id="top_links">
-                        	<c:choose>
-                        	<c:when test="${null eq sessionId}">
+                        	
                             <li><a href="indexUsrLogin"  style="font-style: normal;" ><i class="icon-login-1"></i>Log in</a></li>
                             <li><a href="indexUsrSignUp" id="signUp"  style="font-style: normal;" ><i class="icon-user-add" > </i>Sign up</a></li>
-                            </c:when>
-                            <c:otherwise>
-                            <li><a href="" style="font-style: normal;" id="logOutBtn"><i class="icon-login-1"></i>Log out</a></li>
-                            </c:otherwise>
-                        	</c:choose>
-                            <li><a href="#none" id="wishlist_link">Wishlist</a></li>
+                            
+<!--                             <li><a href="#none" id="wishlist_link">Wishlist</a></li> -->
 <!--                             <li><a href="http://themeforest.net/item/citytours-city-tours-tour-tickets-and-guides/10715647?ref=ansonika">Purchase this template</a></li> -->
                         </ul>
                     </div>
                 </div><!-- End row -->
             </div><!-- End container-->
         </div><!-- End top line-->
+        </c:when>
+        <c:otherwise>
+        </c:otherwise>
+     </c:choose>
         
         <div class="container">
             <div class="row">
@@ -68,17 +69,17 @@
                                     <li><a href="/trainUsrList">기차 노선</a></li>
                                     <li><a href="/hotelUsrList">숙소</a></li>
                                     <li><a href="/indexUsrTicket">입장권</a></li>
-                                    <li class="third-level"><a href="javascript:void(0);">지역</a>
-                                        <ul>
-                                            <li><a href="#" data-toggle="modal" data-target="#myModal">서울</a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#myModal">경기/인천</a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#myModal">충청</a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#myModal">강원</a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#myModal">전라</a></li>
-                                            <li><a href="#" data-toggle="modal" data-target="#myModal">경상</a></li>
+<!--                                     <li class="third-level"><a href="javascript:void(0);">지역</a> -->
+<!--                                         <ul> -->
+<!--                                             <li><a href="#" data-toggle="modal" data-target="#myModal">서울</a></li> -->
+<!--                                             <li><a href="#" data-toggle="modal" data-target="#myModal">경기/인천</a></li> -->
+<!--                                             <li><a href="#" data-toggle="modal" data-target="#myModal">충청</a></li> -->
+<!--                                             <li><a href="#" data-toggle="modal" data-target="#myModal">강원</a></li> -->
+<!--                                             <li><a href="#" data-toggle="modal" data-target="#myModal">전라</a></li> -->
+<!--                                             <li><a href="#" data-toggle="modal" data-target="#myModal">경상</a></li> -->
 
-                                        </ul>
-                                    </li>
+<!--                                         </ul> -->
+<!--                                     </li> -->
 
                                 </ul>
                             </li>
@@ -86,25 +87,33 @@
                                 <a href="javascript:void(0);" class="show-submenu" style="color: #e04f67;">Tours <i class="icon-down-open-mini"></i></a>
                                 <ul>
                                     <li><a href="bookingUsrView">예약 페이지</a></li>
-                                    <li><a href="all_tours_grid.html"></a></li>
-                                    <li><a href="all_tours_grid_masonry.html">All tours Sort Masonry</a></li>
-                                    <li><a href="all_tours_map_listing.html">All tours map listing</a></li>
-                                    <li><a href="single_tour.html">Single tour page</a></li>
-                                    <li><a href="single_tour_with_gallery.html">Single tour with gallery</a></li>
-                                    <li class="third-level"><a href="javascript:void(0);">Single tour fixed sidebar</a>
-                                        <ul>
-                                            <li><a href="single_tour_fixed_sidebar.html">Single tour fixed sidebar</a></li>
-                                            <li><a href="single_tour_with_gallery_fixed_sidebar.html">Single tour 2 Fixed Sidebar</a></li>
-                                            <li><a href="cart_fixed_sidebar.html">Cart Fixed Sidebar</a></li>
-                                            <li><a href="payment_fixed_sidebar.html">Payment Fixed Sidebar</a></li>
-                                            <li><a href="confirmation_fixed_sidebar.html">Confirmation Fixed Sidebar</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="single_tour_working_booking.php">Single tour working booking</a></li>
-                                    <li><a href="cart.html">Single tour cart</a></li>
-                                    <li><a href="payment.html">Single tour booking</a></li>
+<!--                                     <li><a href="all_tours_grid.html"></a></li> -->
+<!--                                     <li><a href="all_tours_grid_masonry.html">All tours Sort Masonry</a></li> -->
+<!--                                     <li><a href="all_tours_map_listing.html">All tours map listing</a></li> -->
+<!--                                     <li><a href="single_tour.html">Single tour page</a></li> -->
+<!--                                     <li><a href="single_tour_with_gallery.html">Single tour with gallery</a></li> -->
+<!--                                     <li class="third-level"><a href="javascript:void(0);">Single tour fixed sidebar</a> -->
+<!--                                         <ul> -->
+<!--                                             <li><a href="single_tour_fixed_sidebar.html">Single tour fixed sidebar</a></li> -->
+<!--                                             <li><a href="single_tour_with_gallery_fixed_sidebar.html">Single tour 2 Fixed Sidebar</a></li> -->
+<!--                                             <li><a href="cart_fixed_sidebar.html">Cart Fixed Sidebar</a></li> -->
+<!--                                             <li><a href="payment_fixed_sidebar.html">Payment Fixed Sidebar</a></li> -->
+<!--                                             <li><a href="confirmation_fixed_sidebar.html">Confirmation Fixed Sidebar</a></li> -->
+<!--                                         </ul> -->
+<!--                                     </li> -->
+<!--                                     <li><a href="single_tour_working_booking.php">Single tour working booking</a></li> -->
+<!--                                     <li><a href="cart.html">Single tour cart</a></li> -->
+<!--                                     <li><a href="payment.html">Single tour booking</a></li> -->
                                 </ul>
                             </li>
+                            <c:choose>
+                        	<c:when test="${null eq sessionId}">
+                            </c:when>
+                            <c:otherwise>
+                            	<li class="col-1 text-center"><a href="/indexUsrMypage">${sessionId }</a></li>
+                            	<li class="col-1"><a href="" style="font-style: normal;" class="logOutBtn"><i class="icon-login-1"></i>Log out</a></li>
+                            </c:otherwise>
+                            </c:choose>
                             <li class="col-1"></li>
                         </ul>
                     </div><!-- End main-menu -->

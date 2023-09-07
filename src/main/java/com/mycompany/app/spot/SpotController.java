@@ -104,21 +104,6 @@ public class SpotController {
 		return "/usr/infra/index/indexUsrTicketDetailInfo";
 	}
 	
-	@RequestMapping("/indexUsrLogin")
-	public String indexUsrLogin() {
-		return "/usr/infra/member/indexUsrLogin";
-	}
-	@RequestMapping("/indexUsrSignUp")
-	public String indexUsrSignUp() {
-		return "/usr/infra/member/indexUsrSignUp";
-	}
-
-	@RequestMapping("/indexUsrMypage")
-	public String indexUsrMyPage() {
-		return "/usr/infra/index/indexUsrMypage";
-	} 
-	
-	
 	
 	@RequestMapping("/spotXdmUpdate")
 	public String spotXdmUpdate(Spot dto) throws Exception {
